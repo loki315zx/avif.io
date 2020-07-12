@@ -1,0 +1,281 @@
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("Raleway Medium"), local("Raleway-Medium"),
+    url("../src/fonts/raleway-medium.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: bold;
+  font-weight: 800;
+  font-display: swap;
+  src: local("Raleway ExtraBold"), local("Raleway-ExtraBold"),
+    url("../src/fonts/raleway-extrabold.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+:root {
+  --f1: calc(16px + 0.5vh);
+  --f2: calc(var(--f1) * 1.33);
+  --f3: calc(var(--f2) * 1.33);
+  --f4: calc(var(--f3) * 1.33);
+  --f5: calc(var(--f4) * 1.78);
+  --blue1: #29a2ff;
+  --blue2: #c7e4fb;
+  --blue3: #eff5fa;
+  --gray1: #193951;
+  --gray2: #50687a;
+  --gray3: #8797a3;
+  --gray4: #f5f5f5;
+  --white: #fff;
+  --red1: #ff2929;
+  --red2: #ffd4d4;
+  --s1: calc(8px + 0.5vh);
+  --s2: calc(var(--s1) * 1.5);
+  --s3: calc(var(--s2) * 1.5);
+  --s4: calc(var(--s3) * 1.5);
+  --s5: calc(var(--s4) * 1.5);
+  --s6: calc(var(--s5) * 1.5);
+  --s7: calc(var(--s6) * 1.5);
+  --s8: calc(var(--s7) * 1.5);
+  --s9: calc(var(--s8) * 1.5);
+  --shadow1: 0px 15px 30px rgba(41, 162, 255, 0.1);
+  --shadow2: 0px 10px 20px rgba(41, 162, 255, 0.075);
+  --shadow3: 0px 5px 10px rgba(41, 162, 255, 0.05);
+  --border1: 32px;
+  --border2: 16px;
+  --border3: 8px;
+}
+
+body {
+  margin: 0;
+  font-family: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--blue3);
+  color: var(--gray1);
+}
+
+.f1 {
+  font-size: var(--f1);
+}
+.f2 {
+  font-size: var(--f2);
+}
+.f3 {
+  font-size: var(--f3);
+}
+.f4 {
+  font-size: var(--f4);
+}
+.f5 {
+  font-size: var(--f5);
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt1 {
+  margin-top: var(--s1);
+}
+.mt2 {
+  margin-top: var(--s2);
+}
+.mt3 {
+  margin-top: var(--s3);
+}
+.mt4 {
+  margin-top: var(--s4);
+}
+.mt5 {
+  margin-top: var(--s5);
+}
+.mt6 {
+  margin-top: var(--s6);
+}
+.mb1 {
+  margin-bottom: var(--s1);
+}
+.mb2 {
+  margin-bottom: var(--s2);
+}
+.mb3 {
+  margin-bottom: var(--s3);
+}
+.mb4 {
+  margin-bottom: var(--s4);
+}
+.mb5 {
+  margin-bottom: var(--s5);
+}
+.mb6 {
+  margin-bottom: var(--s6);
+}
+.p1 {
+  padding: var(--s1);
+}
+.p2 {
+  padding: var(--s2);
+}
+.p3 {
+  padding: var(--s3);
+}
+.p4 {
+  padding: var(--s4);
+}
+.p5 {
+  padding: var(--s5);
+}
+.p6 {
+  padding: var(--s6);
+}
+
+.blue1 {
+  color: var(--blue1);
+}
+.blue2 {
+  color: var(--blue2);
+}
+.blue3 {
+  color: var(--blue3);
+}
+.gray1 {
+  color: var(--gray1);
+}
+.gray2 {
+  color: var(--gray2);
+}
+.gray3 {
+  color: var(--gray3);
+}
+.gray4 {
+  color: var(--gray4);
+}
+.white {
+  color: var(--white);
+}
+.red1 {
+  color: var(--red1);
+}
+.red2 {
+  color: var(--red2);
+}
+
+.bg-blue1 {
+  background-color: var(--blue1);
+}
+.bg-blue2 {
+  background-color: var(--blue2);
+}
+.bg-blue3 {
+  background-color: var(--blue3);
+}
+.bg-gray1 {
+  background-color: var(--gray1);
+}
+.bg-gray2 {
+  background-color: var(--gray2);
+}
+.bg-gray3 {
+  background-color: var(--gray3);
+}
+.bg-gray4 {
+  background-color: var(--gray4);
+}
+.bg-white {
+  background-color: var(--white);
+}
+.bg-red1 {
+  background-color: var(--red1);
+}
+.bg-red2 {
+  background-color: var(--red2);
+}
+
+/**/
+
+.main {
+  min-height: 100vh;
+}
+.main_container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.box {
+  width: 50vw;
+  height: 50vh;
+  border-radius: var(--border1);
+  background: #fff;
+  box-shadow: var(--shadow1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--s3);
+}
+
+.box-inside {
+  border-radius: var(--border1);
+  border-width: 4px;
+  border-style: dashed;
+  border-color: var(--gray4);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.panel {
+  width: var(--s7);
+  height: var(--s8);
+  background: #fff;
+  box-shadow: var(--blue2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--s4);
+}
+
+#faq {
+  border-radius: 0 16px 16px 0;
+}
+
+#settings {
+  border-radius: 16px 0 0 16px;
+}
+
+.menu {
+  color: var(--gray2);
+  position: absolute;
+  top: var(--s3);
+  right: var(--s3);
+}
+
+.menu div {
+  margin-bottom: var(--s1);
+  text-align: right;
+}
+
+.scroll-indicator {
+  position: absolute;
+  right: 50%;
+  bottom: var(--s1);
+}
