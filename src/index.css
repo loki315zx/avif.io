@@ -5,9 +5,8 @@
   font-display: swap;
   src: local("Raleway Medium"), local("Raleway-Medium"),
     url("../src/fonts/raleway-medium.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
-    U+FEFF, U+FFFD;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
+    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
@@ -17,9 +16,8 @@
   font-display: swap;
   src: local("Raleway ExtraBold"), local("Raleway-ExtraBold"),
     url("../src/fonts/raleway-extrabold.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
-    U+FEFF, U+FFFD;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
+    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 :root {
@@ -55,15 +53,24 @@
   --border3: 8px;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
 body {
   margin: 0;
-  font-family: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-    "Helvetica Neue", sans-serif;
+  font-family: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: var(--blue3);
   color: var(--gray1);
+  line-height: 1.4;
 }
 
 .f1 {
@@ -108,6 +115,15 @@ body {
 .mt6 {
   margin-top: var(--s6);
 }
+.mt7 {
+  margin-top: var(--s7);
+}
+.mt8 {
+  margin-top: var(--s8);
+}
+.mt9 {
+  margin-top: var(--s9);
+}
 .mb1 {
   margin-bottom: var(--s1);
 }
@@ -125,6 +141,15 @@ body {
 }
 .mb6 {
   margin-bottom: var(--s6);
+}
+.mb7 {
+  margin-bottom: var(--s7);
+}
+.mb8 {
+  margin-bottom: var(--s8);
+}
+.mb9 {
+  margin-bottom: var(--s9);
 }
 .p1 {
   padding: var(--s1);
@@ -207,7 +232,19 @@ body {
   background-color: var(--red2);
 }
 
-/**/
+.border1 {
+  border-radius: var(--border1);
+}
+.border2 {
+  border-radius: var(--border2);
+}
+.border3 {
+  border-radius: var(--border3);
+}
+
+/*
+Main
+*/
 
 .main {
   min-height: 100vh;
@@ -278,4 +315,52 @@ body {
   position: absolute;
   right: 50%;
   bottom: var(--s1);
+}
+
+/*
+FAQ: What is avif?
+*/
+
+#explanation-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+#image-text {
+  flex: 3;
+}
+
+#image-container {
+  flex: 7;
+  margin-left: var(--s6);
+}
+
+#slider-options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--s3);
+}
+
+#slider-options span {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+#webp,
+#png {
+  margin-left: var(--s1);
+}
+
+#slider-options span.active {
+  background: var(--blue1);
+}
+
+#avif {
+  margin: 0;
+}
+
+.handle {
+  width: var(--s2);
+  height: var(--s6);
+  background: var(--blue1);
+  border-radius: 9999px;
 }
