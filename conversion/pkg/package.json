@@ -1,0 +1,15 @@
+{
+  "name": "conversion",
+  "collaborators": [
+    "Enn Michael <enntheprogrammer@gmail.com>"
+  ],
+  "version": "0.1.0",
+  "files": [
+    "conversion_bg.wasm",
+    "conversion.js",
+    "conversion.d.ts"
+  ],
+  "module": "conversion.js",
+  "types": "conversion.d.ts",
+  "sideEffects": false
+}

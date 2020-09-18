@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="60e326b2-114d-473d-b447-421d2c89b8c1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/avif.io.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/avif.io.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/converters.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversion.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversion.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/neeno.avif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/neeno.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/soty.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/sphere.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extern/aom" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extern/libavif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/extern/libspng" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pngToAvif.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pngToAvif.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pngToAvifDemo.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../www/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../www/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../www/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../www/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../www/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../www/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../www/static/pngToAvif.js" beforeDir="false" afterPath="$PROJECT_DIR$/../www/static/pngToAvif.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../www/static/pngToAvif.wasm" beforeDir="false" afterPath="$PROJECT_DIR$/../www/static/pngToAvif.wasm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../www/static/worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/../www/static/worker.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="cjlo1ke1" />
+  </component>
+  <component name="OCResolveContextSettings">
+    <option name="configuration" value="0-Debug-pngToAvif" />
+  </component>
+  <component name="ProjectId" id="1h30D5nDA6X5Utc4oonhkPhbqoS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.advertisement.text.has.clang-format" value="true" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.gitmodules" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
+    <property name="settings.editor.selected.configurable" value="dynamic.analysis.tools.valgrind" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="pngToAvif" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="demo/sphere.png demo/sphere.avif" REDIRECT_INPUT="false" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="pngToAvif" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="pngToAvif">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="RustProjectSettings">
+    <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="60e326b2-114d-473d-b447-421d2c89b8c1" name="Default Changelist" comment="" />
+      <created>1599224347459</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1599224347459</updated>
+      <workItem from="1599224350330" duration="21000" />
+      <workItem from="1599224407080" duration="9000" />
+      <workItem from="1599224439057" duration="75000" />
+      <workItem from="1599224527143" duration="171000" />
+      <workItem from="1599224712706" duration="10156000" />
+      <workItem from="1599235153032" duration="8134000" />
+      <workItem from="1599250957810" duration="4275000" />
+      <workItem from="1599297346778" duration="622000" />
+      <workItem from="1599300055669" duration="671000" />
+      <workItem from="1599301110032" duration="26916000" />
+      <workItem from="1599338208738" duration="5000" />
+      <workItem from="1599387414252" duration="6919000" />
+      <workItem from="1599402154237" duration="15840000" />
+      <workItem from="1599421820855" duration="4809000" />
+      <workItem from="1599464445890" duration="17219000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="142" y="58" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599433209403">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="142" y="58" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1599433209403" />
+    <state x="262" y="196" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599490554476">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="262" y="196" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.768@0.0.1366.768" timestamp="1599490554476" />
+    <state x="354" y="99" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1599231298636">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="354" y="99" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.768@0.0.1366.768" timestamp="1599231298636" />
+    <state x="0" y="19" width="817" height="747" key="DiffContextDialog" timestamp="1599405276828">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="0" y="19" width="817" height="747" key="DiffContextDialog/0.0.1366.768@0.0.1366.768" timestamp="1599405276828" />
+    <state x="403" y="93" key="FileChooserDialogImpl" timestamp="1599402117234">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="403" y="93" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1599402117234" />
+    <state width="1312" height="173" key="GridCell.Tab.0.bottom" timestamp="1599437039120">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1312" height="173" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1599437039120" />
+    <state width="1312" height="173" key="GridCell.Tab.0.center" timestamp="1599437039120">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1312" height="173" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1599437039120" />
+    <state width="1312" height="173" key="GridCell.Tab.0.left" timestamp="1599437039120">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1312" height="173" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1599437039120" />
+    <state width="1312" height="173" key="GridCell.Tab.0.right" timestamp="1599437039120">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1312" height="173" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1599437039120" />
+    <state width="1312" height="173" key="GridCell.Tab.1.bottom" timestamp="1599437039121">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1312" height="173" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1599437039121" />
+    <state width="1312" height="173" key="GridCell.Tab.1.center" timestamp="1599437039121">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1312" height="173" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1599437039121" />
+    <state width="1312" height="173" key="GridCell.Tab.1.left" timestamp="1599437039121">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1312" height="173" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1599437039121" />
+    <state width="1312" height="173" key="GridCell.Tab.1.right" timestamp="1599437039121">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1312" height="173" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1599437039121" />
+    <state x="167" y="84" width="1030" height="616" key="IDE.errors.dialog" timestamp="1599398357673">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="167" y="84" width="1030" height="616" key="IDE.errors.dialog/0.0.1366.768@0.0.1366.768" timestamp="1599398357673" />
+    <state x="171" y="0" width="1156" height="768" key="SettingsEditor" timestamp="1599436038906">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="171" y="0" width="1156" height="768" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1599436038906" />
+    <state x="599" y="0" width="767" height="768" key="find.popup" timestamp="1599417705176">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="599" y="0" width="767" height="768" key="find.popup/0.0.1366.768@0.0.1366.768" timestamp="1599417705176" />
+    <state x="261" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1599466182002">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="261" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1599466182002" />
+  </component>
+</project>

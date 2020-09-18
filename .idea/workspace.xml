@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="CargoProjects">
+    <cargoProject FILE="$PROJECT_DIR$/conversion/Cargo.toml" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5e8a798a-47d2-451e-a9b1-af5940e8cc13" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversion/src/encoding.rs" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/src/avif.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/src/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/www/src/utils.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ElmWorkspace">
+    <elmProjects />
+    <settings elmCompilerPath="" elmFormatPath="" elmTestPath="" isElmFormatOnSaveEnabled="false" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="TypeScript JSX File" />
+        <option value="CSS File" />
+        <option value="TypeScript File" />
+        <option value="Rust File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="02o2du1v" />
+  </component>
+  <component name="ProjectId" id="1h317d0CtX6iVuHJdIMYANmMXS8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
+    <property name="org.rust.disableDetachedFileInspection/home/doggs/projects/avif.io/converters/src/demo.rs" value="true" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/www/static" />
+      <recent name="$PROJECT_DIR$/www/src" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/converters/src" />
+      <recent name="$PROJECT_DIR$/converters/src/lib" />
+    </key>
+  </component>
+  <component name="RustProjectSettings">
+    <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
+    <option name="version" value="2" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5e8a798a-47d2-451e-a9b1-af5940e8cc13" name="Default Changelist" comment="" />
+      <created>1599224796735</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1599224796735</updated>
+      <workItem from="1599224798539" duration="2226000" />
+      <workItem from="1599322378412" duration="60000" />
+      <workItem from="1599322448970" duration="12474000" />
+      <workItem from="1599338239891" duration="2772000" />
+      <workItem from="1599418870141" duration="9535000" />
+      <workItem from="1599464470483" duration="12874000" />
+      <workItem from="1599556294651" duration="22501000" />
+      <workItem from="1599586396161" duration="8178000" />
+      <workItem from="1599640520317" duration="13004000" />
+      <workItem from="1599664603242" duration="12207000" />
+      <workItem from="1599692976917" duration="5580000" />
+      <workItem from="1599731228480" duration="3609000" />
+      <workItem from="1599735279531" duration="13177000" />
+      <workItem from="1599818048314" duration="833000" />
+      <workItem from="1600172682884" duration="763000" />
+      <workItem from="1600363797774" duration="21796000" />
+      <workItem from="1600432286490" duration="333000" />
+    </task>
+    <task id="LOCAL-00001" summary="Refactored a bit and added jpeg support">
+      <created>1599646178299</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1599646178299</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added jpeg conversion to browser">
+      <created>1599648228951</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1599648228951</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added basic progress tracking">
+      <created>1599671904297</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1599671904297</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added multi-file conversions and progress tracking">
+      <created>1599677334563</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1599677334563</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added proper progress bars">
+      <created>1599678471396</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1599678471396</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added drag and drop and some extra info">
+      <created>1599698582725</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1599698582725</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added browser polish">
+      <created>1599734393888</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1599734393888</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added webp support">
+      <created>1599761879129</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1599761879129</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Switching to Rust image, implemented YUV420 for a large number of image types">
+      <created>1600383511168</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1600383511168</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Finished the switch to the Rust image library">
+      <created>1600387101117</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1600387101117</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/converters" />
+      <path value="$PROJECT_DIR$/converters/extern/aom" />
+      <path value="$PROJECT_DIR$/converters/extern/libavif" />
+      <path value="$PROJECT_DIR$/converters/extern/libspng" />
+      <path value="$PROJECT_DIR$/conversion" />
+    </ignored-roots>
+    <MESSAGE value="Refactored a bit and added jpeg support" />
+    <MESSAGE value="Added jpeg conversion to browser" />
+    <MESSAGE value="Added basic progress tracking" />
+    <MESSAGE value="Added multi-file conversions and progress tracking" />
+    <MESSAGE value="Added proper progress bars" />
+    <MESSAGE value="Added drag and drop and some extra info" />
+    <MESSAGE value="Added browser polish" />
+    <MESSAGE value="Added webp support" />
+    <MESSAGE value="Switching to Rust image, implemented YUV420 for a large number of image types" />
+    <MESSAGE value="Finished the switch to the Rust image library" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished the switch to the Rust image library" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="369" y="217" width="616" height="320" key="#Notifications" timestamp="1600363981313">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="369" y="217" width="616" height="320" key="#Notifications/0.0.1366.768@0.0.1366.768" timestamp="1600363981313" />
+    <state x="146" y="65" width="1093" height="654" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600365907124">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="146" y="65" width="1093" height="654" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.768@0.0.1366.768" timestamp="1600365907124" />
+    <state x="278" y="209" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599656350966">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="278" y="209" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.768@0.0.1366.768" timestamp="1599656350966" />
+    <state x="448" y="165" key="FileChooserDialogImpl" timestamp="1599755385014">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="448" y="165" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1599755385014" />
+    <state width="1318" height="187" key="GridCell.Tab.0.bottom" timestamp="1600390702945">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1318" height="187" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1600390702945" />
+    <state width="1318" height="187" key="GridCell.Tab.0.center" timestamp="1600390702944">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1318" height="187" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1600390702944" />
+    <state width="1318" height="187" key="GridCell.Tab.0.left" timestamp="1600390702944">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1318" height="187" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1600390702944" />
+    <state width="1318" height="187" key="GridCell.Tab.0.right" timestamp="1600390702944">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1318" height="187" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1600390702944" />
+    <state x="247" y="53" key="SettingsEditor" timestamp="1600173164790">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="176" y="38" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1599642821933" />
+    <state x="247" y="53" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1600173164790" />
+    <state width="498" height="445" key="SwitcherDM" timestamp="1600364095748">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="498" height="445" key="SwitcherDM/0.0.1366.768@0.0.1366.768" timestamp="1600364095748" />
+    <state x="282" y="143" width="800" height="498" key="Vcs.Push.Dialog.v2" timestamp="1600387102918">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="282" y="143" width="800" height="498" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1600387102918" />
+    <state x="577" y="0" width="789" height="768" key="find.popup" timestamp="1599510427901">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="577" y="0" width="789" height="768" key="find.popup/0.0.1366.768@0.0.1366.768" timestamp="1599510427901" />
+    <state x="346" y="181" width="672" height="677" key="run.anything.popup" timestamp="1600380348564">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="346" y="181" width="672" height="677" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1600380348564" />
+    <state x="345" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1600386034756">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="345" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1600386034756" />
+  </component>
+</project>
