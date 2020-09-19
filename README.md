@@ -65,7 +65,6 @@ npm i
 ```
 Next, we are going to build the front-end:
 ```shell script
-cd www/
 npm run build
 ```
 Package the WASM code:
@@ -77,3 +76,9 @@ Now, you can run the server locally using `npm run start`,
 or you can deploy it to a static web server by copying everything
 from `www/dist` and `www/static` and the `www/index.html` file
 to the server.
+
+npm i
+cd www/
+npm i
+cd www/
+npm run build
