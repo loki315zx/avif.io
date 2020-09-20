@@ -40,10 +40,12 @@ export default function App() {
   return (
     <div>
       <div className="header">
-        <a>what is avif?</a>
-        <a>blog</a>
-        <a>upcoming features</a>
-        <a className="blue">donate</a>
+        <a href="#whatisavif">what is avif?</a>
+        <a>blog (coming soon)</a>
+        <a href="https://www.patreon.com/avifio">upcoming features</a>
+        <a href="https://www.patreon.com/avifio" className="blue">
+          donate
+        </a>
       </div>
       <div className={"app-container"}>
         <div className={"title f3 blue bold s2"}>avif.io</div>
@@ -114,6 +116,12 @@ export default function App() {
               sliderLineColor="#F5F5F5"
               sliderPositionPercentage={0.5}
             />
+            <div className="comparison-sub">
+              <div>jpg · 75kb</div>
+              <div>
+                avif · <span className="blue">50kb</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

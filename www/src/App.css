@@ -30,7 +30,7 @@ a {
 }
 
 a:active {
-  color: var(--blue) !important;
+  color: inherit !important;
 }
 
 h1,
@@ -597,6 +597,14 @@ body {
   height: var(--s3);
   background: var(--blue);
   border-radius: 9999px;
+}
+
+.comparison-sub {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--secondary);
+  margin-top: var(--s0);
 }
 
 /* TECH COMPANIES */

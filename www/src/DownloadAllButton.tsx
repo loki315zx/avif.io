@@ -24,8 +24,13 @@ export default function DownloadAllButton(props: DownloadAllButtonProps) {
           </button>
           <p className="gray">
             Do you enjoy using avif.io? Consider
-            <span className="blue"> donating</span> to keep the server alive and
-            to support <span className="blue">upcoming features.</span>
+            <a href="https://www.patreon.com/avifio" className="blue">
+              donating
+            </a>
+            to keep the server alive and to support
+            <a href="https://www.patreon.com/avifio" className="blue">
+              upcoming features.
+            </a>
           </p>
         </div>
       )}
