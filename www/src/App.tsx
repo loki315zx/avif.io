@@ -109,8 +109,8 @@ export default function App() {
             <ReactCompareImage
               leftImage={lion2}
               rightImage={lion}
-              leftImageAlt="after"
-              rightImageAlt="before"
+              leftImageAlt="avif image"
+              rightImageAlt="jpg image"
               sliderLineWidth={8}
               handle={<div className="handle"></div>}
               sliderLineColor="#F5F5F5"

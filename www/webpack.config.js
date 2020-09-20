@@ -21,6 +21,10 @@ module.exports = {
       },
     ],
   },
+  optimization: {
+    minimize: true,
+    noEmitOnErrors: true,
+  },
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
   },
