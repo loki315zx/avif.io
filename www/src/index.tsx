@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import * as serviceWorker from "./serviceWorker";
 
 (function () {
   File.prototype.arrayBuffer = File.prototype.arrayBuffer || myArrayBuffer;
@@ -24,4 +23,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.querySelector("#root")
 );
-serviceWorker.register();
