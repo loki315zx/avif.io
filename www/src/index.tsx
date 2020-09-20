@@ -1,20 +1,27 @@
-import React from "react"
-import ReactDOM from "react-dom"
-import App from "./App"
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
 
 (function () {
-    File.prototype.arrayBuffer = File.prototype.arrayBuffer || myArrayBuffer
-    Blob.prototype.arrayBuffer = Blob.prototype.arrayBuffer || myArrayBuffer
+  File.prototype.arrayBuffer = File.prototype.arrayBuffer || myArrayBuffer;
+  Blob.prototype.arrayBuffer = Blob.prototype.arrayBuffer || myArrayBuffer;
 
-    function myArrayBuffer(this: File | Blob): Promise<ArrayBuffer> {
-        return new Promise((resolve) => {
-            let fr = new FileReader()
-            fr.onload = () => {
-                resolve(fr.result as ArrayBuffer)
-            }
-            fr.readAsArrayBuffer(this)
-        })
-    }
-})()
+  function myArrayBuffer(this: File | Blob): Promise<ArrayBuffer> {
+    return new Promise((resolve) => {
+      let fr = new FileReader();
+      fr.onload = () => {
+        resolve(fr.result as ArrayBuffer);
+      };
+      fr.readAsArrayBuffer(this);
+    });
+  }
+})();
 
-ReactDOM.render(<App/>, document.querySelector("#root"))
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.querySelector("#root")
+);
+serviceWorker.register();

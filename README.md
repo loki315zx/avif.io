@@ -27,16 +27,18 @@ files via `npm dev`. The `www/` directory contains the front-end
 code, which is written in TypeScript and uses [React](https://reactjs.org/).
 The front-end code is bundled using [Webpack](https://webpack.js.org/),
 and the bundled files end up in `www/dist`. Static files can
-be found in `www/static`. 
+be found in `www/static`.
 
 ## Building the Rust code
 
 Building Rust requires `cargo` and `make`. To build the wasm
 code for release, use:
+
 ```shell script
 cd conversion/
 make wasm
 ```
+
 This will also run webpack to move the produced WASM and JS
 files to `www/dist`. Keep in mind that when you clone the repository
 the Rust code will already have been compiled, so you don't have to
@@ -57,21 +59,28 @@ is a special case at the moment, so don't be surprised that some
 of the code is explicitly checking whether it's working with WebP.
 
 ## Installing dependencies and building the front-end
+
 First, we will install the back-end and front-end dependencies:
+
 ```shell script
 npm i
 cd www/
 npm i
 ```
+
 Next, we are going to build the front-end:
+
 ```shell script
 npm run build
 ```
+
 Package the WASM code:
+
 ```shell script
-cd conversion/
+cd ../conversion
 npx webpack
 ```
+
 Now, you can run the server locally using `npm run start`,
 or you can deploy it to a static web server by copying everything
 from `www/dist` and `www/static` and the `www/index.html` file
@@ -82,3 +91,5 @@ cd www/
 npm i
 cd www/
 npm run build
+cd ../conversion
+npx webpack
