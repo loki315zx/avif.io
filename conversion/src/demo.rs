@@ -15,7 +15,7 @@ fn main() {
     let mut input = Vec::new();
     fs::File::open(&args[1]).unwrap().read_to_end(&mut input).unwrap();
     let input = input;
-    let result = conversion::to_avif(&input).unwrap();
+    let result = conversion::convert_to_avif(&input).unwrap();
     let mut output_file = fs::File::create(args[1].clone() + ".avif").unwrap();
     output_file.write_all(&result).unwrap();
 }

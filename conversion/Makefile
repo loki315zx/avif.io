@@ -8,5 +8,8 @@ wasm:
 	rm pkg/.gitignore
 	npx webpack
 
+demo-release:
+	cargo build --no-default-features --features build-demo --release
+
 demo-debug:
 	cargo build --no-default-features --features build-demo

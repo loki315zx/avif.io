@@ -62,19 +62,20 @@ fn subsampled<I: GenericImageView>(
 }
 
 fn rgb8_to_y(rgb: &Rgb<u8>) -> u8 {
-    let r = (rgb.0[0] as f64) / 255.;
-    let g = (rgb.0[1] as f64) / 255.;
-    let b = (rgb.0[2] as f64) / 255.;
-    ((0.299 * r + 0.587 * g + 0.114 * b) * 255.) as u8
+    let r = rgb.0[0] as i32;
+    let g = rgb.0[1] as i32;
+    let b = rgb.0[2] as i32;
+
+    (((66 * r + 129 * g + 25 * b + 128) >> 8) + 16) as u8
 }
 
 fn rgb8_to_uv(rgb: &Rgb<u8>) -> (u8, u8) {
-    let r = (rgb.0[0] as f64) / 255.;
-    let g = (rgb.0[1] as f64) / 255.;
-    let b = (rgb.0[2] as f64) / 255.;
+    let r = rgb.0[0] as i32;
+    let g = rgb.0[1] as i32;
+    let b = rgb.0[2] as i32;
 
     (
-        (((-0.337 * r - 0.662 * g + b) / 2. + 0.5) * 255.) as u8,
-        (((0.791 * r - 0.662 * g - 0.129 * b) / 2. + 0.5) * 255.) as u8,
+        (((-38 * r - 74 * g + 112 * b + 128) >> 8) + 128) as u8,
+        (((112 * r - 94 * g - 18 * b + 128) >> 8) + 128) as u8,
     )
 }

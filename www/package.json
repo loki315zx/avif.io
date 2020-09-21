@@ -25,6 +25,7 @@
     "lodash": "^4.17.20",
     "pretty-bytes": "^5.4.1",
     "react": "^16.13.1",
+    "react-animated-cursor": "^2.1.5",
     "react-compare-image": "^3.0.2",
     "react-dom": "^16.13.1",
     "react-dropzone": "^11.1.0",
