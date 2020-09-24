@@ -41,7 +41,7 @@ export default function App() {
     <div>
       <div className="header">
         <a href="#whatisavif">what is avif?</a>
-        <a href="#howtouse">how to use avif</a>
+        <a href="#howto">how to use avif</a>
         <a>blog (coming soon)</a>
         <a>upcoming features (coming soon)</a>
         <a href="https://www.buymeacoffee.com/justinschmitz" className="blue">
