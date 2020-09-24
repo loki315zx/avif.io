@@ -27,6 +27,7 @@
     "react": "^16.13.1",
     "react-animated-cursor": "^2.1.5",
     "react-compare-image": "^3.0.2",
+    "react-copy-to-clipboard": "^5.0.2",
     "react-dom": "^16.13.1",
     "react-dropzone": "^11.1.0",
     "react-svg": "^11.0.39",

@@ -22,6 +22,14 @@
     U+FEFF, U+FFFD;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 a {
   text-decoration: none;
   outline: none !important;
@@ -179,13 +187,6 @@ body {
   }
 }
 
-.title:after {
-  content: "beta";
-  font-size: var(--f1);
-  color: var(--gray);
-  font-weight: 400;
-}
-
 .app-container {
   display: flex;
   align-items: center;
@@ -226,6 +227,34 @@ body {
 
 .dropzone-container:hover {
   transform: scale(0.98);
+}
+
+.main-container {
+  animation: bounce-in 1s forwards 1;
+  animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(1, 1);
+  }
+  10% {
+    transform: scale(1.05, 0.9);
+  }
+  30% {
+    transform: scale(0.9, 1.05);
+  }
+  50% {
+    transform: scale(1.02, 0.95);
+  }
+  57% {
+    transform: scale(1, 1);
+  }
+  64% {
+    transform: scale(1.01, 0.99);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
 }
 
 .dropzone-container,
@@ -341,36 +370,15 @@ body {
   }
 }
 
-@keyframes push {
-  0%,
-  20%,
-  40%,
-  90%,
-  to {
-    animation-timing-function: ease-in;
-  }
+@keyframes flip-in-hor-bottom {
   0% {
-    transform: scalex(0.01) translatey(-50px);
+    transform: rotateX(80deg);
     opacity: 0;
   }
-  20% {
-    transform: scalex(0.01) translatey(0);
-    opacity: 0.1;
-  }
-  40% {
-    transform: scalex(0.1) translatey(0);
-    opacity: 0.5;
-  }
-  to {
-    transform: scalex(1) translatey(0);
+  100% {
+    transform: rotateX(0);
     opacity: 1;
   }
-}
-
-.in-progress {
-}
-
-.finished {
 }
 
 .picture {
@@ -421,10 +429,11 @@ body {
   background: var(--light);
   color: var(--primary);
   order: 2;
-  animation-duration: 0.5s;
-  animation-name: push;
-  transform-origin: top left;
+  animation: flip-in-hor-bottom 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  z-index: 1;
+  pointer-events: none;
 }
+
 .conversion:first-of-type {
   margin-top: var(--s2);
 }
@@ -466,6 +475,7 @@ body {
   color: var(--white);
   animation-duration: 0.75s;
   animation-name: bounceIn;
+  pointer-events: all;
 }
 
 .meta {
@@ -537,6 +547,43 @@ body {
   margin-top: var(--s2);
   border-radius: 12px;
   cursor: pointer;
+  animation: wobble-hor-top 0.8s 0.5s 1 forwards;
+  position: relative;
+  z-index: 0;
+  opacity: 0;
+}
+
+@keyframes wobble-hor-top {
+  0% {
+    transform: translateX(0%);
+    transform-origin: 50% 50%;
+    opacity: 0;
+  }
+  15% {
+    transform: translateX(-20px) rotate(4deg);
+    opacity: 1;
+  }
+  30% {
+    transform: translateX(10px) rotate(-4deg);
+    opacity: 1;
+  }
+  45% {
+    transform: translateX(-10px) rotate(2.4deg);
+    opacity: 1;
+  }
+  60% {
+    transform: translateX(6px) rotate(-1.8deg);
+    opacity: 1;
+  }
+  75% {
+    transform: translateX(-4px) rotate(0.8deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0%);
+    transform-origin: 50% 50%;
+    opacity: 1;
+  }
 }
 
 .finished .bar-container {
@@ -574,12 +621,14 @@ body {
   max-width: 1400px;
   margin: 0 auto;
   padding: 5vw;
+  min-height: 80vh;
 }
 
 .explanation-text {
   flex: 3;
-  padding: var(--s3);
-  min-width: 384px;
+  padding: var(--s1);
+  min-width: 480px;
+  margin-right: var(--s3);
 }
 
 .explanation-image {
@@ -591,6 +640,38 @@ body {
 .explanation-image div[data-testid="container"] {
   border-radius: 32px;
 }
+
+/* Code */
+
+.braces {
+  margin: 0 var(--s0);
+}
+
+.container-code {
+  padding: var(--s2);
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 2.8px 2.2px rgba(43, 51, 60, 0.003),
+    0 6.7px 5.3px rgba(43, 51, 60, 0.004), 0 12.5px 10px rgba(43, 51, 60, 0.005),
+    0 22.3px 17.9px rgba(43, 51, 60, 0.006),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.007), 0 100px 80px rgba(43, 51, 60, 0.01);
+  text-align: left;
+  position: relative;
+}
+
+.opacity-half {
+  opacity: 0.5;
+}
+
+.badge {
+  background: var(--secondary);
+  color: var(--white);
+  border-radius: 6px;
+  padding: var(--s0);
+  display: inline-block;
+}
+
+/* Comparison */
 
 .handle {
   width: var(--s1);
@@ -662,12 +743,8 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
-  .section {
-    padding: 1vw;
-  }
-
   .explanation-text {
-    padding: var(--s1);
+    padding: 0;
   }
 
   :root {
@@ -690,5 +767,24 @@ body {
   }
   .flex-center {
     display: block;
+  }
+  .carousel {
+    grid-template-columns: 1fr;
+    grid-gap: var(--s3);
+  }
+  .center {
+    text-align: left;
+  }
+  .explanation-image {
+    flex: 7;
+    min-height: 30vh;
+    position: relative;
+    margin: var(--s1) 0 var(--s4);
+  }
+  .f1.secondary.s4.center {
+    display: none;
+  }
+  .f3.blue.bold.f2.s2.center {
+    margin: 0;
   }
 }

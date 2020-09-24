@@ -41,10 +41,11 @@ export default function App() {
     <div>
       <div className="header">
         <a href="#whatisavif">what is avif?</a>
+        <a href="#howtouse">how to use avif</a>
         <a>blog (coming soon)</a>
-        <a href="https://www.patreon.com/avifio">upcoming features</a>
-        <a href="https://www.patreon.com/avifio" className="blue">
-          donate
+        <a>upcoming features (coming soon)</a>
+        <a href="https://www.buymeacoffee.com/justinschmitz" className="blue">
+          support me with pizza
         </a>
       </div>
       <div className={"app-container"}>
@@ -67,6 +68,111 @@ export default function App() {
         <div className="chevron"></div>
       </div>
 
+      <div className="section" id="howto">
+        <div className="f3 blue bold f2 s2 center">How to use avif</div>
+        <div className="f1 secondary s4 center">in HTML & CSS environment</div>
+        <div
+          className="flex-center"
+          style={{ alignItems: "flex-end", justifyContent: "space-around" }}
+        >
+          <div className="center">
+            <div className="badge s3">css</div>
+            <div>
+              <p className="s1">
+                <a
+                  className="blue"
+                  href="https://github.com/djpogo/avif-webp-css-support"
+                  title="avif detection"
+                >
+                  Check for avif support & use
+                </a>
+              </p>
+              <div
+                className="container-code"
+                onClick={() => navigator.clipboard.writeText("yes")}
+              >
+                <div className="opacity-half">
+                  <p className="gray">
+                    <span className="secondary">.div</span>
+                    <span className="braces">{`{`}</span>
+                    <span className="primary">
+                      {`background-image: url("lion.jpg")`}
+                    </span>
+                    <span className="braces">{`}`}</span>
+                  </p>
+
+                  <p className="gray">
+                    <span className="secondary">.webp .div</span>
+                    <span className="braces">{`{`}</span>
+                    <span className="primary">
+                      {`background-image: url("lion.webp")`}
+                    </span>
+                    <span className="braces">{`}`}</span>
+                  </p>
+                </div>
+
+                <p className="gray">
+                  <span className="secondary">.avif .div</span>
+                  <span className="braces">{`{`}</span>
+                  <span className="blue">
+                    {`background-image: url("lion.avif")`}
+                  </span>
+                  <span className="braces">{`}`}</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className="center">
+              <div className="badge s3">html</div>
+              <div className="container-code">
+                <p className="gray">
+                  <span>{`<`}</span>
+                  <span className="secondary">picture</span>
+                  <span>{`>`}</span>
+                </p>
+
+                <p className="gray">
+                  <span className="braces">{`<`}</span>
+                  <span className="secondary">source </span>
+                  <span>type=</span>
+                  <span className="blue">"image/avif" </span>
+                  <span>srcset=</span>
+                  <span className="blue">"lion.avif"</span>
+                  <span className="braces">{`>`}</span>
+                </p>
+                <div className="opacity-half">
+                  <p className="gray">
+                    <span className="braces">{`<`}</span>
+                    <span className="secondary">source </span>
+                    <span>type=</span>
+                    <span className="primary">"image/webp" </span>
+                    <span>srcset=</span>
+                    <span className="primary">"lion.webp"</span>
+                    <span className="braces">{`>`}</span>
+                  </p>
+
+                  <p className="gray">
+                    <span className="braces">{`<`}</span>
+                    <span className="secondary">source </span>
+                    <span>type=</span>
+                    <span className="primary">"image/jpg" </span>
+                    <span>srcset=</span>
+                    <span className="primary">"lion.jpg"</span>
+                    <span className="braces">{`>`}</span>
+                  </p>
+
+                  <p className="gray">
+                    <span>{`<`}</span>
+                    <span className="secondary">/picture</span>
+                    <span>{`>`}</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="section" id="whatisavif">
         <div className="f3 blue bold f2 s2 center">What is avif?</div>
         <div className="f1 secondary s4 center">and why you should care</div>
