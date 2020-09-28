@@ -127,6 +127,7 @@ body::-webkit-scrollbar-thumb {
 }
 .f3 {
   font-size: var(--f3);
+  line-height: 1.2;
 }
 
 .s0 {
@@ -149,6 +150,7 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
 }
 
 .center {
@@ -170,7 +172,7 @@ body {
   font-family: "Raleway";
   font-weight: 400;
   line-height: 25px;
-  background: #eff5fa;
+  background: #f6f9fc;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -618,36 +620,18 @@ body {
 }
 
 .section {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 5vw;
-  min-height: 80vh;
+  padding: 12vw 12vw;
 }
 
-.explanation-text {
-  flex: 3;
-  padding: var(--s1);
-  min-width: 480px;
-  margin-right: var(--s3);
-}
-
-.explanation-image {
-  flex: 7;
-  min-height: 60vh;
-  position: relative;
-}
-
-.explanation-image div[data-testid="container"] {
-  border-radius: 32px;
+.section:nth-of-type(odd) {
+  background: rgba(0, 0, 0, 0.02);
 }
 
 /* Code */
 
-.braces {
-  margin: 0 var(--s0);
-}
-
-.container-code {
+#howto .right-half {
+  display: flex;
+  min-height: 400px;
   padding: var(--s2);
   background: var(--white);
   border-radius: 12px;
@@ -655,8 +639,70 @@ body {
     0 6.7px 5.3px rgba(43, 51, 60, 0.004), 0 12.5px 10px rgba(43, 51, 60, 0.005),
     0 22.3px 17.9px rgba(43, 51, 60, 0.006),
     0 41.8px 33.4px rgba(0, 0, 0, 0.007), 0 100px 80px rgba(43, 51, 60, 0.01);
-  text-align: left;
+}
+
+#howto .left-half .f2 {
   position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#howto .left-half {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.css #css,
+.html #html,
+.wordpress #wordpress,
+.netlify #netlify,
+.shopify #shopify {
+  color: var(--primary);
+}
+
+.css #css:before,
+.html #html:before,
+.wordpress #wordpress:before,
+.netlify #netlify:before,
+.shopify #shopify:before {
+  content: "";
+  height: 4px;
+  display: block;
+  width: 100%;
+  position: absolute;
+  background: var(--blue);
+  border-radius: 99999px;
+  bottom: -10px;
+}
+
+.css #css-tutorial {
+  display: block;
+}
+.html #html-tutorial {
+  display: block;
+}
+.wordpress #wordpress-tutorial {
+  display: block;
+}
+.netlify #netlify-tutorial {
+  display: block;
+}
+.shopify #shopify-tutorial {
+  display: block;
+}
+
+#howto .flex-center {
+  align-items: inherit;
+}
+
+.braces {
+  margin: 0 var(--s0);
+}
+
+.container-code {
+  display: none;
 }
 
 .opacity-half {
@@ -672,6 +718,22 @@ body {
 }
 
 /* Comparison */
+
+#whatisavif .left-half {
+  flex: 1;
+  margin-right: var(--s3);
+}
+
+#whatisavif .right-half {
+  flex: 2;
+  position: relative;
+  align-self: stretch;
+  justify-self: stretch;
+}
+
+#comparison-img div[data-testid="container"] {
+  border-radius: 32px;
+}
 
 .handle {
   width: var(--s1);
@@ -697,15 +759,30 @@ body {
   background-position: center;
 }
 
-#chart-img {
-  background: url("./assets/chart.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
+#gainanadvantage .right-half {
+  flex: 2;
+  align-self: stretch;
 }
 
-#gainadvantage {
-  margin-bottom: 0;
+#gainanadvantage .left-half {
+  flex: 1;
+  position: relative;
+  align-self: baseline;
+  margin-right: var(--s3);
+}
+
+/* ADVANTAGE */
+
+#supportedbyplayers .right-half {
+  flex: 2;
+  align-self: stretch;
+}
+
+#supportedbyplayers .left-half {
+  flex: 1;
+  position: relative;
+  align-self: baseline;
+  margin-right: var(--s3);
 }
 
 /* SLIDE */
@@ -743,10 +820,6 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
-  .explanation-text {
-    padding: 0;
-  }
-
   :root {
     --f1: 16px;
     --f2: 24px;
@@ -762,9 +835,6 @@ body {
     padding-top: 200px;
   }
 
-  .dropzone-root {
-    padding: var(--s2);
-  }
   .flex-center {
     display: block;
   }
@@ -786,5 +856,11 @@ body {
   }
   .f3.blue.bold.f2.s2.center {
     margin: 0;
+  }
+  .left-half .secondary {
+    margin-bottom: var(--s3);
+  }
+  .main-container {
+    width: 100%;
   }
 }

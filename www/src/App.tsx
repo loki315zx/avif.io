@@ -15,6 +15,7 @@ export default function App() {
   const [converter, setConverter] = useState<Converter>();
   const [files, setFiles] = useState<FileWithId[]>([]);
   const [convertedFiles, setConvertedFiles] = useState<File[]>([]);
+  const [tutorial, setTutorial] = useState("css");
 
   useEffect(() => {
     setConverter(new Converter());
@@ -37,15 +38,222 @@ export default function App() {
     setConvertedFiles([...convertedFiles]);
   }
 
+  const css = (
+    <div className="container-code" id="css-tutorial">
+      <div className="opacity-half">
+        <p className="gray">
+          <span className="secondary">.div</span>
+          <span className="braces">{`{`}</span>
+          <span className="primary">{`background-image: url("lion.jpg")`}</span>
+          <span className="braces">{`}`}</span>
+        </p>
+
+        <p className="gray">
+          <span className="secondary">.webp .div</span>
+          <span className="braces">{`{`}</span>
+          <span className="primary">
+            {`background-image: url("lion.webp")`}
+          </span>
+          <span className="braces">{`}`}</span>
+        </p>
+      </div>
+
+      <p className="gray">
+        <span className="secondary">.avif .div</span>
+        <span className="braces">{`{`}</span>
+        <span className="blue">{`background-image: url("lion.avif")`}</span>
+        <span className="braces">{`}`}</span>
+      </p>
+    </div>
+  );
+
+  const html = (
+    <div className="container-code" id="html-tutorial">
+      <p className="gray">
+        <span>{`<`}</span>
+        <span className="secondary">picture</span>
+        <span>{`>`}</span>
+      </p>
+
+      <p className="gray">
+        <span className="braces">{`<`}</span>
+        <span className="secondary">source </span>
+        <span>type=</span>
+        <span className="blue">"image/avif" </span>
+        <span>srcset=</span>
+        <span className="blue">"lion.avif"</span>
+        <span className="braces">{`>`}</span>
+      </p>
+      <div className="opacity-half">
+        <p className="gray">
+          <span className="braces">{`<`}</span>
+          <span className="secondary">source </span>
+          <span>type=</span>
+          <span className="primary">"image/webp" </span>
+          <span>srcset=</span>
+          <span className="primary">"lion.webp"</span>
+          <span className="braces">{`>`}</span>
+        </p>
+
+        <p className="gray">
+          <span className="braces">{`<`}</span>
+          <span className="secondary">source </span>
+          <span>type=</span>
+          <span className="primary">"image/jpg" </span>
+          <span>srcset=</span>
+          <span className="primary">"lion.jpg"</span>
+          <span className="braces">{`>`}</span>
+        </p>
+
+        <p className="gray">
+          <span>{`<`}</span>
+          <span className="secondary">/picture</span>
+          <span>{`>`}</span>
+        </p>
+      </div>
+    </div>
+  );
+
+  const wordpress = (
+    <div className="container-code" id="wordpress-tutorial">
+      <p>By default, WordPress does not (yet) accept avif files.</p>
+      <p>
+        {" "}
+        In order to upload them,{" "}
+        <a
+          href="https://wordpress.org/plugins/wp-add-mime-types/"
+          title="mime type"
+        >
+          use this plugin
+        </a>{" "}
+        and
+      </p>
+      <p>
+        enable the mime type with:{" "}
+        <span className="blue">avif = image/avif</span>.
+      </p>
+      <p>
+        Then, add images to your site with the picture element:
+        <p className="s1"></p>
+        <p className="gray">
+          <span>{`<`}</span>
+          <span className="secondary">picture</span>
+          <span>{`>`}</span>
+        </p>
+        <p className="gray">
+          <span className="braces">{`<`}</span>
+          <span className="secondary">source </span>
+          <span>type=</span>
+          <span className="blue">"image/avif" </span>
+          <span>srcset=</span>
+          <span className="blue">"lion.avif"</span>
+          <span className="braces">{`>`}</span>
+        </p>
+        <div className="opacity-half">
+          <p className="gray">
+            <span className="braces">{`<`}</span>
+            <span className="secondary">source </span>
+            <span>type=</span>
+            <span className="primary">"image/webp" </span>
+            <span>srcset=</span>
+            <span className="primary">"lion.webp"</span>
+            <span className="braces">{`>`}</span>
+          </p>
+
+          <p className="gray">
+            <span className="braces">{`<`}</span>
+            <span className="secondary">source </span>
+            <span>type=</span>
+            <span className="primary">"image/jpg" </span>
+            <span>srcset=</span>
+            <span className="primary">"lion.jpg"</span>
+            <span className="braces">{`>`}</span>
+          </p>
+
+          <p className="gray">
+            <span>{`<`}</span>
+            <span className="secondary">/picture</span>
+            <span>{`>`}</span>
+          </p>
+        </div>
+      </p>
+    </div>
+  );
+
+  const netlify = (
+    <div className="container-code" id="netlify-tutorial">
+      <p className="s1">
+        Define a custom header within the Netflix configuration file:
+      </p>
+      <p className="secondary s1">
+        <p>[[headers]]</p> <p>for = "*.avif"</p>
+        <p>[headers.values]</p>
+        <p>Content-Type = "image/avif"</p>
+        <p>Content-Disposition = "inline"</p>
+      </p>
+
+      <p>
+        Then, add images to your site with the picture element:
+        <p className="secondary s1"></p>
+        <p className="gray">
+          <span>{`<`}</span>
+          <span className="secondary">picture</span>
+          <span>{`>`}</span>
+        </p>
+        <p className="gray">
+          <span className="braces">{`<`}</span>
+          <span className="secondary">source </span>
+          <span>type=</span>
+          <span className="blue">"image/avif" </span>
+          <span>srcset=</span>
+          <span className="blue">"lion.avif"</span>
+          <span className="braces">{`>`}</span>
+        </p>
+        <div className="opacity-half s1">
+          <p className="gray">
+            <span className="braces">{`<`}</span>
+            <span className="secondary">source </span>
+            <span>type=</span>
+            <span className="primary">"image/webp" </span>
+            <span>srcset=</span>
+            <span className="primary">"lion.webp"</span>
+            <span className="braces">{`>`}</span>
+          </p>
+
+          <p className="gray">
+            <span className="braces">{`<`}</span>
+            <span className="secondary">source </span>
+            <span>type=</span>
+            <span className="primary">"image/jpg" </span>
+            <span>srcset=</span>
+            <span className="primary">"lion.jpg"</span>
+            <span className="braces">{`>`}</span>
+          </p>
+
+          <p className="gray">
+            <span>{`<`}</span>
+            <span className="secondary">/picture</span>
+            <span>{`>`}</span>
+          </p>
+        </div>
+        <a
+          href="https://reachlightspeed.com/blog/using-the-new-high-performance-avif-image-format-on-the-web-today/"
+          title="avif on netlify"
+        >
+          Thanks to Lightspeed for this approach.
+        </a>
+      </p>
+    </div>
+  );
+
   return (
     <div>
       <div className="header">
         <a href="#whatisavif">what is avif?</a>
         <a href="#howto">how to use avif</a>
         <a>blog (coming soon)</a>
-        <a>upcoming features (coming soon)</a>
         <a href="https://www.buymeacoffee.com/justinschmitz" className="blue">
-          support me with pizza
+          pizza support
         </a>
       </div>
       <div className={"app-container"}>
@@ -69,118 +277,52 @@ export default function App() {
       </div>
 
       <div className="section" id="howto">
-        <div className="f3 blue bold f2 s2 center">How to use avif</div>
-        <div className="f1 secondary s4 center">in HTML & CSS environment</div>
-        <div
-          className="flex-center"
-          style={{ alignItems: "flex-end", justifyContent: "space-around" }}
-        >
-          <div className="center">
-            <div className="badge s3">css</div>
-            <div>
-              <p className="s1">
-                <a
-                  className="blue"
-                  href="https://github.com/djpogo/avif-webp-css-support"
-                  title="avif detection"
-                >
-                  Check for avif support & use
-                </a>
-              </p>
-              <div
-                className="container-code"
-                onClick={() => navigator.clipboard.writeText("yes")}
-              >
-                <div className="opacity-half">
-                  <p className="gray">
-                    <span className="secondary">.div</span>
-                    <span className="braces">{`{`}</span>
-                    <span className="primary">
-                      {`background-image: url("lion.jpg")`}
-                    </span>
-                    <span className="braces">{`}`}</span>
-                  </p>
-
-                  <p className="gray">
-                    <span className="secondary">.webp .div</span>
-                    <span className="braces">{`{`}</span>
-                    <span className="primary">
-                      {`background-image: url("lion.webp")`}
-                    </span>
-                    <span className="braces">{`}`}</span>
-                  </p>
-                </div>
-
-                <p className="gray">
-                  <span className="secondary">.avif .div</span>
-                  <span className="braces">{`{`}</span>
-                  <span className="blue">
-                    {`background-image: url("lion.avif")`}
-                  </span>
-                  <span className="braces">{`}`}</span>
-                </p>
-              </div>
+        <div className="f3 blue bold s4">How to use avif.</div>
+        <div className="flex-center">
+          <div className={"left-half " + tutorial}>
+            <div
+              className={"f2 bold secondary"}
+              id="css"
+              onClick={() => setTutorial("css")}
+            >
+              CSS
+            </div>
+            <div
+              className={"f2 bold secondary"}
+              id="html"
+              onClick={() => setTutorial("html")}
+            >
+              HTML
+            </div>
+            <div
+              className={"f2 bold secondary"}
+              id="wordpress"
+              onClick={() => setTutorial("wordpress")}
+            >
+              WordPress
+            </div>
+            <div
+              className={"f2 bold secondary"}
+              id="netlify"
+              onClick={() => setTutorial("netlify")}
+            >
+              Netlify
             </div>
           </div>
-          <div>
-            <div className="center">
-              <div className="badge s3">html</div>
-              <div className="container-code">
-                <p className="gray">
-                  <span>{`<`}</span>
-                  <span className="secondary">picture</span>
-                  <span>{`>`}</span>
-                </p>
 
-                <p className="gray">
-                  <span className="braces">{`<`}</span>
-                  <span className="secondary">source </span>
-                  <span>type=</span>
-                  <span className="blue">"image/avif" </span>
-                  <span>srcset=</span>
-                  <span className="blue">"lion.avif"</span>
-                  <span className="braces">{`>`}</span>
-                </p>
-                <div className="opacity-half">
-                  <p className="gray">
-                    <span className="braces">{`<`}</span>
-                    <span className="secondary">source </span>
-                    <span>type=</span>
-                    <span className="primary">"image/webp" </span>
-                    <span>srcset=</span>
-                    <span className="primary">"lion.webp"</span>
-                    <span className="braces">{`>`}</span>
-                  </p>
-
-                  <p className="gray">
-                    <span className="braces">{`<`}</span>
-                    <span className="secondary">source </span>
-                    <span>type=</span>
-                    <span className="primary">"image/jpg" </span>
-                    <span>srcset=</span>
-                    <span className="primary">"lion.jpg"</span>
-                    <span className="braces">{`>`}</span>
-                  </p>
-
-                  <p className="gray">
-                    <span>{`<`}</span>
-                    <span className="secondary">/picture</span>
-                    <span>{`>`}</span>
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div className={"right-half " + tutorial}>
+            {css}
+            {html}
+            {wordpress}
+            {netlify}
           </div>
         </div>
       </div>
+
       <div className="section" id="whatisavif">
-        <div className="f3 blue bold f2 s2 center">What is avif?</div>
-        <div className="f1 secondary s4 center">and why you should care</div>
+        <div className="f3 blue bold s4">avif is the future.</div>
         <div className="flex-center">
-          <div className="explanation-text">
-            <div className="f2 primary bold s2">
-              avif is the image format of the future
-            </div>
+          <div className="left-half">
             <div className="f1 secondary s2">
               <a
                 className="secondary"
@@ -211,45 +353,40 @@ export default function App() {
               </a>
             </div>
           </div>
-          <div className="explanation-image" id="comparison-img">
+          <div className="right-half" id="comparison-img">
             <ReactCompareImage
               leftImage={lion2}
               rightImage={lion}
               leftImageAlt="avif image"
               rightImageAlt="jpg image"
-              sliderLineWidth={8}
+              sliderLineWidth={4}
               handle={<div className="handle"></div>}
-              sliderLineColor="#F5F5F5"
+              sliderLineColor="rgba(255,255,255,0.2)"
               sliderPositionPercentage={0.5}
             />
             <div className="comparison-sub">
-              <div>jpg · 75kb</div>
               <div>
                 avif · <span className="blue">50kb</span>
               </div>
+              <div>jpg ·75kb</div>
             </div>
           </div>
         </div>
       </div>
       <div className="section" id="supportedbyplayers">
-        <div className="f3 blue bold f2 s2 center">Supported by players</div>
-        <div className="f1 secondary s4 center">
-          giants develop it - royalty-free
-        </div>
+        <div className="f3 blue bold s4">Supported by big players.</div>
         <div className="flex-center">
-          <div className="explanation-text">
-            <div className="f2 primary bold s2">
-              avif is developed and used by the most influencial tech companies
-            </div>
+          <div className="left-half">
             <div className="f1 secondary s2">
               <a
                 className="secondary"
                 title="netflix is using avif"
                 href="https://netflixtechblog.com/avif-for-next-generation-image-coding-b1d75675fe4"
               >
-                Netflix has already considered .avif superior to the JPEG, PNG,
-                and even the newer WebP image formats for its image quality to
-                compressed file size ratio.
+                avif is developed and used by the most influencial tech
+                companies. Netflix has already considered .avif superior to the
+                JPEG, PNG, and even the newer WebP image formats for its image
+                quality to compressed file size ratio.
               </a>
             </div>
             <div className="f1 secondary s2">
@@ -271,19 +408,13 @@ export default function App() {
               innovating the modern web.
             </div>
           </div>
-          <div className="explanation-image" id="tech-companies"></div>
+          <div className="right-half" id="tech-companies"></div>
         </div>
       </div>
       <div className="section" id="gainanadvantage">
-        <div className="f3 blue bold f2 s2 center">Gain an advantage</div>
-        <div className="f1 secondary s4 center">
-          why low file size is awesome for your users
-        </div>
+        <div className="f3 blue bold s4">Gain an advantage.</div>
         <div className="flex-center">
-          <div className="explanation-text">
-            <div className="f2 primary bold s2">
-              increasing your speed increases your profit
-            </div>
+          <div className="left-half">
             <div className="f1 secondary s2">
               <a
                 className="secondary"
@@ -296,10 +427,11 @@ export default function App() {
               </a>
             </div>
             <div className="f1 secondary s2">
-              Every successful e-commerce store focuses on increasing page
-              loading speed. If your page takes too long to load, visitors will
-              more likely switch to another page, quit the shopping process or
-              stop visiting your website at all.
+              Increasing your speed increases your profit. Every successful
+              e-commerce store focuses on increasing page loading speed. If your
+              page takes too long to load, visitors will more likely switch to
+              another page, quit the shopping process or stop visiting your
+              website at all.
             </div>
             <div className="f1 secondary">
               So not only does a long page loading time decrease the user
@@ -308,70 +440,69 @@ export default function App() {
               studies on how performance increases revenue.
             </div>
           </div>
-          <div className="explanation-image" id="chart-img"></div>
-        </div>
-      </div>
-      <div className="section" id="speed">
-        <div className="carousel">
-          <a
-            className="slide center"
-            href="http://radar.oreilly.com/2008/08/radar-theme-web-ops.html"
-          >
-            <div className="primary s1 bold">Amazon</div>
-            <div className="secondary">
-              Found that every 100ms of latency cost them 1% in sales.
+          <div className="right-half">
+            <div className="carousel">
+              <a
+                className="slide center"
+                href="http://radar.oreilly.com/2008/08/radar-theme-web-ops.html"
+              >
+                <div className="primary s1 bold">Amazon</div>
+                <div className="secondary">
+                  Found that every 100ms of latency cost them 1% in sales.
+                </div>
+              </a>
+              <a
+                className="slide center"
+                href="https://blog.mozilla.org/metrics/category/website-optimization/"
+              >
+                <div className="primary s1 bold">Mozilla</div>
+                <div className="secondary">
+                  Mozilla cut load time by 2.2 seconds and saw download
+                  conversions increase by 15.4%
+                </div>
+              </a>
+              <a
+                className="slide center"
+                href="http://cdn.oreillystatic.com/en/assets/1/event/7/Improving%20Netflix%20Performance%20Presentation.pdf"
+              >
+                <div className="primary s1 bold">Netflix</div>
+                <div className="secondary">
+                  Netflix saw a 43% decrease in their bandwidth bill after
+                  turning on GZip.
+                </div>
+              </a>
+              <a
+                className="slide center"
+                href="https://www.slideshare.net/devonauerswald/walmart-pagespeedslide"
+              >
+                <div className="primary s1 bold">Walmart</div>
+                <div className="secondary">
+                  For every 1 second of improvement, they experienced up to a 2%
+                  increase in conversions.
+                </div>
+              </a>
+              <a
+                className="slide center"
+                href="https://www.akamai.com/de/de/about/events/edgeworld.jsp#edge2016futureofcommercemodal"
+              >
+                <div className="primary s1 bold">AliExpress</div>
+                <div className="secondary">
+                  Reduced load time by 36% and saw a 10.5% increase in orders
+                  and a 27% increase in conversion for new customers.
+                </div>
+              </a>
+              <a
+                className="slide center"
+                href="https://jobs.zalando.com/de/tech/blog/loading-time-matters/index.html"
+              >
+                <div className="primary s1 bold">Zalando</div>
+                <div className="secondary">
+                  Zalando saw a 0.7% increase in revenue when they shaved 100ms
+                  off their load time.
+                </div>
+              </a>
             </div>
-          </a>
-          <a
-            className="slide center"
-            href="https://blog.mozilla.org/metrics/category/website-optimization/"
-          >
-            <div className="primary s1 bold">Mozilla</div>
-            <div className="secondary">
-              Mozilla cut load time by 2.2 seconds and saw download conversions
-              increase by 15.4%
-            </div>
-          </a>
-          <a
-            className="slide center"
-            href="http://cdn.oreillystatic.com/en/assets/1/event/7/Improving%20Netflix%20Performance%20Presentation.pdf"
-          >
-            <div className="primary s1 bold">Netflix</div>
-            <div className="secondary">
-              Netflix saw a 43% decrease in their bandwidth bill after turning
-              on GZip.
-            </div>
-          </a>
-          <a
-            className="slide center"
-            href="https://www.slideshare.net/devonauerswald/walmart-pagespeedslide"
-          >
-            <div className="primary s1 bold">Walmart</div>
-            <div className="secondary">
-              For every 1 second of improvement, they experienced up to a 2%
-              increase in conversions.
-            </div>
-          </a>
-          <a
-            className="slide center"
-            href="https://www.akamai.com/de/de/about/events/edgeworld.jsp#edge2016futureofcommercemodal"
-          >
-            <div className="primary s1 bold">AliExpress</div>
-            <div className="secondary">
-              Reduced load time by 36% and saw a 10.5% increase in orders and a
-              27% increase in conversion for new customers.
-            </div>
-          </a>
-          <a
-            className="slide center"
-            href="https://jobs.zalando.com/de/tech/blog/loading-time-matters/index.html"
-          >
-            <div className="primary s1 bold">Zalando</div>
-            <div className="secondary">
-              Zalando saw a 0.7% increase in revenue when they shaved 100ms off
-              their load time.
-            </div>
-          </a>
+          </div>
         </div>
       </div>
     </div>

@@ -30,6 +30,7 @@
     "react-copy-to-clipboard": "^5.0.2",
     "react-dom": "^16.13.1",
     "react-dropzone": "^11.1.0",
+    "react-responsive-carousel": "^3.2.10",
     "react-svg": "^11.0.39",
     "style-loader": "^1.2.1",
     "ts-loader": "^8.0.3",
