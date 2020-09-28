@@ -3,8 +3,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   entry: "./src/index.tsx",
-  mode: "development",
-  devtool: "inline-source-map",
+  mode: "production",
   module: {
     rules: [
       {
@@ -24,12 +23,17 @@ module.exports = {
   },
   optimization: {
     minimize: true,
-    minimizer: [
+minimizer: [
       new TerserPlugin({
-        test: /\.js(\?.*)?$/i,
+        terserOptions: {
+          output: {
+            comments: false,
+          },
+        },
+        extractComments: false,
       }),
     ],
-    noEmitOnErrors: true,
+    noEmitOnErrors: true
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
