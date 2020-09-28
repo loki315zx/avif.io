@@ -132,7 +132,7 @@ export default function App() {
         enable the mime type with:{" "}
         <span className="blue">avif = image/avif</span>.
       </p>
-      <p>
+      <div>
         Then, add images to your site with the picture element:
         <p className="s1"></p>
         <p className="gray">
@@ -176,7 +176,7 @@ export default function App() {
             <span>{`>`}</span>
           </p>
         </div>
-      </p>
+      </div>
     </div>
   );
 
@@ -185,14 +185,14 @@ export default function App() {
       <p className="s1">
         Define a custom header within the Netflix configuration file:
       </p>
-      <p className="secondary s1">
+      <div className="secondary s1">
         <p>[[headers]]</p> <p>for = "*.avif"</p>
         <p>[headers.values]</p>
         <p>Content-Type = "image/avif"</p>
         <p>Content-Disposition = "inline"</p>
-      </p>
+      </div>
 
-      <p>
+      <div>
         Then, add images to your site with the picture element:
         <p className="secondary s1"></p>
         <p className="gray">
@@ -242,7 +242,7 @@ export default function App() {
         >
           Thanks to Lightspeed for this approach.
         </a>
-      </p>
+      </div>
     </div>
   );
 
@@ -253,7 +253,7 @@ export default function App() {
         <a href="#howto">how to use avif</a>
         <a>blog (coming soon)</a>
         <a href="https://www.buymeacoffee.com/justinschmitz" className="blue">
-          pizza support
+          support
         </a>
       </div>
       <div className={"app-container"}>
