@@ -792,7 +792,7 @@ body {
 }
 
 .slide {
-  padding: var(--s2);
+  padding: var(--s1);
   text-align: center;
   background: var(--white);
   border-radius: 12px;
@@ -803,7 +803,7 @@ body {
 }
 
 .carousel {
-  padding: var(--s3);
+  padding: var(--s1);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: var(--s1);
@@ -835,12 +835,21 @@ body {
     padding-top: 200px;
   }
 
+  .section {
+    padding: 6vw;
+    padding-top: var(--s4);
+  }
+
   .flex-center {
     display: block;
   }
   .carousel {
     grid-template-columns: 1fr;
     grid-gap: var(--s3);
+    padding: inherit;
+  }
+  .slide {
+    padding: var(--s2);
   }
   .center {
     text-align: left;
