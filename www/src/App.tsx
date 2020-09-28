@@ -40,6 +40,15 @@ export default function App() {
 
   const css = (
     <div className="container-code" id="css-tutorial">
+      <p className="s1">
+        <a
+          className="blue"
+          href="https://github.com/djpogo/avif-webp-css-support"
+          title="avif detection"
+        >
+          Check for avif support & use
+        </a>
+      </p>
       <div className="opacity-half">
         <p className="gray">
           <span className="secondary">.div</span>
