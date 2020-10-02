@@ -6,7 +6,7 @@ wasm-debug:
 wasm:
 	wasm-pack build --release
 	rm pkg/.gitignore
-	npx webpack
+	npx cross-env NODE_ENV=production webpack
 
 demo-release:
 	cargo build --no-default-features --features build-demo --release

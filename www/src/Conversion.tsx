@@ -4,10 +4,12 @@ import { FileWithId, splitNameAndExtension } from "./utils";
 import prettyBytes from "pretty-bytes";
 import ProgressBar from "./ProgressBar";
 import webpToRgba from "./webpToRgba";
+import { Settings } from "./SettingsBox";
 
 export interface ConversionProps {
   file: FileWithId;
   converter: Converter;
+  settings: Settings;
 
   onFinished(outputFile: File): void;
 }
@@ -44,6 +46,7 @@ export default function Conversion(props: ConversionProps) {
         conversionOptions = {
           inputData: data.buffer,
           isRawRgba: true,
+          ...props.settings,
           width,
           height,
           onFinished,
@@ -53,6 +56,7 @@ export default function Conversion(props: ConversionProps) {
       } else {
         conversionOptions = {
           inputData: props.file.data,
+          ...props.settings,
           onFinished,
           onProgress: setProgress,
           onError: (e) => window.alert(e),
@@ -65,7 +69,7 @@ export default function Conversion(props: ConversionProps) {
 
   const percentageSaved = Math.ceil((1 - outputSize / originalSize) * 100);
 
-  const conversion = (
+  return (
     <a
       download={`${fileName}.avif`}
       href={outputObjectURL}
@@ -89,12 +93,9 @@ export default function Conversion(props: ConversionProps) {
             )}{" "}
           </span>
         </p>
-        <span
-          className={"download"}
-        ></span>
+        <span className={"download"} />
       </div>
       <ProgressBar progress={progress} />
     </a>
   );
-  return conversion;
 }

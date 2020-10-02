@@ -10,16 +10,25 @@ import DownloadAllButton from "./DownloadAllButton";
 import lion from "./assets/lion.jpg";
 import lion2 from "./assets/lion2.avif";
 import ReactCompareImage from "react-compare-image";
+import SettingsBox, { Settings } from "./SettingsBox";
 
 export default function App() {
   const [converter, setConverter] = useState<Converter>();
   const [files, setFiles] = useState<FileWithId[]>([]);
   const [convertedFiles, setConvertedFiles] = useState<File[]>([]);
+  const [settings, setSettings] = useState<Settings>({
+    quality: 0,
+    useYuv444: false,
+  });
   const [tutorial, setTutorial] = useState("css");
 
   useEffect(() => {
     setConverter(new Converter());
   }, []);
+
+  function onSettingsUpdate(settings: Settings) {
+    setSettings(settings);
+  }
 
   async function onFilesSelected(selectedFiles: File[]) {
     const addedFiles = await Promise.all(
@@ -143,7 +152,7 @@ export default function App() {
       </p>
       <div>
         Then, add images to your site with the picture element:
-        <p className="s1"></p>
+        <p className="s1" />
         <p className="gray">
           <span>{`<`}</span>
           <span className="secondary">picture</span>
@@ -203,7 +212,7 @@ export default function App() {
 
       <div>
         Then, add images to your site with the picture element:
-        <p className="secondary s1"></p>
+        <p className="secondary s1" />
         <p className="gray">
           <span>{`<`}</span>
           <span className="secondary">picture</span>
@@ -274,6 +283,7 @@ export default function App() {
           {files.map((f) => (
             <Conversion
               onFinished={onConversionFinished}
+              settings={settings}
               file={f}
               converter={converter}
               key={f.id}
@@ -281,8 +291,9 @@ export default function App() {
           ))}
           <DownloadAllButton files={convertedFiles} />
           <Dropzone onDrop={onFilesSelected} />
+          <SettingsBox onSettingsUpdate={onSettingsUpdate} />
         </div>
-        <div className="chevron"></div>
+        <div className="chevron" />
       </div>
 
       <div className="section" id="howto">
@@ -348,8 +359,8 @@ export default function App() {
               AV1 (.avif) is the solution. It is developed by the Alliance for
               Open Media in collaboration with Google, Mozilla, Intel and other
               tech giants. Avif is a codec for super-compressed images with
-              acceptable quality. Avif is in continous development with the goal
-              to achieve the best ratio of compression and quality.
+              acceptable quality. Avif is in continuous development with the
+              goal to achieve the best ratio of compression and quality.
             </div>
             <div className="f1 secondary">
               Avif offers significant reduction of file size compared to the
@@ -369,7 +380,7 @@ export default function App() {
               leftImageAlt="avif image"
               rightImageAlt="jpg image"
               sliderLineWidth={4}
-              handle={<div className="handle"></div>}
+              handle={<div className="handle" />}
               sliderLineColor="rgba(255,255,255,0.2)"
               sliderPositionPercentage={0.5}
             />
@@ -392,7 +403,7 @@ export default function App() {
                 title="netflix is using avif"
                 href="https://netflixtechblog.com/avif-for-next-generation-image-coding-b1d75675fe4"
               >
-                avif is developed and used by the most influencial tech
+                avif is developed and used by the most influential tech
                 companies. Netflix has already considered .avif superior to the
                 JPEG, PNG, and even the newer WebP image formats for its image
                 quality to compressed file size ratio.
@@ -417,7 +428,7 @@ export default function App() {
               innovating the modern web.
             </div>
           </div>
-          <div className="right-half" id="tech-companies"></div>
+          <div className="right-half" id="tech-companies" />
         </div>
       </div>
       <div className="section" id="gainanadvantage">

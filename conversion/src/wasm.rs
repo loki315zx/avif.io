@@ -1,18 +1,15 @@
-#[cfg(feature = "build-wasm")]
+#![cfg(feature = "build-wasm")]
+
 use std::mem;
 
-#[cfg(feature = "build-wasm")]
 use js_sys;
-#[cfg(feature = "build-wasm")]
 use wasm_bindgen::prelude::*;
 
-#[cfg(feature = "build-wasm")]
-use crate::yuv420;
-
-#[cfg(feature = "build-wasm")]
 use crate::avif;
+pub use crate::avif::ConversionOptions;
+pub use crate::yuv::Subsampling;
+use crate::yuv;
 
-#[cfg(feature = "build-wasm")]
 #[wasm_bindgen]
 pub struct ConversionResult {
     pub data: *const u8,
@@ -21,7 +18,6 @@ pub struct ConversionResult {
     pub error_size: usize,
 }
 
-#[cfg(feature = "build-wasm")]
 #[wasm_bindgen]
 impl ConversionResult {
     fn from_data(v: Vec<u8>) -> ConversionResult {
@@ -38,35 +34,38 @@ impl ConversionResult {
     }
 }
 
-#[cfg(feature = "build-wasm")]
+
 #[wasm_bindgen]
-pub fn convert_to_avif(input_data: &[u8], on_progress: js_sys::Function) -> ConversionResult {
+pub fn convert_to_avif(
+    input_data: &[u8],
+    options: &ConversionOptions,
+    on_progress: js_sys::Function,
+) -> ConversionResult {
     unsafe { register_progress_hook(on_progress); }
 
-    let result = avif::convert_to_avif(input_data);
+    let result = avif::convert_to_avif(input_data, options);
     match result {
         Ok(data) => ConversionResult::from_data(data),
         Err(e) => ConversionResult::from_error(e.to_string()),
     }
 }
 
-/// A special thing for WebP.
-#[cfg(feature = "build-wasm")]
+/// A special function for WebP.
 #[wasm_bindgen]
 pub fn raw_rgba_to_avif(
     input_data: &[u8],
+    options: &ConversionOptions,
     width: usize,
     height: usize,
     on_progress: js_sys::Function,
 ) -> ConversionResult {
     unsafe { register_progress_hook(on_progress); }
 
-    let yuv = yuv420::from_rgba8_raw(input_data, width, height);
-    let data = avif::encode_avif(&yuv, width, height);
+    let yuv = yuv::from_rgba8_raw(input_data, options.subsampling, width, height);
+    let data = avif::encode_avif(&yuv, options, width, height);
     ConversionResult::from_data(data)
 }
 
-#[cfg(feature = "build-wasm")]
 unsafe fn register_progress_hook(on_progress: js_sys::Function) {
     #[cfg(feature = "console_error_panic_hook")]
         console_error_panic_hook::set_once();

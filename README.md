@@ -68,7 +68,8 @@ cd www/
 npm i
 ```
 
-Next, we are going to build the front-end:
+Next, we are going to build the front-end in production mode,
+minimizing the code: 
 
 ```shell script
 npm run build
@@ -78,7 +79,7 @@ Package the WASM code:
 
 ```shell script
 cd ../conversion
-npx webpack
+npm run pack-wasm-code
 ```
 
 Now, you can run the server locally using `npm run start`,
@@ -86,10 +87,13 @@ or you can deploy it to a static web server by copying everything
 from `www/dist` and `www/static` and the `www/index.html` file
 to the server.
 
+Quick rundown copy-paste for Windows:
+
+```shell script
 npm i
 cd www/
 npm i
-cd www/
 npm run build
 cd ../conversion
-npx webpack
+npm run pack-wasm-code
+```

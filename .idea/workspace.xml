@@ -25,7 +25,33 @@
     <cargoProject FILE="$PROJECT_DIR$/conversion/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e8a798a-47d2-451e-a9b1-af5940e8cc13" name="Default Changelist" comment="" />
+    <list default="true" id="5e8a798a-47d2-451e-a9b1-af5940e8cc13" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversion/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversion/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversion/pkg/conversion.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/pkg/conversion.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversion/pkg/conversion_bg.js" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/pkg/conversion_bg.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversion/pkg/conversion_bg.wasm" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/pkg/conversion_bg.wasm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversion/pkg/conversion_bg.wasm.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/pkg/conversion_bg.wasm.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversion/src/avif.rs" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/src/avif.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversion/src/demo.rs" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/src/demo.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversion/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversion/src/wasm.rs" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/src/wasm.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversion/src/yuv420.rs" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/src/yuv.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/www/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/www/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/www/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/src/Conversion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/www/src/Conversion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/src/converter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/www/src/converter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/www/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/src/webpToRgba.ts" beforeDir="false" afterPath="$PROJECT_DIR$/www/src/webpToRgba.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/static/worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/static/worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/webpack.config.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,10 +66,10 @@
       <list>
         <option value="HTML File" />
         <option value="JavaScript File" />
-        <option value="TypeScript JSX File" />
         <option value="CSS File" />
         <option value="TypeScript File" />
         <option value="Rust File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -67,12 +93,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="14.8.0" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.11.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
     <property name="org.rust.disableDetachedFileInspection/home/doggs/projects/avif.io/converters/src/demo.rs" value="true" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="prettier.files.pattern" value="{**/*,*}.{js,ts,jsx,tsx,css,scss}" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/www/node_modules/prettier" />
+    <property name="run.prettier.on.save" value="true" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -119,6 +150,8 @@
       <workItem from="1600432286490" duration="1979000" />
       <workItem from="1600434934964" duration="1603000" />
       <workItem from="1600682298657" duration="2566000" />
+      <workItem from="1601654714936" duration="2598000" />
+      <workItem from="1601657487663" duration="11447000" />
     </task>
     <task id="LOCAL-00001" summary="Refactored a bit and added jpeg support">
       <created>1599646178299</created>
@@ -293,11 +326,11 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="1318" height="187" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1600390702944" />
-    <state x="247" y="53" key="SettingsEditor" timestamp="1600173164790">
+    <state x="247" y="53" key="SettingsEditor" timestamp="1601665699463">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="176" y="38" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1599642821933" />
-    <state x="247" y="53" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1600173164790" />
+    <state x="247" y="53" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1601665699463" />
     <state width="498" height="445" key="SwitcherDM" timestamp="1600364095748">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -310,13 +343,15 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="577" y="0" width="789" height="768" key="find.popup/0.0.1366.768@0.0.1366.768" timestamp="1599510427901" />
-    <state x="346" y="181" width="672" height="677" key="run.anything.popup" timestamp="1600380348564">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="486" y="255" width="945" height="953" key="run.anything.popup" timestamp="1601667089317">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="346" y="181" width="672" height="677" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1600380348564" />
-    <state x="345" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1600683068241">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="486" y="255" width="945" height="953" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1601667089317" />
+    <state x="485" y="125" width="945" height="954" key="search.everywhere.popup" timestamp="1601668081024">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="345" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1600683068241" />
+    <state x="485" y="125" width="945" height="954" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1601668081024" />
   </component>
 </project>
