@@ -15,7 +15,7 @@ export interface ConversionProps {
 }
 
 export default function Conversion(props: ConversionProps) {
-  // TODO file ID will be used for cancellation
+  // TODO Add conversion cancellation using props.file.id
   const [fileName, setFileName] = useState<string>();
   const [originalFormat, setOriginalFormat] = useState<string>();
   const [originalSize] = useState(props.file.data.byteLength);

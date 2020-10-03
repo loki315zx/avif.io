@@ -18,12 +18,11 @@ export function convert_to_avif(input_data: Uint8Array, options: ConversionOptio
  * @returns {ConversionResult}
  */
 export function raw_rgba_to_avif(input_data: Uint8Array, options: ConversionOptions, width: number, height: number, on_progress: Function): ConversionResult;
-
 /**
  */
 export enum Subsampling {
-    YUV420,
-    YUV444,
+  YUV420,
+  YUV444,
 }
 
 /**
@@ -59,14 +58,14 @@ export class ConversionResult {
     data: number;
     /**
      * @returns {number}
-*/
-  error: number;
-/**
-* @returns {number}
-*/
-  error_size: number;
-/**
-* @returns {number}
-*/
-  size: number;
+     */
+    error: number;
+    /**
+     * @returns {number}
+     */
+    error_size: number;
+    /**
+     * @returns {number}
+     */
+    size: number;
 }

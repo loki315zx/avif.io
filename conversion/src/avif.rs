@@ -58,7 +58,7 @@ pub fn encode_avif(
 fn create_encoder_config(options: &ConversionOptions, width: usize, height: usize) -> EncoderConfig {
     assert!(options.quality <= 100);
 
-    let speed = (10 - (options.quality / 10)) as usize;
+    let speed = (10 - (options.quality / 20)) as usize;
     web_sys::console::log_1(&JsValue::from(speed as i32));
     let mut encoder_config = EncoderConfig::with_speed_preset(speed);
     encoder_config.chroma_sampling = to_av1_chroma_sampling(options.subsampling);

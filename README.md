@@ -79,7 +79,7 @@ Package the WASM code:
 
 ```shell script
 cd ../conversion
-npm run pack-wasm-code
+npx cross-env NODE_ENV=production webpack
 ```
 
 Now, you can run the server locally using `npm run start`,
@@ -87,7 +87,7 @@ or you can deploy it to a static web server by copying everything
 from `www/dist` and `www/static` and the `www/index.html` file
 to the server.
 
-Quick rundown copy-paste for Windows:
+Copy-paste version of above:
 
 ```shell script
 npm i
@@ -95,5 +95,5 @@ cd www/
 npm i
 npm run build
 cd ../conversion
-npm run pack-wasm-code
+npx cross-env NODE_ENV=production webpack
 ```

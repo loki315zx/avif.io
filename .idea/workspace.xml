@@ -28,29 +28,15 @@
     <list default="true" id="5e8a798a-47d2-451e-a9b1-af5940e8cc13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conversion/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conversion/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conversion/pkg/conversion.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/pkg/conversion.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conversion/pkg/conversion_bg.js" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/pkg/conversion_bg.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conversion/pkg/conversion_bg.wasm" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/pkg/conversion_bg.wasm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conversion/pkg/conversion_bg.wasm.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/pkg/conversion_bg.wasm.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conversion/src/avif.rs" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/src/avif.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conversion/src/demo.rs" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/src/demo.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conversion/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conversion/src/wasm.rs" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/src/wasm.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conversion/src/yuv420.rs" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/src/yuv.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/www/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/www/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/www/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/src/Conversion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/www/src/Conversion.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/src/converter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/www/src/converter.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/www/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/src/webpToRgba.ts" beforeDir="false" afterPath="$PROJECT_DIR$/www/src/webpToRgba.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/static/worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/static/worker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/src/SettingsBox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/www/src/SettingsBox.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,10 +52,10 @@
       <list>
         <option value="HTML File" />
         <option value="JavaScript File" />
-        <option value="CSS File" />
         <option value="TypeScript File" />
         <option value="Rust File" />
         <option value="TypeScript JSX File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -151,7 +137,7 @@
       <workItem from="1600434934964" duration="1603000" />
       <workItem from="1600682298657" duration="2566000" />
       <workItem from="1601654714936" duration="2598000" />
-      <workItem from="1601657487663" duration="11447000" />
+      <workItem from="1601657487663" duration="24892000" />
     </task>
     <task id="LOCAL-00001" summary="Refactored a bit and added jpeg support">
       <created>1599646178299</created>
@@ -251,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600684654797</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added settings functionality">
+      <created>1601669784120</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1601669784120</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,7 +284,9 @@
     <MESSAGE value="Slightly improved error handling" />
     <MESSAGE value="Updated the README file" />
     <MESSAGE value="Made it so the converted image looks better and is less bright" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made it so the converted image looks better and is less bright" />
+    <MESSAGE value="Added settings functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added settings functionality" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="369" y="217" width="616" height="320" key="#Notifications" timestamp="1600363981313">
@@ -306,6 +301,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="278" y="209" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.768@0.0.1366.768" timestamp="1599656350966" />
+    <state x="368" y="119" key="CommitChangelistDialog2" timestamp="1601669783227">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="368" y="119" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1601669783227" />
     <state x="448" y="165" key="FileChooserDialogImpl" timestamp="1600436536851">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -335,10 +334,11 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="498" height="445" key="SwitcherDM/0.0.1366.768@0.0.1366.768" timestamp="1600364095748" />
-    <state x="282" y="143" width="800" height="498" key="Vcs.Push.Dialog.v2" timestamp="1600684655714">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="396" y="201" width="800" height="498" key="Vcs.Push.Dialog.v2" timestamp="1601669913474">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="282" y="143" width="800" height="498" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1600684655714" />
+    <state x="396" y="201" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1601669913474" />
     <state x="577" y="0" width="789" height="768" key="find.popup" timestamp="1599510427901">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -348,10 +348,10 @@
     </state>
     <state x="346" y="181" width="672" height="677" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1600380348564" />
     <state x="486" y="255" width="945" height="953" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1601667089317" />
-    <state x="485" y="125" width="945" height="954" key="search.everywhere.popup" timestamp="1601668081024">
+    <state x="485" y="125" width="945" height="954" key="search.everywhere.popup" timestamp="1601721514577">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="345" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1600683068241" />
-    <state x="485" y="125" width="945" height="954" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1601668081024" />
+    <state x="485" y="125" width="945" height="954" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1601721514577" />
   </component>
 </project>

@@ -16,6 +16,7 @@ export default function App() {
   const [converter, setConverter] = useState<Converter>();
   const [files, setFiles] = useState<FileWithId[]>([]);
   const [convertedFiles, setConvertedFiles] = useState<File[]>([]);
+  const [settingsBoxOpen, setSettingsBoxOpen] = useState(false);
   const [settings, setSettings] = useState<Settings>({
     quality: 0,
     useYuv444: false,
@@ -40,6 +41,7 @@ export default function App() {
     );
 
     setFiles([...files, ...addedFiles]);
+    setSettingsBoxOpen(false);
   }
 
   function onConversionFinished(file: File) {
@@ -280,6 +282,21 @@ export default function App() {
         <h2 className={"f1 secondary s4"}>fast, simple, secure</h2>
 
         <div className={"main-container"}>
+          <div className={"dropzone-and-settings"}>
+            <Dropzone onDrop={onFilesSelected} />
+            <div className={"cog-and-settings"}>
+              <button
+                className={"cog-button"}
+                onClick={() => setSettingsBoxOpen(!settingsBoxOpen)}
+              >
+                O
+              </button>
+              <SettingsBox
+                open={settingsBoxOpen}
+                onSettingsUpdate={onSettingsUpdate}
+              />
+            </div>
+          </div>
           {files.map((f) => (
             <Conversion
               onFinished={onConversionFinished}
@@ -290,8 +307,6 @@ export default function App() {
             />
           ))}
           <DownloadAllButton files={convertedFiles} />
-          <Dropzone onDrop={onFilesSelected} />
-          <SettingsBox onSettingsUpdate={onSettingsUpdate} />
         </div>
         <div className="chevron" />
       </div>
