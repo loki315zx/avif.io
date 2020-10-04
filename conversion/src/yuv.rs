@@ -1,15 +1,25 @@
-use image::{DynamicImage::{self, *}, GenericImageView, ImageBuffer, imageops, Pixel, Rgb, RgbaImage, RgbImage};
+use image::{DynamicImage::{self, *}, GenericImageView, ImageBuffer, imageops, Pixel, Rgb, RgbImage};
 use image::buffer::ConvertBuffer;
 use image::imageops::FilterType;
+#[cfg(feature = "build-wasm")]
+use image::RgbaImage;
+use wasm_bindgen::prelude::*;
 
-#[derive(Default)]
 pub struct YUV {
     pub y: Vec<u8>,
     pub u: Vec<u8>,
     pub v: Vec<u8>,
+    pub subsampling: Subsampling,
 }
 
-pub fn from_image(image: &DynamicImage) -> YUV {
+#[wasm_bindgen]
+#[derive(Copy, Clone, Debug, Eq, PartialEq)]
+pub enum Subsampling {
+    YUV420 = 0,
+    YUV444 = 1,
+}
+
+pub fn from_image(image: &DynamicImage, subsampling: Subsampling) -> YUV {
     let image = match image {
         ImageLuma8(image) => image.convert(),
         ImageLumaA8(image) => image.convert(),
@@ -23,26 +33,42 @@ pub fn from_image(image: &DynamicImage) -> YUV {
         ImageBgra8(image) => image.convert(),
     };
 
-    from_rgb8(&image)
+    from_rgb8(&image, subsampling)
 }
 
-pub fn from_rgba8_raw(data: &[u8], width: usize, height: usize) -> YUV {
+#[cfg(feature = "build-wasm")]
+pub fn from_rgba8_raw(data: &[u8], subsampling: Subsampling, width: usize, height: usize) -> YUV {
     let image = RgbaImage::from_raw(
         width as u32,
         height as u32,
         Vec::from(data),
     ).unwrap();
-    from_rgb8(&image.convert())
+    from_rgb8(&image.convert(), subsampling)
 }
 
-fn from_rgb8(image: &RgbImage) -> YUV {
-    let mut yuv = YUV::default();
+fn from_rgb8(image: &RgbImage, subsampling: Subsampling) -> YUV {
+    let mut yuv = YUV {
+        y: Vec::new(),
+        u: Vec::new(),
+        v: Vec::new(),
+        subsampling,
+    };
 
     for rgb in image.pixels() {
         yuv.y.push(rgb8_to_y(rgb));
     }
 
-    for rgb in subsampled(image).pixels() {
+    let subsampled_image;
+
+    let image = match subsampling {
+        Subsampling::YUV420 => {
+            subsampled_image = subsampled(image);
+            &subsampled_image
+        }
+        Subsampling::YUV444 => image,
+    };
+
+    for rgb in image.pixels() {
         let (u, v) = rgb8_to_uv(rgb);
         yuv.u.push(u);
         yuv.v.push(v);

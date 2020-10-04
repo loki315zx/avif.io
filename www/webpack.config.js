@@ -1,10 +1,12 @@
 const path = require("path");
-const TerserPlugin = require('terser-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
+
+const isProduction = process.env.NODE_ENV === "production";
 
 module.exports = {
   entry: "./src/index.tsx",
-  mode: "production",
-  // devtool: "inline-source-map",
+  mode: isProduction ? "production" : "development",
+  devtool: isProduction ? undefined : "inline-source-map",
   module: {
     rules: [
       {
@@ -22,20 +24,22 @@ module.exports = {
       },
     ],
   },
-  optimization: {
-    minimize: true,
-minimizer: [
-      new TerserPlugin({
-        terserOptions: {
-          output: {
-            comments: false,
-          },
-        },
-        extractComments: false,
-      }),
-    ],
-    noEmitOnErrors: true
-  },
+  optimization: isProduction
+    ? {
+        minimize: true,
+        minimizer: [
+          new TerserPlugin({
+            terserOptions: {
+              output: {
+                comments: false,
+              },
+            },
+            extractComments: false,
+          }),
+        ],
+        noEmitOnErrors: true,
+      }
+    : undefined,
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
   },

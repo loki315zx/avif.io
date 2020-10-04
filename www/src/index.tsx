@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 
+// arrayBuffer polyfill for Safari.
 (function () {
   File.prototype.arrayBuffer = File.prototype.arrayBuffer || myArrayBuffer;
   Blob.prototype.arrayBuffer = Blob.prototype.arrayBuffer || myArrayBuffer;

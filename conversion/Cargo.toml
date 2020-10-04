@@ -15,13 +15,13 @@ required-features = ["build-demo"]
 [features]
 default = ["console_error_panic_hook", "build-wasm"]
 build-demo = []
-build-wasm = ["wasm-bindgen", "web-sys"]
+build-wasm = ["web-sys"]
 
 [dependencies]
 rav1e = { git = "https://github.com/ennmichael/rav1e", branch = "v0.3.4-progress-tracking", default-features = false }
 image = { version = "0.23.9", default-features = false, features = ["gif", "jpeg", "ico", "png", "pnm", "tga", "tiff", "bmp", "hdr", "dxt", "dds", "farbfeld"] }
 avif-serialize = "0.6.4"
-wasm-bindgen = { version = "0.2.63", optional = true }
+wasm-bindgen = { version = "0.2.63" }
 web-sys = { version = "0.3.44", features = ["console"], optional = true }
 js-sys = "0.3.45"
 
