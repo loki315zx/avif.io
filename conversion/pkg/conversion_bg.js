@@ -230,14 +230,13 @@ export function raw_rgba_to_avif(input_data, options, width, height, on_progress
 }
 
 function handleError(f) {
-    return function () {
-        try {
-            return f.apply(this, arguments);
-
-        } catch (e) {
-            wasm.__wbindgen_exn_store(addHeapObject(e));
-        }
-    };
+  return function () {
+    try {
+      return f.apply(this, arguments);
+    } catch (e) {
+      wasm.__wbindgen_exn_store(addHeapObject(e));
+    }
+  };
 }
 
 /**
@@ -247,14 +246,6 @@ export const Subsampling = Object.freeze({
   0: "YUV420",
   YUV444: 1,
   1: "YUV444",
-});
-/**
- */
-export const Transparency = Object.freeze({
-  Drop: 0,
-  0: "Drop",
-  Keep: 1,
-  1: "Keep",
 });
 
 /**
@@ -324,32 +315,32 @@ export class ConversionOptions {
   }
 
   /**
-   * @returns {number}
+   * @returns {boolean}
    */
-  get transparency() {
-    var ret = wasm.__wbg_get_conversionoptions_transparency(this.ptr);
-    return ret >>> 0;
+  get keep_transparency() {
+    var ret = wasm.__wbg_get_conversionoptions_keep_transparency(this.ptr);
+    return ret !== 0;
   }
 
   /**
-   * @param {number} arg0
+   * @param {boolean} arg0
    */
-  set transparency(arg0) {
-    wasm.__wbg_set_conversionoptions_transparency(this.ptr, arg0);
+  set keep_transparency(arg0) {
+    wasm.__wbg_set_conversionoptions_keep_transparency(this.ptr, arg0);
   }
 
   /**
    * @param {number} effort
    * @param {number} quality
    * @param {number} subsampling
-   * @param {number} transparency
+   * @param {boolean} keep_transparency
    */
-  constructor(effort, quality, subsampling, transparency) {
+  constructor(effort, quality, subsampling, keep_transparency) {
     var ret = wasm.conversionoptions_new(
       effort,
       quality,
       subsampling,
-      transparency
+      keep_transparency
     );
     return ConversionOptions.__wrap(ret);
   }
@@ -443,20 +434,20 @@ export const __wbindgen_number_new = function (arg0) {
 };
 
 export const __wbg_new_59cb74e423758ede = function () {
-  var ret = new Error();
-  return addHeapObject(ret);
+    var ret = new Error();
+    return addHeapObject(ret);
 };
 
 export const __wbg_stack_558ba5917b466edd = function (arg0, arg1) {
-  var ret = getObject(arg1).stack;
-  var ptr0 = passStringToWasm0(
-    ret,
-    wasm.__wbindgen_malloc,
-    wasm.__wbindgen_realloc
-  );
-  var len0 = WASM_VECTOR_LEN;
-  getInt32Memory0()[arg0 / 4 + 1] = len0;
-  getInt32Memory0()[arg0 / 4 + 0] = ptr0;
+    var ret = getObject(arg1).stack;
+    var ptr0 = passStringToWasm0(
+      ret,
+      wasm.__wbindgen_malloc,
+      wasm.__wbindgen_realloc
+    );
+    var len0 = WASM_VECTOR_LEN;
+    getInt32Memory0()[arg0 / 4 + 1] = len0;
+    getInt32Memory0()[arg0 / 4 + 0] = ptr0;
 };
 
 export const __wbg_error_4bb6c2a97407129a = function (arg0, arg1) {

@@ -9,20 +9,13 @@ use wasm_bindgen::prelude::*;
 use crate::yuv::{self, Subsampling, YUV};
 
 #[wasm_bindgen]
-#[derive(Copy, Clone, Debug, Eq, PartialEq)]
-pub enum Transparency {
-    Drop = 0,
-    Keep = 1,
-}
-
-#[wasm_bindgen]
 pub struct ConversionOptions {
     /// Effort of conversion as a percentage from 0 to 100.
     pub effort: u8,
     /// Quality of conversion as a percentage from 0 to 100.
     pub quality: u8,
     pub subsampling: Subsampling,
-    pub transparency: Transparency,
+    pub keep_transparency: bool,
 }
 
 #[wasm_bindgen]
@@ -33,9 +26,9 @@ impl ConversionOptions {
         effort: u8,
         quality: u8,
         subsampling: Subsampling,
-        transparency: Transparency,
+        keep_transparency: bool
     ) -> Self {
-        Self { effort, quality, subsampling, transparency }
+        Self { effort, quality, subsampling, keep_transparency }
     }
 }
 
@@ -45,7 +38,7 @@ pub fn convert_to_avif(data: &[u8], options: &ConversionOptions) -> ImageResult<
             .with_guessed_format()
             .unwrap();
     let image = reader.decode()?;
-    let yuv = yuv::from_image(&image, options.subsampling);
+    let yuv = yuv::from_image(&image, options.subsampling, options.keep_transparency);
     let (w, h) = image.dimensions();
     Ok(encode_avif(&yuv, options, w as usize, h as usize))
 }

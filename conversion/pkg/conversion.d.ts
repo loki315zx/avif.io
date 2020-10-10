@@ -18,73 +18,65 @@ export function convert_to_avif(input_data: Uint8Array, options: ConversionOptio
  * @returns {ConversionResult}
  */
 export function raw_rgba_to_avif(input_data: Uint8Array, options: ConversionOptions, width: number, height: number, on_progress: Function): ConversionResult;
-
 /**
  */
 export enum Subsampling {
-    YUV420,
-    YUV444,
-}
-
-/**
- */
-export enum Transparency {
-    Drop,
-    Keep,
+  YUV420,
+  YUV444,
 }
 
 /**
  */
 export class ConversionOptions {
-    free(): void;
+  free(): void;
 
-    /**
-     * @param {number} effort
-     * @param {number} quality
-     * @param {number} subsampling
-     * @param {number} transparency
-     */
-    constructor(effort: number, quality: number, subsampling: number, transparency: number);
+  /**
+   * @param {number} effort
+   * @param {number} quality
+   * @param {number} subsampling
+   * @param {boolean} keep_transparency
+   */
+  constructor(effort: number, quality: number, subsampling: number, keep_transparency: boolean);
 
-    /**
-     * Effort of conversion as a percentage from 0 to 100.
-     * @returns {number}
-     */
-    effort: number;
-    /**
-     * Quality of conversion as a percentage from 0 to 100.
-     * @returns {number}
-     */
-    quality: number;
-    /**
-     * @returns {number}
-     */
-    subsampling: number;
-    /**
-     * @returns {number}
-     */
-    transparency: number;
+  /**
+   * Effort of conversion as a percentage from 0 to 100.
+   * @returns {number}
+   */
+  effort: number;
+  /**
+   * @returns {boolean}
+   */
+  keep_transparency: boolean;
+  /**
+   * Quality of conversion as a percentage from 0 to 100.
+   * @returns {number}
+   */
+  quality: number;
+  /**
+   * @returns {number}
+   */
+  subsampling: number;
 }
 
 /**
  */
 export class ConversionResult {
-    free(): void;
+  free(): void;
 
-    /**
-     * @returns {number}
-     */
-    data: number;
-    /**
-     * @returns {number}
-     */
-    error: number;
-    /**
-     * @returns {number}
-     */
-    error_size: number;
-    /**
-     * @returns {number}
-     */
-    size: number;
+  /**
+   * @returns {number}
+   */
+  data: number;
+  /**
+   * @returns {number}
+   */
+  error: number;
+  /**
+   * @returns {number}
+   */
+  error_size: number;
+  /**
+   * @returns {number}
+   */
+  size: number;
 }

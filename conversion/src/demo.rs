@@ -19,7 +19,7 @@ fn main() {
         effort: 0,
         quality: args[2].parse().unwrap(),
         subsampling: conversion::Subsampling::YUV420,
-        transparency: conversion::Transparency::Keep,
+        keep_transparency: args[3].parse().unwrap(),
     }).unwrap();
     let mut output_file = fs::File::create(args[1].clone() + ".avif").unwrap();
     output_file.write_all(&result).unwrap();

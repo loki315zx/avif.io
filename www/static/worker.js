@@ -6,7 +6,6 @@ onmessage = async function (msg) {
     raw_rgba_to_avif: rawRgbaToAvif,
     ConversionOptions,
     Subsampling,
-    Transparency,
     memory,
   } = await conversion.lib();
 
@@ -20,7 +19,7 @@ onmessage = async function (msg) {
       msg.data.effort,
       msg.data.quality,
       msg.data.useYuv444 ? Subsampling.YUV444 : Subsampling.YUV420,
-      msg.data.keepTransparency ? Transparency.Keep : Transparency.Drop
+      msg.data.keepTransparency
     );
     if (msg.data.isRawRgba) {
       return rawRgbaToAvif(

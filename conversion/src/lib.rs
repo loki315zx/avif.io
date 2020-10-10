@@ -4,7 +4,7 @@ mod avif;
 
 #[cfg(feature = "build-wasm")]
 pub use wasm::*;
-pub use avif::{Transparency, ConversionOptions, convert_to_avif};
+pub use avif::{ConversionOptions, convert_to_avif};
 pub use yuv::Subsampling;
 
 // When the `wee_alloc` feature is enabled, use `wee_alloc` as the global

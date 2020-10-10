@@ -27,8 +27,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5e8a798a-47d2-451e-a9b1-af5940e8cc13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conversion/demo/neeno.avif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/conversion/demo/neeno.png.avif" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/demo/neeno.png.avif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conversion/pkg/conversion.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/pkg/conversion.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conversion/pkg/conversion_bg.js" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/pkg/conversion_bg.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conversion/pkg/conversion_bg.wasm" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/pkg/conversion_bg.wasm" afterDir="false" />
@@ -36,8 +34,7 @@
       <change beforePath="$PROJECT_DIR$/conversion/src/avif.rs" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/src/avif.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conversion/src/demo.rs" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/src/demo.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conversion/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/www/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/src/SettingsBox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/www/src/SettingsBox.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversion/src/yuv.rs" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/src/yuv.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/static/worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/static/worker.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -246,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601669784120</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Added quality and effort as separate settings">
+      <created>1602345788519</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1602345788519</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,7 +291,8 @@
     <MESSAGE value="Updated the README file" />
     <MESSAGE value="Made it so the converted image looks better and is less bright" />
     <MESSAGE value="Added settings functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added settings functionality" />
+    <MESSAGE value="Added quality and effort as separate settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added quality and effort as separate settings" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -303,10 +308,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="278" y="209" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.768@0.0.1366.768" timestamp="1599656350966" />
-    <state x="368" y="119" key="CommitChangelistDialog2" timestamp="1601669783227">
+    <state x="368" y="119" key="CommitChangelistDialog2" timestamp="1602345787715">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="368" y="119" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1601669783227" />
+    <state x="368" y="119" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1602345787715" />
     <state x="448" y="165" key="FileChooserDialogImpl" timestamp="1600436536851">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -336,24 +341,24 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="498" height="445" key="SwitcherDM/0.0.1366.768@0.0.1366.768" timestamp="1600364095748" />
-    <state x="396" y="201" width="800" height="498" key="Vcs.Push.Dialog.v2" timestamp="1601669913474">
+    <state x="396" y="201" width="800" height="498" key="Vcs.Push.Dialog.v2" timestamp="1602345795969">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="282" y="143" width="800" height="498" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1600684655714" />
-    <state x="396" y="201" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1601669913474" />
+    <state x="396" y="201" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1602345795969" />
     <state x="577" y="0" width="789" height="768" key="find.popup" timestamp="1599510427901">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="577" y="0" width="789" height="768" key="find.popup/0.0.1366.768@0.0.1366.768" timestamp="1599510427901" />
-    <state x="486" y="255" width="945" height="953" key="run.anything.popup" timestamp="1601667089317">
+    <state x="486" y="255" width="945" height="953" key="run.anything.popup" timestamp="1602350140545">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="346" y="181" width="672" height="677" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1600380348564" />
-    <state x="486" y="255" width="945" height="953" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1601667089317" />
-    <state x="485" y="125" width="945" height="954" key="search.everywhere.popup" timestamp="1602345410636">
+    <state x="486" y="255" width="945" height="953" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1602350140545" />
+    <state x="485" y="125" width="945" height="954" key="search.everywhere.popup" timestamp="1602350747552">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="345" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1600683068241" />
-    <state x="485" y="125" width="945" height="954" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1602345410636" />
+    <state x="485" y="125" width="945" height="954" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1602350747552" />
   </component>
 </project>
