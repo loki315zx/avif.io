@@ -3,7 +3,7 @@ onmessage = async function (msg) {
 
   const {
     convert_to_avif: convertToAvif,
-    raw_rgba_to_avif: rawRgbaToAvif,
+    rgba_to_avif: rgbaToAvif,
     ConversionOptions,
     Subsampling,
     memory,
@@ -22,7 +22,7 @@ onmessage = async function (msg) {
       msg.data.keepTransparency
     );
     if (msg.data.isRawRgba) {
-      return rawRgbaToAvif(
+      return rgbaToAvif(
         input,
         options,
         msg.data.width,

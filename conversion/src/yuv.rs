@@ -1,11 +1,7 @@
-use image::{DynamicImage::{self, *}, GenericImageView, ImageBuffer, imageops, Pixel, Rgb, RgbImage, GenericImage, GrayAlphaImage, GrayImage, Luma, Rgba};
+use image::{GenericImageView, Pixel, ImageBuffer, imageops, Rgb, RgbImage, RgbaImage};
 use image::buffer::ConvertBuffer;
 use image::imageops::FilterType;
-#[cfg(feature = "build-wasm")]
-use image::RgbaImage;
 use wasm_bindgen::prelude::*;
-use std::ops::Deref;
-use wasm_bindgen::__rt::core::iter::FromIterator;
 
 pub struct YUV {
     pub y: Vec<u8>,
@@ -19,39 +15,43 @@ pub struct YUV {
 pub enum Subsampling {
     YUV420 = 0,
     YUV444 = 1,
+    YUV400 = 2,
 }
 
-pub fn from_image(image: &DynamicImage, subsampling: Subsampling, keep_transparency: bool) -> YUV {
-    let image = image.as_rgba8().unwrap();
-    image = if keep_transparency { image } else { strip_alpha(image) };
-    from_rgba8(&image, subsampling, keep_transparency)
+#[derive(Copy, Clone, Debug, Eq, PartialEq)]
+pub enum TransparencyHandling {
+    Strip,
+    Blend,
 }
 
-trait StripAlpha: Pixel {
-    type Output: Pixel;
-
-    fn strip_alpha(&self) -> Self::Output;
-}
-
-impl StripAlpha for Rgba<u16> {
-    type Output = Rgb<u16>;
-
-    fn strip_alpha(&self) -> Self::Output {
-        Rgb([0, 0, 0])
+pub fn from_alpha(alpha: &[u8]) -> YUV {
+    YUV {
+        y: Vec::from(alpha),
+        u: Vec::new(),
+        v: Vec::new(),
+        subsampling: Subsampling::YUV400,
     }
 }
 
-fn strip_alpha<P, C>(img: &ImageBuffer<P, C>) -> ImageBuffer<P::Output, Vec<<P::Output as Pixel>::Subpixel>>
-    where
-        P: StripAlpha + 'static,
-        P::Subpixel: 'static,
-        C: Deref<Target=[P::Subpixel]>
+pub fn from_image(
+    image: &RgbaImage,
+    subsampling: Subsampling,
+    transparency_handling: TransparencyHandling,
+) -> YUV {
+    let image = match transparency_handling {
+        TransparencyHandling::Strip => ignore_transparency(image.clone()).convert(),
+        TransparencyHandling::Blend => image.convert(),
+    };
+    from_rgb8(&image, subsampling)
+}
+
+fn ignore_transparency(mut image: RgbaImage) -> RgbaImage
 {
-    let mut result = ImageBuffer::new(img.width(), img.height());
-    for (x, y, p) in img.enumerate_pixels() {
-        result.put_pixel(x, y, p.strip_alpha());
+    for rgba in image.pixels_mut() {
+        rgba.0[3] = 255;
     }
-    result
+
+    image
 }
 
 #[cfg(feature = "build-wasm")]
@@ -64,7 +64,7 @@ pub fn from_rgba8_raw(data: &[u8], subsampling: Subsampling, width: usize, heigh
     from_rgb8(&image.convert(), subsampling)
 }
 
-fn from_rgb8(image: &RgbImage, subsampling: Subsampling, bool keep_transparency) -> YUV {
+fn from_rgb8(image: &RgbImage, subsampling: Subsampling) -> YUV {
     let mut yuv = YUV {
         y: Vec::new(),
         u: Vec::new(),
@@ -84,6 +84,7 @@ fn from_rgb8(image: &RgbImage, subsampling: Subsampling, bool keep_transparency)
             &subsampled_image
         }
         Subsampling::YUV444 => image,
+        Subsampling::YUV400 => unimplemented!(),
     };
 
     for rgb in image.pixels() {

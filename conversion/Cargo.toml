@@ -18,7 +18,7 @@ build-demo = []
 build-wasm = ["web-sys"]
 
 [dependencies]
-rav1e = { git = "https://github.com/ennmichael/rav1e", branch = "v0.3.4-progress-tracking", default-features = false }
+rav1e = { git = "https://github.com/ennmichael/rav1e", branch = "v0.4.0-alpha-progress-tracking", default-features = false }
 image = { version = "0.23.9", default-features = false, features = ["gif", "jpeg", "ico", "png", "pnm", "tga", "tiff", "bmp", "hdr", "dxt", "dds", "farbfeld"] }
 avif-serialize = "0.6.4"
 wasm-bindgen = { version = "0.2.63" }
