@@ -16,8 +16,10 @@ fn main() {
     fs::File::open(&args[1]).unwrap().read_to_end(&mut input).unwrap();
     let input = input;
     let result = conversion::convert_to_avif(&input, &conversion::ConversionOptions {
-        quality: 100,
+        effort: 0,
+        quality: args[2].parse().unwrap(),
         subsampling: conversion::Subsampling::YUV420,
+        transparency: conversion::Transparency::Keep,
     }).unwrap();
     let mut output_file = fs::File::create(args[1].clone() + ".avif").unwrap();
     output_file.write_all(&result).unwrap();

@@ -4,20 +4,11 @@ const heap = new Array(32).fill(undefined);
 
 heap.push(undefined, null, true, false);
 
-let heap_next = heap.length;
-
-function addHeapObject(obj) {
-  if (heap_next === heap.length) heap.push(heap.length + 1);
-  const idx = heap_next;
-  heap_next = heap[idx];
-
-  heap[idx] = obj;
-  return idx;
-}
-
 function getObject(idx) {
   return heap[idx];
 }
+
+let heap_next = heap.length;
 
 function dropObject(idx) {
   if (idx < 36) return;
@@ -29,6 +20,15 @@ function takeObject(idx) {
   const ret = getObject(idx);
   dropObject(idx);
   return ret;
+}
+
+function addHeapObject(obj) {
+  if (heap_next === heap.length) heap.push(heap.length + 1);
+  const idx = heap_next;
+  heap_next = heap[idx];
+
+  heap[idx] = obj;
+  return idx;
 }
 
 function debugString(val) {
@@ -203,7 +203,12 @@ export function convert_to_avif(input_data, options, on_progress) {
     var ptr0 = passArray8ToWasm0(input_data, wasm.__wbindgen_malloc);
     var len0 = WASM_VECTOR_LEN;
     _assertClass(options, ConversionOptions);
-    var ret = wasm.convert_to_avif(ptr0, len0, options.ptr, addHeapObject(on_progress));
+    var ret = wasm.convert_to_avif(
+      ptr0,
+      len0,
+      options.ptr,
+      addHeapObject(on_progress)
+    );
     return ConversionResult.__wrap(ret);
 }
 
@@ -237,195 +242,253 @@ function handleError(f) {
 
 /**
  */
-export const Subsampling = Object.freeze({YUV420: 0, "0": "YUV420", YUV444: 1, "1": "YUV444",});
+export const Subsampling = Object.freeze({
+  YUV420: 0,
+  0: "YUV420",
+  YUV444: 1,
+  1: "YUV444",
+});
+/**
+ */
+export const Transparency = Object.freeze({
+  Drop: 0,
+  0: "Drop",
+  Keep: 1,
+  1: "Keep",
+});
 
 /**
  */
 export class ConversionOptions {
+  static __wrap(ptr) {
+    const obj = Object.create(ConversionOptions.prototype);
+    obj.ptr = ptr;
 
-    static __wrap(ptr) {
-        const obj = Object.create(ConversionOptions.prototype);
-        obj.ptr = ptr;
+    return obj;
+  }
 
-        return obj;
-    }
+  free() {
+    const ptr = this.ptr;
+    this.ptr = 0;
 
-    free() {
-        const ptr = this.ptr;
-        this.ptr = 0;
+    wasm.__wbg_conversionoptions_free(ptr);
+  }
 
-        wasm.__wbg_conversionoptions_free(ptr);
-    }
+  /**
+   * Effort of conversion as a percentage from 0 to 100.
+   * @returns {number}
+   */
+  get effort() {
+    var ret = wasm.__wbg_get_conversionoptions_effort(this.ptr);
+    return ret;
+  }
 
-    /**
-     * Quality of conversion as a percentage from 0 to 100.
-     * @returns {number}
-     */
-    get quality() {
-        var ret = wasm.__wbg_get_conversionoptions_quality(this.ptr);
-        return ret >>> 0;
-    }
+  /**
+   * Effort of conversion as a percentage from 0 to 100.
+   * @param {number} arg0
+   */
+  set effort(arg0) {
+    wasm.__wbg_set_conversionoptions_effort(this.ptr, arg0);
+  }
 
-    /**
-     * Quality of conversion as a percentage from 0 to 100.
-     * @param {number} arg0
-     */
-    set quality(arg0) {
-        wasm.__wbg_set_conversionoptions_quality(this.ptr, arg0);
-    }
+  /**
+   * Quality of conversion as a percentage from 0 to 100.
+   * @returns {number}
+   */
+  get quality() {
+    var ret = wasm.__wbg_get_conversionoptions_quality(this.ptr);
+    return ret;
+  }
 
-    /**
-     * @returns {number}
-     */
-    get subsampling() {
-        var ret = wasm.__wbg_get_conversionoptions_subsampling(this.ptr);
-        return ret >>> 0;
-    }
+  /**
+   * Quality of conversion as a percentage from 0 to 100.
+   * @param {number} arg0
+   */
+  set quality(arg0) {
+    wasm.__wbg_set_conversionoptions_quality(this.ptr, arg0);
+  }
 
-    /**
-     * @param {number} arg0
-     */
-    set subsampling(arg0) {
-        wasm.__wbg_set_conversionoptions_subsampling(this.ptr, arg0);
-    }
+  /**
+   * @returns {number}
+   */
+  get subsampling() {
+    var ret = wasm.__wbg_get_conversionoptions_subsampling(this.ptr);
+    return ret >>> 0;
+  }
 
-    /**
-     * @param {number} quality
-     * @param {number} subsampling
-     */
-    constructor(quality, subsampling) {
-        var ret = wasm.conversionoptions_new(quality, subsampling);
-        return ConversionOptions.__wrap(ret);
-    }
+  /**
+   * @param {number} arg0
+   */
+  set subsampling(arg0) {
+    wasm.__wbg_set_conversionoptions_subsampling(this.ptr, arg0);
+  }
+
+  /**
+   * @returns {number}
+   */
+  get transparency() {
+    var ret = wasm.__wbg_get_conversionoptions_transparency(this.ptr);
+    return ret >>> 0;
+  }
+
+  /**
+   * @param {number} arg0
+   */
+  set transparency(arg0) {
+    wasm.__wbg_set_conversionoptions_transparency(this.ptr, arg0);
+  }
+
+  /**
+   * @param {number} effort
+   * @param {number} quality
+   * @param {number} subsampling
+   * @param {number} transparency
+   */
+  constructor(effort, quality, subsampling, transparency) {
+    var ret = wasm.conversionoptions_new(
+      effort,
+      quality,
+      subsampling,
+      transparency
+    );
+    return ConversionOptions.__wrap(ret);
+  }
 }
 
 /**
  */
 export class ConversionResult {
+  static __wrap(ptr) {
+    const obj = Object.create(ConversionResult.prototype);
+    obj.ptr = ptr;
 
-    static __wrap(ptr) {
-        const obj = Object.create(ConversionResult.prototype);
-        obj.ptr = ptr;
+    return obj;
+  }
 
-        return obj;
-    }
+  free() {
+    const ptr = this.ptr;
+    this.ptr = 0;
 
-    free() {
-        const ptr = this.ptr;
-        this.ptr = 0;
+    wasm.__wbg_conversionresult_free(ptr);
+  }
 
-        wasm.__wbg_conversionresult_free(ptr);
-    }
+  /**
+   * @returns {number}
+   */
+  get data() {
+    var ret = wasm.__wbg_get_conversionresult_data(this.ptr);
+    return ret;
+  }
 
-    /**
-     * @returns {number}
-     */
-    get data() {
-        var ret = wasm.__wbg_get_conversionresult_data(this.ptr);
-        return ret;
-    }
+  /**
+   * @param {number} arg0
+   */
+  set data(arg0) {
+    wasm.__wbg_set_conversionresult_data(this.ptr, arg0);
+  }
 
-    /**
-     * @param {number} arg0
-     */
-    set data(arg0) {
-        wasm.__wbg_set_conversionresult_data(this.ptr, arg0);
-    }
+  /**
+   * @returns {number}
+   */
+  get size() {
+    var ret = wasm.__wbg_get_conversionresult_size(this.ptr);
+    return ret >>> 0;
+  }
 
-    /**
-     * @returns {number}
-     */
-    get size() {
-        var ret = wasm.__wbg_get_conversionresult_size(this.ptr);
-        return ret >>> 0;
-    }
+  /**
+   * @param {number} arg0
+   */
+  set size(arg0) {
+    wasm.__wbg_set_conversionresult_size(this.ptr, arg0);
+  }
 
-    /**
-     * @param {number} arg0
-     */
-    set size(arg0) {
-        wasm.__wbg_set_conversionresult_size(this.ptr, arg0);
-    }
+  /**
+   * @returns {number}
+   */
+  get error() {
+    var ret = wasm.__wbg_get_conversionresult_error(this.ptr);
+    return ret;
+  }
 
-    /**
-     * @returns {number}
-     */
-    get error() {
-        var ret = wasm.__wbg_get_conversionresult_error(this.ptr);
-        return ret;
-    }
+  /**
+   * @param {number} arg0
+   */
+  set error(arg0) {
+    wasm.__wbg_set_conversionresult_error(this.ptr, arg0);
+  }
 
-    /**
-     * @param {number} arg0
-     */
-    set error(arg0) {
-        wasm.__wbg_set_conversionresult_error(this.ptr, arg0);
-    }
+  /**
+   * @returns {number}
+   */
+  get error_size() {
+    var ret = wasm.__wbg_get_conversionresult_error_size(this.ptr);
+    return ret >>> 0;
+  }
 
-    /**
-     * @returns {number}
-     */
-    get error_size() {
-        var ret = wasm.__wbg_get_conversionresult_error_size(this.ptr);
-        return ret >>> 0;
-    }
-
-    /**
-     * @param {number} arg0
-     */
-    set error_size(arg0) {
-        wasm.__wbg_set_conversionresult_error_size(this.ptr, arg0);
-    }
+  /**
+   * @param {number} arg0
+   */
+  set error_size(arg0) {
+    wasm.__wbg_set_conversionresult_error_size(this.ptr, arg0);
+  }
 }
 
-export const __wbindgen_number_new = function (arg0) {
-    var ret = arg0;
-    return addHeapObject(ret);
-};
-
 export const __wbindgen_object_drop_ref = function (arg0) {
-    takeObject(arg0);
+  takeObject(arg0);
 };
 
-export const __wbg_log_3bafd82835c6de6d = function (arg0) {
-    console.log(getObject(arg0));
+export const __wbindgen_number_new = function (arg0) {
+  var ret = arg0;
+  return addHeapObject(ret);
 };
 
 export const __wbg_new_59cb74e423758ede = function () {
-    var ret = new Error();
-    return addHeapObject(ret);
+  var ret = new Error();
+  return addHeapObject(ret);
 };
 
 export const __wbg_stack_558ba5917b466edd = function (arg0, arg1) {
-    var ret = getObject(arg1).stack;
-    var ptr0 = passStringToWasm0(ret, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
-    var len0 = WASM_VECTOR_LEN;
-    getInt32Memory0()[arg0 / 4 + 1] = len0;
-    getInt32Memory0()[arg0 / 4 + 0] = ptr0;
+  var ret = getObject(arg1).stack;
+  var ptr0 = passStringToWasm0(
+    ret,
+    wasm.__wbindgen_malloc,
+    wasm.__wbindgen_realloc
+  );
+  var len0 = WASM_VECTOR_LEN;
+  getInt32Memory0()[arg0 / 4 + 1] = len0;
+  getInt32Memory0()[arg0 / 4 + 0] = ptr0;
 };
 
 export const __wbg_error_4bb6c2a97407129a = function (arg0, arg1) {
-    try {
-        console.error(getStringFromWasm0(arg0, arg1));
-    } finally {
-        wasm.__wbindgen_free(arg0, arg1);
-    }
+  try {
+    console.error(getStringFromWasm0(arg0, arg1));
+  } finally {
+    wasm.__wbindgen_free(arg0, arg1);
+  }
 };
 
-export const __wbg_call_d713ea0274dfc6d2 = handleError(function (arg0, arg1, arg2) {
-    var ret = getObject(arg0).call(getObject(arg1), getObject(arg2));
-    return addHeapObject(ret);
+export const __wbg_call_d713ea0274dfc6d2 = handleError(function (
+  arg0,
+  arg1,
+  arg2
+) {
+  var ret = getObject(arg0).call(getObject(arg1), getObject(arg2));
+  return addHeapObject(ret);
 });
 
-export const __wbindgen_debug_string = function(arg0, arg1) {
-    var ret = debugString(getObject(arg1));
-    var ptr0 = passStringToWasm0(ret, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
-    var len0 = WASM_VECTOR_LEN;
-    getInt32Memory0()[arg0 / 4 + 1] = len0;
-    getInt32Memory0()[arg0 / 4 + 0] = ptr0;
+export const __wbindgen_debug_string = function (arg0, arg1) {
+  var ret = debugString(getObject(arg1));
+  var ptr0 = passStringToWasm0(
+    ret,
+    wasm.__wbindgen_malloc,
+    wasm.__wbindgen_realloc
+  );
+  var len0 = WASM_VECTOR_LEN;
+  getInt32Memory0()[arg0 / 4 + 1] = len0;
+  getInt32Memory0()[arg0 / 4 + 0] = ptr0;
 };
 
-export const __wbindgen_throw = function(arg0, arg1) {
-    throw new Error(getStringFromWasm0(arg0, arg1));
+export const __wbindgen_throw = function (arg0, arg1) {
+  throw new Error(getStringFromWasm0(arg0, arg1));
 };
 

@@ -6,6 +6,7 @@ onmessage = async function (msg) {
     raw_rgba_to_avif: rawRgbaToAvif,
     ConversionOptions,
     Subsampling,
+    Transparency,
     memory,
   } = await conversion.lib();
 
@@ -16,8 +17,10 @@ onmessage = async function (msg) {
     const input = new Uint8Array(msg.data.input);
     console.log(msg.data.quality);
     const options = new ConversionOptions(
+      msg.data.effort,
       msg.data.quality,
-      msg.data.useYuv444 ? Subsampling.YUV444 : Subsampling.YUV420
+      msg.data.useYuv444 ? Subsampling.YUV444 : Subsampling.YUV420,
+      msg.data.keepTransparency ? Transparency.Keep : Transparency.Drop
     );
     if (msg.data.isRawRgba) {
       return rawRgbaToAvif(

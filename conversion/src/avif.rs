@@ -9,18 +9,33 @@ use wasm_bindgen::prelude::*;
 use crate::yuv::{self, Subsampling, YUV};
 
 #[wasm_bindgen]
+#[derive(Copy, Clone, Debug, Eq, PartialEq)]
+pub enum Transparency {
+    Drop = 0,
+    Keep = 1,
+}
+
+#[wasm_bindgen]
 pub struct ConversionOptions {
+    /// Effort of conversion as a percentage from 0 to 100.
+    pub effort: u8,
     /// Quality of conversion as a percentage from 0 to 100.
-    pub quality: u32,
+    pub quality: u8,
     pub subsampling: Subsampling,
+    pub transparency: Transparency,
 }
 
 #[wasm_bindgen]
 impl ConversionOptions {
     #[cfg(feature = "build-wasm")]
     #[wasm_bindgen(constructor)]
-    pub fn new(quality: u32, subsampling: Subsampling) -> Self {
-        Self { quality, subsampling }
+    pub fn new(
+        effort: u8,
+        quality: u8,
+        subsampling: Subsampling,
+        transparency: Transparency,
+    ) -> Self {
+        Self { effort, quality, subsampling, transparency }
     }
 }
 
@@ -56,11 +71,13 @@ pub fn encode_avif(
 }
 
 fn create_encoder_config(options: &ConversionOptions, width: usize, height: usize) -> EncoderConfig {
+    assert!(options.effort <= 100);
     assert!(options.quality <= 100);
 
-    let speed = (10 - (options.quality / 20)) as usize;
-    web_sys::console::log_1(&JsValue::from(speed as i32));
+    let speed = (10 - (options.effort / 20)) as usize;
     let mut encoder_config = EncoderConfig::with_speed_preset(speed);
+    encoder_config.quantizer = 255 - (options.quality as usize) * 255 / 100;
+    encoder_config.min_quantizer = encoder_config.quantizer as u8;
     encoder_config.chroma_sampling = to_av1_chroma_sampling(options.subsampling);
     encoder_config.width = width;
     encoder_config.height = height;
