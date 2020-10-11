@@ -1,13 +1,21 @@
 /* tslint:disable */
 /* eslint-disable */
 export const memory: WebAssembly.Memory;
+
 export function __wbg_conversionresult_free(a: number): void;
+
 export function __wbg_get_conversionresult_data(a: number): number;
+
 export function __wbg_set_conversionresult_data(a: number, b: number): void;
+
 export function __wbg_get_conversionresult_size(a: number): number;
+
 export function __wbg_set_conversionresult_size(a: number, b: number): void;
+
 export function __wbg_get_conversionresult_error(a: number): number;
+
 export function __wbg_set_conversionresult_error(a: number, b: number): void;
+
 export function __wbg_get_conversionresult_error_size(a: number): number;
 
 export function __wbg_set_conversionresult_error_size(
@@ -22,7 +30,7 @@ export function convert_to_avif(
   d: number
 ): number;
 
-export function raw_rgba_to_avif(
+export function rgba_to_avif(
   a: number,
   b: number,
   c: number,

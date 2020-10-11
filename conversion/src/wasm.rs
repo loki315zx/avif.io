@@ -2,13 +2,13 @@
 
 use std::mem;
 
+use image::RgbaImage;
 use js_sys;
 use wasm_bindgen::prelude::*;
 
 use crate::avif;
 pub use crate::avif::ConversionOptions;
 pub use crate::Subsampling;
-use image::RgbaImage;
 
 #[wasm_bindgen]
 pub struct ConversionResult {
@@ -40,7 +40,7 @@ pub fn convert_to_avif(
     options: &ConversionOptions,
     on_progress: js_sys::Function,
 ) -> ConversionResult {
-    unsafe { register_progress_hook(on_progress); }
+    unsafe { register_progress_hook(on_progress, options.keep_transparency); }
 
     match avif::convert_to_avif(input_data, options) {
         Ok(data) => ConversionResult::from_data(data),
@@ -57,7 +57,7 @@ pub fn rgba_to_avif(
     height: usize,
     on_progress: js_sys::Function,
 ) -> ConversionResult {
-    unsafe { register_progress_hook(on_progress); }
+    unsafe { register_progress_hook(on_progress, options.keep_transparency); }
 
     let image = RgbaImage::from_raw(
         width as u32,
@@ -68,9 +68,13 @@ pub fn rgba_to_avif(
     ConversionResult::from_data(result_data)
 }
 
-unsafe fn register_progress_hook(on_progress: js_sys::Function) {
+unsafe fn register_progress_hook(on_progress: js_sys::Function, keep_transparency: bool) {
     #[cfg(feature = "console_error_panic_hook")]
         console_error_panic_hook::set_once();
+
+    if keep_transparency {
+        rav1e::PROGRESS_SCALE = 0.5;
+    }
 
     rav1e::ON_PROGRESS = Some(
         Box::new(move |progress| {

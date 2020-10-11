@@ -17,14 +17,14 @@ export function convert_to_avif(input_data: Uint8Array, options: ConversionOptio
  * @param {Function} on_progress
  * @returns {ConversionResult}
  */
-export function raw_rgba_to_avif(input_data: Uint8Array, options: ConversionOptions, width: number, height: number, on_progress: Function): ConversionResult;
+export function rgba_to_avif(input_data: Uint8Array, options: ConversionOptions, width: number, height: number, on_progress: Function): ConversionResult;
 /**
  */
 export enum Subsampling {
   YUV420,
   YUV444,
+  YUV400,
 }
-
 /**
  */
 export class ConversionOptions {
@@ -36,7 +36,12 @@ export class ConversionOptions {
    * @param {number} subsampling
    * @param {boolean} keep_transparency
    */
-  constructor(effort: number, quality: number, subsampling: number, keep_transparency: boolean);
+  constructor(
+    effort: number,
+    quality: number,
+    subsampling: number,
+    keep_transparency: boolean
+  );
 
   /**
    * Effort of conversion as a percentage from 0 to 100.

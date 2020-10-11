@@ -27,10 +27,18 @@
   <component name="ChangeListManager">
     <list default="true" id="5e8a798a-47d2-451e-a9b1-af5940e8cc13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conversion/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversion/demo/neeno.png.avif" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/demo/neeno.png.avif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversion/pkg/conversion.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/pkg/conversion.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversion/pkg/conversion_bg.js" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/pkg/conversion_bg.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversion/pkg/conversion_bg.wasm" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/pkg/conversion_bg.wasm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversion/pkg/conversion_bg.wasm.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/pkg/conversion_bg.wasm.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conversion/src/avif.rs" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/src/avif.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversion/src/demo.rs" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/src/demo.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversion/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/src/lib.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conversion/src/wasm.rs" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/src/wasm.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conversion/src/yuv.rs" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/src/yuv.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/src/SettingsBox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/www/src/SettingsBox.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/src/converter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/www/src/converter.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/static/worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/static/worker.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +84,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.8.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.11.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../rav1e" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
@@ -154,6 +162,7 @@
       <workItem from="1601657487663" duration="24892000" />
       <workItem from="1602351765035" duration="8117000" />
       <workItem from="1602365019474" duration="2160000" />
+      <workItem from="1602407879710" duration="7025000" />
     </task>
     <task id="LOCAL-00001" summary="Refactored a bit and added jpeg support">
       <created>1599646178299</created>
@@ -337,11 +346,11 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="368" y="119" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1602351030222" />
-    <state x="630" y="232" key="FileChooserDialogImpl" timestamp="1602361089905">
+    <state x="630" y="232" width="424" height="454" key="FileChooserDialogImpl" timestamp="1602410776494">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="448" y="165" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1600436536851" />
-    <state x="630" y="232" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1602361089905" />
+    <state x="630" y="232" width="424" height="454" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1602410776494" />
     <state width="1876" height="291" key="GridCell.Tab.0.bottom" timestamp="1602361093473">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -385,10 +394,10 @@
     </state>
     <state x="346" y="181" width="672" height="677" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1600380348564" />
     <state x="486" y="255" width="945" height="953" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1602350140545" />
-    <state x="485" y="125" width="945" height="954" key="search.everywhere.popup" timestamp="1602365360670">
+    <state x="485" y="125" width="945" height="954" key="search.everywhere.popup" timestamp="1602413637788">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="345" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1600683068241" />
-    <state x="485" y="125" width="945" height="954" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1602365360670" />
+    <state x="485" y="125" width="945" height="954" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1602413637788" />
   </component>
 </project>

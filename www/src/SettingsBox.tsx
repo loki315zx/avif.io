@@ -17,9 +17,9 @@ export interface SettingsBoxProps {
 
 export default function SettingsBox(props: SettingsBoxProps) {
   const [effort, setEffort] = useState(10);
-  const [quality, setQuality] = useState(100);
+  const [quality, setQuality] = useState(90);
   const [useYuv444, setUseYuv444] = useState(false);
-  const [keepTransparency, setKeepTransparency] = useState(false);
+  const [keepTransparency, setKeepTransparency] = useState(true);
   const [lossless, setLossless] = useState(false);
 
   useEffect(
@@ -27,10 +27,6 @@ export default function SettingsBox(props: SettingsBoxProps) {
       props.onSettingsUpdate({ effort, quality, useYuv444, keepTransparency }),
     [effort, quality, useYuv444, keepTransparency]
   );
-
-  function onUseYuv444Changed(event: React.ChangeEvent<HTMLInputElement>) {
-    setUseYuv444(event.target.checked);
-  }
 
   function onLosslessChanged(event: ChangeEvent<HTMLInputElement>) {
     if (event.target.checked) {
@@ -57,6 +53,10 @@ export default function SettingsBox(props: SettingsBoxProps) {
     if (!event.target.checked) return;
 
     setUseYuv444(true);
+  }
+
+  function onKeepTransparencyChanged(event: ChangeEvent<HTMLInputElement>) {
+    setKeepTransparency(event.target.checked);
   }
 
   return (
@@ -105,6 +105,14 @@ export default function SettingsBox(props: SettingsBoxProps) {
             <p className={"checkbox-text"}>4:4:4</p>
           </label>
         </div>
+        <label>
+          <input
+            type={"checkbox"}
+            checked={keepTransparency}
+            onChange={onKeepTransparencyChanged}
+          />
+          <p className={"checkbox-text"}>Keep transparency</p>
+        </label>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ use rav1e::Frame;
 use rav1e::prelude::EncoderConfig;
 use wasm_bindgen::prelude::*;
 
-use crate::yuv::{self, Subsampling, YUV, TransparencyHandling};
+use crate::yuv::{self, Subsampling, YUV};
 
 #[wasm_bindgen]
 pub struct ConversionOptions {
@@ -45,18 +45,10 @@ pub fn convert_rgba_to_avif(image: &RgbaImage, options: &ConversionOptions) -> V
     let yuv = yuv::from_image(
         &image,
         options.subsampling,
-        if options.keep_transparency {
-            TransparencyHandling::Strip
-        } else {
-            TransparencyHandling::Blend
-        },
     );
     let (w, h) = image.dimensions();
     if options.keep_transparency {
         let alpha: Vec<_> = alpha_channel(&image).collect();
-        for (k, v) in alpha.iter().enumerate() {
-            println!("{} {}", k, *v);
-        }
         encode_avif(&yuv, options, Some(&alpha), w as usize, h as usize)
     } else {
         encode_avif(&yuv, options, None, w as usize, h as usize)
@@ -77,7 +69,6 @@ pub fn encode_avif(
     match alpha {
         Some(alpha) => {
             let mut encoder_config = EncoderConfig::with_speed_preset(10);
-            // TODO This is just godawful, needs refactoring
             encoder_config.chroma_sampling = ChromaSampling::Cs400;
             encoder_config.width = width;
             encoder_config.height = height;

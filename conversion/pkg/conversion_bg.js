@@ -200,16 +200,16 @@ function _assertClass(instance, klass) {
  * @returns {ConversionResult}
  */
 export function convert_to_avif(input_data, options, on_progress) {
-    var ptr0 = passArray8ToWasm0(input_data, wasm.__wbindgen_malloc);
-    var len0 = WASM_VECTOR_LEN;
-    _assertClass(options, ConversionOptions);
-    var ret = wasm.convert_to_avif(
-      ptr0,
-      len0,
-      options.ptr,
-      addHeapObject(on_progress)
-    );
-    return ConversionResult.__wrap(ret);
+  var ptr0 = passArray8ToWasm0(input_data, wasm.__wbindgen_malloc);
+  var len0 = WASM_VECTOR_LEN;
+  _assertClass(options, ConversionOptions);
+  var ret = wasm.convert_to_avif(
+    ptr0,
+    len0,
+    options.ptr,
+    addHeapObject(on_progress)
+  );
+  return ConversionResult.__wrap(ret);
 }
 
 /**
@@ -221,12 +221,19 @@ export function convert_to_avif(input_data, options, on_progress) {
  * @param {Function} on_progress
  * @returns {ConversionResult}
  */
-export function raw_rgba_to_avif(input_data, options, width, height, on_progress) {
-    var ptr0 = passArray8ToWasm0(input_data, wasm.__wbindgen_malloc);
-    var len0 = WASM_VECTOR_LEN;
-    _assertClass(options, ConversionOptions);
-    var ret = wasm.raw_rgba_to_avif(ptr0, len0, options.ptr, width, height, addHeapObject(on_progress));
-    return ConversionResult.__wrap(ret);
+export function rgba_to_avif(input_data, options, width, height, on_progress) {
+  var ptr0 = passArray8ToWasm0(input_data, wasm.__wbindgen_malloc);
+  var len0 = WASM_VECTOR_LEN;
+  _assertClass(options, ConversionOptions);
+  var ret = wasm.rgba_to_avif(
+    ptr0,
+    len0,
+    options.ptr,
+    width,
+    height,
+    addHeapObject(on_progress)
+  );
+  return ConversionResult.__wrap(ret);
 }
 
 function handleError(f) {
@@ -246,6 +253,8 @@ export const Subsampling = Object.freeze({
   0: "YUV420",
   YUV444: 1,
   1: "YUV444",
+  YUV400: 2,
+  2: "YUV400",
 });
 
 /**
@@ -434,20 +443,20 @@ export const __wbindgen_number_new = function (arg0) {
 };
 
 export const __wbg_new_59cb74e423758ede = function () {
-    var ret = new Error();
-    return addHeapObject(ret);
+  var ret = new Error();
+  return addHeapObject(ret);
 };
 
 export const __wbg_stack_558ba5917b466edd = function (arg0, arg1) {
-    var ret = getObject(arg1).stack;
-    var ptr0 = passStringToWasm0(
-      ret,
-      wasm.__wbindgen_malloc,
-      wasm.__wbindgen_realloc
-    );
-    var len0 = WASM_VECTOR_LEN;
-    getInt32Memory0()[arg0 / 4 + 1] = len0;
-    getInt32Memory0()[arg0 / 4 + 0] = ptr0;
+  var ret = getObject(arg1).stack;
+  var ptr0 = passStringToWasm0(
+    ret,
+    wasm.__wbindgen_malloc,
+    wasm.__wbindgen_realloc
+  );
+  var len0 = WASM_VECTOR_LEN;
+  getInt32Memory0()[arg0 / 4 + 1] = len0;
+  getInt32Memory0()[arg0 / 4 + 0] = ptr0;
 };
 
 export const __wbg_error_4bb6c2a97407129a = function (arg0, arg1) {

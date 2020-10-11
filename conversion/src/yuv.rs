@@ -1,5 +1,4 @@
-use image::{GenericImageView, Pixel, ImageBuffer, imageops, Rgb, RgbImage, RgbaImage};
-use image::buffer::ConvertBuffer;
+use image::{GenericImageView, ImageBuffer, imageops, Pixel, Rgb, RgbaImage};
 use image::imageops::FilterType;
 use wasm_bindgen::prelude::*;
 
@@ -18,12 +17,6 @@ pub enum Subsampling {
     YUV400 = 2,
 }
 
-#[derive(Copy, Clone, Debug, Eq, PartialEq)]
-pub enum TransparencyHandling {
-    Strip,
-    Blend,
-}
-
 pub fn from_alpha(alpha: &[u8]) -> YUV {
     YUV {
         y: Vec::from(alpha),
@@ -36,35 +29,7 @@ pub fn from_alpha(alpha: &[u8]) -> YUV {
 pub fn from_image(
     image: &RgbaImage,
     subsampling: Subsampling,
-    transparency_handling: TransparencyHandling,
 ) -> YUV {
-    let image = match transparency_handling {
-        TransparencyHandling::Strip => ignore_transparency(image.clone()).convert(),
-        TransparencyHandling::Blend => image.convert(),
-    };
-    from_rgb8(&image, subsampling)
-}
-
-fn ignore_transparency(mut image: RgbaImage) -> RgbaImage
-{
-    for rgba in image.pixels_mut() {
-        rgba.0[3] = 255;
-    }
-
-    image
-}
-
-#[cfg(feature = "build-wasm")]
-pub fn from_rgba8_raw(data: &[u8], subsampling: Subsampling, width: usize, height: usize) -> YUV {
-    let image = RgbaImage::from_raw(
-        width as u32,
-        height as u32,
-        Vec::from(data),
-    ).unwrap();
-    from_rgb8(&image.convert(), subsampling)
-}
-
-fn from_rgb8(image: &RgbImage, subsampling: Subsampling) -> YUV {
     let mut yuv = YUV {
         y: Vec::new(),
         u: Vec::new(),
@@ -72,8 +37,8 @@ fn from_rgb8(image: &RgbImage, subsampling: Subsampling) -> YUV {
         subsampling,
     };
 
-    for rgb in image.pixels() {
-        yuv.y.push(rgb8_to_y(rgb));
+    for rgba in image.pixels() {
+        yuv.y.push(rgb8_to_y(&rgba.to_rgb()));
     }
 
     let subsampled_image;
@@ -87,13 +52,23 @@ fn from_rgb8(image: &RgbImage, subsampling: Subsampling) -> YUV {
         Subsampling::YUV400 => unimplemented!(),
     };
 
-    for rgb in image.pixels() {
-        let (u, v) = rgb8_to_uv(rgb);
+    for rgba in image.pixels() {
+        let (u, v) = rgb8_to_uv(&rgba.to_rgb());
         yuv.u.push(u);
         yuv.v.push(v);
     }
 
     yuv
+}
+
+#[cfg(feature = "build-wasm")]
+pub fn from_rgba8_raw(data: &[u8], subsampling: Subsampling, width: usize, height: usize) -> YUV {
+    let image = RgbaImage::from_raw(
+        width as u32,
+        height as u32,
+        Vec::from(data),
+    ).unwrap();
+    from_image(&image, subsampling)
 }
 
 fn subsampled<I: GenericImageView>(
