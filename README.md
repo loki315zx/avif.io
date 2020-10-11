@@ -1,3 +1,12 @@
+```shell script
+npm i && cd www/ && npm i && npm run build && cd ../conversion && npx cross-env NODE_ENV=production webpack && cd ../ && npm run start
+```
+
+```shell script
+npm i && cd www/ && npm i && npm run build && cd ../conversion && npx cross-env NODE_ENV=production webpack
+```
+
+
 # AVIF.IO
 
 avif.io is a website for converting a wide variety of file
@@ -69,7 +78,7 @@ npm i
 ```
 
 Next, we are going to build the front-end in production mode,
-minimizing the code: 
+minimizing the code:
 
 ```shell script
 npm run build
@@ -87,13 +96,3 @@ or you can deploy it to a static web server by copying everything
 from `www/dist` and `www/static` and the `www/index.html` file
 to the server.
 
-Copy-paste version of above:
-
-```shell script
-npm i
-cd www/
-npm i
-npm run build
-cd ../conversion
-npx cross-env NODE_ENV=production webpack
-```

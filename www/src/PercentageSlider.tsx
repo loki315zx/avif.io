@@ -11,9 +11,12 @@ export interface PercentageSliderProps {
 
 export default function PercentageSlider(props: PercentageSliderProps) {
   return (
-    <div className={props.className}>
-      <p>
-        <b>{props.value}%</b> {props.name}
+    <div className={props.className + " " + "s1"}>
+      <p className="s0 gray center">
+        <span className="bold primary" style={{ marginRight: 5 }}>
+          {props.value}%
+        </span>{" "}
+        {props.name}
       </p>
       <input
         type={"range"}
@@ -22,6 +25,7 @@ export default function PercentageSlider(props: PercentageSliderProps) {
         min={0}
         max={100}
         disabled={props.disabled}
+        step={5}
       />
     </div>
   );

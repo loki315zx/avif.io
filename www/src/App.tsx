@@ -283,22 +283,24 @@ export default function App() {
         <h1 className={"f1 secondary"}>Convert any image to avif for free.</h1>
         <h2 className={"f1 secondary s4"}>fast, simple, secure</h2>
 
-        <div className={"main-container"}>
-          <div className={"dropzone-and-settings"}>
-            <Dropzone onDrop={onFilesSelected} />
-            <div className={"cog-and-settings"}>
-              <button
-                className={"cog-button"}
-                onClick={() => setSettingsBoxOpen(!settingsBoxOpen)}
-              >
-                O
-              </button>
-              <SettingsBox
-                open={settingsBoxOpen}
-                onSettingsUpdate={onSettingsUpdate}
-              />
-            </div>
+        <div
+          className={"main-container" + " " + (settingsBoxOpen ? "open" : "")}
+        >
+          <Dropzone onDrop={onFilesSelected} />
+
+          <div
+            className={"settings_cog" + " " + (settingsBoxOpen ? "open" : "")}
+          >
+            <p
+              className={"cog-button" + " " + (settingsBoxOpen ? "open" : "")}
+              onClick={() => setSettingsBoxOpen(!settingsBoxOpen)}
+            ></p>
+            <SettingsBox
+              open={settingsBoxOpen}
+              onSettingsUpdate={onSettingsUpdate}
+            />
           </div>
+
           {files.map((f) => (
             <Conversion
               onFinished={onConversionFinished}

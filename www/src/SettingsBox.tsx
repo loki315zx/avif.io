@@ -1,6 +1,5 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 import PercentageSlider from "./PercentageSlider";
-import "./SettingsBox.css";
 
 export interface Settings {
   effort: number;
@@ -16,8 +15,8 @@ export interface SettingsBoxProps {
 }
 
 export default function SettingsBox(props: SettingsBoxProps) {
-  const [effort, setEffort] = useState(10);
-  const [quality, setQuality] = useState(90);
+  const [effort, setEffort] = useState(0);
+  const [quality, setQuality] = useState(80);
   const [useYuv444, setUseYuv444] = useState(false);
   const [keepTransparency, setKeepTransparency] = useState(true);
   const [lossless, setLossless] = useState(false);
@@ -61,7 +60,9 @@ export default function SettingsBox(props: SettingsBoxProps) {
 
   return (
     <div
-      className={"settings-box align-left " + (props.open ? "open" : "closed")}
+      className={
+        "settings-box align-left secondary " + (props.open ? "open" : "closed")
+      }
     >
       <div className={"align-left"}>
         <PercentageSlider
@@ -105,6 +106,8 @@ export default function SettingsBox(props: SettingsBoxProps) {
             <p className={"checkbox-text"}>4:4:4</p>
           </label>
         </div>
+      </div>
+      <div className={"misc"}>
         <label>
           <input
             type={"checkbox"}
