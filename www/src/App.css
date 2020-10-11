@@ -903,29 +903,9 @@ input[type="range"]::-moz-range-thumb {
   cursor: pointer;
 }
 
-input[type="range"]::-webkit-slider-thumb:hover {
-  animation: color-change-2x 2s linear infinite alternate both;
-}
-
-input[type="range"]::-moz-range-thumb:hover {
-  animation: color-change-2x 2s linear infinite alternate both;
-}
-
-input[type="range"]:active::-webkit-slider-thumb {
-  animation: color-change-2x 2s linear infinite alternate both;
-}
-
-input[type="range"]:active::-moz-range-thumb {
-  animation: color-change-2x 2s linear infinite alternate both;
-}
-
-@keyframes color-change-2x {
-  0% {
-    background: red;
-  }
-  100% {
-    background: #29c6ff;
-  }
+.disabled {
+  pointer-events: none;
+  opacity: 0.2;
 }
 
 .settings_cog {
