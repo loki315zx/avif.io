@@ -2,13 +2,13 @@
 
 use std::mem;
 
+use image::RgbaImage;
 use js_sys;
 use wasm_bindgen::prelude::*;
 
 use crate::avif;
 pub use crate::avif::ConversionOptions;
-pub use crate::yuv::Subsampling;
-use crate::yuv;
+pub use crate::Subsampling;
 
 #[wasm_bindgen]
 pub struct ConversionResult {
@@ -34,17 +34,15 @@ impl ConversionResult {
     }
 }
 
-
 #[wasm_bindgen]
 pub fn convert_to_avif(
     input_data: &[u8],
     options: &ConversionOptions,
     on_progress: js_sys::Function,
 ) -> ConversionResult {
-    unsafe { register_progress_hook(on_progress); }
+    unsafe { register_progress_hook(on_progress, options.keep_transparency); }
 
-    let result = avif::convert_to_avif(input_data, options);
-    match result {
+    match avif::convert_to_avif(input_data, options) {
         Ok(data) => ConversionResult::from_data(data),
         Err(e) => ConversionResult::from_error(e.to_string()),
     }
@@ -52,23 +50,31 @@ pub fn convert_to_avif(
 
 /// A special function for WebP.
 #[wasm_bindgen]
-pub fn raw_rgba_to_avif(
+pub fn rgba_to_avif(
     input_data: &[u8],
     options: &ConversionOptions,
     width: usize,
     height: usize,
     on_progress: js_sys::Function,
 ) -> ConversionResult {
-    unsafe { register_progress_hook(on_progress); }
+    unsafe { register_progress_hook(on_progress, options.keep_transparency); }
 
-    let yuv = yuv::from_rgba8_raw(input_data, options.subsampling, width, height);
-    let data = avif::encode_avif(&yuv, options, width, height);
-    ConversionResult::from_data(data)
+    let image = RgbaImage::from_raw(
+        width as u32,
+        height as u32,
+        Vec::from(input_data),
+    ).unwrap();
+    let result_data = avif::convert_rgba_to_avif(&image, options);
+    ConversionResult::from_data(result_data)
 }
 
-unsafe fn register_progress_hook(on_progress: js_sys::Function) {
+unsafe fn register_progress_hook(on_progress: js_sys::Function, keep_transparency: bool) {
     #[cfg(feature = "console_error_panic_hook")]
         console_error_panic_hook::set_once();
+
+    if keep_transparency {
+        rav1e::PROGRESS_SCALE = 0.5;
+    }
 
     rav1e::ON_PROGRESS = Some(
         Box::new(move |progress| {

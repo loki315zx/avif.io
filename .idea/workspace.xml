@@ -27,16 +27,19 @@
   <component name="ChangeListManager">
     <list default="true" id="5e8a798a-47d2-451e-a9b1-af5940e8cc13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversion/demo/neeno.png.avif" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/demo/neeno.png.avif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conversion/pkg/conversion.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/pkg/conversion.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conversion/pkg/conversion_bg.js" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/pkg/conversion_bg.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conversion/pkg/conversion_bg.wasm" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/pkg/conversion_bg.wasm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conversion/pkg/conversion_bg.wasm.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/pkg/conversion_bg.wasm.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conversion/src/avif.rs" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/src/avif.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/www/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/src/Conversion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/www/src/Conversion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversion/src/demo.rs" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/src/demo.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversion/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversion/src/wasm.rs" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/src/wasm.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conversion/src/yuv.rs" beforeDir="false" afterPath="$PROJECT_DIR$/conversion/src/yuv.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/src/SettingsBox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/www/src/SettingsBox.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/src/converter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/www/src/converter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/static/worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/static/worker.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,9 +56,9 @@
         <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="TypeScript File" />
-        <option value="Rust File" />
-        <option value="TypeScript JSX File" />
         <option value="CSS File" />
+        <option value="TypeScript JSX File" />
+        <option value="Rust File" />
       </list>
     </option>
   </component>
@@ -81,7 +84,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.8.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.11.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../rav1e" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
@@ -101,6 +104,25 @@
       <recent name="$PROJECT_DIR$/converters/src" />
       <recent name="$PROJECT_DIR$/converters/src/lib" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="check" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="channel" value="DEFAULT" />
+      <option name="command" value="check" />
+      <option name="allFeatures" value="false" />
+      <option name="emulateTerminal" value="false" />
+      <option name="backtrace" value="SHORT" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Cargo.check" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="RustProjectSettings">
     <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
@@ -138,6 +160,9 @@
       <workItem from="1600682298657" duration="2566000" />
       <workItem from="1601654714936" duration="2598000" />
       <workItem from="1601657487663" duration="24892000" />
+      <workItem from="1602351765035" duration="8117000" />
+      <workItem from="1602365019474" duration="2160000" />
+      <workItem from="1602407879710" duration="7025000" />
     </task>
     <task id="LOCAL-00001" summary="Refactored a bit and added jpeg support">
       <created>1599646178299</created>
@@ -244,7 +269,21 @@
       <option name="project" value="LOCAL" />
       <updated>1601669784120</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Added quality and effort as separate settings">
+      <created>1602345788519</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1602345788519</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Saving some bad code">
+      <created>1602351030659</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1602351030659</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,7 +324,9 @@
     <MESSAGE value="Updated the README file" />
     <MESSAGE value="Made it so the converted image looks better and is less bright" />
     <MESSAGE value="Added settings functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added settings functionality" />
+    <MESSAGE value="Added quality and effort as separate settings" />
+    <MESSAGE value="Saving some bad code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Saving some bad code" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -301,30 +342,35 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="278" y="209" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.768@0.0.1366.768" timestamp="1599656350966" />
-    <state x="368" y="119" key="CommitChangelistDialog2" timestamp="1601669783227">
+    <state x="368" y="119" key="CommitChangelistDialog2" timestamp="1602351030222">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="368" y="119" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1601669783227" />
-    <state x="448" y="165" key="FileChooserDialogImpl" timestamp="1600436536851">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="368" y="119" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1602351030222" />
+    <state x="630" y="232" width="424" height="454" key="FileChooserDialogImpl" timestamp="1602410776494">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="448" y="165" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1600436536851" />
-    <state width="1318" height="187" key="GridCell.Tab.0.bottom" timestamp="1600390702945">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="630" y="232" width="424" height="454" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1602410776494" />
+    <state width="1876" height="291" key="GridCell.Tab.0.bottom" timestamp="1602361093473">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1318" height="187" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1600390702945" />
-    <state width="1318" height="187" key="GridCell.Tab.0.center" timestamp="1600390702944">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state width="1876" height="291" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1602361093473" />
+    <state width="1876" height="291" key="GridCell.Tab.0.center" timestamp="1602361093472">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1318" height="187" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1600390702944" />
-    <state width="1318" height="187" key="GridCell.Tab.0.left" timestamp="1600390702944">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state width="1876" height="291" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1602361093472" />
+    <state width="1876" height="291" key="GridCell.Tab.0.left" timestamp="1602361093472">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1318" height="187" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1600390702944" />
-    <state width="1318" height="187" key="GridCell.Tab.0.right" timestamp="1600390702944">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state width="1876" height="291" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1602361093472" />
+    <state width="1876" height="291" key="GridCell.Tab.0.right" timestamp="1602361093472">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1318" height="187" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1600390702944" />
+    <state width="1876" height="291" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1602361093472" />
     <state x="247" y="53" key="SettingsEditor" timestamp="1601665699463">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -334,24 +380,24 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="498" height="445" key="SwitcherDM/0.0.1366.768@0.0.1366.768" timestamp="1600364095748" />
-    <state x="396" y="201" width="800" height="498" key="Vcs.Push.Dialog.v2" timestamp="1601669913474">
+    <state x="396" y="201" width="800" height="498" key="Vcs.Push.Dialog.v2" timestamp="1602351033827">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="282" y="143" width="800" height="498" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1600684655714" />
-    <state x="396" y="201" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1601669913474" />
+    <state x="396" y="201" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1602351033827" />
     <state x="577" y="0" width="789" height="768" key="find.popup" timestamp="1599510427901">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="577" y="0" width="789" height="768" key="find.popup/0.0.1366.768@0.0.1366.768" timestamp="1599510427901" />
-    <state x="486" y="255" width="945" height="953" key="run.anything.popup" timestamp="1601667089317">
+    <state x="486" y="255" width="945" height="953" key="run.anything.popup" timestamp="1602350140545">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="346" y="181" width="672" height="677" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1600380348564" />
-    <state x="486" y="255" width="945" height="953" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1601667089317" />
-    <state x="485" y="125" width="945" height="954" key="search.everywhere.popup" timestamp="1601721514577">
+    <state x="486" y="255" width="945" height="953" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1602350140545" />
+    <state x="485" y="125" width="945" height="954" key="search.everywhere.popup" timestamp="1602413637788">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="345" y="89" width="672" height="678" key="search.everywhere.popup/0.0.1366.768@0.0.1366.768" timestamp="1600683068241" />
-    <state x="485" y="125" width="945" height="954" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1601721514577" />
+    <state x="485" y="125" width="945" height="954" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1602413637788" />
   </component>
 </project>

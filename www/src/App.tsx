@@ -18,8 +18,10 @@ export default function App() {
   const [convertedFiles, setConvertedFiles] = useState<File[]>([]);
   const [settingsBoxOpen, setSettingsBoxOpen] = useState(false);
   const [settings, setSettings] = useState<Settings>({
+    effort: 0,
     quality: 0,
     useYuv444: false,
+    keepTransparency: false,
   });
   const [tutorial, setTutorial] = useState("css");
 

@@ -6,8 +6,10 @@ export interface ConversionResult {
 
 export interface ConversionOptions {
   inputData: ArrayBuffer;
+  effort: number; // Conversion effort as a 0-100 percentage
   quality: number; // Quality as a 0-100 percentage
   useYuv444: boolean;
+  keepTransparency: boolean;
   isRawRgba?: boolean;
   width?: number;
   height?: number;
@@ -90,8 +92,10 @@ export default class Converter {
       {
         input: options.inputData,
         isRawRgba: options.isRawRgba,
+        effort: options.effort,
         quality: options.quality,
         useYuv444: options.useYuv444,
+        keepTransparency: options.keepTransparency,
         width: options.width,
         height: options.height,
       },
