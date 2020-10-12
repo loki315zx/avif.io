@@ -20,12 +20,13 @@ module.exports = {
       },
       {
         test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg|avif)(\?[a-z0-9=.]+)?$/,
-        loader: "url-loader?limit=100000",
+        loader: "url-loader",
       },
     ],
   },
   optimization: isProduction
     ? {
+        emitOnErrors: false,
         minimize: true,
         minimizer: [
           new TerserPlugin({
@@ -37,7 +38,6 @@ module.exports = {
             extractComments: false,
           }),
         ],
-        noEmitOnErrors: true,
       }
     : undefined,
   resolve: {
