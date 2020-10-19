@@ -61,16 +61,6 @@ pub fn from_image(
     yuv
 }
 
-#[cfg(feature = "build-wasm")]
-pub fn from_rgba8_raw(data: &[u8], subsampling: Subsampling, width: usize, height: usize) -> YUV {
-    let image = RgbaImage::from_raw(
-        width as u32,
-        height as u32,
-        Vec::from(data),
-    ).unwrap();
-    from_image(&image, subsampling)
-}
-
 fn subsampled<I: GenericImageView>(
     image: &I
 ) -> ImageBuffer<I::Pixel, Vec<<I::Pixel as Pixel>::Subpixel>>
