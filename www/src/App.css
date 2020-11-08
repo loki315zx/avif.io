@@ -1,21 +1,22 @@
 @font-face {
-  font-family: "Raleway";
+  font-family: "Poppins";
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   font-display: swap;
-  src: local("Raleway Medium"), local("Raleway-Medium"),
-    url("./fonts/raleway-medium.woff2") format("woff2");
+  src: local("Poppins Regular"), local("Poppins-Regular"),
+    url("./fonts/poppins-regular.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
     U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
     U+FEFF, U+FFFD;
 }
 
 @font-face {
-  font-family: "Raleway";
-  font-weight: 800;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
   font-display: swap;
-  src: local("Raleway ExtraBold"), local("Raleway-ExtraBold"),
-    url("./fonts/raleway-extrabold.woff2") format("woff2");
+  src: local("Poppins Bold"), local("Poppins-Bold"),
+    url("./fonts/poppins-bold.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
     U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
     U+FEFF, U+FFFD;
@@ -74,7 +75,7 @@ body::-webkit-scrollbar {
 }
 
 body {
-  font-family: "Raleway";
+  font-family: "Poppins";
   font-weight: 400;
   background: #f6f9fc;
   -webkit-font-smoothing: antialiased;
@@ -210,6 +211,10 @@ body::-webkit-scrollbar-thumb {
   flex-direction: column;
   padding: 5vw;
   min-height: 90vh;
+  background: url(./assets/waves.svg);
+  background-color: rgb(245 245 245 / 0.75);
+  background-blend-mode: overlay;
+  background-size: cover;
 }
 
 .main-container {
@@ -647,8 +652,8 @@ body::-webkit-scrollbar-thumb {
   padding: 12vw 12vw;
 }
 
-.section:nth-of-type(odd) {
-  background: rgba(0, 0, 0, 0.02);
+.section:nth-of-type(even) {
+  background: rgba(0, 0, 0, 0.015);
 }
 
 /* Code */

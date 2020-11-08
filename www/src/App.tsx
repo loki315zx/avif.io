@@ -540,6 +540,9 @@ export default function App() {
           </div>
         </div>
       </div>
+      <div className="section center" id="about">
+        created by <a title="ux designer" href="https://www.linkedin.com/in/justinschmitz97/">Justin Schmitz</a> & <a title="file encoding" href="https://github.com/ennmichael">Niksa Sporin</a>
+      </div>
     </div>
   );
 }
