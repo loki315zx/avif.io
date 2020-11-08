@@ -16,8 +16,8 @@ export interface SettingsBoxProps {
 
 export default function SettingsBox(props: SettingsBoxProps) {
   const [effort, setEffort] = useState(0);
-  const [quality, setQuality] = useState(80);
-  const [useYuv444, setUseYuv444] = useState(false);
+  const [quality, setQuality] = useState(50);
+  const [useYuv444, setUseYuv444] = useState(true);
   const [keepTransparency, setKeepTransparency] = useState(true);
   const [lossless, setLossless] = useState(false);
 
@@ -86,9 +86,9 @@ export default function SettingsBox(props: SettingsBoxProps) {
           <p className={"checkbox-text"}>Lossless</p>
         </label>
       </div>
-      <div className={"subsampling"}>
-        <p>Subsample Chroma</p>
-        <div className={"subsampling-options"}>
+      {/*<div className={"subsampling"}>
+        <p>Subsample Chroma (back soon)	</p>
+        <div className={"subsampling-options disabled"}>
           <label>
             <input
               type={"checkbox"}
@@ -106,7 +106,7 @@ export default function SettingsBox(props: SettingsBoxProps) {
             <p className={"checkbox-text"}>4:4:4</p>
           </label>
         </div>
-      </div>
+    </div>*/}
       <div className={"misc"}>
         <label>
           <input

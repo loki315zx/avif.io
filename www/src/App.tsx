@@ -205,7 +205,7 @@ export default function App() {
   const netlify = (
     <div className="container-code" id="netlify-tutorial">
       <p className="s1">
-        Define a custom header within the Netflix configuration file:
+        Define a custom header within the Netlify configuration file:
       </p>
       <div className="secondary s1">
         <p>[[headers]]</p> <p>for = "*.avif"</p>
@@ -270,13 +270,9 @@ export default function App() {
 
   return (
     <div>
-      <div className="header">
-        <a href="#whatisavif">what is avif?</a>
-        <a href="#howto">how to use avif</a>
-        <a>blog (coming soon)</a>
-        <a href="https://www.buymeacoffee.com/justinschmitz" className="blue">
-          support
-        </a>
+      <div className="header-two">
+        This website uses GA to improve performance.
+        <a href="https://tools.google.com/dlpage/gaoptout?hl=de" title="google analytics">Click to deactivate.</a>
       </div>
       <div className={"app-container"}>
         <div className={"title f3 blue bold s2"}>avif.io</div>
@@ -532,7 +528,7 @@ export default function App() {
               </a>
               <a
                 className="slide center"
-                href="https://jobs.zalando.com/de/tech/blog/loading-time-matters/index.html"
+                href="https://www.tribeuk.co.uk/blog/understanding-website-performance"
               >
                 <div className="primary s1 bold">Zalando</div>
                 <div className="secondary">
