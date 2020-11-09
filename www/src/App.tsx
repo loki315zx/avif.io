@@ -272,7 +272,12 @@ export default function App() {
     <div>
       <div className="header-two">
         This website uses GA to improve performance.
-        <a href="https://tools.google.com/dlpage/gaoptout?hl=de" title="google analytics">Click to deactivate.</a>
+        <a
+          href="https://tools.google.com/dlpage/gaoptout?hl=de"
+          title="google analytics"
+        >
+          Click to deactivate.
+        </a>
       </div>
       <div className={"app-container"}>
         <div className={"title f3 blue bold s2"}>avif.io</div>
@@ -541,7 +546,17 @@ export default function App() {
         </div>
       </div>
       <div className="section center" id="about">
-        created by <a title="ux designer" href="https://www.linkedin.com/in/justinschmitz97/">Justin Schmitz</a> & <a title="file encoding" href="https://github.com/ennmichael">Niksa Sporin</a>
+        created by{" "}
+        <a
+          title="ux designer"
+          href="https://www.linkedin.com/in/justinschmitz97/"
+        >
+          Justin Schmitz
+        </a>{" "}
+        &{" "}
+        <a title="file encoding" href="https://github.com/ennmichael">
+          Niksa Sporin
+        </a>
       </div>
     </div>
   );
