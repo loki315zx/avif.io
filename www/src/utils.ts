@@ -26,9 +26,9 @@ export function saveFile(file: File) {
   a.click();
 }
 
-export function millisecondsToHumanReadableTime(ms: number) {
+export function minutesAndSeconds(ms: number): [number, number] {
   let seconds = ms / 1000;
   const minutes = Math.floor(seconds / 60);
   seconds = Math.floor(seconds) % 60;
-  return `${minutes}:${seconds}`;
+  return [minutes, seconds];
 }

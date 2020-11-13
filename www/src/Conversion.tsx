@@ -1,10 +1,6 @@
 import Converter, { ConversionOptions, ConversionResult } from "./converter";
 import React, { useEffect, useState } from "react";
-import {
-  FileWithId,
-  millisecondsToHumanReadableTime,
-  splitNameAndExtension,
-} from "./utils";
+import { FileWithId, splitNameAndExtension } from "./utils";
 import prettyBytes from "pretty-bytes";
 import ProgressBar from "./ProgressBar";
 import webpToRgba from "./webpToRgba";
@@ -19,6 +15,29 @@ export interface ConversionProps {
   onFinished(outputFile: File): void;
 }
 
+function formatRemainingTimeEstimate(estimator: ConversionTimeEstimator) {
+  if (estimator.minutes === undefined) return "";
+
+  if (estimator.minutes === 0 && estimator.seconds === 0)
+    return "Less than 10 seconds left";
+
+  let result = "About ";
+  if (estimator.minutes !== 0) {
+    result += `${estimator.minutes} minute`;
+    if (estimator.minutes !== 1) {
+      result += "s";
+    }
+    if (!!estimator.seconds) {
+      result += " and ";
+    }
+  }
+  if (!!estimator.seconds) {
+    result += `${estimator.seconds} seconds`;
+  }
+  result += " left";
+  return result;
+}
+
 export default function Conversion(props: ConversionProps) {
   // TODO Add conversion cancellation using props.file.id
   const [fileName, setFileName] = useState<string>();
@@ -28,9 +47,9 @@ export default function Conversion(props: ConversionProps) {
   const [outputSize, setOutputSize] = useState(0);
   const [outputObjectURL, setOutputObjectURL] = useState("");
   const [finished, setFinished] = useState(false);
-  const [remainingTime, setRemainingTime] = useState(-1);
+  const [remainingTime, setRemainingTime] = useState("");
   const [conversionTimeEstimator] = useState(
-    new ConversionTimeEstimator(800, 20)
+    new ConversionTimeEstimator(100, 2500)
   );
 
   useEffect(() => {
@@ -38,7 +57,7 @@ export default function Conversion(props: ConversionProps) {
       const [fileName, format] = splitNameAndExtension(props.file.name);
       setFileName(fileName);
       setOriginalFormat(format);
-      conversionTimeEstimator.clearSamples();
+      conversionTimeEstimator.start();
 
       function onFinished(result: ConversionResult) {
         setFinished(true);
@@ -50,8 +69,8 @@ export default function Conversion(props: ConversionProps) {
 
       function onProgress(progress: number) {
         setProgress(progress);
-        conversionTimeEstimator.sample(progress);
-        setRemainingTime(conversionTimeEstimator.estimateRemainingTime());
+        conversionTimeEstimator.update(progress);
+        setRemainingTime(formatRemainingTimeEstimate(conversionTimeEstimator));
       }
 
       let conversionOptions: ConversionOptions;
@@ -93,8 +112,8 @@ export default function Conversion(props: ConversionProps) {
     >
       <p className="filename">
         {fileName}
-        {finished ? ".avif" : ""} —
-        {remainingTime >= 0 && millisecondsToHumanReadableTime(remainingTime)}
+        {finished ? ".avif" : ""}
+        {remainingTime && " — " + remainingTime}
       </p>
       <div className="flex-center">
         <p className={"meta"}>
