@@ -113,7 +113,7 @@ export default function Conversion(props: ConversionProps) {
       <p className="filename">
         {fileName}
         {finished ? ".avif" : ""}
-        {remainingTime && " — " + remainingTime}
+        {!finished && remainingTime && " — " + remainingTime}
       </p>
       <div className="flex-center">
         <p className={"meta"}>
