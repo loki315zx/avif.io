@@ -60,8 +60,7 @@ export default function Dropzone(props: DropzoneProps) {
             </span>
           </div>
           <div className={"gray"}>
-            supports png · jpg · jpeg · webp · gif · bmp · ico · tiff and more
-            <p>no uploading to the cloud</p>
+            supports png · jpg · jpeg · webp · gif and more
           </div>
         </>
       </div>
