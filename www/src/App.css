@@ -24,6 +24,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 * {
@@ -209,7 +210,7 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 5vw;
+  padding: var(--s3) var(--s3) var(--s4);
   min-height: 90vh;
   background: url(./assets/waves.svg);
   background-color: rgb(245 245 245 / 0.75);
@@ -289,7 +290,7 @@ body::-webkit-scrollbar-thumb {
 .dropzone-root {
   background-color: var(--white);
   border: dashed 4px var(--lightblue);
-  border-radius: 36px;
+  border-radius: 26px;
   padding: var(--s4) var(--s2);
   display: flex;
   align-items: center;
@@ -650,6 +651,7 @@ body::-webkit-scrollbar-thumb {
 
 .section {
   padding: 12vw 12vw;
+  position: relative;
 }
 
 .section:nth-of-type(even) {
@@ -661,6 +663,7 @@ body::-webkit-scrollbar-thumb {
 #howto .right-half {
   display: flex;
   min-height: 400px;
+max-width:600px;
   padding: var(--s2);
   background: var(--white);
   border-radius: 12px;
@@ -697,13 +700,14 @@ body::-webkit-scrollbar-thumb {
 .netlify #netlify:before,
 .shopify #shopify:before {
   content: "";
-  height: 4px;
+  height: 20px;
   display: block;
   width: 100%;
   position: absolute;
-  background: var(--blue);
-  border-radius: 99999px;
-  bottom: -10px;
+  background: var(--lightblue);
+  border-radius: 4px;
+  bottom: 0px;
+  z-index: -1;
 }
 
 .css #css-tutorial {
@@ -1020,6 +1024,24 @@ input[type="checkbox"]:checked + p::before {
   cursor: pointer;
 }
 
+.remaining-time {
+  animation: 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) 10s 1 normal both running
+    tracking-in-expand;
+}
+
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.1em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 /**/
 
 @media only screen and (max-width: 768px) {
@@ -1035,7 +1057,7 @@ input[type="checkbox"]:checked + p::before {
   }
 
   body {
-    padding-top: 200px;
+    padding-top: var(--s4);
   }
 
   .section {

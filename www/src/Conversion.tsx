@@ -21,7 +21,7 @@ function formatRemainingTimeEstimate(estimator: ConversionTimeEstimator) {
   if (estimator.minutes === 0 && estimator.seconds === 0)
     return "Less than 10 seconds left";
 
-  let result = "About ";
+  let result = "";
   if (estimator.minutes !== 0) {
     result += `${estimator.minutes} minute`;
     if (estimator.minutes !== 1) {
@@ -113,7 +113,7 @@ export default function Conversion(props: ConversionProps) {
       <p className="filename">
         {fileName}
         {finished ? ".avif" : ""}
-        {!finished && remainingTime && " — " + remainingTime}
+        <span className="remaining-time"> {!finished && remainingTime && " · " + remainingTime}</span>
       </p>
       <div className="flex-center">
         <p className={"meta"}>

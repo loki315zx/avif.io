@@ -215,49 +215,7 @@ export default function App() {
       </div>
 
       <div>
-        Then, add images to your site with the picture element:
-        <p className="secondary s1" />
-        <p className="gray">
-          <span>{`<`}</span>
-          <span className="secondary">picture</span>
-          <span>{`>`}</span>
-        </p>
-        <p className="gray">
-          <span className="braces">{`<`}</span>
-          <span className="secondary">source </span>
-          <span>type=</span>
-          <span className="blue">"image/avif" </span>
-          <span>srcset=</span>
-          <span className="blue">"lion.avif"</span>
-          <span className="braces">{`>`}</span>
-        </p>
-        <div className="opacity-half s1">
-          <p className="gray">
-            <span className="braces">{`<`}</span>
-            <span className="secondary">source </span>
-            <span>type=</span>
-            <span className="primary">"image/webp" </span>
-            <span>srcset=</span>
-            <span className="primary">"lion.webp"</span>
-            <span className="braces">{`>`}</span>
-          </p>
-
-          <p className="gray">
-            <span className="braces">{`<`}</span>
-            <span className="secondary">source </span>
-            <span>type=</span>
-            <span className="primary">"image/jpg" </span>
-            <span>srcset=</span>
-            <span className="primary">"lion.jpg"</span>
-            <span className="braces">{`>`}</span>
-          </p>
-
-          <p className="gray">
-            <span>{`<`}</span>
-            <span className="secondary">/picture</span>
-            <span>{`>`}</span>
-          </p>
-        </div>
+        Now you can add images to your site with the picture element (see HTML).
         <a
           href="https://reachlightspeed.com/blog/using-the-new-high-performance-avif-image-format-on-the-web-today/"
           title="avif on netlify"
@@ -280,9 +238,9 @@ export default function App() {
         </a>
       </div>
       <div className={"app-container"}>
-        <div className={"title f3 blue bold s2"}>avif.io</div>
+        <div className={"title f3 blue bold s1"}>avif.io</div>
         <h1 className={"f1 secondary"}>Convert any image to avif for free.</h1>
-        <h2 className={"f1 secondary s4"}>fast, simple, secure</h2>
+        <h2 className={"f1 secondary s3"}>works fast, simple and without uploading files</h2>
 
         <div
           className={"main-container" + " " + (settingsBoxOpen ? "open" : "")}
