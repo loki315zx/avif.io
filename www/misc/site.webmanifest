@@ -1,6 +1,8 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "avif.io",
+    "short_name": "avif.io",
+	"start_url": ".",
+	"description": "AVIF Converter",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",

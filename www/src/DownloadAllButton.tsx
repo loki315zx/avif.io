@@ -17,9 +17,10 @@ export default function DownloadAllButton(props: DownloadAllButtonProps) {
 
   return (
     <>
-      {props.files.length > 1 && (
-        <div className="downloadall-container">
-          <button className="downloadall s2" onClick={onClick}>
+      {(
+
+<div className={`downloadall-container ${props.files.length > 1 ? "show" : "hide"}`}>
+          <button className="downloadall" onClick={onClick}>
             Download all
           </button>
           <p className="gray">

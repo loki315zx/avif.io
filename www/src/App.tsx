@@ -269,8 +269,8 @@ export default function App() {
               key={f.id}
             />
           ))}
-          <DownloadAllButton files={convertedFiles} />
         </div>
+        <DownloadAllButton files={convertedFiles} />
         <div className="chevron" />
       </div>
 

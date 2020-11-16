@@ -110,11 +110,14 @@ export default function Conversion(props: ConversionProps) {
       href={outputObjectURL}
       className={`conversion ${finished ? "finished" : "progress"}`}
     >
+      <div className="flex-center">
       <p className="filename">
         {fileName}
         {finished ? ".avif" : ""}
-        <span className="remaining-time"> {!finished && remainingTime && " · " + remainingTime}</span>
+        
       </p>
+      <span className="remaining-time"> {!finished && remainingTime && " · " + remainingTime}</span>
+      </div>
       <div className="flex-center">
         <p className={"meta"}>
           <span className="originalformat">
