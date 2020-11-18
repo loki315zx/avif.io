@@ -475,7 +475,7 @@ body::-webkit-scrollbar-thumb {
   bottom: var(--s0);
   height: calc(var(--s0) / 2);
   background: var(--light);
-  width: calc(100% - var(--s3) - var(--s1));
+  width: calc(100% - var(--s1));
 }
 
 .bar-inner {
