@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import _ from "lodash";
+import ReactCompareImage from "react-compare-image";
 import Converter from "./converter";
 import Conversion from "./Conversion";
 import Dropzone from "./Dropzone";
-import { FileWithId, uniqueId } from "./utils";
-import "./normalize.min.css";
-import "./App.css";
 import DownloadAllButton from "./DownloadAllButton";
+import ShareButtons from "./ShareButtons";
+import SettingsBox, { Settings } from "./SettingsBox";
+import { FileWithId, uniqueId } from "./utils";
 import lion from "./assets/lion.jpg";
 import lion2 from "./assets/lion2.avif";
-import ReactCompareImage from "react-compare-image";
-import SettingsBox, { Settings } from "./SettingsBox";
+import "./normalize.min.css";
+import "./App.css";
 
 export default function App() {
   const [converter, setConverter] = useState<Converter>();
@@ -237,6 +238,7 @@ export default function App() {
           Click to deactivate.
         </a>
       </div>
+      <ShareButtons/>
       <div className={"app-container"}>
         <div className={"title f3 blue bold s1"}>avif.io</div>
         <h1 className={"f1 secondary"}>Convert any image to avif for free.</h1>
@@ -346,7 +348,7 @@ export default function App() {
               current JPEG or WebP codec. You can typically reduce file sizes by
               20-90%. Even for images with transparency or animated frames.
               While currently only supported by Chrome, you can expect it to get
-              more support quickly.
+              more support quickly.{" "}
               <a title="avif support progress" href="https://caniuse.com/avif">
                 View the progress.
               </a>

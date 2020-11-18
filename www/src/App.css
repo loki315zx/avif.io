@@ -670,6 +670,44 @@ h2:hover:before {
   content: "png, jpg, jpeg, webp, gif, bmp, dib, ico, tiff, tif, pbm, pgm, ppm, pnm, dds, tga, icb, vda, vst, ff";
 }
 
+/* SHARE */
+
+.share-container {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  position: absolute;
+  bottom: var(--s1);
+  left: var(--s1);
+  z-index: 1;
+}
+
+.share-container a {
+  display: inline-flex;
+  width: 32px;
+  height: 32px;
+  margin-right: var(--s0);
+}
+
+#facebook {
+  background-image: url("./assets/facebook.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#reddit {
+  background-image: url("./assets/reddit.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#twitter {
+  background-image: url("./assets/twitter.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 /* Code */
 
 #howto .right-half {
@@ -1262,7 +1300,8 @@ input[type="radio"]:checked {
   }
 
   .app-container {
-    padding: var(--s3) 0 var(--s4);
+    padding: var(--s4) 0 var(--s4);
+    min-height: 100vh;
   }
 
   .download {
@@ -1279,6 +1318,13 @@ input[type="radio"]:checked {
 
   .downloadall {
     padding: var(--s3) var(--s4);
+  }
+  .share-container {
+    top: var(--s1);
+    bottom: inherit;
+  }
+  .infobox:before {
+    display: none;
   }
 }
 
