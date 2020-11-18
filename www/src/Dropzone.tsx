@@ -59,7 +59,7 @@ export default function Dropzone(props: DropzoneProps) {
               r <span className={"blue"}>browse</span>
             </span>
           </div>
-          <div className={"gray"}>
+          <div id="explainformats" className={"gray infobox"}>
             supports png · jpg · jpeg · webp · gif and more
           </div>
         </>

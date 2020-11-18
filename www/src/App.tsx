@@ -240,7 +240,7 @@ export default function App() {
       <div className={"app-container"}>
         <div className={"title f3 blue bold s1"}>avif.io</div>
         <h1 className={"f1 secondary"}>Convert any image to avif for free.</h1>
-        <h2 className={"f1 secondary s3"}>works fast, simple and without uploading files</h2>
+        <h2 className={"f1 secondary s3 infobox"}>works fast, simple and without uploading files</h2>
 
         <div
           className={"main-container" + " " + (settingsBoxOpen ? "open" : "")}

@@ -232,7 +232,6 @@ body::-webkit-scrollbar-thumb {
   flex-direction: column;
   background: #ffffff96;
   transition: all 0.45s ease-in-out;
-  overflow: hidden;
 }
 
 .dropzone-container {
@@ -578,19 +577,8 @@ body::-webkit-scrollbar-thumb {
 
 .downloadall-container.show {
   margin-top: var(--s3);
-  animation: slide-in-fwd-bottom 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   height: auto;
-}
-
-@keyframes slide-in-fwd-bottom {
-  0% {
-    transform: translateZ(-1400px) translateY(800px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateZ(0) translateY(0);
-    opacity: 1;
-  }
+  opacity: 1;
 }
 
 .finished .bar-container {
@@ -641,6 +629,45 @@ body::-webkit-scrollbar-thumb {
 
 .section:nth-of-type(even) {
   background: rgba(0, 0, 0, 0.015);
+}
+
+/* HELP */
+
+.infobox {
+  position: relative;
+}
+
+.infobox:before {
+  content: "?";
+  position: absolute;
+  background: var(--white);
+  right: calc(var(--s1) * (-1) - 5px);
+  border-radius: 100%;
+  width: var(--s1);
+  height: var(--s1);
+  font-size: var(--f0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.infobox:hover:before {
+  width: auto;
+  text-align: left;
+  height: auto;
+  padding: var(--s0);
+  border-radius: 4px;
+  max-width: var(--s4);
+  word-break: break-all;
+}
+
+h2:hover:before {
+  content: "using WASM & Rav1e";
+}
+
+#explainformats:hover:before {
+  content: "png, jpg, jpeg, webp, gif, bmp, dib, ico, tiff, tif, pbm, pgm, ppm, pnm, dds, tga, icb, vda, vst, ff";
 }
 
 /* Code */
@@ -1231,6 +1258,7 @@ input[type="radio"]:checked {
 
   h2 {
     text-align: center;
+    position: relative;
   }
 
   .app-container {
