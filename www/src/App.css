@@ -61,6 +61,7 @@ p {
   --gray: #6997ba;
   --primary: #1b2d3b;
   --secondary: #3b6280;
+  --f0: calc(var(--f1) / 1.5);
   --f1: calc(16px + 0.01vw);
   --f2: calc(var(--f1) * 2);
   --f3: calc(var(--f2) * 2);
@@ -192,13 +193,6 @@ body::-webkit-scrollbar-thumb {
   text-align: center;
 }
 
-.headline {
-  font-size: var(--f5);
-  color: var(--blue);
-  font-weight: bold;
-  line-height: 1.2;
-}
-
 .bold {
   font-weight: 900;
 }
@@ -238,6 +232,7 @@ body::-webkit-scrollbar-thumb {
   flex-direction: column;
   background: #ffffff96;
   transition: all 0.45s ease-in-out;
+  overflow: hidden;
 }
 
 .dropzone-container {
@@ -296,7 +291,7 @@ body::-webkit-scrollbar-thumb {
 .dropzone-root {
   background-color: var(--white);
   border: dashed 4px var(--light);
-  border-radius: 26px;
+  border-radius: 24px;
   padding: var(--s4) var(--s2);
   display: flex;
   align-items: center;
@@ -452,7 +447,7 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   justify-content: space-between;
   padding: var(--s1);
-  border-radius: 16px;
+  border-radius: 10px;
   margin-top: var(--s1);
   align-self: normal;
   align-items: center;
@@ -462,10 +457,6 @@ body::-webkit-scrollbar-thumb {
   animation: flip-in-hor-bottom 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   z-index: 1;
   pointer-events: none;
-}
-
-.conversion:active {
-  color: white !important;
 }
 
 .conversion:first-of-type {
@@ -479,13 +470,13 @@ body::-webkit-scrollbar-thumb {
 
 .bar-container {
   position: absolute;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background: none;
-  border-radius: 12px;
+  border-radius: 2px 0 0 2px;
   margin: 0;
   z-index: 0;
+  bottom: var(--s0);
+  height: calc(var(--s0) / 2);
+  background: var(--light);
+  width: calc(100% - var(--s3) - var(--s1));
 }
 
 .bar-inner {
@@ -505,26 +496,19 @@ body::-webkit-scrollbar-thumb {
 }
 
 .conversion.finished {
-  background: var(--blue);
-  color: var(--white);
+  background: var(--white);
+  color: var(--secondary);
   animation-duration: 0.75s;
   animation-name: bounceIn;
   pointer-events: all;
 }
 
 .meta {
-  background: var(--secondary);
-  color: var(--white);
-  margin-right: var(--s1);
+  color: var(--gray);
+  margin-right: var(--s3);
   border-radius: 6px;
   padding: var(--s0);
   z-index: 999;
-}
-
-.conversion.finished .meta {
-  background: var(--white);
-  color: var(--primary);
-  margin-right: var(--s1);
 }
 
 .filename {
@@ -538,16 +522,17 @@ body::-webkit-scrollbar-thumb {
 }
 
 .download {
-  width: 48px;
-  height: 48px;
-  border-radius: 100%;
-  background: white;
+  width: var(--s3);
+  background: var(--blue);
   background-image: url("./assets/download.svg");
   background-position: center center;
   background-repeat: no-repeat;
   transition: all 0.3s ease;
   transform: scale(0);
-  position: relative;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  border-radius: 0 8px 8px 0;
 }
 
 .finished .download {
@@ -556,16 +541,16 @@ body::-webkit-scrollbar-thumb {
 
 .finished .download:before {
   content: "";
-  width: 48px;
-  height: 48px;
   position: absolute;
   animation: pulse 2s 1;
   animation-delay: 2s;
   top: 0;
-  right: 0;
   left: 0;
   bottom: 0;
-  border-radius: 100%;
+  right: 0;
+  height: 100%;
+  border-radius: 0 8px 8px 0;
+  width: var(--s3);
 }
 
 .download:hover {
@@ -583,26 +568,18 @@ body::-webkit-scrollbar-thumb {
   cursor: pointer;
   position: relative;
   z-index: 0;
+  margin-bottom: var(--s1);
 }
 
 .downloadall-container {
-  position: fixed;
-  bottom: 0;
-  z-index: 99999;
-  background: white;
-  display: flex;
-  text-align: center;
-  padding: var(--s1);
-  border-radius: 0;
-  width: 100%;
-  left: 0;
-  align-items: center;
-  justify-content: space-between;
   opacity: 0;
+  height: 0;
 }
 
 .downloadall-container.show {
+  margin-top: var(--s3);
   animation: slide-in-fwd-bottom 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  height: auto;
 }
 
 @keyframes slide-in-fwd-bottom {
@@ -644,7 +621,7 @@ body::-webkit-scrollbar-thumb {
   top: 12px;
   color: var(--gray);
   max-width: 200px;
-  font-size: 0.5em;
+  font-size: var(--f0);
 }
 
 .header a {
@@ -1249,6 +1226,31 @@ input[type="radio"]:checked {
 
   .main-container {
     width: 100%;
+    border-radius: 0;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  .app-container {
+    padding: var(--s3) 0 var(--s4);
+  }
+
+  .download {
+    width: var(--s4);
+  }
+
+  .meta {
+    font-size: var(--f0);
+    margin-right: var(--s4);
+  }
+  .filename {
+    max-width: 120px;
+  }
+
+  .downloadall {
+    padding: var(--s3) var(--s4);
   }
 }
 

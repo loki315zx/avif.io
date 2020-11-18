@@ -132,8 +132,8 @@ export default function Conversion(props: ConversionProps) {
             )}{" "}
           </span>
         </p>
-        <span className={"download"} />
       </div>
+      <span className={"download"} />
       <ProgressBar progress={progress} />
     </a>
   );
