@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getConversionsCount } from "../src/conversionCounter";
+import { getConversionsCount } from "../src/conversionsCounter";
 
 export default function ConversionsCounter() {
   const [conversionsCount, setConversionsCount] = useState<number>();
