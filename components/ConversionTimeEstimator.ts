@@ -1,5 +1,5 @@
 import _ from "lodash";
-import { minutesAndSeconds } from "./utils";
+import { minutesAndSeconds } from "../src/utils";
 
 export default class ConversionTimeEstimator {
   private samples: Sample[] = [];

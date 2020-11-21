@@ -1,6 +1,6 @@
 import React from "react";
 import JSZip from "jszip";
-import { saveFile } from "./utils";
+import { saveFile } from "../src/utils";
 
 export interface DownloadAllButtonProps {
   files: File[];
@@ -17,9 +17,12 @@ export default function DownloadAllButton(props: DownloadAllButtonProps) {
 
   return (
     <>
-      {(
-
-<div className={`downloadall-container ${props.files.length > 1 ? "show" : "hide"}`}>
+      {
+        <div
+          className={`downloadall-container ${
+            props.files.length > 1 ? "show" : "hide"
+          }`}
+        >
           <button className="downloadall" onClick={onClick}>
             Download all
           </button>
@@ -30,11 +33,11 @@ export default function DownloadAllButton(props: DownloadAllButtonProps) {
               className="blue"
             >
               donating
-            </a>
-            {" "}to support upcoming features like a REST API.
+            </a>{" "}
+            to support upcoming features like a REST API.
           </p>
         </div>
-      )}
+      }
     </>
   );
 }

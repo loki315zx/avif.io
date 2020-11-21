@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import _ from "lodash";
 import ReactCompareImage from "react-compare-image";
-import Converter from "./converter";
+import Converter from "../src/converter";
 import Conversion from "./Conversion";
 import Dropzone from "./Dropzone";
 import DownloadAllButton from "./DownloadAllButton";
 import ShareButtons from "./ShareButtons";
 import SettingsBox, { Settings } from "./SettingsBox";
-import { FileWithId, uniqueId } from "./utils";
+import { FileWithId, uniqueId } from "../src/utils";
 import lion from "../assets/lion.jpg";
 import lion2 from "../assets/lion2.avif";
 

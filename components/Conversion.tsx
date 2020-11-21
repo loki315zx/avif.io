@@ -1,9 +1,12 @@
-import Converter, { ConversionOptions, ConversionResult } from "./converter";
+import Converter, {
+  ConversionOptions,
+  ConversionResult,
+} from "../src/converter";
 import React, { useEffect, useState } from "react";
-import { FileWithId, splitNameAndExtension } from "./utils";
+import { FileWithId, splitNameAndExtension } from "../src/utils";
 import prettyBytes from "pretty-bytes";
 import ProgressBar from "./ProgressBar";
-import webpToRgba from "./webpToRgba";
+import webpToRgba from "../src/webpToRgba";
 import { Settings } from "./SettingsBox";
 import ConversionTimeEstimator from "./ConversionTimeEstimator";
 
