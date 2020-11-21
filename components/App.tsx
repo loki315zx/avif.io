@@ -10,6 +10,7 @@ import SettingsBox, { Settings } from "./SettingsBox";
 import { FileWithId, uniqueId } from "../src/utils";
 import lion from "../assets/lion.jpg";
 import lion2 from "../assets/lion2.avif";
+import ConversionsCount from "./ConversionsCount";
 
 export default function App() {
   const [converter, setConverter] = useState<Converter>();
@@ -274,6 +275,7 @@ export default function App() {
           <DownloadAllButton files={convertedFiles} />
         </div>
 
+        <ConversionsCount />
         <div className="chevron" />
       </div>
 

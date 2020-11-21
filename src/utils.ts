@@ -1,3 +1,5 @@
+import { assert } from "console";
+
 export function splitNameAndExtension(fileName: string): [string, string] {
   const pieces = fileName.split(".");
   // TODO Handle the case of no extension properly
@@ -31,4 +33,9 @@ export function minutesAndSeconds(ms: number): [number, number] {
   const minutes = Math.floor(seconds / 60);
   seconds = Math.floor(seconds) % 60;
   return [minutes, seconds];
+}
+
+export function randomRange(start: number, end: number) {
+  console.assert(end > start);
+  return start + Math.random() * (end - start);
 }
