@@ -2,8 +2,8 @@ use std::io::Cursor;
 
 use image::{self, error::ImageResult, RgbaImage};
 use rav1e::color::ChromaSampling;
-use rav1e::Frame;
 use rav1e::prelude::EncoderConfig;
+use rav1e::Frame;
 use wasm_bindgen::prelude::*;
 
 use crate::yuv::{self, Subsampling, YUV};
@@ -22,30 +22,26 @@ pub struct ConversionOptions {
 impl ConversionOptions {
     #[cfg(feature = "build-wasm")]
     #[wasm_bindgen(constructor)]
-    pub fn new(
-        effort: u8,
-        quality: u8,
-        subsampling: Subsampling,
-        keep_transparency: bool,
-    ) -> Self {
-        Self { effort, quality, subsampling, keep_transparency }
+    pub fn new(effort: u8, quality: u8, subsampling: Subsampling, keep_transparency: bool) -> Self {
+        Self {
+            effort,
+            quality,
+            subsampling,
+            keep_transparency,
+        }
     }
 }
 
 pub fn convert_to_avif(data: &[u8], options: &ConversionOptions) -> ImageResult<Vec<u8>> {
-    let reader =
-        image::io::Reader::new(Cursor::new(data))
-            .with_guessed_format()
-            .unwrap();
-    let image = reader.decode()?.into_rgba();
+    let reader = image::io::Reader::new(Cursor::new(data))
+        .with_guessed_format()
+        .unwrap();
+    let image = reader.decode()?.into_rgba8();
     Ok(convert_rgba_to_avif(&image, options))
 }
 
 pub fn convert_rgba_to_avif(image: &RgbaImage, options: &ConversionOptions) -> Vec<u8> {
-    let yuv = yuv::from_image(
-        &image,
-        options.subsampling,
-    );
+    let yuv = yuv::from_image(&image, options.subsampling);
     let (w, h) = image.dimensions();
     if options.keep_transparency {
         let alpha: Vec<_> = alpha_channel(&image).collect();
@@ -73,14 +69,18 @@ pub fn encode_avif(
             encoder_config.width = width;
             encoder_config.height = height;
             encoder_config.still_picture = true;
-            let alpha = encode_av1_frame(
-                &yuv::from_alpha(alpha),
-                width,
-                encoder_config,
-            );
-            avif_serialize::serialize_to_vec(&encoded_data, Some(alpha.as_slice()), width as u32, height as u32, 8)
+            let alpha = encode_av1_frame(&yuv::from_alpha(alpha), width, encoder_config);
+            avif_serialize::serialize_to_vec(
+                &encoded_data,
+                Some(alpha.as_slice()),
+                width as u32,
+                height as u32,
+                8,
+            )
         }
-        None => avif_serialize::serialize_to_vec(&encoded_data, None, width as u32, height as u32, 8)
+        None => {
+            avif_serialize::serialize_to_vec(&encoded_data, None, width as u32, height as u32, 8)
+        }
     }
 }
 
@@ -96,7 +96,11 @@ fn encode_av1_frame(yuv: &YUV, width: usize, encoder_config: EncoderConfig) -> V
     ctx.receive_packet().unwrap().data
 }
 
-fn create_encoder_config(options: &ConversionOptions, width: usize, height: usize) -> EncoderConfig {
+fn create_encoder_config(
+    options: &ConversionOptions,
+    width: usize,
+    height: usize,
+) -> EncoderConfig {
     assert!(options.effort <= 100);
     assert!(options.quality <= 100);
 
@@ -132,6 +136,6 @@ fn create_av1_frame(yuv: &YUV, ctx: &rav1e::Context<u8>, width: usize) -> Frame<
     frame
 }
 
-pub fn alpha_channel<'a>(image: &'a RgbaImage) -> impl Iterator<Item=u8> + 'a {
+pub fn alpha_channel<'a>(image: &'a RgbaImage) -> impl Iterator<Item = u8> + 'a {
     image.pixels().map(|p| p.0[3])
 }

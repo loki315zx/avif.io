@@ -8,10 +8,8 @@ import DownloadAllButton from "./DownloadAllButton";
 import ShareButtons from "./ShareButtons";
 import SettingsBox, { Settings } from "./SettingsBox";
 import { FileWithId, uniqueId } from "./utils";
-import lion from "./assets/lion.jpg";
-import lion2 from "./assets/lion2.avif";
-import "./normalize.min.css";
-import "./App.css";
+import lion from "../assets/lion.jpg";
+import lion2 from "../assets/lion2.avif";
 
 export default function App() {
   const [converter, setConverter] = useState<Converter>();
@@ -238,11 +236,13 @@ export default function App() {
           Click to deactivate.
         </a>
       </div>
-      <ShareButtons/>
+      <ShareButtons />
       <div className={"app-container"}>
         <div className={"title f3 blue bold s1"}>avif.io</div>
         <h1 className={"f1 secondary"}>Convert any image to avif for free.</h1>
-        <h2 className={"f1 secondary s3 infobox"}>works fast, simple and without uploading files</h2>
+        <h2 className={"f1 secondary s3 infobox"}>
+          works fast, simple and without uploading files
+        </h2>
 
         <div
           className={"main-container" + " " + (settingsBoxOpen ? "open" : "")}
@@ -271,7 +271,7 @@ export default function App() {
               key={f.id}
             />
           ))}
-                  <DownloadAllButton files={convertedFiles} />
+          <DownloadAllButton files={convertedFiles} />
         </div>
 
         <div className="chevron" />
@@ -515,7 +515,7 @@ export default function App() {
           Justin Schmitz
         </a>{" "}
         &{" "}
-        <a title="file encoding" href="https://github.com/ennmichael">
+        <a title="programmer" href="https://github.com/ennmichael">
           Niksa Sporin
         </a>
       </div>

@@ -1,5 +1,5 @@
 onmessage = async function (msg) {
-  importScripts("conversion.js");
+  importScripts("dist/conversion.js");
 
   const {
     convert_to_avif: convertToAvif,
@@ -14,7 +14,6 @@ onmessage = async function (msg) {
 
   function convertInput() {
     const input = new Uint8Array(msg.data.input);
-    console.log(msg.data);
     const options = new ConversionOptions(
       msg.data.effort,
       msg.data.quality,
