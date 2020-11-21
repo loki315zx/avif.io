@@ -49,7 +49,7 @@ export default function Conversion(props: ConversionProps) {
   const [finished, setFinished] = useState(false);
   const [remainingTime, setRemainingTime] = useState("");
   const [conversionTimeEstimator] = useState(
-    new ConversionTimeEstimator(100, 2500)
+    new ConversionTimeEstimator(50, 300)
   );
 
   useEffect(() => {
@@ -111,12 +111,14 @@ export default function Conversion(props: ConversionProps) {
       className={`conversion ${finished ? "finished" : "progress"}`}
     >
       <div className="flex-center">
-      <p className="filename">
-        {fileName}
-        {finished ? ".avif" : ""}
-        
-      </p>
-      <span className="remaining-time"> {!finished && remainingTime && " · " + remainingTime}</span>
+        <p className="filename">
+          {fileName}
+          {finished ? ".avif" : ""}
+        </p>
+        <span className="remaining-time">
+          {" "}
+          {!finished && remainingTime && " · " + remainingTime}
+        </span>
       </div>
       <div className="flex-center">
         <p className={"meta"}>
