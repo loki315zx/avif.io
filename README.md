@@ -1,10 +1,5 @@
 ```shell script
-npm i && cd www/ && npm i && npm run build && cd ../conversion && npx cross-env NODE_ENV=production webpack && cd ../ && npm run start
-```
-
-```shell script
-npm i && cd www/ && npm i && npm run build && cd ../conversion && npx cross-env NODE_ENV=production webpack
-```
+npm i -D && npm run export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && npm run start
 
 
 # AVIF.IO
@@ -27,16 +22,10 @@ The Rust code is in `conversion/`.
 
 ## Details
 
-The root of the project is an [express](https://expressjs.com/)
-server written in [TypeScript](https://www.typescriptlang.org/).
-This server is extremely simple for now, and acts essentially as
-a static file server.
-You can run the server via `npm start`, and watch and reload the
-files via `npm dev`. The `www/` directory contains the front-end
-code, which is written in TypeScript and uses [React](https://reactjs.org/).
-The front-end code is bundled using [Webpack](https://webpack.js.org/),
-and the bundled files end up in `www/dist`. Static files can
-be found in `www/static`.
+The root of the project is a [Next.js](https://nextjs.org) application
+written in [TypeScript](https://www.typescriptlang.org/).
+You can run the application via `npm start`, and watch and reload the
+files via `npm dev`. The `wasm-pack`ed Rust code ends up in `public/dist`.
 
 ## Building the Rust code
 
@@ -49,7 +38,7 @@ make wasm
 ```
 
 This will also run webpack to move the produced WASM and JS
-files to `www/dist`. Keep in mind that when you clone the repository
+files to `public/dist`. Keep in mind that when you clone the repository
 the Rust code will already have been compiled, so you don't have to
 do this step yourself.
 
@@ -59,7 +48,7 @@ to test out the Rust code in a non-WASM environment.
 
 ## WebP
 
-At the time of writing, the `image` library had very incomplete
+At the time of writing, the `image` library has very incomplete
 support for the WebP format. Instead, we use a special build of
 [libwebp](https://github.com/webmproject/libwebp/) called webp_js,
 which allows us to decode WebP files in the browser using the
@@ -69,19 +58,15 @@ of the code is explicitly checking whether it's working with WebP.
 
 ## Installing dependencies and building the front-end
 
-First, we will install the back-end and front-end dependencies:
+First, we will install the dependencies:
 
 ```shell script
-npm i
-cd www/
-npm i
+npm i -D
 ```
 
-Next, we are going to build the front-end in production mode,
-minimizing the code:
-
+Next, we are going to export the code as a pre-rendered static web app:
 ```shell script
-npm run build
+npm run export
 ```
 
 Package the WASM code:
@@ -93,6 +78,14 @@ npx cross-env NODE_ENV=production webpack
 
 Now, you can run the server locally using `npm run start`,
 or you can deploy it to a static web server by copying everything
-from `www/dist` and `www/static` and the `www/index.html` file
-to the server.
+from `out/` to the server.
+
+## Blogging
+
+You can add blogs by adding `.tsx` files to the `pages/blogs` folder and
+you can update the blog list by editing the `pages/blogs/index.tsx` file.
+If you would like to modify the layout of the entire website, you can do
+that by editing `pages/_app.tsx`. Don't forget to put all components in the
+`/components` directory. If you accidentaly put them in `pages` they will be
+accessible via public routes, which is probably not what you intended.
 
