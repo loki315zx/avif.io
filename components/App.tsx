@@ -8,8 +8,8 @@ import DownloadAllButton from "./DownloadAllButton";
 import ShareButtons from "./ShareButtons";
 import SettingsBox, { Settings } from "./SettingsBox";
 import { FileWithId, uniqueId } from "../src/utils";
-import lion from "../assets/lion.jpg";
-import lion2 from "../assets/lion2.avif";
+import lion from "../public/images/lion.jpg";
+import lion2 from "../public/images/lion2.avif";
 import ConversionsCount from "./ConversionsCount";
 
 export default function App() {

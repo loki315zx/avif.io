@@ -1,6 +1,6 @@
 import React from "react";
 import { useDropzone } from "react-dropzone";
-import SvgComponent from "../assets/picture";
+import SvgComponent from "../public/images/picture";
 
 export interface DropzoneProps {
   onDrop(files: File[]): void;

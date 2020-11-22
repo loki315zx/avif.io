@@ -1,10 +1,5 @@
 ```shell script
-npm i && cd www/ && npm i && npm run build && cd ../conversion && npx cross-env NODE_ENV=production webpack && cd ../ && npm run start
-```
-
-```shell script
-npm i && cd www/ && npm i && npm run build && cd ../conversion && npx cross-env NODE_ENV=production webpack
-```
+npm i -D && npm run export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && npm run start
 
 
 # AVIF.IO
