@@ -115,10 +115,6 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-#Public for Firebase
-.firebase/
-firebase/
-
 # dependencies
 /node_modules
 /.pnp
@@ -151,3 +147,7 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+#firebase
+firebase/
+.firebase/

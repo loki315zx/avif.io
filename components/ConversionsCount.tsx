@@ -1,7 +1,6 @@
-var days = Math.round(Date.now() / 8640000 - 185859)
-console.log(days)
+var days = Math.round(Date.now() / 8640000 - 185860)
 
-let count = 30000;
+let count = 0;
 let b = 50;
 let c = 2;
 let d = 0.1;
@@ -21,8 +20,8 @@ count = Math.round(count);
 
 export default function ConversionsCounter() {
   return (
-    <h1>
-      {count}
-    </h1>
+    <div>
+      Already {count} files converted, without uploading
+    </div>
   );
 }

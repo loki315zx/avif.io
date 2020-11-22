@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
-import _ from "lodash";
 import ReactCompareImage from "react-compare-image";
-import Converter from "../src/converter";
+import _ from "lodash";
 import Conversion from "./Conversion";
 import Dropzone from "./Dropzone";
 import DownloadAllButton from "./DownloadAllButton";
 import ShareButtons from "./ShareButtons";
-import SettingsBox, { Settings } from "./SettingsBox";
-import { FileWithId, uniqueId } from "../src/utils";
-import lion from "../public/images/lion.jpg";
-import lion2 from "../public/images/lion2.avif";
 import ConversionsCount from "./ConversionsCount";
+import {css, html, wordpress, netlify} from "./Tutorial";
+import SettingsBox, { Settings } from "./SettingsBox";
+import Converter from "../src/converter";
+import { FileWithId, uniqueId } from "../src/utils";
+import lion from "../assets/images/lion.jpg";
+import lion2 from "../assets/images/lion2.avif";
 
 export default function App() {
   const [converter, setConverter] = useState<Converter>();
@@ -18,10 +19,10 @@ export default function App() {
   const [convertedFiles, setConvertedFiles] = useState<File[]>([]);
   const [settingsBoxOpen, setSettingsBoxOpen] = useState(false);
   const [settings, setSettings] = useState<Settings>({
-    effort: 0,
-    quality: 0,
+    effort: 25,
+    quality: 50,
     useYuv444: false,
-    keepTransparency: false,
+    keepTransparency: true,
   });
   const [tutorial, setTutorial] = useState("css");
 
@@ -51,199 +52,14 @@ export default function App() {
     setConvertedFiles([...convertedFiles]);
   }
 
-  const css = (
-    <div className="container-code" id="css-tutorial">
-      <p className="s1">
-        <a
-          className="blue"
-          href="https://github.com/djpogo/avif-webp-css-support"
-          title="avif detection"
-        >
-          Check for avif support & use
-        </a>
-      </p>
-      <div className="opacity-half">
-        <p className="gray">
-          <span className="secondary">.div</span>
-          <span className="braces">{`{`}</span>
-          <span className="primary">{`background-image: url("lion.jpg")`}</span>
-          <span className="braces">{`}`}</span>
-        </p>
-
-        <p className="gray">
-          <span className="secondary">.webp .div</span>
-          <span className="braces">{`{`}</span>
-          <span className="primary">
-            {`background-image: url("lion.webp")`}
-          </span>
-          <span className="braces">{`}`}</span>
-        </p>
-      </div>
-
-      <p className="gray">
-        <span className="secondary">.avif .div</span>
-        <span className="braces">{`{`}</span>
-        <span className="blue">{`background-image: url("lion.avif")`}</span>
-        <span className="braces">{`}`}</span>
-      </p>
-    </div>
-  );
-
-  const html = (
-    <div className="container-code" id="html-tutorial">
-      <p className="gray">
-        <span>{`<`}</span>
-        <span className="secondary">picture</span>
-        <span>{`>`}</span>
-      </p>
-
-      <p className="gray">
-        <span className="braces">{`<`}</span>
-        <span className="secondary">source </span>
-        <span>type=</span>
-        <span className="blue">"image/avif" </span>
-        <span>srcset=</span>
-        <span className="blue">"lion.avif"</span>
-        <span className="braces">{`>`}</span>
-      </p>
-      <div className="opacity-half">
-        <p className="gray">
-          <span className="braces">{`<`}</span>
-          <span className="secondary">source </span>
-          <span>type=</span>
-          <span className="primary">"image/webp" </span>
-          <span>srcset=</span>
-          <span className="primary">"lion.webp"</span>
-          <span className="braces">{`>`}</span>
-        </p>
-
-        <p className="gray">
-          <span className="braces">{`<`}</span>
-          <span className="secondary">source </span>
-          <span>type=</span>
-          <span className="primary">"image/jpg" </span>
-          <span>srcset=</span>
-          <span className="primary">"lion.jpg"</span>
-          <span className="braces">{`>`}</span>
-        </p>
-
-        <p className="gray">
-          <span>{`<`}</span>
-          <span className="secondary">/picture</span>
-          <span>{`>`}</span>
-        </p>
-      </div>
-    </div>
-  );
-
-  const wordpress = (
-    <div className="container-code" id="wordpress-tutorial">
-      <p>By default, WordPress does not (yet) accept avif files.</p>
-      <p>
-        {" "}
-        In order to upload them,{" "}
-        <a
-          href="https://wordpress.org/plugins/wp-add-mime-types/"
-          title="mime type"
-        >
-          use this plugin
-        </a>{" "}
-        and
-      </p>
-      <p>
-        enable the mime type with:{" "}
-        <span className="blue">avif = image/avif</span>.
-      </p>
-      <div>
-        Then, add images to your site with the picture element:
-        <p className="s1" />
-        <p className="gray">
-          <span>{`<`}</span>
-          <span className="secondary">picture</span>
-          <span>{`>`}</span>
-        </p>
-        <p className="gray">
-          <span className="braces">{`<`}</span>
-          <span className="secondary">source </span>
-          <span>type=</span>
-          <span className="blue">"image/avif" </span>
-          <span>srcset=</span>
-          <span className="blue">"lion.avif"</span>
-          <span className="braces">{`>`}</span>
-        </p>
-        <div className="opacity-half">
-          <p className="gray">
-            <span className="braces">{`<`}</span>
-            <span className="secondary">source </span>
-            <span>type=</span>
-            <span className="primary">"image/webp" </span>
-            <span>srcset=</span>
-            <span className="primary">"lion.webp"</span>
-            <span className="braces">{`>`}</span>
-          </p>
-
-          <p className="gray">
-            <span className="braces">{`<`}</span>
-            <span className="secondary">source </span>
-            <span>type=</span>
-            <span className="primary">"image/jpg" </span>
-            <span>srcset=</span>
-            <span className="primary">"lion.jpg"</span>
-            <span className="braces">{`>`}</span>
-          </p>
-
-          <p className="gray">
-            <span>{`<`}</span>
-            <span className="secondary">/picture</span>
-            <span>{`>`}</span>
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-
-  const netlify = (
-    <div className="container-code" id="netlify-tutorial">
-      <p className="s1">
-        Define a custom header within the Netlify configuration file:
-      </p>
-      <div className="secondary s1">
-        <p>[[headers]]</p> <p>for = "*.avif"</p>
-        <p>[headers.values]</p>
-        <p>Content-Type = "image/avif"</p>
-        <p>Content-Disposition = "inline"</p>
-      </div>
-
-      <div>
-        Now you can add images to your site with the picture element (see HTML).
-        <a
-          href="https://reachlightspeed.com/blog/using-the-new-high-performance-avif-image-format-on-the-web-today/"
-          title="avif on netlify"
-        >
-          Thanks to Lightspeed for this approach.
-        </a>
-      </div>
-    </div>
-  );
 
   return (
     <div>
-      <div className="header-two">
-        This website uses GA to improve performance.
-        <a
-          href="https://tools.google.com/dlpage/gaoptout?hl=de"
-          title="google analytics"
-        >
-          Click to deactivate.
-        </a>
-      </div>
       <ShareButtons />
       <div className={"app-container"}>
         <div className={"title f3 blue bold s1"}>avif.io</div>
         <h1 className={"f1 secondary"}>Convert any image to avif for free.</h1>
-        <h2 className={"f1 secondary s3 infobox"}>
-          works fast, simple and without uploading files
-        </h2>
+        <h2 className={"f1 secondary s3 infobox"}><ConversionsCount /></h2>
 
         <div
           className={"main-container" + " " + (settingsBoxOpen ? "open" : "")}
@@ -274,8 +90,6 @@ export default function App() {
           ))}
           <DownloadAllButton files={convertedFiles} />
         </div>
-
-        <ConversionsCount />
         <div className="chevron" />
       </div>
 
@@ -520,6 +334,15 @@ export default function App() {
         <a title="programmer" href="https://github.com/ennmichael">
           Niksa Sporin
         </a>
+        <div>
+        This website uses GA to improve performance.
+        <a
+          href="https://tools.google.com/dlpage/gaoptout?hl=de"
+          title="google analytics"
+        >
+          Click to deactivate.
+        </a>
+        </div>
       </div>
     </div>
   );

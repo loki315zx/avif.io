@@ -1,6 +1,8 @@
 import React from "react";
 import { useDropzone } from "react-dropzone";
-import SvgComponent from "../public/images/picture";
+import SvgComponent from "../assets/images/picture";
+import Conversion from "./Conversion";
+
 
 export interface DropzoneProps {
   onDrop(files: File[]): void;
@@ -54,13 +56,10 @@ export default function Dropzone(props: DropzoneProps) {
             <SvgComponent />
           </div>
           <div className={"f2 s1 bold primary"}>
-            Drop your images o
-            <span>
-              r <span className={"blue"}>browse</span>
-            </span>
+            Drop your images or browse
           </div>
           <div id="explainformats" className={"gray infobox"}>
-            supports png · jpg · jpeg · webp · gif and more
+            supports png · jpg · webp · gif and more
           </div>
         </>
       </div>

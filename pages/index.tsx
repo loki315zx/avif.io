@@ -78,15 +78,13 @@ export default function Index() {
         <meta property="og:determiner" content="the" />
         <meta property="og:url" content="https://avif.io" />
         <meta property="og:site_name" content="AVIF Converter | avif.io ✨" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png"/>
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png"/>
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png"/>
-        <link rel="manifest" href="/favicons/site.webmanifest"/>
-        <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#29A2FF"/>
-        <link rel="shortcut icon" href="/favicons/favicon.ico"/>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#29A2FF"/>
         <meta name="msapplication-TileColor" content="#29A2FF"/>
-        <meta name="msapplication-config" content="/favicons/browserconfig.xml"/>
-        <meta name="theme-color" content="#29A2FF"/>      
+        <meta name="theme-color" content="#29A2FF"/>
+        <meta name="msapplication-config" content="none"/>
         <script type="application/ld+json">{ldJson}</script>
       </Head>
 
