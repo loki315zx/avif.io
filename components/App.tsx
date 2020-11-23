@@ -57,9 +57,9 @@ export default function App() {
     <div>
       <ShareButtons />
       <div className={"app-container"}>
-        <div className={"title f3 blue bold s1"}>avif.io</div>
-        <h1 className={"f1 secondary"}>Convert any image to avif for free.</h1>
-        <h2 className={"f1 secondary s3 infobox"}><ConversionsCount /></h2>
+        <div className={"title f3 white bold s1"}>avif.io</div>
+        <h1 className={"f1 white"}>Convert any image to avif for free.</h1>
+        <h2 className={"f1 s3 infobox white"}><ConversionsCount /></h2>
 
         <div
           className={"main-container" + " " + (settingsBoxOpen ? "open" : "")}

@@ -26,7 +26,7 @@ export default function DownloadAllButton(props: DownloadAllButtonProps) {
           <button className="downloadall" onClick={onClick}>
             Download all
           </button>
-          <p className="gray">
+          <p className="donation">
             Do you enjoy using avif.io? Consider{" "}
             <a
               href="https://www.buymeacoffee.com/justinschmitz"
