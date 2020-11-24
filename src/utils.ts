@@ -15,12 +15,6 @@ export function uniqueId() {
   return maxId;
 }
 
-export interface FileWithId {
-  name: string;
-  data: ArrayBuffer;
-  id: number;
-}
-
 export function saveFile(file: File) {
   const a = document.createElement("a");
   a.download = file.name;

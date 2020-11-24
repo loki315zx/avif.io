@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import prettyBytes from "pretty-bytes";
-import Converter, { ConversionOptions, ConversionResult } from "@/converter";
-import { FileWithId, splitNameAndExtension } from "@/utils";
+import Converter, { ConversionResult } from "@/Converter";
+import { splitNameAndExtension } from "@/utils";
 import ProgressBar from "@components/ProgressBar";
-import webpToRgba from "@/webpToRgba";
 import { Settings } from "@components/SettingsBox";
 import ConversionTimeEstimator from "@components/ConversionTimeEstimator";
+import { InputFile } from "@/files";
 
 export interface ConversionProps {
-  file: FileWithId;
+  file: InputFile;
   converter: Converter;
   settings: Settings;
 
@@ -39,7 +39,6 @@ function formatRemainingTimeEstimate(estimator: ConversionTimeEstimator) {
 }
 
 export default function Conversion(props: ConversionProps) {
-  // TODO Add conversion cancellation using props.file.id
   const [fileName, setFileName] = useState<string>();
   const [originalFormat, setOriginalFormat] = useState<string>();
   const [originalSize] = useState(props.file.data.byteLength);
@@ -73,32 +72,12 @@ export default function Conversion(props: ConversionProps) {
         setRemainingTime(formatRemainingTimeEstimate(conversionTimeEstimator));
       }
 
-      let conversionOptions: ConversionOptions;
-      if (format === "webp") {
-        const { data, width, height } = await webpToRgba(
-          new Uint8Array(props.file.data)
-        );
-        conversionOptions = {
-          inputData: data.buffer,
-          isRawRgba: true,
-          ...props.settings,
-          width,
-          height,
-          onFinished,
-          onProgress,
-          onError: (e) => window.alert(e),
-        };
-      } else {
-        conversionOptions = {
-          inputData: props.file.data,
-          ...props.settings,
-          onFinished,
-          onProgress,
-          onError: (e) => window.alert(e),
-        };
-      }
-
-      props.converter.convertFile(conversionOptions);
+      props.converter.convertFile(props.file, {
+        ...props.settings,
+        onFinished,
+        onProgress,
+        onError: (e) => window.alert(e),
+      });
     })();
   }, []);
 

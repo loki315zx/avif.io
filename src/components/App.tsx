@@ -8,10 +8,16 @@ import ShareButtons from "@components/ShareButtons";
 import ConversionsCount from "@components/ConversionsCount";
 import { css, html, wordpress, netlify } from "@components/tutorial";
 import SettingsBox, { Settings } from "@components/SettingsBox";
-import Converter from "@/converter";
-import { FileWithId, uniqueId } from "@/utils";
+import Converter, { ConversionId } from "@/Converter";
+import { uniqueId } from "@/utils";
 import lion from "@assets/images/lion.jpg";
 import lion2 from "@assets/images/lion2.avif";
+import { InputFile, loadInputFiles } from "@/files";
+
+interface FileWithId {
+  file: InputFile;
+  id: number;
+}
 
 export default function App() {
   const [converter, setConverter] = useState<Converter>();
@@ -26,24 +32,15 @@ export default function App() {
   });
   const [tutorial, setTutorial] = useState("css");
 
-  useEffect(() => {
-    setConverter(new Converter());
-  }, []);
+  useEffect(() => setConverter(new Converter()), []);
 
   function onSettingsUpdate(settings: Settings) {
     setSettings(settings);
   }
 
   async function onFilesSelected(selectedFiles: File[]) {
-    const addedFiles = await Promise.all(
-      _.map(selectedFiles, async (file) => ({
-        name: file.name,
-        data: await file.arrayBuffer(),
-        id: uniqueId(),
-      }))
-    );
-
-    setFiles([...files, ...addedFiles]);
+    const newFiles = await loadInputFiles(selectedFiles);
+    setFiles([...files, ...newFiles.map((file) => ({ file, id: uniqueId() }))]);
     setSettingsBoxOpen(false);
   }
 
@@ -80,13 +77,13 @@ export default function App() {
             />
           </div>
 
-          {files.map((f) => (
+          {files.map(({ file, id }) => (
             <Conversion
               onFinished={onConversionFinished}
               settings={settings}
-              file={f}
+              file={file}
               converter={converter}
-              key={f.id}
+              key={id}
             />
           ))}
           <DownloadAllButton files={convertedFiles} />

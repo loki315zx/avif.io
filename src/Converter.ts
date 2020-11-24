@@ -1,18 +1,15 @@
 import _ from "lodash";
+import { InputFile } from "./files";
 
 export interface ConversionResult {
   data: Uint8Array;
 }
 
 export interface ConversionOptions {
-  inputData: ArrayBuffer;
   effort: number; // Conversion effort as a 0-100 percentage
   quality: number; // Quality as a 0-100 percentage
   useYuv444: boolean;
   keepTransparency: boolean;
-  isRawRgba?: boolean;
-  width?: number;
-  height?: number;
 
   onProgress(progress: number): void;
 
@@ -27,6 +24,7 @@ interface ConversionWorker {
 }
 
 interface Conversion {
+  file: InputFile;
   options: ConversionOptions;
   id: ConversionId;
 }
@@ -54,10 +52,14 @@ export default class Converter {
     };
   }
 
-  convertFile(options: ConversionOptions): ConversionId {
+  convertFile(file: InputFile, options: ConversionOptions): ConversionId {
     const conversionId = new ConversionId(this.lastConversionId);
     this.lastConversionId++;
-    this.pendingConversions.push({ options, id: conversionId });
+    this.pendingConversions.push({
+      file,
+      options,
+      id: conversionId,
+    });
     this.tryConvertingFiles();
     return conversionId;
   }
@@ -73,7 +75,7 @@ export default class Converter {
     const worker = this.getAvailableWorker();
     if (worker === undefined) return;
 
-    const { options, id: conversionId } = this.pendingConversions.shift();
+    const { file, options, id: conversionId } = this.pendingConversions.shift();
     worker.conversionId = conversionId;
 
     worker.worker.onmessage = (msg) => {
@@ -98,17 +100,16 @@ export default class Converter {
 
     worker.worker.postMessage(
       {
-        type: "start",
-        input: options.inputData,
-        isRawRgba: options.isRawRgba,
+        input: file.data,
+        isRawRgba: file.isRawRgba,
         effort: options.effort,
         quality: options.quality,
         useYuv444: options.useYuv444,
         keepTransparency: options.keepTransparency,
-        width: options.width,
-        height: options.height,
+        width: file.rawWidth,
+        height: file.rawHeight,
       },
-      [options.inputData]
+      [file.data]
     );
   }
 
