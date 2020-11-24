@@ -1,4 +1,3 @@
-import { assert } from "console";
 import _ from "lodash";
 
 export function splitNameAndExtension(fileName: string): [string, string] {
