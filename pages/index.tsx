@@ -89,9 +89,8 @@ export default function Index() {
       </Head>
 
       <App />
-      <script src="bundle.js"></script>
-      <script src="/__/firebase/7.21.0/firebase-app.js"></script>
-      <script src="/__/firebase/7.21.0/firebase-analytics.js"></script>
+      <script src="/__/firebase/8.1.1/firebase-app.js"></script>
+      <script src="/__/firebase/8.1.1/firebase-analytics.js"></script>
       <script src="/__/firebase/init.js"></script>
       <script>firebase.analytics();</script>
     </div>
