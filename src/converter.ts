@@ -23,19 +23,21 @@ export interface ConversionOptions {
 
 interface ConversionWorker {
   worker: Worker;
-  busy: boolean;
+  conversionId?: ConversionId;
 }
 
 interface Conversion {
   options: ConversionOptions;
-  conversionId: number;
+  id: ConversionId;
 }
 
-export type ConversionId = number;
+export class ConversionId {
+  constructor(readonly value: number) {}
+}
 
 export default class Converter {
-  private readonly workers: readonly ConversionWorker[];
-  private readonly pendingConversions: Conversion[] = [];
+  private workers: readonly ConversionWorker[];
+  private pendingConversions: Conversion[] = [];
   private lastConversionId: number = 0;
 
   constructor() {
@@ -43,20 +45,26 @@ export default class Converter {
       1,
       Math.floor(navigator.hardwareConcurrency / 2)
     );
-    this.workers = _.range(numWorkers).map(() => {
-      return {
-        worker: new Worker("worker.js"),
-        busy: false,
-      };
-    });
+    this.workers = _.range(numWorkers).map(Converter.createWorker);
+  }
+
+  private static createWorker(): ConversionWorker {
+    return {
+      worker: new Worker("worker.js"),
+    };
   }
 
   convertFile(options: ConversionOptions): ConversionId {
-    const conversionId = this.lastConversionId;
+    const conversionId = new ConversionId(this.lastConversionId);
     this.lastConversionId++;
-    this.pendingConversions.push({ options, conversionId });
+    this.pendingConversions.push({ options, id: conversionId });
     this.tryConvertingFiles();
     return conversionId;
+  }
+
+  cancelConversion(conversionId: ConversionId) {
+    this.cancelPendingConversion(conversionId);
+    this.cancelOngoingConversion(conversionId);
   }
 
   private tryConvertingFiles(): void {
@@ -65,8 +73,8 @@ export default class Converter {
     const worker = this.getAvailableWorker();
     if (worker === undefined) return;
 
-    const { options } = this.pendingConversions.shift();
-    worker.busy = true;
+    const { options, id: conversionId } = this.pendingConversions.shift();
+    worker.conversionId = conversionId;
 
     worker.worker.onmessage = (msg) => {
       switch (msg.data.type) {
@@ -77,12 +85,12 @@ export default class Converter {
           options.onFinished({
             data: msg.data.data,
           });
-          worker.busy = false;
+          worker.conversionId = undefined;
           this.tryConvertingFiles();
           break;
         case "error":
           options.onError(msg.data.error);
-          worker.busy = false;
+          worker.conversionId = undefined;
           this.tryConvertingFiles();
           break;
       }
@@ -90,6 +98,7 @@ export default class Converter {
 
     worker.worker.postMessage(
       {
+        type: "start",
         input: options.inputData,
         isRawRgba: options.isRawRgba,
         effort: options.effort,
@@ -105,9 +114,26 @@ export default class Converter {
 
   private getAvailableWorker(): ConversionWorker {
     for (const worker of this.workers) {
-      if (!worker.busy) return worker;
+      if (worker.conversionId === undefined) return worker;
     }
 
     return undefined;
+  }
+
+  private cancelPendingConversion(conversionId: ConversionId) {
+    this.pendingConversions = this.pendingConversions.filter(
+      (conversion) => conversion.id.value !== conversionId.value
+    );
+  }
+
+  private cancelOngoingConversion(conversionId: ConversionId) {
+    this.workers = this.workers.map((worker) => {
+      if (worker.conversionId?.value === conversionId.value) {
+        worker.worker.terminate();
+        return Converter.createWorker();
+      } else {
+        return worker;
+      }
+    });
   }
 }
