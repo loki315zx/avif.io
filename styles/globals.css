@@ -79,11 +79,10 @@ body {
   font-family: "Poppins";
   font-weight: 400;
   background: white;
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: var(--f1);
   line-height: 1.6;
-  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 body::-webkit-scrollbar-track {
@@ -417,28 +416,26 @@ input[type="radio"]:checked {
   flex-direction: column;
   padding: var(--s3) var(--s3) var(--s4);
   min-height: 100vh;
+  background: linear-gradient(120deg, var(--blue500) 50%, var(--blue100));
 }
 
 .app-container:before {
   content: "";
-  background: radial-gradient(
-    circle farthest-side,
-    #29a2ff 50%,
-    #00c1ff 75%,
-    #00d9e9 10%
-  );
+  background: url(../assets/images/mesh.jpg);
   position: absolute;
-  width: 50vw;
+  right: 0;
   top: 0;
   left: 0;
   bottom: 0;
+  background-size: cover;
   animation: backgroundBlur;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
-  animation-duration: 20s;
+  animation-duration: 15s;
   animation-direction: alternate;
   z-index: 0;
-  transform-origin: 0%;
+  mix-blend-mode: soft-light;
+  opacity: 0.5;
 }
 
 @supports (-moz-appearance: none) {
@@ -454,59 +451,59 @@ input[type="radio"]:checked {
 
 @keyframes backgroundBlur {
   0% {
-    filter: blur(147px) hue-rotate(2deg);
-    transform: skew(0deg, 0deg) rotate(-5deg) scale(2.5) translatex(-200px);
+    filter: blur(1px) hue-rotate(2deg);
+    transform: skew(02deg, 0deg) rotate(-5deg) scale(2.5) translatex(-200px);
   }
   10% {
-    filter: blur(174px) hue-rotate(4deg);
-    transform: skew(5deg, 0deg) rotate(-5deg) scale(2.3) translatex(-200px);
+    filter: blur(7px) hue-rotate(4deg);
+    transform: skew(5deg, 10deg) rotate(-50deg) scale(2.3) translatex(-200px);
   }
   20% {
-    filter: blur(190px) hue-rotate(1deg);
-    transform: skew(3deg, 0deg) rotate(5deg) scale(2.88) translatex(-200px);
+    filter: blur(9px) hue-rotate(1deg);
+    transform: skew(3deg, 10deg) rotate(20deg) scale(2.88) translatex(-200px);
   }
   30% {
-    filter: blur(132px) hue-rotate(-2deg);
-    transform: skew(0deg, 6deg) rotate(-3deg) scale(2.25) translatex(-200px);
+    filter: blur(3px) hue-rotate(-2deg);
+    transform: skew(20deg, 6deg) rotate(-30deg) scale(2.25) translatex(-200px);
   }
   40% {
-    filter: blur(110px) hue-rotate(4deg);
-    transform: skew(2deg, 0deg) rotate(4deg) scale(2.42) translatex(-200px);
+    filter: blur(1px) hue-rotate(4deg);
+    transform: skew(12deg, 0deg) rotate(53deg) scale(2.42) translatex(-200px);
   }
   50% {
-    filter: blur(90px) hue-rotate(-3deg);
-    transform: skew(0deg, 9deg) rotate(2deg) scale(2.95) translatex(-200px);
+    filter: blur(9px) hue-rotate(-3deg);
+    transform: skew(10deg, 9deg) rotate(22deg) scale(2.95) translatex(-200px);
   }
   60% {
-    filter: blur(160px) hue-rotate(0deg);
-    transform: skew(4deg, 0deg) rotate(6deg) scale(2.01) translatex(-200px);
+    filter: blur(6px) hue-rotate(0deg);
+    transform: skew(4deg, 05deg) rotate(23deg) scale(2.01) translatex(-200px);
   }
   70% {
-    filter: blur(120px) hue-rotate(1deg);
-    transform: skew(0deg, 5deg) rotate(-3deg) scale(2.3) translatex(-200px);
+    filter: blur(2px) hue-rotate(1deg);
+    transform: skew(05deg, 5deg) rotate(-23deg) scale(2.3) translatex(-200px);
   }
   80% {
-    filter: blur(150px) hue-rotate(4deg);
-    transform: skew(2deg, 0deg) rotate(6deg) scale(2.65) translatex(-200px);
+    filter: blur(1px) hue-rotate(4deg);
+    transform: skew(20deg, 0deg) rotate(34deg) scale(2.65) translatex(-200px);
   }
   90% {
-    filter: blur(140px) hue-rotate(0deg);
-    transform: skew(0deg, 1deg) rotate(0deg) scale(2.56) translatex(-200px);
+    filter: blur(4px) hue-rotate(0deg);
+    transform: skew(5deg, 1deg) rotate(20deg) scale(2.56) translatex(-200px);
   }
   100% {
-    filter: blur(110px) hue-rotate(-2deg);
-    transform: skew(4deg, 0deg) rotate(-2deg) scale(3) translatex(-200px);
+    filter: blur(1px) hue-rotate(-2deg);
+    transform: skew(16deg, 0deg) rotate(-23deg) scale(3) translatex(-200px);
   }
 }
 
 #howto:after {
   content: "";
   top: 0;
-  height: 100vh;
+  height: 125vh;
   width: 100vw;
   position: absolute;
-  transform: skewY(-5deg) scale(1.3) scaley(0.3) translatey(-150%);
-  background: #fff;
+  transform: skewY(-5deg) scale(1.3) scaley(0.3) translatey(-165%);
+  background: var(--light);
   z-index: 0;
 }
 
@@ -596,6 +593,7 @@ input[type="radio"]:checked {
   justify-content: center;
   width: 100%;
   flex-direction: column;
+  border: 4px dashed var(--blue100);
 }
 
 .active .dropzone-root {
@@ -773,7 +771,7 @@ input[type="radio"]:checked {
   z-index: 0;
   bottom: var(--s0);
   height: calc(var(--s0) / 2);
-  background: var(--light);
+  background: var(--blue100);
   width: calc(100% - var(--s1));
 }
 
@@ -941,11 +939,11 @@ input[type="radio"]:checked {
 .section {
   padding: 12vw 12vw;
   position: relative;
-  background: white;
+  background: var(--light);
 }
 
 .section:nth-of-type(even) {
-  background: rgba(0, 0, 0, 0.015);
+  background: var(--white);
 }
 
 /* HELP */
