@@ -1,5 +1,5 @@
-```shell script
-npm i -D && npm run export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && npm run start
+````shell script
+npm i -D && npm run export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && npm run dev
 
 
 # AVIF.IO
@@ -35,7 +35,7 @@ code for release, use:
 ```shell script
 cd conversion/
 make wasm
-```
+````
 
 This will also run webpack to move the produced WASM and JS
 files to `public/dist`. Keep in mind that when you clone the repository
@@ -65,6 +65,7 @@ npm i -D
 ```
 
 Next, we are going to export the code as a pre-rendered static web app:
+
 ```shell script
 npm run export
 ```
@@ -88,4 +89,3 @@ If you would like to modify the layout of the entire website, you can do
 that by editing `pages/_app.tsx`. Don't forget to put all components in the
 `/components` directory. If you accidentaly put them in `pages` they will be
 accessible via public routes, which is probably not what you intended.
-

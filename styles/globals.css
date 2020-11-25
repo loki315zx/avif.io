@@ -416,84 +416,9 @@ input[type="radio"]:checked {
   flex-direction: column;
   padding: var(--s3) var(--s3) var(--s4);
   min-height: 100vh;
-  background: linear-gradient(120deg, var(--blue500) 50%, var(--blue100));
-}
-
-.app-container:before {
-  content: "";
-  background: url(../assets/images/mesh.jpg);
-  position: absolute;
-  right: 0;
-  top: 0;
-  left: 0;
-  bottom: 0;
+  background: url(../assets/images/background.svg);
   background-size: cover;
-  animation: backgroundBlur;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-duration: 15s;
-  animation-direction: alternate;
-  z-index: 0;
-  mix-blend-mode: soft-light;
-  opacity: 0.5;
-}
-
-@supports (-moz-appearance: none) {
-  .app-container:before {
-    background: linear-gradient(#29a2ff 80%, #00c1ff 100%);
-    animation: none;
-    filter: none;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-}
-
-@keyframes backgroundBlur {
-  0% {
-    filter: blur(1px) hue-rotate(2deg);
-    transform: skew(02deg, 0deg) rotate(-5deg) scale(2.5) translatex(-200px);
-  }
-  10% {
-    filter: blur(7px) hue-rotate(4deg);
-    transform: skew(5deg, 10deg) rotate(-50deg) scale(2.3) translatex(-200px);
-  }
-  20% {
-    filter: blur(9px) hue-rotate(1deg);
-    transform: skew(3deg, 10deg) rotate(20deg) scale(2.88) translatex(-200px);
-  }
-  30% {
-    filter: blur(3px) hue-rotate(-2deg);
-    transform: skew(20deg, 6deg) rotate(-30deg) scale(2.25) translatex(-200px);
-  }
-  40% {
-    filter: blur(1px) hue-rotate(4deg);
-    transform: skew(12deg, 0deg) rotate(53deg) scale(2.42) translatex(-200px);
-  }
-  50% {
-    filter: blur(9px) hue-rotate(-3deg);
-    transform: skew(10deg, 9deg) rotate(22deg) scale(2.95) translatex(-200px);
-  }
-  60% {
-    filter: blur(6px) hue-rotate(0deg);
-    transform: skew(4deg, 05deg) rotate(23deg) scale(2.01) translatex(-200px);
-  }
-  70% {
-    filter: blur(2px) hue-rotate(1deg);
-    transform: skew(05deg, 5deg) rotate(-23deg) scale(2.3) translatex(-200px);
-  }
-  80% {
-    filter: blur(1px) hue-rotate(4deg);
-    transform: skew(20deg, 0deg) rotate(34deg) scale(2.65) translatex(-200px);
-  }
-  90% {
-    filter: blur(4px) hue-rotate(0deg);
-    transform: skew(5deg, 1deg) rotate(20deg) scale(2.56) translatex(-200px);
-  }
-  100% {
-    filter: blur(1px) hue-rotate(-2deg);
-    transform: skew(16deg, 0deg) rotate(-23deg) scale(3) translatex(-200px);
-  }
+  background-position: top left;
 }
 
 #howto:after {
