@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { ReactElement, useEffect, useState } from "react";
 import prettyBytes from "pretty-bytes";
-import Converter, { ConversionResult } from "@/Converter";
+import Converter, { ConversionId, ConversionResult } from "@/Converter";
 import { splitNameAndExtension } from "@/utils";
 import ProgressBar from "@components/ProgressBar";
 import { Settings } from "@components/SettingsBox";
 import ConversionTimeEstimator from "@components/ConversionTimeEstimator";
-import { InputFile } from "@/files";
 
 export interface ConversionProps {
-  file: InputFile;
+  file: File;
   converter: Converter;
   settings: Settings;
 
@@ -27,26 +26,27 @@ function formatRemainingTimeEstimate(estimator: ConversionTimeEstimator) {
     if (estimator.minutes !== 1) {
       result += "s";
     }
-    if (!!estimator.seconds) {
+    if (estimator.seconds) {
       result += " and ";
     }
   }
-  if (!!estimator.seconds) {
+  if (estimator.seconds) {
     result += `${estimator.seconds} seconds`;
   }
   result += " left";
   return result;
 }
 
-export default function Conversion(props: ConversionProps) {
+export default function Conversion(props: ConversionProps): ReactElement {
   const [fileName, setFileName] = useState<string>();
   const [originalFormat, setOriginalFormat] = useState<string>();
-  const [originalSize] = useState(props.file.data.byteLength);
+  const [originalSize] = useState(props.file.size);
   const [progress, setProgress] = useState(0);
   const [outputSize, setOutputSize] = useState(0);
   const [outputObjectURL, setOutputObjectURL] = useState("");
   const [finished, setFinished] = useState(false);
   const [remainingTime, setRemainingTime] = useState("");
+  const [conversionId, setConversionId] = useState<ConversionId>();
   const [conversionTimeEstimator] = useState(
     new ConversionTimeEstimator(50, 300)
   );
@@ -72,12 +72,16 @@ export default function Conversion(props: ConversionProps) {
         setRemainingTime(formatRemainingTimeEstimate(conversionTimeEstimator));
       }
 
-      props.converter.convertFile(props.file, {
-        ...props.settings,
-        onFinished,
-        onProgress,
-        onError: (e) => window.alert(e),
-      });
+      setConversionId(
+        await props.converter.convertFile(props.file, {
+          ...props.settings,
+          onFinished,
+          onProgress,
+          onError(e: string) {
+            window.alert(e);
+          },
+        })
+      );
     })();
   }, []);
 

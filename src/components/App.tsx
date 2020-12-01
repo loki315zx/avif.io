@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { ReactElement, useEffect, useState } from "react";
 import ReactCompareImage from "react-compare-image";
-import _ from "lodash";
 import Conversion from "@components/Conversion";
 import Dropzone from "@components/Dropzone";
 import DownloadAllButton from "@components/DownloadAllButton";
@@ -8,18 +7,17 @@ import ShareButtons from "@components/ShareButtons";
 import ConversionsCount from "@components/ConversionsCount";
 import { css, html, wordpress, netlify } from "@components/tutorial";
 import SettingsBox, { Settings } from "@components/SettingsBox";
-import Converter, { ConversionId } from "@/Converter";
+import Converter from "@/Converter";
 import { uniqueId } from "@/utils";
 import lion from "@assets/images/lion.jpg";
 import lion2 from "@assets/images/lion2.avif";
-import { InputFile, loadInputFiles } from "@/files";
 
 interface FileWithId {
-  file: InputFile;
+  file: File;
   id: number;
 }
 
-export default function App() {
+export default function App(): ReactElement {
   const [converter, setConverter] = useState<Converter>();
   const [files, setFiles] = useState<FileWithId[]>([]);
   const [convertedFiles, setConvertedFiles] = useState<File[]>([]);
@@ -39,8 +37,10 @@ export default function App() {
   }
 
   async function onFilesSelected(selectedFiles: File[]) {
-    const newFiles = await loadInputFiles(selectedFiles);
-    setFiles([...files, ...newFiles.map((file) => ({ file, id: uniqueId() }))]);
+    setFiles([
+      ...files,
+      ...selectedFiles.map((file) => ({ file, id: uniqueId() })),
+    ]);
     setSettingsBoxOpen(false);
   }
 
@@ -330,7 +330,7 @@ export default function App() {
         </a>{" "}
         &{" "}
         <a title="programmer" href="https://github.com/ennmichael">
-          Niksa Sporin
+          Nikša Sporin
         </a>
         <div>
           This website uses GA to improve performance.

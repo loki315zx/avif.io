@@ -1,16 +1,12 @@
 import _ from "lodash";
-import { InputFile } from "./files";
+import { fileExtension } from "./utils";
+import webpToRgba from "./webpToRgba";
 
 export interface ConversionResult {
   data: Uint8Array;
 }
 
-export interface ConversionOptions {
-  effort: number; // Conversion effort as a 0-100 percentage
-  quality: number; // Quality as a 0-100 percentage
-  useYuv444: boolean;
-  keepTransparency: boolean;
-
+interface ConversionMessageCallbacks {
   onProgress(progress: number): void;
 
   onFinished(result: ConversionResult): void;
@@ -18,13 +14,15 @@ export interface ConversionOptions {
   onError(error: string): void;
 }
 
-interface ConversionWorker {
-  worker: Worker;
-  conversionId?: ConversionId;
+export interface ConversionOptions extends ConversionMessageCallbacks {
+  effort: number; // Conversion effort as a 0-100 percentage
+  quality: number; // Quality as a 0-100 percentage
+  useYuv444: boolean;
+  keepTransparency: boolean;
 }
 
-interface Conversion {
-  file: InputFile;
+interface PendingConversion {
+  file: File;
   options: ConversionOptions;
   id: ConversionId;
 }
@@ -33,26 +31,30 @@ export class ConversionId {
   constructor(readonly value: number) {}
 }
 
+interface WorkerWithConversionId {
+  worker: ConversionWorker;
+  conversionId?: ConversionId;
+}
+
 export default class Converter {
-  private workers: readonly ConversionWorker[];
-  private pendingConversions: Conversion[] = [];
-  private lastConversionId: number = 0;
+  private workers: readonly WorkerWithConversionId[];
+  private pendingConversions: PendingConversion[] = [];
+  private lastConversionId = 0;
 
   constructor() {
     const numWorkers = Math.max(
       1,
       Math.floor(navigator.hardwareConcurrency / 2)
     );
-    this.workers = _.range(numWorkers).map(Converter.createWorker);
+    this.workers = _.range(numWorkers).map(() => ({
+      worker: new ConversionWorker(),
+    }));
   }
 
-  private static createWorker(): ConversionWorker {
-    return {
-      worker: new Worker("worker.js"),
-    };
-  }
-
-  convertFile(file: InputFile, options: ConversionOptions): ConversionId {
+  async convertFile(
+    file: File,
+    options: ConversionOptions
+  ): Promise<ConversionId> {
     const conversionId = new ConversionId(this.lastConversionId);
     this.lastConversionId++;
     this.pendingConversions.push({
@@ -60,60 +62,61 @@ export default class Converter {
       options,
       id: conversionId,
     });
-    this.tryConvertingFiles();
+    await this.tryConvertingFiles();
     return conversionId;
   }
 
-  cancelConversion(conversionId: ConversionId) {
+  cancelConversion(conversionId: ConversionId): void {
     this.cancelPendingConversion(conversionId);
     this.cancelOngoingConversion(conversionId);
   }
 
-  private tryConvertingFiles(): void {
+  private async tryConvertingFiles(): Promise<void> {
     if (_.isEmpty(this.pendingConversions)) return;
 
-    const worker = this.getAvailableWorker();
-    if (worker === undefined) return;
+    const workerWithConversionId = this.getAvailableWorker();
+    if (workerWithConversionId === undefined) return;
 
+    const { worker } = workerWithConversionId;
     const { file, options, id: conversionId } = this.pendingConversions.shift();
-    worker.conversionId = conversionId;
+    workerWithConversionId.conversionId = conversionId;
 
-    worker.worker.onmessage = (msg) => {
-      switch (msg.data.type) {
-        case "progress":
-          options.onProgress(msg.data.progress);
-          break;
-        case "finished":
-          options.onFinished({
-            data: msg.data.data,
-          });
-          worker.conversionId = undefined;
-          this.tryConvertingFiles();
-          break;
-        case "error":
-          options.onError(msg.data.error);
-          worker.conversionId = undefined;
-          this.tryConvertingFiles();
-          break;
-      }
-    };
+    worker.sendConversionMessage(await startConversionMessage());
 
-    worker.worker.postMessage(
-      {
-        input: file.data,
-        isRawRgba: file.isRawRgba,
-        effort: options.effort,
-        quality: options.quality,
-        useYuv444: options.useYuv444,
-        keepTransparency: options.keepTransparency,
-        width: file.rawWidth,
-        height: file.rawHeight,
+    worker.handleMessages({
+      onProgress: options.onProgress,
+      onFinished: (result: ConversionResult) => {
+        options.onFinished(result);
+        workerWithConversionId.conversionId = undefined;
+        this.tryConvertingFiles();
       },
-      [file.data]
-    );
+      onError: (error) => {
+        options.onError(error);
+        workerWithConversionId.conversionId = undefined;
+        this.tryConvertingFiles();
+      },
+    });
+
+    async function startConversionMessage() {
+      if (fileExtension(file.name) === "webp") {
+        const { data, width, height } = await webpToRgba(
+          new Uint8Array(await file.arrayBuffer())
+        );
+        return {
+          input: data.buffer,
+          isRawRgba: true,
+          options,
+          width,
+          height,
+        };
+      } else {
+        const input = await file.arrayBuffer();
+        return { input, options };
+      }
+    }
   }
 
-  private getAvailableWorker(): ConversionWorker {
+  private getAvailableWorker(): WorkerWithConversionId {
     for (const worker of this.workers) {
       if (worker.conversionId === undefined) return worker;
     }
@@ -127,14 +130,63 @@ export default class Converter {
     );
   }
 
-  private cancelOngoingConversion(conversionId: ConversionId) {
-    this.workers = this.workers.map((worker) => {
-      if (worker.conversionId?.value === conversionId.value) {
-        worker.worker.terminate();
-        return Converter.createWorker();
-      } else {
-        return worker;
+  private cancelOngoingConversion(targetId: ConversionId) {
+    for (const { worker, conversionId } of this.workers) {
+      if (conversionId.value === targetId.value) {
+        worker.restart();
       }
-    });
+    }
+  }
+}
+
+interface NonWebpConversionMessage {
+  input: ArrayBuffer;
+  options: ConversionOptions;
+}
+
+interface WebpConversionMessage extends NonWebpConversionMessage {
+  isRawRgba: true;
+  width: number;
+  height: number;
+}
+
+type ConversionMessage = NonWebpConversionMessage | WebpConversionMessage;
+
+class ConversionWorker {
+  private worker: Worker;
+
+  constructor() {
+    this.worker = new Worker("worker.js");
+  }
+
+  async sendConversionMessage(message: ConversionMessage): Promise<void> {
+    const messageToSend = {
+      ...message,
+      options: _.omitBy(message.options, (_, name) => name.startsWith("on")),
+    };
+    this.worker.postMessage(messageToSend, [messageToSend.input]);
+  }
+
+  handleMessages(cb: ConversionMessageCallbacks): void {
+    this.worker.onmessage = (msg) => {
+      switch (msg.data.type) {
+        case "progress":
+          cb.onProgress(msg.data.progress);
+          break;
+        case "finished":
+          cb.onFinished({
+            data: msg.data.data,
+          });
+          break;
+        case "error":
+          cb.onError(msg.data.error);
+          break;
+      }
+    };
+  }
+
+  restart() {
+    this.worker.terminate();
+    this.worker = new Worker("worker.js");
   }
 }
