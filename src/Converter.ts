@@ -66,9 +66,10 @@ export default class Converter {
     return conversionId;
   }
 
-  cancelConversion(conversionId: ConversionId): void {
+  async cancelConversion(conversionId: ConversionId): Promise<void> {
     this.cancelPendingConversion(conversionId);
     this.cancelOngoingConversion(conversionId);
+    await this.tryConvertingFiles();
   }
 
   private async tryConvertingFiles(): Promise<void> {
@@ -131,10 +132,11 @@ export default class Converter {
     );
   }
 
-  private cancelOngoingConversion(targetId: ConversionId) {
-    for (const { worker, conversionId } of this.workers) {
-      if (conversionId?.value === targetId.value) {
-        worker.restart();
+  private cancelOngoingConversion(conversionId: ConversionId) {
+    for (const workerWithConversionId of this.workers) {
+      if (workerWithConversionId.conversionId?.value === conversionId.value) {
+        workerWithConversionId.worker.restart();
+        workerWithConversionId.conversionId = undefined;
       }
     }
   }
@@ -157,7 +159,7 @@ class ConversionWorker {
   private worker: Worker;
 
   constructor() {
-    this.worker = new Worker("worker.js");
+    this.worker = ConversionWorker.createWorker();
   }
 
   async sendConversionMessage(message: ConversionMessage): Promise<void> {
@@ -188,6 +190,10 @@ class ConversionWorker {
 
   restart() {
     this.worker.terminate();
-    this.worker = new Worker("worker.js");
+    this.worker = ConversionWorker.createWorker();
+  }
+
+  private static createWorker() {
+    return new Worker("worker.js");
   }
 }

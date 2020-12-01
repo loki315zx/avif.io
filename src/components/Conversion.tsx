@@ -37,14 +37,16 @@ function formatRemainingTimeEstimate(estimator: ConversionTimeEstimator) {
   return result;
 }
 
+type ConversionStatus = "inProgress" | "canceled" | "finished";
+
 export default function Conversion(props: ConversionProps): ReactElement {
+  const [status, setStatus] = useState<ConversionStatus>("inProgress");
   const [fileName, setFileName] = useState<string>();
   const [originalFormat, setOriginalFormat] = useState<string>();
   const [originalSize] = useState(props.file.size);
   const [progress, setProgress] = useState(0);
   const [outputSize, setOutputSize] = useState(0);
   const [outputObjectURL, setOutputObjectURL] = useState("");
-  const [finished, setFinished] = useState(false);
   const [remainingTime, setRemainingTime] = useState("");
   const [conversionId, setConversionId] = useState<ConversionId>();
   const [conversionTimeEstimator] = useState(
@@ -59,7 +61,7 @@ export default function Conversion(props: ConversionProps): ReactElement {
       conversionTimeEstimator.start();
 
       function onFinished(result: ConversionResult) {
-        setFinished(true);
+        setStatus("finished");
         const outputFile = new File([result.data], `${fileName}.avif`);
         setOutputObjectURL(URL.createObjectURL(outputFile));
         setOutputSize(result.data.length);
@@ -88,44 +90,53 @@ export default function Conversion(props: ConversionProps): ReactElement {
   const percentageSaved = Math.ceil((1 - outputSize / originalSize) * 100);
 
   function cancelConverison() {
-    if (conversionId !== undefined)
+    if (status === "inProgress" && conversionId !== undefined) {
       props.converter.cancelConversion(conversionId);
+      setStatus("canceled");
+    }
   }
 
+  const finished = status === "finished";
+
   return (
-    <a
-      download={`${fileName}.avif`}
-      href={outputObjectURL}
-      className={`conversion ${finished ? "finished" : "progress"}`}
-    >
-      <div className="flex-center">
-        <p className="filename">
-          {fileName}
-          {finished ? ".avif" : ""}
-        </p>
-        <span className="remaining-time">
-          {" "}
-          {!finished && remainingTime && " · " + remainingTime}
-        </span>
-      </div>
-      <div className="flex-center">
-        <p className={"meta"}>
-          <span className="originalformat">
-            {originalFormat} · {prettyBytes(originalSize)}
+    <>
+      {status === "inProgress" && (
+        <button onClick={cancelConverison}>Cancel</button>
+      )}
+      <a
+        download={`${fileName}.avif`}
+        href={outputObjectURL}
+        className={`conversion ${finished ? "finished" : "progress"}`}
+      >
+        <div className="flex-center">
+          <p className="filename">
+            {fileName}
+            {finished ? ".avif" : ""}
+          </p>
+          <span className="remaining-time">
+            {" "}
+            {status === "inProgress" && remainingTime && " · " + remainingTime}
           </span>
-          <span className="conversionformat">
-            {percentageSaved > 0 && (
-              <>
-                {" "}
-                {percentageSaved}% smaller · {prettyBytes(outputSize)}
-              </>
-            )}{" "}
-          </span>
-        </p>
-      </div>
-      <span className={"download"} />
-      <ProgressBar progress={progress} />
-      <button onClick={cancelConverison}>Cancel</button>
-    </a>
+        </div>
+        <div className="flex-center">
+          <p className={"meta"}>
+            <span className="originalformat">
+              {originalFormat} · {prettyBytes(originalSize)}
+            </span>
+            <span className="conversionformat">
+              {percentageSaved > 0 && (
+                <>
+                  {" "}
+                  {percentageSaved}% smaller · {prettyBytes(outputSize)}
+                </>
+              )}{" "}
+            </span>
+          </p>
+        </div>
+        <span className={"download"} />
+        {status === "inProgress" && <ProgressBar progress={progress} />}
+        {status === "canceled" && <h1>Canceled</h1>}
+      </a>
+    </>
   );
 }
