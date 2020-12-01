@@ -14,14 +14,14 @@ if (e % 1.5 == 0) { e=1.1 } else { e +=0.1 }
 d += 0.1;
 d = Math.round(d * 10) / 10;
 e = Math.round(e * 10) / 10;
-count += (Math.pow(b+c+d, e)/5);
+count += (Math.pow(b+c+d, e)/10);
 count = Math.round(count);
 }
 
 export default function ConversionsCounter() {
   return (
-    <div>
-      Already {count} files converted, without uploading
+    <div className="conversionscounter">
+      already {count} files converted, without uploading
     </div>
   );
 }
