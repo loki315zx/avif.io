@@ -21,7 +21,6 @@ export default function App() {
     useYuv444: false,
     keepTransparency: true,
   });
-  const [tutorial, setTutorial] = useState("css");
 
   useEffect(() => {
     setConverter(new Converter());
@@ -89,28 +88,6 @@ export default function App() {
       </div>
 
 
-      <div className="section center" id="about">
-        created by{" "}
-        <a
-          title="ux designer"
-          href="https://www.linkedin.com/in/justinschmitz97/"
-        >
-          Justin Schmitz
-        </a>{" "}
-        &{" "}
-        <a title="programmer" href="https://github.com/ennmichael">
-          Niksa Sporin
-        </a>
-        <div>
-        This website uses GA to improve performance.
-        <a
-          href="https://tools.google.com/dlpage/gaoptout?hl=de"
-          title="google analytics"
-        >
-          Click to deactivate.
-        </a>
-        </div>
-      </div>
     </div>
   );
 }

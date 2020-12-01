@@ -6,12 +6,12 @@
   --f2: calc(var(--f1) * 2);
   --f3: calc(var(--f2) * 2);
 
-  --s0: 8px;
+  --s0: calc(4px + 0.5vh);
   --s1: calc(var(--s0) * 2);
   --s2: calc(var(--s1) * 2);
   --s3: calc(var(--s2) * 2);
-  --s4: calc(var(--s3) * 2);
-  --s5: calc(var(--s4) * 2);
+  --s4: calc(var(--s3) * 1.5);
+  --s5: calc(var(--s4) * 1.5);
 
   --lineheight-text: 1.6;
   --lineheight-headline: 1.3;
@@ -233,14 +233,27 @@ span {
   background-size: cover;
   background-position: top left;
   padding: var(--s2);
+  position:relative
+}
+
+.app-container:before {
+  background: black;
+  position: absolute;
+  top: 120vh;
+  bottom: 0px;
+  content: "";
+  right: 0;
+  left: 0;
+  opacity: 0.8;
+  backdrop-filter: blur(200px);
 }
 
 .main-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: var(--s0);
-  max-width: calc(var(--s5) * 3);
+  padding: var(--s1);
+  max-width: calc(var(--s5) * 6);
   border-radius: var(--radius500);
   box-shadow: 0 2.8px 2.2px rgba(43, 51, 60, 0.003),
     0 6.7px 5.3px rgba(43, 51, 60, 0.004), 0 12.5px 10px rgba(43, 51, 60, 0.005),
@@ -263,7 +276,7 @@ span {
   background: var(--white);
   z-index: 99;
   border-radius: var(--radius500);
-  transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out
 }
 
 .dropzone-container.active {
@@ -329,17 +342,16 @@ span {
 .conversion {
   display: flex;
   justify-content: space-between;
-  padding: var(--s1);
   border-radius: var(--radius300);
   margin-top: var(--s1);
   align-self: normal;
-  align-items: center;
   position: relative;
   background: var(--white);
   color: var(--blue800);
   animation: flip-in-hor-bottom 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   z-index: 1;
   pointer-events: none;
+  flex-direction: column;
 }
 
 .conversion:first-of-type {
@@ -353,24 +365,38 @@ span {
 
 .bar-container {
   position: absolute;
-  border-radius: 2px 0 0 2px;
+  border-radius: var(--radius300);
   margin: 0;
   z-index: 0;
-  bottom: var(--s0);
-  height: calc(var(--s0) / 2);
-  background: var(--blue100);
-  width: calc(100% - var(--s1));
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .bar-inner {
-  height: 100%;
   transition: all 0.3s ease-out;
-  background-color: var(--blue500);
+  background-color: var(--gray1);
   border-radius: var(--radius300);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
 }
 
+.bar-inner-small {
+  height: 2px;
+  transition: all 0.3s ease-out;
+  background: linear-gradient(90deg, var(--color100), var(--color300), var(--color500));
+  margin-bottom: var(--s1);
+  z-index:999
+}
+
+
+
 .progress .bar-inner {
-  border-radius: 12px 0 0 12px;
+  border-radius: var(--radius300) 0 0 var(--radius300);
+  background: var(--gray1);
 }
 
 .finished-conversion {
@@ -378,18 +404,20 @@ span {
 }
 
 .conversion.finished {
-  background: var(--white);
-  color: var(--blue800);
   animation-duration: 0.75s;
   animation-name: bounceIn;
   pointer-events: all;
 }
 
-.meta {
-  color: var(--blue700);
-  margin-right: var(--s3);
-  border-radius: var(--radius300);
-  padding: var(--s0);
+.conversion_information {
+  display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    padding: var(--s1);
+}
+
+.conversion_meta {
+  color: var(--gray2);
   z-index: 999;
 }
 
@@ -397,25 +425,23 @@ span {
   position: relative;
   z-index: 99;
   text-align: left;
-  max-width: 360px;
+  max-width: 300px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-weight: bold;
 }
 
 .download {
-  width: var(--s3);
+  width: var(--s4);
   transition: all 0.3s ease;
   transform: scale(0);
   position: absolute;
   right: 0;
   height: 100%;
-  border-radius: 0 8px 8px 0;
-  background: radial-gradient(
-    circle at bottom right,
-    #29a2ff 50%,
-    #00c1ff 100%
-  );
+  border-radius: 0 var(--radius300) var(--radius300) 0;
+  background: radial-gradient( circle at bottom right, var(--color500) 30%, var(--color300) 100% );
+  z-index: 9999;
 }
 
 .download:after {
@@ -430,7 +456,7 @@ span {
   background-size: 25%;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 0 8px 8px 0;
+  border-radius: 0 var(--radius300) var(--radius300) 0;
   z-index: 99999;
 }
 
@@ -438,23 +464,7 @@ span {
   transform: scale(1);
 }
 
-.finished .download:before {
-  content: "";
-  position: absolute;
-  animation: pulse 2s 1;
-  animation-delay: 2s;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  height: 100%;
-  border-radius: 0 8px 8px 0;
-  width: var(--s3);
-}
 
-.download:hover {
-  transform: scale(0.9);
-}
 
 .downloadall {
   background-color: var(--blue500);
@@ -485,11 +495,11 @@ span {
   display: none;
 }
 
-.finished .originalformat {
+.finished .conversion_format {
   display: none;
 }
 
-.progress .conversionformat {
+.progress .conversion_outcome {
   display: none;
 }
 
@@ -816,15 +826,20 @@ h2.infobox:hover:before {
   width: 24px;
   right: 0;
   height: 24px;
-  padding: var(--s2);
+  padding: var(--s3);
   display: block;
-  background-image: url("../assets/images/settings.svg");
-  background-size: 24px;
-  background-repeat: no-repeat;
-  background-position: center;
   transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  filter: brightness(0.8);
   z-index: 999;
+  cursor: pointer;
+  background-color: var(--gray2);
+  mask-image: url("../assets/images/settings.svg");
+  mask-size: 24px;
+  mask-position: center center;
+  mask-repeat: no-repeat;
+}
+
+.cog-button svg {
+  fill:blue
 }
 
 .cog-button.open {
@@ -923,6 +938,7 @@ h2.infobox:hover:before {
 .remaining-time {
   opacity: 0;
   z-index: 999;
+  color:var(--gray2)
 }
 
 .progress .remaining-time {
@@ -1082,99 +1098,5 @@ h2.infobox:hover:before {
 /**/
 
 @media only screen and (max-width: 768px) {
-  .section {
-    padding: 6vw;
-    padding-top: var(--s4);
-  }
-
-  .flex-center {
-    display: block;
-  }
-
-  .carousel {
-    grid-template-columns: 1fr;
-    grid-gap: var(--s3);
-    padding: inherit;
-  }
-
-  .slide {
-    padding: var(--s2);
-  }
-
-  .center {
-    text-align: left;
-  }
-
-  .explanation-image {
-    flex: 7;
-    min-height: 30vh;
-    position: relative;
-    margin: var(--s1) 0 var(--s4);
-  }
-
-  .f1.secondary.s4.center {
-    display: none;
-  }
-
-  .settings_cog {
-    overflow: hidden;
-  }
-
-  .cog-button {
-    right: -90px;
-  }
-
-  .f3.blue.bold.f2.s2.center {
-    margin: 0;
-  }
-
-  .left-half .secondary {
-    margin-bottom: var(--s3);
-  }
-
-  .main-container {
-    width: 100%;
-    border-radius: 0;
-    background: none;
-  }
-
-  .app-container {
-    padding: var(--s4) 0 var(--s4);
-    min-height: 100vh;
-  }
-
-  .download {
-    width: var(--s4);
-  }
-
-  .meta {
-    font-size: var(--f0);
-    margin-right: var(--s4);
-  }
-  .filename {
-    max-width: 120px;
-  }
-
-  .downloadall {
-    padding: var(--s3) var(--s4);
-  }
-  .share-container {
-    top: var(--s1);
-    bottom: inherit;
-  }
-  .infobox:before {
-    display: none;
-  }
-
-  .app-container {
-    background: var(--blue500);
-  }
-
-  .app-container:before {
-    content: none;
-  }
-
-  #howto:after {
-    content: none;
-  }
+  
 }

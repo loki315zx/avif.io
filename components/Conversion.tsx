@@ -113,22 +113,18 @@ export default function Conversion(props: ConversionProps) {
       href={outputObjectURL}
       className={`conversion ${finished ? "finished" : "progress"}`}
     >
-      <div className="flex-center">
+      <div className="conversion_information">
         <p className="filename">
           {fileName}
           {finished ? ".avif" : ""}
         </p>
-        <span className="remaining-time">
-          {" "}
-          {!finished && remainingTime && " · " + remainingTime}
+        <div className="conversion_meta">
+
+        <span className="conversion_format">
+        {originalFormat} · {prettyBytes(originalSize)}
         </span>
-      </div>
-      <div className="flex-center">
-        <p className={"meta"}>
-          <span className="originalformat">
-            {originalFormat} · {prettyBytes(originalSize)}
-          </span>
-          <span className="conversionformat">
+
+          <span className="conversion_outcome">
             {percentageSaved > 0 && (
               <>
                 {" "}
@@ -136,7 +132,13 @@ export default function Conversion(props: ConversionProps) {
               </>
             )}{" "}
           </span>
-        </p>
+
+        <span className="remaining-time">
+          {" · "}
+          {!finished && remainingTime && "" + remainingTime}
+        </span>
+
+        </div>
       </div>
       <span className={"download"} />
       <ProgressBar progress={progress} />

@@ -15,13 +15,13 @@ d += 0.1;
 d = Math.round(d * 10) / 10;
 e = Math.round(e * 10) / 10;
 count += (Math.pow(b+c+d, e)/10);
-count = Math.round(count);
+count = Math.round(count / 40) * 40;
 }
 
 export default function ConversionsCounter() {
   return (
     <div className="conversionscounter">
-      already {count} files converted, without uploading
+      over {count} files converted
     </div>
   );
 }
