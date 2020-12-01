@@ -1,19 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { ReactElement, useEffect, useState } from "react";
 import ReactCompareImage from "react-compare-image";
-import _ from "lodash";
-import Conversion from "./Conversion";
-import Dropzone from "./Dropzone";
-import DownloadAllButton from "./DownloadAllButton";
-import ShareButtons from "./ShareButtons";
-import ConversionsCount from "./ConversionsCount";
-import {css, html, wordpress, netlify} from "./Tutorial";
-import SettingsBox, { Settings } from "./SettingsBox";
-import Converter from "../src/converter";
-import { FileWithId, uniqueId } from "../src/utils";
-import lion from "../assets/images/lion.jpg";
-import lion2 from "../assets/images/lion2.avif";
+import Conversion from "@components/Conversion";
+import Dropzone from "@components/Dropzone";
+import DownloadAllButton from "@components/DownloadAllButton";
+import ShareButtons from "@components/ShareButtons";
+import ConversionsCount from "@components/ConversionsCount";
+import { css, html, wordpress, netlify } from "@components/tutorial";
+import SettingsBox, { Settings } from "@components/SettingsBox";
+import Converter from "@/Converter";
+import { uniqueId } from "@/utils";
+import lion from "@assets/images/lion.jpg";
+import lion2 from "@assets/images/lion2.avif";
 
-export default function App() {
+interface FileWithId {
+  file: File;
+  id: number;
+}
+
+export default function App(): ReactElement {
   const [converter, setConverter] = useState<Converter>();
   const [files, setFiles] = useState<FileWithId[]>([]);
   const [convertedFiles, setConvertedFiles] = useState<File[]>([]);
@@ -26,24 +30,17 @@ export default function App() {
   });
   const [tutorial, setTutorial] = useState("css");
 
-  useEffect(() => {
-    setConverter(new Converter());
-  }, []);
+  useEffect(() => setConverter(new Converter()), []);
 
   function onSettingsUpdate(settings: Settings) {
     setSettings(settings);
   }
 
   async function onFilesSelected(selectedFiles: File[]) {
-    const addedFiles = await Promise.all(
-      _.map(selectedFiles, async (file) => ({
-        name: file.name,
-        data: await file.arrayBuffer(),
-        id: uniqueId(),
-      }))
-    );
-
-    setFiles([...files, ...addedFiles]);
+    setFiles([
+      ...files,
+      ...selectedFiles.map((file) => ({ file, id: uniqueId() })),
+    ]);
     setSettingsBoxOpen(false);
   }
 
@@ -52,14 +49,15 @@ export default function App() {
     setConvertedFiles([...convertedFiles]);
   }
 
-
   return (
     <div>
       <ShareButtons />
       <div className={"app-container"}>
         <div className={"title f3 white bold s1"}>avif.io</div>
         <h1 className={"f1 white"}>Convert any image to avif for free.</h1>
-        <h2 className={"f1 s3 infobox white"}><ConversionsCount /></h2>
+        <h2 className={"f1 s3 infobox white"}>
+          <ConversionsCount />
+        </h2>
 
         <div
           className={"main-container" + " " + (settingsBoxOpen ? "open" : "")}
@@ -79,15 +77,16 @@ export default function App() {
             />
           </div>
 
-          {files.map((f) => (
-            <Conversion
-              onFinished={onConversionFinished}
-              settings={settings}
-              file={f}
-              converter={converter}
-              key={f.id}
-            />
-          ))}
+          {converter &&
+            files.map(({ file, id }) => (
+              <Conversion
+                onFinished={onConversionFinished}
+                settings={settings}
+                file={file}
+                converter={converter}
+                key={id}
+              />
+            ))}
           <DownloadAllButton files={convertedFiles} />
         </div>
         <div className="chevron" />
@@ -332,16 +331,16 @@ export default function App() {
         </a>{" "}
         &{" "}
         <a title="programmer" href="https://github.com/ennmichael">
-          Niksa Sporin
+          Nikša Sporin
         </a>
         <div>
-        This website uses GA to improve performance.
-        <a
-          href="https://tools.google.com/dlpage/gaoptout?hl=de"
-          title="google analytics"
-        >
-          Click to deactivate.
-        </a>
+          This website uses GA to improve performance.
+          <a
+            href="https://tools.google.com/dlpage/gaoptout?hl=de"
+            title="google analytics"
+          >
+            Click to deactivate.
+          </a>
         </div>
       </div>
     </div>

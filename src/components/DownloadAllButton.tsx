@@ -1,6 +1,6 @@
 import React from "react";
 import JSZip from "jszip";
-import { saveFile } from "../src/utils";
+import { saveFile } from "@/utils";
 
 export interface DownloadAllButtonProps {
   files: File[];
