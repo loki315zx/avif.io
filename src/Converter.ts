@@ -72,13 +72,14 @@ export default class Converter {
   }
 
   private async tryConvertingFiles(): Promise<void> {
-    if (_.isEmpty(this.pendingConversions)) return;
-
     const workerWithConversionId = this.getAvailableWorker();
     if (workerWithConversionId === undefined) return;
 
+    const pendingConversion = this.pendingConversions.shift();
+    if (pendingConversion === undefined) return;
+
     const { worker } = workerWithConversionId;
-    const { file, options, id: conversionId } = this.pendingConversions.shift();
+    const { file, options, id: conversionId } = pendingConversion;
     workerWithConversionId.conversionId = conversionId;
 
     worker.sendConversionMessage(await startConversionMessage());
@@ -116,7 +117,7 @@ export default class Converter {
     }
   }
 
-  private getAvailableWorker(): WorkerWithConversionId {
+  private getAvailableWorker(): WorkerWithConversionId | undefined {
     for (const worker of this.workers) {
       if (worker.conversionId === undefined) return worker;
     }
@@ -132,7 +133,7 @@ export default class Converter {
 
   private cancelOngoingConversion(targetId: ConversionId) {
     for (const { worker, conversionId } of this.workers) {
-      if (conversionId.value === targetId.value) {
+      if (conversionId?.value === targetId.value) {
         worker.restart();
       }
     }

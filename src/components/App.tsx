@@ -77,15 +77,16 @@ export default function App(): ReactElement {
             />
           </div>
 
-          {files.map(({ file, id }) => (
-            <Conversion
-              onFinished={onConversionFinished}
-              settings={settings}
-              file={file}
-              converter={converter}
-              key={id}
-            />
-          ))}
+          {converter &&
+            files.map(({ file, id }) => (
+              <Conversion
+                onFinished={onConversionFinished}
+                settings={settings}
+                file={file}
+                converter={converter}
+                key={id}
+              />
+            ))}
           <DownloadAllButton files={convertedFiles} />
         </div>
         <div className="chevron" />

@@ -87,6 +87,11 @@ export default function Conversion(props: ConversionProps): ReactElement {
 
   const percentageSaved = Math.ceil((1 - outputSize / originalSize) * 100);
 
+  function cancelConverison() {
+    if (conversionId !== undefined)
+      props.converter.cancelConversion(conversionId);
+  }
+
   return (
     <a
       download={`${fileName}.avif`}
@@ -120,6 +125,7 @@ export default function Conversion(props: ConversionProps): ReactElement {
       </div>
       <span className={"download"} />
       <ProgressBar progress={progress} />
+      <button onClick={cancelConverison}>Cancel</button>
     </a>
   );
 }
