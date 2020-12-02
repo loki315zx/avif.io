@@ -8,7 +8,7 @@
     "start": "next start",
     "check-tsc": "tsc --noEmit",
     "check-eslint": "eslint src/",
-    "check-ts": "check-tsc && check-eslint",
+    "check-ts": "npm run check-tsc && npm run check-eslint",
     "export": "npm run build && next export"
   },
   "dependencies": {

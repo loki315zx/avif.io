@@ -1,5 +1,6 @@
-````shell script
+```bash
 npm i -D && npm run export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && npm run dev
+```
 
 
 # AVIF.IO
@@ -32,10 +33,10 @@ files via `npm dev`. The `wasm-pack`ed Rust code ends up in `public/dist`.
 Building Rust requires `cargo` and `make`. To build the wasm
 code for release, use:
 
-```shell script
+```bash
 cd conversion/
 make wasm
-````
+```
 
 This will also run webpack to move the produced WASM and JS
 files to `public/dist`. Keep in mind that when you clone the repository
@@ -60,19 +61,19 @@ of the code is explicitly checking whether it's working with WebP.
 
 First, we will install the dependencies:
 
-```shell script
+```bash
 npm i -D
 ```
 
 Next, we are going to export the code as a pre-rendered static web app:
 
-```shell script
+```bash
 npm run export
 ```
 
 Package the WASM code:
 
-```shell script
+```bash
 cd ../conversion
 npx cross-env NODE_ENV=production webpack
 ```

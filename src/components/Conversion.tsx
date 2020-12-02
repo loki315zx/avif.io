@@ -4,7 +4,7 @@ import Converter, { ConversionId, ConversionResult } from "@/Converter";
 import { splitNameAndExtension } from "@/utils";
 import ProgressBar from "@components/ProgressBar";
 import { Settings } from "@components/SettingsBox";
-import ConversionTimeEstimator from "@components/ConversionTimeEstimator";
+import ConversionTimeEstimator from "@/ConversionTimeEstimator";
 
 export interface ConversionProps {
   file: File;
