@@ -3,6 +3,7 @@ import ReactCompareImage from "react-compare-image";
 import _ from "lodash";
 import Conversion from "./Conversion";
 import Dropzone from "./Dropzone";
+import Tutorials from "./Tutorials";
 import DownloadAllButton from "./DownloadAllButton";
 import SettingsBox, { Settings } from "./SettingsBox";
 import Converter from "../src/converter";
@@ -48,12 +49,15 @@ export default function App() {
     setConvertedFiles([...convertedFiles]);
   }
 
-
   return (
-    <div>
+    <>
       <div className={"app-container"}>
-        <h1 className={"f3 white bold s1"}>Convert any images to avif for free.</h1>
-        <h2 className={"f1 white s4"}>No data is sent. The magic happens in your browser.</h2>
+        <h1 className={"f3 white bold s1"}>
+          Convert any images to avif for free.
+        </h1>
+        <h2 className={"f1 white s4 infobox"}>
+          No data is sent. The magic happens in your browser.
+        </h2>
 
         <div
           className={"main-container" + " " + (settingsBoxOpen ? "open" : "")}
@@ -61,9 +65,9 @@ export default function App() {
           <Dropzone onDrop={onFilesSelected} />
 
           <p
-              className={"cog-button" + " " + (settingsBoxOpen ? "open" : "")}
-              onClick={() => setSettingsBoxOpen(!settingsBoxOpen)}
-            ></p>
+            className={"cog-button" + " " + (settingsBoxOpen ? "open" : "")}
+            onClick={() => setSettingsBoxOpen(!settingsBoxOpen)}
+          ></p>
           <div
             className={"settings_cog" + " " + (settingsBoxOpen ? "open" : "")}
           >
@@ -87,7 +91,7 @@ export default function App() {
         <div className="chevron" />
       </div>
 
-
-    </div>
+      <Tutorials />
+    </>
   );
 }
