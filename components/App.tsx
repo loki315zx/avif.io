@@ -18,8 +18,8 @@ export default function App() {
   const [settingsBoxOpen, setSettingsBoxOpen] = useState(false);
   const [settings, setSettings] = useState<Settings>({
     effort: 25,
-    quality: 50,
-    useYuv444: false,
+    quality: 75,
+    useYuv444: true,
     keepTransparency: true,
   });
 
@@ -92,6 +92,26 @@ export default function App() {
       </div>
 
       <Tutorials />
+      <section id="whatisavif">
+        <div className="badge__grid">
+          <div className="white center s2 badge__avif">
+            <p className="bold">
+              What is<span>.avif?</span>
+            </p>
+          </div>
+          <div className="badge__grid__item">80% more bullshit</div>
+          <div className="badge__grid__item">242 more cool things</div>
+          <div className="badge__grid__item">
+            developed by tech giants like Google, Apple, Facebook, Microsoft,
+            Mozilla, Netflix, Nvidia
+          </div>
+          <div className="badge__grid__item">80% more bullshit</div>
+          <div className="badge__grid__item">242 more cool things</div>
+          <div className="badge__grid__item">
+            developed by Google, Apple and more
+          </div>
+        </div>
+      </section>
     </>
   );
 }

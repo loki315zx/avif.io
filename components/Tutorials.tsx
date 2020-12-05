@@ -4,15 +4,15 @@ import TutorialsBox from "./TutorialsBox";
 export default function Tutorials() {
   return (
     <div className="tutorial_container">
-      <div className="text-40 f3 white">
+      <div className="text-60 f3 white">
         How to use avif in a productive environment.
       </div>
-      <div className="text-40 white s4">
+      <div className="text-40 white s5">
         AV1 (.avif) is the solution. It is developed by the Alliance for Open
         Media in collaboration with Google, Mozilla, Intel and other tech
-        giants.{" "}
+        giants.
       </div>
-      <div className="tutorials_container">
+      <div className="tutorials_container s5">
         <TutorialsBox cssclass="css" title="CSS" />
         <TutorialsBox cssclass="html" title="HTML" />
         <TutorialsBox cssclass="js" title="JS" />

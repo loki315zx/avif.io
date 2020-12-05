@@ -36,7 +36,10 @@
   --gray1: #f4f4f4;
   --gray2: #bbbbbb;
   --gray3: #353535;
-  --gray4: #140635;
+
+  --bg1: #140635;
+  --bg2: #2c0635;
+  --bg3: #061935;
 
   --shadow: 0 2.2px 2.2px rgba(187, 187, 187, 0.006),
     0 5.3px 5.3px rgba(187, 187, 187, 0.008),
@@ -45,10 +48,12 @@
     0 33.4px 33.4px rgba(187, 187, 187, 0.014),
     0 80px 80px rgba(187, 187, 187, 0.02);
 
-  --responsivepadding: calc(5vh + 5vw) calc(10vh + 10vw) calc(5vh + 5vw)
-    calc(10vh + 10vw);
+  --responsivepadding: calc(20vh + 5vw) calc(10vh + 15vw) calc(5vh + 5vw)
+    calc(10vh + 15vw);
   --grid12234: repeat(4, 1fr);
   --gridgap: var(--s2);
+
+  --shadow3d: inset -2px -12px 12px rgba(0, 0, 0, 0.1);
 }
 
 /**/
@@ -255,7 +260,7 @@ span {
   color: var(--gray3);
 }
 .black900 {
-  color: var(--gray4);
+  color: var(--bg1);
 }
 
 .text-20 {
@@ -338,8 +343,8 @@ span {
   align-items: center;
   flex-direction: column;
   min-height: 100vh;
-  background-color: var(--gray4);
-  background-image: url(../assets/images/bg.svg);
+  background-color: var(--bg1);
+  background-image: url(../assets/images/newbg.svg);
   background-size: cover;
   background-position: bottom left;
   background-repeat: no-repeat;
@@ -359,6 +364,7 @@ span {
   flex-direction: column;
   backdrop-filter: blur(100px);
   z-index: 99999;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .dropzone-container {
@@ -370,6 +376,7 @@ span {
   z-index: 99;
   border-radius: var(--radius500);
   padding: var(--s1);
+  box-shadow: var(--shadow3d);
 }
 
 .dropzone-container.active {
@@ -391,13 +398,32 @@ span {
 .upload-button {
   width: var(--s4);
   height: var(--s4);
-  background-color: var(--gray4);
+  background: radial-gradient(
+      circle at top right,
+      var(--color500),
+      transparent 60%
+    ),
+    radial-gradient(circle at bottom right, var(--color300), transparent 60%),
+    radial-gradient(circle at bottom left, var(--color500), transparent 60%),
+    radial-gradient(circle at top left, var(--color300), transparent 60%),
+    var(--bg1);
+  border-radius: var(--radius300);
+  margin-bottom: var(--s2);
+  box-shadow: var(--shadow3d);
+  position: relative;
+}
+
+.upload-button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
   background-image: url("../assets/images/arrow.svg");
   background-size: 24px;
   background-position: center center;
   background-repeat: no-repeat;
-  border-radius: var(--radius900);
-  margin-bottom: var(--s2);
 }
 
 .conversion {
@@ -408,7 +434,7 @@ span {
   align-self: normal;
   position: relative;
   background: var(--white);
-  color: var(--gray4);
+  color: var(--bg1);
   z-index: 1;
   pointer-events: none;
   flex-direction: column;
@@ -528,7 +554,7 @@ span {
 }
 
 .downloadall {
-  background-color: var(--gray4);
+  background-color: var(--bg1);
   outline: none;
   color: var(--white);
   border: none;
@@ -638,7 +664,7 @@ h2.infobox:hover:before {
 
 .cog-button {
   position: absolute;
-  bottom: 0;
+  top: 0;
   width: 24px;
   right: 0;
   height: 24px;
@@ -743,7 +769,7 @@ h2.infobox:hover:before {
 .tutorial_container {
   padding: var(--responsivepadding);
   position: relative;
-  background: var(--gray4);
+  background: var(--bg1);
 }
 
 .tutorial_container * {
@@ -860,6 +886,7 @@ h2.infobox:hover:before {
     var(--color700)
   );
   cursor: pointer;
+  box-shadow: var(--shadow3d);
 }
 
 .tutorial_overflow {
@@ -945,6 +972,127 @@ h2.infobox:hover:before {
 
 .tutorials_box:hover .tutorial_shadow {
   transform: scale(1);
+}
+
+/**/
+/**/
+/* WHAT IS AVIF */
+/**/
+/**/
+
+.badge__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: var(--s2);
+}
+
+#whatisavif {
+  padding: var(--responsivepadding);
+  position: relative;
+  background: var(--bg2);
+  z-index: -1;
+}
+
+.badge__avif {
+  grid-column: 1/4;
+  background: radial-gradient(
+      circle at center left,
+      var(--color100),
+      transparent 50%
+    ),
+    radial-gradient(circle at 0% 0%, var(--color500), transparent 25%),
+    radial-gradient(circle at 20% 60%, var(--color700), transparent 25%),
+    radial-gradient(circle at center right, var(--color900), transparent 50%),
+    radial-gradient(circle at 60% 60%, var(--color300), transparent 25%),
+    radial-gradient(circle at bottom center, var(--color500), transparent 75%),
+    radial-gradient(circle at 80% 40%, var(--color100), transparent 75%),
+    var(--bg1);
+  border-radius: var(--radius500);
+  padding: var(--s5);
+  position: relative;
+  box-shadow: var(--shadow3d);
+}
+
+.badge__avif:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: radial-gradient(
+      circle at center left,
+      var(--color100),
+      transparent 50%
+    ),
+    radial-gradient(circle at 0% 0%, var(--color500), transparent 25%),
+    radial-gradient(circle at 20% 60%, var(--color700), transparent 25%),
+    radial-gradient(circle at center right, var(--color900), transparent 50%),
+    radial-gradient(circle at 60% 60%, var(--color300), transparent 25%),
+    radial-gradient(circle at bottom center, var(--color500), transparent 75%),
+    radial-gradient(circle at 80% 40%, var(--color100), transparent 75%),
+    var(--bg1);
+  animation: animate-border-radius 6s linear infinite alternate-reverse;
+  z-index: -1;
+  filter: blur(50px);
+  height: var(--s5);
+  box-shadow: var(--shadow3d);
+}
+
+.badge__avif p {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.badge__avif p span {
+  font-size: calc(var(--f3) * 2);
+
+  font-weight: bold;
+}
+
+.badge__grid__item {
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius300);
+  padding: var(--s2);
+  text-align: center;
+  position: relative;
+  box-shadow: var(--shadow3d);
+}
+
+@keyframes animate-border-radius {
+  0% {
+    border-radius: 37% 60% 42% 58% / 55% 42% 38% 25%;
+  }
+
+  20% {
+    border-radius: 72% 28% 42% 58% / 28% 34% 66% 72%;
+  }
+
+  40% {
+    border-radius: 72% 28% 78% 22% / 67% 77% 23% 33%;
+  }
+
+  60% {
+    border-radius: 18% 82% 78% 22% / 18% 59% 41% 82%;
+  }
+
+  80% {
+    border-radius: 79% 21% 78% 22% / 59% 81% 19% 41%;
+  }
+
+  100% {
+    border-radius: 45% 55% 21% 79% / 59% 30% 70% 41%;
+  }
 }
 
 /**/
