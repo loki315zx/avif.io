@@ -36,6 +36,7 @@
   --gray1: #f4f4f4;
   --gray2: #bbbbbb;
   --gray3: #353535;
+  --gray4: #111;
 
   --bg1: #140635;
   --bg2: #2c0635;
@@ -65,7 +66,7 @@
 @media only screen and (max-width: 1399.98px) {
   :root {
     --grid12234: repeat(3, 1fr);
-    --responsivepadding: calc(5vh + 5vw);
+    --responsivepadding: calc(10vh + 10vw) calc(5vh + 5vw);
   }
 }
 
@@ -89,7 +90,7 @@
   :root {
     --f1: calc(14px + 0.1vw);
     --s0: calc(4px + 0.5vh);
-    --responsivepadding: calc(2.5vh + 2.5vw);
+    --responsivepadding: calc(1vh + 1vw);
     --grid12234: repeat(1, 1fr);
     --gridgap: var(--s0);
   }
@@ -401,11 +402,11 @@ span {
   background: radial-gradient(
       circle at top right,
       var(--color500),
-      transparent 60%
+      transparent 80%
     ),
-    radial-gradient(circle at bottom right, var(--color300), transparent 60%),
-    radial-gradient(circle at bottom left, var(--color500), transparent 60%),
-    radial-gradient(circle at top left, var(--color300), transparent 60%),
+    radial-gradient(circle at bottom right, var(--color300), transparent 80%),
+    radial-gradient(circle at bottom left, var(--color500), transparent 80%),
+    radial-gradient(circle at top left, var(--color300), transparent 80%),
     var(--bg1);
   border-radius: var(--radius300);
   margin-bottom: var(--s2);
@@ -980,29 +981,27 @@ h2.infobox:hover:before {
 /**/
 /**/
 
-.badge__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: var(--s2);
-}
-
 #whatisavif {
   padding: var(--responsivepadding);
   position: relative;
-  background: var(--bg2);
+  background: var(--gray4);
   z-index: -1;
 }
 
+.badge__grid {
+  margin: 0 var(--s5);
+  padding: var(--s5);
+}
+
 .badge__avif {
-  grid-column: 1/4;
   background: radial-gradient(
       circle at center left,
       var(--color100),
       transparent 50%
     ),
     radial-gradient(circle at 0% 0%, var(--color500), transparent 25%),
-    radial-gradient(circle at 20% 60%, var(--color700), transparent 25%),
-    radial-gradient(circle at center right, var(--color900), transparent 50%),
+    radial-gradient(circle at 20% 60%, var(--color100), transparent 25%),
+    radial-gradient(circle at center right, var(--color500), transparent 50%),
     radial-gradient(circle at 60% 60%, var(--color300), transparent 25%),
     radial-gradient(circle at bottom center, var(--color500), transparent 75%),
     radial-gradient(circle at 80% 40%, var(--color100), transparent 75%),
@@ -1032,66 +1031,41 @@ h2.infobox:hover:before {
     radial-gradient(circle at bottom center, var(--color500), transparent 75%),
     radial-gradient(circle at 80% 40%, var(--color100), transparent 75%),
     var(--bg1);
-  animation: animate-border-radius 6s linear infinite alternate-reverse;
+  animation: animate-shadow 3s ease-out infinite;
   z-index: -1;
   filter: blur(50px);
-  height: var(--s5);
-  box-shadow: var(--shadow3d);
 }
 
 .badge__avif p {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-}
-
-.badge__avif p span {
   font-size: calc(var(--f3) * 2);
-
   font-weight: bold;
 }
 
 .badge__grid__item {
-  background: var(--white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: var(--s3) var(--s4);
   border-radius: var(--radius300);
-  padding: var(--s2);
-  text-align: center;
-  position: relative;
   box-shadow: var(--shadow3d);
+  margin-bottom: var(--s4);
+  background: var(--white);
+  text-align: center;
+  font-weight: bold;
 }
 
-@keyframes animate-border-radius {
+@keyframes animate-shadow {
   0% {
-    border-radius: 37% 60% 42% 58% / 55% 42% 38% 25%;
+    transform:scale(1)
   }
 
   20% {
-    border-radius: 72% 28% 42% 58% / 28% 34% 66% 72%;
-  }
-
-  40% {
-    border-radius: 72% 28% 78% 22% / 67% 77% 23% 33%;
-  }
-
-  60% {
-    border-radius: 18% 82% 78% 22% / 18% 59% 41% 82%;
-  }
-
-  80% {
-    border-radius: 79% 21% 78% 22% / 59% 81% 19% 41%;
+    transform:scale(1.5)
   }
 
   100% {
-    border-radius: 45% 55% 21% 79% / 59% 30% 70% 41%;
+    transform:scale(1)
   }
 }
 
