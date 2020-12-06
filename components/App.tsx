@@ -132,8 +132,8 @@ export default function App() {
           <div className="advantage__grid">
           <div className="advantage__grid__item">usually <span className="advantage__important">reduces file size</span> of images by 20-90% for faster page loading.</div>
           <div className="advantage__grid__item"><span className="advantage__important">decreases required bandwidth</span> for service providers.</div>
-          <div className="advantage__grid__item">
-          <span className="advantage__important">is actively developed by tech giants</span> like Google, Apple, Facebook, Microsoft,
+          <div className="advantage__grid__item">is{" "}
+          <span className="advantage__important">actively developed by tech giants</span> like Google, Apple, Facebook, Microsoft,
             Mozilla, Netflix & Nvidia.
           </div>
           <div className="advantage__grid__item">is open to use and <span className="advantage__important">royalty-free</span> for everyone.</div>
@@ -151,20 +151,29 @@ export default function App() {
           <span className="advantage__important">embraces HDR and wide color gamut</span> for viewing images on a wider range of colors.
           </div>
         </div>
-        <ReactCompareImage
+      </section>
+      <section id="avifcompare">
+        <div id="comparison__container">
+      <ReactCompareImage
               leftImage={lion}
               rightImage={lion2}
               leftImageAlt="jpg image"
               rightImageAlt="avif image"
               sliderLineWidth={4}
-              handle={<div className="handle" />}
+              handle={<div id="handle" />}
               sliderLineColor="rgba(255,255,255,0.2)"
               sliderPositionPercentage={0.5}
             />
+      <div id="fileformats">
+      <p id="png" className="active">png · 100kb</p>
+        <p id="jpg">jpg · 50kb</p>
+        <p id="webp">webp · 30kb</p>
+      </div>
+      </div>
       </section>
-      <section id="avifcompare">
-
-      </section>
+      <section id="caniuse">
+<div className="f3">Can I use?</div>
+</section>
     </>
   );
 }

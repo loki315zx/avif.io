@@ -39,8 +39,6 @@
   --gray4: #111;
 
   --bg1: #140635;
-  --bg2: #2c0635;
-  --bg3: #061935;
 
   --shadow: 0 2.2px 2.2px rgba(187, 187, 187, 0.006),
     0 5.3px 5.3px rgba(187, 187, 187, 0.008),
@@ -63,10 +61,17 @@
 /**/
 /**/
 
+@media only screen and (max-width: 1599.98px) {
+  :root {
+    --responsivepadding: calc(20vh + 5vw) calc(10vh + 10vw) calc(5vh + 5vw)
+    calc(10vh + 10vw);
+  }
+}
+
 @media only screen and (max-width: 1399.98px) {
   :root {
     --grid12234: repeat(3, 1fr);
-    --responsivepadding: calc(10vh + 10vw) calc(5vh + 5vw);
+    --responsivepadding: calc(10vh + 10vw) calc(5vh + 2.5vw);
   }
 }
 
@@ -1087,8 +1092,54 @@ h2.infobox:hover:before {
 /**/
 
 #avifcompare  {
-  padding:var(--responsivepadding);
   background: hsl(0 0% 8% / 1);
+}
+
+#avifcompare #fileformats div {
+  border-radius:var(--radius500)
+}
+
+#comparison__container {
+  position: relative;
+}
+
+#handle {
+  background: var(--color500);
+  padding: var(--s2) var(--s0);
+  border-radius: var(--radius100);
+}
+
+#fileformats {
+  display: flex;
+    position: absolute;
+    top: 0;
+    flex-direction: column;
+    padding: var(--s2);
+}
+
+#fileformats p {
+  background: var(--white);
+  padding: var(--s0);
+  margin-bottom: var(--s1);
+  border-radius: var(--radius100);
+  text-align: center;
+  opacity: 0.5;
+  cursor:pointer
+}
+
+#fileformats p.active {
+opacity:1
+}
+
+/**/
+/**/
+/* Can I use? */
+/**/
+/**/
+
+#caniuse {
+  background:var(--bg1);
+  padding:var(--responsivepadding)
 }
 
 
