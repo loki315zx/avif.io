@@ -10,6 +10,7 @@ import { FileWithId, uniqueId } from "../src/utils";
 import lion from "../assets/images/lion.jpg";
 import lion2 from "../assets/images/lion2.avif";
 import TutorialsBox from "./TutorialsBox";
+import { motion } from "framer-motion";
 
 export default function App() {
   const [converter, setConverter] = useState<Converter>();
@@ -50,6 +51,7 @@ export default function App() {
   }
 
   return (
+    
     <>
       <div className={"app-container"}>
         <h1 className={"f3 white bold s1"}>
@@ -115,31 +117,53 @@ export default function App() {
         <TutorialsBox cssclass="wordpress" title="WordPress" />
       </div>
     </div>
-      <section id="whatisavif">
+      <section id="avifbadge">
 
-          <div className="white center s3 badge__avif">
+          <div className="white center badge__avif">
             <p className="bold">.AVIF
             </p>
+            <motion.div    transition={{ duration: 4, repeat: Infinity, repeatType: "reverse", type: "scale",  damping: 0, mass: 0.5 }}
+            animate={{
+      scale: [1, 1.5]
+    }} className="badge__shadow"></motion.div>
           </div>
-          <div className="badge__grid">
-          <div className="badge__grid__item">usually reduces image file size by 20-90%</div>
-          <div className="badge__grid__item">reduces required bandwidth for service providers</div>
-          <div className="badge__grid__item">
-            developed by tech giants like Google, Apple, Facebook, Microsoft,
-            Mozilla, Netflix, Nvidia
+          </section>
+          <section id="avifadvantages">
+          <div className="advantage__grid">
+          <div className="advantage__grid__item">usually <span className="advantage__important">reduces file size</span> of images by 20-90% for faster page loading.</div>
+          <div className="advantage__grid__item"><span className="advantage__important">decreases required bandwidth</span> for service providers.</div>
+          <div className="advantage__grid__item">
+          <span className="advantage__important">is actively developed by tech giants</span> like Google, Apple, Facebook, Microsoft,
+            Mozilla, Netflix & Nvidia.
           </div>
-          <div className="badge__grid__item">open and royalty-free for everyone</div>
-          <div className="badge__grid__item">one of the highest quality to compression rates ever achieved</div>
-          <div className="badge__grid__item">
-            already supported by Chrome, Opera and Firefox
+          <div className="advantage__grid__item">is open to use and <span className="advantage__important">royalty-free</span> for everyone.</div>
+          <div className="advantage__grid__item">provides the <span className="advantage__important">highest quality to compression rate</span> ever achieved.</div>
+          <div className="advantage__grid__item">
+            already <span className="advantage__important">supported by browsers</span> like Chrome, Opera and Firefox.
           </div>
-          <div className="badge__grid__item">
-            supports transparency
+          <div className="advantage__grid__item">
+          <span className="advantage__important">supports transparency</span> and is therefore a better version of PNG.
           </div>
-          <div className="badge__grid__item">
-            supports animated frames
+          <div className="advantage__grid__item">
+          <span className="advantage__important">offers support for animated frames</span> and can replace GIFs as well as aPNGs.
+          </div>
+          <div className="advantage__grid__item">
+          <span className="advantage__important">embraces HDR and wide color gamut</span> for viewing images on a wider range of colors.
           </div>
         </div>
+        <ReactCompareImage
+              leftImage={lion}
+              rightImage={lion2}
+              leftImageAlt="jpg image"
+              rightImageAlt="avif image"
+              sliderLineWidth={4}
+              handle={<div className="handle" />}
+              sliderLineColor="rgba(255,255,255,0.2)"
+              sliderPositionPercentage={0.5}
+            />
+      </section>
+      <section id="avifcompare">
+
       </section>
     </>
   );

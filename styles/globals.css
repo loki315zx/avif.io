@@ -977,20 +977,15 @@ h2.infobox:hover:before {
 
 /**/
 /**/
-/* WHAT IS AVIF */
+/* AVIFBADGE */
 /**/
 /**/
 
-#whatisavif {
+#avifbadge {
   padding: var(--responsivepadding);
   position: relative;
   background: var(--gray4);
-  z-index: -1;
-}
-
-.badge__grid {
-  margin: 0 var(--s5);
-  padding: var(--s5);
+  z-index: 2;
 }
 
 .badge__avif {
@@ -1010,9 +1005,10 @@ h2.infobox:hover:before {
   padding: var(--s5);
   position: relative;
   box-shadow: var(--shadow3d);
+  margin: var(--s4)
 }
 
-.badge__avif:after {
+.badge__shadow {
   content: "";
   position: absolute;
   top: 0;
@@ -1031,7 +1027,6 @@ h2.infobox:hover:before {
     radial-gradient(circle at bottom center, var(--color500), transparent 75%),
     radial-gradient(circle at 80% 40%, var(--color100), transparent 75%),
     var(--bg1);
-  animation: animate-shadow 3s ease-out infinite;
   z-index: -1;
   filter: blur(50px);
 }
@@ -1045,29 +1040,57 @@ h2.infobox:hover:before {
   font-weight: bold;
 }
 
-.badge__grid__item {
-  padding: var(--s3) var(--s4);
-  border-radius: var(--radius300);
-  box-shadow: var(--shadow3d);
-  margin-bottom: var(--s4);
-  background: var(--white);
-  text-align: center;
+/**/
+/**/
+/* AVIF ADVANTAGES */
+/**/
+/**/
+
+#avifadvantages {
+  background:var(--gray4)
+}
+
+.advantage__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap:var(--s2);
+  padding:var(--s3)
+}
+
+.advantage__grid__item {
+  padding: var(--s2);
+  background: hsl(0 0% 8% / 1);
+    color: #ffffff0d;
+  font-weight: bold;
+  min-height: 50vh;
+  margin: var(--s1);
+  border-radius: var(--radius500);
+  font-size: var(--f2);
+  cursor: default;
+}
+
+.advantage__important {
+  color:var(--color500);
   font-weight: bold;
 }
 
-@keyframes animate-shadow {
-  0% {
-    transform:scale(1)
-  }
-
-  20% {
-    transform:scale(1.5)
-  }
-
-  100% {
-    transform:scale(1)
-  }
+.advantage__grid__item:hover {
+  background: #242424;
+  color: white;
 }
+
+
+/**/
+/**/
+/* IMAGECOMPARE */
+/**/
+/**/
+
+#avifcompare  {
+  padding:var(--responsivepadding);
+  background: hsl(0 0% 8% / 1);
+}
+
 
 /**/
 /**/
