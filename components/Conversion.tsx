@@ -117,12 +117,16 @@ export default function Conversion(props: ConversionProps) {
         <p className="filename">
           {fileName}
           {finished ? ".avif" : ""}
+
+          <span className="remaining-time">
+            {" · "}
+            {!finished && remainingTime && "" + remainingTime}
+          </span>
         </p>
         <div className="conversion_meta">
-
-        <span className="conversion_format">
-        {originalFormat} · {prettyBytes(originalSize)}
-        </span>
+          <span className="conversion_format">
+            {originalFormat} · {prettyBytes(originalSize)}
+          </span>
 
           <span className="conversion_outcome">
             {percentageSaved > 0 && (
@@ -132,12 +136,6 @@ export default function Conversion(props: ConversionProps) {
               </>
             )}{" "}
           </span>
-
-        <span className="remaining-time">
-          {" · "}
-          {!finished && remainingTime && "" + remainingTime}
-        </span>
-
         </div>
       </div>
       <span className={"download"} />

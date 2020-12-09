@@ -17,9 +17,13 @@ export default function Header() {
             </div>
           </div>
           <div className="menu">
-            <a id="support">Support</a>
-            <a id="features">Features</a>
-            <a id="blog">Blog</a>
+            <a id="support">
+              {" "}
+              <Link href="https://www.buymeacoffee.com/justinschmitz">
+                Support
+              </Link>
+            </a>
+            <a id="blog">Blog (soon)</a>
             <a id="cta" className="button-primary">
               <Link href="/">Convert</Link>
             </a>

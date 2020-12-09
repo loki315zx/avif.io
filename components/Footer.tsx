@@ -12,7 +12,7 @@ export default function Footer() {
               A tool by Justin Schmitz and Niksa Sporin that has already{" "}
               converted <ConversionsCounter /> files.
             </div>
-            <div>2020 avif.io</div>
+            <div>© 2020 avif.io</div>
           </div>
           <div id="footer-about">
             <div className="bold s1">About</div>
