@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import ConversionsCounter from "./ConversionsCounter";
 
 export default function Header() {
@@ -7,15 +8,20 @@ export default function Header() {
       {
         <div className="header">
           <div className="flex-center">
-            <span className="logo">avif.io</span>
-            <ConversionsCounter />
+            <a className="logo">
+              <Link href="/">avif.io</Link>
+            </a>
+            <div className="conversionscounter">
+              over <ConversionsCounter />
+              files converted
+            </div>
           </div>
           <div className="menu">
             <a id="support">Support</a>
             <a id="features">Features</a>
             <a id="blog">Blog</a>
             <a id="cta" className="button-primary">
-              Convert
+              <Link href="/">Convert</Link>
             </a>
           </div>
         </div>

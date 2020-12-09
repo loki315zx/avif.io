@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from "react";
 import ReactCompareImage from "react-compare-image";
 import _ from "lodash";
+
 import Conversion from "./Conversion";
 import Dropzone from "./Dropzone";
 import DownloadAllButton from "./DownloadAllButton";
 import SettingsBox, { Settings } from "./SettingsBox";
+import Tutorials from "./Tutorials";
+import Advantages from "./Advantages";
+import Footer from "./Footer";
+import CTA from "./CTA";
+
 import Converter from "../src/converter";
 import { FileWithId, uniqueId } from "../src/utils";
-import lion from "../assets/images/lion.jpg";
-import lion2 from "../assets/images/lion2.avif";
-import TutorialsBox from "./TutorialsBox";
-import { motion } from "framer-motion";
+
+import comparison_jpg from "../assets/images/comparison.jpg";
+import comparison_avif from "../assets/images/comparison.avif";
 
 export default function App() {
   const [converter, setConverter] = useState<Converter>();
@@ -51,9 +56,9 @@ export default function App() {
   }
 
   return (
-    
     <>
       <div className={"app-container"}>
+        <div className="app-container-blur"></div>
         <h1 className={"f3 white bold s1"}>
           Convert any images to avif for free.
         </h1>
@@ -93,87 +98,67 @@ export default function App() {
         <div className="chevron" />
       </div>
 
-      <div className="tutorial_container">
-      <div className="text-60 f3 white">
-        How to use avif in a productive environment.
-      </div>
-      <div className="text-40 white s5">
-        AV1 (.avif) is the solution. It is developed by the Alliance for Open
-        Media in collaboration with Google, Mozilla, Intel and other tech
-        giants.
-      </div>
-      <div className="tutorials_container s5">
-        <TutorialsBox cssclass="css" title="CSS" />
-        <TutorialsBox cssclass="html" title="HTML" />
-        <TutorialsBox cssclass="js" title="JS" />
-        <TutorialsBox cssclass="svelte" title="Svelte" />
-        <TutorialsBox cssclass="react" title="React" />
-        <TutorialsBox cssclass="angular" title="Angular" />
-        <TutorialsBox cssclass="vue" title="Vue" />
-        <TutorialsBox cssclass="firefox" title="Firefox" />
-        <TutorialsBox cssclass="gimp" title="GIMP" />
-        <TutorialsBox cssclass="windows" title="Windows" />
-        <TutorialsBox cssclass="netlify" title="Netlify" />
-        <TutorialsBox cssclass="wordpress" title="WordPress" />
-      </div>
-    </div>
-      <section id="avifbadge">
-
-          <div className="white center badge__avif">
-            <p className="bold">.AVIF
-            </p>
-            <motion.div    transition={{ duration: 4, repeat: Infinity, repeatType: "reverse", type: "scale",  damping: 0, mass: 0.5 }}
-            animate={{
-      scale: [1, 1.5]
-    }} className="badge__shadow"></motion.div>
+      <Tutorials />
+      <Advantages />
+      <section id="avifcompare">
+        <div id="comparison__container">
+          <ReactCompareImage
+            leftImage={comparison_jpg}
+            rightImage={comparison_avif}
+            leftImageAlt="jpg image"
+            rightImageAlt="avif image"
+            sliderLineWidth={4}
+            handle={<div id="handle" />}
+            sliderLineColor="rgba(255,255,255,0.2)"
+            sliderPositionPercentage={0.5}
+          />
+          <p id="jpg">jpg · 45kb</p>
+          <p id="avif">avif · 45kb</p>
+        </div>
+      </section>
+      {/*
+      <section className="more__grid">
+        <div className="more__item">
+          <div className="f2 s2">Comparisons</div>
+          <div className="more__badges">
+            <div className="badge">webp</div>
+            <div className="badge">jpg</div>
+            <div className="badge">jpegxl</div>
+            <div className="badge">png</div>
+            <div className="badge">mozjpg</div>
+            <div className="badge">oxipng</div>
+            <div className="badge">gif</div>
+            <div className="badge">bmp</div>
+            <div className="badge">svg</div>
+            <div className="badge">heif</div>
           </div>
-          </section>
-          <section id="avifadvantages">
-          <div className="advantage__grid">
-          <div className="advantage__grid__item">usually <span className="advantage__important">reduces file size</span> of images by 20-90% for faster page loading.</div>
-          <div className="advantage__grid__item"><span className="advantage__important">decreases required bandwidth</span> for service providers.</div>
-          <div className="advantage__grid__item">is{" "}
-          <span className="advantage__important">actively developed by tech giants</span> like Google, Apple, Facebook, Microsoft,
-            Mozilla, Netflix & Nvidia.
+        </div>
+        <div className="more__item">
+          <div className="f2 s2">Usecases</div>
+          <div className="more__badges">
+            <div className="badge">Increase Conversions</div>
+            <div className="badge">SaaS</div>
+            <div className="badge">e-Commerce</div>
+            <div className="badge">Improve SEO</div>
+            <div className="badge">Save Data</div>
+            <div className="badge">Performance</div>
+            <div className="badge">User Experience</div>
           </div>
-          <div className="advantage__grid__item">is open to use and <span className="advantage__important">royalty-free</span> for everyone.</div>
-          <div className="advantage__grid__item">provides the <span className="advantage__important">highest quality to compression rate</span> ever achieved.</div>
-          <div className="advantage__grid__item">
-            already <span className="advantage__important">supported by browsers</span> like Chrome, Opera and Firefox.
-          </div>
-          <div className="advantage__grid__item">
-          <span className="advantage__important">supports transparency</span> and is therefore a better version of PNG.
-          </div>
-          <div className="advantage__grid__item">
-          <span className="advantage__important">offers support for animated frames</span> and can replace GIFs as well as aPNGs.
-          </div>
-          <div className="advantage__grid__item">
-          <span className="advantage__important">embraces HDR and wide color gamut</span> for viewing images on a wider range of colors.
+        </div>
+        <div className="more__item">
+          <div className="f2 s2">Support</div>
+          <div className="more__badges">
+            <div className="badge">'Can I use?'-overview</div>
+            <div className="badge">Browser Support</div>
+            <div className="badge">Software Support</div>
+            <div className="badge">Hardware Support</div>
           </div>
         </div>
       </section>
-      <section id="avifcompare">
-        <div id="comparison__container">
-      <ReactCompareImage
-              leftImage={lion}
-              rightImage={lion2}
-              leftImageAlt="jpg image"
-              rightImageAlt="avif image"
-              sliderLineWidth={4}
-              handle={<div id="handle" />}
-              sliderLineColor="rgba(255,255,255,0.2)"
-              sliderPositionPercentage={0.5}
-            />
-      <div id="fileformats">
-      <p id="png" className="active">png · 100kb</p>
-        <p id="jpg">jpg · 50kb</p>
-        <p id="webp">webp · 30kb</p>
-      </div>
-      </div>
-      </section>
-      <section id="caniuse">
-<div className="f3">Can I use?</div>
-</section>
+*/}
+
+      <CTA />
+      <Footer />
     </>
   );
 }

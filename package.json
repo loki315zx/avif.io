@@ -16,6 +16,7 @@
     "lodash": "^4.17.20",
     "next": "10.0.2",
     "next-images": "^1.6.2",
+    "next-mdx-remote": "^1.0.1",
     "prettier": "^2.1.2",
     "pretty-bytes": "^5.4.1",
     "react": "17.0.1",

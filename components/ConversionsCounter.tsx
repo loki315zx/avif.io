@@ -31,5 +31,5 @@ for (day = 0; day < days; day++) {
 }
 
 export default function ConversionsCounter() {
-  return <div className="conversionscounter">over {count} files converted</div>;
+  return <>{count} </>;
 }
