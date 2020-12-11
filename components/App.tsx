@@ -102,7 +102,7 @@ export default function App() {
 
       <Tutorials />
       <Advantages />
-      <section className="content-visibility" id="avifcompare">
+      <section id="avifcompare">
         <div id="comparison__container">
           <ReactCompareImage
             leftImage={comparison_jpg}

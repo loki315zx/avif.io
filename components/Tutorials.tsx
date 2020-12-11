@@ -18,7 +18,7 @@ function TutorialsBox(props: TutorialsBoxProps) {
 
 export default function Tutorials() {
   return (
-    <section className="section__tutorials content-visibility">
+    <section className="section__tutorials">
       <div className="text-60 white f3">
         How to use avif in a productive environment.
       </div>

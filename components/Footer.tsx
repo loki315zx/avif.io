@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <>
       {
-        <div className="footer content-visibility">
+        <div className="footer">
           <div id="footer-info">
             <div className="bold s2 f2">avif.io</div>
             <div className="s2 text-60">

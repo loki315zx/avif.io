@@ -312,10 +312,6 @@ span {
   color: var(--white);
 }
 
-.content-visibility {
-  content-visibility: auto;
-}
-
 .will-change {
   will-change: auto;
 }
@@ -508,6 +504,31 @@ span {
   margin-bottom: var(--s2);
   box-shadow: var(--shadow3d);
   position: relative;
+  overflow: hidden;
+}
+
+.upload-blur {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: radial-gradient(
+      circle at center left,
+      var(--color300),
+      transparent 50%
+    ),
+    radial-gradient(circle at 0% 0%, var(--color500), transparent 25%),
+    radial-gradient(circle at 20% 60%, var(--color300), transparent 50%),
+    radial-gradient(circle at center right, var(--color500), transparent 50%),
+    radial-gradient(circle at 60% 60%, var(--color700), transparent 25%),
+    radial-gradient(circle at bottom center, var(--color500), transparent 75%),
+    radial-gradient(circle at 80% 40%, var(--color700), transparent 75%),
+    var(--bg1);
+  z-index: 0;
+  filter: blur(5px);
+  transition: all 10s ease-in-out;
+  animation: cta-background 10s infinite alternate-reverse both;
 }
 
 .upload-button:after {
@@ -521,6 +542,7 @@ span {
   background-size: 24px;
   background-position: center center;
   background-repeat: no-repeat;
+  z-index: 1;
 }
 
 .conversion {

@@ -1,9 +1,28 @@
 import React from "react";
 
+export interface Advantages {
+  pre: string;
+  text: string;
+  post: string;
+  number: string;
+}
+
+function AdvantageItem(props: Advantages) {
+  return (
+    <div className="advantage__grid__item">
+      <div className="advantage__text">
+        {props.pre} <span className="advantage__important">{props.text}</span>{" "}
+        {props.post}
+      </div>
+      <div className="advantage__visualizer" id={props.number}></div>
+    </div>
+  );
+}
+
 export default function Advantages() {
   return (
     <>
-      <section id="avifbadge" className="content-visibility">
+      <section id="avifbadge">
         <div className="white center badge__avif">
           <p className="bold">.AVIF</p>
           <div className="badge__shadow"></div>
@@ -11,89 +30,61 @@ export default function Advantages() {
       </section>
       <section id="avifadvantages">
         <div className="advantage__grid">
-          <div className="advantage__grid__item">
-            <div>
-              usually{" "}
-              <span className="advantage__important">reduces file size</span> of
-              images by 20-90% for faster page loading.
-            </div>
-            <div className="visualizer" id="visualizer-1"></div>
-          </div>
-          <div className="advantage__grid__item">
-            <div>
-              <span className="advantage__important">
-                decreases required bandwidth
-              </span>{" "}
-              for service providers.
-            </div>
-            <div className="visualizer" id="visualizer-2"></div>
-          </div>
-          <div className="advantage__grid__item">
-            <div>
-              is{" "}
-              <span className="advantage__important">
-                actively developed by tech giants
-              </span>{" "}
-              like Google, Apple, Facebook, Microsoft, Mozilla, Netflix &
-              Nvidia.
-            </div>
-            <div className="visualizer" id="visualizer-3"></div>
-          </div>
-          <div className="advantage__grid__item">
-            <div>
-              is open to use and{" "}
-              <span className="advantage__important">royalty-free</span> for
-              everyone.
-            </div>
-            <div className="visualizer" id="visualizer-4"></div>
-          </div>
-          <div className="advantage__grid__item">
-            <div>
-              provides the{" "}
-              <span className="advantage__important">
-                highest quality to compression rate
-              </span>{" "}
-              ever achieved.
-            </div>
-            <div className="visualizer" id="visualizer-5"></div>
-          </div>
-          <div className="advantage__grid__item">
-            <div>
-              already{" "}
-              <span className="advantage__important">
-                supported by browsers
-              </span>{" "}
-              like Chrome, Opera and Firefox.
-            </div>
-            <div className="visualizer" id="visualizer-6"></div>
-          </div>
-          <div className="advantage__grid__item">
-            <div>
-              <span className="advantage__important">
-                supports transparency
-              </span>{" "}
-              and is therefore a better version of PNG.
-            </div>
-            <div className="visualizer" id="visualizer-7"></div>
-          </div>
-          <div className="advantage__grid__item">
-            <div>
-              <span className="advantage__important">
-                offers support for animated frames
-              </span>{" "}
-              and can replace GIFs as well as aPNGs.
-            </div>
-            <div className="visualizer" id="visualizer-8"></div>
-          </div>
-          <div className="advantage__grid__item">
-            <div>
-              <span className="advantage__important">
-                embraces HDR and wide color gamut
-              </span>{" "}
-              for viewing images on a wider range of colors.
-            </div>
-            <div className="visualizer" id="visualizer-9"></div>
-          </div>
+          <AdvantageItem
+            pre="usually"
+            text="reduces file size"
+            post="of images by 20-90% for faster page loading."
+            number="visualizer-1"
+          />
+          <AdvantageItem
+            pre=""
+            text="decreases required bandwidth"
+            post="for service providers."
+            number="visualizer-2"
+          />
+          <AdvantageItem
+            pre="is"
+            text="actively developed by tech giants"
+            post="like Google, Apple, Microsoft, Mozilla &
+              Nvidia."
+            number="visualizer-3"
+          />
+          <AdvantageItem
+            pre="is open to use and"
+            text="royalty-free"
+            post="for everyone"
+            number="visualizer-4"
+          />
+          <AdvantageItem
+            pre="provides the"
+            text="highest quality to compression rate"
+            post="ever achieved"
+            number="visualizer-5"
+          />
+          <AdvantageItem
+            pre="already"
+            text="supported by browsers"
+            post="like Chrome, Opera and Firefox"
+            number="visualizer-6"
+          />
+          <AdvantageItem
+            pre=""
+            text="supports transparency"
+            post="and is therefore a better version of PNG."
+            number="visualizer-7"
+          />
+          <AdvantageItem
+            pre=""
+            text="offers support for animated frames"
+            post="and can replace GIFs as well as aPNGs."
+            number="visualizer-8"
+          />
+          <AdvantageItem
+            pre=""
+            text="embraces HDR and wide color gamut"
+            post="for viewing images on a wider range of colors."
+            number="visualizer-9"
+          />
         </div>
         <div className="advantages-explainer">
           In the last 10 years, the size of an average website has increased

@@ -2,6 +2,11 @@
 npm i -D && npm run export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && npm run dev
 
 
+#Reset
+git fetch origin
+git reset --hard origin/master
+
+
 # AVIF.IO
 
 avif.io is a website for converting a wide variety of file

@@ -2,7 +2,6 @@ import React from "react";
 import { useDropzone } from "react-dropzone";
 import Conversion from "./Conversion";
 
-
 export interface DropzoneProps {
   onDrop(files: File[]): void;
 }
@@ -51,10 +50,10 @@ export default function Dropzone(props: DropzoneProps) {
       <div className={"dropzone-root"} {...getRootProps()}>
         <input {...getInputProps()} />
         <>
-        <div className={"upload-button"}></div>
-          <div className={"s0 bold gray4"}>
-            Drop your images or browse
+          <div className={"upload-button"}>
+            <div className="upload-blur"></div>
           </div>
+          <div className={"s0 bold gray4"}>Drop your images or browse</div>
           <div id="explainformats" className={"black500 infobox"}>
             supports png · jpg · webp · gif and more
           </div>
