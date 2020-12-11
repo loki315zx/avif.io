@@ -1,26 +1,12 @@
 import React from "react";
-import { motion } from "framer-motion";
 
 export default function Advantages() {
   return (
     <>
-      <section id="avifbadge">
+      <section id="avifbadge" className="content-visibility">
         <div className="white center badge__avif">
           <p className="bold">.AVIF</p>
-          <motion.div
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              repeatType: "reverse",
-              type: "scale",
-              damping: 0,
-              mass: 0.5,
-            }}
-            animate={{
-              scale: [1, 1.2],
-            }}
-            className="badge__shadow"
-          ></motion.div>
+          <div className="badge__shadow"></div>
         </div>
       </section>
       <section id="avifadvantages">

@@ -1,11 +1,10 @@
 import React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 export default function CTA() {
   return (
     <Link href="/">
-      <div className="cta__container">
+      <div className="cta__container content-visibility">
         <div className="cta">
           <div className="cta__subtitle">
             Profit from a faster website, higher ranking and better conversions.

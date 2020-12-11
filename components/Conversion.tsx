@@ -111,7 +111,7 @@ export default function Conversion(props: ConversionProps) {
     <a
       download={`${fileName}.avif`}
       href={outputObjectURL}
-      className={`conversion ${finished ? "finished" : "progress"}`}
+      className={`will-change conversion ${finished ? "finished" : "progress"}`}
     >
       <div className="conversion_information">
         <p className="filename">

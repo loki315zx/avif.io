@@ -72,7 +72,9 @@ export default function App() {
           <Dropzone onDrop={onFilesSelected} />
 
           <p
-            className={"cog-button" + " " + (settingsBoxOpen ? "open" : "")}
+            className={
+              "will-change cog-button" + " " + (settingsBoxOpen ? "open" : "")
+            }
             onClick={() => setSettingsBoxOpen(!settingsBoxOpen)}
           ></p>
           <div
@@ -100,7 +102,7 @@ export default function App() {
 
       <Tutorials />
       <Advantages />
-      <section id="avifcompare">
+      <section className="content-visibility" id="avifcompare">
         <div id="comparison__container">
           <ReactCompareImage
             leftImage={comparison_jpg}

@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 
 export interface TutorialsBoxProps {
   cssclass: string;
@@ -8,22 +7,18 @@ export interface TutorialsBoxProps {
 
 function TutorialsBox(props: TutorialsBoxProps) {
   return (
-    <motion.div
-      className={"tutorials__box"}
-      id={props.cssclass}
-      whileHover={{ scale: 1.03, rotate: 3 }}
-    >
-      <motion.div className={"tutorial__overflow"}>
-        <motion.span className="tutorial__title">{props.title}</motion.span>
-      </motion.div>
+    <div className={"tutorials__box"} id={props.cssclass}>
+      <div className={"tutorial__overflow"}>
+        <span className="tutorial__title">{props.title}</span>
+      </div>
       <div className="tutorial__shadow"></div>
-    </motion.div>
+    </div>
   );
 }
 
 export default function Tutorials() {
   return (
-    <section className="section__tutorials">
+    <section className="section__tutorials content-visibility">
       <div className="text-60 white f3">
         How to use avif in a productive environment.
       </div>
