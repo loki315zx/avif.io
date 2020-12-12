@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import "../styles/normalize.min.css";
-import "../styles/render.css";
+import "../styles/globals.css";
 
 export default function AvifIo({ Component, pageProps }: any) {
   useEffect(arrayBufferPolyfill, []);
@@ -23,5 +23,3 @@ function arrayBufferPolyfill() {
     });
   }
 }
-
-import "../styles/globals.css";

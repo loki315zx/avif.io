@@ -42,6 +42,22 @@ export default function SampleBlog() {
           </div>
         </div>
       </div>
+      <section className="posts">
+        <div className="posts__container">
+          <div className="posts__item">
+            <div className="posts__date">November 12, 2020</div>
+            <div className="posts__title">
+              Three things you didn't know about avif
+            </div>
+            <div className="posts__summary">
+              AVIF, the file format based on the AV1 video codec, is the latest
+              addition to the next-gen image formats. Early reports and
+              comparisons show good results compared to JPEG and WebP. However,
+              even if browser support is good, AVIF is still on
+            </div>
+          </div>
+        </div>
+      </section>
       <CTA />
       <Footer />
     </div>

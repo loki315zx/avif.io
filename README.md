@@ -4,7 +4,7 @@ npm i -D && npm run export && cd conversion && npx cross-env NODE_ENV=production
 
 #Reset
 git fetch origin
-git reset --hard origin/master
+git reset --hard origin/content2.0
 
 
 # AVIF.IO
