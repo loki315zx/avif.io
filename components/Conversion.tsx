@@ -105,7 +105,10 @@ export default function Conversion(props: ConversionProps) {
     })();
   }, []);
 
-  const percentageSaved = Math.ceil((1 - outputSize / originalSize) * 100);
+  const percentageSaved = Math.max(
+    Math.ceil((1 - outputSize / originalSize) * 100),
+    0
+  );
 
   return (
     <a
@@ -129,12 +132,7 @@ export default function Conversion(props: ConversionProps) {
           </span>
 
           <span className="conversion_outcome">
-            {percentageSaved > 0 && (
-              <>
-                {" "}
-                {percentageSaved}% smaller · {prettyBytes(outputSize)}
-              </>
-            )}{" "}
+            {percentageSaved}% smaller · {prettyBytes(outputSize)}
           </span>
         </div>
       </div>
