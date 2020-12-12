@@ -1,6 +1,6 @@
 import React from "react";
 import { useDropzone } from "react-dropzone";
-import Conversion from "./Conversion";
+import Conversion from "@components/Conversion";
 
 export interface DropzoneProps {
   onDrop(files: File[]): void;

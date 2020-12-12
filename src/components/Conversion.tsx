@@ -1,17 +1,13 @@
-import Converter, {
-  ConversionOptions,
-  ConversionResult,
-} from "../src/converter";
-import React, { useEffect, useState } from "react";
-import { FileWithId, splitNameAndExtension } from "../src/utils";
+import React, { ReactElement, useEffect, useState } from "react";
 import prettyBytes from "pretty-bytes";
-import ProgressBar from "./ProgressBar";
-import webpToRgba from "../src/webpToRgba";
-import { Settings } from "./SettingsBox";
-import ConversionTimeEstimator from "./ConversionTimeEstimator";
+import Converter, { ConversionId, ConversionResult } from "@/Converter";
+import { splitNameAndExtension } from "@/utils";
+import ProgressBar from "@components/ProgressBar";
+import { Settings } from "@components/SettingsBox";
+import ConversionTimeEstimator from "@/ConversionTimeEstimator";
 
 export interface ConversionProps {
-  file: FileWithId;
+  file: File;
   converter: Converter;
   settings: Settings;
 
@@ -30,27 +26,29 @@ function formatRemainingTimeEstimate(estimator: ConversionTimeEstimator) {
     if (estimator.minutes !== 1) {
       result += "s";
     }
-    if (!!estimator.seconds) {
+    if (estimator.seconds) {
       result += " and ";
     }
   }
-  if (!!estimator.seconds) {
+  if (estimator.seconds) {
     result += `${estimator.seconds} seconds`;
   }
   result += " left";
   return result;
 }
 
-export default function Conversion(props: ConversionProps) {
-  // TODO Add conversion cancellation using props.file.id
+type ConversionStatus = "inProgress" | "canceled" | "finished";
+
+export default function Conversion(props: ConversionProps): ReactElement {
+  const [status, setStatus] = useState<ConversionStatus>("inProgress");
   const [fileName, setFileName] = useState<string>();
   const [originalFormat, setOriginalFormat] = useState<string>();
-  const [originalSize] = useState(props.file.data.byteLength);
+  const [originalSize] = useState(props.file.size);
   const [progress, setProgress] = useState(0);
   const [outputSize, setOutputSize] = useState(0);
   const [outputObjectURL, setOutputObjectURL] = useState("");
-  const [finished, setFinished] = useState(false);
   const [remainingTime, setRemainingTime] = useState("");
+  const [conversionId, setConversionId] = useState<ConversionId>();
   const [conversionTimeEstimator] = useState(
     new ConversionTimeEstimator(50, 300)
   );
@@ -63,7 +61,7 @@ export default function Conversion(props: ConversionProps) {
       conversionTimeEstimator.start();
 
       function onFinished(result: ConversionResult) {
-        setFinished(true);
+        setStatus("finished");
         const outputFile = new File([result.data], `${fileName}.avif`);
         setOutputObjectURL(URL.createObjectURL(outputFile));
         setOutputSize(result.data.length);
@@ -76,56 +74,52 @@ export default function Conversion(props: ConversionProps) {
         setRemainingTime(formatRemainingTimeEstimate(conversionTimeEstimator));
       }
 
-      let conversionOptions: ConversionOptions;
-      if (format === "webp") {
-        const { data, width, height } = await webpToRgba(
-          new Uint8Array(props.file.data)
-        );
-        conversionOptions = {
-          inputData: data.buffer,
-          isRawRgba: true,
-          ...props.settings,
-          width,
-          height,
-          onFinished,
-          onProgress,
-          onError: (e) => window.alert(e),
-        };
-      } else {
-        conversionOptions = {
-          inputData: props.file.data,
+      setConversionId(
+        await props.converter.convertFile(props.file, {
           ...props.settings,
           onFinished,
           onProgress,
-          onError: (e) => window.alert(e),
-        };
-      }
-
-      props.converter.convertFile(conversionOptions);
+          onError(e: string) {
+            window.alert(e);
+          },
+        })
+      );
     })();
   }, []);
 
-  const percentageSaved = Math.max(
-    Math.ceil((1 - outputSize / originalSize) * 100),
-    0
-  );
+  const percentageSaved = Math.ceil((1 - outputSize / originalSize) * 100);
+
+  function cancelConverison() {
+    if (status === "inProgress" && conversionId !== undefined) {
+      props.converter.cancelConversion(conversionId);
+      setStatus("canceled");
+    }
+  }
+
+  const finished = status === "finished";
 
   return (
-    <a
-      download={`${fileName}.avif`}
-      href={outputObjectURL}
-      className={`will-change conversion ${finished ? "finished" : "progress"}`}
-    >
-      <div className="conversion_information">
-        <p className="filename">
-          {fileName}
-          {finished ? ".avif" : ""}
-
+    <>
+      {status === "inProgress" && (
+        <button onClick={cancelConverison}>Cancel</button>
+      )}
+      <a
+        download={`${fileName}.avif`}
+        href={outputObjectURL}
+        className={`will-change conversion ${
+          finished ? "finished" : "progress"
+        }`}
+      >
+        <div className="conversion_information">
+          <p className="filename">
+            {fileName}
+            {finished ? ".avif" : ""}
+          </p>
           <span className="remaining-time">
-            {" · "}
-            {!finished && remainingTime && "" + remainingTime}
+            {" "}
+            {status === "inProgress" && remainingTime && " · " + remainingTime}
           </span>
-        </p>
+        </div>
         <div className="conversion_meta">
           <span className="conversion_format">
             {originalFormat} · {prettyBytes(originalSize)}
@@ -135,9 +129,10 @@ export default function Conversion(props: ConversionProps) {
             {percentageSaved}% smaller · {prettyBytes(outputSize)}
           </span>
         </div>
-      </div>
-      <span className={"download"} />
-      <ProgressBar progress={progress} />
-    </a>
+        <span className={"download"} />
+        {status === "inProgress" && <ProgressBar progress={progress} />}
+        {status === "canceled" && <h1>Canceled</h1>}
+      </a>
+    </>
   );
 }

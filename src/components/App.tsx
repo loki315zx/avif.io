@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { ReactElement, useEffect, useState } from "react";
 import ReactCompareImage from "react-compare-image";
-import _ from "lodash";
 
 import Conversion from "./Conversion";
 import Dropzone from "./Dropzone";
@@ -11,13 +10,18 @@ import Advantages from "./Advantages";
 import Footer from "./Footer";
 import CTA from "./CTA";
 
-import Converter from "../src/converter";
-import { FileWithId, uniqueId } from "../src/utils";
+import Converter from "@/Converter";
+import { uniqueId } from "@/utils";
 
 import comparison_jpg from "../assets/images/comparison.jpg";
 import comparison_avif from "../assets/images/comparison.avif";
 
-export default function App() {
+interface FileWithId {
+  file: File;
+  id: number;
+}
+
+export default function App(): ReactElement {
   const [converter, setConverter] = useState<Converter>();
   const [files, setFiles] = useState<FileWithId[]>([]);
   const [convertedFiles, setConvertedFiles] = useState<File[]>([]);
@@ -25,28 +29,21 @@ export default function App() {
   const [settings, setSettings] = useState<Settings>({
     effort: 25,
     quality: 75,
-    useYuv444: true,
+    useYuv444: false,
     keepTransparency: true,
   });
 
-  useEffect(() => {
-    setConverter(new Converter());
-  }, []);
+  useEffect(() => setConverter(new Converter()), []);
 
   function onSettingsUpdate(settings: Settings) {
     setSettings(settings);
   }
 
   async function onFilesSelected(selectedFiles: File[]) {
-    const addedFiles = await Promise.all(
-      _.map(selectedFiles, async (file) => ({
-        name: file.name,
-        data: await file.arrayBuffer(),
-        id: uniqueId(),
-      }))
-    );
-
-    setFiles([...files, ...addedFiles]);
+    setFiles([
+      ...files,
+      ...selectedFiles.map((file) => ({ file, id: uniqueId() })),
+    ]);
     setSettingsBoxOpen(false);
   }
 
@@ -86,15 +83,16 @@ export default function App() {
             />
           </div>
 
-          {files.map((f) => (
-            <Conversion
-              onFinished={onConversionFinished}
-              settings={settings}
-              file={f}
-              converter={converter}
-              key={f.id}
-            />
-          ))}
+          {converter &&
+            files.map(({ file, id }) => (
+              <Conversion
+                onFinished={onConversionFinished}
+                settings={settings}
+                file={file}
+                converter={converter}
+                key={id}
+              />
+            ))}
           <DownloadAllButton files={convertedFiles} />
         </div>
         <div className="chevron" />

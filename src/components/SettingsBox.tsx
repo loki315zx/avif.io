@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
-import PercentageSlider from "./PercentageSlider";
+import PercentageSlider from "@components/PercentageSlider";
 
 export interface Settings {
   effort: number;
