@@ -1,30 +1,30 @@
 import _ from "lodash";
-import { minutesAndSeconds } from "../src/utils";
+import { minutesAndSeconds } from "@/utils";
 
 export default class ConversionTimeEstimator {
   private samples: Sample[] = [];
-  private startTime: number;
-  private estimate: number;
+  private startTime = 0;
+  private estimate = 0;
 
-  private coarseMinutesEstimate: number;
-  private coarseSecondsEstimate: number;
+  private coarseMinutesEstimate?: number;
+  private coarseSecondsEstimate?: number;
 
   constructor(
     private readonly samplingTime: number,
     private readonly holdTime: number
   ) {}
 
-  start() {
+  start(): void {
     this.samples = [];
     this.startTime = Date.now();
   }
 
-  update(progress: number) {
+  update(progress: number): void {
     const now = Date.now();
 
     if (
       this.samples.length &&
-      now - _.last(this.samples).time < this.samplingTime
+      now - _.last(this.samples)!.time < this.samplingTime
     ) {
       return;
     }
@@ -40,11 +40,11 @@ export default class ConversionTimeEstimator {
     this.updateRemainingTimeEstimate();
   }
 
-  get minutes() {
+  get minutes(): number | undefined {
     return this.coarseMinutesEstimate;
   }
 
-  get seconds() {
+  get seconds(): number | undefined {
     return this.coarseSecondsEstimate;
   }
 
@@ -72,8 +72,10 @@ export default class ConversionTimeEstimator {
   }
 
   private updateRemainingTimeEstimate() {
-    const minSample = this.minSample();
-    const maxSample = this.maxSample();
+    console.assert(this.samples.length > 0);
+
+    const minSample = this.minSample()!;
+    const maxSample = this.maxSample()!;
 
     if (
       this.estimate === undefined ||
@@ -87,6 +89,7 @@ export default class ConversionTimeEstimator {
   }
 
   private coarserEstimate() {
+    // eslint-disable-next-line prefer-const
     let [minutes, seconds] = minutesAndSeconds(this.estimate);
 
     if (minutes >= 10) {

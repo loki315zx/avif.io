@@ -14,7 +14,7 @@ export default async function webpToRgba(data: Uint8Array): Promise<ImageData> {
   canvas.hidden = true;
   document.body.append(canvas);
   webpWasm.canvas = canvas;
-  const ctx = canvas.getContext("2d");
+  const ctx = canvas.getContext("2d")!;
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   // TODO Should I delete the canvas after?
   webpToCanvas(data, data.length);
