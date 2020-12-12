@@ -1,6 +1,6 @@
 import Head from "next/head";
-import App from "../components/App";
-import Header from "../components/Header";
+import App from "@components/App";
+import Header from "@components/Header";
 
 const ldJson = `
 {
@@ -87,8 +87,8 @@ export default function Index() {
 
       <App />
       <Header />
-      <script src="/__/firebase/8.1.1/firebase-app.js"></script>
-      <script src="/__/firebase/8.1.1/firebase-analytics.js"></script>
+      <script src="/__/firebase/8.2.0/firebase-app.js"></script>
+      <script src="/__/firebase/8.2.0/firebase-analytics.js"></script>
       <script src="/__/firebase/init.js"></script>
       <script>firebase.analytics();</script>
     </div>
