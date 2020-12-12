@@ -1,5 +1,6 @@
 import Head from "next/head";
-import App from "@/components/App";
+import App from "@components/App";
+import Header from "@components/Header";
 
 const ldJson = `
 {
@@ -78,33 +79,16 @@ export default function Index() {
         <meta property="og:determiner" content="the" />
         <meta property="og:url" content="https://avif.io" />
         <meta property="og:site_name" content="AVIF Converter | avif.io ✨" />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#29A2FF" />
-        <meta name="msapplication-TileColor" content="#29A2FF" />
-        <meta name="theme-color" content="#29A2FF" />
+        <meta name="msapplication-TileColor" content="#140635" />
+        <meta name="theme-color" content="#140635" />
         <meta name="msapplication-config" content="none" />
         <script type="application/ld+json">{ldJson}</script>
       </Head>
 
       <App />
-      <script src="/__/firebase/8.1.1/firebase-app.js"></script>
-      <script src="/__/firebase/8.1.1/firebase-analytics.js"></script>
+      <Header />
+      <script src="/__/firebase/8.2.0/firebase-app.js"></script>
+      <script src="/__/firebase/8.2.0/firebase-analytics.js"></script>
       <script src="/__/firebase/init.js"></script>
       <script>firebase.analytics();</script>
     </div>

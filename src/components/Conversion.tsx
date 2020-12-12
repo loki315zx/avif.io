@@ -106,9 +106,11 @@ export default function Conversion(props: ConversionProps): ReactElement {
       <a
         download={`${fileName}.avif`}
         href={outputObjectURL}
-        className={`conversion ${finished ? "finished" : "progress"}`}
+        className={`will-change conversion ${
+          finished ? "finished" : "progress"
+        }`}
       >
-        <div className="flex-center">
+        <div className="conversion_information">
           <p className="filename">
             {fileName}
             {finished ? ".avif" : ""}
@@ -118,20 +120,14 @@ export default function Conversion(props: ConversionProps): ReactElement {
             {status === "inProgress" && remainingTime && " · " + remainingTime}
           </span>
         </div>
-        <div className="flex-center">
-          <p className={"meta"}>
-            <span className="originalformat">
-              {originalFormat} · {prettyBytes(originalSize)}
-            </span>
-            <span className="conversionformat">
-              {percentageSaved > 0 && (
-                <>
-                  {" "}
-                  {percentageSaved}% smaller · {prettyBytes(outputSize)}
-                </>
-              )}{" "}
-            </span>
-          </p>
+        <div className="conversion_meta">
+          <span className="conversion_format">
+            {originalFormat} · {prettyBytes(originalSize)}
+          </span>
+
+          <span className="conversion_outcome">
+            {percentageSaved}% smaller · {prettyBytes(outputSize)}
+          </span>
         </div>
         <span className={"download"} />
         {status === "inProgress" && <ProgressBar progress={progress} />}

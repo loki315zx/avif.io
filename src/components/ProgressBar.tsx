@@ -12,8 +12,8 @@ export default function ProgressBar(props: ProgressBarProps) {
   };
 
   return (
-    <div className={"bar-container"}>
-      <div className={"bar-inner"} style={innerStyle} />
+    <div className={"bar__container"}>
+      <div className={"bar__inner"} style={innerStyle} />
     </div>
   );
 }
