@@ -13,8 +13,8 @@ import CTA from "@components/CTA";
 import Converter from "@utils/converter";
 import { uniqueId } from "@utils/utils";
 
-import comparison_jpg from "@assets/images/comparison.jpg";
-import comparison_avif from "@assets/images/comparison.avif";
+import comparison_jpg from "@images/comparison.jpg";
+import comparison_avif from "@images/comparison.avif";
 
 interface FileWithId {
   file: File;
