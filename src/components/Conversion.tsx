@@ -1,10 +1,10 @@
 import React, { ReactElement, useEffect, useState } from "react";
 import prettyBytes from "pretty-bytes";
-import Converter, { ConversionId, ConversionResult } from "@/Converter";
-import { splitNameAndExtension } from "@/utils";
+import Converter, { ConversionId, ConversionResult } from "@utils/converter";
+import { splitNameAndExtension } from "@utils/utils";
 import ProgressBar from "@components/ProgressBar";
 import { Settings } from "@components/SettingsBox";
-import ConversionTimeEstimator from "@/ConversionTimeEstimator";
+import ConversionTimeEstimator from "@utils/ConversionTimeEstimator";
 
 export interface ConversionProps {
   file: File;
@@ -17,8 +17,7 @@ export interface ConversionProps {
 function formatRemainingTimeEstimate(estimator: ConversionTimeEstimator) {
   if (estimator.minutes === undefined) return "";
 
-  if (estimator.minutes === 0 && estimator.seconds === 0)
-    return "Less than 10 seconds left";
+  if (estimator.minutes === 0 && estimator.seconds === 0) return "Less than 10 seconds left";
 
   let result = "";
   if (estimator.minutes !== 0) {
@@ -49,9 +48,7 @@ export default function Conversion(props: ConversionProps): ReactElement {
   const [outputObjectURL, setOutputObjectURL] = useState("");
   const [remainingTime, setRemainingTime] = useState("");
   const [conversionId, setConversionId] = useState<ConversionId>();
-  const [conversionTimeEstimator] = useState(
-    new ConversionTimeEstimator(50, 300)
-  );
+  const [conversionTimeEstimator] = useState(new ConversionTimeEstimator(50, 300));
 
   useEffect(() => {
     (async () => {
@@ -100,16 +97,11 @@ export default function Conversion(props: ConversionProps): ReactElement {
 
   return (
     <>
-      {status === "inProgress" && (
-        <button onClick={cancelConverison}>Cancel</button>
-      )}
+      {status === "inProgress" && <button onClick={cancelConverison}>Cancel</button>}
       <a
         download={`${fileName}.avif`}
         href={outputObjectURL}
-        className={`will-change conversion ${
-          finished ? "finished" : "progress"
-        }`}
-      >
+        className={`will-change conversion ${finished ? "finished" : "progress"}`}>
         <div className="conversion_information">
           <p className="filename">
             {fileName}

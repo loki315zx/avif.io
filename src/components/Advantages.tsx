@@ -11,8 +11,7 @@ function AdvantageItem(props: Advantages) {
   return (
     <div className="advantage__grid__item">
       <div className="advantage__text">
-        {props.pre} <span className="advantage__important">{props.text}</span>{" "}
-        {props.post}
+        {props.pre} <span className="advantage__important">{props.text}</span> {props.post}
       </div>
       <div className="advantage__visualizer" id={props.number}></div>
     </div>
@@ -87,19 +86,16 @@ export default function Advantages() {
           />
         </div>
         <div className="advantages-explainer">
-          In the last 10 years, the size of an average website has increased
-          from 500kb to 2000kb. Images have always been taking up half the
-          amount. To counteract the increasing size, the web is in need of a new
-          alternative to JPEG. AV1 (.avif) is the solution. It is developed by
-          the Alliance for Open Media in collaboration with Google, Mozilla,
-          Intel and other tech giants. Avif is a codec for super-compressed
-          images with acceptable quality. Avif is in continuous development with
-          the goal to achieve the best ratio of compression and quality. Avif
-          offers significant reduction of file size compared to the current JPEG
-          or WebP codec. You can typically reduce file sizes by 20-90%. Even for
-          images with transparency or animated frames. While currently only
-          supported by Chrome, you can expect it to get more support quickly.
-          View the progress.
+          In the last 10 years, the size of an average website has increased from 500kb to 2000kb.
+          Images have always been taking up half the amount. To counteract the increasing size, the
+          web is in need of a new alternative to JPEG. AV1 (.avif) is the solution. It is developed
+          by the Alliance for Open Media in collaboration with Google, Mozilla, Intel and other tech
+          giants. Avif is a codec for super-compressed images with acceptable quality. Avif is in
+          continuous development with the goal to achieve the best ratio of compression and quality.
+          Avif offers significant reduction of file size compared to the current JPEG or WebP codec.
+          You can typically reduce file sizes by 20-90%. Even for images with transparency or
+          animated frames. While currently only supported by Chrome, you can expect it to get more
+          support quickly. View the progress.
         </div>
       </section>
     </>

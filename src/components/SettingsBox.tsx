@@ -21,11 +21,12 @@ export default function SettingsBox(props: SettingsBoxProps) {
   const [keepTransparency, setKeepTransparency] = useState(true);
   const [lossless, setLossless] = useState(false);
 
-  useEffect(
-    () =>
-      props.onSettingsUpdate({ effort, quality, useYuv444, keepTransparency }),
-    [effort, quality, useYuv444, keepTransparency]
-  );
+  useEffect(() => props.onSettingsUpdate({ effort, quality, useYuv444, keepTransparency }), [
+    effort,
+    quality,
+    useYuv444,
+    keepTransparency,
+  ]);
 
   function onLosslessChanged(event: ChangeEvent<HTMLInputElement>) {
     if (event.target.checked) {
@@ -59,11 +60,7 @@ export default function SettingsBox(props: SettingsBoxProps) {
   }
 
   return (
-    <div
-      className={
-        "settings-box align-left secondary " + (props.open ? "open" : "closed")
-      }
-    >
+    <div className={"settings-box align-left secondary " + (props.open ? "open" : "closed")}>
       <div className={"align-left"}>
         <PercentageSlider
           className={"align-left"}
@@ -78,11 +75,7 @@ export default function SettingsBox(props: SettingsBoxProps) {
           onChange={setQuality}
         />
         <label className={"lossless-checkbox"}>
-          <input
-            type={"checkbox"}
-            checked={lossless}
-            onChange={onLosslessChanged}
-          />
+          <input type={"checkbox"} checked={lossless} onChange={onLosslessChanged} />
           <p className={"checkbox-text"}>Lossless</p>
         </label>
       </div>

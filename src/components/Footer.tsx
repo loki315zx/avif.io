@@ -9,15 +9,14 @@ export default function Footer() {
           <div id="footer-info">
             <div className="bold s2 f2">avif.io</div>
             <div className="s2 text-60">
-              A tool by Justin Schmitz and Niksa Sporin that has already{" "}
-              converted <ConversionsCounter /> files.
+              A tool by Justin Schmitz and Niksa Sporin that has already converted{" "}
+              <ConversionsCounter /> files.
             </div>
             <div>© 2020 avif.io</div>
           </div>
           <div id="footer-about">
             <div className="bold s1">About</div>
-            <a>Features</a> <a>Upcoming</a> <a>Changelog</a>{" "}
-            <a>User Feedback</a>
+            <a>Features</a> <a>Upcoming</a> <a>Changelog</a> <a>User Feedback</a>
           </div>
           <div id="footer-learn">
             <div className="bold s1">Learn</div>

@@ -43,10 +43,7 @@ export default function Dropzone(props: DropzoneProps) {
   }
 
   return (
-    <a
-      onClick={onBrowseClick}
-      className={`dropzone-container ${isDragActive ? "active" : ""}`}
-    >
+    <a onClick={onBrowseClick} className={`dropzone-container ${isDragActive ? "active" : ""}`}>
       <div className={"dropzone-root"} {...getRootProps()}>
         <input {...getInputProps()} />
         <>

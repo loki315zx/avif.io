@@ -1,20 +1,20 @@
 import React, { ReactElement, useEffect, useState } from "react";
 import ReactCompareImage from "react-compare-image";
 
-import Conversion from "./Conversion";
-import Dropzone from "./Dropzone";
-import DownloadAllButton from "./DownloadAllButton";
-import SettingsBox, { Settings } from "./SettingsBox";
-import Tutorials from "./Tutorials";
-import Advantages from "./Advantages";
-import Footer from "./Footer";
-import CTA from "./CTA";
+import Conversion from "@components/Conversion";
+import Dropzone from "@components/Dropzone";
+import DownloadAllButton from "@components/DownloadAllButton";
+import SettingsBox, { Settings } from "@components/SettingsBox";
+import Tutorials from "@components/Tutorials";
+import Advantages from "@components/Advantages";
+import Footer from "@components/Footer";
+import CTA from "@components/CTA";
 
-import Converter from "@/Converter";
-import { uniqueId } from "@/utils";
+import Converter from "@utils/converter";
+import { uniqueId } from "@utils/utils";
 
-import comparison_jpg from "../assets/images/comparison.jpg";
-import comparison_avif from "../assets/images/comparison.avif";
+import comparison_jpg from "@assets/images/comparison.jpg";
+import comparison_avif from "@assets/images/comparison.avif";
 
 interface FileWithId {
   file: File;
@@ -40,10 +40,7 @@ export default function App(): ReactElement {
   }
 
   async function onFilesSelected(selectedFiles: File[]) {
-    setFiles([
-      ...files,
-      ...selectedFiles.map((file) => ({ file, id: uniqueId() })),
-    ]);
+    setFiles([...files, ...selectedFiles.map((file) => ({ file, id: uniqueId() }))]);
     setSettingsBoxOpen(false);
   }
 
@@ -56,31 +53,19 @@ export default function App(): ReactElement {
     <>
       <div className={"app-container"}>
         <div className="app-container-blur"></div>
-        <h1 className={"f3 white bold s1"}>
-          Convert any images to avif for free.
-        </h1>
+        <h1 className={"f3 white bold s1"}>Convert any images to avif for free.</h1>
         <h2 className={"f1 white s4 infobox"}>
           No data is sent. The magic happens in your browser.
         </h2>
 
-        <div
-          className={"main-container" + " " + (settingsBoxOpen ? "open" : "")}
-        >
+        <div className={"main-container" + " " + (settingsBoxOpen ? "open" : "")}>
           <Dropzone onDrop={onFilesSelected} />
 
           <p
-            className={
-              "will-change cog-button" + " " + (settingsBoxOpen ? "open" : "")
-            }
-            onClick={() => setSettingsBoxOpen(!settingsBoxOpen)}
-          ></p>
-          <div
-            className={"settings_cog" + " " + (settingsBoxOpen ? "open" : "")}
-          >
-            <SettingsBox
-              open={settingsBoxOpen}
-              onSettingsUpdate={onSettingsUpdate}
-            />
+            className={"will-change cog-button" + " " + (settingsBoxOpen ? "open" : "")}
+            onClick={() => setSettingsBoxOpen(!settingsBoxOpen)}></p>
+          <div className={"settings_cog" + " " + (settingsBoxOpen ? "open" : "")}>
+            <SettingsBox open={settingsBoxOpen} onSettingsUpdate={onSettingsUpdate} />
           </div>
 
           {converter &&

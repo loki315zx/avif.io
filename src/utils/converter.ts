@@ -42,19 +42,13 @@ export default class Converter {
   private lastConversionId = 0;
 
   constructor() {
-    const numWorkers = Math.max(
-      1,
-      Math.floor(navigator.hardwareConcurrency / 2)
-    );
+    const numWorkers = Math.max(1, Math.floor(navigator.hardwareConcurrency / 2));
     this.workers = _.range(numWorkers).map(() => ({
       worker: new ConversionWorker(),
     }));
   }
 
-  async convertFile(
-    file: File,
-    options: ConversionOptions
-  ): Promise<ConversionId> {
+  async convertFile(file: File, options: ConversionOptions): Promise<ConversionId> {
     const conversionId = new ConversionId(this.lastConversionId);
     this.lastConversionId++;
     this.pendingConversions.push({
@@ -101,9 +95,7 @@ export default class Converter {
 
     async function startConversionMessage() {
       if (fileExtension(file.name) === "webp") {
-        const { data, width, height } = await webpToRgba(
-          new Uint8Array(await file.arrayBuffer())
-        );
+        const { data, width, height } = await webpToRgba(new Uint8Array(await file.arrayBuffer()));
         return {
           input: data.buffer,
           isRawRgba: true,

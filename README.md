@@ -2,11 +2,12 @@
 npm i -D && npm run export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && npm run dev
 ```
 
-
-#Reset
+#Reset Branch
 git fetch origin
-git reset --hard origin/content2.0
+git reset --hard origin/master
 
+#Run Prettier across project
+prettier --write .
 
 # AVIF.IO
 

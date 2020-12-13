@@ -19,9 +19,7 @@ export default function Header() {
           <div className="menu">
             <a id="support">
               {" "}
-              <Link href="https://www.buymeacoffee.com/justinschmitz">
-                Support
-              </Link>
+              <Link href="https://www.buymeacoffee.com/justinschmitz">Support</Link>
             </a>
             <a id="blog">Blog (soon)</a>
             <a id="cta" className="button-primary">

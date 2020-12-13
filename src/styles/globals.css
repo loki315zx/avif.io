@@ -46,17 +46,13 @@
   --bg6: hsl(0 0% 6% / 1);
   --bg7: hsl(0 0% 7% / 1);
   --bg8: hsl(0 0% 8% / 1);
-  --bg9: hsl(0 0 9% / 1);
+  --bg9: hsl(0 0% 9% / 1);
 
-  --shadow: 0 2.2px 2.2px rgba(187, 187, 187, 0.006),
-    0 5.3px 5.3px rgba(187, 187, 187, 0.008),
-    0 10px 10px rgba(187, 187, 187, 0.01),
-    0 17.9px 17.9px rgba(187, 187, 187, 0.012),
-    0 33.4px 33.4px rgba(187, 187, 187, 0.014),
-    0 80px 80px rgba(187, 187, 187, 0.02);
+  --shadow: 0 2.2px 2.2px rgba(187, 187, 187, 0.006), 0 5.3px 5.3px rgba(187, 187, 187, 0.008),
+    0 10px 10px rgba(187, 187, 187, 0.01), 0 17.9px 17.9px rgba(187, 187, 187, 0.012),
+    0 33.4px 33.4px rgba(187, 187, 187, 0.014), 0 80px 80px rgba(187, 187, 187, 0.02);
 
-  --responsivepadding: calc(15vh + 5vw) calc(10vh + 12.5vw) calc(15vh + 5vw)
-    calc(10vh + 12.5vw);
+  --responsivepadding: calc(15vh + 5vw) calc(10vh + 12.5vw) calc(15vh + 5vw) calc(10vh + 12.5vw);
   --grid12234: repeat(4, 1fr);
   --gridgap: var(--s2);
 
@@ -71,8 +67,7 @@
 
 @media only screen and (max-width: 1599.98px) {
   :root {
-    --responsivepadding: calc(15vh + 5vw) calc(10vh + 5vw) calc(15vh + 5vw)
-      calc(10vh + 5vw);
+    --responsivepadding: calc(15vh + 5vw) calc(10vh + 5vw) calc(15vh + 5vw) calc(10vh + 5vw);
   }
 }
 
@@ -120,11 +115,10 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local("Poppins Regular"), local("Poppins-Regular"),
-    url("../assets/fonts/poppins-regular.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
-    U+FEFF, U+FFFD;
+  src: local(Poppins Regular), local(Poppins-Regular),
+    url("@assets/fonts/poppins-regular.woff2") format(woff2);
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
+    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
@@ -132,11 +126,10 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: local("Poppins Bold"), local("Poppins-Bold"),
-    url("../assets/fonts/poppins-bold.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
-    U+FEFF, U+FFFD;
+  src: local(Poppins Bold), local(Poppins-Bold),
+    url("@assets/fonts/poppins-bold.woff2") format(woff2);
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
+    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
@@ -144,10 +137,9 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("../assets/fonts/patua-one.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
-    U+FEFF, U+FFFD;
+  src: url("@assets/fonts/patua-one.woff2") format(woff2);
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
+    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 /**/
@@ -370,7 +362,7 @@ span {
   flex-direction: column;
   min-height: 100vh;
   background-color: var(--bg1);
-  background-image: url(../assets/images/newbg.svg);
+  background-image: url(@assets/images/newbg.svg);
   background-size: cover;
   background-position: bottom left;
   background-repeat: no-repeat;
@@ -496,15 +488,10 @@ span {
 .upload-button {
   width: var(--s4);
   height: var(--s4);
-  background: radial-gradient(
-      circle at top right,
-      var(--color500),
-      transparent 80%
-    ),
+  background: radial-gradient(circle at top right, var(--color500), transparent 80%),
     radial-gradient(circle at bottom right, var(--color300), transparent 80%),
     radial-gradient(circle at bottom left, var(--color500), transparent 80%),
-    radial-gradient(circle at top left, var(--color300), transparent 80%),
-    var(--bg1);
+    radial-gradient(circle at top left, var(--color300), transparent 80%), var(--bg1);
   border-radius: var(--radius300);
   margin-bottom: var(--s2);
   box-shadow: var(--shadow3d);
@@ -518,18 +505,13 @@ span {
   right: 0;
   left: 0;
   bottom: 0;
-  background: radial-gradient(
-      circle at center left,
-      var(--color300),
-      transparent 50%
-    ),
+  background: radial-gradient(circle at center left, var(--color300), transparent 50%),
     radial-gradient(circle at 0% 0%, var(--color500), transparent 25%),
     radial-gradient(circle at 20% 60%, var(--color300), transparent 50%),
     radial-gradient(circle at center right, var(--color500), transparent 50%),
     radial-gradient(circle at 60% 60%, var(--color700), transparent 25%),
     radial-gradient(circle at bottom center, var(--color500), transparent 75%),
-    radial-gradient(circle at 80% 40%, var(--color700), transparent 75%),
-    var(--bg1);
+    radial-gradient(circle at 80% 40%, var(--color700), transparent 75%), var(--bg1);
   z-index: 0;
   filter: blur(5px);
   transition: all 10s ease-in-out;
@@ -543,7 +525,7 @@ span {
   bottom: 0;
   right: 0;
   left: 0;
-  background-image: url("../assets/images/arrow.svg");
+  background-image: url(@assets/images/arrow.svg);
   background-size: 24px;
   background-position: center center;
   background-repeat: no-repeat;
@@ -581,12 +563,7 @@ span {
 }
 
 .bar__inner {
-  background: linear-gradient(
-    90deg,
-    var(--color300),
-    var(--color500),
-    var(--color700)
-  );
+  background: linear-gradient(90deg, var(--color300), var(--color500), var(--color700));
   margin-bottom: var(--s1);
   z-index: 999;
   height: 100%;
@@ -650,11 +627,7 @@ span {
   top: 0;
   height: 100%;
   border-radius: 0 var(--radius300) var(--radius300) 0;
-  background: radial-gradient(
-    circle at bottom right,
-    var(--color500) 30%,
-    var(--color300) 100%
-  );
+  background: radial-gradient(circle at bottom right, var(--color500) 30%, var(--color300) 100%);
   z-index: 9999;
   cursor: pointer;
 }
@@ -662,7 +635,7 @@ span {
 .download:after {
   content: "";
   color: rgba(255, 255, 255, 0.5);
-  background-image: url("../assets/images/download.svg");
+  background-image: url(@assets/images/download.svg);
   position: absolute;
   top: 0;
   right: 0;
@@ -725,7 +698,7 @@ span {
 }
 
 .chevron {
-  background-image: url("../assets/images/chevron.svg");
+  background-image: url(@assets/images/chevron.svg);
   width: 24px;
   height: 24px;
   margin-top: var(--s2);
@@ -808,7 +781,7 @@ h2.infobox:hover:before {
   z-index: 999;
   cursor: pointer;
   background-color: var(--gray2);
-  mask-image: url("../assets/images/settings.svg");
+  mask-image: url(@assets/images/settings.svg);
   mask-size: 24px;
   mask-position: center center;
   mask-repeat: no-repeat;
@@ -916,7 +889,7 @@ h2.infobox:hover:before {
   left: 0;
   right: 0;
   display: block;
-  background-image: url(../assets/images/bg.svg);
+  background-image: "@assets/images/bg.svg";
   background-size: contain;
   background-position: bottom left;
   background-repeat: no-repeat;
@@ -957,11 +930,7 @@ h2.infobox:hover:before {
   border-radius: var(--radius500);
   position: relative;
   padding: calc(100% - var(--s1)) var(--s1) var(--s1) var(--s1);
-  background: radial-gradient(
-    at left center,
-    var(--color500) 50%,
-    var(--color700)
-  );
+  background: radial-gradient(at left center, var(--color500) 50%, var(--color700));
   cursor: pointer;
   box-shadow: var(--shadow3d);
   transition: all 0.2s ease-in-out;
@@ -1058,40 +1027,40 @@ h2.infobox:hover:before {
 }
 
 #css .tutorial__overflow:before {
-  background-image: url("../assets/images/logos/css.svg");
+  background-image: url(@assets/images/logos/css.svg);
 }
 #html .tutorial__overflow:before {
-  background-image: url("../assets/images/logos/html.svg");
+  background-image: url(@assets/images/logos/html.svg);
 }
 #js .tutorial__overflow:before {
-  background-image: url("../assets/images/logos/js.svg");
+  background-image: url(@assets/images/logos/js.svg);
 }
 #windows .tutorial__overflow:before {
-  background-image: url("../assets/images/logos/windows.svg");
+  background-image: url(@assets/images/logos/windows.svg);
 }
 #react .tutorial__overflow:before {
-  background-image: url("../assets/images/logos/react.svg");
+  background-image: url(@assets/images/logos/react.svg);
 }
 #angular .tutorial__overflow:before {
-  background-image: url("../assets/images/logos/angular.svg");
+  background-image: url(@assets/images/logos/angular.svg);
 }
 #vue .tutorial__overflow:before {
-  background-image: url("../assets/images/logos/vue.svg");
+  background-image: url(@assets/images/logos/vue.svg);
 }
 #firefox .tutorial__overflow:before {
-  background-image: url("../assets/images/logos/firefox.svg");
+  background-image: url(@assets/images/logos/firefox.svg);
 }
 #gimp .tutorial__overflow:before {
-  background-image: url("../assets/images/logos/gimp.svg");
+  background-image: url(@assets/images/logos/gimp.svg);
 }
 #svelte .tutorial__overflow:before {
-  background-image: url("../assets/images/logos/svelte.svg");
+  background-image: url(@assets/images/logos/svelte.svg);
 }
 #netlify .tutorial__overflow:before {
-  background-image: url("../assets/images/logos/netlify.svg");
+  background-image: url(@assets/images/logos/netlify.svg);
 }
 #wordpress .tutorial__overflow:before {
-  background-image: url("../assets/images/logos/wordpress.svg");
+  background-image: url(@assets/images/logos/wordpress.svg);
 }
 
 .tutorials__box:hover .tutorial_shadow {
@@ -1126,18 +1095,13 @@ h2.infobox:hover:before {
 }
 
 .badge__avif {
-  background: radial-gradient(
-      circle at center left,
-      var(--color300),
-      transparent 50%
-    ),
+  background: radial-gradient(circle at center left, var(--color300), transparent 50%),
     radial-gradient(circle at 0% 0%, var(--color500), transparent 25%),
     radial-gradient(circle at 20% 60%, var(--color300), transparent 50%),
     radial-gradient(circle at center right, var(--color500), transparent 50%),
     radial-gradient(circle at 60% 60%, var(--color700), transparent 25%),
     radial-gradient(circle at bottom center, var(--color500), transparent 75%),
-    radial-gradient(circle at 80% 40%, var(--color700), transparent 75%),
-    var(--bg1);
+    radial-gradient(circle at 80% 40%, var(--color700), transparent 75%), var(--bg1);
   border-radius: var(--radius500);
   padding: var(--s5);
   position: relative;
@@ -1155,18 +1119,13 @@ h2.infobox:hover:before {
   bottom: 0;
   right: 0;
   left: 0;
-  background: radial-gradient(
-      circle at center left,
-      var(--color300),
-      transparent 50%
-    ),
+  background: radial-gradient(circle at center left, var(--color300), transparent 50%),
     radial-gradient(circle at 0% 0%, var(--color500), transparent 25%),
     radial-gradient(circle at 20% 60%, var(--color300), transparent 50%),
     radial-gradient(circle at center right, var(--color500), transparent 50%),
     radial-gradient(circle at 60% 60%, var(--color700), transparent 25%),
     radial-gradient(circle at bottom center, var(--color500), transparent 75%),
-    radial-gradient(circle at 80% 40%, var(--color700), transparent 75%),
-    var(--bg1);
+    radial-gradient(circle at 80% 40%, var(--color700), transparent 75%), var(--bg1);
   z-index: -1;
   filter: blur(0px);
   border-radius: var(--radius900);
@@ -1249,36 +1208,36 @@ h2.infobox:hover:before {
 }
 
 #visualizer-1 {
-  background-image: url("../assets/images/visualizer-1.svg");
+  background-image: url(@assets/images/visualizer-1.svg);
 }
 
 #visualizer-2 {
-  background-image: url("../assets/images/visualizer-2.svg");
+  background-image: url(@assets/images/visualizer-2.svg);
 }
 
 #visualizer-3 {
-  background-image: url("../assets/images/visualizer-3.svg");
+  background-image: url(@assets/images/visualizer-3.svg);
 }
 
 #visualizer-4 {
-  background-image: url("../assets/images/visualizer-4.svg");
+  background-image: url(@assets/images/visualizer-4.svg);
 }
 
 #visualizer-5 {
-  background-image: url("../assets/images/visualizer-5.svg");
+  background-image: url(@assets/images/visualizer-5.svg);
 }
 
 #visualizer-6 {
-  background-image: url("../assets/images/visualizer-6.svg");
+  background-image: url(@assets/images/visualizer-6.svg);
 }
 #visualizer-7 {
-  background-image: url("../assets/images/visualizer-7.svg");
+  background-image: url(@assets/images/visualizer-7.svg);
 }
 #visualizer-8 {
-  background-image: url("../assets/images/visualizer-8.svg");
+  background-image: url(@assets/images/visualizer-8.svg);
 }
 #visualizer-9 {
-  background-image: url("../assets/images/visualizer-9.svg");
+  background-image: url(@assets/images/visualizer-9.svg);
 }
 
 .advantage__grid__item:hover .visualizer {
@@ -1300,7 +1259,7 @@ h2.infobox:hover:before {
 }
 
 #avifcompare::after {
-  content: "Cant see this image? Your browser doesn't support avif yet. :(";
+  content: "Cant see this image? Your browser doesnt support avif yet.";
   position: absolute;
   top: 0;
   right: 0;
@@ -1385,18 +1344,13 @@ h2.infobox:hover:before {
 }
 
 .cta {
-  background: radial-gradient(
-      circle at center left,
-      var(--color300),
-      transparent 50%
-    ),
+  background: radial-gradient(circle at center left, var(--color300), transparent 50%),
     radial-gradient(circle at 0% 0%, var(--color500), transparent 25%),
     radial-gradient(circle at 20% 60%, var(--color300), transparent 50%),
     radial-gradient(circle at center right, var(--color500), transparent 50%),
     radial-gradient(circle at 60% 60%, var(--color700), transparent 25%),
     radial-gradient(circle at bottom center, var(--color500), transparent 75%),
-    radial-gradient(circle at 80% 40%, var(--color700), transparent 75%),
-    var(--bg1);
+    radial-gradient(circle at 80% 40%, var(--color700), transparent 75%), var(--bg1);
   padding: var(--s4);
   border-radius: var(--radius500);
   position: relative;
@@ -1410,18 +1364,13 @@ h2.infobox:hover:before {
   right: 0;
   left: 0;
   bottom: 0;
-  background: radial-gradient(
-      circle at center left,
-      var(--color300),
-      transparent 50%
-    ),
+  background: radial-gradient(circle at center left, var(--color300), transparent 50%),
     radial-gradient(circle at 0% 0%, var(--color500), transparent 25%),
     radial-gradient(circle at 20% 60%, var(--color300), transparent 50%),
     radial-gradient(circle at center right, var(--color500), transparent 50%),
     radial-gradient(circle at 60% 60%, var(--color700), transparent 25%),
     radial-gradient(circle at bottom center, var(--color500), transparent 75%),
-    radial-gradient(circle at 80% 40%, var(--color700), transparent 75%),
-    var(--bg1);
+    radial-gradient(circle at 80% 40%, var(--color700), transparent 75%), var(--bg1);
   z-index: 0;
   filter: blur(50px);
   transition: all 10s ease-in-out;
@@ -1435,7 +1384,7 @@ h2.infobox:hover:before {
   bottom: 0;
   right: 0;
   left: 0;
-  background: url("../assets/images/arrow-right.svg");
+  background: url(@assets/images/arrow-right.svg);
   background-repeat: no-repeat;
   background-position: 90% center;
   z-index: 1;
@@ -1537,7 +1486,7 @@ h2.infobox:hover:before {
 
 .blog {
   background-color: var(--bg1);
-  background-image: url("../assets/images/bg-orange.svg");
+  background-image: url(@assets/images/bg-orange.svg);
   background-size: cover;
   background-position: bottom left;
   background-repeat: no-repeat;
@@ -1894,12 +1843,9 @@ h2.infobox:hover:before {
     position: absolute;
     -webkit-transition: opacity var(--d-o, 0.2s),
       -webkit-transform var(--d-t, 0.3s) var(--d-t-e, ease);
-    transition: opacity var(--d-o, 0.2s),
-      -webkit-transform var(--d-t, 0.3s) var(--d-t-e, ease);
-    transition: transform var(--d-t, 0.3s) var(--d-t-e, ease),
-      opacity var(--d-o, 0.2s);
-    transition: transform var(--d-t, 0.3s) var(--d-t-e, ease),
-      opacity var(--d-o, 0.2s),
+    transition: opacity var(--d-o, 0.2s), -webkit-transform var(--d-t, 0.3s) var(--d-t-e, ease);
+    transition: transform var(--d-t, 0.3s) var(--d-t-e, ease), opacity var(--d-o, 0.2s);
+    transition: transform var(--d-t, 0.3s) var(--d-t-e, ease), opacity var(--d-o, 0.2s),
       -webkit-transform var(--d-t, 0.3s) var(--d-t-e, ease);
   }
   input[type="checkbox"]:checked,
