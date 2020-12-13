@@ -115,8 +115,8 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local(Poppins Regular), local(Poppins-Regular),
-    url("@assets/fonts/poppins-regular.woff2") format(woff2);
+  src: local("Poppins Regular"), local("Poppins-Regular"),
+    url("@assets/fonts/poppins-regular.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
     U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
@@ -126,8 +126,8 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: local(Poppins Bold), local(Poppins-Bold),
-    url("@assets/fonts/poppins-bold.woff2") format(woff2);
+  src: local("Poppins Bold"), local("Poppins-Bold"),
+    url("@assets/fonts/poppins-bold.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
     U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
@@ -137,7 +137,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("@assets/fonts/patua-one.woff2") format(woff2);
+  src: url("@assets/fonts/patua-one.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
     U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
@@ -525,7 +525,7 @@ span {
   bottom: 0;
   right: 0;
   left: 0;
-  background-image: url(@assets/images/arrow.svg);
+  background-image: url("@assets/images/arrow.svg");
   background-size: 24px;
   background-position: center center;
   background-repeat: no-repeat;
@@ -635,7 +635,7 @@ span {
 .download:after {
   content: "";
   color: rgba(255, 255, 255, 0.5);
-  background-image: url(@assets/images/download.svg);
+  background-image: url("@assets/images/download.svg");
   position: absolute;
   top: 0;
   right: 0;
@@ -698,7 +698,7 @@ span {
 }
 
 .chevron {
-  background-image: url(@assets/images/chevron.svg);
+  background-image: url("@assets/images/chevron.svg");
   width: 24px;
   height: 24px;
   margin-top: var(--s2);
@@ -781,7 +781,7 @@ h2.infobox:hover:before {
   z-index: 999;
   cursor: pointer;
   background-color: var(--gray2);
-  mask-image: url(@assets/images/settings.svg);
+  mask-image: url("@assets/images/settings.svg");
   mask-size: 24px;
   mask-position: center center;
   mask-repeat: no-repeat;
@@ -889,7 +889,7 @@ h2.infobox:hover:before {
   left: 0;
   right: 0;
   display: block;
-  background-image: "@assets/images/bg.svg";
+  background-image: url(@assets/images/bg.svg);
   background-size: contain;
   background-position: bottom left;
   background-repeat: no-repeat;
@@ -1027,40 +1027,40 @@ h2.infobox:hover:before {
 }
 
 #css .tutorial__overflow:before {
-  background-image: url(@assets/images/logos/css.svg);
+  background-image: url("@assets/images/logos/css.svg");
 }
 #html .tutorial__overflow:before {
-  background-image: url(@assets/images/logos/html.svg);
+  background-image: url("@assets/images/logos/html.svg");
 }
 #js .tutorial__overflow:before {
-  background-image: url(@assets/images/logos/js.svg);
+  background-image: url("@assets/images/logos/js.svg");
 }
 #windows .tutorial__overflow:before {
-  background-image: url(@assets/images/logos/windows.svg);
+  background-image: url("@assets/images/logos/windows.svg");
 }
 #react .tutorial__overflow:before {
-  background-image: url(@assets/images/logos/react.svg);
+  background-image: url("@assets/images/logos/react.svg");
 }
 #angular .tutorial__overflow:before {
-  background-image: url(@assets/images/logos/angular.svg);
+  background-image: url("@assets/images/logos/angular.svg");
 }
 #vue .tutorial__overflow:before {
-  background-image: url(@assets/images/logos/vue.svg);
+  background-image: url("@assets/images/logos/vue.svg");
 }
 #firefox .tutorial__overflow:before {
-  background-image: url(@assets/images/logos/firefox.svg);
+  background-image: url("@assets/images/logos/firefox.svg");
 }
 #gimp .tutorial__overflow:before {
-  background-image: url(@assets/images/logos/gimp.svg);
+  background-image: url("@assets/images/logos/gimp.svg");
 }
 #svelte .tutorial__overflow:before {
-  background-image: url(@assets/images/logos/svelte.svg);
+  background-image: url("@assets/images/logos/svelte.svg");
 }
 #netlify .tutorial__overflow:before {
-  background-image: url(@assets/images/logos/netlify.svg);
+  background-image: url("@assets/images/logos/netlify.svg");
 }
 #wordpress .tutorial__overflow:before {
-  background-image: url(@assets/images/logos/wordpress.svg);
+  background-image: url("@assets/images/logos/wordpress.svg");
 }
 
 .tutorials__box:hover .tutorial_shadow {
@@ -1208,36 +1208,36 @@ h2.infobox:hover:before {
 }
 
 #visualizer-1 {
-  background-image: url(@assets/images/visualizer-1.svg);
+  background-image: url("@assets/images/visualizer-1.svg");
 }
 
 #visualizer-2 {
-  background-image: url(@assets/images/visualizer-2.svg);
+  background-image: url("@assets/images/visualizer-2.svg");
 }
 
 #visualizer-3 {
-  background-image: url(@assets/images/visualizer-3.svg);
+  background-image: url("@assets/images/visualizer-3.svg");
 }
 
 #visualizer-4 {
-  background-image: url(@assets/images/visualizer-4.svg);
+  background-image: url("@assets/images/visualizer-4.svg");
 }
 
 #visualizer-5 {
-  background-image: url(@assets/images/visualizer-5.svg);
+  background-image: url("@assets/images/visualizer-5.svg");
 }
 
 #visualizer-6 {
-  background-image: url(@assets/images/visualizer-6.svg);
+  background-image: url("@assets/images/visualizer-6.svg");
 }
 #visualizer-7 {
-  background-image: url(@assets/images/visualizer-7.svg);
+  background-image: url("@assets/images/visualizer-7.svg");
 }
 #visualizer-8 {
-  background-image: url(@assets/images/visualizer-8.svg);
+  background-image: url("@assets/images/visualizer-8.svg");
 }
 #visualizer-9 {
-  background-image: url(@assets/images/visualizer-9.svg);
+  background-image: url("@assets/images/visualizer-9.svg");
 }
 
 .advantage__grid__item:hover .visualizer {
@@ -1259,7 +1259,7 @@ h2.infobox:hover:before {
 }
 
 #avifcompare::after {
-  content: "Cant see this image? Your browser doesnt support avif yet.";
+  content: "Cant see this image? Your browser doesn't support avif yet. :(";
   position: absolute;
   top: 0;
   right: 0;
@@ -1384,7 +1384,7 @@ h2.infobox:hover:before {
   bottom: 0;
   right: 0;
   left: 0;
-  background: url(@assets/images/arrow-right.svg);
+  background: url("@assets/images/arrow-right.svg");
   background-repeat: no-repeat;
   background-position: 90% center;
   z-index: 1;
@@ -1486,7 +1486,7 @@ h2.infobox:hover:before {
 
 .blog {
   background-color: var(--bg1);
-  background-image: url(@assets/images/bg-orange.svg);
+  background-image: url("@assets/images/bg-orange.svg");
   background-size: cover;
   background-position: bottom left;
   background-repeat: no-repeat;
