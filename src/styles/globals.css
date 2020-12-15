@@ -36,27 +36,21 @@
   --gray3: #353535;
   --gray4: #111;
 
-  --bg-blog1: rgba(20, 6, 53, 0.8);
-  --bg-blog2: rgba(57, 4, 66, 0.8);
-  --bg-blog3: rgba(46, 5, 77, 0.8);
-  --bg-blog4: rgba(7, 5, 77, 0.8);
-  --bg-blog5: rgba(4, 19, 66, 0.8);
+  --black1: hsl(0 0% 6% / 1);
+  --black2: hsl(0 0% 7% / 1);
+  --black3: hsl(0 0% 8% / 1);
+  --black4: hsl(0 0% 9% / 1);
 
-  --bg1: #140635;
-  --bg6: hsl(0 0% 6% / 1);
-  --bg7: hsl(0 0% 7% / 1);
-  --bg8: hsl(0 0% 8% / 1);
-  --bg9: hsl(0 0% 9% / 1);
-
-  --shadow: 0 2.2px 2.2px rgba(187, 187, 187, 0.006), 0 5.3px 5.3px rgba(187, 187, 187, 0.008),
-    0 10px 10px rgba(187, 187, 187, 0.01), 0 17.9px 17.9px rgba(187, 187, 187, 0.012),
-    0 33.4px 33.4px rgba(187, 187, 187, 0.014), 0 80px 80px rgba(187, 187, 187, 0.02);
+  --black1-8: hsl(0 0% 6% / 0.8);
+  --black2-8: hsl(0 0% 7% / 0.8);
+  --black3-8: hsl(0 0% 8% / 0.8);
+  --black4-8: hsl(0 0% 9% / 0.8);
 
   --responsivepadding: calc(15vh + 5vw) calc(10vh + 12.5vw) calc(15vh + 5vw) calc(10vh + 12.5vw);
   --grid12234: repeat(4, 1fr);
   --gridgap: var(--s2);
 
-  --shadow3d: inset -2px -12px 12px rgba(0, 0, 0, 0.05);
+  --shadow3d: inset -2px -12px 12px rgba(0, 0, 0, 0.1);
 }
 
 /**/
@@ -261,7 +255,7 @@ span {
   color: var(--gray3);
 }
 .black900 {
-  color: var(--bg1);
+  color: var(--black1);
 }
 
 .text-20 {
@@ -361,13 +355,24 @@ span {
   align-items: center;
   flex-direction: column;
   min-height: 100vh;
-  background-color: var(--bg1);
+  background-color: var(--black1);
   background-image: url(@assets/newbg.svg);
-  background-size: cover;
+  background-size: 100%;
   background-position: bottom left;
   background-repeat: no-repeat;
   padding: var(--s2);
   position: relative;
+}
+
+.app-container:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 50vh;
+  right: 0;
+  left: 0;
+  background: linear-gradient(180deg, white, transparent);
+  opacity: 0.01;
 }
 
 .app-container-blur {
@@ -376,7 +381,7 @@ span {
   bottom: 0;
   right: 0;
   left: 0;
-  background: var(--bg1);
+  background: var(--black1);
   z-index: -1;
 }
 
@@ -387,7 +392,7 @@ span {
   padding: var(--s1);
   max-width: calc(var(--s5) * 6);
   border-radius: var(--radius500);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow3d);
   text-align: center;
   flex-direction: column;
   backdrop-filter: blur(100px);
@@ -485,14 +490,18 @@ span {
   transition: all 0.2s ease-out;
 }
 
+.dropzone-root {
+  color: var(--color500);
+}
+
 .upload-button {
   width: var(--s4);
   height: var(--s4);
   background: radial-gradient(circle at top right, var(--color500), transparent 80%),
     radial-gradient(circle at bottom right, var(--color300), transparent 80%),
     radial-gradient(circle at bottom left, var(--color500), transparent 80%),
-    radial-gradient(circle at top left, var(--color300), transparent 80%), var(--bg1);
-  border-radius: var(--radius300);
+    radial-gradient(circle at top left, var(--color300), transparent 80%), var(--black1);
+  border-radius: var(--radius900);
   margin-bottom: var(--s2);
   box-shadow: var(--shadow3d);
   position: relative;
@@ -511,11 +520,26 @@ span {
     radial-gradient(circle at center right, var(--color500), transparent 50%),
     radial-gradient(circle at 60% 60%, var(--color700), transparent 25%),
     radial-gradient(circle at bottom center, var(--color500), transparent 75%),
-    radial-gradient(circle at 80% 40%, var(--color700), transparent 75%), var(--bg1);
+    radial-gradient(circle at 80% 40%, var(--color700), transparent 75%), var(--black1);
   z-index: 0;
   filter: blur(5px);
-  transition: all 10s ease-in-out;
-  animation: cta-background 10s infinite alternate-reverse both;
+  animation: cta-background 10s infinite;
+}
+
+.dropzone-container:hover .upload-blur {
+  animation: cta-background 3s infinite;
+}
+
+.upload-button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  border-radius: var(--radius900);
+  box-shadow: var(--shadow3d), inset -5px -5px 15px var(--color500);
+  z-index: 1;
 }
 
 .upload-button:after {
@@ -534,6 +558,7 @@ span {
 
 .conversion {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   border-radius: var(--radius300);
   margin-top: var(--s1);
@@ -543,10 +568,11 @@ span {
   color: var(--gray3);
   z-index: 1;
   pointer-events: none;
-  flex-direction: column;
   padding: var(--s0) var(--s1);
   cursor: inherit;
   animation: flip-in-hor-bottom 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
 }
 
 .bar__container {
@@ -582,10 +608,6 @@ span {
   pointer-events: all;
 }
 
-.conversion.finished .remaining-time {
-  z-index: 999;
-}
-
 .conversion.finished .bar__container {
   transform: translatey(10px);
   opacity: 0;
@@ -602,6 +624,11 @@ span {
 .conversion_meta {
   z-index: 999;
   margin-right: var(--s3);
+}
+
+.conversion.cancelled {
+  opacity: 0.5 !important;
+  padding: 0 var(--s1);
 }
 
 .remaining-time {
@@ -873,7 +900,7 @@ h2.infobox:hover:before {
 .section__tutorials {
   padding: var(--responsivepadding);
   position: relative;
-  background: var(--bg1);
+  background: var(--black1);
 }
 
 .section__tutorials * {
@@ -891,9 +918,8 @@ h2.infobox:hover:before {
   display: block;
   background-image: url(@assets/bg.svg);
   background-size: contain;
-  background-position: bottom left;
+  background-position: top left;
   background-repeat: no-repeat;
-  transform: scaley(-1) scalex(-1);
   z-index: 1;
 }
 
@@ -905,7 +931,7 @@ h2.infobox:hover:before {
   left: 0;
   right: 0;
   display: block;
-  background: rgba(20, 6, 53, 0.8); /*gray4*/
+  background: var(--black1-8);
   z-index: 2;
   opacity: 1;
   backdrop-filter: blur(10px);
@@ -1090,22 +1116,14 @@ h2.infobox:hover:before {
   padding: var(--responsivepadding);
   padding-bottom: 0;
   position: relative;
-  background: var(--bg7);
+  background: var(--black1);
   z-index: 2;
 }
 
 .badge__avif {
-  background: radial-gradient(circle at center left, var(--color300), transparent 50%),
-    radial-gradient(circle at 0% 0%, var(--color500), transparent 25%),
-    radial-gradient(circle at 20% 60%, var(--color300), transparent 50%),
-    radial-gradient(circle at center right, var(--color500), transparent 50%),
-    radial-gradient(circle at 60% 60%, var(--color700), transparent 25%),
-    radial-gradient(circle at bottom center, var(--color500), transparent 75%),
-    radial-gradient(circle at 80% 40%, var(--color700), transparent 75%), var(--bg1);
   border-radius: var(--radius500);
   padding: var(--s5);
   position: relative;
-  box-shadow: var(--shadow3d);
   margin: var(--s4);
   margin-bottom: 0;
   display: flex;
@@ -1125,12 +1143,16 @@ h2.infobox:hover:before {
     radial-gradient(circle at center right, var(--color500), transparent 50%),
     radial-gradient(circle at 60% 60%, var(--color700), transparent 25%),
     radial-gradient(circle at bottom center, var(--color500), transparent 75%),
-    radial-gradient(circle at 80% 40%, var(--color700), transparent 75%), var(--bg1);
+    radial-gradient(circle at 80% 40%, var(--color700), transparent 75%), var(--black1);
   z-index: -1;
   filter: blur(0px);
   border-radius: var(--radius900);
-  animation: glow 5s infinite alternate-reverse both;
-  animation-timing-function: ease-out;
+  animation: glow 15s infinite alternate-reverse both;
+  width: 80%;
+  padding-bottom: 40%;
+  padding-top: 40%;
+  margin: 0 auto;
+  transition-timing-function: ease-in-out;
 }
 
 .badge__avif p {
@@ -1150,7 +1172,7 @@ h2.infobox:hover:before {
 /**/
 
 #avifadvantages {
-  background: var(--bg7);
+  background: var(--black1);
   padding: var(--responsivepadding);
 }
 
@@ -1162,7 +1184,7 @@ h2.infobox:hover:before {
 
 .advantage__grid__item {
   padding: var(--s2);
-  background-color: var(--bg8);
+  background-color: var(--black2);
   color: #ffffff0d;
   border-radius: var(--radius500);
   cursor: default;
@@ -1253,8 +1275,7 @@ h2.infobox:hover:before {
 /**/
 
 #avifcompare {
-  background: var(--bg8);
-  padding: var(--s5);
+  background: var(--black1);
   position: relative;
 }
 
@@ -1271,10 +1292,6 @@ h2.infobox:hover:before {
   justify-content: center;
   align-items: center;
   z-index: 0;
-}
-
-#avifcompare * {
-  border-radius: var(--radius500);
 }
 
 #avifcompare #fileformats div {
@@ -1339,7 +1356,7 @@ h2.infobox:hover:before {
 
 .cta__container {
   padding: calc(var(--s5) * 1) calc(var(--s5) * 2);
-  background: var(--bg7);
+  background: var(--black1);
   position: relative;
 }
 
@@ -1350,7 +1367,7 @@ h2.infobox:hover:before {
     radial-gradient(circle at center right, var(--color500), transparent 50%),
     radial-gradient(circle at 60% 60%, var(--color700), transparent 25%),
     radial-gradient(circle at bottom center, var(--color500), transparent 75%),
-    radial-gradient(circle at 80% 40%, var(--color700), transparent 75%), var(--bg1);
+    radial-gradient(circle at 80% 40%, var(--color700), transparent 75%), var(--black1);
   padding: var(--s4);
   border-radius: var(--radius500);
   position: relative;
@@ -1370,7 +1387,7 @@ h2.infobox:hover:before {
     radial-gradient(circle at center right, var(--color500), transparent 50%),
     radial-gradient(circle at 60% 60%, var(--color700), transparent 25%),
     radial-gradient(circle at bottom center, var(--color500), transparent 75%),
-    radial-gradient(circle at 80% 40%, var(--color700), transparent 75%), var(--bg1);
+    radial-gradient(circle at 80% 40%, var(--color700), transparent 75%), var(--black1);
   z-index: 0;
   filter: blur(50px);
   transition: all 10s ease-in-out;
@@ -1429,11 +1446,11 @@ h2.infobox:hover:before {
   padding: var(--s1);
   font-weight: bold;
   color: var(--white);
-  background: var(--bg8);
+  background: var(--black2);
 }
 
 .more__item:hover {
-  background: var(--bg9);
+  background: var(--black2);
 }
 
 .more__item .f2 {
@@ -1448,7 +1465,7 @@ h2.infobox:hover:before {
 .badge {
   padding: var(--s0);
   background: var(--white);
-  color: var(--bg1);
+  color: var(--black1);
   display: inline-flex;
   margin: 0 var(--s0) var(--s0) 0;
   border-radius: var(--radius100);
@@ -1461,7 +1478,7 @@ h2.infobox:hover:before {
 /**/
 
 .footer {
-  background: var(--bg6);
+  background: var(--black4);
   padding: var(--s3) var(--s4);
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
@@ -1485,10 +1502,10 @@ h2.infobox:hover:before {
 /**/
 
 .blog {
-  background-color: var(--bg1);
-  background-image: url("@assets/bg-orange.svg");
-  background-size: cover;
-  background-position: bottom left;
+  background-color: var(--black1);
+  background-image: url("@assets/bg-pink.svg");
+  background-size: contain;
+  background-position: top center;
   background-repeat: no-repeat;
   position: relative;
 }
@@ -1514,7 +1531,7 @@ h2.infobox:hover:before {
 .blog h1 {
   margin: 0 var(--s5) 0;
   padding: calc(var(--s4) * 2) var(--s4) var(--s4) var(--s4);
-  font-size: calc(var(--f3) * 2);
+  font-size: calc(var(--f3) * 1.5);
 }
 
 .content__container {
@@ -1537,11 +1554,7 @@ h2.infobox:hover:before {
 }
 
 .blog .button-primary a {
-  color: var(--bg1);
-}
-
-.blog .cta__container {
-  background: none;
+  color: var(--black1);
 }
 
 .tutorial__item {
@@ -1554,7 +1567,7 @@ h2.infobox:hover:before {
   width: 25%;
   font-size: var(--f3);
   font-weight: bold;
-  color: var(--bg-blog5);
+  color: var(--color500);
   text-align: left;
   margin-right: var(--s1);
 }
@@ -1566,46 +1579,24 @@ h2.infobox:hover:before {
 /**/
 
 @keyframes cta-background {
-  0% {
-    background-position: 100% 50%;
-    transform: rotate(0deg);
-  }
-  100% {
-    background-position: 0% 50%;
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes cta-background {
-  0% {
+  from {
     background-position: 100% 50%;
     transform: rotate(0deg) scale(1.2);
   }
-  100% {
-    background-position: 0% 50%;
-    transform: rotate(360deg) scale(2);
+  to {
+    background-position: 25% 50%;
+    transform: rotate(360deg) scale(1.4);
   }
 }
 
 @keyframes glow {
   0% {
-    transform: scale(1) skew(0) rotate(0deg);
+    transform: scale(1.55);
     filter: blur(15px);
   }
-  25% {
-    transform: scale(1.15) skew(2deg) rotate(2deg);
-    filter: blur(30px);
-  }
-  50% {
-    transform: scale(1.3) skew(-2deg) rotate(-2deg);
-    filter: blur(45px);
-  }
-  75% {
-    transform: scale(1.45) skew(0deg) rotate(2deg);
-    filter: blur(60px);
-  }
+
   100% {
-    transform: scale(1.6) skew(2deg) rotate(-2deg);
+    transform: scale(1.6) rotate(360deg);
     filter: blur(75px);
   }
 }

@@ -21,7 +21,7 @@ export default function Header() {
               {" "}
               <Link href="https://www.buymeacoffee.com/justinschmitz">Support</Link>
             </a>
-            <a id="blog">Blog (soon)</a>
+            <a id="blog">Blog</a>
             <a id="cta" className="button-primary">
               <Link href="/">Convert</Link>
             </a>

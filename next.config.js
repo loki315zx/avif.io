@@ -6,7 +6,11 @@ module.exports = withPlugins([
   [
     optimizedImages,
     {
-      optimizeImagesInDev: "true",
+      inlineImageLimit: 12000,
+      optimizeImagesInDev: true,
+      svgo: {
+        plugins: [{ removeComments: true }],
+      },
     },
   ],
 

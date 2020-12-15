@@ -17,7 +17,7 @@ export interface ConversionProps {
 function formatRemainingTimeEstimate(estimator: ConversionTimeEstimator) {
   if (estimator.minutes === undefined) return "";
 
-  if (estimator.minutes === 0 && estimator.seconds === 0) return "Less than 10 seconds left";
+  if (estimator.minutes === 0 && estimator.seconds === 0) return "Almost ready..";
 
   let result = "";
   if (estimator.minutes !== 0) {
@@ -26,7 +26,7 @@ function formatRemainingTimeEstimate(estimator: ConversionTimeEstimator) {
       result += "s";
     }
     if (estimator.seconds) {
-      result += " and ";
+      result += " & ";
     }
   }
   if (estimator.seconds) {
@@ -36,7 +36,7 @@ function formatRemainingTimeEstimate(estimator: ConversionTimeEstimator) {
   return result;
 }
 
-type ConversionStatus = "inProgress" | "canceled" | "finished";
+type ConversionStatus = "inProgress" | "cancelled" | "finished";
 
 export default function Conversion(props: ConversionProps): ReactElement {
   const [status, setStatus] = useState<ConversionStatus>("inProgress");
@@ -89,23 +89,25 @@ export default function Conversion(props: ConversionProps): ReactElement {
   function cancelConverison() {
     if (status === "inProgress" && conversionId !== undefined) {
       props.converter.cancelConversion(conversionId);
-      setStatus("canceled");
+      setStatus("cancelled");
     }
   }
 
   const finished = status === "finished";
+  const cancelled = status === "cancelled";
 
   return (
     <>
       {status === "inProgress" && <button onClick={cancelConverison}>Cancel</button>}
-      <a
-        download={`${fileName}.avif`}
-        href={outputObjectURL}
-        className={`will-change conversion ${finished ? "finished" : "progress"}`}>
+      <div
+        className={`will-change conversion ${finished ? "finished" : "progress"} ${
+          cancelled ? "cancelled" : ""
+        }`}>
         <div className="conversion_information">
           <p className="filename">
             {fileName}
             {finished ? ".avif" : ""}
+            {cancelled ? " · cancelled" : ""}
           </p>
           <span className="remaining-time">
             {" "}
@@ -121,10 +123,9 @@ export default function Conversion(props: ConversionProps): ReactElement {
             {percentageSaved}% smaller · {prettyBytes(outputSize)}
           </span>
         </div>
-        <span className={"download"} />
+        <a download={`${fileName}.avif`} href={outputObjectURL} className={"download"} />
         {status === "inProgress" && <ProgressBar progress={progress} />}
-        {status === "canceled" && <h1>Canceled</h1>}
-      </a>
+      </div>
     </>
   );
 }

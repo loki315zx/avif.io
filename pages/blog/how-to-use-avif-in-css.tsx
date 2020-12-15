@@ -5,7 +5,6 @@ import CTA from "@components/CTA";
 export default function SampleBlog() {
   return (
     <div className="blog">
-      <div className="blog-blur"></div>
       <Header />
       <h1 className="f3 white">How to use avif images in CSS.</h1>
 

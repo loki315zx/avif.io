@@ -30,7 +30,7 @@ export default function Tutorials() {
         and the best compression rate ever achieved, we are just a step away from innovating the
         modern web.
       </div>
-      <div className="tutorials__container s5">
+      <div className="tutorials__container">
         <TutorialsBox cssclass="css" title="CSS" />
         <TutorialsBox cssclass="html" title="HTML" />
         <TutorialsBox cssclass="js" title="JS" />
