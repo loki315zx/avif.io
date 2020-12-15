@@ -15,10 +15,10 @@ onmessage = async function (msg) {
   function convertInput() {
     const input = new Uint8Array(msg.data.input);
     const options = new ConversionOptions(
-      msg.data.effort,
-      msg.data.quality,
-      msg.data.useYuv444 ? Subsampling.YUV444 : Subsampling.YUV420,
-      msg.data.keepTransparency
+      msg.data.options.effort,
+      msg.data.options.quality,
+      msg.data.options.useYuv444 ? Subsampling.YUV444 : Subsampling.YUV420,
+      msg.data.options.keepTransparency
     );
     if (msg.data.isRawRgba) {
       return rgbaToAvif(input, options, msg.data.width, msg.data.height, postProgress);
