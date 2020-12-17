@@ -15,8 +15,8 @@ export interface SettingsBoxProps {
 }
 
 export default function SettingsBox(props: SettingsBoxProps) {
-  const [effort, setEffort] = useState(25);
-  const [quality, setQuality] = useState(75);
+  const [effort, setEffort] = useState(0);
+  const [quality, setQuality] = useState(60);
   const [useYuv444, setUseYuv444] = useState(true);
   const [keepTransparency, setKeepTransparency] = useState(true);
   const [lossless, setLossless] = useState(false);

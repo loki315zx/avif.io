@@ -31,6 +31,7 @@
     "react-compare-image": "^3.0.2",
     "react-dom": "17.0.1",
     "react-dropzone": "^11.2.4",
+    "react-ios-corners": "^1.0.0",
     "responsive-loader": "^2.2.1",
     "svg-sprite-loader": "^5.1.1",
     "webp-loader": "^0.6.0"

@@ -25,9 +25,6 @@ function formatRemainingTimeEstimate(estimator: ConversionTimeEstimator) {
     if (estimator.minutes !== 1) {
       result += "s";
     }
-    if (estimator.seconds) {
-      result += " & ";
-    }
   }
   if (estimator.seconds) {
     result += `${estimator.seconds} seconds`;
@@ -84,7 +81,7 @@ export default function Conversion(props: ConversionProps): ReactElement {
     })();
   }, []);
 
-  const percentageSaved = Math.ceil((1 - outputSize / originalSize) * 100);
+  const percentageSaved = Math.max(Math.ceil((1 - outputSize / originalSize) * 100), 0);
 
   function cancelConverison() {
     if (status === "inProgress" && conversionId !== undefined) {
@@ -98,7 +95,6 @@ export default function Conversion(props: ConversionProps): ReactElement {
 
   return (
     <>
-      {status === "inProgress" && <button onClick={cancelConverison}>Cancel</button>}
       <div
         className={`will-change conversion ${finished ? "finished" : "progress"} ${
           cancelled ? "cancelled" : ""
@@ -106,8 +102,8 @@ export default function Conversion(props: ConversionProps): ReactElement {
         <div className="conversion_information">
           <p className="filename">
             {fileName}
-            {finished ? ".avif" : ""}
-            {cancelled ? " · cancelled" : ""}
+            {finished ? ".avif " : ""}
+            {cancelled ? " · cancelled " : ""}
           </p>
           <p className="remaining-time">
             {" "}
@@ -123,6 +119,11 @@ export default function Conversion(props: ConversionProps): ReactElement {
             {percentageSaved}% smaller · {prettyBytes(outputSize)}
           </span>
         </div>
+        {status === "inProgress" && (
+          <div className="conversion__cancel" onClick={cancelConverison}>
+            cancel
+          </div>
+        )}
         <a download={`${fileName}.avif`} href={outputObjectURL} className={"download"} />
         {status === "inProgress" && <ProgressBar progress={progress} />}
       </div>
