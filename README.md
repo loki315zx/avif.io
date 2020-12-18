@@ -3,8 +3,7 @@ npm i -D && npm run export && cd conversion && npx cross-env NODE_ENV=production
 ```
 
 #Reset Branch
-git fetch origin
-git reset --hard origin/master
+git fetch origin && git reset --hard origin/master
 
 #Run Prettier across project
 prettier --write .

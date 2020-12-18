@@ -85,21 +85,16 @@ export default class ConversionTimeEstimator {
     // eslint-disable-next-line prefer-const
     let [minutes, seconds] = minutesAndSeconds(this.estimate);
 
+    if (seconds >= 15) {
+      this.coarseMinutesEstimate = minutes;
+      this.coarseSecondsEstimate = Math.round(seconds / 10) * 10;
+    } else if (minutes >= 1) {
+      this.coarseMinutesEstimate = minutes;
+      this.coarseSecondsEstimate = undefined;
+    }
     if (minutes >= 10) {
       this.coarseMinutesEstimate = Math.round(minutes / 10);
       this.coarseSecondsEstimate = undefined;
-    } else if (minutes >= 3) {
-      if (seconds > 30) {
-        minutes++;
-      }
-      this.coarseMinutesEstimate = minutes;
-      this.coarseSecondsEstimate = undefined;
-    } else if (minutes >= 1) {
-      this.coarseMinutesEstimate = minutes;
-      this.coarseSecondsEstimate = Math.round(seconds / 30) * 30;
-    } else if (seconds >= 15) {
-      this.coarseMinutesEstimate = minutes;
-      this.coarseSecondsEstimate = Math.round(seconds / 10) * 10;
     } else {
       this.coarseMinutesEstimate = 0;
       this.coarseSecondsEstimate = 0;

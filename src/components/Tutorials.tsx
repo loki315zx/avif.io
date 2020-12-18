@@ -43,6 +43,8 @@ export default function Tutorials() {
         <TutorialsBox cssclass="windows" title="Windows" />
         <TutorialsBox cssclass="netlify" title="Netlify" />
         <TutorialsBox cssclass="wordpress" title="WordPress" />
+        <TutorialsBox cssclass="nextjs" title="Next.JS" />
+        <TutorialsBox cssclass="cloudflare" title="Cloudflare" />
       </div>
     </section>
   );

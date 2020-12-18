@@ -22,11 +22,11 @@ export default function DownloadAllButton(props: DownloadAllButtonProps) {
             Download all
           </button>
           <p className="donation">
-            Do you enjoy using avif.io? Consider{" "}
+            Enjoy using avif.io? Keep the project alive.{" "}
             <a href="https://www.buymeacoffee.com/justinschmitz" className="blue">
-              donating
+              Donate
             </a>{" "}
-            to support upcoming features like a REST API.
+            to support upcoming features like a REST API, CLI and more.
           </p>
         </div>
       }

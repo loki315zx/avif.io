@@ -16,19 +16,20 @@ export interface ConversionProps {
 
 function formatRemainingTimeEstimate(estimator: ConversionTimeEstimator) {
   if (estimator.minutes === undefined) return "";
+  if (estimator.seconds === undefined) return "";
 
-  if (estimator.minutes === 0 && estimator.seconds === 0) return "Less than 10 seconds";
+  if (estimator.minutes === 0 && estimator.seconds === 0) return "almost ready..";
 
   let result = "";
   if (estimator.minutes !== 0) {
     result += `${estimator.minutes} minute`;
-    if (estimator.minutes !== 1) {
+    if (estimator.minutes > 1) {
       result += "s";
     }
-  }
-  if (estimator.seconds) {
+  } else {
     result += `${estimator.seconds} seconds`;
   }
+
   result += " left";
   return result;
 }
@@ -101,13 +102,12 @@ export default function Conversion(props: ConversionProps): ReactElement {
         }`}>
         <div className="conversion_information">
           <p className="filename">
-            {fileName}
-            {finished ? ".avif " : ""}
-            {cancelled ? " · cancelled " : ""}
+            {fileName?.substring(0, 15)}
+            {finished ? ".avif " : " "}
+            {cancelled ? " · cancelled " : " "}
           </p>
           <p className="remaining-time">
-            {" "}
-            {status === "inProgress" && remainingTime && " · " + remainingTime}
+            {status === "inProgress" && remainingTime ? " · " + remainingTime : ""}
           </p>
         </div>
         <div className="conversion_meta">

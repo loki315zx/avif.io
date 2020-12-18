@@ -1,0 +1,7 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "indentation": 2,
+    "rule-empty-line-before":"inside-block-and-after-rule"
+  }
+}
