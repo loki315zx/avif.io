@@ -6,6 +6,7 @@ npm i -D && npm run export && cd conversion && npx cross-env NODE_ENV=production
 git fetch origin && git reset --hard origin/master
 
 #Run Prettier across project
+npx stylelint "\*_/_.css" --fix
 prettier --write .
 
 # AVIF.IO

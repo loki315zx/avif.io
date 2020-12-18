@@ -2,6 +2,14 @@
   "extends": "stylelint-config-standard",
   "rules": {
     "indentation": 2,
-    "rule-empty-line-before":"inside-block-and-after-rule"
+    "rule-empty-line-before": "always",
+    "comment-no-empty": false,
+    "comment-empty-line-before": [
+      "true",
+      {
+        "ignore": ["after-comment", "stylelint-commands"]
+      }
+    ],
+    "font-family-no-missing-generic-family-keyword": false
   }
 }
