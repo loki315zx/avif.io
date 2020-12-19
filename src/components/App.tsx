@@ -61,9 +61,9 @@ export default function App(): ReactElement {
         <div className={"main-container" + " " + (settingsBoxOpen ? "open" : "")}>
           <Dropzone onDrop={onFilesSelected} />
 
-          <p
+          <button
             className={"will-change cog-button" + " " + (settingsBoxOpen ? "open" : "")}
-            onClick={() => setSettingsBoxOpen(!settingsBoxOpen)}></p>
+            onClick={() => setSettingsBoxOpen(!settingsBoxOpen)}></button>
           <div className={"settings_cog" + " " + (settingsBoxOpen ? "open" : "")}>
             <SettingsBox open={settingsBoxOpen} onSettingsUpdate={onSettingsUpdate} />
           </div>

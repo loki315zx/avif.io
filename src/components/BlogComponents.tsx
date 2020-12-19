@@ -49,8 +49,8 @@ export function BlogAdvantages(props: any) {
 
 export function BlogPosts(props: any) {
   const posts = props.posts;
-  const listItems = posts.map((post: any) => (
-    <div className="posts__item">
+  const listItems = posts.map((post: any, index: any) => (
+    <div className="posts__item" key={index}>
       <div className="posts__img">{post.title}</div>
       <div className="posts__data">
         <div className="posts__date">{post.date}</div>

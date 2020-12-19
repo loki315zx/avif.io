@@ -1,4 +1,6 @@
-let days = Math.round(Date.now() / 8640000 - 185860);
+import React from "react";
+
+const days = Math.round(Date.now() / 8640000 - 185860);
 
 let count = 5000;
 let b = 50;

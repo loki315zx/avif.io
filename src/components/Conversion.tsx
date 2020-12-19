@@ -120,11 +120,16 @@ export default function Conversion(props: ConversionProps): ReactElement {
           </span>
         </div>
         {status === "inProgress" && (
-          <div className="conversion__cancel" onClick={cancelConverison}>
+          <a role="button" className="conversion__cancel" onClick={cancelConverison}>
             cancel
-          </div>
+          </a>
         )}
-        <a download={`${fileName}.avif`} href={outputObjectURL} className={"download"} />
+        <a
+          title={`download ${fileName}`}
+          download={`${fileName}.avif`}
+          href={outputObjectURL}
+          className={"download"}
+        />
         {status === "inProgress" && <ProgressBar progress={progress} />}
       </div>
     </>

@@ -16,18 +16,48 @@ export default function Footer() {
           </div>
           <div id="footer-about">
             <div className="bold s1">About</div>
-            <a>Features</a> <a>Upcoming</a> <a>Changelog</a> <a>User Feedback</a>
+            <a title="title" href="#">
+              Features
+            </a>{" "}
+            <a title="title" href="#">
+              Upcoming
+            </a>{" "}
+            <a title="title" href="#">
+              Changelog
+            </a>{" "}
+            <a title="title" href="#">
+              User Feedback
+            </a>
           </div>
           <div id="footer-learn">
             <div className="bold s1">Learn</div>
-            <a>What is avif?</a> <a>How do I use avif?</a> <a>FAQ</a> <a>avif support</a>
+            <a title="title" href="#">
+              What is avif?
+            </a>{" "}
+            <a title="title" href="#">
+              How do I use avif?
+            </a>{" "}
+            <a title="title" href="#">
+              FAQ
+            </a>{" "}
+            <a title="title" href="#">
+              avif support
+            </a>
           </div>
           <div id="footer-more">
             <div className="bold s1">More</div>
-            <a>Blog</a>
-            <a>Contact</a>
-            <a>Donate</a>
-            <a>Legal & Privacy</a>
+            <a title="title" href="#">
+              Blog
+            </a>
+            <a title="title" href="#">
+              Contact
+            </a>
+            <a title="title" href="#">
+              Donate
+            </a>
+            <a title="title" href="#">
+              Legal & Privacy
+            </a>
           </div>
         </div>
       }

@@ -1,6 +1,5 @@
 import React from "react";
 import { useDropzone } from "react-dropzone";
-import Conversion from "@components/Conversion";
 
 export interface DropzoneProps {
   onDrop(files: File[]): void;
@@ -43,7 +42,10 @@ export default function Dropzone(props: DropzoneProps) {
   }
 
   return (
-    <a onClick={onBrowseClick} className={`dropzone-container ${isDragActive ? "active" : ""}`}>
+    <a
+      role="button"
+      onClick={onBrowseClick}
+      className={`dropzone-container ${isDragActive ? "active" : ""}`}>
       <div className={"dropzone-root"} {...getRootProps()}>
         <input {...getInputProps()} />
         <>
