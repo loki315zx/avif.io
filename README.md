@@ -1,14 +1,3 @@
-```bash
-npm i -D && npm run export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && npm run dev
-```
-
-#Reset Branch
-git fetch origin && git reset --hard origin/master
-
-#Run Prettier across project
-npx stylelint "\*_/_.css" --fix
-prettier --write .
-
 # AVIF.IO
 
 avif.io is a website for converting a wide variety of file

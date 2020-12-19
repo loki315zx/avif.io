@@ -1548,7 +1548,7 @@ h2.infobox:hover::before {
   padding: var(--responsivepadding);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: var(--s0);
+  grid-gap: var(--s1);
 }
 
 .posts__item {
@@ -1563,7 +1563,7 @@ h2.infobox:hover::before {
 }
 
 .posts__img {
-  background-image: url(@images/mesh1.jpg);
+  background: var(--color500);
   height: calc(var(--s5) * 1.5);
   border-radius: var(--radius300) var(--radius300) 0 0;
   display: flex;
@@ -1574,6 +1574,22 @@ h2.infobox:hover::before {
   color: white;
   background-size: 100%;
   background-position: center center;
+}
+
+.posts__img:nth-of-type(2) {
+  filter: hue-rotate(-6deg) saturate(0.98);
+}
+.posts__img:nth-of-type(3) {
+  filter: hue-rotate(-6deg) saturate(0.98);
+}
+.posts__img:nth-of-type(4) {
+  filter: hue-rotate(-6deg) saturate(0.98);
+}
+.posts__img:nth-of-type(5) {
+  filter: hue-rotate(-6deg) saturate(0.98);
+}
+.posts__img:nth-of-type(6) {
+  filter: hue-rotate(-6deg) saturate(0.98);
 }
 
 .posts__item:hover {
@@ -1726,6 +1742,7 @@ h2.infobox:hover::before {
   font-weight: bold;
 }
 
+ol,
 ul {
   margin: var(--s1) 0 var(--s2);
   padding: 0;

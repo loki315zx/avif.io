@@ -8,12 +8,20 @@
     "start": "next start",
     "check-tsc": "tsc --noEmit",
     "check-eslint": "eslint src/",
+    "check-style": "npx stylelint **/*.css",
     "check-ts": "npm run check-tsc && npm run check-eslint",
-    "export": "npm run build && next export"
+    "export": "npm run build && next export",
+    "prettier": "prettier --write .",
+    "reset": "git fetch origin && git reset --hard origin/master",
+    "setup": "npm i -D && npm run export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && npm run dev",
+    "analyze": "cross-env ANALYZE=true next build",
+    "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
   },
   "dependencies": {
     "@next/bundle-analyzer": "^10.0.3",
     "@types/react-syntax-highlighter": "^13.5.0",
+    "@zeit/next-source-maps": "0.0.3",
     "file-saver": "^2.0.2",
     "image-trace-loader": "^1.0.2",
     "imagemin-mozjpeg": "^9.0.0",

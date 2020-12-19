@@ -1,12 +1,12 @@
-var days = Math.round(Date.now() / 8640000 - 185860);
+let days = Math.round(Date.now() / 8640000 - 185860);
 
 let count = 5000;
 let b = 50;
 let c = 2;
 let d = 0.1;
-var e = 1.1;
+let e = 1.1;
 
-var day;
+let day;
 for (day = 0; day < days; day++) {
   if (b % 62 == 0) {
     b = 50;

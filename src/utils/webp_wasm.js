@@ -116,7 +116,11 @@ var Module = (function () {
       abort("no native wasm support detected");
     }
     var wasmMemory;
-    var wasmTable = new WebAssembly.Table({ initial: 161, maximum: 161, element: "anyfunc" });
+    var wasmTable = new WebAssembly.Table({
+      initial: 161,
+      maximum: 161,
+      element: "anyfunc",
+    });
     var ABORT = false;
     var EXITSTATUS = 0;
     function assert(condition, text) {
@@ -825,7 +829,10 @@ var Module = (function () {
               stream: { llseek: MEMFS.stream_ops.llseek },
             },
             file: {
-              node: { getattr: MEMFS.node_ops.getattr, setattr: MEMFS.node_ops.setattr },
+              node: {
+                getattr: MEMFS.node_ops.getattr,
+                setattr: MEMFS.node_ops.setattr,
+              },
               stream: {
                 llseek: MEMFS.stream_ops.llseek,
                 read: MEMFS.stream_ops.read,
@@ -844,7 +851,10 @@ var Module = (function () {
               stream: {},
             },
             chrdev: {
-              node: { getattr: MEMFS.node_ops.getattr, setattr: MEMFS.node_ops.setattr },
+              node: {
+                getattr: MEMFS.node_ops.getattr,
+                setattr: MEMFS.node_ops.setattr,
+              },
               stream: FS.chrdev_stream_ops,
             },
           };
@@ -1172,7 +1182,9 @@ var Module = (function () {
             while (FS.isLink(current.mode)) {
               var link = FS.readlink(current_path);
               current_path = PATH_FS.resolve(PATH.dirname(current_path), link);
-              var lookup = FS.lookupPath(current_path, { recurse_count: opts.recurse_count });
+              var lookup = FS.lookupPath(current_path, {
+                recurse_count: opts.recurse_count,
+              });
               current = lookup.node;
               if (count++ > 40) {
                 throw new FS.ErrnoError(32);
@@ -1513,7 +1525,12 @@ var Module = (function () {
             throw new FS.ErrnoError(54);
           }
         }
-        var mount = { type: type, opts: opts, mountpoint: mountpoint, mounts: [] };
+        var mount = {
+          type: type,
+          opts: opts,
+          mountpoint: mountpoint,
+          mounts: [],
+        };
         var mountRoot = type.mount(mount);
         mountRoot.mount = mount;
         mount.root = mountRoot;
@@ -3090,7 +3107,9 @@ var Module = (function () {
           }
           if (Browser.hasBlobConstructor) {
             try {
-              var b = new Blob([byteArray], { type: Browser.getMimetype(name) });
+              var b = new Blob([byteArray], {
+                type: Browser.getMimetype(name),
+              });
             } catch (e) {
               return fail();
             }
@@ -3191,7 +3210,11 @@ var Module = (function () {
         var ctx;
         var contextHandle;
         if (useWebGL) {
-          var contextAttributes = { antialias: false, alpha: false, majorVersion: 1 };
+          var contextAttributes = {
+            antialias: false,
+            alpha: false,
+            majorVersion: 1,
+          };
           if (webGLContextAttributes) {
             for (var attribute in webGLContextAttributes) {
               contextAttributes[attribute] = webGLContextAttributes[attribute];
@@ -4188,7 +4211,12 @@ var Module = (function () {
             if (SDL.DOMButtons[0] === 1) {
               SDL.events.push({
                 type: "touchmove",
-                touch: { identifier: 0, deviceID: -1, pageX: event.pageX, pageY: event.pageY },
+                touch: {
+                  identifier: 0,
+                  deviceID: -1,
+                  pageX: event.pageX,
+                  pageY: event.pageY,
+                },
               });
             }
             if (Browser.pointerLock) {
@@ -4218,7 +4246,12 @@ var Module = (function () {
               SDL.DOMButtons[event.button] = 1;
               SDL.events.push({
                 type: "touchstart",
-                touch: { identifier: 0, deviceID: -1, pageX: event.pageX, pageY: event.pageY },
+                touch: {
+                  identifier: 0,
+                  deviceID: -1,
+                  pageX: event.pageX,
+                  pageY: event.pageY,
+                },
               });
             } else if (event.type == "mouseup") {
               if (!SDL.DOMButtons[event.button]) {
@@ -4226,7 +4259,12 @@ var Module = (function () {
               }
               SDL.events.push({
                 type: "touchend",
-                touch: { identifier: 0, deviceID: -1, pageX: event.pageX, pageY: event.pageY },
+                touch: {
+                  identifier: 0,
+                  deviceID: -1,
+                  pageX: event.pageX,
+                  pageY: event.pageY,
+                },
               });
               SDL.DOMButtons[event.button] = 0;
             }
@@ -4273,7 +4311,10 @@ var Module = (function () {
             event.preventDefault();
             break;
           case "visibilitychange":
-            SDL.events.push({ type: "visibilitychange", visible: !document.hidden });
+            SDL.events.push({
+              type: "visibilitychange",
+              visible: !document.hidden,
+            });
             unpressAllPressedKeys();
             event.preventDefault();
             break;
