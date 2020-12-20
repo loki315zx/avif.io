@@ -1,39 +1,35 @@
 import React from "react";
 import Blog from "@components/Blog";
-import { BlogSubtitle, BlogAdvantages, BlogSyntax } from "@components/BlogComponents";
+import { BlogSubtitle, BlogAdvantages, BlogSyntax, BlogNote } from "@components/BlogComponents";
+
+let data = require("./blog.json");
+let postdata = data.use_avif_in_html;
+
+/*let post1 = data.use_avif_in_css ?????? */
+/*let post2 = data.use_avif_in_css ?????? */
 
 const posts = [
   {
+    url: "#",
     title: "7 tips on how to efficiently use avif in CSS.",
-    date: "last update: November 12, 2020",
-    summary:
+    date_modified: "last update: November 12, 2020",
+    description:
       "AVIF, the file format based on the AV1 video codec, is the latest addition to the next-gen image formats. Early reports and comparisons show good results.",
   },
   {
+    url: "#",
     title: "7 tips on how to efficiently use avif in CSS.",
-    date: "last update: November 12, 2020",
-    summary:
+    date_modified: "last update: November 12, 2020",
+    description:
       "AVIF, the file format based on the AV1 video codec, is the latest addition to the next-gen image formats. Early reports and comparisons show good results.",
   },
   {
+    url: "#",
     title: "7 tips on how to efficiently use avif in CSS.",
-    date: "last update: November 12, 2020",
-    summary:
+    date_modified: "last update: November 12, 2020",
+    description:
       "AVIF, the file format based on the AV1 video codec, is the latest addition to the next-gen image formats. Early reports and comparisons show good results.",
   },
-];
-
-const sources = [
-  "http://aomedia.org/about/",
-  "http://aomedia.org/av1-features/get-started/",
-  "https://caniuse.com/?search=picture",
-  "https://caniuse.com/avif",
-  "https://caniuse.com/loading-lazy-attr",
-  "https://caniuse.com/webp",
-  "https://css-tricks.com/avif-has-landed/",
-  "https://developer.apple.com/documentation/safari-release-notes/safari-14-release-notes",
-  "https://tollwerk.de/blog/schlanke-responsive-bilder-mit-picture-mozjpeg-webp-avif-sqip",
-  "https://www.mediaevent.de/bilddatenformate-jpg-avif-png-webp/",
 ];
 
 const advantages = [
@@ -43,11 +39,9 @@ const advantages = [
   "Easy to implement",
 ];
 
-const title = "How to use avif in HTML";
-
 export default function BlogAvifInHtml() {
   return (
-    <Blog title={title} sources={sources} posts={posts}>
+    <Blog postdata={postdata} posts={posts}>
       <div>
         You've clicked this article because you'd like to find out how to use avif in HTML.
         Therefore I won't bother you with a stupid 10.000 words text passages about how awesome avif
@@ -86,9 +80,7 @@ export default function BlogAvifInHtml() {
 <img src="image.jpg" alt="avif in html" loading="lazy">
 </picture>`}
       </BlogSyntax>
-      <div className="note">
-        PS: The lazy loading attribute is supported by 75% of all browsers, make use of it!
-      </div>
+      <BlogNote text="PS: The lazy loading attribute is supported by 75% of all browsers, make use of it!" />
       This setup suits all visitors. Make sure to put the avif image as first source tag, the
       browser will display the first media-type it can handle.
       <BlogSubtitle text="Responsiveness" />

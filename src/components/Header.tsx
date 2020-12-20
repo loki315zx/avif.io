@@ -8,23 +8,20 @@ export default function Header() {
       {
         <div className="header">
           <div className="flex-center">
-            <a className="logo">
-              <Link href="/">avif.io</Link>
-            </a>
+            <Link href="/">
+              <a className="logo">avif.io</a>
+            </Link>
             <div className="conversionscounter">
               over <ConversionsCounter />
               files converted
             </div>
           </div>
           <div className="menu">
-            <a id="support">
-              {" "}
-              <Link href="https://www.buymeacoffee.com/justinschmitz">Support</Link>
-            </a>
-            <a id="blog">Blog</a>
-            <a id="cta" className="button-primary">
-              <Link href="/">Convert</Link>
-            </a>
+            <Link href="https://www.buymeacoffee.com/justinschmitz">Support</Link>
+            <Link href="https://www.buymeacoffee.com/justinschmitz">Blog</Link>
+            <Link href="/">
+              <a className="button-primary">Convert</a>
+            </Link>
           </div>
         </div>
       }

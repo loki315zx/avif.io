@@ -12,19 +12,28 @@ export interface MetaProps {
   image?: string;
   date_published: string;
   date_modified: string;
-  type: string;
 }
 
 export default function Meta(props: MetaProps) {
   return (
     <Head>
-      {/*Basic Meta*/}
       <title>avif.io | {props.title}</title>
       <meta name="description" content={props.description} />
       <meta name="keywords" content={props.keywords.join(",")} />
       <meta name="author" content={props.author} />
-      <link rel="canonical" href={"avif.io" + props.url} />
-      {/*Json Ld*/}
+      <link rel="canonical" href={props.url} />
+      <meta property="og:site_name" content="avif.io" />
+      <meta property="og:url" content={props.url} />
+      <meta property="og:title" content={props.title} />
+      <meta property="og:description" content={props.description} />
+      <meta property="og:image" content={props.image} />
+      <meta property="og:type" content="article" />
+
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:site" content="@jschmitz97" />
+      <meta property="twitter:url" content={"https://twitter.com/jschmitz97"} />
+      <meta property="twitter:title" content={["avif.io", props.title].join(" | ")} />
+      <meta property="twitter:description" content={props.description} />
       <JsonLd<BlogPosting>
         item={{
           "@context": "https://schema.org",
