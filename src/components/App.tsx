@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useState } from "react";
+import { ReactElement, useEffect, useState } from "react";
 import ReactCompareImage from "react-compare-image";
 
 import Conversion from "@components/Conversion";

@@ -1,5 +1,3 @@
-import React from "react";
-
 export interface Advantages {
   pre: string;
   text: string;
@@ -32,25 +30,24 @@ export default function Advantages() {
           <AdvantageItem
             pre="usually"
             text="reduces file size"
-            post="of images by 20-90% for faster page loading."
+            post="of images by 20-90% for faster page loading"
             number="visualizer-1"
           />
           <AdvantageItem
             pre=""
             text="decreases required bandwidth"
-            post="for service providers."
+            post="for service providers"
             number="visualizer-2"
           />
           <AdvantageItem
             pre="is"
             text="actively developed by tech giants"
-            post="like Google, Apple, Microsoft, Mozilla &
-              Nvidia."
+            post="like Google, Apple & Microsoft"
             number="visualizer-3"
           />
           <AdvantageItem
-            pre="is open to use and"
-            text="royalty-free"
+            pre="is"
+            text="open to use and royalty-free"
             post="for everyone"
             number="visualizer-4"
           />
@@ -62,40 +59,59 @@ export default function Advantages() {
           />
           <AdvantageItem
             pre="already"
-            text="supported by browsers"
-            post="like Chrome, Opera and Firefox"
+            text="supported by Chrome, Opera and Firefox"
+            post=""
             number="visualizer-6"
           />
           <AdvantageItem
             pre=""
             text="supports transparency"
-            post="and is therefore a better version of PNG."
+            post="and is therefore a better version of PNG"
             number="visualizer-7"
           />
           <AdvantageItem
             pre=""
             text="offers support for animated frames"
-            post="and can replace GIFs as well as aPNGs."
+            post="and can replace GIFs & aPNGs"
             number="visualizer-8"
           />
           <AdvantageItem
             pre=""
-            text="embraces HDR and wide color gamut"
-            post="for viewing images on a wider range of colors."
+            text="embraces HDR"
+            post="with 12-bit color depth and wide color gamut"
+            number="visualizer-9"
+          />
+          <AdvantageItem
+            pre="provides"
+            text="future-proof VP-10 codec technology"
+            post=""
+            number="visualizer-9"
+          />
+          <AdvantageItem
+            pre="latest GPUs already support"
+            text="hardware decoding"
+            post=""
+            number="visualizer-9"
+          />
+          <AdvantageItem
+            pre="is"
+            text="rich of features for smartphones"
+            post="like live photos"
             number="visualizer-9"
           />
         </div>
         <div className="advantages-explainer">
           In the last 10 years, the size of an average website has increased from 500kb to 2000kb.
           Images have always been taking up half the amount. To counteract the increasing size, the
-          web is in need of a new alternative to JPEG. AV1 (.avif) is the solution. It is developed
-          by the Alliance for Open Media in collaboration with Google, Mozilla, Intel and other tech
-          giants. Avif is a codec for super-compressed images with acceptable quality. Avif is in
-          continuous development with the goal to achieve the best ratio of compression and quality.
-          Avif offers significant reduction of file size compared to the current JPEG or WebP codec.
-          You can typically reduce file sizes by 20-90%. Even for images with transparency or
-          animated frames. While currently only supported by Chrome, you can expect it to get more
-          support quickly. View the progress.
+          web is in need of a new alternative to JPEG, which currently is the most popular image
+          format, despite its age and due to its high compability. AV1 (.avif) is the modern
+          solution. It is developed by the Alliance for Open Media, a collaboration of Google, Apple
+          Mozilla, Intel and other tech giants. Avif is a codec for super-compressed images with
+          acceptable quality. Avif is in continuous development with the goal to achieve the best
+          ratio of compression and quality. Avif offers significant reduction of file size compared
+          to the current JPEG or WebP codec. You can typically reduce file sizes by 20-90%. Even for
+          images with transparency or animated frames. Currently supported by Chrome, Opera and
+          Firefox, you can expect it to get more support quickly.
         </div>
       </section>
     </>

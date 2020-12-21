@@ -1,11 +1,10 @@
-import React from "react";
 import Link from "next/link";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 
-export function BlogSyntax(props: { children: any }) {
+export function BlogSyntax(props: { language: string; children: any }) {
   return (
-    <SyntaxHighlighter language="html" style={vs2015} showLineNumbers={true}>
+    <SyntaxHighlighter language={props.language} style={vs2015} showLineNumbers={true}>
       {props.children}
     </SyntaxHighlighter>
   );
@@ -27,7 +26,7 @@ export function BlogSources(props: any) {
   const sources = props.sources;
   const listItems = sources.map((source: any, index: any) => (
     <li key={index} className="source">
-      <a href={source}>{source}</a>
+      <a href={`https://${source}`}>{source.toString().replace(/\//g, " · ")}</a>
     </li>
   ));
   return (

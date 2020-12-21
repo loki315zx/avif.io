@@ -1,4 +1,3 @@
-import React from "react";
 import ConversionsCounter from "./ConversionsCounter";
 
 export default function Footer() {

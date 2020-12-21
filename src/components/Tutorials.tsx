@@ -1,5 +1,3 @@
-import React from "react";
-
 export interface TutorialsBoxProps {
   cssclass: string;
   title: string;
@@ -21,12 +19,12 @@ export default function Tutorials() {
     <section className="section__tutorials">
       <div className="text-60 white f3">How to use avif in a productive environment.</div>
       <div className="text-40 white s5">
-        avif is developed and used by the most influential tech companies. Netflix has already
-        considered .avif superior to the JPEG, PNG, and even the newer WebP image formats for its
-        image quality to compressed file size ratio. Leaders and technology innovators from all
-        prominent companies contributed to the creation of AV1, and license their patents essential
-        to the codec on a royalty-free basis to create an enduring ecosystem. No other codec looks
-        as promising as avif. With its huge support, its modern feature rate, the license free usage
+        avif is developed by the most influential tech companies. Netflix has already considered
+        .avif superior to the JPEG, PNG, and even the newer WebP image formats for its image quality
+        to compressed file size ratio. Leaders and technology innovators from all prominent
+        companies contributed to the creation of AV1, and license their patents essential to the
+        codec on a royalty-free basis to create an enduring ecosystem. No other codec looks as
+        promising as avif. With its huge support, its modern feature rate, the license free usage
         and the best compression rate ever achieved, we are just a step away from innovating the
         modern web.
       </div>
@@ -45,6 +43,7 @@ export default function Tutorials() {
         <TutorialsBox cssclass="wordpress" title="WordPress" />
         <TutorialsBox cssclass="nextjs" title="Next.JS" />
         <TutorialsBox cssclass="cloudflare" title="Cloudflare" />
+        <TutorialsBox cssclass="edge" title="Edge" />
       </div>
     </section>
   );

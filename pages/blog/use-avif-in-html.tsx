@@ -1,12 +1,28 @@
-import React from "react";
 import Blog from "@components/Blog";
 import { BlogSubtitle, BlogAdvantages, BlogSyntax, BlogNote } from "@components/BlogComponents";
 
-let data = require("./blog.json");
-let postdata = data.use_avif_in_html;
-
-/*let post1 = data.use_avif_in_css ?????? */
-/*let post2 = data.use_avif_in_css ?????? */
+const postdata = {
+  title: "How to use avif in HTML",
+  description: "Enjoy this short, but still in depth guide on how to use AVIF in HTML.",
+  url: "https://avif.io/blog/use-avif-in-html",
+  image: "https://avif.io/images/bg-orange.svg",
+  keywords: ["avif", "picture", "HTML", "image optimization"],
+  author: "Justin Schmitz",
+  data_published: "22.10.20",
+  date_modified: "22.12.20",
+  sources: [
+    "aomedia.org/about",
+    "aomedia.org/av1-features/get-started",
+    "caniuse.com/picture",
+    "caniuse.com/avif",
+    "caniuse.com/loading-lazy-attr",
+    "caniuse.com/webp",
+    "css-tricks.com/avif-has-landed",
+    "developer.apple.com/documentation/safari-release-notes/safari-14-release-notes",
+    "tollwerk.de/blog/schlanke-responsive-bilder-mit-picture-mozjpeg-webp-avif-sqip",
+    "mediaevent.de/bilddatenformate-jpg-avif-png-webp",
+  ],
+};
 
 const posts = [
   {
@@ -42,38 +58,32 @@ const advantages = [
 export default function BlogAvifInHtml() {
   return (
     <Blog postdata={postdata} posts={posts}>
-      <div>
-        You've clicked this article because you'd like to find out how to use avif in HTML.
-        Therefore I won't bother you with a stupid 10.000 words text passages about how awesome avif
-        is just to increase my SEO. You can read plenty of articles about how amazing avif is right
-        here on X or Y, as well as everywhere else in the web, just like my constant slightly
-        annoying twitter updates about this site. So let's get riiiiight into the topic.
-      </div>
+      I won't bother you with a stupid 10.000 words text passages about how awesome avif is just to
+      increase my SEO. You can read plenty of articles about how amazing avif is right here on X or
+      Y, as well as everywhere else in the web, just like my constant slightly annoying twitter
+      updates about this site. You've clicked this article because you'd like to find out how to use
+      avif in HTML, so let's get riiiiight into the topic.
       <BlogSubtitle text="Browser Support" />
-      <div>
-        The most important thing you should remember when using avif is that it unfortunately isn't
-        supported everywhere yet. It's a shame, right? It took webP (another awesome image format,
-        but not as good as the latest ones like avif) ten years to be fully supported, due to Apple
-        not implementing the format in Safari. And even now there's only a 90% support. By the time
-        of writing, avif has a 25% support on Browsers. However, as avif is an invention by the
-        non-profit industry consortium AOM and the largest browser-creating giants like Apple,
-        Mozilla and Google are part of it, you can expect support quite quickly.
-      </div>
+      The most important thing you should remember when using avif is that it unfortunately isn't
+      supported everywhere yet. It's a shame, right? It took webP (another awesome image format, but
+      not as good as the latest ones like avif) ten years to be fully supported, due to Apple not
+      implementing the format in Safari. And even now there's only a 90% support. By the time of
+      writing, avif has a 25% support on Browsers. However, as avif is an invention by the
+      non-profit industry consortium AOM and the largest browser-creating giants like Apple, Mozilla
+      and Google are part of it, you can expect support quite quickly.
       <BlogSubtitle text="The picture element" />
-      <div>
-        In the meanwhile, you can still use the format in its almost-full glory with the native{" "}
-        {`<picture>`} element in HTML. Why you may ask? Well, the {`<picture>`} element allows for
-        progressive support. You can simply list all image sources in the order in which you want
-        them to be loaded. The wanky browser of your visitors will only download the first image it
-        supports. You only load one image at a time, there's no need for a script and everyone is
-        happy.
-        <BlogAdvantages advantages={advantages} />
-        <BlogSubtitle text="Implementation" />
-        Browser support for the picture element is at 96%, but even if your grandma is visiting your
-        website with her disguisting Internet Explorer 6, her browser will simply fallback to using
-        the default image. Take a look at this example and copy it for your website:
-      </div>
-      <BlogSyntax>
+      In the meanwhile, you can still use the format in its almost-full glory with the native{" "}
+      {`<picture>`} element in HTML. Why you may ask? Well, the {`<picture>`} element allows for
+      progressive support. You can simply list all image sources in the order in which you want them
+      to be loaded. The wanky browser of your visitors will only download the first image it
+      supports. You only load one image at a time, there's no need for a script and everyone is
+      happy.
+      <BlogAdvantages advantages={advantages} />
+      <BlogSubtitle text="Implementation" />
+      Browser support for the picture element is at 96%, but even if your grandma is visiting your
+      website with her disguisting Internet Explorer 6, her browser will simply fallback to using
+      the default image. Take a look at this example and copy it for your website:
+      <BlogSyntax language="html">
         {`<picture>
 <source srcset="image.avif" type="image/avif" loading="lazy">
 <source srcset="image.webp" type="image/webp" loading="lazy">
@@ -87,7 +97,7 @@ export default function BlogAvifInHtml() {
       Great, right? Well, yes, but actually no. Because we are still lacking support for different
       device types. Creating an optimal experience for Retina displays can be a little more
       demanding:
-      <BlogSyntax>
+      <BlogSyntax language="html">
         {`<picture>
 <source srcset="image.avif 1x, image@2x.avif 2x" type="image/avif" loading="lazy">
 <source srcset="image.webp 1x, image@2x.webp 2x" type="image/webp" loading="lazy">

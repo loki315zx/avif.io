@@ -1,4 +1,3 @@
-import React from "react";
 import JSZip from "jszip";
 import { saveFile } from "@utils/utils";
 

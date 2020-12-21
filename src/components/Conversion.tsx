@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useState } from "react";
+import { ReactElement, useEffect, useState } from "react";
 import prettyBytes from "pretty-bytes";
 import Converter, { ConversionId, ConversionResult } from "@utils/converter";
 import { splitNameAndExtension } from "@utils/utils";

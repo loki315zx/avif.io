@@ -39,7 +39,7 @@
   --black2-8: hsl(0 0% 7% / 0.8);
   --black3-8: hsl(0 0% 8% / 0.8);
   --black4-8: hsl(0 0% 9% / 0.8);
-  --responsivepadding: calc(5vh + 5vw) calc(10vh + 15vw);
+  --responsivepadding: calc(5vh + 5vw) calc(10vh + 10vw);
   --blogpadding: calc(5vh + 5vw) calc(5vh + 7.5vw);
   --grid12234: repeat(4, 1fr);
   --gridgap: var(--s2);
@@ -55,6 +55,7 @@
 @media only screen and (max-width: 1599.98px) {
   :root {
     --responsivepadding: calc(5vh + 5vw) calc(10vh + 5vw);
+    --blogpadding: calc(5vh + 5vw) calc(5vh + 5vw);
   }
 }
 
@@ -62,6 +63,7 @@
   :root {
     --grid12234: repeat(3, 1fr);
     --responsivepadding: calc(5vh + 5vw) calc(5vh + 2vw);
+    --blogpadding: calc(5vh + 5vw) calc(5vh + 2vw);
   }
 }
 
@@ -70,6 +72,7 @@
     --f1: calc(15px + 0.1vw);
     --s0: calc(5px + 0.5vh);
     --responsivepadding: calc(2.5vh + 2vw);
+    --blogpadding: calc(2.5vh + 2vw) calc(1vh + 1vw);
     --grid12234: repeat(2, 1fr);
     --gridgap: var(--s1);
   }
@@ -328,7 +331,7 @@ span {
   font-family: "Patua One";
 }
 
-.logo a {
+.logo {
   color: var(--white);
 }
 
@@ -1061,6 +1064,18 @@ h2.infobox:hover::before {
   margin-bottom: calc(var(--s3) * 1);
 }
 
+.tutorials__box:nth-of-type(15) {
+  filter: hue-rotate(-30deg) saturate(0.9);
+  margin-top: calc(var(--s3) * -2);
+  margin-bottom: calc(var(--s3) * 2);
+}
+
+.tutorials__box:nth-of-type(16) {
+  filter: hue-rotate(-36deg) saturate(0.88);
+  margin-top: calc(var(--s3) * -3);
+  margin-bottom: calc(var(--s3) * 3);
+}
+
 .tutorial__overflow {
   position: absolute;
   top: 0;
@@ -1146,6 +1161,10 @@ h2.infobox:hover::before {
 
 #cloudflare .tutorial__overflow::before {
   background-image: url("@assets/cloudflare.svg");
+}
+
+#edge .tutorial__overflow::before {
+  background-image: url("@assets/edge.svg");
 }
 
 .tutorials__box:hover .tutorial_shadow {
@@ -1658,7 +1677,7 @@ h2.infobox:hover::before {
 .blog {
   background-color: var(--black1);
   background-image: url("@assets/bg-pink.svg");
-  background-size: 200vh;
+  background-size: 250vh;
   background-position: top center;
   background-repeat: no-repeat;
   position: relative;
@@ -1763,9 +1782,6 @@ ul {
 .blog .button-primary {
   background: var(--white);
   opacity: 1;
-}
-
-.blog .button-primary a {
   color: var(--black1);
 }
 
@@ -1954,12 +1970,13 @@ pre {
   }
 
   .content__container {
-    padding: var(--s2);
+    padding: var(--s1);
     border-radius: var(--radius300);
   }
 
   .blog h1 {
     padding: var(--s4) var(--s1) var(--s1) var(--s1);
+    margin: 0;
     font-size: var(--f3);
   }
 

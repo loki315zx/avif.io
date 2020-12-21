@@ -1,5 +1,3 @@
-import React from "react";
-
 export interface PercentageSliderProps {
   className?: string;
   value: number;

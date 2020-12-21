@@ -1,12 +1,10 @@
-import React from "react";
-
 import Header from "@components/Header";
 import Footer from "@components/Footer";
 import CTA from "@components/CTA";
 import { BlogSources, BlogSubtitle, BlogTitle, BlogPosts } from "@components/BlogComponents";
 import Meta from "@components/Meta";
 
-export default function Blog(props: any) {
+export default function Blog(props: { postdata: any; children: any; posts: any }) {
   return (
     <div className="blog">
       <Meta
