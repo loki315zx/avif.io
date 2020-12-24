@@ -518,14 +518,15 @@ span {
     radial-gradient(circle at 80% 40%, var(--color700), transparent 75%), var(--black1);
   z-index: 0;
   filter: blur(5px);
-  animation: cta-background 10s infinite;
+  animation: cta-background 5s infinite;
+  animation-play-state: paused;
 }
 
 .dropzone-container:hover .upload-blur {
-  animation: cta-background 3s infinite;
+  animation-play-state: running;
 }
 
-.upload-button::after {
+.upload-button::before {
   content: "";
   position: absolute;
   top: 0;
