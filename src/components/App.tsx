@@ -82,7 +82,6 @@ export default function App(): ReactElement {
         </div>
         <div className="chevron" />
       </div>
-
       <Tutorials />
       <Advantages />
       <section id="avifcompare">
@@ -141,8 +140,29 @@ export default function App(): ReactElement {
         </div>
       </section>
 */}
-
       <CTA />
+      <div className="advantages-explainer">
+        In the last 10 years, the size of an average website has increased from 500kb to 2000kb.
+        Images have always been taking up half the amount. To counteract the increasing size, the
+        web is in need of a new alternative to JPEG, which currently is the most popular image
+        format, despite its age and due to its high compability. AV1 (.avif) is the modern solution.
+        It is developed by the Alliance for Open Media, a collaboration of Google, Apple Mozilla,
+        Intel and other tech giants. Avif is a codec for super-compressed images with acceptable
+        quality. Avif is in continuous development with the goal to achieve the best ratio of
+        compression and quality. Avif offers significant reduction of file size compared to the
+        current JPEG or WebP codec. You can typically reduce file sizes by 20-90%. Even for images
+        with transparency or animated frames. Currently supported by Chrome, Opera and Firefox, you
+        can expect it to get more support quickly.
+      </div>
+      <div className="advantages-explainer">
+        avif is developed by the most influential tech companies. Netflix has already considered
+        .avif superior to the JPEG, PNG, and even the newer WebP image formats for its image quality
+        to compressed file size ratio. Leaders and technology innovators from all prominent
+        companies contributed to the creation of AV1. They licensed their patents essential to the
+        codec on a royalty-free basis to create an enduring ecosystem. No other codec looks as
+        promising as avif. With its vast support, current feature rate, license-free usage and the
+        best compression rate ever achieved, we are just a step away from innovating the modern web.
+      </div>
       <Footer />
     </>
   );

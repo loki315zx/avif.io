@@ -100,19 +100,6 @@ export default function Advantages() {
             number="visualizer-9"
           />
         </div>
-        <div className="advantages-explainer">
-          In the last 10 years, the size of an average website has increased from 500kb to 2000kb.
-          Images have always been taking up half the amount. To counteract the increasing size, the
-          web is in need of a new alternative to JPEG, which currently is the most popular image
-          format, despite its age and due to its high compability. AV1 (.avif) is the modern
-          solution. It is developed by the Alliance for Open Media, a collaboration of Google, Apple
-          Mozilla, Intel and other tech giants. Avif is a codec for super-compressed images with
-          acceptable quality. Avif is in continuous development with the goal to achieve the best
-          ratio of compression and quality. Avif offers significant reduction of file size compared
-          to the current JPEG or WebP codec. You can typically reduce file sizes by 20-90%. Even for
-          images with transparency or animated frames. Currently supported by Chrome, Opera and
-          Firefox, you can expect it to get more support quickly.
-        </div>
       </section>
     </>
   );

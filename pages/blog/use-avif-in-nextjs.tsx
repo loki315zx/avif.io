@@ -46,9 +46,9 @@ const advantages = ["", ""];
 export default function BlogAvifInNextJS() {
   return (
     <Blog postdata={postdata} posts={posts}>
-      Are you expecting a huge blog article? Well, suck it! This blog uses the latest version of
+      Are you expecting a colossal blog article? Well, suck it! This blog uses the latest version of
       both, React and Next.JS. Not only that, but the bundler automatically detects avif files and
-      treats the accordingly, we didn't have to do anything for this work. That's what we call a
+      treats them accordingly. We didn't have to do anything for this work. That's what we call a
       top-notch service, gentlemen!
       <BlogSubtitle text="That's it?" />
       Yes. Some people refer to this as: "GG EZ". Simply add the required avif files to your project
@@ -60,13 +60,13 @@ module.exports = withImages()`}
       </BlogSyntax>
       Next.JS will handle all the bullshit behind the scenes for you.
       <BlogSubtitle text="You gotta be kidding me" />
-      Okay, kinda. The team behind Next.JS they worked big time on providing optimizations to
-      images. Since version 10.0.0, Next.js has a built-in Image Component and Automatic Image
-      Optimization. They describe their image component as " an extension of the HTML {`<img>`}{" "}
-      element, evolved for the modern web." Why you may ask? Well, the images in this component get
-      automatically resized, optimized and served on the right format, based on the device and
-      browser of your visitor. You won't deliver a 4k image to a Nintendo Gameboy. Furthermore,
-      images are always lazy-loaded, support the Core Web Vitals by not shifting layouts and this
+      Okay, kinda. The team behind Next.JS worked big time on providing optimizations to images.
+      Since version 10.0.0, Next.js has a built-in Image Component and Automatic Image Optimization.
+      They describe their image component as " an extension of the HTML {`<img>`} element, evolved
+      for the modern web." Why, you may ask? The images in this component get automatically resized,
+      optimized, and served in the right format, based on your visitor's device and browser. You
+      won't deliver a 4k image to a Nintendo Gameboy. Furthermore, images are always lazy-loaded and
+      supporting the Core Web Vitals by not shifting layouts. Further further furthermore, this
       service can also be used when serving images from a CDN.
       <BlogSubtitle text="Use the Next.JS image component" />
       All in all, it's a simple "put this image into your project, add it with the component and we
@@ -86,9 +86,9 @@ module.exports = withImages()`}
       see support in the upcoming releases. Also, images loaded via CSS do not get optimized. We are
       crossing fingers that this will be the case in future releases.
       <BlogSubtitle text="Next Optimized Images" />
-      Until then, we are using the third party Next.JS plugin called 'next-optimized-images'. It has
-      lots of additional features and support images loaded via CSS, which in our usecase is highly
-      appreciated. It yet doesn't support avif as well, but the author is currently rewriting the
+      Until then, we are using the third-party Next.JS plugin called 'next-optimized-images'. It has
+      many additional features and support images loaded via CSS, which is highly appreciated in our
+      use-case. It yet doesn't support avif as well. Still, the author is currently rewriting the
       whole plugin from scratch and a canary version is already published. We've linked to the
       plugin in the sources below.
     </Blog>

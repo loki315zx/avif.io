@@ -2,8 +2,9 @@ import Blog from "@components/Blog";
 import { BlogSubtitle, BlogAdvantages, BlogSyntax, BlogNote } from "@components/BlogComponents";
 
 const postdata = {
-  title: "Enable AVIF in Edge",
-  description: "Learn how to view AVIF images in your favorite Microsoft Browser... Edge!",
+  title: "View AVIF Images In Microsoft Edge",
+  description:
+    "Internet Explorer 6, the latest browser.. oh wait, it's called Edge? Well, okay. Microsoft Edge now supports AV1 image formats. Learn more about it here.",
   url: "https://avif.io/blog/use-avif-in-edge",
   image: "",
   keywords: ["avif", "image optimization", "microsoft", "edge"],
@@ -47,11 +48,7 @@ export default function BlogAvifInEdge() {
   return (
     <Blog postdata={postdata} posts={posts}>
       <BlogSubtitle text="Next Optimized Images" />
-      Until then, we are using the third party Next.JS plugin called 'next-optimized-images'. It has
-      lots of additional features and support images loaded via CSS, which in our usecase is highly
-      appreciated. It yet doesn't support avif as well, but the author is currently rewriting the
-      whole plugin from scratch and a canary version is already published. We've linked to the
-      plugin in the sources below.
+      Placeholder
     </Blog>
   );
 }
