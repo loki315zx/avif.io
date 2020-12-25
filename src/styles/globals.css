@@ -2056,6 +2056,12 @@ pre {
   }
 }
 
+@media (prefers-reduced-data: no-preference) {
+  * {
+    background-image: none;
+  }
+}
+
 @supports (-moz-appearance: meterbar) {
   .section__tutorials::before {
     filter: blur(10px);

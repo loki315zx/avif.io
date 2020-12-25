@@ -28,19 +28,17 @@ export default function Tutorials() {
       <div className="tutorials__container">
         <TutorialsBox cssclass="css" title="CSS" />
         <TutorialsBox cssclass="html" title="HTML" />
-        <TutorialsBox cssclass="js" title="JS" />
-        <TutorialsBox cssclass="svelte" title="Svelte" />
-        <TutorialsBox cssclass="react" title="React" />
         <TutorialsBox cssclass="angular" title="Angular" />
+        <TutorialsBox cssclass="react" title="React" />
         <TutorialsBox cssclass="vue" title="Vue" />
+        <TutorialsBox cssclass="nextjs" title="Next.JS" />
         <TutorialsBox cssclass="firefox" title="Firefox" />
+        <TutorialsBox cssclass="edge" title="Edge" />
         <TutorialsBox cssclass="gimp" title="GIMP" />
-        <TutorialsBox cssclass="windows" title="Windows" />
         <TutorialsBox cssclass="netlify" title="Netlify" />
         <TutorialsBox cssclass="wordpress" title="WordPress" />
-        <TutorialsBox cssclass="nextjs" title="Next.JS" />
         <TutorialsBox cssclass="cloudflare" title="Cloudflare" />
-        <TutorialsBox cssclass="edge" title="Edge" />
+        <TutorialsBox cssclass="windows" title="Windows" />
       </div>
     </section>
   );
