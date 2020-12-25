@@ -2,10 +2,11 @@ import Blog from "@components/Blog";
 import { BlogSubtitle, BlogAdvantages, BlogSyntax, BlogNote } from "@components/BlogComponents";
 
 const postdata = {
-  title: "How to use avif in Wordpress",
-  description: "Enjoy this short, but still in depth guide on how to use AVIF in HTML.",
+  title: "Use AVIF in Wordpress",
+  description:
+    "Wordpress disallows uploading avif files. Find out how to still use AVIF images on your website today.",
   url: "https://avif.io/blog/use-avif-in-wordpress",
-  image: "https://avif.io/images/bg-orange.svg",
+  image: "",
   keywords: ["avif", "wordpress", "wp", "image optimization", "mime type"],
   author: "Justin Schmitz",
   data_published: "22.10.20",
@@ -24,7 +25,7 @@ const postdata = {
     "wordpress.org/support/topic/generating-images-in-avif-format-5",
     "wordpress.org/support/topic/will-the-avif-image-format-be-support-in-the-future",
     "wordpress.stackexchange.com/questions/379114/workaround-to-upload-avif-files",
-    "wpbeginner.com/glossary/functions-php/",
+    "wpbeginner.com/glossary/functions-php",
   ],
 };
 
@@ -55,7 +56,14 @@ export default function BlogAvifInWordpress() {
   return (
     <Blog postdata={postdata} posts={posts}>
       "Sorry, this file type is not permitted for security reasons" is the glorious response you get
-      when you try to upload avif images to Wordpress. There is no official support.
+      when you try to upload avif images to Wordpress. There is no official support. Still,
+      WordPress needs AVIF because of two reasons. First, technical professionals and end-users
+      often struggle with web speed issues that are very common with this CMS. Hence, AVIF can
+      contribute to faster loading because of its incredibly low-size images without causing any
+      dent in quality. The second reason is that WordPress is the most dominant CMS in the world
+      with over 455 million websites in 2020. This means that around 35% of the web is powered by
+      WordPress. Further statistics from WordPress reveal that as of November 2020, over 409 million
+      people view more than 20 billion pages each month.
       <BlogSubtitle text="Official Wordpress Support" />
       The Wordpress core has implemented a security check for file uploading since its version 4.7.
       This means that Wordpress checks the file extension of your uploaded files and rejects files
@@ -94,7 +102,8 @@ export default function BlogAvifInWordpress() {
 add_filter( 'upload_mimes', 'allow_avif', 1, 1 );`}
       </BlogSyntax>
       This code will automatically allow you to upload avif files just like you upload any other
-      image.
+      image. If you wish to add more support for all the new image formats out there in the wild,
+      feel free to copy the code below.
       <BlogSyntax language="php">
         {`function support_modern_images( $mime_types ) {
   $mime_types['webp'] = 'image/webp';
@@ -109,21 +118,46 @@ add_filter( 'upload_mimes', 'allow_avif', 1, 1 );`}
 add_filter( 'upload_mimes', 'support_modern_images', 1, 1 );`}
       </BlogSyntax>
       <BlogSubtitle text="FTP Upload" />
+      Another way to bypass the restriction is to upload your files via FTP. Simply connect to your
+      server and drop your images in the upload folder, where most of your current images should be
+      saved. If you don't know how to access your files directly, feel free to ask your web host.
+      Most providers offer great tutorials.
       <BlogSubtitle text="Plugins for mime type support" />
-      The plugin additionally allows the mime types and file extensions to WordPress. In other
-      words, your WordPress site can upload various file extensions.
-      <span>https://wordpress.org/plugins/wp-add-mime-types/</span>
-      <span>https://wordpress.org/plugins/blob-mimes/</span>
-      <BlogSubtitle text="Problem: No automatic conversion" />
-      Upload avif is nice, but no automatic best choice for your users. better use plugins.
+      There's a huge disadvantage when modifying the functions.php. It's theme related. This means
+      whenever you switch a theme or proceed to update your current one, most likely the short code
+      snippet will be gone. Hold on, there's no need to pull out the lyrics of 'Time to say
+      Goodbye'. Mhh mhh mhh, no no no. There is a solution that is working independently.
+      Financially indepen.. sorry, the memes. Let me get back on track: Multiple plugin solutions
+      exist. Take a look at these beauties:
+      <p>https://wordpress.org/plugins/wp-add-mime-types/</p>
+      <p>https://wordpress.org/plugins/blob-mimes/</p>
+      To quote: WordPress relies mostly on name-based validation when deciding whether or not to
+      allow a particular file, leaving the door open for various kinds of attacks. Lord of the Files
+      (previously known as "blob mimes") adds to this content-based validation and sanitizing,
+      making sure that files are what they say they are and safe for inclusion on your site.
+      <BlogSubtitle text="There's one remaining problem: No automatic conversion" />
+      Uploading images is a cool thing, but there's a huge problem remaining: For every image you
+      wish to serve to your users, you have to convert them manually with some awesome converter
+      like avif.io, but the work of using the html picture tag still remains. A more simplistic idea
+      would be to have an image plugin that automatically converts images to modern formats and
+      serve the best solution based on the browser of your user. We are currently working on
+      creating an easy to use plugin that handles all these requests without you having to configure
+      anything. Until then, feel free to try other plugins. Unfortunately we don't know any that
+      support avif, but webp is an advantage too!
       <BlogSubtitle text="Image Optimization Plugin Support" />
-      <span>Support maybe in future: WebP Converter for Media</span>
-      <span>Support maybe in future: Imagify</span>
-      <span>Support maybe in future: Smush from WPMUDev</span>
-      <span>Supports: Shortpixel: Looks like it is already supported in ShortPixel.</span>
-      <span>Support maybe in future: Optimole</span>
-      <BlogSubtitle text="Automatic conversion" />
-      <span>Supports: ImageEngine</span>
+      As we already told you, all common WordPress services and plugins for image optimization do
+      not currently support AVIF. However, the following plugins might be support them in the near
+      future:
+      <p>WebP Converter for Media</p>
+      <p>Imagify</p>
+      <p>Smush from WPMUDev</p>
+      <p>ShortPixel</p>
+      <p>Optimole</p>
+      <p>ImageEngine</p>
+      <BlogSubtitle text="Summary" />
+      Wordpress doesn't support avif files. Wordpress does not even support WebP. We are currently
+      creating an awesome plugin for you. In the meantime, you can still upload avif files by
+      allowing the mime type or use an image plugin to at least make use of WebP.
     </Blog>
   );
 }

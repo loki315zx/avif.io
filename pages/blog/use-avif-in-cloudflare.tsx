@@ -6,7 +6,7 @@ const postdata = {
   description:
     "Learn how to transform images on Cloudflare’s edge platform and convert images to WebP or AVIF format on demand.",
   url: "https://avif.io/blog/use-avif-in-cloudflare",
-  image: "https://avif.io/images/bg-orange.svg",
+  image: "",
   keywords: ["avif", "cdn", "cloudflare", "image optimization"],
   author: "Justin Schmitz",
   data_published: "16.12.20",

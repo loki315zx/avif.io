@@ -5,7 +5,7 @@ const postdata = {
   title: "How to use avif in HTML",
   description: "Enjoy this short, but still in depth guide on how to use AVIF in HTML.",
   url: "https://avif.io/blog/use-avif-in-html",
-  image: "https://avif.io/images/bg-orange.svg",
+  image: "",
   keywords: ["avif", "picture", "HTML", "image optimization"],
   author: "Justin Schmitz",
   data_published: "22.10.20",
