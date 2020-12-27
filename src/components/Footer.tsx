@@ -40,7 +40,7 @@ export default function Footer() {
               FAQ
             </a>{" "}
             <a title="title" href="#">
-              avif support
+              AVIF support
             </a>
           </div>
           <div id="footer-more">

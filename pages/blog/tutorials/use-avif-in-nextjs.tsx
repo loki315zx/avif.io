@@ -1,11 +1,11 @@
 import Blog from "@components/Blog";
-import { BlogSubtitle, BlogAdvantages, BlogSyntax, BlogNote } from "@components/BlogComponents";
+import { BlogSubtitle, BlogSyntax } from "@components/BlogComponents";
 
 const postdata = {
   title: "Use AVIF in Next.JS",
   description:
     "Curious to read on how to use AVIF images in Next.JS? Well, this site does exactly that! Learn more.",
-  url: "https://avif.io/blog/use-avif-in-nextjs",
+  url: "https://avif.io/blog/tutorials/use-avif-in-nextjs",
   image: "",
   keywords: ["avif", "nextjs", "next", "react", "image optimization"],
   author: "Justin Schmitz",
@@ -41,17 +41,15 @@ const posts = [
   },
 ];
 
-const advantages = ["", ""];
-
 export default function BlogAvifInNextJS() {
   return (
     <Blog postdata={postdata} posts={posts}>
       Are you expecting a colossal blog article? Well, suck it! This blog uses the latest version of
-      both, React and Next.JS. Not only that, but the bundler automatically detects avif files and
+      both, React and Next.JS. Not only that, but the bundler automatically detects AVIF files and
       treats them accordingly. We didn't have to do anything for this work. That's what we call a
       top-notch service, gentlemen!
       <BlogSubtitle text="That's it?" />
-      Yes. Some people refer to this as: "GG EZ". Simply add the required avif files to your project
+      Yes. Some people refer to this as: "GG EZ". Simply add the required AVIF files to your project
       and insert them via the typical methods in HTML or CSS. There's no need for any configuration.
       Just make sure that your next.config.js includes:
       <BlogSyntax language="javascript">
@@ -82,13 +80,13 @@ module.exports = withImages()`}
 (..)`}</BlogSyntax>
       <BlogSubtitle text="The component is not com..plete" />
       Because while it does convert images into newer formats, it yet doesn't convert to avif.
-      There's a canary version on Github that refers to avif multiple times, so we will definitely
+      There's a canary version on Github that refers to AVIF multiple times, so we will definitely
       see support in the upcoming releases. Also, images loaded via CSS do not get optimized. We are
       crossing fingers that this will be the case in future releases.
       <BlogSubtitle text="Next Optimized Images" />
       Until then, we are using the third-party Next.JS plugin called 'next-optimized-images'. It has
       many additional features and support images loaded via CSS, which is highly appreciated in our
-      use-case. It yet doesn't support avif as well. Still, the author is currently rewriting the
+      use-case. It yet doesn't support AVIF as well. Still, the author is currently rewriting the
       whole plugin from scratch and a canary version is already published. We've linked to the
       plugin in the sources below.
     </Blog>

@@ -1,11 +1,11 @@
 import Blog from "@components/Blog";
-import { BlogSubtitle, BlogAdvantages, BlogSyntax, BlogNote } from "@components/BlogComponents";
+import { BlogSubtitle } from "@components/BlogComponents";
 
 const postdata = {
   title: "View AVIF Images In Microsoft Edge",
   description:
     "Internet Explorer 6, the latest browser.. oh wait, it's called Edge? Well, okay. Microsoft Edge now supports AV1 image formats. Learn more about it here.",
-  url: "https://avif.io/blog/use-avif-in-edge",
+  url: "https://avif.io/blog/tutorials/use-avif-in-edge",
   image: "",
   keywords: ["avif", "image optimization", "microsoft", "edge"],
   author: "Justin Schmitz",
@@ -53,8 +53,8 @@ export default function BlogAvifInEdge() {
       rely on, they appear to do all sidequests instead of focusing on the plot. AVIF is part of the
       creation of AV1 that is developed by the Alliance of Open Media. As all significant browser
       creators are part of this alliance and everyone is interested in pushing a new and modern
-      format, you can expect Microsoft Edge to support avif files soon. By the time of writing, Edge
-      does not yet support avif images. It refuses to render or open AVIF images. If you're looking
+      format, you can expect Microsoft Edge to support AVIF files soon. By the time of writing, Edge
+      does not yet support AVIF images. It refuses to render or open AVIF images. If you're looking
       to enable experimental AV1 support, you can do so by downloading a plugin. At least videos on
       YouTube will then be streamed with the new format.
       <BlogSubtitle text="Your version of Edge" />
@@ -69,7 +69,7 @@ export default function BlogAvifInEdge() {
       The AV1 Extension add-on can be installed in the Microsoft Store. It adds support for the AV1
       video to Windows 10 devices. This extension helps video apps installed on Windows 10 play
       videos that have been encoded using the AV1 video coding standard developed by the Alliance
-      for Open Media. As already said, there's unfortunately no support for avif images yet, even
+      for Open Media. As already said, there's unfortunately no support for AVIF images yet, even
       though avif.io converts images seamlessly on Edge. Since Microsoft Edge uses the same Chromium
       Engine, the support for Edge should roll out soon.
     </Blog>

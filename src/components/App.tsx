@@ -52,8 +52,8 @@ export default function App(): ReactElement {
   return (
     <>
       <div className={"app-container"}>
-        <div className="app-container-blur"></div>
-        <h1 className={"f3 white bold s1"}>Convert any images to avif for free.</h1>
+        <div className="app-container-blur overlay"></div>
+        <h1 className={"f3 white bold s1"}>Convert any images to AVIF for free.</h1>
         <h2 className={"f1 white s4 infobox"}>
           No data is sent. The magic happens in your browser.
         </h2>
@@ -84,7 +84,7 @@ export default function App(): ReactElement {
       </div>
       <Tutorials />
       <Advantages />
-      <section id="avifcompare">
+      <section class="avifcompare overlay-after">
         <div id="comparison__container">
           <ReactCompareImage
             leftImage={comparison_jpg}
@@ -155,7 +155,7 @@ export default function App(): ReactElement {
         can expect it to get more support quickly.
       </div>
       <div className="advantages-explainer">
-        avif is developed by the most influential tech companies. Netflix has already considered
+        AVIF is developed by the most influential tech companies. Netflix has already considered
         .avif superior to the JPEG, PNG, and even the newer WebP image formats for its image quality
         to compressed file size ratio. Leaders and technology innovators from all prominent
         companies contributed to the creation of AV1. They licensed their patents essential to the

@@ -14,8 +14,12 @@ export function BlogTitle(props: { text: string }) {
   return <h1 className="f3 white">{props.text}</h1>;
 }
 
-export function BlogSubtitle(props: { text: string }) {
-  return <div className="content__subtitle">{props.text}</div>;
+export function BlogSubtitle(props: { text: string; id?: string }) {
+  return (
+    <div id={props.id} className="content__subtitle">
+      {props.text}
+    </div>
+  );
 }
 
 export function BlogNote(props: { text: string }) {
@@ -38,9 +42,10 @@ export function BlogSources(props: any) {
 
 export function BlogAdvantages(props: any) {
   const advantages = props.advantages;
+
   const listItems = advantages.map((advantage: any, index: any) => (
     <li key={index}>
-      <input type="checkbox" checked readOnly />
+      <input type="checkbox" readOnly checked={props.checked} />
       {advantage}
     </li>
   ));

@@ -11,7 +11,7 @@ function AdvantageItem(props: Advantages) {
       <div className="advantage__text">
         {props.pre} <span className="advantage__important">{props.text}</span> {props.post}
       </div>
-      <div className="advantage__visualizer" id={props.number}></div>
+      <div className="advantage__visualizer overlay" id={props.number}></div>
     </div>
   );
 }
@@ -22,7 +22,7 @@ export default function Advantages() {
       <section id="avifbadge">
         <div className="white center badge__avif">
           <p className="bold">.AVIF</p>
-          <div className="badge__shadow"></div>
+          <div className="badge__shadow overlay"></div>
         </div>
       </section>
       <section id="avifadvantages">
@@ -85,19 +85,19 @@ export default function Advantages() {
             pre="provides"
             text="future-proof VP-10 codec technology"
             post=""
-            number="visualizer-9"
+            number="visualizer-10"
           />
           <AdvantageItem
             pre="latest GPUs already support"
             text="hardware decoding"
             post=""
-            number="visualizer-9"
+            number="visualizer-11"
           />
           <AdvantageItem
             pre="is"
             text="rich of features for smartphones"
             post="like live photos"
-            number="visualizer-9"
+            number="visualizer-12"
           />
         </div>
       </section>

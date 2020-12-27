@@ -2,7 +2,7 @@ import Header from "@components/Header";
 import Footer from "@components/Footer";
 import CTA from "@components/CTA";
 import Meta from "@components/Meta";
-import { BlogSubtitle, BlogTitle, BlogPosts } from "@components/BlogComponents";
+import { BlogSubtitle, BlogTitle } from "@components/BlogComponents";
 
 const keywords = ["test", "tes"];
 
@@ -29,7 +29,7 @@ export default function PrivacyPolicy(props: any) {
           <BlogSubtitle text="Privacy Policy" />
           Effective date: 23th of December, 2020
           <BlogSubtitle text="Introduction" />
-          Welcome to avif.io avif.io (“us”, “we”, or “our”) operates https://avif.io &
+          Welcome to avif.io. avif.io (“us”, “we”, or “our”) operates https://avif.io &
           http://avif.io & https://www.avif.io & http://avif.io and possibly an avif.io mobile
           application (hereinafter referred to as “Service”). Our Privacy Policy governs your visit
           to https://avif.io & http://avif.io & https://www.avif.io & http://avif.io and possibly an

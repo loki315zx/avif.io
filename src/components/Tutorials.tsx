@@ -6,18 +6,18 @@ export interface TutorialsBoxProps {
 function TutorialsBox(props: TutorialsBoxProps) {
   return (
     <div className={"tutorials__box"} id={props.cssclass}>
-      <div className={"tutorial__overflow"}>
+      <div className={"tutorial__overflow overlay"}>
         <span className="tutorial__title">{props.title}</span>
       </div>
-      <div className="tutorial__shadow"></div>
+      <div className="tutorial__shadow overlay"></div>
     </div>
   );
 }
 
 export default function Tutorials() {
   return (
-    <section className="section__tutorials">
-      <div className="text-60 white f3">How to use avif in a productive environment.</div>
+    <section className="section__tutorials overlay-before overlay-after">
+      <div className="text-60 white f3">How to use AVIF in a productive environment.</div>
       <div className="text-40 white s5">
         Support is constantly rising across browsers, software and hardware. Thanks to being
         royalty-free, companies can include the format without having to deal with patents. We

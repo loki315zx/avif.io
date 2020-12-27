@@ -138,15 +138,8 @@
 /*  */
 /*  */
 
-* {
+html {
   box-sizing: border-box;
-}
-
-::selection {
-  background: var(--color500);
-}
-
-body {
   font-family: "Poppins";
   font-weight: 400;
   -webkit-font-smoothing: subpixel-antialiased;
@@ -157,6 +150,16 @@ body {
   background: var(--black1);
   cursor: default;
   overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+::selection {
+  background: var(--color500);
 }
 
 a {
@@ -307,6 +310,17 @@ span {
   will-change: auto;
 }
 
+.overlay,
+.overlay-before::before,
+.overlay-after::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 /*  */
 /*  */
 /* MENU */
@@ -369,11 +383,6 @@ span {
 }
 
 .app-container-blur {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
   background: var(--black1);
   z-index: -1;
 }
@@ -504,11 +513,6 @@ span {
 }
 
 .upload-blur {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
   background: radial-gradient(circle at center left, var(--color300), transparent 50%),
     radial-gradient(circle at 0% 0%, var(--color500), transparent 25%),
     radial-gradient(circle at 20% 60%, var(--color300), transparent 50%),
@@ -527,24 +531,12 @@ span {
 }
 
 .upload-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
   border-radius: var(--radius900);
   box-shadow: var(--shadow3d), inset -5px -5px 15px var(--color500);
   z-index: 1;
 }
 
 .upload-button::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
   background-image: url("@assets/arrow.svg");
   background-size: 24px;
   background-position: center center;
@@ -681,14 +673,8 @@ span {
 }
 
 .download::after {
-  content: "";
   color: rgba(255, 255, 255, 0.5);
   background-image: url("@assets/download.svg");
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
   background-size: 25%;
   background-repeat: no-repeat;
   background-position: center;
@@ -926,18 +912,12 @@ h2.infobox:hover::before {
   background: var(--black1);
 }
 
-.section__tutorials * {
+.section__tutorials > * {
   position: relative;
   z-index: 3;
 }
 
 .section__tutorials::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
   display: block;
   background-image: url(@assets/bg.svg);
   background-size: contain;
@@ -947,12 +927,6 @@ h2.infobox:hover::before {
 }
 
 .section__tutorials::after {
-  content: "";
-  position: absolute;
-  top: -2px;
-  bottom: 0;
-  left: 0;
-  right: 0;
   display: block;
   background: var(--black1-8);
   z-index: 2;
@@ -1078,11 +1052,6 @@ h2.infobox:hover::before {
 }
 
 .tutorial__overflow {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
   display: flex;
   align-items: center;
   padding-left: var(--s1);
@@ -1173,11 +1142,6 @@ h2.infobox:hover::before {
 }
 
 .tutorial__shadow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
   background: var(--color500);
   z-index: -1;
   filter: blur(5px);
@@ -1211,11 +1175,6 @@ h2.infobox:hover::before {
 }
 
 .badge__shadow {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
   background: radial-gradient(circle at center left, var(--color300), transparent 50%),
     radial-gradient(circle at 0% 0%, var(--color500), transparent 25%),
     radial-gradient(circle at 20% 60%, var(--color300), transparent 50%),
@@ -1296,11 +1255,6 @@ h2.infobox:hover::before {
 
 .advantage__visualizer {
   border-radius: var(--radius500);
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
   background-size: contain;
   background-position: center right;
   background-repeat: no-repeat;
@@ -1346,6 +1300,18 @@ h2.infobox:hover::before {
   background-image: url("@assets/visualizer-9.svg");
 }
 
+#visualizer-10 {
+  background-image: url("@assets/visualizer-10.svg");
+}
+
+#visualizer-11 {
+  background-image: url("@assets/visualizer-11.svg");
+}
+
+#visualizer-12 {
+  background-image: url("@assets/visualizer-12.svg");
+}
+
 .advantage__grid__item:hover .visualizer {
   filter: blur(10px);
   opacity: 0.05;
@@ -1358,23 +1324,18 @@ h2.infobox:hover::before {
 /*  */
 /*  */
 
-#avifcompare {
+.avifcompare {
   background: var(--black1);
   position: relative;
   padding: var(--responsivepadding);
 }
 
-#avifcompare * {
+.avifcompare * {
   border-radius: var(--radius500);
 }
 
-#avifcompare::after {
+.avifcompare::after {
   content: "Cant see this image? Your browser doesn't support avif yet. :(";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
   display: flex;
   align-self: center;
   color: var(--white);
@@ -1383,7 +1344,7 @@ h2.infobox:hover::before {
   z-index: 0;
 }
 
-#avifcompare #fileformats div {
+.avifcompare #fileformats div {
   border-radius: var(--radius500);
 }
 
@@ -1415,7 +1376,6 @@ h2.infobox:hover::before {
   position: absolute;
   top: 0;
   right: 0;
-  padding: var(--s2);
   background: var(--white);
   padding: var(--s0);
   margin: var(--s1);
@@ -1465,11 +1425,6 @@ h2.infobox:hover::before {
 }
 
 .cta__blur {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
   background: radial-gradient(circle at center left, var(--color300), transparent 50%),
     radial-gradient(circle at 0% 0%, var(--color500), transparent 25%),
     radial-gradient(circle at 20% 60%, var(--color300), transparent 50%),
@@ -1484,12 +1439,6 @@ h2.infobox:hover::before {
 }
 
 .cta::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
   background: url("@assets/arrow-right.svg");
   background-repeat: no-repeat;
   background-position: 90% center;
@@ -1602,15 +1551,19 @@ h2.infobox:hover::before {
 .posts__img:nth-of-type(2) {
   filter: hue-rotate(-6deg) saturate(0.98);
 }
+
 .posts__img:nth-of-type(3) {
   filter: hue-rotate(-6deg) saturate(0.98);
 }
+
 .posts__img:nth-of-type(4) {
   filter: hue-rotate(-6deg) saturate(0.98);
 }
+
 .posts__img:nth-of-type(5) {
   filter: hue-rotate(-6deg) saturate(0.98);
 }
+
 .posts__img:nth-of-type(6) {
   filter: hue-rotate(-6deg) saturate(0.98);
 }
@@ -1687,19 +1640,6 @@ h2.infobox:hover::before {
 .blog * {
   position: relative;
   z-index: 3;
-}
-
-.blog-blur {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: var(--bg-blog5);
-  z-index: 2;
-  opacity: 1;
-  backdrop-filter: blur(5px);
 }
 
 .blog h1 {
@@ -2006,6 +1946,10 @@ pre {
     font-size: var(--f1);
     min-height: auto;
   }
+
+  .header {
+    padding: 0 var(--s2);
+  }
 }
 
 @media only screen and (max-width: 767.98px) {
@@ -2039,6 +1983,19 @@ pre {
   .cta {
     padding: var(--s3);
   }
+
+  .header {
+    padding: 0 var(--s2);
+  }
+
+  .conversionscounter {
+    display: none;
+  }
+
+  .badge__avif {
+    padding: var(--s2);
+    margin: var(--s4) 0 0 0;
+  }
 }
 
 @media only screen and (max-width: 575.98px) {
@@ -2054,7 +2011,21 @@ pre {
   #footer-info {
     grid-column: 1/3;
   }
+
+  .header {
+    padding: 0 var(--s0);
+  }
+
+  .menu > a {
+    margin-left: var(--s2);
+  }
 }
+
+/*  */
+/*  */
+/* SPECIAL QUERIES */
+/*  */
+/*  */
 
 @media (prefers-reduced-data: no-preference) {
   * {
@@ -2069,6 +2040,12 @@ pre {
     z-index: 0;
   }
 }
+
+/*  */
+/*  */
+/* INPUTS */
+/*  */
+/*  */
 
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {
   input[type="checkbox"],

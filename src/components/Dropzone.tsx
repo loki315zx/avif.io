@@ -48,8 +48,8 @@ export default function Dropzone(props: DropzoneProps) {
       <div className={"dropzone-root"} {...getRootProps()}>
         <input {...getInputProps()} />
         <>
-          <div className={"upload-button"}>
-            <div className="upload-blur"></div>
+          <div className={"upload-button overlay-before overlay-after"}>
+            <div className="upload-blur overlay"></div>
           </div>
           <div className={"s0 bold gray4"}>Drop your images or browse</div>
           <div id="explainformats" className={"black500 infobox"}>

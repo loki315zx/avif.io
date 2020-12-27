@@ -5,7 +5,7 @@ const postdata = {
   title: "How to convert images to AVIF using Cloudflare",
   description:
     "Cloudflare has added support for AVIF, a new image format. Learn how to optimize images and convert them to WebP or AVIF on demand.",
-  url: "https://avif.io/blog/use-avif-in-cloudflare",
+  url: "https://avif.io/blog/tutorials/use-avif-in-cloudflare",
   image: "",
   keywords: ["avif", "cdn", "cloudflare", "image optimization"],
   author: "Justin Schmitz",
@@ -60,19 +60,19 @@ export default function BlogAvifInCloudflare() {
     <Blog postdata={postdata} posts={posts}>
       Cloudflare mainly provides content distribution services and offers free hosting for many
       websites to quickly optimize the content loading on the user side. On the 3rd of October,
-      Cloudflare has announced support for automatically serving avif images. Let's keep in mind
+      Cloudflare has announced support for automatically serving AVIF images. Let's keep in mind
       that more than half of an average website is spent on pictures and around 15% of all websites
       are powered by Cloudflare services. This marks a massive step toward making the web a faster
       place. Services like Discord, ILovePDF, Okta, Medium and Udemy all rely on the technological
       foundation of Cloudflare. WE suppose you are visiting this site because you are owning a
-      website with Cloudflare services and would like to know how to turn on avif support. Oh, and
+      website with Cloudflare services and would like to know how to turn on AVIF support. Oh, and
       by the way, this post is not sponsored in any kind. Let's see:
       <BlogSubtitle text="Why Cloudflare supports avif" />
       Regarding their latest blog post about avif, Cloudflare has made the decision to support avif
       for the following advantages:
-      <BlogAdvantages advantages={advantages} />
+      <BlogAdvantages advantages={advantages} checked={true} />
       <BlogSubtitle text="Business & Pro Plan" />
-      Converting images to the avif format is part of the Image Resizing feature. Sadly, this
+      Converting images to the AVIF format is part of the Image Resizing feature. Sadly, this
       feature is not free and part of their Business Plan. As a Business plan is quite expensive at
       around $200 / month, this seems like overkill for such a feature. However, in a comment
       section on the Cloudflare Blog, Kornel Lesiński from Cloudflare said that converting images
@@ -84,9 +84,9 @@ export default function BlogAvifInCloudflare() {
       attractive investment to get the last bit of performance out of your website. (Psst
       Cloudflare, sponsor me, I like you!)
       <BlogSubtitle text="Implementation with Workers" />
-      Browsers with avif support add an image/avif note to their Accept request header. To request
+      Browsers with AVIF support add an image/avif note to their Accept request header. To request
       the AVIF format from the Image Resizing module of Cloudflare, simply set the format option to
-      avif. Using a worker script, you can auto-detect and enable support for avif easily:
+      avif. Using a worker script, you can auto-detect and enable support for AVIF easily:
       <BlogSyntax language="javascript">
         {`addEventListener('fetch', event => {
   const imageURL = "https://yourdomain.com/image.jpg";
@@ -109,8 +109,8 @@ export default function BlogAvifInCloudflare() {
       condition. Crisp-clear images in 4K are still incredible if your visitors have a bandwidth
       that supports it, and you can keep serving the large file size.
       <BlogSubtitle text="The picture element" />
-      In our Tutorial on how to use avif in HTML, we present you the {`<picture>`} element as the
-      best option to serve avif files in an HTML environment. Cloudflare allows you to use their
+      In our Tutorial on how to use AVIF in HTML, we present you the {`<picture>`} element as the
+      best option to serve AVIF files in an HTML environment. Cloudflare allows you to use their
       image optimization endpoint to perform the conversion if you don't want to use Workers.
       <BlogSyntax language="html">
         {`<picture>

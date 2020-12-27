@@ -4,8 +4,8 @@ import { BlogSubtitle, BlogAdvantages, BlogSyntax, BlogNote } from "@components/
 const postdata = {
   title: "How To Use Avif Images In WordPress",
   description:
-    "WordPress doesn't allow uploading avif files. Learn how to still use AVIF images on your website today.",
-  url: "https://avif.io/blog/use-avif-in-wordpress",
+    "WordPress doesn't allow uploading AVIF files. Learn how to still use AVIF images on your website today.",
+  url: "https://avif.io/blog/tutorials/use-avif-in-wordpress",
   image: "",
   keywords: ["avif", "wordpress", "wp", "image optimization", "mime type"],
   author: "Justin Schmitz",
@@ -50,13 +50,11 @@ const posts = [
   },
 ];
 
-const advantages = ["", ""];
-
 export default function BlogAvifInWordpress() {
   return (
     <Blog postdata={postdata} posts={posts}>
       "Sorry, this file type is not permitted for security reasons" is the glorious response you get
-      when you try to upload avif images to WordPress. There is no official support. Still,
+      when you try to upload AVIF images to WordPress. There is no official support. Still,
       WordPress needs AVIF because of two reasons. First, technical professionals and end-users
       often struggle with web speed issues widespread with this CMS. Hence, AVIF can contribute to
       faster loading because of its incredibly low-size images without causing any dent in quality.
@@ -70,7 +68,7 @@ export default function BlogAvifInWordpress() {
       possible) and rejects files that don't match their pattern. Most of you will know this due to
       the restriction to upload SVGs. The same story goes for modern image formats. To this day,
       WordPress still doesn't natively support viewing or uploading WebP images, AVIF images, or
-      other modern formats. We could argue that avif is a new extension. However, considering that
+      other modern formats. We could argue that AVIF is a new extension. However, considering that
       WebP is more than 10 years old, this really brings up the question if WordPress is ever going
       to add support to modern image formats. Luckily, there are several ways to bypass this
       security check. If you're looking for an easy way to automatically generate images and serve
@@ -101,7 +99,7 @@ export default function BlogAvifInWordpress() {
 }
 add_filter( 'upload_mimes', 'allow_avif', 1, 1 );`}
       </BlogSyntax>
-      This code will automatically allow you to upload avif files just like you upload any other
+      This code will automatically allow you to upload AVIF files just like you upload any other
       image. If you wish to add more support for all the new image formats out there in the wild,
       copy the code below.
       <BlogSyntax language="php">
@@ -156,8 +154,8 @@ add_filter( 'upload_mimes', 'support_modern_images', 1, 1 );`}
       <p>Optimole</p>
       <p>ImageEngine</p>
       <BlogSubtitle text="Summary" />
-      WordPress doesn't support avif files. WordPress does not even support WebP. We are currently
-      creating a fantastic plugin for you. In the meantime, you can still upload avif files by
+      WordPress doesn't support AVIF files. WordPress does not even support WebP. We are currently
+      creating a fantastic plugin for you. In the meantime, you can still upload AVIF files by
       allowing the mime type or use an image plugin to at least make use of WebP.
     </Blog>
   );

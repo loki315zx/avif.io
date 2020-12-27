@@ -14,7 +14,7 @@ const ldJson = `
       "text": "1. Open up https://avif.io
 2. Drag and drop your jpg images or use the browsing function
 3. The conversion will happen automatically
-4. Download the avif files by pressing the Download or Download All button"
+4. Download the AVIF files by pressing the Download or Download All button"
     }
   },{
     "@type": "Question",
@@ -24,7 +24,7 @@ const ldJson = `
       "text": "1. Open up https://avif.io
 2. Drag and drop your webp images or use the browsing function
 3. The conversion will happen automatically
-4. Download the avif files by pressing the Download or Download All button"
+4. Download the AVIF files by pressing the Download or Download All button"
     }
   },{
     "@type": "Question",
@@ -34,7 +34,7 @@ const ldJson = `
       "text": "1. Open up https://avif.io
 2. Drag and drop your png images or use the browsing function
 3. The conversion will happen automatically
-4. Download the avif files by pressing the Download or Download All button"
+4. Download the AVIF files by pressing the Download or Download All button"
     }
   },{
     "@type": "Question",
@@ -44,7 +44,7 @@ const ldJson = `
       "text": "1. Open up https://avif.io
 2. Drag and drop your gif images or use the browsing function
 3. The conversion will happen automatically
-4. Download the avif files by pressing the Download or Download All button"
+4. Download the AVIF files by pressing the Download or Download All button"
     }
   },{
     "@type": "Question",
@@ -54,7 +54,7 @@ const ldJson = `
       "text": "1. Open up https://avif.io
 2. Drag and drop your bmp images or use the browsing function
 3. The conversion will happen automatically
-4. Download the avif files by pressing the Download or Download All button"
+4. Download the AVIF files by pressing the Download or Download All button"
     }
   }]
 }
@@ -70,11 +70,11 @@ export default function Index() {
         <title>AVIF Converter | avif.io ✨</title>
         <meta
           name="description"
-          content="Convert all image types to avif for free.🚀 Supports bulk converting. Blazing fast. Privacy protected. Compress your images now!⏱"
+          content="Convert all image types to AVIF for free.🚀 Supports bulk converting. Blazing fast. Privacy protected. Compress your images now!⏱"
         />
         <meta
           property="og:description"
-          content="Convert all image types to avif for free.🚀 Supports bulk converting. Blazing fast. Privacy protected. Compress your images now!⏱"
+          content="Convert all image types to AVIF for free.🚀 Supports bulk converting. Blazing fast. Privacy protected. Compress your images now!⏱"
         />
         <meta property="og:determiner" content="the" />
         <meta property="og:url" content="https://avif.io" />

@@ -5,7 +5,7 @@
     "rule-empty-line-before": "always",
     "comment-no-empty": false,
     "comment-empty-line-before": [
-      "true",
+      true,
       {
         "ignore": ["after-comment", "stylelint-commands"]
       }
