@@ -1,6 +1,5 @@
 import Blog from "@components/Blog";
 import { BlogSubtitle, BlogAdvantages, BlogSyntax, BlogNote } from "@components/BlogComponents";
-import Image from "next/image";
 
 const postdata = {
   title: "Use AVIF in Javascript Frameworks like Vue, React & Angular",
@@ -97,9 +96,6 @@ export default function BlogAvifInFrameworks() {
       it with the following frameworks:
       <BlogAdvantages advantages={advantages} checked={true} />
       You can see some screenshots of our test on Angular and React below:
-      <Image src="/images/angular-avif.jpg" alt="Angular" width={1920} height={1033} />
-      <Image src="/images/react-avif.jpg" alt="React" width={1920} height={1032} />
-      <Image src="/images/angular-render.jpg" alt="Angular render" width={1920} height={958} />
       <BlogSubtitle id="other-frameworks" text="Other frameworks" />
       In principle, other frameworks might work differently. From our research, we found that Meteor
       and Ember support AVIF files without additional configuration. However because we have not

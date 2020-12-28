@@ -11,6 +11,8 @@ const postdata = {
   data_published: "22.10.20",
   date_modified: "22.12.20",
   sources: [""],
+  tags: [""],
+  questions: [""],
 };
 
 const posts = [
@@ -40,7 +42,10 @@ export default function BlogAvif() {
   return (
     <Blog postdata={postdata} posts={posts}>
       <BlogSubtitle text="" />
-      use image set and a special fix for firefox with JPG
+      avif detection script
+      <BlogSubtitle text="Look into the future" />
+      https://drafts.csswg.org/css-images-4/
+      https://dev.to/nucliweb/detect-avif-image-support-to-use-in-your-css-4pen
     </Blog>
   );
 }

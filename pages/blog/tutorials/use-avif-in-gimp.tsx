@@ -1,7 +1,5 @@
 import Blog from "@components/Blog";
 import { BlogSubtitle, BlogAdvantages, BlogSyntax, BlogNote } from "@components/BlogComponents";
-import Image from "next/image";
-
 const postdata = {
   title: "Use AVIF in GIMP",
   description:

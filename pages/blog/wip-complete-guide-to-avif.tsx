@@ -11,6 +11,8 @@ const postdata = {
   data_published: "16.12.20",
   date_modified: "22.12.20",
   sources: [""],
+  tags: [""],
+  questions: [""],
 };
 
 const posts = [
