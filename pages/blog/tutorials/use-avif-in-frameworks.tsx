@@ -30,6 +30,24 @@ const postdata = {
     "stackoverflow.com/questions/59433854/how-do-i-use-avif-images-in-react-single-page-web-app",
     "webpack.js.org/loaders/file-loader",
   ],
+  tags: [
+    "avif",
+    "image optimization",
+    "javascript",
+    "framework",
+    "angular",
+    "svelte",
+    "react",
+    "vue",
+    "nuxt",
+    "gatbsy",
+    "meteor",
+    "backbone",
+    "polymer",
+    "ember",
+    "javascript framework",
+  ],
+  questions: ["How do I use AVIF images in React Single page Web App"],
 };
 
 const posts = [
@@ -72,25 +90,24 @@ const disadvantages = [
 export default function BlogAvifInFrameworks() {
   return (
     <Blog postdata={postdata} posts={posts}>
-      Now that you've learned how amazing AVIF is, you may be wondering: 'Yo, how do I use avif
-      images in Frameworks? As AVIF is quite new, this must be super complex and hard to implement!'
-      Listen here, little boygirl. We have the answer! .. there's nothing you need to do. No,
-      really. Most javascript frontend frameworks support AVIF natively as they just rely on the
-      HTML and CSS implementation. To make sure we ain't talking nonsense, we tested it on the
-      following frameworks:
+      Now that you've learned how fantastic AVIF is, you might wonder: 'Yo, how do I use AVIF images
+      in frameworks? As AVIF is quite new, this must be super complicated and time-consuming to
+      implement!’ The answer is simple. Most javascript frontend frameworks support AVIF natively
+      and rely on HTML and CSS implementation. To make sure we weren't talking nonsense, we tested
+      it with the following frameworks:
       <BlogAdvantages advantages={advantages} checked={true} />
       You can see some screenshots of our test on Angular and React below:
       <Image src="/images/angular-avif.jpg" alt="Angular" width={1920} height={1033} />
       <Image src="/images/react-avif.jpg" alt="React" width={1920} height={1032} />
       <Image src="/images/angular-render.jpg" alt="Angular render" width={1920} height={958} />
       <BlogSubtitle id="other-frameworks" text="Other frameworks" />
-      Of course, there are other frameworks out there, which might work a little different. From
-      pure research, we have found that Meteor und Ember support AVIF files without additional
-      configuration. However as we didn't try it live on the latest version, we are listing them
-      here as "maybe works" until we've went to the science lab:
+      In principle, other frameworks might work differently. From our research, we found that Meteor
+      and Ember support AVIF files without additional configuration. However because we have not
+      experimented with the latest version live, we are listing them here as "maybe works" until
+      we've been in the science lab.
       <BlogAdvantages advantages={disadvantages} checked={false} />
       <BlogSubtitle text="Webpack File Loader" />
-      In some cases, especially on older versions and when using webpack, you might encounter some
+      In some cases, especially with older versions and when using webpack, you may encounter some
       problems. Especially:
       <BlogSyntax language="txt">
         Module parse failed: Unexpected character ' ' (1:0) You may need an appropiate loader to
@@ -109,11 +126,10 @@ export default function BlogAvifInFrameworks() {
 }`}
       </BlogSyntax>
       <BlogSubtitle text="Automatic conversion" />
-      Some plugins like next-optimized-images, or image components from Nuxt.js or Next.js offer
-      automatic conversion, based on your visitors browser. They will resize the image accordingly
-      and use modern formats if possible. However, we couldn't find a plugin that automatically
-      converts images to avif.. yet. Did you encounter such a plugin? Did you have any good
-      experiences, bad experiences? Let us know so we can continue completing this plugin.
+      They will convert the image into a different size to suit the needs of the client, and choose
+      a modern format when possible. However, we were unable to find a plugin yet that automatically
+      converts images to AVIF. Did you ever come into contact with such a plugin? Did you have any
+      good or bad experiences with it? Please let us know so we can complete this article.
     </Blog>
   );
 }

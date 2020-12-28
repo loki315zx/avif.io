@@ -1726,6 +1726,16 @@ ul {
   color: var(--black1);
 }
 
+.tag,
+.question {
+  background: var(--black3);
+  padding: var(--s0);
+  border-radius: var(--radius300);
+  margin-bottom: var(--s0);
+  font-size: var(--f0);
+  display: inline-block;
+}
+
 /*  */
 /*  */
 /* KEYFRAMES */
@@ -1893,6 +1903,9 @@ pre {
   .content__container {
     padding: var(--s3);
     border-radius: var(--radius300);
+  }
+  .blog h1 {
+    margin: 0;
   }
 }
 

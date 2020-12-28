@@ -49,58 +49,91 @@ export default function BlogAvifInCloudflare() {
   return (
     <Blog postdata={postdata} posts={posts}>
       <BlogSubtitle id="introduction" text="Overall Introduction" />
-      AOMedia Video 1 (AV1) is an open, royalty-free video coding format initially designed for
-      video transmissions over the Internet. It was developed as a successor to VP9 by the Alliance
-      for Open Media (AOMedia),[2] a consortium founded in 2015 that includes semiconductor firms,
-      video on demand providers, video content producers, software development companies and web
-      browser vendors. The AV1 bitstream specification includes a reference video codec.[1] In 2018
-      Facebook conducted testing that approximates real world conditions, the AV1 reference encoder
-      achieved 34%, 46.2% and 50.3% higher data compression than libvpx-vp9, x264 high profile, and
-      x264 main profile respectively. Like VP9, but unlike H.264/AVC and HEVC, AV1 has a
-      royalty-free licensing model that does not hinder adoption in open-source
-      projects.[3][4][5][6][2][7] AV1 Image File Format (AVIF) is an image file format that uses AV1
-      compression algorithms. // Page speed is a big thing. From a search engine optimization
-      perspective, and user perspective. And it’s not me who’s saying this, it’s Google, and Moz,
-      and SEMrush and every major SEO site out there. Now when we talk about page speed, the biggest
-      challenge for developers is always images. They are the bane of their existence and are
-      usually the primary blame point when we talk about slow page load. That is one of the reasons
-      why every developer is always looking for an image format that can improve their image
-      compression. And AVIF has arrived to do just that. AVIF Image Format can address images
-      compressed with AV1 (AOMedia Video 1) algorithm. As compared to other compression codecs like
-      JPEG, PNG, WebP, etc., it produces high quality compressed images without compromising much on
-      quality. Developed by the Alliance for Open Media, it is a successor to VP9 and promises to be
-      a game-changer in image compression. With major companies supporting this format, the AVIF
-      image format’s future is looking very bright. Jake Archibald, developer advocate for Google
-      Chrome wrote a great post on why AVIF is great and you can check out a live demo on his site
-      on why AVIF is so awesome. // AVIF is a combination of the HEIF ISO standard, and a
-      royalty-free AV1 codec by Mozilla, Xiph, Google, Cisco, and many others. Currently JPEG is the
-      most popular image format on the Web. It's doing remarkably well for its age, and it will
-      likely remain popular for years to come thanks to its excellent compatibility. There have been
-      many previous attempts at replacing JPEG, such as JPEG 2000, JPEG XR and WebP. However, these
-      formats offered only modest compression improvements, and didn't always beat JPEG on image
-      quality. Compression and image quality in AVIF is better than in all of them, and by a wide
-      margin. // The major application for high quality compression of photos is Internet speed.
-      While bandwidth does continue to increase each year, so does the quality and size of most
-      Internet media. What that means is that even though data can be transferred more quickly, the
-      need for compressing media into smaller files without losing visual quality has not gone away.
-      In fact, the need for an effective compressing tool may have even grown. With that said, many
-      people assume that there are multiple resources available for compressing photos. Options such
-      as JPEG 2000, WebP, and HEIF are all available and have experienced success in one form or
-      another. The most promising compression tool right now was developed by the Alliance for Open
-      Media on its AV1 format and is called AVIF. Being worked on by companies like Netflix and
-      Microsoft, AVIF is showing some impressive signs of being the next step in the compression
-      market. // The AV1 Image format, or AVIF, is the latest image codec on earth. AVIF is an
-      optimized image format which was created to make our images smaller while keeping the same
-      quality (lossless). The file extension for AVIF is .avif. // AVIF is an image file format
-      developed by Alliance for Open Media which is supposed to make our images smaller while
-      keeping the same image quality. Experts believe that it is the next step in media compression.
-      AOMedia’s goal is to develop open, royalty-free technology for multimedia delivery, which
-      means that nobody will have to pay anybody to use the new AVIF format (as opposed to JPG, for
-      example). Behind AOMedia we find big companies like Netflix, Google, Facebook, Apple or
-      Microsoft. We could say that, currently, the most popular image file formats for web are JPG
-      and PNG. A few years ago, WebP came on the scene, developed by Google, delivering images 30%
-      smaller than JPG, keeping the same image quality. Now, AVIF promises images 50% smaller than
-      JPG, and still keeping the same image quality.
+      AV1 Image File Format (AVIF) is a powerful new, open source, royalty-free file format that
+      encodes AV1 bitstreams in the High Efficiency Image File Format (HEIF) container. Note: AVIF
+      has potential to become the "next big thing" for sharing images in web content. It offers
+      state-of-the-art features and performance, without the encumbrance of complicated licensing
+      and patent royalties that have hampered comparable alternatives. // AOMedia Video 1 (AV1) is
+      an open, royalty-free video coding format initially designed for video transmissions over the
+      Internet. It was developed as a successor to VP9 by the Alliance for Open Media (AOMedia),[2]
+      a consortium founded in 2015 that includes semiconductor firms, video on demand providers,
+      video content producers, software development companies and web browser vendors. The AV1
+      bitstream specification includes a reference video codec.[1] In 2018 Facebook conducted
+      testing that approximates real world conditions, the AV1 reference encoder achieved 34%, 46.2%
+      and 50.3% higher data compression than libvpx-vp9, x264 high profile, and x264 main profile
+      respectively. Like VP9, but unlike H.264/AVC and HEVC, AV1 has a royalty-free licensing model
+      that does not hinder adoption in open-source projects.[3][4][5][6][2][7] AV1 Image File Format
+      (AVIF) is an image file format that uses AV1 compression algorithms. // Page speed is a big
+      thing. From a search engine optimization perspective, and user perspective. And it’s not me
+      who’s saying this, it’s Google, and Moz, and SEMrush and every major SEO site out there. Now
+      when we talk about page speed, the biggest challenge for developers is always images. They are
+      the bane of their existence and are usually the primary blame point when we talk about slow
+      page load. That is one of the reasons why every developer is always looking for an image
+      format that can improve their image compression. And AVIF has arrived to do just that. AVIF
+      Image Format can address images compressed with AV1 (AOMedia Video 1) algorithm. As compared
+      to other compression codecs like JPEG, PNG, WebP, etc., it produces high quality compressed
+      images without compromising much on quality. Developed by the Alliance for Open Media, it is a
+      successor to VP9 and promises to be a game-changer in image compression. With major companies
+      supporting this format, the AVIF image format’s future is looking very bright. Jake Archibald,
+      developer advocate for Google Chrome wrote a great post on why AVIF is great and you can check
+      out a live demo on his site on why AVIF is so awesome. // AVIF is a combination of the HEIF
+      ISO standard, and a royalty-free AV1 codec by Mozilla, Xiph, Google, Cisco, and many others.
+      Currently JPEG is the most popular image format on the Web. It's doing remarkably well for its
+      age, and it will likely remain popular for years to come thanks to its excellent
+      compatibility. There have been many previous attempts at replacing JPEG, such as JPEG 2000,
+      JPEG XR and WebP. However, these formats offered only modest compression improvements, and
+      didn't always beat JPEG on image quality. Compression and image quality in AVIF is better than
+      in all of them, and by a wide margin. // The major application for high quality compression of
+      photos is Internet speed. While bandwidth does continue to increase each year, so does the
+      quality and size of most Internet media. What that means is that even though data can be
+      transferred more quickly, the need for compressing media into smaller files without losing
+      visual quality has not gone away. In fact, the need for an effective compressing tool may have
+      even grown. With that said, many people assume that there are multiple resources available for
+      compressing photos. Options such as JPEG 2000, WebP, and HEIF are all available and have
+      experienced success in one form or another. The most promising compression tool right now was
+      developed by the Alliance for Open Media on its AV1 format and is called AVIF. Being worked on
+      by companies like Netflix and Microsoft, AVIF is showing some impressive signs of being the
+      next step in the compression market. // The AV1 Image format, or AVIF, is the latest image
+      codec on earth. AVIF is an optimized image format which was created to make our images smaller
+      while keeping the same quality (lossless). The file extension for AVIF is .avif. // AVIF is an
+      image file format developed by Alliance for Open Media which is supposed to make our images
+      smaller while keeping the same image quality. Experts believe that it is the next step in
+      media compression. AOMedia’s goal is to develop open, royalty-free technology for multimedia
+      delivery, which means that nobody will have to pay anybody to use the new AVIF format (as
+      opposed to JPG, for example). Behind AOMedia we find big companies like Netflix, Google,
+      Facebook, Apple or Microsoft. We could say that, currently, the most popular image file
+      formats for web are JPG and PNG. A few years ago, WebP came on the scene, developed by Google,
+      delivering images 30% smaller than JPG, keeping the same image quality. Now, AVIF promises
+      images 50% smaller than JPG, and still keeping the same image quality.
+      <BlogSubtitle id="otherformats" text="Compression" />
+      First of all, why use better compression, doesn’t network bandwidth increase every year? Why
+      media industry continues to push requirements for codec standards with even higher compression
+      ratio? There are three major reasons for that: Network coverage. While you’re achieving 20
+      Gbps near the 5G cell, there are many places in town where speed isn’t that great at all.
+      Traffic cost. Even if you download fast, most telcos charge you for every byte of data. Higher
+      resolution and quality. Need at least 8K for 12.9” tablet for human-eye resolution, ideally
+      lossless. We are not there yet. For example I browse web in underground a lot and inside
+      tunnel fantastic LTE Advanced transforms into ridiculous 100 Kbit/s. On the forum that I host
+      and regularly visit users upload photos mostly without any preprocessing, so usual picture
+      takes 1–4 MBs, quite a lot if you open bunch of them every now and then. And it would be
+      strange to prefer 800×1200 to 2000×3000 (typical resolutions of exported photos) because the
+      latter looks much nicer on high DPI display. So higher compression is essential, but don’t we
+      already have tons of solutions for that? What about WebP based on VP8 format that is meant to
+      be replacement of JPEG and just recently gained support in most browsers? Also there are many
+      other candidates, e.g. JPEG 2000, JPEG XR, and finally HEIF based on HEVC video codec
+      standard. Another thing worth to be noted, 800×1200 photos taking 4 MB are clearly not
+      optimized, even with normal JPEG we may compress them down to ~500 KB without losing visual
+      quality much. And even more with state of the art JPEG encoders such as mozjpeg and guetzli.
+      MSU Codec Comparison (April 4, 2019) Well, it seems that coding tools of AV1, the new video
+      coding format developed by Alliance for Open Media, are the most promising at the moment to
+      get highest compression possible, especially at low bit-rates. See e.g. this and this
+      benchmarks. Since we would need to re-compress images anyway to get benefits of new format,
+      why not choose the best? If you’re interested in leveraging AV1 for video compression, take a
+      look at my previous article dedicated to this subject. Another advantage of AV1 is that it’s a
+      royalty-free format which means you don’t have to pay to patent-holders. For what it’s worth
+      software patents is unfortunately still a thing. Formats like JPEG XR didn’t achieve great
+      adoption mostly because of patents involved. So AV1-based solutions are attractive from both
+      technical and legal points of view.
       <BlogSubtitle id="otherformats" text="Introduction to other formats" />
       <BlogSubtitle id="aom" text="Alliance of Open Media" />
       <BlogSubtitle id="aom" text="Introduction to video formats" />
@@ -134,25 +167,28 @@ export default function BlogAvifInCloudflare() {
       the base procedure remains the same, they are often named identical to each other. With this,
       we will explore more codecs in this article. However, to understand the algorithm’s
       significant parameters, you can go through a good research paper for reference.
-      <BlogSubtitle id="codec" text="Introduction of the AV1 Codec" />
-      AV1 is the most recent video codec developed by Alliance for Open Media and hence the name
-      AOMedia Video 1 codec (AV1 codec). The development of the AV1 video codec resulted from the
-      collaboration between Google, Xiph, and Cisco, who decided to combine their in-house video
-      codecs into one single open, royalty-free video codec to benefit everyone. Being royalty-free
-      has been the highlighted feature for AV1 since every other codec had a portion of royalties
-      (except WebP). Therefore, unlike JPEG, which was neither open nor royalty-free, AV1 has seen
-      much faster progress and a wider adoption among the top tech companies, including Google. The
-      idea behind designing AV1 was to transmit the video over the internet. With a greater
-      compression reach for the video and reducing the number of overall bits, AV1 codec provides
-      multiple coding techniques that enable the encoders to use various inputs for their missions.
-      If you wonder why we brought this concept of video compression technique into an image
-      compression post, video, and image codec share similarities between them because of the same
-      nature of the data. AV1 codec has proved very advantageous for the internet by saving the
-      bandwidth, which MPEG could not do, although JPEG XR was still in the race but not as
-      effective as AV1. When tech companies such as Facebook and other video streaming websites
-      started using AV1, the company decided to bring an image format with the same efficiency and
-      based on the same codec. AV1 codec is the foundation of the AVIF image format that is taking
-      the internet by storm.
+      <BlogSubtitle id="codec" text="Introduction of the AV1 Codec" /> AV1 is a coding format that
+      was originally designed for video transmission over the Internet. The format benefits from the
+      signficant advances in video encoding in recent years, and may potentially benefit from the
+      associated support for hardware rendering. However it also has disadvantages for some cases,
+      as video and image encoding have some different requirements. // AV1 is the most recent video
+      codec developed by Alliance for Open Media and hence the name AOMedia Video 1 codec (AV1
+      codec). The development of the AV1 video codec resulted from the collaboration between Google,
+      Xiph, and Cisco, who decided to combine their in-house video codecs into one single open,
+      royalty-free video codec to benefit everyone. Being royalty-free has been the highlighted
+      feature for AV1 since every other codec had a portion of royalties (except WebP). Therefore,
+      unlike JPEG, which was neither open nor royalty-free, AV1 has seen much faster progress and a
+      wider adoption among the top tech companies, including Google. The idea behind designing AV1
+      was to transmit the video over the internet. With a greater compression reach for the video
+      and reducing the number of overall bits, AV1 codec provides multiple coding techniques that
+      enable the encoders to use various inputs for their missions. If you wonder why we brought
+      this concept of video compression technique into an image compression post, video, and image
+      codec share similarities between them because of the same nature of the data. AV1 codec has
+      proved very advantageous for the internet by saving the bandwidth, which MPEG could not do,
+      although JPEG XR was still in the race but not as effective as AV1. When tech companies such
+      as Facebook and other video streaming websites started using AV1, the company decided to bring
+      an image format with the same efficiency and based on the same codec. AV1 codec is the
+      foundation of the AVIF image format that is taking the internet by storm.
       <BlogSubtitle id="purpose" text="History" />
       The Alliance's motivations for creating AV1 included the high cost and uncertainty involved
       with the patent licensing of HEVC, the MPEG-designed codec expected to succeed AVC.[8][6]
@@ -431,61 +467,79 @@ export default function BlogAvifInCloudflare() {
       confirmed support for AV1 hardware decoding on Xe-LP(Gen12), Ampere and RDNA2 with a blog
       post.[112]
       <BlogSubtitle id="av1" text="Introduction to the AV Image Format" />
-      AVIF or AV Image Format is an open and royalty-free image format based on the AV1 codec, and
-      similar to AV1 — AVIF provides a very high compression rate. Being royalty-free makes it one
-      of the best among its peers. Leveraging the powerful genes of AV1 proves beneficial in both
-      processing time and handling hardware issues. Also before we move further into the advantages
-      of AVIF, be advised that AVIF saves the picture in the AVIF image format, which is relatively
-      new and still not a popular file format, and this is a reasonably new algorithm. So there may
-      be a possibility that it’s not best for all use cases right now. Developers have been working
-      on developing a better image compression algorithm for some time now. For example, before
-      AVIF, HEIF was invented which was arguably a better technique in its time. You would be
-      knowing about the HEIF images if you are an iPhone user. HEIF uses HEVC codec, and as you may
-      notice in the image below (Model: Samsung Galaxy S10), it will save storage space but it was
-      not popular with some sharing sites. Arguably, HEIF is said to save 50% of the storage, which
-      is excellent in today’s data-driven world. HEIF and AV1 are both based on the same standard,
-      i.e., ISO-23000–12, which was driven by the Moving Pictures Experts Group (MPEG). Both
-      formats’ pedigree alone marks their reliability and makes them trustworthy with a promising
-      future. Apart from bringing the file size to a minimum, the codecs using this standard can
-      also also be used for animated images or GIFs as popularly known. Now If you are wondering
-      that if HEIF was more or less the same, then why are we moving towards AV1 — it is mainly
-      because of the royalty-fees and slightly better performance of AV1 compared to HEIF. Before we
-      dig deep into the AVIF image format and compare it with other compression codecs, let’s
-      understand more about the AV1 codec. // The abbreviation "AVIF" stands for "AV1 Image File
-      Format" and is essentially the specification for storing still and animated images compressed
-      with AV1 in the HEIF file format. AV1 is the royalty-free video coding format that has most
-      tech experts believing it is the next step in media compression. From a legal standpoint and a
-      technical standpoint, AVIF cannot be matched. JPEG XR, for example, had many technical
-      advantages and seemed to be the next step in high quality compression. However, software
-      patents and the need to pay those patent-holders made adoption of the technology almost
-      impossible. The AV1 format is just as technically advanced as the JPEG XR was, but because it
-      is a royalty-free product, adoption will be cheaper and improvements will be accomplished much
-      more quickly. AVIF version 1.0.0 was released and approved in February of 2019 and is
-      therefore ready to be used in production. This new version supports features like "high
-      dynamic range" and "wide color gamut" to make it the most technically advanced form of high
-      quality picture compression. High Dynamic Range is also known as HDR and wide color gamut is
-      akin to what people now call "Ultra High Definition" photos and videos.
+      AVIF (AV1 Still Image File Format) is a new still image format based on AV1. Specification was
+      released and approved as 1.0.0 just recently, meaning it’s ready to be used in production.
+      AVIF file is basically an AV1 key frame packed inside ISOBMFF container, almost identical to
+      the HEIF structure, except AV1 video format instead of HEVC is used. In theory it looks great
+      but what about practice? Well, tooling support is currently not that good as it could be,
+      given novel aspects of the format. For example latest versions of Chrome and Firefox support
+      AV1 video decoding, but still can’t display AVIF images, it usually takes some time before new
+      format will be added. See e.g. Firefox issue. Same for encoding. Most existing software isn’t
+      even aware of such format. So I had to implement both encoding and decoding libraries by
+      myself. See next sections for the details. // AVIF or AV Image Format is an open and
+      royalty-free image format based on the AV1 codec, and similar to AV1 — AVIF provides a very
+      high compression rate. Being royalty-free makes it one of the best among its peers. Leveraging
+      the powerful genes of AV1 proves beneficial in both processing time and handling hardware
+      issues. Also before we move further into the advantages of AVIF, be advised that AVIF saves
+      the picture in the AVIF image format, which is relatively new and still not a popular file
+      format, and this is a reasonably new algorithm. So there may be a possibility that it’s not
+      best for all use cases right now. Developers have been working on developing a better image
+      compression algorithm for some time now. For example, before AVIF, HEIF was invented which was
+      arguably a better technique in its time. You would be knowing about the HEIF images if you are
+      an iPhone user. HEIF uses HEVC codec, and as you may notice in the image below (Model: Samsung
+      Galaxy S10), it will save storage space but it was not popular with some sharing sites.
+      Arguably, HEIF is said to save 50% of the storage, which is excellent in today’s data-driven
+      world. HEIF and AV1 are both based on the same standard, i.e., ISO-23000–12, which was driven
+      by the Moving Pictures Experts Group (MPEG). Both formats’ pedigree alone marks their
+      reliability and makes them trustworthy with a promising future. Apart from bringing the file
+      size to a minimum, the codecs using this standard can also also be used for animated images or
+      GIFs as popularly known. Now If you are wondering that if HEIF was more or less the same, then
+      why are we moving towards AV1 — it is mainly because of the royalty-fees and slightly better
+      performance of AV1 compared to HEIF. Before we dig deep into the AVIF image format and compare
+      it with other compression codecs, let’s understand more about the AV1 codec. // The
+      abbreviation "AVIF" stands for "AV1 Image File Format" and is essentially the specification
+      for storing still and animated images compressed with AV1 in the HEIF file format. AV1 is the
+      royalty-free video coding format that has most tech experts believing it is the next step in
+      media compression. From a legal standpoint and a technical standpoint, AVIF cannot be matched.
+      JPEG XR, for example, had many technical advantages and seemed to be the next step in high
+      quality compression. However, software patents and the need to pay those patent-holders made
+      adoption of the technology almost impossible. The AV1 format is just as technically advanced
+      as the JPEG XR was, but because it is a royalty-free product, adoption will be cheaper and
+      improvements will be accomplished much more quickly. AVIF version 1.0.0 was released and
+      approved in February of 2019 and is therefore ready to be used in production. This new version
+      supports features like "high dynamic range" and "wide color gamut" to make it the most
+      technically advanced form of high quality picture compression. High Dynamic Range is also
+      known as HDR and wide color gamut is akin to what people now call "Ultra High Definition"
+      photos and videos.
       <BlogSubtitle id="advantages" text="Advantages of AVIF and technical features" />
-      The main application of AVIF has to do with producing high quality compressed photos that lose
-      as little quality as possible during the compression process. A compressed photo will take
-      less time to download from the Internet than a full-size photo but should maintain the same
-      quality level. This speeds up page loading times, increases website storage capabilities, and
-      allows web pages to be accessed even in low speed areas. While the AV1 file format software
-      shows potential, there is a major problem in the application of that potential. Most web
-      browsers do not currently support this type of image format. While AV1 can be used in video
-      decoding, its image file format cannot be downloaded by Chrome, Firefox, or Explorer. It is
-      still a new technology and it is being worked on and improved by Microsoft, Netflix, Google,
-      and a host of other top-notch companies, but the current application of this format is limited
-      because most browsers are not ready for it yet. // Some of the features that make AVIF
-      potentially better than the competitors are as follows: AVIF supports High Dynamic Range
-      (HDR), which provides better and brighter images. AVIF supports both lossless as well as lossy
-      decomposition. AVIF includes an alpha channel (refer to chroma subsampling), providing a
-      richer touch to the images. AVIF provides 8, 10, and 12-bit color depth. AVIF supports 4:2:0,
-      4:2:2 and 4:4:4 chroma subsampling, and many more AVIF provides the highest compression in
-      royalty-free format. With these advantages, there lies a single disadvantage, which is its
-      availability in the market. AVIF is a fairly new image format; though it’s gaining a lot of
-      praise worldwide, AVIF still lacks browser support. Browsers are a primary medium for most
-      images that we see in everyday life. Hence browser compatibility is crucial. //
+      The format offers: Excellent lossy compression compared to JPG and PNG for visually similar
+      compression levels (e.g. lossy AVIF images are around 50% smaller than JPEG images). Generally
+      AVIF has better compression than WebP — median 50% vs 30% compression for the same JPG set
+      (source: AVIF WebP Comparision (CTRL Blog)). Lossless compression. Animation/multi-image
+      storage (similar to animated GIFs, but with much better compression) Alpha channel support
+      (i.e. for transparency). High Dynamic Range (HDR): support for storing images that can
+      represent bigger contrasts between the lightest and darkest parts of the image. Wide Color
+      Gamut: Support for images that can contain a larger range of colours. // The main application
+      of AVIF has to do with producing high quality compressed photos that lose as little quality as
+      possible during the compression process. A compressed photo will take less time to download
+      from the Internet than a full-size photo but should maintain the same quality level. This
+      speeds up page loading times, increases website storage capabilities, and allows web pages to
+      be accessed even in low speed areas. While the AV1 file format software shows potential, there
+      is a major problem in the application of that potential. Most web browsers do not currently
+      support this type of image format. While AV1 can be used in video decoding, its image file
+      format cannot be downloaded by Chrome, Firefox, or Explorer. It is still a new technology and
+      it is being worked on and improved by Microsoft, Netflix, Google, and a host of other
+      top-notch companies, but the current application of this format is limited because most
+      browsers are not ready for it yet. // Some of the features that make AVIF potentially better
+      than the competitors are as follows: AVIF supports High Dynamic Range (HDR), which provides
+      better and brighter images. AVIF supports both lossless as well as lossy decomposition. AVIF
+      includes an alpha channel (refer to chroma subsampling), providing a richer touch to the
+      images. AVIF provides 8, 10, and 12-bit color depth. AVIF supports 4:2:0, 4:2:2 and 4:4:4
+      chroma subsampling, and many more AVIF provides the highest compression in royalty-free
+      format. With these advantages, there lies a single disadvantage, which is its availability in
+      the market. AVIF is a fairly new image format; though it’s gaining a lot of praise worldwide,
+      AVIF still lacks browser support. Browsers are a primary medium for most images that we see in
+      everyday life. Hence browser compatibility is crucial. //
       <BlogSubtitle id="filesize" text="Reduced File Size" />
       <BlogSubtitle id="chroma" text="4:2:0, 4:2:2, 4:4:4 chroma subsampling" />
       Chroma subsampling, often popularly referred to as color subsampling, is the heart of the
@@ -578,7 +632,46 @@ export default function BlogAvifInCloudflare() {
       encoder, a particular area of improvement was in high resolution screen sharing.[83] libgav1
       is a decoder written in C++11 released by Google. Several other parties have announced to be
       working on encoders, including EVE for AV1 (in beta testing),[85] NGCodec,[86] Socionext,[87]
-      Aurora[88] and MilliCast.[89]
+      Aurora[88] and MilliCast.[89] // As said earlier AVIF file is nothing more than AV1 intra
+      frame in ISOBMFF container. So we may use any available AV1 encoder to produce the actual
+      picture. Which one to choose among libaom, rav1e and SVT-AV1, the three currently available
+      open-source AV1 encoders? Comparison of intra coding efficiency This graphic produced by
+      av1-bench promotes libaom as a clear winner: it has best score on VMAF metric and its slowest
+      encoding preset is actually faster than competitors’, at least on my pre-AVX2 CPU. (libjpeg
+      results are provided for the reference.) That could be explained by speed-over-quality
+      trade-offs chosen in SVT-AV1 and rav1e. It’s not bad, though still images are represented as
+      single frame videos and it’s not that long to encode one frame even with slowest compression
+      settings. So libaom should be a good choice. Not like we can’t make it faster with speed
+      controls if needed. I’ve also compared libaom and SVT-AV1 encodes with my eyes because
+      objective metrics are not the single source of truth. From my subjective perspective it pretty
+      much correlated with VMAF results, though sometimes it was hard to choose the best of two. So
+      AV1 encoder is chosen, what’s next? Forum back-end where I’m going to use AVIF is written in
+      Go, so I needed a library for that language. After some search I’ve found libavif C library
+      mentioned in official AVIF wiki. It probably works fine and should allow to write Go bindings,
+      but I decided to write my own for better understanding of the format. Since we won’t implement
+      encoder from scratch, the entire library boils down to libaom cgo wrapper and pure Go ISOBMFF
+      muxer. libaom provides typical encoder library C API. We need to prepare frame i.e. wrap pixel
+      data into library’s structures, run encode function on it and get results back. Most encoders
+      operate with Y’CbCr color model, and 4:2:0 subsampling is the most common. I’m using image
+      package from standard Go library to get RGB pixel values from the image provided by the user.
+      It supports decoding most popular JPEG and PNG formats out of the box. Pixels in .png are
+      already stored as RGB and for .jpg Go will convert them to RGB automatically. We just need to
+      convert RGB to Y’CbCr BT.709 4:2:0 limited range and can pass it to encoder. If it sounds
+      scary, don’t worry. This operation boils down to multiplying R, G and B components of every
+      pixel with some coefficient and few additions. Now we need to pass that data to libaom, I’m
+      using small C wrapper av1.c for easier interoperability between C and Go. libaom’s API is
+      pretty straightforward, but there are few things worth to note: We utilize 2-pass encoding
+      even though it’s a single picture. libaom (and libvpx) are known to produce better results
+      that way. CRF (Q mode in libaom’s terminology) maps pretty well to quality slider we’re used
+      to with JPEG converters. It’s just a bit different scale from 0 to 63 where 0 means lossless
+      and 63 is worst quality. Well, codecs might be strange 😉 We can control encoding speed in
+      range from 0 to 8, 4 being the default which seems reasonable. Multithreading is enabled by
+      default, otherwise it would be too slow. row-mt parallelism and 4 tiles give pretty good
+      results. Go part is available in avif.go. Encoder part is done, now it’s muxer part. Specs for
+      container are freely available here. Here is HEIF extension and here is AVIF extension. I
+      won’t go into details, you can check final implementation in mp4.go, the code should be
+      self-explanatory. Looks tedious to implement all that dozen of ISOBMFF boxes, but in fact it
+      was a real fun.
       <BlogSubtitle id="supported" text="highly supported for a new format" />
       <BlogSubtitle id="transparency" text="supports transparency" />
       <BlogSubtitle id="animated" text="supports animated frames" />
@@ -775,27 +868,32 @@ export default function BlogAvifInCloudflare() {
       doesn’t use the maximum compression level possible in AVIF to further increase compression
       speed. Resized images are cached, so the encoding speed is noticeable only on a cache miss.
       <BlogSubtitle id="progressive" text="Progressive rendering" />
-      Because AVIF is an off-cut of a video format, it's missing some useful image features and
-      optimisations that aren't relevant to video. The above shows a high-resolution (2000x1178),
-      high-quality image loading at 2g speeds. To get roughly the same quality, the JPEG is 249 kB,
-      the WebP is 153 kB, and the AVIF is 96 kB. Although they're all loading at the same rate, the
-      much-larger JPEG feels faster because of how it renders in multiple passes. WebP renders from
-      top to bottom, which isn't as good, but at least you see the progress. Unfortunately, with
-      AVIF it's all-or-nothing. Video doesn't need to render a partial frame, so it isn't something
-      the format is set up to do. It's possible to have a top-to-bottom render like WebP, but the
-      implementation would be complicated, so we're unlikely to see it in browsers in the
-      foreseeable future. Because of this, AVIF feels better suited to smaller quicker-loading
-      images. But that still covers most images on the web. Maybe this could be solved if the format
-      could provide a way to embed a 'preview' version of the image at the start of the file. The
-      browser would render this if it doesn't have the rest of the file. Because it's a different
-      image, the developer would get to choose the quality, resolution, and even apply filters like
-      blurring. // AVIF images don't show anything on screen until they're fully downloaded. In
-      contrast, a progressive JPEG can display a lower-quality approximation of the image very
-      quickly, while it's still loading. When progressive JPEGs are delivered well, they make
-      websites appear to load much faster. Progressive JPEG can look loaded at half of its file
-      size. AVIF can fully load at half of JPEG's size, so it somewhat overcomes the lack of
-      progressive rendering with the sheer compression advantage. In this case only WebP is left
-      behind, which has neither progressive rendering nor strong compression.
+      AVIF does not support progressive rendering, so files must be fully downloaded before they can
+      be displayed. This often has little impact on real-world user experience because AVIF files
+      are much smaller than the equivalent JPEG or PNG files, and hence can be downloaded and
+      displayed much faster. For larger file size the impact can become significant, and you should
+      consider using a format that supports progressive rendering. // Because AVIF is an off-cut of
+      a video format, it's missing some useful image features and optimisations that aren't relevant
+      to video. The above shows a high-resolution (2000x1178), high-quality image loading at 2g
+      speeds. To get roughly the same quality, the JPEG is 249 kB, the WebP is 153 kB, and the AVIF
+      is 96 kB. Although they're all loading at the same rate, the much-larger JPEG feels faster
+      because of how it renders in multiple passes. WebP renders from top to bottom, which isn't as
+      good, but at least you see the progress. Unfortunately, with AVIF it's all-or-nothing. Video
+      doesn't need to render a partial frame, so it isn't something the format is set up to do. It's
+      possible to have a top-to-bottom render like WebP, but the implementation would be
+      complicated, so we're unlikely to see it in browsers in the foreseeable future. Because of
+      this, AVIF feels better suited to smaller quicker-loading images. But that still covers most
+      images on the web. Maybe this could be solved if the format could provide a way to embed a
+      'preview' version of the image at the start of the file. The browser would render this if it
+      doesn't have the rest of the file. Because it's a different image, the developer would get to
+      choose the quality, resolution, and even apply filters like blurring. // AVIF images don't
+      show anything on screen until they're fully downloaded. In contrast, a progressive JPEG can
+      display a lower-quality approximation of the image very quickly, while it's still loading.
+      When progressive JPEGs are delivered well, they make websites appear to load much faster.
+      Progressive JPEG can look loaded at half of its file size. AVIF can fully load at half of
+      JPEG's size, so it somewhat overcomes the lack of progressive rendering with the sheer
+      compression advantage. In this case only WebP is left behind, which has neither progressive
+      rendering nor strong compression.
       <BlogSubtitle id="future" text="Next steps" />
       In this post, we have covered all the benefits of the brand-new image compression format AVIF.
       But the whole discussion comes to a halt by observing its acceptance and support in the market
@@ -819,7 +917,17 @@ export default function BlogAvifInCloudflare() {
       using older compression formats. In the times to come, maybe early 2021, AVIF will see a
       broader user base. Thank you for reading, and now we would like to hear from you: what do you
       think is the future of AVIF? Or maybe you have a question. Either way, go ahead and leave a
-      comment below.
+      comment below. // Better compression is great, but how do we know that quality of the original
+      image is preserved when we re-encode? There are various objective metrics such as PSNR, SSIM
+      or modern VMAF exist, but they simply don’t define the “visual identity” score we should
+      target. And even if they would, how should we map encoder’s QP to that score? I’m going to
+      collect some statistics about AVIF usage on my site and maybe share them in the next article.
+      Let’s hope Chrome, Firefox, Edge or even Safari will add native support for AVIF soon. avif.js
+      should still be useful for supporting elder versions though. AVIF tooling might be much
+      better. Right now we’re limited to this small list of AVIF-aware software. Would be great to
+      have support in popular image viewers and converters too. AV1 decoder polyfill (dav1d.js)
+      might be tinier and faster, it’s not tuned to the max yet. But since polyfill is only needed
+      for old browsers, it’s not that important.
       <BlogSubtitle id="future" text="Conclusion" />
       AVIF sounds and looks very promising and even though it’s still taking its first steps, it is
       set to be the next most popular image format on the internet. Having PNG and JPG rooted in the

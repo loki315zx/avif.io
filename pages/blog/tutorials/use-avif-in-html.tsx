@@ -22,6 +22,42 @@ const postdata = {
     "tollwerk.de/blog/schlanke-responsive-bilder-mit-picture-mozjpeg-webp-avif-sqip",
     "mediaevent.de/bilddatenformate-jpg-avif-png-webp",
   ],
+  tags: [
+    "files",
+    "image avif",
+    "img src",
+    "image format",
+    "avif support",
+    "image webp",
+    "sizes",
+    "firefox",
+    "avif images",
+    "webp image",
+    "file size",
+    "avif files",
+    "github",
+    "google",
+    "file format",
+    "google chrome",
+    "image file",
+    "picture",
+  ],
+  questions: [
+    "AVIF Image Format – The Next-Gen Compression Codec",
+    "Future Of AVIF: Browser Compatibility for Chrome and Firefox",
+    "File sizes: AVIF vs WebP vs PNG/JPEG",
+    "A More Optimal Image Format",
+    "A way to leverage new image formats",
+    "How to Create AVIF Files?",
+    "Is AVIF worth an investment from you as a developer/company? Ready for prime time?",
+    "What I decided about image formats",
+    "What is AV Image Format (AVIF)",
+    "How to Use AVIF: The New Next-Gen Image Compression Format",
+    "Is your browser capable of displaying AVIF images?",
+    "How to convert images to the AVIF file format",
+    "How to create AVIF images",
+    "What is 'acceptable quality'?",
+  ],
 };
 
 const posts = [
@@ -49,39 +85,44 @@ const posts = [
 ];
 
 const advantages = [
-  "Downloads only one image",
-  "Native support for choosing the best image",
-  "Has 96% support in browsers and provides an automatic fallback",
-  "Easy to implement",
+  "Does not download more than one image at a time",
+  "Native support for selecting the most appropriate image",
+  "96% browser support and automatic fallback",
+  "Getting this implemented is easy and straightforward",
 ];
 
 export default function BlogAvifInHtml() {
   return (
     <Blog postdata={postdata} posts={posts}>
-      I won't bother you with a stupid 10.000 words text passages about how awesome AVIF is just to
-      increase my SEO. You can read plenty of articles about how fantastic AVIF is right here on X
-      or Y, as well as everywhere else on the web. Or just enjoy my constant, slightly annoying
-      twitter updates about this site. You've clicked this article because you'd like to find out
-      how to use AVIF in HTML, so let's get riiiiight into the topic.
+      I won't waste your time with 10.000 word text passages about how awesome AVIF is just to boost
+      my SEO rankings. AVIF is a file format based off a video codec that support high bit depth
+      while keeping a low file size. You can find plenty of articles about how fantastic AVIF is
+      right here, as well as everywhere else on the web. Or you can just enjoy my countless,
+      occasionally irritating tweets about this site. You clicked this article because you would
+      like to learn how to use AVIF in HTML, so let's get riiiiiight into the topic.
       <BlogSubtitle text="Browser Support" />
-      The most important thing you should remember when using AVIF is that it unfortunately isn't
-      supported everywhere yet. It's a shame, right? It took webP (another excellent image format,
-      but not as good as avif) ten years to be fully supported due to Apple not implementing the
-      format in Safari. And even now, there's only 90% support. By the time of writing, AVIF has 25%
-      support on Browsers. However, AVIF is an invention by the non-profit industry consortium AOM.
-      The largest browser-creating giants like Apple, Mozilla and Google are part of it, so you can
-      expect support quite quickly.
+      The most important thing you should be aware of when using AVIF is that it unfortunately isn't
+      supported everywhere yet. This is a shame, right? It took ten years for webP (another
+      excellent image format, but not good enough to match avif) to become fully supported due to
+      Apple's unwillingness to implement the format in Safari. But still, there's only 90% support.
+      By the time of writing, AVIF has 25% support on browsers. Google Chrome and Opera support it.
+      Firefox supports it if you enable the AVIF image format in the settings. Safari has no AVIF
+      support yet. However, AVIF is an invention by the non-profit industry consortium Alliance of
+      Open Media (AOM). The largest browser-creating giants Apple, Mozilla and Google are all part
+      of the project, so you can expect support quite quickly.
       <BlogSubtitle text="The picture element" />
-      Meanwhile, you can still use the format in its almost-full glory with the native {`<picture>`}{" "}
-      element in HTML. Why, you may ask? Well, the {`<picture>`} element allows for progressive
-      support. You can simply list all image sources in the order in which you want them to be
-      loaded. The wanky browser of your visitors will only download the first image it supports. You
-      only load one image at a time, there's no need for a script and everyone is happy.
+      For the time-being, you can still use the format in its almost-complete glory with the native{" "}
+      {`<picture>`} element in HTML. Why, you may ask? Well, the {`<picture>`} element allows for
+      progressive support. You can simply put all the image files in the order in which you want
+      them to be loaded. The wanky browsers of your visitors will only load one image at the same
+      time, thus reducing the load on the server. Also, there's no need for a script to handle
+      multiple images. Everyone is happy.
       <BlogAdvantages advantages={advantages} checked={true} />
       <BlogSubtitle text="Implementation" />
-      Browser support for the picture element is at 96%. Still, even if your grandma is visiting
-      your website with her disgusting Internet Explorer 6, her browser will simply fall back to
-      using the default image. Take a look at this example and copy it for your website:
+      At the moment, 96% of browsers support the picture element. Still, even if your grandma is
+      visiting your website with her disgusting Internet Explorer 6, her browser will simply fall
+      back to using the default image format if you provide it. Take a look at the following example
+      and copy it if you want it for your website:
       <BlogSyntax language="html">
         {`<picture>
 <source srcset="image.avif" type="image/avif" loading="lazy">
@@ -90,12 +131,12 @@ export default function BlogAvifInHtml() {
 </picture>`}
       </BlogSyntax>
       <BlogNote text="PS: The lazy loading attribute is supported by 75% of all browsers, make use of it!" />
-      This setup suits all visitors. Make sure to put the AVIF image as the first source tag, the
-      browser will display the first media-type it can handle.
+      This is a nice set up for all visitors. Just make sure the first source tag is an AVIF image
+      for the browser to display the first media type it can handle.
       <BlogSubtitle text="Responsiveness" />
-      Great, right? Well, yes, but actually no. Because we are still lacking support for different
-      device types. Creating an optimal experience for Retina displays can be a little more
-      demanding:
+      At this point, it seems to be great, right? Well, no, not yet. That is because our platform
+      still lacks support for different types of devices. Creating an optimal experience for Retina
+      displays is a little more challenging.
       <BlogSyntax language="html">
         {`<picture>
 <source srcset="image.avif 1x, image@2x.avif 2x" type="image/avif" loading="lazy">
@@ -103,10 +144,13 @@ export default function BlogAvifInHtml() {
 <img src="image.jpg 1x, image@2x.jpg 2x" alt="avif in html" loading="lazy">
 </picture>`}
       </BlogSyntax>
-      Okay, probably not as demanding as it sounded like. Still, creating different images for every
-      viewport with every format can be exhausting. However, if you don't have to deal with many
-      images on your website, it's an excellent way to setup for the future. Looking to use AVIF as
-      background images? How about frameworks? Enjoy the articles featured below. :)
+      Okay, this is probably not as challenging as we originally believed, but creating AVIF images
+      for every viewport with every format can be exhausting. Nevertheless, if your website does not
+      have many images, it's a good way to prepare for the future. Please remember to provide
+      fallback images for older versions of browsers or experimental usage like in Firefox. Else
+      your User Experience might be suffering as images won't get rendered. AVIF is good for
+      backgrounds as well. Check out the CSS article. How about frameworks? Enjoy the articles below
+      featuring the different types of frameworks you can use. :)
     </Blog>
   );
 }

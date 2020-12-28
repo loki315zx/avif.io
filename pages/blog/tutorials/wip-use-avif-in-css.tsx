@@ -40,7 +40,7 @@ export default function BlogAvif() {
   return (
     <Blog postdata={postdata} posts={posts}>
       <BlogSubtitle text="" />
-      Placeholder
+      use image set and a special fix for firefox with JPG
     </Blog>
   );
 }

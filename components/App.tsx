@@ -84,7 +84,7 @@ export default function App(): ReactElement {
       </div>
       <Tutorials />
       <Advantages />
-      <section class="avifcompare overlay-after">
+      <section className="avifcompare overlay-after">
         <div id="comparison__container">
           <ReactCompareImage
             leftImage={comparison_jpg}

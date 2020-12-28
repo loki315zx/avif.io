@@ -9,7 +9,7 @@
     "allowJs": true,
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["./src/components/*"],
+      "@components/*": ["./components/*"],
       "@assets/*": ["./assets/*"],
       "@images/*": ["./public/images/*"],
       "@utils/*": ["./src/utils/*"],

@@ -79,3 +79,24 @@ export function BlogPosts(props: any) {
     </section>
   );
 }
+
+export function BlogTags(props: any) {
+  const tags = props.tags;
+  const questions = props.questions;
+
+  const listTags = tags.map((tag: any, index: any) => (
+    <div key={index} className="tag">
+      {tag}
+    </div>
+  ));
+  const listQuestions = questions.map((question: any, index: any) => (
+    <div key={index} className="question">
+      {question}
+    </div>
+  ));
+  return (
+    <section className="tags_container f0">
+      {listTags} {listQuestions}
+    </section>
+  );
+}

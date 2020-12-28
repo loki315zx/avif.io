@@ -27,6 +27,35 @@ const postdata = {
     "wordpress.stackexchange.com/questions/379114/workaround-to-upload-avif-files",
     "wpbeginner.com/glossary/functions-php",
   ],
+  tags: [
+    "image format",
+    "wordpress",
+    "avif images",
+    "file size",
+    "mime type",
+    "image avif",
+    "image optimization",
+    "firefox",
+    "file format",
+    "avif image format",
+    "image file",
+    "google chrome",
+    "faster loading",
+  ],
+  questions: [
+    "Why AVIF Support in WordPress is Important",
+    "Why Does a WordPress Site Needs AVIF?",
+    "How to Enable AVIF in WordPress?",
+    "Is your browser capable of displaying AVIF images?",
+    "How to convert images to the AVIF file format",
+    "Using the AVIF Next-Generation Image Format on your Sites for Faster Loading Images",
+    "Insert AVIF files in WordPress pages or posts",
+    "Supporting additional mime types in WordPress",
+    "Uploading AVIF images in WordPress",
+    "Include support for the AVIF image format",
+    "Optimizing your images as a way to speed up your WordPress site",
+    "Upload AVIF to WordPress",
+  ],
 };
 
 const posts = [
@@ -57,7 +86,7 @@ export default function BlogAvifInWordpress() {
       when you try to upload AVIF images to WordPress. There is no official support. Still,
       WordPress needs AVIF because of two reasons. First, technical professionals and end-users
       often struggle with web speed issues widespread with this CMS. Hence, AVIF can contribute to
-      faster loading because of its incredibly low-size images without causing any dent in quality.
+      faster loading because of its incredibly low file size without causing any dent in quality.
       The second reason is that WordPress is the most dominant CMS globally, with over 455 million
       websites in 2020. This means that around 35% of the web is powered by WordPress. Further
       statistics from WordPress reveal that as of November 2020, over 409 million people view more
@@ -156,7 +185,9 @@ add_filter( 'upload_mimes', 'support_modern_images', 1, 1 );`}
       <BlogSubtitle text="Summary" />
       WordPress doesn't support AVIF files. WordPress does not even support WebP. We are currently
       creating a fantastic plugin for you. In the meantime, you can still upload AVIF files by
-      allowing the mime type or use an image plugin to at least make use of WebP.
+      allowing the mime type or use an image plugin to at least make use of WebP. Just make sure to
+      provide fallback images for older versions of Chrome. Or browsers that do not support avif
+      yet, like Firefox.
     </Blog>
   );
 }
