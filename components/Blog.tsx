@@ -30,7 +30,7 @@ export default function Blog(props: { postdata: any; children: any; posts: any }
           {props.children}
           <BlogSubtitle text="Sources" />
           <BlogSources sources={props.postdata.sources} />
-          <BlogSubtitle text="Tags & Related Questions and Headlines" />
+          <BlogSubtitle text="Tags, Related Questions and Headlines" />
           <BlogTags tags={props.postdata.tags} questions={props.postdata.questions} />
         </div>
       </div>

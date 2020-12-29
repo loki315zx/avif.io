@@ -1,5 +1,5 @@
 onmessage = async function (msg) {
-  importScripts("dist/conversion.js");
+  importScripts("/dist/conversion.js");
 
   const {
     convert_to_avif: convertToAvif,

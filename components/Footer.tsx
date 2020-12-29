@@ -54,7 +54,7 @@ export default function Footer() {
             Donate
           </a>
           <a title="title" href="#">
-            Legal & Privacy
+            Legal and Privacy
           </a>
         </div>
       </div>

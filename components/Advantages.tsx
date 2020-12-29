@@ -42,7 +42,7 @@ export default function Advantages() {
           <AdvantageItem
             pre="is"
             text="actively developed by tech giants"
-            post="like Google, Apple & Microsoft"
+            post="like Google, Apple and Microsoft"
             number="visualizer-3"
           />
           <AdvantageItem
@@ -71,8 +71,8 @@ export default function Advantages() {
           />
           <AdvantageItem
             pre=""
-            text="offers support for animated frames"
-            post="and can replace GIFs & aPNGs"
+            text="supports animated frames"
+            post="which can replace GIFs and aPNGs"
             number="visualizer-8"
           />
           <AdvantageItem
