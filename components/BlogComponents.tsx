@@ -1,6 +1,12 @@
 import Link from "next/link";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { vs2015 } from "react-syntax-highlighter/dist/cjs/styles/hljs";
+
+import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
+import vs2015 from "react-syntax-highlighter/dist/cjs/styles/hljs/vs2015";
+import js from "react-syntax-highlighter/dist/cjs/languages/hljs/javascript";
+import html from "react-syntax-highlighter/dist/cjs/languages/hljs/htmlbars";
+
+SyntaxHighlighter.registerLanguage("javascript", js);
+SyntaxHighlighter.registerLanguage("html", html);
 
 export function BlogSyntax(props: { language: string; children: any }) {
   return (

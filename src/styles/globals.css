@@ -2286,19 +2286,3 @@ input[type="range"]:active::-moz-range-thumb {
 input[type="range"]:focus::-webkit-slider-thumb {
   box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--color700);
 }
-
-/* TEST */
-
-.blog {
-  background-image: image-set(
-    url("@images/comparison.avif") 3x,
-    url("@images/comparison.webp") 2x,
-    url("@images/comparison.jpg") 1x
-  );
-}
-
-@-moz-document url-prefix() {
-  .blog {
-    background: url("@images/comparison.jpg");
-  }
-}
