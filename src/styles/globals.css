@@ -1736,6 +1736,19 @@ ul {
   display: inline-block;
 }
 
+picture {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  margin: var(--s2) 0;
+}
+
+picture img {
+  object-fit: cover;
+  height: auto;
+  width: 100%;
+}
+
 /*  */
 /*  */
 /* KEYFRAMES */

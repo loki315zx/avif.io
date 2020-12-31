@@ -23,6 +23,7 @@ const postdata = {
     "cloudflare.com/case-studies/discord",
     "cloudflare.com/case-studies/hubspot",
     "cloudflare.com/case-studies/zendesk",
+    "cloudflare.com/plans/",
     "developers.cloudflare.com/images",
     "developers.cloudflare.com/images/resizing-with-workers",
     "endler.dev/2020/perf",
@@ -105,13 +106,18 @@ export default function BlogAvifInCloudflare() {
       websites to optimize the loading of content on the user's side. On the 3rd of October,
       Cloudflare announced support for automatic serving of AVIF images. Upon reviewing web stats,
       let's point out that more than half of an average website is spent on pictures, and that over
-      15% of all websites are powered by Cloudflare. Allowing users to optimize images into the new
-      AVIF image format marks a major milestone in making the web a faster place. Improved image
-      compression can reduce bandwidth usage and improve web performance. Services and companies
-      like Discord, ILovePDF, Hubspot and Zendesk all use the technological foundation that is
-      provided by Cloudflare to function. We assume you are on this page because you are using
-      Cloudflare services and would like to know how to turn on AVIF support. Oh, and by the way,
-      this post is not sponsored in any way.Let's see: Let's see:
+      15% of all websites are powered by Cloudflare.
+      <picture>
+        <source srcSet="/images/cloudflare-stats.avif" type="image/avif" />
+        <source srcSet="/images/cloudflare-stats.webp" type="image/webp" />
+        <img src="/images/cloudflare-stats.jpg" alt="avif in html" />
+      </picture>
+      Allowing users to optimize images into the new AVIF image format marks a major milestone in
+      making the web a faster place. Improved image compression can reduce bandwidth usage and
+      improve web performance. Services and companies like Discord, ILovePDF, Hubspot and Zendesk
+      all use the technological foundation that is provided by Cloudflare to function. We assume you
+      are on this page because you are using Cloudflare services and would like to know how to turn
+      on AVIF support. Oh, and by the way, this post is not sponsored in any way. Let's see:
       <BlogSubtitle text="Why Cloudflare supports avif" />
       Regarding their latest blog post about avif, Cloudflare has made the decision to support avif
       for the following advantages:

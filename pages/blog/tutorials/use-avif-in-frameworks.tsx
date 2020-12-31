@@ -108,6 +108,15 @@ export default function BlogAvifInFrameworks() {
       experimented with the latest version live, we are listing them here as "maybe works" until
       we've been in the science lab.
       <BlogAdvantages advantages={disadvantages} checked={false} />
+      <BlogSubtitle text="An example code" />
+      This is the code I've used to display the image below in React and Next.JS:
+      <BlogSyntax language="html">
+        <picture>
+          <source srcSet="/images/cloudflare-stats.avif" type="image/avif" />
+          <source srcSet="/images/cloudflare-stats.webp" type="image/webp" />
+          <img src="/images/cloudflare-stats.jpg" alt="avif in html" />
+        </picture>
+      </BlogSyntax>
       <BlogSubtitle text="Webpack File Loader" />
       In some cases, especially with older versions and when using webpack, you may encounter some
       problems. Especially:
