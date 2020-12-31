@@ -1,16 +1,21 @@
+import Link from "next/link";
+
 export interface TutorialsBoxProps {
   cssclass: string;
   title: string;
+  url: string;
 }
 
 function TutorialsBox(props: TutorialsBoxProps) {
   return (
-    <div className={"tutorials__box"} id={props.cssclass}>
-      <div className={"tutorial__overflow overlay"}>
-        <span className="tutorial__title">{props.title}</span>
+    <Link href={`/blog/tutorials/use-avif-in-${props.url}`}>
+      <div className={"tutorials__box"} id={props.cssclass}>
+        <div className={"tutorial__overflow overlay"}>
+          <span className="tutorial__title">{props.title}</span>
+        </div>
+        <div className="tutorial__shadow overlay"></div>
       </div>
-      <div className="tutorial__shadow overlay"></div>
-    </div>
+    </Link>
   );
 }
 
@@ -26,19 +31,19 @@ export default function Tutorials() {
         and we will write an article about it.
       </div>
       <div className="tutorials__container">
-        <TutorialsBox cssclass="css" title="CSS" />
-        <TutorialsBox cssclass="html" title="HTML" />
-        <TutorialsBox cssclass="angular" title="Angular" />
-        <TutorialsBox cssclass="react" title="React" />
-        <TutorialsBox cssclass="vue" title="Vue" />
-        <TutorialsBox cssclass="nextjs" title="Next.JS" />
-        <TutorialsBox cssclass="firefox" title="Firefox" />
-        <TutorialsBox cssclass="edge" title="Edge" />
-        <TutorialsBox cssclass="gimp" title="GIMP" />
-        <TutorialsBox cssclass="netlify" title="Netlify" />
-        <TutorialsBox cssclass="wordpress" title="WordPress" />
-        <TutorialsBox cssclass="cloudflare" title="Cloudflare" />
-        <TutorialsBox cssclass="windows" title="Windows" />
+        <TutorialsBox cssclass="css" title="CSS" url="css" />
+        <TutorialsBox cssclass="html" title="HTML" url="html" />
+        <TutorialsBox cssclass="angular" title="Angular" url="frameworks" />
+        <TutorialsBox cssclass="react" title="React" url="frameworks" />
+        <TutorialsBox cssclass="vue" title="Vue" url="frameworks" />
+        <TutorialsBox cssclass="nextjs" title="Next.JS" url="nextjs" />
+        <TutorialsBox cssclass="firefox" title="Firefox" url="firefox" />
+        <TutorialsBox cssclass="edge" title="Edge" url="edge" />
+        <TutorialsBox cssclass="gimp" title="GIMP" url="gimp" />
+        <TutorialsBox cssclass="netlify" title="Netlify" url="netlify" />
+        <TutorialsBox cssclass="wordpress" title="WordPress" url="wordpress" />
+        <TutorialsBox cssclass="cloudflare" title="Cloudflare" url="cloudflare" />
+        <TutorialsBox cssclass="windows" title="Windows" url="windows" />
       </div>
     </section>
   );

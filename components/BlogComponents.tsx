@@ -4,6 +4,7 @@ import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
 import vs2015 from "react-syntax-highlighter/dist/cjs/styles/hljs/vs2015";
 import js from "react-syntax-highlighter/dist/cjs/languages/hljs/javascript";
 import html from "react-syntax-highlighter/dist/cjs/languages/hljs/htmlbars";
+import { link } from "fs";
 
 SyntaxHighlighter.registerLanguage("javascript", js);
 SyntaxHighlighter.registerLanguage("html", html);
@@ -36,7 +37,9 @@ export function BlogSources(props: any) {
   const sources = props.sources;
   const listItems = sources.map((source: any, index: any) => (
     <li key={index} className="source">
-      <a href={`https://${source}`}>{source.toString().replace(/\//g, " · ")}</a>
+      <a target="_blank" href={`https://${source}`}>
+        {source.toString().replace(/\//g, " · ")}
+      </a>
     </li>
   ));
   return (
@@ -104,5 +107,25 @@ export function BlogTags(props: any) {
     <section className="tags_container f0">
       {listTags} {listQuestions}
     </section>
+  );
+}
+
+export function BlogLink(props: { link: string; text: string; newLine?: boolean }) {
+  return (
+    <div style={{ display: props.newLine ? "block" : "inline-block" }}>
+      <Link href={props.link}>
+        <a title={props.text}>{props.text}</a>
+      </Link>
+    </div>
+  );
+}
+
+export function BlogLinkExternal(props: { link: string; text: string; newLine?: boolean }) {
+  return (
+    <div style={{ display: props.newLine ? "block" : "inline-block" }}>
+      <a target="_blank" title={props.text} href={props.link}>
+        {props.text}
+      </a>
+    </div>
   );
 }

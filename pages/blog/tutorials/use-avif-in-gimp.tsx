@@ -1,5 +1,12 @@
 import Blog from "@components/Blog";
-import { BlogSubtitle, BlogAdvantages, BlogSyntax, BlogNote } from "@components/BlogComponents";
+import {
+  BlogSubtitle,
+  BlogAdvantages,
+  BlogSyntax,
+  BlogNote,
+  BlogLink,
+  BlogLinkExternal,
+} from "@components/BlogComponents";
 const postdata = {
   title: "Use AVIF in GIMP",
   description:
@@ -43,13 +50,10 @@ const postdata = {
     "GIMP 2.10.22 Is Released With AVIF Support And Improved Support For Many Other File Formats",
     "Download Now: GIMP 2.10.22 Released with Major File Format Improvements",
     "GIMP 2.10.22 Released with Major File Format Improvements",
-    "Add .avif (AV1 Image File Format) support",
+    "Add .avif (AV1 Image File Format) support to GIMP",
     "GIMP 2.10.22 Released with AVIF Support, Improved PSP and TIFF Support",
-    "What is AVIF? How to Use AV1 Image Format Images on Your Website",
-    "Do you lose any features you know from earlier releases?",
-    "Are there any benefits for plugin developers?",
-    "How to Start Using AVIF Images",
-    "Insert AVIF files in WordPress pages or posts",
+    "What is AVIF? How to Use AV1 Image Format Images in GIMP",
+    "How to Start Using AVIF Images in GIMP",
   ],
 };
 
@@ -84,7 +88,7 @@ export default function BlogAvifInGIMP() {
       While it was developed as a Linux Image editor, it has evolved into an effective alternative
       for Photoshop from Adobe, while remaining both free and open source.
       <BlogSubtitle text="AVIF Support for new images" />
-      As GIMP 3.0 development has been going on, on the 7th of October 2020, the GIMP 2.10.22 was
+      As GIMP 3.0 development has been going on, on the 7th of October 2020, GIMP 2.10.22 was
       released. This release is titled a bug fix, however it had severe effects on GIMP's
       functionality. Since then, thanks to the encoder libheif, it is now capable of supporting the
       AVIF image format natively, which means that you can import and export AV1-based AVIF images
@@ -98,15 +102,20 @@ export default function BlogAvifInGIMP() {
       comparison, JPG has 8 bits. So if you're not a photographer and just want to use AVIF images
       for your website, we recommend that you stick with 8-bit.
       <BlogSubtitle text="AVIF Plugin" />
-      There's also a plugin available called 'gimp-avif-plugin' by novemesk. Despite the
-      non-creative name, the user interface is fantastic. It allows for many options to choose from,
-      such as the minimum and maximum Quantizer, pixel format, bit depth, encoder, encoder speed,
-      alpha channel settings, EXIF data and XMP data handling, and the ICC color profile. If you do
-      not understand most of these settings, don't worry; you will probably be fine with the default
-      interface.
+      There's also a plugin available called{" "}
+      <BlogLinkExternal
+        text="gimp-avif-plugin by novemesk"
+        link="https://github.com/novomesk/gimp-avif-plugin"
+      />
+      . Despite the non-creative name, the user interface is fantastic. It allows for many options
+      to choose from, such as the minimum and maximum Quantizer, pixel format, bit depth, encoder,
+      encoder speed, alpha channel settings, EXIF data and XMP data handling, and the ICC color
+      profile. If you do not understand most of these settings, don't worry; you will probably be
+      fine with the default interface.
       <BlogSubtitle text="AVIF Support for existing images" />
       If you look to have a lot of images converted, it's a lot easier to convert them all in one
-      go. Make life easier for yourself by using our converter, which is free.
+      go. Make life easier for yourself by{" "}
+      <BlogLink text="using our AVIF converter, which is free" link="/" />.
     </Blog>
   );
 }

@@ -1,6 +1,12 @@
 import Blog from "@components/Blog";
-import { BlogSubtitle, BlogSyntax } from "@components/BlogComponents";
-
+import {
+  BlogSubtitle,
+  BlogAdvantages,
+  BlogSyntax,
+  BlogNote,
+  BlogLink,
+  BlogLinkExternal,
+} from "@components/BlogComponents";
 const postdata = {
   title: "Use AVIF in Next.JS",
   description:
@@ -105,8 +111,8 @@ module.exports = withImages()`}
       <Image
         src="/yourmum.jpg"
         alt="Picture of your mum"
-        width={500}
-        height={500}
+        width={9001}
+        height={0}
       />
 (..)`}</BlogSyntax>
       <BlogSubtitle text="The component is not com..plete" />
@@ -115,11 +121,15 @@ module.exports = withImages()`}
       will see this supported in future releases. As a final note, the images loaded through CSS do
       not get optimized, although we are praying this will be the case in future releases.
       <BlogSubtitle text="Next Optimized Images" />
-      Until that point, we are using a third-party plugin in Next.JS called next-optimized-images.
-      It has many additional features, and it supports loading images with CSS, which is very useful
-      for our use-case. Yet, the plugin does not yet support AVIF as well. Still, the author is
-      currently working on a complete rewrite of the entire plugin, and a canary version is already
-      published. We've linked to the plugin in the sources below.
+      Until that point, we are using a third-party plugin in Next.JS called{" "}
+      <BlogLinkExternal
+        text="next-optimized-images"
+        link="https://github.com/cyrilwanner/next-optimized-images"
+      />
+      . It has many additional features, and it supports loading images with CSS, which is very
+      useful for our use-case. Yet, the plugin does not yet support AVIF as well. Still, the author
+      is currently working on a complete rewrite of the entire plugin, and a canary version is
+      already published. We've linked to the plugin in the sources below.
     </Blog>
   );
 }

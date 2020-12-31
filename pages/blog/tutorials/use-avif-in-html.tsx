@@ -1,6 +1,12 @@
 import Blog from "@components/Blog";
-import { BlogSubtitle, BlogAdvantages, BlogSyntax, BlogNote } from "@components/BlogComponents";
-
+import {
+  BlogSubtitle,
+  BlogAdvantages,
+  BlogSyntax,
+  BlogNote,
+  BlogLink,
+  BlogLinkExternal,
+} from "@components/BlogComponents";
 const postdata = {
   title: "How to use AVIF in HTML",
   description: "Enjoy this short, but still in depth guide on how to use AVIF in HTML.",
@@ -98,8 +104,10 @@ export default function BlogAvifInHtml() {
       my SEO rankings. AVIF is a file format based off a video codec that support high bit depth
       while keeping a low file size. You can find plenty of articles about how fantastic AVIF is
       right here, as well as everywhere else on the web. Or you can just enjoy my countless,
-      occasionally irritating tweets about this site. You clicked this article because you would
-      like to learn how to use AVIF in HTML, so let's get riiiiiight into the topic.
+      occasionally irritating{" "}
+      <BlogLinkExternal text="tweets" link="https://twitter.com/jschmitz97" /> about this site. You
+      clicked this article because you would like to learn how to use AVIF in HTML, so let's get
+      riiiiiight into the topic.
       <BlogSubtitle text="Browser Support" />
       The most important thing you should be aware of when using AVIF is that it unfortunately isn't
       supported everywhere yet. This is a shame, right? It took ten years for webP (another
@@ -149,8 +157,10 @@ export default function BlogAvifInHtml() {
       have many images, it's a good way to prepare for the future. Please remember to provide
       fallback images for older versions of browsers or experimental usage like in Firefox. Else
       your User Experience might be suffering as images won't get rendered. AVIF is good for
-      backgrounds as well. Check out the CSS article. How about frameworks? Enjoy the articles below
-      featuring the different types of frameworks you can use. :)
+      backgrounds as well. Check out the{" "}
+      <BlogLink text="CSS article" link="/blog/tutorials/use-avif-in-css" />. How about{" "}
+      <BlogLink text="frameworks" link="/blog/tutorials/use-avif-in-frameworks" />? Enjoy this
+      article featuring the different types of frameworks you can use. :)
     </Blog>
   );
 }

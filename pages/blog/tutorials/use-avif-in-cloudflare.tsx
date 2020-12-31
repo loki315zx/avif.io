@@ -1,6 +1,12 @@
 import Blog from "@components/Blog";
-import { BlogSubtitle, BlogAdvantages, BlogSyntax } from "@components/BlogComponents";
-
+import {
+  BlogSubtitle,
+  BlogAdvantages,
+  BlogSyntax,
+  BlogNote,
+  BlogLink,
+  BlogLinkExternal,
+} from "@components/BlogComponents";
 const postdata = {
   title: "How to convert images to AVIF using Cloudflare",
   description:
@@ -14,9 +20,13 @@ const postdata = {
   sources: [
     "blog.cloudflare.com/generate-avif-images-with-image-resizing",
     "blog.cloudflare.com/http3-the-past-present-and-future",
+    "cloudflare.com/case-studies/discord",
+    "cloudflare.com/case-studies/hubspot",
+    "cloudflare.com/case-studies/zendesk",
     "developers.cloudflare.com/images",
     "developers.cloudflare.com/images/resizing-with-workers",
     "endler.dev/2020/perf",
+    "ilovepdf.com/help/privacy",
     "meterpreter.org/cloudflare-supports-the-new-avif-image-format-in-image-resizing",
     "neowin.net/news/cloudflare-image-resizing-adds-support-for-avif-images",
     "w3techs.com/technologies/details/cn-cloudflare",
@@ -47,11 +57,10 @@ const postdata = {
     "Cloudflare supports the new AVIF image format in Image Resizing",
     "Progressively delivering new image formats with CSS and Cloudflare Workers",
     "Cloudflare Image Resizing adds support for AVIF images",
-    "My Blog Just Got Faster: Cloudflare Workers and AVIF Support",
+    "Cloudflare Workers and AVIF Support",
     "Cloudflare Image Resizing docs",
-    "AVIF, a next-gen image format for the web, will have to wait in line behind WebP",
+    "AVIF, a next-gen image format for the web",
     "Resizing with Cloudflare Workers",
-    "Why a new image format?",
   ],
 };
 
@@ -98,11 +107,11 @@ export default function BlogAvifInCloudflare() {
       let's point out that more than half of an average website is spent on pictures, and that over
       15% of all websites are powered by Cloudflare. Allowing users to optimize images into the new
       AVIF image format marks a major milestone in making the web a faster place. Improved image
-      compression can reduce bandwidth usage and improve web performance. Services like Discord,
-      ILovePDF, Okta, Medium and Udemy all use the technological foundation that is provided by
-      Cloudflare to function. We assume you are on this page because you are using Cloudflare
-      services and would like to know how to turn on AVIF support. Oh, and by the way, this post is
-      not sponsored in any way.Let's see: Let's see:
+      compression can reduce bandwidth usage and improve web performance. Services and companies
+      like Discord, ILovePDF, Hubspot and Zendesk all use the technological foundation that is
+      provided by Cloudflare to function. We assume you are on this page because you are using
+      Cloudflare services and would like to know how to turn on AVIF support. Oh, and by the way,
+      this post is not sponsored in any way.Let's see: Let's see:
       <BlogSubtitle text="Why Cloudflare supports avif" />
       Regarding their latest blog post about avif, Cloudflare has made the decision to support avif
       for the following advantages:
@@ -113,11 +122,11 @@ export default function BlogAvifInCloudflare() {
       $200 or more per month, this seems overkill for such a small feature. However, in another
       comment section on the Cloudflare Blog, Kornel Lesinski from Cloudflare said that
       automatically converting your images into the best variant for your users will eventually be
-      part of their Polish features in the future. Pro Plans start at $20/month and come with a lot
-      more features. Things like automatically choosing the best TCP settings, automatic mobile and
-      image optimizations, a better firewall, captchas, cache analytics, etc. For an upcoming small
-      to medium-sized business, this seems like an attractive investment to get the last bit of
-      performance out of your website. (Psst Cloudflare, sponsor me, I like you!)
+      part of their Pro plans in the future. Pro Plans start at $20/month and come with a lot more
+      features. Things like automatically choosing the best TCP settings, automatic mobile and image
+      optimizations, a better firewall, captchas, cache analytics, etc. For an upcoming small to
+      medium-sized business, this seems like an attractive investment to get the last bit of
+      performance out of your website.
       <BlogSubtitle text="Implementation with Workers" />
       Browsers with AVIF support add an image/avif note to their Accept request header. To request
       the AVIF format from the Image Resizing module of Cloudflare, simply set the format option to
@@ -145,9 +154,11 @@ export default function BlogAvifInCloudflare() {
       that supports it, and you can keep serving the large file size. Also, supported image formats
       are the only ones that can be resized.
       <BlogSubtitle text="The picture element" />
-      In our Tutorial on how to use AVIF in HTML, we present you the {`<picture>`} element as the
-      best option to serve AVIF files in an HTML environment. Cloudflare allows you to use their
-      image optimization endpoint to perform the conversion if you don't want to use Workers.
+      In our Tutorial on{" "}
+      <BlogLink link="/blog/tutorials/use-avif-in-html" text="how to use avif in HTML" />, we
+      present you the {`<picture>`} element as the best option to serve AVIF files in an HTML
+      environment. Cloudflare allows you to use their image optimization endpoint to perform the
+      conversion if you don't want to use Workers.
       <BlogSyntax language="html">
         {`<picture>
     <source type="image/avif" 
@@ -161,7 +172,11 @@ export default function BlogAvifInCloudflare() {
       we're not sponsored in any way, however we love to see companies push technologies, which
       Cloudflare does regularly. They already have preliminary support for HTTP/3 as well. Is there
       anything else you'd like to know about avif? Got a good suggestion on an advanced worker
-      script? Let us know on Justin's Twitter.
+      script?{" "}
+      <BlogLinkExternal
+        link="https://twitter.com/jschmitz97"
+        text="Let us know on Justin's Twitter."
+      />
     </Blog>
   );
 }

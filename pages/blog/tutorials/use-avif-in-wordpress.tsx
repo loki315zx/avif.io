@@ -1,6 +1,12 @@
 import Blog from "@components/Blog";
-import { BlogSubtitle, BlogAdvantages, BlogSyntax, BlogNote } from "@components/BlogComponents";
-
+import {
+  BlogSubtitle,
+  BlogAdvantages,
+  BlogSyntax,
+  BlogNote,
+  BlogLink,
+  BlogLinkExternal,
+} from "@components/BlogComponents";
 const postdata = {
   title: "How To Use Avif Images In WordPress",
   description:
@@ -156,8 +162,16 @@ add_filter( 'upload_mimes', 'support_modern_images', 1, 1 );`}
       say Goodbye'. Mhh mhh mhh, no no no. There is a solution that is working independently.
       Financially indepen.. sorry, the memes. Let me get back on track: Multiple plugin solutions
       exist. Take a look at these beauties:
-      <p>https://wordpress.org/plugins/wp-add-mime-types/</p>
-      <p>https://wordpress.org/plugins/blob-mimes/</p>
+      <BlogLinkExternal
+        link="https://wordpress.org/plugins/wp-add-mime-types/"
+        text="WP Add Mime Types"
+        newLine
+      />
+      <BlogLinkExternal
+        link="https://wordpress.org/plugins/blob-mimes/"
+        text="Lord of the Files"
+        newLine
+      />
       To quote: WordPress relies mostly on name-based validation when deciding whether or not to
       allow a particular file, leaving the door open for various kinds of attacks. Lord of the Files
       (previously known as "blob mimes") adds to this content-based validation and sanitizing,
@@ -165,23 +179,17 @@ add_filter( 'upload_mimes', 'support_modern_images', 1, 1 );`}
       <BlogSubtitle text="There's one remaining problem: No automatic conversion" />
       Uploading images is a cool thing, but there's a colossal problem remaining. For every image
       you wish to serve to your users, you have to convert it manually. Well, there are some *cough*
-      exceptional bulk converters.. like avif.io. Probably you've heard of it. However, the work of
-      using the HTML picture tag still remains. A more simplistic idea would be to have an image
-      plugin that automatically converts images to modern formats and serves the best solution based
-      on your user's browser. We are currently working on creating an easy to use Plugin that
-      handles all these requests without you having to configure anything. Until then, feel free to
-      try other plugins. Unfortunately, we don't know any that support avif, but WebP is an
-      advantage too!
+      <BlogLink text=" exceptional bulk converters.. like avif.io.." link="/" /> probably you've
+      heard of it already. However, the work of{" "}
+      <BlogLink text="using the HTML picture tag" link="/blog/tutorials/use-avif-in-html" /> still
+      remains. A more simplistic idea would be to have an image plugin that automatically converts
+      images to modern formats and serves the best solution based on your user's browser. We are
+      currently working on creating an easy to use Plugin that handles all these requests without
+      you having to configure anything. Until then, feel free to try other plugins. Unfortunately,
+      none of these support avif yet, but WebP is an advantage too!
       <BlogSubtitle text="Image Optimization Plugin Support" />
       As we already told you, all standard WordPress services and plugins for image optimization do
-      not currently support AVIF. However, the following plugins might support them in the near
-      future:
-      <p>WebP Converter for Media</p>
-      <p>Imagify</p>
-      <p>Smush from WPMUDev</p>
-      <p>ShortPixel</p>
-      <p>Optimole</p>
-      <p>ImageEngine</p>
+      not currently support AVIF.
       <BlogSubtitle text="Summary" />
       WordPress doesn't support AVIF files. WordPress does not even support WebP. We are currently
       creating a fantastic plugin for you. In the meantime, you can still upload AVIF files by

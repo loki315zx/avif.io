@@ -1643,7 +1643,7 @@ h2.infobox:hover::before {
 }
 
 .blog h1 {
-  margin: 0 var(--s5) 0;
+  margin: 0 var(--s2) 0;
   padding: calc(var(--s4) * 2) var(--s4) var(--s4) var(--s4);
   font-size: calc(var(--f3) * 1.5);
 }
