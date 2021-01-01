@@ -8,6 +8,7 @@ import {
   BlogLinkExternal,
 } from "@components/BlogComponents";
 const postdata = {
+  readingtime: "11",
   title: "How To Use Avif Images In WordPress",
   description:
     "WordPress doesn't allow uploading AVIF files. Learn how to still use AVIF images on your website today.",

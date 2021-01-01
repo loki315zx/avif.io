@@ -8,6 +8,7 @@ import {
   BlogLinkExternal,
 } from "@components/BlogComponents";
 const postdata = {
+  readingtime: "6",
   title: "Use AVIF in Next.JS",
   description:
     "Curious to read on how to use AVIF images in Next.JS? Well, this site does exactly that! Learn more.",

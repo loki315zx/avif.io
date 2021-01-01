@@ -21,6 +21,10 @@ export function BlogTitle(props: { text: string }) {
   return <h1 className="f3 white">{props.text}</h1>;
 }
 
+export function BlogReadingTime(props: { text: string }) {
+  return <div className="f0 white center">Reading time: {props.text} minutes</div>;
+}
+
 export function BlogSubtitle(props: { text: string; id?: string }) {
   return (
     <div id={props.id} className="content__subtitle">

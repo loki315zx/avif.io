@@ -63,6 +63,7 @@ const postdata = {
     "AVIF, a next-gen image format for the web",
     "Resizing with Cloudflare Workers",
   ],
+  readingtime: "8",
 };
 
 const posts = [

@@ -7,6 +7,7 @@ import {
   BlogTitle,
   BlogPosts,
   BlogTags,
+  BlogReadingTime,
 } from "@components/BlogComponents";
 import Meta from "@components/Meta";
 
@@ -25,6 +26,7 @@ export default function Blog(props: { postdata: any; children: any; posts: any }
       />
       <Header />
       <BlogTitle text={props.postdata.title} />
+      <BlogReadingTime text={props.postdata.readingtime} />
       <div className="content__container">
         <div className="content">
           {props.children}

@@ -48,10 +48,7 @@ export default function BlogAvif() {
   return (
     <Blog postdata={postdata} posts={posts}>
       <BlogSubtitle text="" />
-      avif detection script
-      <BlogSubtitle text="Look into the future" />
-      https://drafts.csswg.org/css-images-4/
-      https://dev.to/nucliweb/detect-avif-image-support-to-use-in-your-css-4pen
+      Present the script
     </Blog>
   );
 }

@@ -8,6 +8,7 @@ import {
   BlogLinkExternal,
 } from "@components/BlogComponents";
 const postdata = {
+  readingtime: "8",
   title: "How to use AVIF in HTML",
   description: "Enjoy this short, but still in depth guide on how to use AVIF in HTML.",
   url: "https://avif.io/blog/tutorials/use-avif-in-html",

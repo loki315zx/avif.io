@@ -8,6 +8,7 @@ import {
   BlogLinkExternal,
 } from "@components/BlogComponents";
 const postdata = {
+  readingtime: "5",
   title: "View AVIF Images In Microsoft Edge",
   description:
     "Internet Explorer 6, the latest browser.. oh wait, it's called Edge? Well, okay. Microsoft Edge now supports AV1 image formats. Learn more about it here.",

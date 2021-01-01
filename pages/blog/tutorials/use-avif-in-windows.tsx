@@ -8,6 +8,7 @@ import {
   BlogLinkExternal,
 } from "@components/BlogComponents";
 const postdata = {
+  readingtime: "6",
   title: "Use AVIF in Windows",
   description:
     "Learn how to make AVIF images load on native Windows 10 applications such as Paint and File Explorer with the AV1 video codec.",

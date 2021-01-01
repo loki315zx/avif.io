@@ -7,6 +7,7 @@ import {
   BlogLink,
 } from "@components/BlogComponents";
 const postdata = {
+  readingtime: "",
   title: "",
   description: "",
   url: "",

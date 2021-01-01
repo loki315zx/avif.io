@@ -3,13 +3,18 @@
   "rules": {
     "indentation": 2,
     "rule-empty-line-before": "always",
-    "comment-no-empty": false,
     "comment-empty-line-before": [
-      true,
+      "always",
       {
-        "ignore": ["after-comment", "stylelint-commands"]
+        "ignore": [
+          "after-comment",
+          "stylelint-commands"
+        ]
       }
     ],
-    "font-family-no-missing-generic-family-keyword": false
+    "comment-no-empty": null,
+    "font-family-no-duplicate-names": null,
+    "value-list-comma-newline-after": null,
+    "declaration-colon-newline-after": null
   }
 }

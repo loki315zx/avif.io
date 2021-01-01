@@ -8,6 +8,7 @@ import {
   BlogLinkExternal,
 } from "@components/BlogComponents";
 const postdata = {
+  readingtime: "5",
   title: "Use AVIF in GIMP",
   description:
     "GIMP 2.10.22 now includes HEIC support and AVIF support, learn how to take advantage of these new features.",

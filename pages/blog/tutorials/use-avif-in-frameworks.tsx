@@ -8,6 +8,7 @@ import {
 } from "@components/BlogComponents";
 
 const postdata = {
+  readingtime: "5",
   title: "Use AVIF in Javascript Frameworks like Vue, React & Angular",
   description: "Serving AVIF images via javascript frameworks is quite easy - find out more here.",
   url: "https://avif.io/blog/tutorial/use-avif-in-frameworks",
@@ -111,6 +112,11 @@ export default function BlogAvifInFrameworks() {
       <BlogSubtitle text="An example code" />
       This is the code I've used to display the image below in React and Next.JS:
       <BlogSyntax language="html">
+        {`<picture>
+          <source srcSet="/images/cloudflare-stats.avif" type="image/avif" />
+          <source srcSet="/images/cloudflare-stats.webp" type="image/webp" />
+          <img src="/images/cloudflare-stats.jpg" alt="avif in html" />
+        </picture>`}
         <picture>
           <source srcSet="/images/cloudflare-stats.avif" type="image/avif" />
           <source srcSet="/images/cloudflare-stats.webp" type="image/webp" />
@@ -120,7 +126,7 @@ export default function BlogAvifInFrameworks() {
       <BlogSubtitle text="Webpack File Loader" />
       In some cases, especially with older versions and when using webpack, you may encounter some
       problems. Especially:
-      <BlogSyntax language="txt">
+      <BlogSyntax language="html">
         Module parse failed: Unexpected character ' ' (1:0) You may need an appropiate loader to
         handle this file type, currently no loaders are configured to process this fail. See
         https://webpack.js.org/concepts#loaders
