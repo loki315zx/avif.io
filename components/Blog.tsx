@@ -7,13 +7,14 @@ import {
   BlogTitle,
   BlogPosts,
   BlogTags,
-  BlogReadingTime,
 } from "@components/BlogComponents";
 import Meta from "@components/Meta";
 
+let randomNumber = Math.floor(Math.random() * 10 + 1);
+
 export default function Blog(props: { postdata: any; children: any; posts: any }) {
   return (
-    <div className="blog">
+    <div className={`blog background${randomNumber}`}>
       <Meta
         title={props.postdata.title}
         description={props.postdata.description}
@@ -24,10 +25,20 @@ export default function Blog(props: { postdata: any; children: any; posts: any }
         date_published={props.postdata.date_published}
         date_modified={props.postdata.date_modified}
       />
-      <Header />
-      <BlogTitle text={props.postdata.title} />
-      <BlogReadingTime text={props.postdata.readingtime} />
+      <div className="blog__header overlay-after">
+        <Header />
+
+        <BlogTitle text={props.postdata.title} />
+
+        <div className="blog__meta">
+          <div className="white center">
+            {props.postdata.date_modified} · {props.postdata.readingtime} minutes
+          </div>
+        </div>
+      </div>
+
       <div className="content__container">
+        <div className="author"></div>
         <div className="content">
           {props.children}
           <BlogSubtitle text="Sources" />

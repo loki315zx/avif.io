@@ -1587,12 +1587,318 @@ h2.infobox:hover::before {
 /*  */
 
 .blog {
-  background-color: var(--black1);
-  background-image: url("@assets/bg-pink.svg");
-  background-size: 250vh;
-  background-position: top center;
-  background-repeat: no-repeat;
   position: relative;
+}
+
+.blog__header:after {
+  height: 100vh;
+}
+
+.background1 .blog__header:after {
+  background-image: radial-gradient(
+      circle at 52% 94%,
+      rgba(169, 169, 169, 0.04) 0%,
+      rgba(169, 169, 169, 0.04) 50%,
+      rgba(199, 199, 199, 0.04) 50%,
+      rgba(199, 199, 199, 0.04) 100%
+    ),
+    radial-gradient(
+      circle at 96% 98%,
+      rgba(61, 61, 61, 0.04) 0%,
+      rgba(61, 61, 61, 0.04) 50%,
+      rgba(201, 201, 201, 0.04) 50%,
+      rgba(201, 201, 201, 0.04) 100%
+    ),
+    radial-gradient(
+      circle at 93% 97%,
+      rgba(227, 227, 227, 0.04) 0%,
+      rgba(227, 227, 227, 0.04) 50%,
+      rgba(145, 145, 145, 0.04) 50%,
+      rgba(145, 145, 145, 0.04) 100%
+    ),
+    radial-gradient(
+      circle at 79% 52%,
+      rgba(245, 245, 245, 0.04) 0%,
+      rgba(245, 245, 245, 0.04) 50%,
+      rgba(86, 86, 86, 0.04) 50%,
+      rgba(86, 86, 86, 0.04) 100%
+    ),
+    linear-gradient(90deg, rgb(210, 9, 198), rgb(25, 38, 118));
+}
+.background2 .blog__header:after {
+  background-image: radial-gradient(
+      circle at 21% 44%,
+      rgba(23, 23, 23, 0.05) 0%,
+      rgba(23, 23, 23, 0.05) 50%,
+      rgba(109, 109, 109, 0.05) 50%,
+      rgba(109, 109, 109, 0.05) 100%
+    ),
+    radial-gradient(
+      circle at 21% 96%,
+      rgba(92, 92, 92, 0.05) 0%,
+      rgba(92, 92, 92, 0.05) 50%,
+      rgba(199, 199, 199, 0.05) 50%,
+      rgba(199, 199, 199, 0.05) 100%
+    ),
+    radial-gradient(
+      circle at 25% 37%,
+      rgba(230, 230, 230, 0.05) 0%,
+      rgba(230, 230, 230, 0.05) 50%,
+      rgba(25, 25, 25, 0.05) 50%,
+      rgba(25, 25, 25, 0.05) 100%
+    ),
+    linear-gradient(90deg, rgb(156, 48, 160), rgb(75, 105, 255));
+}
+.background3 .blog__header:after {
+  background-image: radial-gradient(
+      circle at 99% 0%,
+      rgba(235, 235, 235, 0.03) 0%,
+      rgba(235, 235, 235, 0.03) 50%,
+      rgba(142, 142, 142, 0.03) 50%,
+      rgba(142, 142, 142, 0.03) 100%
+    ),
+    radial-gradient(
+      circle at 84% 89%,
+      rgba(229, 229, 229, 0.03) 0%,
+      rgba(229, 229, 229, 0.03) 50%,
+      rgba(1, 1, 1, 0.03) 50%,
+      rgba(1, 1, 1, 0.03) 100%
+    ),
+    radial-gradient(
+      circle at 89% 20%,
+      rgba(219, 219, 219, 0.03) 0%,
+      rgba(219, 219, 219, 0.03) 50%,
+      rgba(38, 38, 38, 0.03) 50%,
+      rgba(38, 38, 38, 0.03) 100%
+    ),
+    radial-gradient(
+      circle at 90% 0%,
+      rgba(48, 48, 48, 0.03) 0%,
+      rgba(48, 48, 48, 0.03) 50%,
+      rgba(109, 109, 109, 0.03) 50%,
+      rgba(109, 109, 109, 0.03) 100%
+    ),
+    linear-gradient(45deg, rgb(26, 53, 180), rgb(164, 129, 216));
+}
+.background4 .blog__header:after {
+  background-image: radial-gradient(
+      circle at 28% 93%,
+      rgba(2, 2, 2, 0.04) 0%,
+      rgba(2, 2, 2, 0.04) 50%,
+      rgba(223, 223, 223, 0.04) 50%,
+      rgba(223, 223, 223, 0.04) 100%
+    ),
+    radial-gradient(
+      circle at 13% 75%,
+      rgba(185, 185, 185, 0.04) 0%,
+      rgba(185, 185, 185, 0.04) 50%,
+      rgba(25, 25, 25, 0.04) 50%,
+      rgba(25, 25, 25, 0.04) 100%
+    ),
+    radial-gradient(
+      circle at 79% 39%,
+      rgba(34, 34, 34, 0.04) 0%,
+      rgba(34, 34, 34, 0.04) 50%,
+      rgba(57, 57, 57, 0.04) 50%,
+      rgba(57, 57, 57, 0.04) 100%
+    ),
+    linear-gradient(56deg, rgb(39, 37, 178), rgb(169, 88, 194));
+}
+.background5 .blog__header:after {
+  background-image: radial-gradient(
+      circle at 79% 8%,
+      rgba(218, 218, 218, 0.04) 0%,
+      rgba(218, 218, 218, 0.04) 50%,
+      rgba(129, 129, 129, 0.04) 50%,
+      rgba(129, 129, 129, 0.04) 100%
+    ),
+    radial-gradient(
+      circle at 0% 68%,
+      rgba(47, 47, 47, 0.04) 0%,
+      rgba(47, 47, 47, 0.04) 50%,
+      rgba(30, 30, 30, 0.04) 50%,
+      rgba(30, 30, 30, 0.04) 100%
+    ),
+    radial-gradient(
+      circle at 96% 42%,
+      rgba(88, 88, 88, 0.04) 0%,
+      rgba(88, 88, 88, 0.04) 50%,
+      rgba(225, 225, 225, 0.04) 50%,
+      rgba(225, 225, 225, 0.04) 100%
+    ),
+    linear-gradient(172deg, rgb(230, 6, 245), rgb(98, 24, 90));
+}
+.background6 .blog__header:after {
+  background-image: radial-gradient(
+      circle at 50% 30%,
+      rgba(209, 209, 209, 0.04) 0%,
+      rgba(209, 209, 209, 0.04) 50%,
+      rgba(138, 138, 138, 0.04) 50%,
+      rgba(138, 138, 138, 0.04) 100%
+    ),
+    radial-gradient(
+      circle at 9% 40%,
+      rgba(209, 209, 209, 0.04) 0%,
+      rgba(209, 209, 209, 0.04) 50%,
+      rgba(71, 71, 71, 0.04) 50%,
+      rgba(71, 71, 71, 0.04) 100%
+    ),
+    radial-gradient(
+      circle at 84% 81%,
+      rgba(147, 147, 147, 0.04) 0%,
+      rgba(147, 147, 147, 0.04) 50%,
+      rgba(253, 253, 253, 0.04) 50%,
+      rgba(253, 253, 253, 0.04) 100%
+    ),
+    linear-gradient(266deg, rgb(5, 73, 170), rgb(140, 100, 243));
+}
+.background7 .blog__header:after {
+  background-image: radial-gradient(
+      circle at 49% 80%,
+      rgba(105, 105, 105, 0.06) 0%,
+      rgba(105, 105, 105, 0.06) 25%,
+      rgba(119, 119, 119, 0.06) 25%,
+      rgba(119, 119, 119, 0.06) 50%,
+      rgba(134, 134, 134, 0.06) 50%,
+      rgba(134, 134, 134, 0.06) 75%,
+      rgba(148, 148, 148, 0.06) 75%,
+      rgba(148, 148, 148, 0.06) 100%
+    ),
+    radial-gradient(
+      circle at 58% 97%,
+      rgba(130, 130, 130, 0.06) 0%,
+      rgba(130, 130, 130, 0.06) 25%,
+      rgba(97, 97, 97, 0.06) 25%,
+      rgba(97, 97, 97, 0.06) 50%,
+      rgba(63, 63, 63, 0.06) 50%,
+      rgba(63, 63, 63, 0.06) 75%,
+      rgba(30, 30, 30, 0.06) 75%,
+      rgba(30, 30, 30, 0.06) 100%
+    ),
+    radial-gradient(
+      circle at 77% 62%,
+      rgba(106, 106, 106, 0.06) 0%,
+      rgba(106, 106, 106, 0.06) 25%,
+      rgba(71, 71, 71, 0.06) 25%,
+      rgba(71, 71, 71, 0.06) 50%,
+      rgba(37, 37, 37, 0.06) 50%,
+      rgba(37, 37, 37, 0.06) 75%,
+      rgba(2, 2, 2, 0.06) 75%,
+      rgba(2, 2, 2, 0.06) 100%
+    ),
+    radial-gradient(
+      circle at 53% 15%,
+      rgba(182, 182, 182, 0.06) 0%,
+      rgba(182, 182, 182, 0.06) 25%,
+      rgba(149, 149, 149, 0.06) 25%,
+      rgba(149, 149, 149, 0.06) 50%,
+      rgba(115, 115, 115, 0.06) 50%,
+      rgba(115, 115, 115, 0.06) 75%,
+      rgba(82, 82, 82, 0.06) 75%,
+      rgba(82, 82, 82, 0.06) 100%
+    ),
+    radial-gradient(
+      circle at 65% 73%,
+      rgba(230, 230, 230, 0.06) 0%,
+      rgba(230, 230, 230, 0.06) 25%,
+      rgba(222, 222, 222, 0.06) 25%,
+      rgba(222, 222, 222, 0.06) 50%,
+      rgba(214, 214, 214, 0.06) 50%,
+      rgba(214, 214, 214, 0.06) 75%,
+      rgba(206, 206, 206, 0.06) 75%,
+      rgba(206, 206, 206, 0.06) 100%
+    ),
+    linear-gradient(135deg, rgb(131, 27, 242), rgb(248, 30, 172));
+}
+.background8 .blog__header:after {
+  background-image: radial-gradient(
+      circle at 45% 92%,
+      rgba(154, 154, 154, 0.08) 0%,
+      rgba(154, 154, 154, 0.08) 33.333%,
+      rgba(119, 119, 119, 0.08) 33.333%,
+      rgba(119, 119, 119, 0.08) 66.666%,
+      rgba(83, 83, 83, 0.08) 66.666%,
+      rgba(83, 83, 83, 0.08) 99.999%
+    ),
+    radial-gradient(
+      circle at 25% 59%,
+      rgba(82, 82, 82, 0.08) 0%,
+      rgba(82, 82, 82, 0.08) 33.333%,
+      rgba(93, 93, 93, 0.08) 33.333%,
+      rgba(93, 93, 93, 0.08) 66.666%,
+      rgba(104, 104, 104, 0.08) 66.666%,
+      rgba(104, 104, 104, 0.08) 99.999%
+    ),
+    radial-gradient(
+      circle at 7% 33%,
+      rgba(56, 56, 56, 0.08) 0%,
+      rgba(56, 56, 56, 0.08) 33.333%,
+      rgba(134, 134, 134, 0.08) 33.333%,
+      rgba(134, 134, 134, 0.08) 66.666%,
+      rgba(212, 212, 212, 0.08) 66.666%,
+      rgba(212, 212, 212, 0.08) 99.999%
+    ),
+    linear-gradient(90deg, rgb(3, 199, 193), rgb(92, 3, 177));
+}
+.background9 .blog__header:after {
+  background-image: radial-gradient(
+      circle at 39% 47%,
+      rgba(107, 107, 107, 0.08) 0%,
+      rgba(107, 107, 107, 0.08) 33.333%,
+      rgba(72, 72, 72, 0.08) 33.333%,
+      rgba(72, 72, 72, 0.08) 66.666%,
+      rgba(36, 36, 36, 0.08) 66.666%,
+      rgba(36, 36, 36, 0.08) 99.999%
+    ),
+    radial-gradient(
+      circle at 53% 74%,
+      rgba(182, 182, 182, 0.08) 0%,
+      rgba(182, 182, 182, 0.08) 33.333%,
+      rgba(202, 202, 202, 0.08) 33.333%,
+      rgba(202, 202, 202, 0.08) 66.666%,
+      rgba(221, 221, 221, 0.08) 66.666%,
+      rgba(221, 221, 221, 0.08) 99.999%
+    ),
+    radial-gradient(
+      circle at 14% 98%,
+      rgba(184, 184, 184, 0.08) 0%,
+      rgba(184, 184, 184, 0.08) 33.333%,
+      rgba(96, 96, 96, 0.08) 33.333%,
+      rgba(96, 96, 96, 0.08) 66.666%,
+      rgba(7, 7, 7, 0.08) 66.666%,
+      rgba(7, 7, 7, 0.08) 99.999%
+    ),
+    linear-gradient(45deg, rgb(97, 14, 117), rgb(20, 32, 127));
+}
+.background10 .blog__header:after {
+  background-image: radial-gradient(
+      circle at 20% 12%,
+      rgba(7, 7, 7, 0.24) 0%,
+      rgba(7, 7, 7, 0.24) 33.333%,
+      rgba(30, 30, 30, 0.24) 33.333%,
+      rgba(30, 30, 30, 0.24) 66.666%,
+      rgba(53, 53, 53, 0.24) 66.666%,
+      rgba(53, 53, 53, 0.24) 99.999%
+    ),
+    radial-gradient(
+      circle at 66% 14%,
+      rgba(45, 45, 45, 0.2) 0%,
+      rgba(45, 45, 45, 0.2) 33.333%,
+      rgba(72, 72, 72, 0.2) 33.333%,
+      rgba(72, 72, 72, 0.2) 66.666%,
+      rgba(99, 99, 99, 0.2) 66.666%,
+      rgba(99, 99, 99, 0.2) 99.999%
+    ),
+    radial-gradient(
+      circle at 3% 81%,
+      rgba(83, 83, 83, 0.16) 0%,
+      rgba(83, 83, 83, 0.16) 33.333%,
+      rgba(142, 142, 142, 0.16) 33.333%,
+      rgba(142, 142, 142, 0.16) 66.666%,
+      rgba(201, 201, 201, 0.16) 66.666%,
+      rgba(201, 201, 201, 0.16) 99.999%
+    ),
+    linear-gradient(45deg, rgb(139, 163, 255), rgb(132, 39, 232));
 }
 
 .blog * {
@@ -1600,17 +1906,46 @@ h2.infobox:hover::before {
   z-index: 3;
 }
 
+.blog__syntax__copy {
+  opacity: 0;
+  position: absolute;
+  top: var(--s0);
+  right: var(--s0);
+  border: none;
+  border-radius: var(--radius100);
+  outline: none;
+  padding: var(--s0) var(--s1);
+  color: #fff;
+  background: var(--color300);
+  overflow: hidden;
+  z-index: 99;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.blog__syntax:hover .blog__syntax__copy {
+  opacity: 1;
+}
+
+.blog__syntax__copy:focus {
+  transform: scale(0.9);
+  background: var(--color700);
+}
+
+.blog__syntax__copy:active {
+  transform: scale(0.8);
+}
+
 .blog h1 {
   margin: 0 var(--s2) 0;
-  padding: calc(var(--s4) * 2) var(--s4) var(--s4) var(--s4);
+  padding: calc(var(--s4) * 2) var(--s4) var(--s1) var(--s4);
   font-size: calc(var(--f3) * 1.5);
 }
 
 .content__container {
-  margin: var(--blogpadding);
+  margin: var(--s5) 0 0 0;
   background: var(--black2);
   padding: var(--s5);
-  border-radius: var(--radius700);
 }
 
 .content {
@@ -2145,8 +2480,8 @@ pre {
   }
 
   input[type="checkbox"]:not(.switch)::after {
-    width: 3px;
-    height: 7px;
+    width: 5px;
+    height: 10px;
     border: 2px solid var(--active-inner);
     border-top: 0;
     border-left: 0;

@@ -1,28 +1,39 @@
 import Link from "next/link";
+import { useState } from "react";
 
 import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
 import vs2015 from "react-syntax-highlighter/dist/cjs/styles/hljs/vs2015";
 import js from "react-syntax-highlighter/dist/cjs/languages/hljs/javascript";
 import html from "react-syntax-highlighter/dist/cjs/languages/hljs/htmlbars";
-import { link } from "fs";
+import css from "react-syntax-highlighter/dist/cjs/languages/hljs/css";
+import scss from "react-syntax-highlighter/dist/cjs/languages/hljs/scss";
 
 SyntaxHighlighter.registerLanguage("javascript", js);
 SyntaxHighlighter.registerLanguage("html", html);
+SyntaxHighlighter.registerLanguage("css", css);
+SyntaxHighlighter.registerLanguage("scss", scss);
 
 export function BlogSyntax(props: { language: string; children: any }) {
+  const [copySuccess, setCopySuccess] = useState("Copy");
+  function copyToClipboard(e: any) {
+    navigator.clipboard.writeText(props.children);
+    e.target.focus();
+    setCopySuccess("Copied!");
+  }
   return (
-    <SyntaxHighlighter language={props.language} style={vs2015} showLineNumbers={true}>
-      {props.children}
-    </SyntaxHighlighter>
+    <div className="blog__syntax">
+      <SyntaxHighlighter language={props.language} style={vs2015} showLineNumbers={true}>
+        {props.children}
+      </SyntaxHighlighter>
+      <button className="blog__syntax__copy" onClick={copyToClipboard}>
+        <span>{copySuccess}</span>
+      </button>
+    </div>
   );
 }
 
 export function BlogTitle(props: { text: string }) {
   return <h1 className="f3 white">{props.text}</h1>;
-}
-
-export function BlogReadingTime(props: { text: string }) {
-  return <div className="f0 white center">Reading time: {props.text} minutes</div>;
 }
 
 export function BlogSubtitle(props: { text: string; id?: string }) {
