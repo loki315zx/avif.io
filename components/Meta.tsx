@@ -1,7 +1,7 @@
 import Head from "next/head";
 
 import { BlogPosting } from "schema-dts";
-import { JsonLd } from "react-schemaorg";
+import { jsonLdScriptProps } from "react-schemaorg";
 
 export interface MetaProps {
   title: string;
@@ -34,8 +34,9 @@ export default function Meta(props: MetaProps) {
       <meta property="twitter:url" content={"https://twitter.com/jschmitz97"} />
       <meta property="twitter:title" content={["avif.io", props.title].join(" | ")} />
       <meta property="twitter:description" content={props.description} />
-      <JsonLd<BlogPosting>
-        item={{
+
+      <script
+        {...jsonLdScriptProps<BlogPosting>({
           "@context": "https://schema.org",
           "@type": "BlogPosting",
           "mainEntityOfPage": {
@@ -62,7 +63,7 @@ export default function Meta(props: MetaProps) {
           "isFamilyFriendly": true,
           "inLanguage": "en-US",
           "genre": [props.keywords.join(",")],
-        }}
+        })}
       />
     </Head>
   );

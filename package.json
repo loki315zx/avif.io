@@ -12,11 +12,8 @@
     "check-ts": "npm run check-tsc && npm run check-eslint",
     "prettier": "prettier --write .",
     "reset": "git fetch origin && git reset --hard origin/master",
-    "setup": "npm i -D && npm run export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && npm run dev",
-    "export": "npm i -D && npm run build && next export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../",
-    "analyze": "cross-env ANALYZE=true next build",
-    "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
-    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
+    "setup": "npm i -D && npm run build && next export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && npm run dev",
+    "analyze": "cross-env ANALYZE=true next build"
   },
   "dependencies": {
     "@next/bundle-analyzer": "^10.0.3",
@@ -91,12 +88,9 @@
       "@typescript-eslint/no-non-null-assertion": "off",
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/explicit-module-boundary-types": "off",
-      "jsx-a11y/anchor-is-valid": "off"
-    },
-    "eslintIgnore": [
-      "hello.js",
-      "world.js"
-    ]
+      "jsx-a11y/anchor-is-valid": "off",
+      "react/react-in-jsx-scope": "off"
+    }
   },
   "prettier": {
     "printWidth": 100,
@@ -126,6 +120,9 @@
       "font-family-no-duplicate-names": null,
       "value-list-comma-newline-after": null,
       "declaration-colon-newline-after": null
-    }
+    },
+    "ignoreFiles": [
+      "node_modules/**/*.css"
+    ]
   }
 }

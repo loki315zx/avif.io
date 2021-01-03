@@ -1591,11 +1591,11 @@ h2.infobox:hover::before {
   position: relative;
 }
 
-.blog__header:after {
+.blog__header::after {
   height: 100vh;
 }
 
-.background1 .blog__header:after {
+.background1 .blog__header::after {
   background-image: radial-gradient(
       circle at 52% 94%,
       rgba(169, 169, 169, 0.04) 0%,
@@ -1626,7 +1626,8 @@ h2.infobox:hover::before {
     ),
     linear-gradient(90deg, rgb(210, 9, 198), rgb(25, 38, 118));
 }
-.background2 .blog__header:after {
+
+.background2 .blog__header::after {
   background-image: radial-gradient(
       circle at 21% 44%,
       rgba(23, 23, 23, 0.05) 0%,
@@ -1650,7 +1651,8 @@ h2.infobox:hover::before {
     ),
     linear-gradient(90deg, rgb(156, 48, 160), rgb(75, 105, 255));
 }
-.background3 .blog__header:after {
+
+.background3 .blog__header::after {
   background-image: radial-gradient(
       circle at 99% 0%,
       rgba(235, 235, 235, 0.03) 0%,
@@ -1681,7 +1683,8 @@ h2.infobox:hover::before {
     ),
     linear-gradient(45deg, rgb(26, 53, 180), rgb(164, 129, 216));
 }
-.background4 .blog__header:after {
+
+.background4 .blog__header::after {
   background-image: radial-gradient(
       circle at 28% 93%,
       rgba(2, 2, 2, 0.04) 0%,
@@ -1705,7 +1708,8 @@ h2.infobox:hover::before {
     ),
     linear-gradient(56deg, rgb(39, 37, 178), rgb(169, 88, 194));
 }
-.background5 .blog__header:after {
+
+.background5 .blog__header::after {
   background-image: radial-gradient(
       circle at 79% 8%,
       rgba(218, 218, 218, 0.04) 0%,
@@ -1729,7 +1733,8 @@ h2.infobox:hover::before {
     ),
     linear-gradient(172deg, rgb(230, 6, 245), rgb(98, 24, 90));
 }
-.background6 .blog__header:after {
+
+.background6 .blog__header::after {
   background-image: radial-gradient(
       circle at 50% 30%,
       rgba(209, 209, 209, 0.04) 0%,
@@ -1753,7 +1758,8 @@ h2.infobox:hover::before {
     ),
     linear-gradient(266deg, rgb(5, 73, 170), rgb(140, 100, 243));
 }
-.background7 .blog__header:after {
+
+.background7 .blog__header::after {
   background-image: radial-gradient(
       circle at 49% 80%,
       rgba(105, 105, 105, 0.06) 0%,
@@ -1811,7 +1817,8 @@ h2.infobox:hover::before {
     ),
     linear-gradient(135deg, rgb(131, 27, 242), rgb(248, 30, 172));
 }
-.background8 .blog__header:after {
+
+.background8 .blog__header::after {
   background-image: radial-gradient(
       circle at 45% 92%,
       rgba(154, 154, 154, 0.08) 0%,
@@ -1841,7 +1848,8 @@ h2.infobox:hover::before {
     ),
     linear-gradient(90deg, rgb(3, 199, 193), rgb(92, 3, 177));
 }
-.background9 .blog__header:after {
+
+.background9 .blog__header::after {
   background-image: radial-gradient(
       circle at 39% 47%,
       rgba(107, 107, 107, 0.08) 0%,
@@ -1871,7 +1879,8 @@ h2.infobox:hover::before {
     ),
     linear-gradient(45deg, rgb(97, 14, 117), rgb(20, 32, 127));
 }
-.background10 .blog__header:after {
+
+.background10 .blog__header::after {
   background-image: radial-gradient(
       circle at 20% 12%,
       rgba(7, 7, 7, 0.24) 0%,
@@ -2036,7 +2045,6 @@ picture img {
   height: auto;
   width: 100%;
   max-width: 100%;
-  background-size: cover;
   content-visibility: auto;
   contain-intrinsic-size: min(768px, 1920px) min(calc(768px * 0.5625), 1080px);
   background-size: cover;

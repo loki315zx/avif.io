@@ -42,24 +42,13 @@ const posts = [
   },
 ];
 
-const advantages = [
-  "fixes WebP biggest flaws",
-  "uses the next generation VP10 video codec",
-  "is not limited to 8-bit color depth and support 12-bit color",
-  "support high dynamic range",
-  "uses chrome-from-luma compression technique for smaller file size",
-  "is already seeing faster adoption than previous royalty-free codecs",
-  "is a feature-rich format with lots of possibilities",
-  "already has multiple independent implementations like rav1e (we use this for avif.io!)",
-];
-
 export default function BlogAvifInCloudflare() {
   return (
     <Blog postdata={postdata} posts={posts}>
       <BlogSubtitle id="introduction" text="Overall Introduction" />
       AV1 Image File Format (AVIF) is a powerful new, open source, royalty-free file format that
       encodes AV1 bitstreams in the High Efficiency Image File Format (HEIF) container. Note: AVIF
-      has potential to become the "next big thing" for sharing images in web content. It offers
+      has potential to become thenext big thingfor sharing images in web content. It offers
       state-of-the-art features and performance, without the encumbrance of complicated licensing
       and patent royalties that have hampered comparable alternatives. // AOMedia Video 1 (AV1) is
       an open, royalty-free video coding format initially designed for video transmissions over the
@@ -270,26 +259,26 @@ export default function BlogAvifInCloudflare() {
       to defend against future IPR threats.[citation needed] The creation of royalty-free web
       standards has been a long-stated pursuit for the industry. In 2007, the proposal for HTML5
       video specified Theora as mandatory to implement. The reason was that public content should be
-      encoded in freely implementable formats, if only as a "baseline format", and that changing
-      such a baseline format later would be hard because of network effects.[29] The Alliance for
-      Open Media is a continuation of Google's efforts with the WebM project, which renewed the
+      encoded in freely implementable formats, if only as abaseline format", and that changing such
+      a baseline format later would be hard because of network effects.[29] The Alliance for Open
+      Media is a continuation of Google's efforts with the WebM project, which renewed the
       royalty-free competition after Theora had been surpassed by AVC. For companies such as Mozilla
       that distribute free software, AVC can be difficult to support as a per-copy royalty easily is
       unsustainable given the lack of revenue stream to support these payments in free software (see
       FRAND § Excluding costless distribution).[3] Similarly, HEVC has not successfully convinced
       all licensors to allow an exception for freely distributed software (see HEVC § Provision for
-      costless software). The performance goals include "a step up from VP9 and HEVC" in efficiency
-      for a low increase in complexity. NETVC's efficiency goal is 25% improvement over HEVC.[30]
-      The primary complexity concern is for software decoding, since hardware support will take time
-      to reach users. However, for WebRTC, live encoding performance is also relevant, which is
-      Cisco's agenda: Cisco is a manufacturer of videoconferencing equipment, and their Thor
-      contributions aim at "reasonable compression at only moderate complexity".[31] Feature wise,
-      AV1 is specifically designed for real-time applications (especially WebRTC) and higher
-      resolutions (wider color gamuts, higher frame rates, UHD) than typical usage scenarios of the
-      current generation (H.264) of video formats, where it is expected to achieve its biggest
-      efficiency gains. It is therefore planned to support the color space from ITU-R Recommendation
-      BT.2020 and up to 12 bits of precision per color component.[32] AV1 is primarily intended for
-      lossy encoding, although lossless compression is supported as well.[33]
+      costless software). The performance goals includea step up from VP9 and HEVCin efficiency for
+      a low increase in complexity. NETVC's efficiency goal is 25% improvement over HEVC.[30] The
+      primary complexity concern is for software decoding, since hardware support will take time to
+      reach users. However, for WebRTC, live encoding performance is also relevant, which is Cisco's
+      agenda: Cisco is a manufacturer of videoconferencing equipment, and their Thor contributions
+      aim atreasonable compression at only moderate complexity".[31] Feature wise, AV1 is
+      specifically designed for real-time applications (especially WebRTC) and higher resolutions
+      (wider color gamuts, higher frame rates, UHD) than typical usage scenarios of the current
+      generation (H.264) of video formats, where it is expected to achieve its biggest efficiency
+      gains. It is therefore planned to support the color space from ITU-R Recommendation BT.2020
+      and up to 12 bits of precision per color component.[32] AV1 is primarily intended for lossy
+      encoding, although lossless compression is supported as well.[33]
       <BlogSubtitle id="purpose" text="Technology" />
       AV1 is a traditional block-based frequency transform format featuring new techniques. Based on
       Google's VP9,[34] AV1 incorporates additional techniques that mainly give encoders more coding
@@ -314,15 +303,15 @@ export default function BlogAvifInCloudflare() {
       recursively subdivided. This allows superblocks to be divided into partitions as small as 4×4
       pixels. Diagram of the AV1 superblock partitioning. It shows how 128×128 superblocks can be
       split all the way down to 4×4 blocks. As special cases, 128×128 and 8×8 blocks can't use 1:4
-      and 4:1 splits, and 8×8 blocks can't use "T"-shaped splits. "T-shaped" partitioning patterns
-      are introduced, a feature developed for VP10, as well as horizontal or vertical splits into
-      four stripes of 4:1 and 1:4 aspect ratio. The available partitioning patterns vary according
-      to the block size, both 128×128 and 8×8 blocks can't use 4:1 and 1:4 splits. Moreover, 8×8
-      blocks can't use "T" shaped splits. Two separate predictions can now be used on spatially
-      different parts of a block using a smooth, oblique transition line (wedge-partitioned
-      prediction).[citation needed] This enables more accurate separation of objects without the
-      traditional staircase lines along the boundaries of square blocks. More encoder parallelism is
-      possible thanks to configurable prediction dependency between tile rows (ext_tile).[38]
+      and 4:1 splits, and 8×8 blocks can't useT"-shaped splits.T-shapedpartitioning patterns are
+      introduced, a feature developed for VP10, as well as horizontal or vertical splits into four
+      stripes of 4:1 and 1:4 aspect ratio. The available partitioning patterns vary according to the
+      block size, both 128×128 and 8×8 blocks can't use 4:1 and 1:4 splits. Moreover, 8×8 blocks
+      can't useTshaped splits. Two separate predictions can now be used on spatially different parts
+      of a block using a smooth, oblique transition line (wedge-partitioned prediction).[citation
+      needed] This enables more accurate separation of objects without the traditional staircase
+      lines along the boundaries of square blocks. More encoder parallelism is possible thanks to
+      configurable prediction dependency between tile rows (ext_tile).[38]
       <BlogSubtitle id="purpose" text="Prediction" />
       AV1 performs internal processing in higher precision (10 or 12 bits per sample), which leads
       to compression improvement due to smaller rounding errors in reference imagery. Predictions
@@ -353,9 +342,9 @@ export default function BlogAvifInCloudflare() {
       chosen. These modes start at an angle of 45 degrees and increase by a step size of 22.5
       degrees up until 203 degrees. Furthermore, for each directional mode, six offsets of 3 degree
       can be signaled for bigger blocks, three above the main angle and three below it, resulting in
-      a total of 56 angles (ext_intra). The "TrueMotion" predictor got replaced with a Paeth
-      predictor which looks at the difference from the known pixel in the above left corner to the
-      pixel directly above and directly left of the new one and then chooses the one that lies in
+      a total of 56 angles (ext_intra). TheTrueMotionpredictor got replaced with a Paeth predictor
+      which looks at the difference from the known pixel in the above left corner to the pixel
+      directly above and directly left of the new one and then chooses the one that lies in
       direction of the smaller gradient as predictor. A palette predictor is available for blocks
       with very few (up to 8, dominant) colors like in some computer screen content. Correlations
       between the luminosity and the color information can now be exploited with a predictor for
@@ -389,7 +378,7 @@ export default function BlogAvifInCloudflare() {
       features at the time (of 77 total), Bitmovin was able to demonstrate favorable objective
       metrics, as well as visual results, compared to HEVC on the Sintel and Tears of Steel short
       films.[48] A follow-up comparison by Jan Ozer of Streaming Media Magazine confirmed this, and
-      concluded that "AV1 is at least as good as HEVC now".[49] Ozer noted that his and Bitmovin's
+      concluded thatAV1 is at least as good as HEVC now".[49] Ozer noted that his and Bitmovin's
       results contradicted a comparison by Fraunhofer Institute for Telecommunications from late
       2016[50] that had found AV1 65.7% less efficient than HEVC, underperforming even H.264/AVC
       which they concluded as being 10.5% more efficient, and justified this discrepancy by having
@@ -401,8 +390,8 @@ export default function BlogAvifInCloudflare() {
       was able to achieve 34%, 46.2% and 50.3% higher data compression than libvpx-vp9, x264 high
       profile, and x264 main profile respectively.[52][53] Tests from Moscow State University in
       2017 found that VP9 required 31% and HEVC 22% more bitrate than AV1 in order to achieve
-      similar levels of quality.[54] The AV1 encoder was operating at a speed "2500–3500 times lower
-      than competitors" due to the lack of optimization (which was not available at that time).[55]
+      similar levels of quality.[54] The AV1 encoder was operating at a speed2500–3500 times lower
+      than competitorsdue to the lack of optimization (which was not available at that time).[55]
       Tests from University of Waterloo in 2020 found that when using a mean opinion score (MOS) for
       2160p (4K) video AV1 had bitrate saving of 9.5% compared to HEVC and 16.4% compared to VP9.
       They also however concluded that at the time of the study at 2160p the AV1 video encodes on
@@ -410,10 +399,10 @@ export default function BlogAvifInCloudflare() {
       and VP9 took on average 5.2856× longer than AVC respectively.[56][57] The latest encoder
       comparison by Streaming Media Magazine as of September 2020, which used moderate encoding
       speeds, VMAF, and a diverse set of short clips, indicated that the open-source libaom and
-      SVT-AV1 encoders took about twice as long time to encode as x265 in its "veryslow" preset
-      while using 15-20% less bitrate, or about 45% less bitrate than x264 veryslow. The
-      best-in-test AV1 encoder, Visionular's Aurora1, in its "slower" preset, was as fast as x265
-      veryslow while saving 50% bitrate over x264 veryslow.[58]
+      SVT-AV1 encoders took about twice as long time to encode as x265 in itsveryslowpreset while
+      using 15-20% less bitrate, or about 45% less bitrate than x264 veryslow. The best-in-test AV1
+      encoder, Visionular's Aurora1, in itsslowerpreset, was as fast as x265 veryslow while saving
+      50% bitrate over x264 veryslow.[58]
       <BlogSubtitle id="browsers" text="Current Operating System Support" />
       Microsoft Windows: - Support introduced in Windows 10 October 2018 Update (1809) with AV1
       Video Extension add-on.[94] - Supported on Universal Windows Platform apps like Microsoft Edge
@@ -462,13 +451,13 @@ export default function BlogAvifInCloudflare() {
       decoder.[122] The Dimensity 1000 is able to decode AV1 content up to 4K 60fps. On 3 January
       2020, LG Electronics announced that its 2020 8K TVs, which are based on the α9 Gen 3
       processor, support AV1.[136][137] At CES 2020, Samsung announced that its 2020 8K QLED TVs,
-      featuring Samsung's "Quantum Processor 8K SoC," are capable of decoding AV1. [138] On 13
-      August 2020, Intel announced that their Intel Xe-LP GPU in Tiger Lake will be their first
-      product to include AV1 fixed-function hardware decoding.[121][120] On 1 September 2020, Nvidia
-      announced that their Nvidia GeForce RTX 30 Series GPUs will support AV1 fixed-function
-      hardware decoding.[123] On 2 September 2020, Intel officially launched Tiger Lake 11th Gen
-      CPUs with AV1 fixed-function hardware decoding.[139] On 15 September 2020, AMD merged patches
-      into the amdgpu drivers for Linux which adds support for AV1 decoding support on RDNA2
+      featuring Samsung'sQuantum Processor 8K SoC, are capable of decoding AV1. [138] On 13 August
+      2020, Intel announced that their Intel Xe-LP GPU in Tiger Lake will be their first product to
+      include AV1 fixed-function hardware decoding.[121][120] On 1 September 2020, Nvidia announced
+      that their Nvidia GeForce RTX 30 Series GPUs will support AV1 fixed-function hardware
+      decoding.[123] On 2 September 2020, Intel officially launched Tiger Lake 11th Gen CPUs with
+      AV1 fixed-function hardware decoding.[139] On 15 September 2020, AMD merged patches into the
+      amdgpu drivers for Linux which adds support for AV1 decoding support on RDNA2
       GPUs.[111][140][141] On 28 September 2020, Roku refreshed the Roku Ultra including AV1
       support.[142] On 30 September 2020, Intel released version 20.3.0 for the Intel Media Driver
       which added support for AV1 decoding on Linux.[118][119][143] On 10 October 2020, Microsoft
@@ -505,8 +494,8 @@ export default function BlogAvifInCloudflare() {
       why are we moving towards AV1 — it is mainly because of the royalty-fees and slightly better
       performance of AV1 compared to HEIF. Before we dig deep into the AVIF image format and compare
       it with other compression codecs, let’s understand more about the AV1 codec. // The
-      abbreviation "AVIF" stands for "AV1 Image File Format" and is essentially the specification
-      for storing still and animated images compressed with AV1 in the HEIF file format. AV1 is the
+      abbreviationAVIF stands forAV1 Image File Format and is essentially the specification for
+      storing still and animated images compressed with AV1 in the HEIF file format. AV1 is the
       royalty-free video coding format that has most tech experts believing it is the next step in
       media compression. From a legal standpoint and a technical standpoint, AVIF cannot be matched.
       JPEG XR, for example, had many technical advantages and seemed to be the next step in high
@@ -515,10 +504,9 @@ export default function BlogAvifInCloudflare() {
       as the JPEG XR was, but because it is a royalty-free product, adoption will be cheaper and
       improvements will be accomplished much more quickly. AVIF version 1.0.0 was released and
       approved in February of 2019 and is therefore ready to be used in production. This new version
-      supports features like "high dynamic range" and "wide color gamut" to make it the most
-      technically advanced form of high quality picture compression. High Dynamic Range is also
-      known as HDR and wide color gamut is akin to what people now call "Ultra High Definition"
-      photos and videos.
+      supports features likehigh dynamic range andwide color gamut to make it the most technically
+      advanced form of high quality picture compression. High Dynamic Range is also known as HDR and
+      wide color gamut is akin to what people now callUltra High Definition" photos and videos.
       <BlogSubtitle id="advantages" text="Advantages of AVIF and technical features" />
       The format offers: Excellent lossy compression compared to JPG and PNG for visually similar
       compression levels (e.g. lossy AVIF images are around 50% smaller than JPEG images). Generally
@@ -626,13 +614,13 @@ export default function BlogAvifInCloudflare() {
       center servers based on Intel Xeon processors. Netflix collaborates with Intel on
       SVT-AV1.[75][76] dav1d is a decoder written in C99 and assembly focused on speed and
       portability.[77] The first official version (0.1) was released in December 2018.[78] Version
-      0.2 was released in March 2019, with users able to "safely use the decoder on all platforms,
+      0.2 was released in March 2019, with users able tosafely use the decoder on all platforms,
       with excellent performance", according to the developers.[79] Version 0.3 was announced in May
       2019 with further optimizations demonstrating performance 2 to 5 times faster than
       aomdec.[80]; version 0.5 was released in October 2019.[81] Firefox 67 switched from Libaom to
       dav1d as a default decoder in May 2019.[82] Cisco AV1 is a proprietary live encoder that Cisco
       developed for its Webex teleconference products. The encoder is optimized for latency[83] and
-      the constraint of having a "usable CPU footprint", as with a "commodity laptop".[84] Cisco
+      the constraint of having ausable CPU footprint", as with acommodity laptop".[84] Cisco
       stressed that at their operating point – high speed, low latency – the large toolset of AV1
       does not preclude a low encoding complexity.[83] Rather, the availability of tools for screen
       content and scalability in all profiles enabled them to find good compression-to-speed
@@ -833,20 +821,20 @@ export default function BlogAvifInCloudflare() {
       <BlogSubtitle id="aom" text="Current companies and content providers supporting avif" />
       YouTube has begun rolling out AV1, starting with its AV1 Beta Launch Playlist. According to
       the description, the videos are (to begin with) encoded at high bitrate to test decoding
-      performance, and YouTube has "ambitious goals" for rolling out AV1. YouTube for Android TV
+      performance, and YouTube hasambitious goals for rolling out AV1. YouTube for Android TV
       supports playback of videos encoded in AV1 on capable platforms as of version 2.10.13,
-      released in early 2020.[68] Vimeo's videos in the "Staff picks" channel are available in
-      AV1.[69] Vimeo is using and contributing to Mozilla's Rav1e encoder, and expects, with further
-      encoder improvements, to eventually provide AV1 support for all videos uploaded to Vimeo as
-      well as the company's "Live" offering.[69] In October 2016, Netflix stated they expected to be
-      an early adopter of AV1.[70] On 5 February 2020, Netflix began using AV1 to stream select
-      titles on Android, providing 20% improved compression efficiency over their VP9 streams.[71]
-      Following their own very positive test results, Facebook said they would gradually roll out
-      AV1 as soon as browser support emerges, starting with their most popular videos.[52] Twitch
-      plans to roll out AV1 for its most popular content in 2022 or 2023, with universal support
-      projected to arrive in 2024 or 2025.[72] On 30 April 2020 iQIYI announced support for AV1 for
-      users on PC web browsers and Android devices, becoming "the first and the only Chinese video
-      streaming site to adopt the AV1 format to date."[73]
+      released in early 2020.[68] Vimeo's videos in theStaff picks channel are available in AV1.[69]
+      Vimeo is using and contributing to Mozilla's Rav1e encoder, and expects, with further encoder
+      improvements, to eventually provide AV1 support for all videos uploaded to Vimeo as well as
+      the company'sLive offering.[69] In October 2016, Netflix stated they expected to be an early
+      adopter of AV1.[70] On 5 February 2020, Netflix began using AV1 to stream select titles on
+      Android, providing 20% improved compression efficiency over their VP9 streams.[71] Following
+      their own very positive test results, Facebook said they would gradually roll out AV1 as soon
+      as browser support emerges, starting with their most popular videos.[52] Twitch plans to roll
+      out AV1 for its most popular content in 2022 or 2023, with universal support projected to
+      arrive in 2024 or 2025.[72] On 30 April 2020 iQIYI announced support for AV1 for users on PC
+      web browsers and Android devices, becomingthe first and the only Chinese video streaming site
+      to adopt the AV1 format to date."[73]
       <BlogSubtitle id="others" text="Drawbacks" />
       <BlogSubtitle id="encoding" text="Encoding Time" />
       Encoding AVIF takes a long time in general, but it's especially bad in Squoosh because we're
