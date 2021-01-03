@@ -150,18 +150,18 @@ export function BlogImage(props: { alt: string; url: string }) {
     <>
       <picture>
         <source
-          sizes="(max-width: 768px) 100vw, 768px"
-          srcSet={`${props.url}.avif 1280w, ${props.url}-640.avif 640w, ${props.url}-320.avif 320w,`}
+          sizes="(max-width: 800px) 100vw, 800px"
+          srcSet={`${props.url}.avif 1600w, ${props.url}-800.avif 800w, ${props.url}-400.avif 400w,`}
           type="image/avif"
         />
         <source
-          sizes="(max-width: 768px) 100vw, 768px"
-          srcSet={`${props.url}.webp 1280w, ${props.url}-640.webp 640w, ${props.url}-320.webp 320w,`}
+          sizes="(max-width: 800px) 100vw, 800px"
+          srcSet={`${props.url}.webp 1600w, ${props.url}-800.webp 800w, ${props.url}-400.webp 400w,`}
           type="image/webp"
         />
         <source
-          sizes="(max-width: 768px) 100vw, 768px"
-          srcSet={`${props.url}.jpg 1280w, ${props.url}-640.jpg 640w, ${props.url}-320.jpg 320w,`}
+          sizes="(max-width: 800px) 100vw, 800px"
+          srcSet={`${props.url}.jpg 1600w, ${props.url}-800.jpg 800w, ${props.url}-400.jpg 400w,`}
           type="image/jpeg"
         />
         <img decoding="async" loading="lazy" src={`${props.url}.jpg`} alt={props.alt} />

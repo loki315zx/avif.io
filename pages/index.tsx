@@ -24,64 +24,6 @@ interface FileWithId {
   id: number;
 }
 
-const ldJson = `
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "How to convert JPG to AVIF?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "1. Open up https://avif.io
-2. Drag and drop your jpg images or use the browsing function
-3. The conversion will happen automatically
-4. Download the AVIF files by pressing the Download or Download All button"
-    }
-  },{
-    "@type": "Question",
-    "name": "How to convert WEBP to AVIF?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "1. Open up https://avif.io
-2. Drag and drop your webp images or use the browsing function
-3. The conversion will happen automatically
-4. Download the AVIF files by pressing the Download or Download All button"
-    }
-  },{
-    "@type": "Question",
-    "name": "How to convert PNG to AVIF?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "1. Open up https://avif.io
-2. Drag and drop your png images or use the browsing function
-3. The conversion will happen automatically
-4. Download the AVIF files by pressing the Download or Download All button"
-    }
-  },{
-    "@type": "Question",
-    "name": "How to convert GIF to AVIF?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "1. Open up https://avif.io
-2. Drag and drop your gif images or use the browsing function
-3. The conversion will happen automatically
-4. Download the AVIF files by pressing the Download or Download All button"
-    }
-  },{
-    "@type": "Question",
-    "name": "How to convert BMP to AVIF?",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "1. Open up https://avif.io
-2. Drag and drop your bmp images or use the browsing function
-3. The conversion will happen automatically
-4. Download the AVIF files by pressing the Download or Download All button"
-    }
-  }]
-}
-`;
-
 export default function App(): ReactElement {
   const [converter, setConverter] = useState<Converter>();
   const [files, setFiles] = useState<FileWithId[]>([]);
@@ -125,7 +67,6 @@ export default function App(): ReactElement {
         <meta property="og:determiner" content="the" />
         <meta property="og:url" content="https://avif.io" />
         <meta property="og:site_name" content="AVIF Converter | avif.io ✨" />
-        <script type="application/ld+json">{ldJson}</script>
       </Head>
       <Header />
       <div className={"app-container"}>
@@ -188,16 +129,14 @@ export default function App(): ReactElement {
         constantly getting better. Avif offers significant reductions in file size over the current
         JPEG or WebP codecs. You can reduce file sizes by 20-90%, even for images with transparency
         and animated frames. Currently supported by Chrome, Opera and Firefox, you can expect it to
-        get more support soon.
-      </div>
-      <div className="advantages-explainer">
-        The most influential tech companies develop AVIF. Netflix has already considered .avif
-        superior to the JPEG, PNG, and even the newer WebP image formats for its image quality to
-        compressed file size ratio. AV1 was created by industry leaders and technology innovators
-        from all prestigious companies. They licensed their codec patents royalty-free to create an
-        ecosystem that would endure. There is no other codec that seems as promising as avif. With
-        its widespread support, current feature rate, license-free usage, and the highest
-        compression rate achieved, we are only steps away from creating a truly modern web.
+        get more support soon. The most influential tech companies develop AVIF. Netflix has already
+        considered .avif superior to the JPEG, PNG, and even the newer WebP image formats for its
+        image quality to compressed file size ratio. AV1 was created by industry leaders and
+        technology innovators from all prestigious companies. They licensed their codec patents
+        royalty-free to create an ecosystem that would endure. There is no other codec that seems as
+        promising as avif. With its widespread support, current feature rate, license-free usage,
+        and the highest compression rate achieved, we are only steps away from creating a truly
+        modern web.
       </div>
       <Footer />
     </>

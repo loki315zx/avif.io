@@ -5,6 +5,8 @@ import {
   BlogSyntax,
   BlogNote,
   BlogLink,
+  BlogLinkExternal,
+  BlogImage,
 } from "@components/BlogComponents";
 const postdata = {
   readingtime: "",

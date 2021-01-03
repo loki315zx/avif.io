@@ -6,6 +6,7 @@ import {
   BlogNote,
   BlogLink,
   BlogLinkExternal,
+  BlogImage,
 } from "@components/BlogComponents";
 const postdata = {
   title: "How to convert images to AVIF using Cloudflare",

@@ -45,8 +45,8 @@
 :root {
   --f0: calc(var(--f1) / 1.5);
   --f1: calc(1em + 0.15vw);
-  --f2: calc(var(--f1) * 1.8);
-  --f3: calc(var(--f2) * 1.8);
+  --f2: calc(var(--f1) * 1.5);
+  --f3: calc(var(--f2) * 1.5);
   --s0: calc(4px + 0.6vh);
   --s1: calc(var(--s0) * 1.8);
   --s2: calc(var(--s1) * 1.8);
@@ -1352,7 +1352,7 @@ h2.infobox:hover::before {
   margin: var(--s3) auto;
   text-align: center;
   color: var(--white);
-  max-width: 768px;
+  max-width: 800px;
   line-height: 2;
 }
 
@@ -1959,7 +1959,7 @@ h2.infobox:hover::before {
 }
 
 .content {
-  max-width: 768px;
+  max-width: 800px;
   margin: 0 auto;
   line-height: 2;
   color: var(--white);
@@ -2046,7 +2046,7 @@ picture img {
   width: 100%;
   max-width: 100%;
   content-visibility: auto;
-  contain-intrinsic-size: min(768px, 1920px) min(calc(768px * 0.5625), 1080px);
+  contain-intrinsic-size: min(800px, 1920px) min(calc(800px * 0.5625), 1080px);
   background-size: cover;
 }
 
