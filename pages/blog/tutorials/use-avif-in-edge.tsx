@@ -95,9 +95,10 @@ export default function BlogAvifInEdge() {
       AV1, which was developed by the Alliance for Open Media. As all major browser creators are
       part of this alliance and everyone is interested in pushing out a new and modern format,
       expect Microsoft Edge to support AVIF files soon. By the time of writing, Edge does not yet
-      support AVIF images; it refuses to render or otherwise open AVIF images. If you plan to enable
-      experimental AV1 support, you can do so by downloading a plugin. At least YouTube videos will
-      then stream in the new format.
+      support AVIF images; it refuses to render or otherwise open AVIF images.
+      <BlogImage url="edge-new" alt="the new microsoft edge" />
+      If you plan to enable experimental AV1 support, you can do so by downloading a plugin. At
+      least YouTube videos will then stream in the new format.
       <BlogSubtitle text="Your version of Edge" />
       If you are looking for a way to test the functionality and capabilities of AV1 on Microsoft
       Edge, you should{" "}
@@ -111,6 +112,7 @@ export default function BlogAvifInEdge() {
       own browser. You may quickly determine if you own a Chromium version of Edge by looking at the
       browser icon. The new version of Edge has a more minimalistic and gradient style, where the
       old one looks like a Van Gogh.
+      <BlogImage url="edge-or-edge" alt="microsoft edge version difference" />
       <BlogSubtitle text="AV1 Plugin" />
       The AV1 Extension add-on is available from the{" "}
       <BlogLinkExternal
@@ -118,11 +120,13 @@ export default function BlogAvifInEdge() {
         text="Microsoft Store"
       />
       . It provides support for AV1 videos on Windows 10 devices and Edge. It also allows for
-      viewing avif images, including thumbnails, and editing them in Paint. Furthermore, this
-      extension allows video apps installed on Windows 10 to play videos encoded using the AV1 video
-      coding standard developed by the Alliance for Open Media. As already stated, there isn't
-      support for AVIF images yet, even though avif.io converts images seamlessly on Edge. However,
-      since Microsoft Edge uses the same Chromium Engine, the support for Edge should roll out soon.
+      viewing avif images, including thumbnails, and editing them in Paint.
+      <BlogImage url="edge-av1" alt="av1 extension" />
+      Furthermore, this extension allows video apps installed on Windows 10 to play videos encoded
+      using the AV1 video coding standard developed by the Alliance for Open Media. As already
+      stated, there isn't support for AVIF images yet, even though avif.io converts images
+      seamlessly on Edge. However, since Microsoft Edge uses the same Chromium Engine, the support
+      for Edge should roll out soon.
     </Blog>
   );
 }

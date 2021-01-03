@@ -94,15 +94,17 @@ export default function BlogAvifInGIMP() {
       released. This release is titled a bug fix, however it had severe effects on GIMP's
       functionality. Since then, thanks to the encoder libheif, it is now capable of supporting the
       AVIF image format natively, which means that you can import and export AV1-based AVIF images
-      as you would any other supported format. When exporting an image from the editor, choose the
-      "HEIF/AVIF" file type or use the ".avif" extension. A prompt will then appear, in which you
-      will have the chance to select among several possible options. First, you will have the chance
-      to choose the degree to which you wish to preserve the image's quality. We recommend a value
-      above 20 and will give you a more detailed comparison below this text. Furthermore, you can
-      adjust the image's bit depth. You can choose between 8, 10 or 12 bits per channel. The higher
-      the bit depth, the greater the amount of colors that will be saved to your image. For
-      comparison, JPG has 8 bits. So if you're not a photographer and just want to use AVIF images
-      for your website, we recommend that you stick with 8-bit.
+      as you would any other supported format.
+      <BlogImage url="gimp" alt="gimp can export as avif" />
+      When exporting an image from the editor, choose the "HEIF/AVIF" file type or use the ".avif"
+      extension. A prompt will then appear, in which you will have the chance to select among
+      several possible options. First, you will have the chance to choose the degree to which you
+      wish to preserve the image's quality. We recommend a value above 20 and will give you a more
+      detailed comparison below this text. Furthermore, you can adjust the image's bit depth. You
+      can choose between 8, 10 or 12 bits per channel. The higher the bit depth, the greater the
+      amount of colors that will be saved to your image. For comparison, JPG has 8 bits. So if
+      you're not a photographer and just want to use AVIF images for your website, we recommend that
+      you stick with 8-bit.
       <BlogSubtitle text="AVIF Plugin" />
       There's also a plugin available called{" "}
       <BlogLinkExternal

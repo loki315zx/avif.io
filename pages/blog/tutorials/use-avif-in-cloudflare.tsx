@@ -109,11 +109,7 @@ export default function BlogAvifInCloudflare() {
       Cloudflare announced support for automatic serving of AVIF images. Upon reviewing web stats,
       let's point out that more than half of an average website is spent on pictures, and that over
       15% of all websites are powered by Cloudflare.
-      <picture>
-        <source srcSet="/images/cloudflare-stats.avif" type="image/avif" />
-        <source srcSet="/images/cloudflare-stats.webp" type="image/webp" />
-        <img src="/images/cloudflare-stats.jpg" alt="cloudflare stats" />
-      </picture>
+      <BlogImage url="cloudflare-stats" alt="cloudflare stats" />
       Allowing users to optimize images into the new AVIF image format marks a major milestone in
       making the web a faster place. Improved image compression can reduce bandwidth usage and
       improve web performance. Services and companies like Discord, ILovePDF, Hubspot and Zendesk
@@ -127,14 +123,15 @@ export default function BlogAvifInCloudflare() {
       <BlogSubtitle text="Business & Pro Plan" />
       The Image Resizing feature converts images to the AVIF format. Unfortunately, this feature is
       not available for free but is part of the Business Plan. Since a Business plan costs around
-      $200 or more per month, this seems overkill for such a small feature. However, in another
-      comment section on the Cloudflare Blog, Kornel Lesinski from Cloudflare said that
-      automatically converting your images into the best variant for your users will eventually be
-      part of their Pro plans in the future. Pro Plans start at $20/month and come with a lot more
-      features. Things like automatically choosing the best TCP settings, automatic mobile and image
-      optimizations, a better firewall, captchas, cache analytics, etc. For an upcoming small to
-      medium-sized business, this seems like an attractive investment to get the last bit of
-      performance out of your website.
+      $200 or more per month, this seems overkill for such a small feature.
+      <BlogImage url="cloudflare-pricing" alt="cloudflare pricing" />
+      However, in another comment section on the Cloudflare Blog, Kornel Lesinski from Cloudflare
+      said that automatically converting your images into the best variant for your users will
+      eventually be part of their Pro plans in the future. Pro Plans start at $20/month and come
+      with a lot more features. Things like automatically choosing the best TCP settings, automatic
+      mobile and image optimizations, a better firewall, captchas, cache analytics, etc. For an
+      upcoming small to medium-sized business, this seems like an attractive investment to get the
+      last bit of performance out of your website.
       <BlogSubtitle text="Implementation with Workers" />
       Browsers with AVIF support add an image/avif note to their Accept request header. To request
       the AVIF format from the Image Resizing module of Cloudflare, simply set the format option to

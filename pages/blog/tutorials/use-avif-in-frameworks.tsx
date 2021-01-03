@@ -119,7 +119,10 @@ export default function BlogAvifInFrameworks() {
           <img src="/images/cloudflare-stats.jpg" alt="avif in frameworks" />
         </picture>`}
       </BlogSyntax>
-      <BlogImage url="/images/cloudflare-stats" alt="avif in frameworks" />
+      <BlogImage url="react-avif" alt="using avif in react" />
+      <BlogImage url="react-render" alt="rendered avif in react" />
+      <BlogImage url="angular-avif" alt="using avif in angular" />
+      <BlogImage url="angular-render" alt="rendered avif in angular" />
       <BlogSubtitle text="Webpack File Loader" />
       In some cases, especially with older versions and when using webpack, you may encounter some
       problems. Especially:
@@ -140,10 +143,11 @@ export default function BlogAvifInFrameworks() {
 }`}
       </BlogSyntax>
       <BlogSubtitle text="Automatic conversion" />
-      They will convert the image into a different size to suit the needs of the client, and choose
-      a modern format when possible. However, we were unable to find a plugin yet that automatically
-      converts images to AVIF. Did you ever come into contact with such a plugin? Did you have any
-      good or bad experiences with it? Please let us know so we can complete this article.
+      We were unable to find a plugin that will convert the image into a different sizes and formats
+      like AVIF to suit the needs of the client, and choose a modern format when possible. The
+      Node.JS library sharp looks like its about to implement AVIF support. Did you ever come into
+      contact with such a plugin? Did you have any good or bad experiences with it? Please let us
+      know so we can complete this article.
     </Blog>
   );
 }
