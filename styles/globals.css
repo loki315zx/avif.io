@@ -620,6 +620,7 @@ ul {
   color: var(--gray2);
   text-align: center;
   opacity: 0;
+  font-size: var(--f0);
 }
 
 .conversion:hover .conversion__cancel {
@@ -650,7 +651,6 @@ ul {
   text-overflow: ellipsis;
   user-select: none;
   cursor: default;
-  font-size: var(--f1);
 }
 
 .download {
@@ -2297,7 +2297,6 @@ pre {
   }
 
   .advantage__grid__item {
-    font-size: var(--f1);
     min-height: auto;
   }
 
