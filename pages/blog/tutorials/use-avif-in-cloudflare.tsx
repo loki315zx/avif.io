@@ -111,7 +111,7 @@ export default function BlogAvifInCloudflare() {
       <picture>
         <source srcSet="/images/cloudflare-stats.avif" type="image/avif" />
         <source srcSet="/images/cloudflare-stats.webp" type="image/webp" />
-        <img src="/images/cloudflare-stats.jpg" alt="avif in html" />
+        <img src="/images/cloudflare-stats.jpg" alt="cloudflare stats" />
       </picture>
       Allowing users to optimize images into the new AVIF image format marks a major milestone in
       making the web a faster place. Improved image compression can reduce bandwidth usage and

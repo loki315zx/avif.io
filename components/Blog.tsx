@@ -32,7 +32,7 @@ export default function Blog(props: { postdata: any; children: any; posts: any }
 
         <div className="blog__meta">
           <div className="white center">
-            {props.postdata.date_modified} · {props.postdata.readingtime} minutes
+            {props.postdata.date_modified} · {props.postdata.readingtime} min read
           </div>
         </div>
       </div>

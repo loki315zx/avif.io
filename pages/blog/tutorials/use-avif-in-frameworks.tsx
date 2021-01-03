@@ -5,11 +5,12 @@ import {
   BlogSyntax,
   BlogNote,
   BlogLink,
+  BlogImage,
 } from "@components/BlogComponents";
 
 const postdata = {
   readingtime: "5",
-  title: "Use AVIF in Javascript Frameworks like Vue, React & Angular",
+  title: "Use AVIF in Frameworks like Vue, React & Angular",
   description: "Serving AVIF images via javascript frameworks is quite easy - find out more here.",
   url: "https://avif.io/blog/tutorial/use-avif-in-frameworks",
   image: "",
@@ -115,14 +116,10 @@ export default function BlogAvifInFrameworks() {
         {`<picture>
           <source srcSet="/images/cloudflare-stats.avif" type="image/avif" />
           <source srcSet="/images/cloudflare-stats.webp" type="image/webp" />
-          <img src="/images/cloudflare-stats.jpg" alt="avif in html" />
+          <img src="/images/cloudflare-stats.jpg" alt="avif in frameworks" />
         </picture>`}
-        <picture>
-          <source srcSet="/images/cloudflare-stats.avif" type="image/avif" />
-          <source srcSet="/images/cloudflare-stats.webp" type="image/webp" />
-          <img src="/images/cloudflare-stats.jpg" alt="avif in html" />
-        </picture>
       </BlogSyntax>
+      <BlogImage url="/images/cloudflare-stats" alt="avif in frameworks" />
       <BlogSubtitle text="Webpack File Loader" />
       In some cases, especially with older versions and when using webpack, you may encounter some
       problems. Especially:

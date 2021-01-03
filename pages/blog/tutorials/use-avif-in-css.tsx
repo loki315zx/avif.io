@@ -17,7 +17,15 @@ const postdata = {
   author: "Justin Schmitz",
   data_published: "22.10.20",
   date_modified: "22.12.20",
-  sources: [""],
+  sources: [
+    "drafts.csswg.org/css-images-4",
+    "dev.to/nucliweb/detect-avif-image-support-to-use-in-your-css-4pen",
+    "caniuse.com/css-image-set",
+    "https://caniuse.com/avif ",
+    "raoulkramer.de/avif-and-webp-images-as-css-background-images",
+    "github.com/djpogo/avif-webp-css-support",
+    "dev.to/nucliweb/detect-avif-image-support-to-use-in-your-css-4pen",
+  ],
   tags: [""],
   questions: [""],
 };
@@ -81,16 +89,16 @@ aviftest.onload = function () {
 aviftest.onerror = function () {
   var webptest = new Image();
   webptest.src =
-    "data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAACyAgCdASoBAAEALmk0mk0iIiIiIgBoSygABc6zbAAA/v56QAAAAA==";
+    "data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==";
   webptest.onload = document.documentElement.classList.add("webp");
 };`}
       </BlogSyntax>
       Minified version:
       <BlogSyntax language="javascript">
-        {`var aviftest=new Image;aviftest.src="data:image/avif;base64,AAAAFGZ0eXBhdmlmAAAAAG1pZjEAAACgbWV0YQAAAAAAAAAOcGl0bQAAAAAAAQAAAB5pbG9jAAAAAEQAAAEAAQAAAAEAAAC8AAAAGwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAARWlwcnAAAAAoaXBjbwAAABRpc3BlAAAAAAAAAAQAAAAEAAAADGF2MUOBAAAAAAAAFWlwbWEAAAAAAAAAAQABAgECAAAAI21kYXQSAAoIP8R8hAQ0BUAyDWeeUy0JG+QAACANEkA=",aviftest.onload=function(){document.documentElement.classList.add("avif")},aviftest.onerror=function(){var A=new Image;A.src="data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAACyAgCdASoBAAEALmk0mk0iIiIiIgBoSygABc6zbAAA/v56QAAAAA==",A.onload=document.documentElement.classList.add("webp")};`}
+        {`var a=new Image;a.src="data:image/avif;base64,AAAAFGZ0eXBhdmlmAAAAAG1pZjEAAACgbWV0YQAAAAAAAAAOcGl0bQAAAAAAAQAAAB5pbG9jAAAAAEQAAAEAAQAAAAEAAAC8AAAAGwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAARWlwcnAAAAAoaXBjbwAAABRpc3BlAAAAAAAAAAQAAAAEAAAADGF2MUOBAAAAAAAAFWlwbWEAAAAAAAAAAQABAgECAAAAI21kYXQSAAoIP8R8hAQ0BUAyDWeeUy0JG+QAACANEkA=",a.onload=function(){document.documentElement.classList.add("avif")},a.onerror=function(){var A=new Image;A.src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==",A.onload=document.documentElement.classList.add("webp")};`}{" "}
       </BlogSyntax>
       <BlogSubtitle text="Usage" />
-      Once implemented, we can simply use the following CSS.
+      Once implemented, we can simply use the following CSS due to the high level classes.
       <BlogSyntax language="css">
         {`/* Simple approach */
 .img { background-image: url('avif-in-css.jpg') }
@@ -132,42 +140,15 @@ aviftest.onerror = function () {
   }
 }`}
       </BlogSyntax>
-      <BlogSubtitle text="Another approach" />
-      Personally, we use a modern-first approach. We changed our script so that if the browser loads
-      the AVIF image successfully, the {`<html>`} element will remain unchanged. If the browser
-      fails to load the AVIF image, it will add a WebP class to your HTML element and check the
-      browser's support for WebP with the same method described above. If very unlikely, your
-      browser also fails this test, the script removes the 'webp' class from the HTML element and
-      adds a 'jpg' class. We are left with either:
-      <BlogSyntax language="html">{`<html> <!--no class at all, which means you can use avif-->
-<html class="webp"> <!--which means you can use webp-->
-<html class="jpg"> <!--which means you have to use jpg (oh dear)-->`}</BlogSyntax>
-      Personally, we find this to be cleaner. The script might be a little longer, but has a lower
-      execution time if avif loads successfully. Also, it is more leaned towards modern features.
-      Maybe this approach suits you as well. View the normal and minified version below.
-      <BlogSyntax language="javascript">
-        {`var aviftest = new Image();
-aviftest.src =
-  "data:image/avif;base64,AAAAFGZ0eXBhdmlmAAAAAG1pZjEAAACgbWV0YQAAAAAAAAAOcGl0bQAAAAAAAQAAAB5pbG9jAAAAAEQAAAEAAQAAAAEAAAC8AAAAGwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAARWlwcnAAAAAoaXBjbwAAABRpc3BlAAAAAAAAAAQAAAAEAAAADGF2MUOBAAAAAAAAFWlwbWEAAAAAAAAAAQABAgECAAAAI21kYXQSAAoIP8R8hAQ0BUAyDWeeUy0JG+QAACANEkA=";
-aviftest.onerror = function () {
-  document.documentElement.classList.add("webp");
-  var webptest = new Image();
-  webptest.src =
-    "data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAACyAgCdASoBAAEALmk0mk0iIiIiIgBoSygABc6zbAAA/v56QAAAAA==";
-  webptest.onerror = function () {
-    document.documentElement.classList.remove("webp");
-    document.documentElement.classList.add("jpg");
-  }
-}`}
-      </BlogSyntax>
-      <BlogSyntax language="javascript">
-        {`var aviftest=new Image;aviftest.src="data:image/avif;base64,AAAAFGZ0eXBhdmlmAAAAAG1pZjEAAACgbWV0YQAAAAAAAAAOcGl0bQAAAAAAAQAAAB5pbG9jAAAAAEQAAAEAAQAAAAEAAAC8AAAAGwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAARWlwcnAAAAAoaXBjbwAAABRpc3BlAAAAAAAAAAQAAAAEAAAADGF2MUOBAAAAAAAAFWlwbWEAAAAAAAAAAQABAgECAAAAI21kYXQSAAoIP8R8hAQ0BUAyDWeeUy0JG+QAACANEkA=",aviftest.onerror=function(){document.documentElement.classList.add("webp");var a=new Image;a.src="data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAACyAgCdASoBAAEALmk0mk0iIiIiIgBoSygABc6zbAAA/v56QAAAAA==",a.onerror=function(){document.documentElement.classList.remove("webp"),document.documentElement.classList.add("jpg")}};`}
-      </BlogSyntax>
       <BlogSubtitle text="Look into the future" />
-      W3C are working in the CSS Images Module Level 4, and the new module will have an interesting
-      feature, image-set and we'll can define the image type. With image-set we'll can define
-      different format and the browser render the first image format supported. An example would
-      look like this:
+      The World Wide Web Consortium (W3C) is developing CSS Images Module Level 4 that will enable
+      us to define the image type. The image-set property allows us to specify different image
+      formats. The browser renders the first image format that is supported by the browser. The
+      example below shows how type() can be used to serve multiple images in high-quality formats
+      and older formats that are more widely supported. Note that the AVIF is shown first, since
+      both images have the same resolution. The JPEG image coming second is automatically dropped in
+      UAs which support AVIF images. However, older UAs ignore AVIF images (because it knows it
+      doesn't support "image/avif" files), and JPEG images will be selected instead.
       <BlogSyntax language="css">
         {`background-image:
 	image-set(
@@ -176,25 +157,23 @@ aviftest.onerror = function () {
 		"zebra.png" type("image/png")
 	);`}
       </BlogSyntax>{" "}
-      Image-set is currently at 90% browser support, but doesn't support the type declaration yet.
-      This is a complete new feature for CSS4 that you can look up here. Until we have this awesome
-      feature in the browsers, we have to use JavaScript to detect the support. .
-      https://drafts.csswg.org/css-images-4/
-      https://dev.to/nucliweb/detect-avif-image-support-to-use-in-your-css-4pen
-      https://caniuse.com/css-image-set
+      Image-set is currently supported by 90% of browsers but does not support the type declaration
+      yet. This is a brand new feature for CSS4. Until browsers support this feature, we have to use
+      JavaScript to detect AVIF and WebP support.
       <BlogSubtitle text="Generating AVIF images" />
-      Creating AVIF files with avif.io is a nobrainer. Simply drag the files into the converter and
-      it'll do the rest. You'll get the best results with the least time.
+      Creating AVIF files with <BlogLink text="avif.io" link="/" /> is a nobrainer. Simply drag the
+      files into the converter and it'll do the rest. You'll get the best results with the least
+      time.
       <BlogSubtitle text="One last hacky way by Marble_Wraith" />
-      Disclaimer: Haven't tested this myself. In theory a hacky way that would work right now:
-      <BlogSyntax language="css">{`@supports (content-visibility:auto){
-    .image-avif {}
+      The reddit user marble_wraith found a hacky way to check for AVIF support. He states that the
+      content-visibility CSS property launched in the same version of Chrome (85) and Opera (71) in
+      which AVIF support has been added. So instead of detecting AVIF support directly, this
+      solution checks for the browser version. However, as soon as other browsers like Safari add
+      AVIF support, this method may stop working. We wouldn't recommend this for a production
+      website, but it's something you can experiment with.
+      <BlogSyntax language="css">{`@supports (content-visibility:auto) {
+    .img {background-image: url("image.avif")}
 }`}</BlogSyntax>
-      Since the content-visibility CSS property launched in chrome 85 and opera 71, alongside AVIF
-      support. It's not so much doing AVIF detection, as it is a janky way of doing browser version
-      detection. Of course this would break as soon as firefox or safari starts with AVIF support
-      unless they too launch content-visibility support at the same time... Well i did say it was
-      hacky
     </Blog>
   );
 }

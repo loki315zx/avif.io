@@ -144,3 +144,28 @@ export function BlogLinkExternal(props: { link: string; text: string; newLine?: 
     </div>
   );
 }
+
+export function BlogImage(props: { alt: string; url: string }) {
+  return (
+    <>
+      <picture>
+        <source
+          sizes="(max-width: 608px) 100vw, 608px"
+          srcSet={`${props.url}.avif 1920w, ${props.url}.avif 1280w, ${props.url}.avif 640w, ${props.url}.avif 320w,`}
+          type="image/avif"
+        />
+        <source
+          sizes="(max-width: 608px) 100vw, 608px"
+          srcSet={`${props.url}.webp 1920w, ${props.url}.webp 1280w, ${props.url}.webp 640w, ${props.url}.webp 320w,`}
+          type="image/webp"
+        />
+        <source
+          sizes="(max-width: 608px) 100vw, 608px"
+          srcSet={`${props.url}.jpg 1920w, ${props.url}.jpg 1280w, ${props.url}.jpg 640w, ${props.url}.jpg 320w,`}
+          type="image/jpeg"
+        />
+        <img decoding="async" loading="lazy" src={`${props.url}.jpg`} alt={props.alt} />
+      </picture>
+    </>
+  );
+}

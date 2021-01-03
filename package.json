@@ -62,5 +62,70 @@
   },
   "optionalDependencies": {
     "fsevents": "^2.2.1"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es2021": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:jsx-a11y/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 12,
+      "sourceType": "module"
+    },
+    "plugins": [
+      "react",
+      "@typescript-eslint",
+      "jsx-a11y"
+    ],
+    "rules": {
+      "@typescript-eslint/no-non-null-assertion": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "jsx-a11y/anchor-is-valid": "off"
+    },
+    "eslintIgnore": [
+      "hello.js",
+      "world.js"
+    ]
+  },
+  "prettier": {
+    "printWidth": 100,
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": false,
+    "quoteProps": "consistent",
+    "jsxSingleQuote": false,
+    "bracketSpacing": true,
+    "jsxBracketSameLine": true
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard",
+    "rules": {
+      "indentation": 2,
+      "rule-empty-line-before": "always",
+      "comment-empty-line-before": [
+        "always",
+        {
+          "ignore": [
+            "after-comment",
+            "stylelint-commands"
+          ]
+        }
+      ],
+      "comment-no-empty": null,
+      "font-family-no-duplicate-names": null,
+      "value-list-comma-newline-after": null,
+      "declaration-colon-newline-after": null
+    }
   }
 }

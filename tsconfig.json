@@ -12,8 +12,8 @@
       "@components/*": ["./components/*"],
       "@assets/*": ["./assets/*"],
       "@images/*": ["./public/images/*"],
-      "@utils/*": ["./src/utils/*"],
-      "@/*": ["./src/*"]
+      "@utils/*": ["utils/*"],
+      "@styles/*": ["styles/*"]
     },
     "allowSyntheticDefaultImports": true,
     "lib": ["dom", "dom.iterable", "esnext"],

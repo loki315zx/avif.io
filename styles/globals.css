@@ -44,11 +44,11 @@
 
 :root {
   --f0: calc(var(--f1) / 1.5);
-  --f1: calc(1em + 0.1vw);
-  --f2: calc(var(--f1) * 1.5);
-  --f3: calc(var(--f2) * 2.25);
-  --s0: calc(4px + 0.5vh);
-  --s1: calc(var(--s0) * 2);
+  --f1: calc(1em + 0.15vw);
+  --f2: calc(var(--f1) * 1.8);
+  --f3: calc(var(--f2) * 1.8);
+  --s0: calc(4px + 0.6vh);
+  --s1: calc(var(--s0) * 1.8);
   --s2: calc(var(--s1) * 1.8);
   --s3: calc(var(--s2) * 1.8);
   --s4: calc(var(--s3) * 1.8);
@@ -154,7 +154,8 @@ html {
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+  border: 0;
+  box-sizing: border-box;
 }
 
 ::selection {
@@ -2034,6 +2035,11 @@ picture img {
   object-fit: cover;
   height: auto;
   width: 100%;
+  max-width: 100%;
+  background-size: cover;
+  content-visibility: auto;
+  contain-intrinsic-size: min(768px, 1920px) min(calc(768px * 0.5625), 1080px);
+  background-size: cover;
 }
 
 /*  */
