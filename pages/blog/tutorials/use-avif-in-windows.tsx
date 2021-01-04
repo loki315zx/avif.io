@@ -60,10 +60,6 @@ const postdata = {
   ],
   questions: [
     "How do I play av1 videos",
-    "Is av1 better",
-    "Is av1 better than Hevc",
-    "Does YouTube use av1",
-    "Can VLC play av1",
     "Who uses av1 codec",
     "Is av1 royalty free",
     "Microsoft Brings AVIF Support to Windows 10 Through File Explorer and Paint",
@@ -73,7 +69,6 @@ const postdata = {
     "Windows 10 1903 Version Support for AVIF File Type (Format)",
     "Compare File Explorer & Paint to the Older Version",
     "Windows File Explorer and MS Paint",
-    "Windows 10 1903 Version Support for AVIF File Type",
     "Windows 10 will support AVIF images format",
     "Display the AVIF Images in Windows 10",
     "Windows 10 AVIF Support Gone?",

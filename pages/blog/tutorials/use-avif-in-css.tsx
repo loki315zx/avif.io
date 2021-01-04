@@ -208,6 +208,9 @@ aviftest.onerror = function () {
       <BlogSyntax language="css">{`@supports (content-visibility:auto) {
     .img {background-image: url("image.avif")}
 }`}</BlogSyntax>
+      <BlogSubtitle text="Further optimization" />
+      There are several more ways to optimize your images. Take a look at the referenced articles
+      below.
     </Blog>
   );
 }

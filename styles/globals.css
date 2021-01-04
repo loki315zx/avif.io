@@ -1591,6 +1591,20 @@ h2.infobox:hover::before {
   position: relative;
 }
 
+.blog .cta__container {
+  padding: 0;
+  background: none;
+}
+
+.blog .cta {
+  padding: var(--s2);
+  line-height: 1.5;
+}
+
+.blog__header {
+  padding: 0 0 var(--s5);
+}
+
 .blog__header::after {
   height: 100vh;
 }
@@ -1933,6 +1947,9 @@ h2.infobox:hover::before {
   cursor: pointer;
 }
 
+.blog__syntax {
+  font-size: var(--f0);
+}
 .blog__syntax:hover .blog__syntax__copy {
   opacity: 1;
 }
@@ -1953,13 +1970,12 @@ h2.infobox:hover::before {
 }
 
 .content__container {
-  margin: var(--s5) 0 0 0;
   background: var(--black2);
   padding: var(--s5);
 }
 
 .content {
-  max-width: 800px;
+  max-width: 720px;
   margin: 0 auto;
   line-height: 2;
   color: var(--white);
@@ -2046,7 +2062,7 @@ picture img {
   width: 100%;
   max-width: 100%;
   content-visibility: auto;
-  contain-intrinsic-size: min(800px, 1920px) min(calc(800px * 0.5625), 1080px);
+  contain-intrinsic-size: min(360px, 720) min(calc(360px * 0.5625), 720px);
   background-size: cover;
 }
 
@@ -2242,7 +2258,6 @@ pre {
 
   .content__container {
     padding: var(--s3);
-    border-radius: var(--radius300);
   }
 
   .blog h1 {
@@ -2266,7 +2281,6 @@ pre {
 
   .content__container {
     padding: var(--s1);
-    border-radius: var(--radius300);
   }
 
   .blog h1 {
@@ -2383,7 +2397,6 @@ pre {
 @supports (-moz-appearance: meterbar) {
   .section__tutorials::before {
     filter: blur(10px);
-    transform: scaleY(-1.01) scaleX(-1.01);
     z-index: 0;
   }
 }

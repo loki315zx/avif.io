@@ -27,6 +27,7 @@ const postdata = {
     "caniuse.com/webp",
     "css-tricks.com/avif-has-landed",
     "developer.apple.com/documentation/safari-release-notes/safari-14-release-notes",
+    "industrialempathy.com/posts/image-optimizations/",
     "tollwerk.de/blog/schlanke-responsive-bilder-mit-picture-mozjpeg-webp-avif-sqip",
     "mediaevent.de/bilddatenformate-jpg-avif-png-webp",
   ],
@@ -137,10 +138,10 @@ export default function BlogAvifInHtml() {
         {`<picture>
 <source srcset="image.avif" type="image/avif" loading="lazy">
 <source srcset="image.webp" type="image/webp" loading="lazy">
-<img src="image.jpg" alt="avif in html" loading="lazy">
+<img src="image.jpg" alt="avif in html" loading="lazy" decoding="async">
 </picture>`}
       </BlogSyntax>
-      <BlogNote text="PS: The lazy loading attribute is supported by 75% of all browsers, make use of it!" />
+      <BlogNote text="PS: The lazy loading attribute is supported by 75% of all browsers, make use of it! Also, don't forget to add width & height to avoid a Layout Shift. Providing width and height is more important than ever." />
       This is a nice set up for all visitors. Just make sure the first source tag is an AVIF image
       for the browser to display the first media type it can handle.
       <BlogSubtitle text="Responsiveness" />

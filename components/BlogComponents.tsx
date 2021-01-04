@@ -129,7 +129,9 @@ export function BlogLink(props: { link: string; text: string; newLine?: boolean 
   return (
     <div style={{ display: props.newLine ? "block" : "inline-block" }}>
       <Link href={props.link}>
-        <a title={props.text}>{props.text}</a>
+        <a rel="prefetch" title={props.text}>
+          {props.text}
+        </a>
       </Link>
     </div>
   );
@@ -149,21 +151,23 @@ export function BlogImage(props: { alt: string; url: string }) {
   return (
     <>
       <picture>
+        {/*
         <source
-          sizes="(max-width: 800px) 100vw, 800px"
-          srcSet={`/images/${props.url}.avif 1600w, /images/${props.url}-800.avif 800w, /images/${props.url}-400.avif 400w,`}
+          sizes="(max-width: 720px) 100vw, 720px"
+          srcSet={`/images/${props.url}.avif 1440w, /images/${props.url}-720.avif 720w, /images/${props.url}-360.avif 360w,`}
           type="image/avif"
         />
         <source
-          sizes="(max-width: 800px) 100vw, 800px"
-          srcSet={`/images/${props.url}.webp 1600w, /images/${props.url}-800.webp 800w, /images/${props.url}-400.webp 400w,`}
+          sizes="(max-width: 720px) 100vw, 720px"
+          srcSet={`/images/${props.url}.webp 1440w, /images/${props.url}-720.webp 720w, /images/${props.url}-360.webp 360w,`}
           type="image/webp"
         />
+        
         <source
-          sizes="(max-width: 800px) 100vw, 800px"
-          srcSet={`/images/${props.url}.jpg 1600w, /images/${props.url}-800.jpg 800w, /images/${props.url}-400.jpg 400w,`}
+          sizes="(max-width: 720px) 100vw, 720px"
+          srcSet={`/images/${props.url}.jpg 1440w, /images/${props.url}-720.jpg 720w, /images/${props.url}-360.jpg 360w,`}
           type="image/jpeg"
-        />
+        />*/}
         <img decoding="async" loading="lazy" src={`/images/${props.url}.jpg`} alt={props.alt} />
       </picture>
     </>

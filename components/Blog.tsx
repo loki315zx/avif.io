@@ -13,6 +13,9 @@ import Meta from "@components/Meta";
 let randomNumber = Math.floor(Math.random() * 10 + 1);
 
 export default function Blog(props: { postdata: any; children: any; posts: any }) {
+  const url = props.postdata.url.substring(16);
+  const urlSplit = url.split("/");
+
   return (
     <div className={`blog background${randomNumber}`}>
       <Meta
@@ -27,12 +30,26 @@ export default function Blog(props: { postdata: any; children: any; posts: any }
       />
       <div className="blog__header overlay-after">
         <Header />
-
         <BlogTitle text={props.postdata.title} />
-
-        <div className="blog__meta">
-          <div className="white center">
+        <div className="blog__meta white center">
+          <div className="s3">
             {props.postdata.date_modified} · {props.postdata.readingtime} min read
+          </div>
+          <div className="breadcrumbs">
+            <div>
+              <a className="white" target="_blank" href={`/${urlSplit[0]}/`}>
+                {urlSplit[0]}
+              </a>
+            </div>
+            {urlSplit[2] ? (
+              <div>
+                <a className="white" target="_blank" href={`/${urlSplit}/${urlSplit[1]}/`}>
+                  {urlSplit[1]}
+                </a>
+              </div>
+            ) : (
+              ""
+            )}
           </div>
         </div>
       </div>

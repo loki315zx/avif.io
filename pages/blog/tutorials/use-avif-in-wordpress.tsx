@@ -10,7 +10,7 @@ import {
 } from "@components/BlogComponents";
 const postdata = {
   readingtime: "11",
-  title: "How To Use Avif Images In WordPress",
+  title: "How To Use AVIF Images In WordPress",
   description:
     "WordPress doesn't allow uploading AVIF files. Learn how to still use AVIF images on your website today.",
   url: "https://avif.io/blog/tutorials/use-avif-in-wordpress",
@@ -34,6 +34,7 @@ const postdata = {
     "wordpress.org/support/topic/will-the-avif-image-format-be-support-in-the-future",
     "wordpress.stackexchange.com/questions/379114/workaround-to-upload-avif-files",
     "wpbeginner.com/glossary/functions-php",
+    "wpengine.com/support/mime-types-wordpress/",
   ],
   tags: [
     "image format",
@@ -99,6 +100,7 @@ export default function BlogAvifInWordpress() {
       websites in 2020. This means that around 35% of the web is powered by WordPress. Further
       statistics from WordPress reveal that as of November 2020, over 409 million people view more
       than 20 billion pages each month.
+      <BlogImage url="wordpress-usage" alt="shows usage statistics of wordpress" />
       <BlogSubtitle text="Official Wordpress Support" />
       The WordPress core has implemented a security check for file uploading since version 4.7. This
       means that WordPress checks your uploaded files' file extension (say that 10x as fast as
@@ -113,12 +115,13 @@ export default function BlogAvifInWordpress() {
       <BlogSubtitle text="Mime Types" />
       WordPress restricts files that don't match their list of Internet media types, also known as
       content-types or mime-types. The MIME Type is a two-part identifier for file formats and
-      format contents transmitted on the Internet. Yes, I copied this explanation from Wikipedia.
+      format contents transmitted on the Internet. Yes, we copied this explanation from Wikipedia.
       It's pretty easy to explain: A media type consists of a type and subtype that defines content
       and file extension. An HTML file has the mime type 'text/html', an jpg the mime type
-      'image/jpeg'. WordPress uses these mime types. They have a list of files they allow and a list
-      of files they disallow. There are several methods to change this behavior and add mime types.
-      See below.
+      'image/jpeg'.
+      <BlogImage url="mimetype" alt="example showing mime types" />
+      WordPress uses these mime types. They have a list of files they allow and a list of files they
+      disallow. There are several methods to change this behavior and add mime types. See below.
       <BlogSubtitle text="Functions.php" />
       The old mighty and glorious functions.php. When we used to 'mod' WordPress sites in our
       teenage age, we consistently fucked up the spelling in this file and ruined our theme. We will
@@ -126,9 +129,10 @@ export default function BlogAvifInWordpress() {
       file that appears on every theme in WordPress and contains basic functionality. You can open
       it by going to Appearance and choosing the Theme Editor. If a warning appears, feel free to
       ignore it. You know what you're doing. ;-) Choose your active theme in the right sidebar, and
-      below you will find all theme files listed, including the functions.php. Click to open and
-      scroll down to the bottom. Don't delete anything. Create a new line after the end of the file,
-      and add the following:
+      below you will find all theme files listed, including the functions.php.
+      <BlogImage url="functionsphp" alt="place where the functions.php is located" />
+      Click to open and scroll down to the bottom. Don't delete anything. Create a new line after
+      the end of the file, and add the following:
       <BlogSyntax language="php">
         {`function allow_avif( $mime_types ) {
   $mime_types['avif'] = 'image/avif';
@@ -178,6 +182,7 @@ add_filter( 'upload_mimes', 'support_modern_images', 1, 1 );`}
       allow a particular file, leaving the door open for various kinds of attacks. Lord of the Files
       (previously known as "blob mimes") adds to this content-based validation and sanitizing,
       ensuring that files are what they say they are and safe for inclusion on your site.
+      <BlogImage url="mimetype-plugin" alt="screenshot of the mime type plugin website" />
       <BlogSubtitle text="There's one remaining problem: No automatic conversion" />
       Uploading images is a cool thing, but there's a colossal problem remaining. For every image
       you wish to serve to your users, you have to convert it manually. Well, there are some *cough*

@@ -5,14 +5,13 @@ import {
   BlogSyntax,
   BlogNote,
   BlogLink,
-  BlogLinkExternal,
-  BlogImage,
 } from "@components/BlogComponents";
+import CTA from "@components/CTA";
 const postdata = {
   readingtime: "",
-  title: "",
+  title: "Why you should convert your JPG to AVIF",
   description: "",
-  url: "",
+  url: "https://avif.io/blog/wip-avif-vs-jpg/",
   image: "",
   keywords: [""],
   author: "Justin Schmitz",
@@ -49,8 +48,11 @@ const advantages = ["", ""];
 export default function BlogAvif() {
   return (
     <Blog postdata={postdata} posts={posts}>
-      <BlogSubtitle text="" />
-      Placeholder
+      <BlogSubtitle text="JPG" />
+      <BlogSubtitle text="AVIF" />
+      <BlogSubtitle text="Why should I convert JPG to AVIF?" />
+      <BlogSubtitle text="How can I convert JPG to AVIF?" />
+      <CTA />
     </Blog>
   );
 }

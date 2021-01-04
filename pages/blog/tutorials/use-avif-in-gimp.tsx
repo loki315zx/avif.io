@@ -105,6 +105,7 @@ export default function BlogAvifInGIMP() {
       amount of colors that will be saved to your image. For comparison, JPG has 8 bits. So if
       you're not a photographer and just want to use AVIF images for your website, we recommend that
       you stick with 8-bit.
+      <BlogImage url="gimp-bitdepth" alt="gimp export avif dialogue showing different bit depths" />
       <BlogSubtitle text="AVIF Plugin" />
       There's also a plugin available called{" "}
       <BlogLinkExternal
