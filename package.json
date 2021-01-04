@@ -18,6 +18,7 @@
   "dependencies": {
     "@next/bundle-analyzer": "^10.0.4",
     "@types/react-syntax-highlighter": "^13.5.0",
+    "fsevents": "^2.2.1",
     "jszip": "^3.5.0",
     "lodash": "^4.17.20",
     "next": "^10.0.4",

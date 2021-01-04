@@ -409,9 +409,11 @@ var Module = (function () {
       return hasPrefix(filename, dataURIPrefix);
     }
     var wasmBinaryFile = "webp_wasm.wasm";
+    /*
     if (!isDataURI(wasmBinaryFile)) {
       wasmBinaryFile = locateFile(wasmBinaryFile);
     }
+    */
     function getBinary() {
       try {
         if (wasmBinary) {
