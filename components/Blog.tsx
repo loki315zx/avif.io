@@ -13,7 +13,7 @@ import Meta from "@components/Meta";
 let randomNumber = Math.floor(Math.random() * 10 + 1);
 
 export default function Blog(props: { postdata: any; children: any; posts: any }) {
-  const url = props.postdata.url.substring(16);
+  const url = props.postdata.url.substring(1);
   const urlSplit = url.split("/");
 
   return (
