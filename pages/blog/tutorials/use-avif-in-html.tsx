@@ -8,101 +8,15 @@ import {
   BlogLinkExternal,
   BlogImage,
 } from "@components/BlogComponents";
-const postdata = {
-  readingtime: "8",
-  title: "How to use AVIF in HTML",
-  description: "Enjoy this short, but still in depth guide on how to use AVIF in HTML.",
-  url: "https://avif.io/blog/tutorials/use-avif-in-html",
-  image: "",
-  keywords: ["avif", "picture", "HTML", "image optimization"],
-  author: "Justin Schmitz",
-  data_published: "22.10.20",
-  date_modified: "22.12.20",
-  sources: [
-    "aomedia.org/about",
-    "aomedia.org/av1-features/get-started",
-    "caniuse.com/picture",
-    "caniuse.com/avif",
-    "caniuse.com/loading-lazy-attr",
-    "caniuse.com/webp",
-    "css-tricks.com/avif-has-landed",
-    "developer.apple.com/documentation/safari-release-notes/safari-14-release-notes",
-    "industrialempathy.com/posts/image-optimizations/",
-    "tollwerk.de/blog/schlanke-responsive-bilder-mit-picture-mozjpeg-webp-avif-sqip",
-    "mediaevent.de/bilddatenformate-jpg-avif-png-webp",
-  ],
-  tags: [
-    "files",
-    "image avif",
-    "img src",
-    "image format",
-    "avif support",
-    "image webp",
-    "sizes",
-    "firefox",
-    "avif images",
-    "webp image",
-    "file size",
-    "avif files",
-    "github",
-    "google",
-    "file format",
-    "google chrome",
-    "image file",
-    "picture",
-  ],
-  questions: [
-    "AVIF Image Format – The Next-Gen Compression Codec",
-    "Future Of AVIF: Browser Compatibility for Chrome and Firefox",
-    "File sizes: AVIF vs WebP vs PNG/JPEG",
-    "A More Optimal Image Format",
-    "A way to leverage new image formats",
-    "How to Create AVIF Files?",
-    "Is AVIF worth an investment from you as a developer/company? Ready for prime time?",
-    "What I decided about image formats",
-    "What is AV Image Format (AVIF)",
-    "How to Use AVIF: The New Next-Gen Image Compression Format",
-    "Is your browser capable of displaying AVIF images?",
-    "How to convert images to the AVIF file format",
-    "How to create AVIF images",
-    "What is 'acceptable quality'?",
-  ],
-};
 
-const posts = [
-  {
-    url: "#",
-    title: "7 tips on how to efficiently use AVIF in CSS.",
-    date_modified: "last update: November 12, 2020",
-    description:
-      "AVIF, the file format based on the AV1 video codec, is the latest addition to the next-gen image formats. Early reports and comparisons show good results.",
-  },
-  {
-    url: "#",
-    title: "7 tips on how to efficiently use AVIF in CSS.",
-    date_modified: "last update: November 12, 2020",
-    description:
-      "AVIF, the file format based on the AV1 video codec, is the latest addition to the next-gen image formats. Early reports and comparisons show good results.",
-  },
-  {
-    url: "#",
-    title: "7 tips on how to efficiently use AVIF in CSS.",
-    date_modified: "last update: November 12, 2020",
-    description:
-      "AVIF, the file format based on the AV1 video codec, is the latest addition to the next-gen image formats. Early reports and comparisons show good results.",
-  },
-];
-
-const advantages = [
-  "Does not download more than one image at a time",
-  "Native support for selecting the most appropriate image",
-  "96% browser support and automatic fallback",
-  "Getting this implemented is easy and straightforward",
-];
+import { useAvifInHtml as postdata } from "lib/meta";
+import { useAvifInHtml as post1 } from "lib/meta";
+import { useAvifInCss as post2 } from "lib/meta";
+import { useAvifInNextjs as post3 } from "lib/meta";
 
 export default function BlogAvifInHtml() {
   return (
-    <Blog postdata={postdata} posts={posts}>
+    <Blog postdata={postdata} posts={[post1, post2, post3]}>
       I won't waste your time with 10.000 word text passages about how awesome AVIF is just to boost
       my SEO rankings. AVIF is a file format based off a video codec that support high bit depth
       while keeping a low file size. You can find plenty of articles about how fantastic AVIF is
@@ -128,7 +42,15 @@ export default function BlogAvifInHtml() {
       them to be loaded. The wanky browsers of your visitors will only load one image at the same
       time, thus reducing the load on the server. Also, there's no need for a script to handle
       multiple images. Everyone is happy.
-      <BlogAdvantages advantages={advantages} checked={true} />
+      <BlogAdvantages
+        advantages={[
+          "Does not download more than one image at a time",
+          "Native support for selecting the most appropriate image",
+          "96% browser support and automatic fallback",
+          "Getting this implemented is easy and straightforward",
+        ]}
+        checked={true}
+      />
       <BlogSubtitle text="Implementation" />
       At the moment, 96% of browsers support the picture element. Still, even if your grandma is
       visiting your website with her disgusting Internet Explorer 6, her browser will simply fall

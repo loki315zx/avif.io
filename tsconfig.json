@@ -13,7 +13,8 @@
       "@assets/*": ["./assets/*"],
       "@images/*": ["./public/images/*"],
       "@utils/*": ["utils/*"],
-      "@styles/*": ["styles/*"]
+      "@styles/*": ["styles/*"],
+      "@pages/*": ["pages/*"]
     },
     "allowSyntheticDefaultImports": true,
     "lib": ["dom", "dom.iterable", "esnext"],

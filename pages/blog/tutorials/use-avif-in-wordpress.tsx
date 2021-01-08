@@ -8,89 +8,15 @@ import {
   BlogLinkExternal,
   BlogImage,
 } from "@components/BlogComponents";
-const postdata = {
-  readingtime: "11",
-  title: "How To Use AVIF Images In WordPress",
-  description:
-    "WordPress doesn't allow uploading AVIF files. Learn how to still use AVIF images on your website today.",
-  url: "https://avif.io/blog/tutorials/use-avif-in-wordpress",
-  image: "",
-  keywords: ["avif", "wordpress", "wp", "image optimization", "mime type"],
-  author: "Justin Schmitz",
-  data_published: "22.10.20",
-  date_modified: "22.12.20",
-  sources: [
-    "blog.shortpixel.com/what-is-avif-and-why-is-it-good",
-    "chrisyee.ca/blog/uploading-avif-images-in-wordpress",
-    "dev.to/iamrajeev/why-avif-support-in-wordpress-is-important-3g5e",
-    "en.wikipedia.org/wiki/Media_type",
-    "github.com/wp-media/imagify-plugin/issues/504",
-    "libre-software.net/avif-test",
-    "premium.wpmudev.org/forums/topic/smush-pro-avif-next-gen-image-format-support",
-    "publishing-project.rivendellweb.net/supporting-aadditional-content-types-in-wordpress",
-    "wordpress.org/support/topic/consider-adding-avif-support-in-the-future",
-    "wordpress.org/support/topic/generating-images-in-avif-format-3",
-    "wordpress.org/support/topic/generating-images-in-avif-format-5",
-    "wordpress.org/support/topic/will-the-avif-image-format-be-support-in-the-future",
-    "wordpress.stackexchange.com/questions/379114/workaround-to-upload-avif-files",
-    "wpbeginner.com/glossary/functions-php",
-    "wpengine.com/support/mime-types-wordpress/",
-  ],
-  tags: [
-    "image format",
-    "wordpress",
-    "avif images",
-    "file size",
-    "mime type",
-    "image avif",
-    "image optimization",
-    "firefox",
-    "file format",
-    "avif image format",
-    "image file",
-    "google chrome",
-    "faster loading",
-  ],
-  questions: [
-    "Why AVIF Support in WordPress is Important",
-    "Why Does a WordPress Site Needs AVIF?",
-    "How to Enable AVIF in WordPress?",
-    "Is your browser capable of displaying AVIF images?",
-    "How to convert images to the AVIF file format",
-    "Using the AVIF Next-Generation Image Format on your Sites for Faster Loading Images",
-    "Insert AVIF files in WordPress pages or posts",
-    "Supporting additional mime types in WordPress",
-    "Uploading AVIF images in WordPress",
-    "Include support for the AVIF image format",
-    "Optimizing your images as a way to speed up your WordPress site",
-    "Upload AVIF to WordPress",
-  ],
-};
 
-const posts = [
-  {
-    url: "",
-    title: "",
-    date_modified: "",
-    description: "",
-  },
-  {
-    url: "",
-    title: "",
-    date_modified: "",
-    description: "",
-  },
-  {
-    url: "",
-    title: "",
-    date_modified: "",
-    description: "",
-  },
-];
+import { useAvifInWordpress as postdata } from "lib/meta";
+import { useAvifInHtml as post1 } from "lib/meta";
+import { useAvifInCss as post2 } from "lib/meta";
+import { useAvifInNextjs as post3 } from "lib/meta";
 
 export default function BlogAvifInWordpress() {
   return (
-    <Blog postdata={postdata} posts={posts}>
+    <Blog postdata={postdata} posts={[post1, post2, post3]}>
       "Sorry, this file type is not permitted for security reasons" is the glorious response you get
       when you try to upload AVIF images to WordPress. There is no official support. Still,
       WordPress needs AVIF because of two reasons. First, technical professionals and end-users

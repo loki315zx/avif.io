@@ -8,86 +8,15 @@ import {
   BlogLinkExternal,
   BlogImage,
 } from "@components/BlogComponents";
-const postdata = {
-  readingtime: "5",
-  title: "View AVIF Images In Microsoft Edge",
-  description:
-    "Internet Explorer 6, the latest browser.. oh wait, it's called Edge? Well, okay. Microsoft Edge now supports AV1 image formats. Learn more about it here.",
-  url: "https://avif.io/blog/tutorials/use-avif-in-edge",
-  image: "",
-  keywords: ["avif", "image optimization", "microsoft", "edge"],
-  author: "Justin Schmitz",
-  data_published: "22.10.20",
-  date_modified: "22.12.20",
-  sources: [
-    "en.wikipedia.org/wiki/AV1",
-    "microsoft.com/en-us/p/av1-video-extension/9mvzqvxjbq9v",
-    "support.microsoft.com/en-us/microsoft-edge",
-    "techcommunity.microsoft.com/t5/discussions/avif-image-support/m-p/1802087",
-    "thewindowsclub.com/what-is-avif-or-av1",
-    "zdnet.de/88384405/microsoft-kuendigt-hardwarebeschleunigung-fuer-av1-an",
-  ],
-  tags: [
-    "windows 10",
-    "image format",
-    "avif images",
-    "google",
-    "av1 video",
-    "users",
-    "enable",
-    "firefox",
-    "av1 video extension",
-    "video extension",
-    "alliance",
-    "alliance for open media",
-    "browser",
-    "file explorer",
-    "file format",
-    "image file",
-    "image file format",
-    "av1 image",
-    "video codec",
-    "google chrome",
-  ],
-  questions: [
-    "Windows 10 graphics: GPU-powered AV1 video compression coming soon, says Microsoft",
-    "To Enable AVIF image format support in Firefox",
-    "Windows 10 will support AVIF images format",
-    "To Enable AVIF Support in Microsoft Edge,",
-    "Enable AVIF Support in Edge",
-    "Enable AVIF or AV1 support in Chrome, Edge and Firefox",
-    "What is AVIF or AV1? How to enable its support in Chrome and Firefox?",
-    "What is AVIF or AV1 image format",
-    "Windows 10 AVIF Support Gone?",
-  ],
-};
 
-const posts = [
-  {
-    url: "",
-    title: "",
-    date_modified: "",
-    description: "",
-  },
-  {
-    url: "",
-    title: "",
-    date_modified: "",
-    description: "",
-  },
-  {
-    url: "",
-    title: "",
-    date_modified: "",
-    description: "",
-  },
-];
-
-const advantages = ["", ""];
+import { useAvifInEdge as postdata } from "lib/meta";
+import { useAvifInHtml as post1 } from "lib/meta";
+import { useAvifInCss as post2 } from "lib/meta";
+import { useAvifInNextjs as post3 } from "lib/meta";
 
 export default function BlogAvifInEdge() {
   return (
-    <Blog postdata={postdata} posts={posts}>
+    <Blog postdata={postdata} posts={[post1, post2, post3]}>
       <BlogSubtitle text="Current status and future plans" />
       While Google can implement new features quickly, other companies like Microsoft and Mozilla
       are much slower. At least when it comes to technology that we rely on, they constantly do all

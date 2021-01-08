@@ -8,80 +8,15 @@ import {
   BlogLinkExternal,
   BlogImage,
 } from "@components/BlogComponents";
-const postdata = {
-  readingtime: "6",
-  title: "Use AVIF in Next.JS",
-  description:
-    "Curious to read on how to use AVIF images in Next.JS? Well, this site does exactly that! Learn more.",
-  url: "https://avif.io/blog/tutorials/use-avif-in-nextjs",
-  image: "",
-  keywords: ["avif", "nextjs", "next", "react", "image optimization"],
-  author: "Justin Schmitz",
-  data_published: "22.10.20",
-  date_modified: "22.12.20",
-  sources: [
-    "github.com/cyrilwanner/next-optimized-images",
-    "github.com/twopluszero/next-images",
-    "github.com/vercel/next.js/discussions/17141",
-    "github.com/vercel/next.js/tree/canary/examples/image-component",
-    "nextjs.org/docs/basic-features/image-optimization",
-  ],
-  tags: [
-    "avif",
-    "react",
-    "nextjs",
-    "next.js",
-    "next js",
-    "google",
-    "webpack",
-    "const",
-    "developer",
-    "javascript",
-    "user experience",
-    "image component",
-    "files",
-    "export default",
-    "react dom",
-    "react components",
-    "code splitting",
-    "server side rendering",
-    "server side",
-    "image optimization",
-    "format",
-  ],
-  questions: [
-    "Automatic Image Optimization: Next.js 10 New Standards for 2020",
-    "Server-side rendering with Gatsby and Next.js",
-    "Automatic Image Optimization",
-    "What are the advantages of using, for instance, Next.js over Gatsby, in that case?",
-    "How Gatsby and Next.js really work (and what it means for speed and SEO)",
-  ],
-};
 
-const posts = [
-  {
-    url: "",
-    title: "",
-    date_modified: "",
-    description: "",
-  },
-  {
-    url: "",
-    title: "",
-    date_modified: "",
-    description: "",
-  },
-  {
-    url: "",
-    title: "",
-    date_modified: "",
-    description: "",
-  },
-];
+import { useAvifInNextjs as postdata } from "lib/meta";
+import { useAvifInHtml as post1 } from "lib/meta";
+import { useAvifInCss as post2 } from "lib/meta";
+import { useAvifInNextjs as post3 } from "lib/meta";
 
 export default function BlogAvifInNextJS() {
   return (
-    <Blog postdata={postdata} posts={posts}>
+    <Blog postdata={postdata} posts={[post1, post2, post3]}>
       So, you're expecting some colossal blog post? Well, it won't happen. The blog you are
       currently reading uses the latest version of both React and NextJS. Not only that, but the
       bundler automatically detects AVIF files and treats them accordingly. We didn't have to do

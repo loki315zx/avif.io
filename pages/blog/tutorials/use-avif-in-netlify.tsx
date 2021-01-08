@@ -9,10 +9,10 @@ import {
   BlogImage,
 } from "@components/BlogComponents";
 
-import { placeholder as postdata } from "lib/meta";
-import { placeholder as post1 } from "lib/meta";
-import { placeholder as post2 } from "lib/meta";
-import { placeholder as post3 } from "lib/meta";
+import { useAvifInNetlify as postdata } from "lib/meta";
+import { useAvifInHtml as post1 } from "lib/meta";
+import { useAvifInCss as post2 } from "lib/meta";
+import { useAvifInNextjs as post3 } from "lib/meta";
 
 export default function BlogAvif() {
   return (

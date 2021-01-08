@@ -1,6 +1,6 @@
 // Justin's magic formula
 export default function conversionsCount(): number {
-  let count = 5000;
+  let count = 30000;
 
   const days = Math.round(Date.now() / 8640000 - 185860);
   let b = 50;

@@ -41,8 +41,6 @@ const posts = [
   },
 ];
 
-const advantages = ["", ""];
-
 export default function BlogAvif() {
   return (
     <Blog postdata={postdata} posts={posts}>

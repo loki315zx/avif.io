@@ -8,88 +8,15 @@ import {
   BlogLinkExternal,
   BlogImage,
 } from "@components/BlogComponents";
-const postdata = {
-  readingtime: "8",
-  title: "Use AVIF in CSS",
-  description: "Implement the new AVIF image format in the `background-images` of your CSS.",
-  url: "https://avif.io/blog/tutorials/use-avif-in-css",
-  image: "",
-  keywords: ["avif", "css", "background image"],
-  author: "Justin Schmitz",
-  data_published: "22.10.20",
-  date_modified: "22.12.20",
-  sources: [
-    "drafts.csswg.org/css-images-4",
-    "dev.to/nucliweb/detect-avif-image-support-to-use-in-your-css-4pen",
-    "caniuse.com/css-image-set",
-    "https://caniuse.com/avif ",
-    "raoulkramer.de/avif-and-webp-images-as-css-background-images",
-    "github.com/djpogo/avif-webp-css-support",
-    "dev.to/nucliweb/detect-avif-image-support-to-use-in-your-css-4pen",
-  ],
-  tags: [
-    "image format",
-    "squoosh",
-    "firefox",
-    "javascript",
-    "files",
-    "avif format",
-    "users",
-    "original image",
-    "decoders",
-    "devices",
-    "google",
-    "bytes",
-    "user experience",
-    "css background",
-    "github",
-    "background images",
-    "file size",
-    "people",
-    "file format",
-  ],
-  questions: [
-    "What is AVIF image format",
-    "Is AVIF lossless",
-    "Which image format can be displayed by all Web browsers",
-    "What is a Web image",
-    "How do I use an AVIF file",
-    "Which image format is highest quality",
-    "Progressively delivering new image formats with CSS",
-    "My Blog Just Got Faster: AVIF Support",
-    "PostCSS plugin to use AVIF in CSS background",
-    "avif and webp images as css background images",
-    "Delivering New Image Formats",
-    "css background-image usage of avif and webp",
-  ],
-};
 
-const posts = [
-  {
-    url: "",
-    title: "",
-    date_modified: "",
-    description: "",
-  },
-  {
-    url: "",
-    title: "",
-    date_modified: "",
-    description: "",
-  },
-  {
-    url: "",
-    title: "",
-    date_modified: "",
-    description: "",
-  },
-];
-
-const advantages = [""];
+import { useAvifInCss as postdata } from "lib/meta";
+import { useAvifInHtml as post1 } from "lib/meta";
+import { useAvifInCss as post2 } from "lib/meta";
+import { useAvifInNextjs as post3 } from "lib/meta";
 
 export default function BlogAvif() {
   return (
-    <Blog postdata={postdata} posts={posts}>
+    <Blog postdata={postdata} posts={[post1, post2, post3]}>
       <BlogSubtitle text="" />
       Serving AVIF images through HTML is very easy, as you can read{" "}
       <BlogLink text="in this tutorial" link="/blog/tutorials/use-avif-in-html" />. Furthermore, it
@@ -111,25 +38,30 @@ export default function BlogAvif() {
 <html class="avif"> <!--which means you can use avif (heck yeah!)-->`}</BlogSyntax>
       <BlogSubtitle text="The Script" />
       To avoid visible image switching when the avif/webp class is added to your DOM, add the
-      contents as an inline script in your {`<head>`} above any CSS content. From my experience,
-      this script takes 2-3ms to load, which is completely fine for the benefit it provides.
+      contents as an inline script in your {`<head>`} above any CSS content. The minified version of
+      this script is a tiny 600 bytes piece and takes 5ms to load, which is completely fine for the
+      benefit it provides.
       <BlogSyntax language="javascript">
-        {`var aviftest = new Image();
-aviftest.src =
-  "data:image/avif;base64,AAAAFGZ0eXBhdmlmAAAAAG1pZjEAAACgbWV0YQAAAAAAAAAOcGl0bQAAAAAAAQAAAB5pbG9jAAAAAEQAAAEAAQAAAAEAAAC8AAAAGwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAARWlwcnAAAAAoaXBjbwAAABRpc3BlAAAAAAAAAAQAAAAEAAAADGF2MUOBAAAAAAAAFWlwbWEAAAAAAAAAAQABAgECAAAAI21kYXQSAAoIP8R8hAQ0BUAyDWeeUy0JG+QAACANEkA=";
-aviftest.onload = function () {
-  document.documentElement.classList.add("avif");
-};
-aviftest.onerror = function () {
-  var webptest = new Image();
-  webptest.src =
-    "data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==";
-  webptest.onload = document.documentElement.classList.add("webp");
-};`}
+        {`function AddClass(class) { document.documentElement.classList.add(class) };
+
+var avif = new Image();
+avif.src = "data:image/avif;base64,AAAAFGZ0eXBhdmlmAAAAAG1pZjEAAACgbWV0YQAAAAAAAAAOcGl0bQAAAAAAAQAAAB5pbG9jAAAAAEQAAAEAAQAAAAEAAAC8AAAAGwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAARWlwcnAAAAAoaXBjbwAAABRpc3BlAAAAAAAAAAQAAAAEAAAADGF2MUOBAAAAAAAAFWlwbWEAAAAAAAAAAQABAgECAAAAI21kYXQSAAoIP8R8hAQ0BUAyDWeeUy0JG+QAACANEkA=";
+
+avif.onload = function () { AddClass("avif") };
+
+avif.onerror = function () {
+  var webp = new Image();
+  webp.src = "data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==";
+  webp.onload = function () { AddClass("webp") }
+}`}
       </BlogSyntax>
-      Minified version:
+      Minified version (600 Bytes):
       <BlogSyntax language="javascript">
-        {`var a=new Image;a.src="data:image/avif;base64,AAAAFGZ0eXBhdmlmAAAAAG1pZjEAAACgbWV0YQAAAAAAAAAOcGl0bQAAAAAAAQAAAB5pbG9jAAAAAEQAAAEAAQAAAAEAAAC8AAAAGwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAARWlwcnAAAAAoaXBjbwAAABRpc3BlAAAAAAAAAAQAAAAEAAAADGF2MUOBAAAAAAAAFWlwbWEAAAAAAAAAAQABAgECAAAAI21kYXQSAAoIP8R8hAQ0BUAyDWeeUy0JG+QAACANEkA=",a.onload=function(){document.documentElement.classList.add("avif")},a.onerror=function(){var A=new Image;A.src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==",A.onload=document.documentElement.classList.add("webp")};`}{" "}
+        {`function F(a){document.documentElement.classList.add(a)}var A=new Image;A.src="data:image/avif;base64,AAAAFGZ0eXBhdmlmAAAAAG1pZjEAAACgbWV0YQAAAAAAAAAOcGl0bQAAAAAAAQAAAB5pbG9jAAAAAEQAAAEAAQAAAAEAAAC8AAAAGwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAARWlwcnAAAAAoaXBjbwAAABRpc3BlAAAAAAAAAAQAAAAEAAAADGF2MUOBAAAAAAAAFWlwbWEAAAAAAAAAAQABAgECAAAAI21kYXQSAAoIP8R8hAQ0BUAyDWeeUy0JG+QAACANEkA=",A.onload=function(){F("avif")},A.onerror=function(){var a=new Image;a.src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==",a.onload=function(){F("webp")}};`}{" "}
+      </BlogSyntax>
+      Minified version without WebP detection (400 Bytes):
+      <BlogSyntax language="javascript">
+        {`var A=new Image;A.src="data:image/avif;base64,AAAAFGZ0eXBhdmlmAAAAAG1pZjEAAACgbWV0YQAAAAAAAAAOcGl0bQAAAAAAAQAAAB5pbG9jAAAAAEQAAAEAAQAAAAEAAAC8AAAAGwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAARWlwcnAAAAAoaXBjbwAAABRpc3BlAAAAAAAAAAQAAAAEAAAADGF2MUOBAAAAAAAAFWlwbWEAAAAAAAAAAQABAgECAAAAI21kYXQSAAoIP8R8hAQ0BUAyDWeeUy0JG+QAACANEkA=",A.onload=function(){document.documentElement.classList.add("avif")};`}{" "}
       </BlogSyntax>
       <BlogSubtitle text="Usage" />
       Once implemented, we can simply use the following CSS due to the high level classes.
@@ -150,6 +82,13 @@ aviftest.onerror = function () {
     .avif .img { background-image: url('avif-in-css@2x.avif') }
 }`}
       </BlogSyntax>
+      <BlogSubtitle text="The outcome (05.01.21)" />
+      Using this script leads to the following screenshots. Back in the day, Firefox Quantum didn't
+      support WebP or AVIF, so there is no class. Chrome currently supports AVIF, so AVIF is
+      displayed. Edge does not support AVIF and supports WebP, so our site has a webp class.
+      <BlogImage url="css-firefox" alt="firefox quantum without any class" />
+      <BlogImage url="css-chrome" alt="our website on chrome gets an avif class" />
+      <BlogImage url="css-edge" alt="microsoft edge with a webp class in the html element" />
       <BlogSubtitle text="SCSS background mixin" />
       <BlogLinkExternal
         link="https://raoulkramer.de/avif-and-webp-images-as-css-background-images/"

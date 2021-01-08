@@ -8,83 +8,15 @@ import {
   BlogLinkExternal,
   BlogImage,
 } from "@components/BlogComponents";
-const postdata = {
-  readingtime: "5",
-  title: "Use AVIF in GIMP",
-  description:
-    "GIMP 2.10.22 now includes HEIC support and AVIF support, learn how to take advantage of these new features.",
-  url: "https://avif.io/blog/tutorials/use-avif-in-gimp/",
-  image: "",
-  keywords: ["gimp", "avif", "tutorial", "use avif in gimp"],
-  author: "Justin Schmitz",
-  data_published: "22.10.20",
-  date_modified: "22.12.20",
-  sources: [
-    "gimp.org/news/2020/10/07/gimp-2-10-22-released",
-    "github.com/novomesk/gimp-avif-plugin",
-    "gitlab.gnome.org/GNOME/gimp/-/issues/2668",
-    "linuxreviews.org/GIMP_2.10.22_Is_Released_With_AVIF_Support_And_Improved_Support_For_Many_Other_File_Formats",
-    "phoronix.com/scan.php?page=news_item&px=GIMP-2.10.22-Released",
-  ],
-  tags: [
-    "linux",
-    "avif support",
-    "file format",
-    "feature",
-    "plug in",
-    "developer",
-    "firefox",
-    "image editor",
-    "image file format",
-    "image format",
-    "color profiles",
-    "avif files",
-    "macos",
-    "flatpak",
-    "flathub",
-    "bug fixes",
-    "avif images",
-    "paint shop pro",
-    "image bounds",
-    "16 bit integer",
-  ],
-  questions: [
-    "GIMP 2.10.22 Is Released With AVIF Support And Improved Support For Many Other File Formats",
-    "Download Now: GIMP 2.10.22 Released with Major File Format Improvements",
-    "GIMP 2.10.22 Released with Major File Format Improvements",
-    "Add .avif (AV1 Image File Format) support to GIMP",
-    "GIMP 2.10.22 Released with AVIF Support, Improved PSP and TIFF Support",
-    "What is AVIF? How to Use AV1 Image Format Images in GIMP",
-    "How to Start Using AVIF Images in GIMP",
-  ],
-};
 
-const posts = [
-  {
-    url: "",
-    title: "",
-    date_modified: "",
-    description: "",
-  },
-  {
-    url: "",
-    title: "",
-    date_modified: "",
-    description: "",
-  },
-  {
-    url: "",
-    title: "",
-    date_modified: "",
-    description: "",
-  },
-];
-
-const advantages = ["", ""];
+import { useAvifInGimp as postdata } from "lib/meta";
+import { useAvifInHtml as post1 } from "lib/meta";
+import { useAvifInCss as post2 } from "lib/meta";
+import { useAvifInNextjs as post3 } from "lib/meta";
 
 export default function BlogAvifInGIMP() {
   return (
-    <Blog postdata={postdata} posts={posts}>
+    <Blog postdata={postdata} posts={[post1, post2, post3]}>
       <BlogSubtitle text="" />
       The GNU Image Manipulation Program (GIMP) is a free and open-source raster graphics editor.
       While it was developed as a Linux Image editor, it has evolved into an effective alternative

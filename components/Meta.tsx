@@ -28,7 +28,6 @@ export default function Meta(props: MetaProps) {
       <meta property="og:description" content={props.description} />
       <meta property="og:image" content={props.image} />
       <meta property="og:type" content="article" />
-
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:site" content="@jschmitz97" />
       <meta property="twitter:url" content={"https://twitter.com/jschmitz97"} />

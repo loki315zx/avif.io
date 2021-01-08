@@ -8,100 +8,15 @@ import {
   BlogLinkExternal,
   BlogImage,
 } from "@components/BlogComponents";
-const postdata = {
-  title: "How to convert images to AVIF using Cloudflare",
-  description:
-    "Cloudflare has added support for AVIF, a new image format. Learn how to optimize images and convert them to WebP or AVIF on demand.",
-  url: "https://avif.io/blog/tutorials/use-avif-in-cloudflare",
-  image: "",
-  keywords: ["avif", "cdn", "cloudflare", "image optimization"],
-  author: "Justin Schmitz",
-  data_published: "16.12.20",
-  date_modified: "22.12.20",
-  sources: [
-    "blog.cloudflare.com/generate-avif-images-with-image-resizing",
-    "blog.cloudflare.com/http3-the-past-present-and-future",
-    "cloudflare.com/case-studies/discord",
-    "cloudflare.com/case-studies/hubspot",
-    "cloudflare.com/case-studies/zendesk",
-    "cloudflare.com/plans/",
-    "developers.cloudflare.com/images",
-    "developers.cloudflare.com/images/resizing-with-workers",
-    "endler.dev/2020/perf",
-    "ilovepdf.com/help/privacy",
-    "meterpreter.org/cloudflare-supports-the-new-avif-image-format-in-image-resizing",
-    "neowin.net/news/cloudflare-image-resizing-adds-support-for-avif-images",
-    "w3techs.com/technologies/details/cn-cloudflare",
-  ],
-  tags: [
-    "image format",
-    "cloudflare",
-    "browser",
-    "image resizing",
-    "google",
-    "file size",
-    "safari",
-    "apple",
-    "bandwidth",
-    "header",
-    "video codec",
-    "sites",
-    "event",
-    "request header",
-    "jpeg xr",
-    "image compression",
-    "webp support",
-    "cloudflare workers",
-    "original image",
-    "use case",
-  ],
-  questions: [
-    "Cloudflare supports the new AVIF image format in Image Resizing",
-    "Progressively delivering new image formats with CSS and Cloudflare Workers",
-    "Cloudflare Image Resizing adds support for AVIF images",
-    "Cloudflare Workers and AVIF Support",
-    "Cloudflare Image Resizing docs",
-    "AVIF, a next-gen image format for the web",
-    "Resizing with Cloudflare Workers",
-  ],
-  readingtime: "8",
-};
 
-const posts = [
-  {
-    url: "#",
-    title: "#",
-    date_modified: "#",
-    description: "#",
-  },
-  {
-    url: "#",
-    title: "#",
-    date_modified: "#",
-    description: "#",
-  },
-  {
-    url: "#",
-    title: "#",
-    date_modified: "#",
-    description: "#",
-  },
-];
-
-const advantages = [
-  "fixes WebP biggest flaws",
-  "uses the next generation VP10 video codec",
-  "is not limited to 8-bit color depth and support 12-bit color",
-  "support high dynamic range",
-  "uses chrome-from-luma compression technique for smaller file size",
-  "is already seeing faster adoption than previous royalty-free codecs",
-  "is a feature-rich format with lots of possibilities",
-  "already has multiple independent implementations like rav1e (we use this for avif.io!)",
-];
+import { useAvifInCloudflare as postdata } from "lib/meta";
+import { useAvifInHtml as post1 } from "lib/meta";
+import { useAvifInCss as post2 } from "lib/meta";
+import { useAvifInNextjs as post3 } from "lib/meta";
 
 export default function BlogAvifInCloudflare() {
   return (
-    <Blog postdata={postdata} posts={posts}>
+    <Blog postdata={postdata} posts={[post1, post2, post3]}>
       Images compressed in AVIF can be reduced to half the size of JPEG and WebP. It combines the
       HEIF ISO standard with the royalty-free AV1 codec from Mozilla, Google, Cisco, and others.
       Cloudflare on the other hand provides hosting services and distribution services to many
@@ -119,7 +34,19 @@ export default function BlogAvifInCloudflare() {
       <BlogSubtitle text="Why Cloudflare supports avif" />
       Regarding their latest blog post about avif, Cloudflare has made the decision to support avif
       for the following advantages:
-      <BlogAdvantages advantages={advantages} checked={true} />
+      <BlogAdvantages
+        advantages={[
+          "fixes WebP biggest flaws",
+          "uses the next generation VP10 video codec",
+          "is not limited to 8-bit color depth and support 12-bit color",
+          "support high dynamic range",
+          "uses chrome-from-luma compression technique for smaller file size",
+          "is already seeing faster adoption than previous royalty-free codecs",
+          "is a feature-rich format with lots of possibilities",
+          "already has multiple independent implementations like rav1e (we use this for avif.io!)",
+        ]}
+        checked={true}
+      />
       <BlogSubtitle text="Business & Pro Plan" />
       The Image Resizing feature converts images to the AVIF format. Unfortunately, this feature is
       not available for free but is part of the Business Plan. Since a Business plan costs around

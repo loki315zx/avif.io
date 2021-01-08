@@ -8,45 +8,15 @@ import {
   BlogLinkExternal,
   BlogImage,
 } from "@components/BlogComponents";
-const postdata = {
-  readingtime: "",
-  title: "",
-  description: "",
-  url: "",
-  image: "",
-  keywords: [""],
-  author: "Justin Schmitz",
-  data_published: "16.12.20",
-  date_modified: "22.12.20",
-  sources: [""],
-  tags: [""],
-  questions: [""],
-};
 
-const posts = [
-  {
-    url: "#",
-    title: "#",
-    date_modified: "#",
-    description: "#",
-  },
-  {
-    url: "#",
-    title: "#",
-    date_modified: "#",
-    description: "#",
-  },
-  {
-    url: "#",
-    title: "#",
-    date_modified: "#",
-    description: "#",
-  },
-];
+import { placeholder as postdata } from "lib/meta";
+import { placeholder as post1 } from "lib/meta";
+import { placeholder as post2 } from "lib/meta";
+import { placeholder as post3 } from "lib/meta";
 
 export default function BlogAvifInCloudflare() {
   return (
-    <Blog postdata={postdata} posts={posts}>
+    <Blog postdata={postdata} posts={[post1, post2, post3]}>
       <BlogSubtitle id="introduction" text="Overall Introduction" />
       AV1 Image File Format (AVIF) is a powerful new, open source, royalty-free file format that
       encodes AV1 bitstreams in the High Efficiency Image File Format (HEIF) container. Note: AVIF

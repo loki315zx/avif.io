@@ -140,7 +140,7 @@ export function BlogLink(props: { link: string; text: string; newLine?: boolean 
 export function BlogLinkExternal(props: { link: string; text: string; newLine?: boolean }) {
   return (
     <div style={{ display: props.newLine ? "block" : "inline-block" }}>
-      <a target="_blank" title={props.text} href={props.link}>
+      <a rel="noopener" target="_blank" title={props.text} href={props.link}>
         {props.text}
       </a>
     </div>

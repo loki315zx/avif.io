@@ -1559,7 +1559,7 @@ h2.infobox:hover::before {
 
 .footer {
   background: var(--black4);
-  padding: var(--responsivepadding);
+  padding: var(--s4) var(--s3);
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
   justify-content: space-between;
@@ -1591,12 +1591,12 @@ h2.infobox:hover::before {
   position: relative;
 }
 
-.blog .cta__container {
+.content .cta__container {
   padding: 0;
   background: none;
 }
 
-.blog .cta {
+.content .cta {
   padding: var(--s2);
   line-height: 1.5;
 }
@@ -1611,169 +1611,199 @@ h2.infobox:hover::before {
 
 .background1 .blog__header::after {
   background-image: radial-gradient(
-      circle at 52% 94%,
-      rgba(169, 169, 169, 0.04) 0%,
-      rgba(169, 169, 169, 0.04) 50%,
-      rgba(199, 199, 199, 0.04) 50%,
-      rgba(199, 199, 199, 0.04) 100%
+      circle at 79% 30%,
+      rgba(230, 230, 230, 0.04) 0%,
+      rgba(230, 230, 230, 0.04) 50%,
+      rgba(12, 12, 12, 0.04) 50%,
+      rgba(12, 12, 12, 0.04) 100%
     ),
     radial-gradient(
-      circle at 96% 98%,
-      rgba(61, 61, 61, 0.04) 0%,
-      rgba(61, 61, 61, 0.04) 50%,
-      rgba(201, 201, 201, 0.04) 50%,
-      rgba(201, 201, 201, 0.04) 100%
+      circle at 53% 89%,
+      rgba(210, 210, 210, 0.04) 0%,
+      rgba(210, 210, 210, 0.04) 50%,
+      rgba(24, 24, 24, 0.04) 50%,
+      rgba(24, 24, 24, 0.04) 100%
     ),
     radial-gradient(
-      circle at 93% 97%,
-      rgba(227, 227, 227, 0.04) 0%,
-      rgba(227, 227, 227, 0.04) 50%,
-      rgba(145, 145, 145, 0.04) 50%,
-      rgba(145, 145, 145, 0.04) 100%
+      circle at 92% 89%,
+      rgba(17, 17, 17, 0.04) 0%,
+      rgba(17, 17, 17, 0.04) 50%,
+      rgba(205, 205, 205, 0.04) 50%,
+      rgba(205, 205, 205, 0.04) 100%
     ),
     radial-gradient(
-      circle at 79% 52%,
-      rgba(245, 245, 245, 0.04) 0%,
-      rgba(245, 245, 245, 0.04) 50%,
-      rgba(86, 86, 86, 0.04) 50%,
-      rgba(86, 86, 86, 0.04) 100%
+      circle at 21% 13%,
+      rgba(124, 124, 124, 0.04) 0%,
+      rgba(124, 124, 124, 0.04) 50%,
+      rgba(243, 243, 243, 0.04) 50%,
+      rgba(243, 243, 243, 0.04) 100%
     ),
-    linear-gradient(90deg, rgb(210, 9, 198), rgb(25, 38, 118));
+    radial-gradient(
+      circle at 77% 0%,
+      rgba(16, 16, 16, 0.04) 0%,
+      rgba(16, 16, 16, 0.04) 50%,
+      rgba(130, 130, 130, 0.04) 50%,
+      rgba(130, 130, 130, 0.04) 100%
+    ),
+    linear-gradient(90deg, rgb(247, 101, 31), rgb(249, 105, 208));
 }
-
 .background2 .blog__header::after {
   background-image: radial-gradient(
-      circle at 21% 44%,
-      rgba(23, 23, 23, 0.05) 0%,
-      rgba(23, 23, 23, 0.05) 50%,
-      rgba(109, 109, 109, 0.05) 50%,
-      rgba(109, 109, 109, 0.05) 100%
+      circle at 22% 15%,
+      rgba(45, 45, 45, 0.05) 0%,
+      rgba(45, 45, 45, 0.05) 50%,
+      rgba(95, 95, 95, 0.05) 50%,
+      rgba(95, 95, 95, 0.05) 100%
     ),
     radial-gradient(
-      circle at 21% 96%,
-      rgba(92, 92, 92, 0.05) 0%,
-      rgba(92, 92, 92, 0.05) 50%,
-      rgba(199, 199, 199, 0.05) 50%,
-      rgba(199, 199, 199, 0.05) 100%
+      circle at 83% 16%,
+      rgba(122, 122, 122, 0.05) 0%,
+      rgba(122, 122, 122, 0.05) 50%,
+      rgba(194, 194, 194, 0.05) 50%,
+      rgba(194, 194, 194, 0.05) 100%
     ),
     radial-gradient(
-      circle at 25% 37%,
-      rgba(230, 230, 230, 0.05) 0%,
+      circle at 74% 7%,
+      rgba(82, 82, 82, 0.05) 0%,
+      rgba(82, 82, 82, 0.05) 50%,
       rgba(230, 230, 230, 0.05) 50%,
-      rgba(25, 25, 25, 0.05) 50%,
-      rgba(25, 25, 25, 0.05) 100%
+      rgba(230, 230, 230, 0.05) 100%
     ),
-    linear-gradient(90deg, rgb(156, 48, 160), rgb(75, 105, 255));
+    linear-gradient(90deg, rgb(243, 136, 126), rgb(251, 43, 71));
 }
-
 .background3 .blog__header::after {
   background-image: radial-gradient(
-      circle at 99% 0%,
-      rgba(235, 235, 235, 0.03) 0%,
-      rgba(235, 235, 235, 0.03) 50%,
-      rgba(142, 142, 142, 0.03) 50%,
-      rgba(142, 142, 142, 0.03) 100%
+      circle at 73% 14%,
+      rgba(160, 160, 160, 0.05) 0%,
+      rgba(160, 160, 160, 0.05) 50%,
+      rgba(27, 27, 27, 0.05) 50%,
+      rgba(27, 27, 27, 0.05) 100%
     ),
     radial-gradient(
-      circle at 84% 89%,
-      rgba(229, 229, 229, 0.03) 0%,
-      rgba(229, 229, 229, 0.03) 50%,
-      rgba(1, 1, 1, 0.03) 50%,
-      rgba(1, 1, 1, 0.03) 100%
+      circle at 22% 0%,
+      rgba(251, 251, 251, 0.05) 0%,
+      rgba(251, 251, 251, 0.05) 50%,
+      rgba(219, 219, 219, 0.05) 50%,
+      rgba(219, 219, 219, 0.05) 100%
     ),
     radial-gradient(
-      circle at 89% 20%,
-      rgba(219, 219, 219, 0.03) 0%,
-      rgba(219, 219, 219, 0.03) 50%,
-      rgba(38, 38, 38, 0.03) 50%,
-      rgba(38, 38, 38, 0.03) 100%
+      circle at 89% 57%,
+      rgba(49, 49, 49, 0.05) 0%,
+      rgba(49, 49, 49, 0.05) 50%,
+      rgba(206, 206, 206, 0.05) 50%,
+      rgba(206, 206, 206, 0.05) 100%
     ),
-    radial-gradient(
-      circle at 90% 0%,
-      rgba(48, 48, 48, 0.03) 0%,
-      rgba(48, 48, 48, 0.03) 50%,
-      rgba(109, 109, 109, 0.03) 50%,
-      rgba(109, 109, 109, 0.03) 100%
-    ),
-    linear-gradient(45deg, rgb(26, 53, 180), rgb(164, 129, 216));
+    linear-gradient(90deg, rgb(238, 131, 122), rgb(184, 12, 194));
 }
-
 .background4 .blog__header::after {
   background-image: radial-gradient(
-      circle at 28% 93%,
-      rgba(2, 2, 2, 0.04) 0%,
-      rgba(2, 2, 2, 0.04) 50%,
-      rgba(223, 223, 223, 0.04) 50%,
-      rgba(223, 223, 223, 0.04) 100%
+      circle at 57% 90%,
+      rgba(129, 129, 129, 0.04) 0%,
+      rgba(129, 129, 129, 0.04) 50%,
+      rgba(193, 193, 193, 0.04) 50%,
+      rgba(193, 193, 193, 0.04) 100%
     ),
     radial-gradient(
-      circle at 13% 75%,
-      rgba(185, 185, 185, 0.04) 0%,
-      rgba(185, 185, 185, 0.04) 50%,
-      rgba(25, 25, 25, 0.04) 50%,
-      rgba(25, 25, 25, 0.04) 100%
+      circle at 91% 64%,
+      rgba(253, 253, 253, 0.04) 0%,
+      rgba(253, 253, 253, 0.04) 50%,
+      rgba(58, 58, 58, 0.04) 50%,
+      rgba(58, 58, 58, 0.04) 100%
     ),
     radial-gradient(
-      circle at 79% 39%,
-      rgba(34, 34, 34, 0.04) 0%,
-      rgba(34, 34, 34, 0.04) 50%,
-      rgba(57, 57, 57, 0.04) 50%,
-      rgba(57, 57, 57, 0.04) 100%
+      circle at 72% 98%,
+      rgba(55, 55, 55, 0.04) 0%,
+      rgba(55, 55, 55, 0.04) 50%,
+      rgba(187, 187, 187, 0.04) 50%,
+      rgba(187, 187, 187, 0.04) 100%
     ),
-    linear-gradient(56deg, rgb(39, 37, 178), rgb(169, 88, 194));
+    linear-gradient(58deg, rgb(185, 9, 110), rgb(243, 119, 170));
 }
-
 .background5 .blog__header::after {
   background-image: radial-gradient(
-      circle at 79% 8%,
-      rgba(218, 218, 218, 0.04) 0%,
-      rgba(218, 218, 218, 0.04) 50%,
-      rgba(129, 129, 129, 0.04) 50%,
-      rgba(129, 129, 129, 0.04) 100%
+      circle at 30% 97%,
+      rgba(4, 4, 4, 0.06) 0%,
+      rgba(4, 4, 4, 0.06) 33.333%,
+      rgba(4, 4, 4, 0.06) 33.333%,
+      rgba(4, 4, 4, 0.06) 66.666%,
+      rgba(3, 3, 3, 0.06) 66.666%,
+      rgba(3, 3, 3, 0.06) 99.999%
     ),
     radial-gradient(
-      circle at 0% 68%,
-      rgba(47, 47, 47, 0.04) 0%,
-      rgba(47, 47, 47, 0.04) 50%,
-      rgba(30, 30, 30, 0.04) 50%,
-      rgba(30, 30, 30, 0.04) 100%
+      circle at 22% 20%,
+      rgba(154, 154, 154, 0.06) 0%,
+      rgba(154, 154, 154, 0.06) 33.333%,
+      rgba(78, 78, 78, 0.06) 33.333%,
+      rgba(78, 78, 78, 0.06) 66.666%,
+      rgba(1, 1, 1, 0.06) 66.666%,
+      rgba(1, 1, 1, 0.06) 99.999%
     ),
     radial-gradient(
-      circle at 96% 42%,
-      rgba(88, 88, 88, 0.04) 0%,
-      rgba(88, 88, 88, 0.04) 50%,
-      rgba(225, 225, 225, 0.04) 50%,
-      rgba(225, 225, 225, 0.04) 100%
+      circle at 67% 32%,
+      rgba(129, 129, 129, 0.06) 0%,
+      rgba(129, 129, 129, 0.06) 33.333%,
+      rgba(165, 165, 165, 0.06) 33.333%,
+      rgba(165, 165, 165, 0.06) 66.666%,
+      rgba(201, 201, 201, 0.06) 66.666%,
+      rgba(201, 201, 201, 0.06) 99.999%
     ),
-    linear-gradient(172deg, rgb(230, 6, 245), rgb(98, 24, 90));
+    linear-gradient(45deg, rgb(236, 52, 23), rgb(251, 186, 40));
 }
-
 .background6 .blog__header::after {
   background-image: radial-gradient(
-      circle at 50% 30%,
-      rgba(209, 209, 209, 0.04) 0%,
-      rgba(209, 209, 209, 0.04) 50%,
-      rgba(138, 138, 138, 0.04) 50%,
-      rgba(138, 138, 138, 0.04) 100%
+      circle at 11% 62%,
+      rgba(205, 205, 205, 0.04) 0%,
+      rgba(205, 205, 205, 0.04) 50%,
+      rgba(149, 149, 149, 0.04) 50%,
+      rgba(149, 149, 149, 0.04) 100%
     ),
     radial-gradient(
-      circle at 9% 40%,
-      rgba(209, 209, 209, 0.04) 0%,
-      rgba(209, 209, 209, 0.04) 50%,
-      rgba(71, 71, 71, 0.04) 50%,
-      rgba(71, 71, 71, 0.04) 100%
+      circle at 78% 10%,
+      rgba(49, 49, 49, 0.04) 0%,
+      rgba(49, 49, 49, 0.04) 50%,
+      rgba(254, 254, 254, 0.04) 50%,
+      rgba(254, 254, 254, 0.04) 100%
     ),
     radial-gradient(
-      circle at 84% 81%,
-      rgba(147, 147, 147, 0.04) 0%,
-      rgba(147, 147, 147, 0.04) 50%,
-      rgba(253, 253, 253, 0.04) 50%,
-      rgba(253, 253, 253, 0.04) 100%
+      circle at 92% 43%,
+      rgba(34, 34, 34, 0.04) 0%,
+      rgba(34, 34, 34, 0.04) 50%,
+      rgba(206, 206, 206, 0.04) 50%,
+      rgba(206, 206, 206, 0.04) 100%
     ),
-    linear-gradient(266deg, rgb(5, 73, 170), rgb(140, 100, 243));
+    linear-gradient(329deg, rgb(241, 77, 33), rgb(218, 227, 61));
 }
-
 .background7 .blog__header::after {
+  background-image: radial-gradient(
+      circle at 30% 97%,
+      rgba(4, 4, 4, 0.06) 0%,
+      rgba(4, 4, 4, 0.06) 33.333%,
+      rgba(4, 4, 4, 0.06) 33.333%,
+      rgba(4, 4, 4, 0.06) 66.666%,
+      rgba(3, 3, 3, 0.06) 66.666%,
+      rgba(3, 3, 3, 0.06) 99.999%
+    ),
+    radial-gradient(
+      circle at 22% 20%,
+      rgba(154, 154, 154, 0.06) 0%,
+      rgba(154, 154, 154, 0.06) 33.333%,
+      rgba(78, 78, 78, 0.06) 33.333%,
+      rgba(78, 78, 78, 0.06) 66.666%,
+      rgba(1, 1, 1, 0.06) 66.666%,
+      rgba(1, 1, 1, 0.06) 99.999%
+    ),
+    radial-gradient(
+      circle at 67% 32%,
+      rgba(129, 129, 129, 0.06) 0%,
+      rgba(129, 129, 129, 0.06) 33.333%,
+      rgba(165, 165, 165, 0.06) 33.333%,
+      rgba(165, 165, 165, 0.06) 66.666%,
+      rgba(201, 201, 201, 0.06) 66.666%,
+      rgba(201, 201, 201, 0.06) 99.999%
+    ),
+    linear-gradient(45deg, rgb(236, 52, 23), rgb(251, 186, 40));
+}
+.background8 .blog__header::after {
   background-image: radial-gradient(
       circle at 49% 80%,
       rgba(105, 105, 105, 0.06) 0%,
@@ -1831,98 +1861,53 @@ h2.infobox:hover::before {
     ),
     linear-gradient(135deg, rgb(131, 27, 242), rgb(248, 30, 172));
 }
-
-.background8 .blog__header::after {
-  background-image: radial-gradient(
-      circle at 45% 92%,
-      rgba(154, 154, 154, 0.08) 0%,
-      rgba(154, 154, 154, 0.08) 33.333%,
-      rgba(119, 119, 119, 0.08) 33.333%,
-      rgba(119, 119, 119, 0.08) 66.666%,
-      rgba(83, 83, 83, 0.08) 66.666%,
-      rgba(83, 83, 83, 0.08) 99.999%
-    ),
-    radial-gradient(
-      circle at 25% 59%,
-      rgba(82, 82, 82, 0.08) 0%,
-      rgba(82, 82, 82, 0.08) 33.333%,
-      rgba(93, 93, 93, 0.08) 33.333%,
-      rgba(93, 93, 93, 0.08) 66.666%,
-      rgba(104, 104, 104, 0.08) 66.666%,
-      rgba(104, 104, 104, 0.08) 99.999%
-    ),
-    radial-gradient(
-      circle at 7% 33%,
-      rgba(56, 56, 56, 0.08) 0%,
-      rgba(56, 56, 56, 0.08) 33.333%,
-      rgba(134, 134, 134, 0.08) 33.333%,
-      rgba(134, 134, 134, 0.08) 66.666%,
-      rgba(212, 212, 212, 0.08) 66.666%,
-      rgba(212, 212, 212, 0.08) 99.999%
-    ),
-    linear-gradient(90deg, rgb(3, 199, 193), rgb(92, 3, 177));
-}
-
 .background9 .blog__header::after {
   background-image: radial-gradient(
-      circle at 39% 47%,
-      rgba(107, 107, 107, 0.08) 0%,
-      rgba(107, 107, 107, 0.08) 33.333%,
-      rgba(72, 72, 72, 0.08) 33.333%,
-      rgba(72, 72, 72, 0.08) 66.666%,
-      rgba(36, 36, 36, 0.08) 66.666%,
-      rgba(36, 36, 36, 0.08) 99.999%
+      circle at 79% 8%,
+      rgba(218, 218, 218, 0.04) 0%,
+      rgba(218, 218, 218, 0.04) 50%,
+      rgba(129, 129, 129, 0.04) 50%,
+      rgba(129, 129, 129, 0.04) 100%
     ),
     radial-gradient(
-      circle at 53% 74%,
-      rgba(182, 182, 182, 0.08) 0%,
-      rgba(182, 182, 182, 0.08) 33.333%,
-      rgba(202, 202, 202, 0.08) 33.333%,
-      rgba(202, 202, 202, 0.08) 66.666%,
-      rgba(221, 221, 221, 0.08) 66.666%,
-      rgba(221, 221, 221, 0.08) 99.999%
+      circle at 0% 68%,
+      rgba(47, 47, 47, 0.04) 0%,
+      rgba(47, 47, 47, 0.04) 50%,
+      rgba(30, 30, 30, 0.04) 50%,
+      rgba(30, 30, 30, 0.04) 100%
     ),
     radial-gradient(
-      circle at 14% 98%,
-      rgba(184, 184, 184, 0.08) 0%,
-      rgba(184, 184, 184, 0.08) 33.333%,
-      rgba(96, 96, 96, 0.08) 33.333%,
-      rgba(96, 96, 96, 0.08) 66.666%,
-      rgba(7, 7, 7, 0.08) 66.666%,
-      rgba(7, 7, 7, 0.08) 99.999%
+      circle at 96% 42%,
+      rgba(88, 88, 88, 0.04) 0%,
+      rgba(88, 88, 88, 0.04) 50%,
+      rgba(225, 225, 225, 0.04) 50%,
+      rgba(225, 225, 225, 0.04) 100%
     ),
-    linear-gradient(45deg, rgb(97, 14, 117), rgb(20, 32, 127));
+    linear-gradient(172deg, rgb(230, 6, 245), rgb(98, 24, 90));
 }
-
 .background10 .blog__header::after {
   background-image: radial-gradient(
-      circle at 20% 12%,
-      rgba(7, 7, 7, 0.24) 0%,
-      rgba(7, 7, 7, 0.24) 33.333%,
-      rgba(30, 30, 30, 0.24) 33.333%,
-      rgba(30, 30, 30, 0.24) 66.666%,
-      rgba(53, 53, 53, 0.24) 66.666%,
-      rgba(53, 53, 53, 0.24) 99.999%
+      circle at 21% 44%,
+      rgba(23, 23, 23, 0.05) 0%,
+      rgba(23, 23, 23, 0.05) 50%,
+      rgba(109, 109, 109, 0.05) 50%,
+      rgba(109, 109, 109, 0.05) 100%
     ),
     radial-gradient(
-      circle at 66% 14%,
-      rgba(45, 45, 45, 0.2) 0%,
-      rgba(45, 45, 45, 0.2) 33.333%,
-      rgba(72, 72, 72, 0.2) 33.333%,
-      rgba(72, 72, 72, 0.2) 66.666%,
-      rgba(99, 99, 99, 0.2) 66.666%,
-      rgba(99, 99, 99, 0.2) 99.999%
+      circle at 21% 96%,
+      rgba(92, 92, 92, 0.05) 0%,
+      rgba(92, 92, 92, 0.05) 50%,
+      rgba(199, 199, 199, 0.05) 50%,
+      rgba(199, 199, 199, 0.05) 100%
     ),
     radial-gradient(
-      circle at 3% 81%,
-      rgba(83, 83, 83, 0.16) 0%,
-      rgba(83, 83, 83, 0.16) 33.333%,
-      rgba(142, 142, 142, 0.16) 33.333%,
-      rgba(142, 142, 142, 0.16) 66.666%,
-      rgba(201, 201, 201, 0.16) 66.666%,
-      rgba(201, 201, 201, 0.16) 99.999%
+      circle at 25% 37%,
+      rgba(230, 230, 230, 0.05) 0%,
+      rgba(230, 230, 230, 0.05) 50%,
+      rgba(25, 25, 25, 0.05) 50%,
+      rgba(25, 25, 25, 0.05) 100%
     ),
-    linear-gradient(45deg, rgb(139, 163, 255), rgb(132, 39, 232));
+    linear-gradient(90deg, rgb(156, 48, 160), rgb(75, 105, 255));
 }
 
 .blog * {
@@ -2064,6 +2049,55 @@ picture img {
   content-visibility: auto;
   contain-intrinsic-size: min(360px, 720) min(calc(360px * 0.5625), 720px);
   background-size: cover;
+}
+
+/*  */
+/*  */
+/* Share Cointer */
+/*  */
+/*  */
+
+.share-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: fixed;
+  bottom: var(--s1);
+  right: var(--s1);
+  z-index: 999;
+  padding: var(--s0);
+  background: var(--black3-8);
+  border-radius: var(--radius300);
+}
+
+.share-container a {
+  display: inline-flex;
+  width: 32px;
+  height: 32px;
+  margin-right: var(--s0);
+}
+
+#twitter {
+  background-image: url(@assets/twitter.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+#facebook,
+#reddit {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+#reddit {
+  background-image: url(@assets/reddit.svg);
+}
+
+#facebook {
+  background-image: url(@assets/facebook.svg);
+  margin-right: 0;
 }
 
 /*  */

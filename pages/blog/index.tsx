@@ -1,10 +1,29 @@
-import Link from "next/link";
+import Blog from "@components/Blog";
+import {
+  BlogSubtitle,
+  BlogAdvantages,
+  BlogSyntax,
+  BlogNote,
+  BlogLink,
+  BlogLinkExternal,
+  BlogImage,
+  BlogPosts,
+} from "@components/BlogComponents";
+import CTA from "@components/CTA";
+import Meta from "@components/Meta";
 
-export default function BlogList() {
+import { placeholder as postdata } from "lib/meta";
+import { useAvifInEdge as post1 } from "lib/meta";
+import { useAvifInFirefox as post2 } from "lib/meta";
+import { placeholder as post3 } from "lib/meta";
+import { useAvifInEdge as post4 } from "lib/meta";
+import { useAvifInFirefox as post5 } from "lib/meta";
+import { placeholder as post6 } from "lib/meta";
+
+export default function BlogAvif() {
   return (
-    <h1>
-      List your blogs here! For example: This is served on avif.io/blog.
-      <Link href="/blog/use-avif-in-html">link</Link>
-    </h1>
+    <>
+      <BlogPosts posts={[post1, post2, post3, post4, post5, post6]} />
+    </>
   );
 }
