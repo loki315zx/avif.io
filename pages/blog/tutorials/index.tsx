@@ -1,15 +1,4 @@
-import Blog from "@components/Blog";
-import {
-  BlogSubtitle,
-  BlogAdvantages,
-  BlogSyntax,
-  BlogNote,
-  BlogLink,
-  BlogLinkExternal,
-  BlogImage,
-  BlogPosts,
-  BlogTitle,
-} from "@components/BlogComponents";
+import { BlogPosts, BlogTitle } from "@components/BlogComponents";
 import CTA from "@components/CTA";
 import Footer from "@components/Footer";
 import Header from "@components/Header";
@@ -31,7 +20,7 @@ export default function BlogAvif() {
   return (
     <>
       <Header />
-      <div className="blog__header">
+      <div className="blog__header overlay-after">
         <Header />
         <BlogTitle text="Read all articles about AVIF" />
         <div className="blog__meta white center"></div>

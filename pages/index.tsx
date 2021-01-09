@@ -68,7 +68,9 @@ export default function App(): ReactElement {
         <meta property="og:url" content="https://avif.io" />
         <meta property="og:site_name" content="AVIF Converter | avif.io ✨" />
       </Head>
-      <Header />
+      <div className="homepage">
+        <Header />
+      </div>
       <div className={"app-container"}>
         <div className="app-container-blur overlay"></div>
         <h1 className={"f3 white bold s1"}>Convert any images to AVIF for free.</h1>

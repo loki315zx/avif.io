@@ -1,3 +1,4 @@
+import { BlogLink, BlogLinkExternal } from "./BlogComponents";
 import ConversionsCounter from "./ConversionsCounter";
 
 export default function Footer() {
@@ -15,10 +16,10 @@ export default function Footer() {
         <div id="footer-about">
           <div className="bold s1">About</div>
           <a title="title" href="#">
-            Features
+            avif.io Features
           </a>{" "}
           <a title="title" href="#">
-            Upcoming
+            Upcoming Features
           </a>{" "}
           <a title="title" href="#">
             Changelog
@@ -30,32 +31,28 @@ export default function Footer() {
         <div id="footer-learn">
           <div className="bold s1">Learn</div>
           <a title="title" href="#">
-            What is avif?
+            What is AVIF?
           </a>{" "}
           <a title="title" href="#">
-            How do I use avif?
+            AVIF Advantages
           </a>{" "}
           <a title="title" href="#">
-            FAQ
+            AVIF Support
           </a>{" "}
           <a title="title" href="#">
-            AVIF support
+            AVIF In-Depth
           </a>
         </div>
         <div id="footer-more">
           <div className="bold s1">More</div>
-          <a title="title" href="#">
-            Blog
-          </a>
-          <a title="title" href="#">
-            Contact
-          </a>
-          <a title="title" href="#">
-            Donate
-          </a>
-          <a title="title" href="#">
-            Legal and Privacy
-          </a>
+          <BlogLink text="Blog" link="/blog" newLine />
+          <BlogLinkExternal text="Contact" link="mailto:support@avif.io" newLine />
+          <BlogLinkExternal
+            text="Donate"
+            link="https://www.buymeacoffee.com/justinschmitz"
+            newLine
+          />
+          <BlogLink text="Legal & Privacy" link="/privacy-policy" newLine />
         </div>
       </div>
     </>

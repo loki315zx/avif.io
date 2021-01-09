@@ -17,7 +17,7 @@ export default function Header() {
           </div>
           <div className="menu">
             <Link href="https://www.buymeacoffee.com/justinschmitz">Support</Link>
-            <Link href="https://www.buymeacoffee.com/justinschmitz">Blog</Link>
+            <Link href="/blog/">Blog</Link>
             <Link href="/">
               <a className="button-primary">Convert</a>
             </Link>

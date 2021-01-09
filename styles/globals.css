@@ -304,7 +304,7 @@ ul {
 .button-primary {
   padding: var(--s0) var(--s1);
   border-radius: var(--radius300);
-  opacity: 0.5;
+  background: var(--color500);
 }
 
 .button-primary a {
@@ -1425,51 +1425,6 @@ h2.infobox:hover::before {
 
 /*  */
 /*  */
-/* Can I use? */
-/*  */
-/*  */
-
-#more {
-  background: var(--gray1);
-  padding: var(--responsivepadding);
-}
-
-.more__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-.more__item {
-  padding: var(--s1);
-  font-weight: bold;
-  color: var(--white);
-  background: var(--black2);
-}
-
-.more__item:hover {
-  background: var(--black2);
-}
-
-.more__item .f2 {
-  font-weight: bold;
-}
-
-.more__badges {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.badge {
-  padding: var(--s0);
-  background: var(--white);
-  color: var(--black1);
-  display: inline-flex;
-  margin: 0 var(--s0) var(--s0) 0;
-  border-radius: var(--radius100);
-}
-
-/*  */
-/*  */
 /* Posts */
 /*  */
 /*  */
@@ -1478,7 +1433,7 @@ h2.infobox:hover::before {
   padding: var(--responsivepadding);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: var(--s1);
+  grid-gap: var(--s2);
 }
 
 .posts__item {
@@ -2018,9 +1973,13 @@ h2.infobox:hover::before {
   margin-right: var(--s0);
 }
 
+.homepage .button-primary {
+  opacity: 0.2;
+  background: none;
+}
+
 .blog .button-primary {
   background: var(--white);
-  opacity: 1;
   color: var(--black1);
 }
 
