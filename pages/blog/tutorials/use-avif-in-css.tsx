@@ -1,9 +1,7 @@
 import Blog from "@components/Blog";
 import {
   BlogSubtitle,
-  BlogAdvantages,
   BlogSyntax,
-  BlogNote,
   BlogLink,
   BlogLinkExternal,
   BlogImage,

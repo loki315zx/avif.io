@@ -1,12 +1,5 @@
 import Blog from "@components/Blog";
-import {
-  BlogSubtitle,
-  BlogAdvantages,
-  BlogSyntax,
-  BlogNote,
-  BlogLink,
-  BlogImage,
-} from "@components/BlogComponents";
+import { BlogSubtitle, BlogNote, BlogImage } from "@components/BlogComponents";
 
 import { useAvifInFirefox as postdata } from "lib/meta";
 import { useAvifInHtml as post1 } from "lib/meta";
@@ -47,7 +40,7 @@ export default function BlogAvif() {
       Remember to restart Firefox. Then come back to this page to see this fantastic image:
       <img
         src="/images/comparison.avif"
-        alt="an avif image"
+        alt="your browser may show this AVIF img"
         decoding="async"
         loading="lazy"
         width="720px"

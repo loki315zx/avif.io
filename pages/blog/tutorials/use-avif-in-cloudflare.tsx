@@ -3,7 +3,6 @@ import {
   BlogSubtitle,
   BlogAdvantages,
   BlogSyntax,
-  BlogNote,
   BlogLink,
   BlogLinkExternal,
   BlogImage,

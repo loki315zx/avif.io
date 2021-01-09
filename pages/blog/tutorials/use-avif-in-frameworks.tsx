@@ -1,12 +1,5 @@
 import Blog from "@components/Blog";
-import {
-  BlogSubtitle,
-  BlogAdvantages,
-  BlogSyntax,
-  BlogNote,
-  BlogLink,
-  BlogImage,
-} from "@components/BlogComponents";
+import { BlogSubtitle, BlogAdvantages, BlogSyntax, BlogImage } from "@components/BlogComponents";
 
 import { useAvifInFrameworks as postdata } from "lib/meta";
 import { useAvifInHtml as post1 } from "lib/meta";

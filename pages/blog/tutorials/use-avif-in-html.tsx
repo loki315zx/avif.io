@@ -6,7 +6,6 @@ import {
   BlogNote,
   BlogLink,
   BlogLinkExternal,
-  BlogImage,
 } from "@components/BlogComponents";
 
 import { useAvifInHtml as postdata } from "lib/meta";

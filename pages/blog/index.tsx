@@ -1,15 +1,4 @@
-import Blog from "@components/Blog";
-import {
-  BlogSubtitle,
-  BlogAdvantages,
-  BlogSyntax,
-  BlogNote,
-  BlogLink,
-  BlogLinkExternal,
-  BlogImage,
-  BlogPosts,
-  BlogTitle,
-} from "@components/BlogComponents";
+import { BlogPosts, BlogTitle } from "@components/BlogComponents";
 import CTA from "@components/CTA";
 import Footer from "@components/Footer";
 import Header from "@components/Header";
