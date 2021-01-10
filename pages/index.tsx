@@ -7,8 +7,6 @@ import DownloadAllButton from "@components/DownloadAllButton";
 import SettingsBox, { Settings } from "@components/SettingsBox";
 import Tutorials from "@components/Tutorials";
 import Advantages from "@components/Advantages";
-import Footer from "@components/Footer";
-import CTA from "@components/CTA";
 import Page from "@components/Page";
 
 import Converter from "@utils/converter";
@@ -93,7 +91,18 @@ export default function App(): ReactElement {
             ))}
           <DownloadAllButton files={convertedFiles} />
         </div>
-        <div className="chevron" />
+        <a
+          className="producthunt"
+          href="https://www.producthunt.com/posts/avif-io-avif-image-converter?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-avif-io-avif-image-converter"
+          target="_blank">
+          <img
+            src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=273434&theme=dark"
+            alt="✨ avif.io | Fastest AVIF image converter - Convert images to AVIF for free. No data sent, it's magic!✨ | Product Hunt"
+            style={{ width: 250, height: 54 }}
+            width="250"
+            height="54"
+          />
+        </a>
       </div>
       <Tutorials />
       <Advantages />
@@ -109,8 +118,8 @@ export default function App(): ReactElement {
             sliderLineColor="rgba(255,255,255,0.2)"
             sliderPositionPercentage={0.5}
           />
-          <p id="jpg">jpg · 45kb</p>
-          <p id="avif">avif · 45kb</p>
+          <p id="jpg">jpg · 45kB</p>
+          <p id="avif">avif · 45kB</p>
         </div>
       </section>
       <div className="advantages-explainer">
@@ -118,7 +127,7 @@ export default function App(): ReactElement {
         have always been taking up half the amount. There's a need for a new image format to stop
         the increasing size of pictures on the web. For years, JPEG has remained the most popular
         picture format due to its high compatibility. AVIF is the modern solution. It is developed
-        by the Alliance for Open Media, a collaboration of Google, Apple Mozilla, Intel and other
+        by the Alliance for Open Media, a collaboration of Google, Apple, Mozilla, Intel and other
         tech giants. Avif is a codec for super-compressed images with acceptable quality, and it’s
         constantly getting better. Avif offers significant reductions in file size over the current
         JPEG or WebP codecs. You can reduce file sizes by 20-90%, even for images with transparency

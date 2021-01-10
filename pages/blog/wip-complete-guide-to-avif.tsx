@@ -1,13 +1,5 @@
 import Blog from "@components/Blog";
-import {
-  BlogSubtitle,
-  BlogAdvantages,
-  BlogSyntax,
-  BlogNote,
-  BlogLink,
-  BlogLinkExternal,
-  BlogImage,
-} from "@components/BlogComponents";
+import { BlogSubtitle } from "@components/BlogComponents";
 
 import { placeholder as postdata } from "lib/meta";
 import { placeholder as post1 } from "lib/meta";

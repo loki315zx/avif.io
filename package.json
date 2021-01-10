@@ -10,7 +10,8 @@
     "check-style": "npx stylelint styles/",
     "prettier": "prettier --write .",
     "pull": "git pull && git fetch origin && git reset --hard origin/master",
-    "setup": "npm i -D && npm run build && next export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && npm run dev",
+    "setup": "npm i && npm run build && next export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && npm run dev",
+    "release": "npm i && npm run build && next export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../",
     "analyze": "cross-env ANALYZE=true next build"
   },
   "dependencies": {

@@ -381,7 +381,7 @@ ul {
   background-size: 100%;
   background-position: bottom left;
   background-repeat: no-repeat;
-  padding: var(--s2);
+  padding: var(--s4) var(--s2) var(--s2) var(--s2);
   position: relative;
 }
 
@@ -396,6 +396,7 @@ ul {
   align-items: center;
   padding: var(--s1);
   max-width: calc(var(--s5) * 4);
+  min-width: calc(var(--s5) * 4);
   border-radius: var(--radius500);
   box-shadow: var(--shadow3d);
   text-align: center;
@@ -404,6 +405,13 @@ ul {
   background-color: rgba(255, 255, 255, 0.1);
   animation: bounce-in 1s forwards 1;
   animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+}
+
+.producthunt {
+  position: absolute;
+  bottom: var(--s0);
+  left: var(--s0);
+  z-index: 9999999999;
 }
 
 .dropzone-container {
@@ -699,15 +707,17 @@ ul {
   margin-bottom: var(--s2);
 }
 
-.downloadall-container {
+.downloadall-container.hide {
   opacity: 0;
   height: 0;
+  display: none;
 }
 
 .downloadall-container.show {
   margin-top: var(--s3);
   height: auto;
   opacity: 1;
+  display: block;
 }
 
 .donation {
@@ -725,16 +735,6 @@ ul {
 
 .progress .conversion_outcome {
   display: none;
-}
-
-.chevron {
-  background-image: url("@assets/chevron.svg");
-  width: 24px;
-  height: 24px;
-  margin-top: var(--s2);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
 }
 
 .dropzone-and-settings {
@@ -1320,7 +1320,7 @@ h2.infobox:hover::before {
   border-radius: var(--radius100);
 }
 
-#jpg {
+.avif #jpg {
   position: absolute;
   top: 0;
   background: var(--white);
@@ -1330,9 +1330,15 @@ h2.infobox:hover::before {
   text-align: center;
   opacity: 0.5;
   cursor: pointer;
+  opacity: 1;
 }
 
+#jpg,
 #avif {
+  opacity: 0;
+}
+
+.avif #avif {
   position: absolute;
   top: 0;
   right: 0;
@@ -1367,8 +1373,6 @@ h2.infobox:hover::before {
   padding: var(--responsivepadding);
   background: var(--black1);
   position: relative;
-  content-visibility: auto;
-  contain-intrinsic-size: min(360px, 100vw) min(240px, 720px);
 }
 
 .cta {
@@ -1437,8 +1441,6 @@ h2.infobox:hover::before {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: var(--s2);
-  content-visibility: auto;
-  contain-intrinsic-size: min(360px, 100vw) min(240px, 720px);
 }
 
 .posts__item {
@@ -1530,8 +1532,6 @@ h2.infobox:hover::before {
   grid-template-columns: 2fr 1fr 1fr 1fr;
   justify-content: space-between;
   align-items: flex-end;
-  content-visibility: auto;
-  contain-intrinsic-size: min(360px, 100vw) min(240px, 720px);
 }
 
 .footer * {
@@ -1607,8 +1607,12 @@ h2.infobox:hover::before {
   line-height: 1.5;
 }
 
-.blog__header {
+.blog .blog__header {
   padding: 0 0 var(--s5);
+}
+
+.blog__header {
+  padding: var(--s5) 0 var(--s1);
 }
 
 .blog__header::after {
@@ -2078,8 +2082,6 @@ picture img {
   padding: var(--s0) var(--s0) 0 var(--s0);
   background: var(--black3-8);
   border-radius: var(--radius300);
-  content-visibility: auto;
-  contain-intrinsic-size: min(60px, 180px) min(40px, 60px);
 }
 
 .share-container a {
@@ -2384,6 +2386,13 @@ pre {
   .cta:before {
     display: none;
   }
+  .main-container {
+    min-width: calc(var(--s5) * 2);
+    max-width: calc(var(--s5) * 4);
+  }
+  .producthunt {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 767.98px) {
@@ -2484,6 +2493,12 @@ pre {
   }
   .tags_container {
     display: none;
+  }
+  .cookie:hover .overlay.flex-center {
+    opacity: 0;
+  }
+  .share-container {
+    padding: var(--s0);
   }
 }
 

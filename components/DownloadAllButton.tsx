@@ -1,5 +1,6 @@
 import JSZip from "jszip";
 import { saveFile } from "@utils/utils";
+import { BlogLinkExternal } from "@components/BlogComponents";
 
 export interface DownloadAllButtonProps {
   files: File[];
@@ -22,10 +23,8 @@ export default function DownloadAllButton(props: DownloadAllButtonProps) {
           </button>
           <p className="donation">
             Enjoy using avif.io? Keep the project alive.{" "}
-            <a href="https://www.buymeacoffee.com/justinschmitz" className="blue">
-              Donate
-            </a>{" "}
-            to support upcoming features like a REST API, CLI and more.
+            <BlogLinkExternal link="https://www.buymeacoffee.com/justinschmitz" text="Donate" /> to
+            support upcoming features like a REST API, CLI and more.
           </p>
         </div>
       }

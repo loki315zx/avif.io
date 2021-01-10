@@ -52,7 +52,7 @@ export function BlogSources(props: any) {
   const sources = props.sources;
   const listItems = sources.map((source: any, index: any) => (
     <li key={index} className="source">
-      <a target="_blank" href={`https://${source}`}>
+      <a target="_blank" rel="noreferrer" href={`https://${source}`}>
         {source.toString().replace(/\//g, " · ")}
       </a>
     </li>
@@ -85,7 +85,7 @@ export function BlogAdvantages(props: any) {
 export function BlogPosts(props: any) {
   const posts = props.posts;
   const listItems = posts.map((post: any, index: any) => (
-    <Link href={post.url} key={index}>
+    <Link href={`/${post.url}`} key={index}>
       <div className="posts__item">
         <div className="posts__img" /*style={{ backgroundImage: `url(${post.image})` }}*/>
           {post.title}
@@ -156,7 +156,7 @@ export function BlogLinkExternal(props: {
     <div style={{ display: props.newLine ? "block" : "inline-block" }}>
       <a
         aria-label={props.aria}
-        rel="noopener"
+        rel="noreferrer"
         target="_blank"
         href={props.link}
         id={props.id}

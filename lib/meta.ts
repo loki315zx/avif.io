@@ -32,6 +32,16 @@ export const blog = {
   date_modified: "10.01.21",
 };
 
+export const tutorials = {
+  description:
+    "Get smarter. Read a lot of articles about AVIF and images on the web. Right here, right now.",
+  url: "blog/tutorials/",
+  image: "",
+  author: "Justin Schmitz",
+  data_published: "01.09.20",
+  date_modified: "10.01.21",
+};
+
 export const privacyPolicy = {
   title: "Privacy Policy",
   description: "Learn how we utilize your data to optimize our service.",
@@ -276,7 +286,7 @@ export const useAvifInFrameworks = {
   readingtime: "5",
   title: "Use AVIF in Frameworks like Vue, React & Angular",
   description: "Serving AVIF images via JavaScript frameworks is quite easy - find out more here.",
-  url: "blog/tutorial/use-avif-in-frameworks",
+  url: "blog/tutorials/use-avif-in-frameworks",
   image: "",
   author: "Justin Schmitz",
   data_published: "21.10.20",

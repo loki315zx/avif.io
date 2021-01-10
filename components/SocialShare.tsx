@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { BlogLinkExternal } from "@components/BlogComponents";
 import { useRouter } from "next/router";
 
@@ -28,7 +27,13 @@ export default function Blog() {
         id="facebook"
       />
       <div>
-        <a onClick={() => share()} aria-label="share" id="share"></a>
+        <a
+          role="button"
+          onClick={() => share()}
+          onKeyPress={() => share()}
+          aria-label="share"
+          tabIndex={99}
+          id="share"></a>
       </div>
     </div>
   );

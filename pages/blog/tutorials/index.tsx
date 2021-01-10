@@ -2,7 +2,6 @@ import { BlogPosts, BlogTitle } from "@components/BlogComponents";
 import CTA from "@components/CTA";
 import Footer from "@components/Footer";
 import Header from "@components/Header";
-import Meta from "@components/Meta";
 
 import Page from "@components/Page";
 
@@ -17,7 +16,7 @@ import { useAvifInNextjs as post8 } from "lib/meta";
 import { useAvifInWindows as post9 } from "lib/meta";
 import { useAvifInWordpress as post10 } from "lib/meta";
 
-import { blog as postdata } from "lib/meta";
+import { tutorials as postdata } from "lib/meta";
 
 export default function BlogAvif() {
   return (
