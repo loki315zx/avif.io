@@ -22,6 +22,16 @@ export const index = {
   date_modified: "10.01.21",
 };
 
+export const blog = {
+  description:
+    "Get smarter. Read a lot of articles about AVIF and images on the web. Right here, right now.",
+  url: "blog/",
+  image: "",
+  author: "Justin Schmitz",
+  data_published: "01.09.20",
+  date_modified: "10.01.21",
+};
+
 export const privacyPolicy = {
   title: "Privacy Policy",
   description: "Learn how we utilize your data to optimize our service.",

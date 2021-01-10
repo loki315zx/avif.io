@@ -2,9 +2,9 @@ import Blog from "@components/Blog";
 import { BlogSubtitle, BlogAdvantages, BlogSyntax, BlogImage } from "@components/BlogComponents";
 
 import { useAvifInFrameworks as postdata } from "lib/meta";
-import { useAvifInHtml as post1 } from "lib/meta";
+import { useAvifInNextjs as post1 } from "lib/meta";
 import { useAvifInCss as post2 } from "lib/meta";
-import { useAvifInNextjs as post3 } from "lib/meta";
+import { useAvifInHtml as post3 } from "lib/meta";
 
 export default function BlogAvifInFrameworks() {
   return (

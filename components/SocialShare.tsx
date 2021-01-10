@@ -1,7 +1,13 @@
+import { useEffect, useState } from "react";
 import { BlogLinkExternal } from "@components/BlogComponents";
 import { useRouter } from "next/router";
 
 export default function Blog() {
+  function share() {
+    event!.preventDefault();
+    navigator.share({ url: url });
+  }
+
   const router = useRouter();
   const url = "https://avif.io" + router.pathname;
   return (
@@ -21,6 +27,9 @@ export default function Blog() {
         aria="Share on Facebook"
         id="facebook"
       />
+      <div>
+        <a onClick={() => share()} aria-label="share" id="share"></a>
+      </div>
     </div>
   );
 }

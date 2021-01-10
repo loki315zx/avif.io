@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Head from "next/head";
 import "@styles/normalize.min.css";
 import "@styles/globals.css";
+import Cookies from "@components/Cookies";
 
 export default function AvifIo({ Component, pageProps }: any) {
   useEffect(arrayBufferPolyfill, []);
@@ -28,6 +29,7 @@ export default function AvifIo({ Component, pageProps }: any) {
       <script defer src="/__/firebase/8.2.1/firebase-analytics.js"></script>
       <script defer src="/__/firebase/init.js"></script>
       <script defer>firebase.analytics();</script>
+      <Cookies />
     </>
   );
 }

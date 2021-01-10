@@ -113,7 +113,6 @@ export default function App(): ReactElement {
           <p id="avif">avif · 45kb</p>
         </div>
       </section>
-      <CTA />
       <div className="advantages-explainer">
         In the last ten years, an average website’s size has increased from 500kb to 2000kb. Images
         have always been taking up half the amount. There's a need for a new image format to stop

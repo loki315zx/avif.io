@@ -99,6 +99,7 @@ export function BlogPosts(props: any) {
   ));
   return (
     <section className="posts">
+      <BlogSubtitle text="Related articles" />
       <div className="posts__container">{listItems}</div>
     </section>
   );
@@ -120,16 +121,22 @@ export function BlogTags(props: any) {
   ));
   return (
     <section className="tags_container f0">
+      <BlogSubtitle text="Tags, Related Questions and Headlines" />
       {listTags} {listQuestions}
     </section>
   );
 }
 
-export function BlogLink(props: { link: string; text: string; newLine?: boolean }) {
+export function BlogLink(props: {
+  link: any;
+  text: string;
+  newLine?: boolean;
+  className?: string;
+}) {
   return (
     <div style={{ display: props.newLine ? "block" : "inline-block" }}>
       <Link href={props.link}>
-        <a rel="prefetch" title={props.text}>
+        <a rel="prefetch" title={props.text} className={props.className}>
           {props.text}
         </a>
       </Link>
@@ -138,11 +145,12 @@ export function BlogLink(props: { link: string; text: string; newLine?: boolean 
 }
 
 export function BlogLinkExternal(props: {
-  link: string;
+  link: any;
   text?: string;
   newLine?: boolean;
   id?: string;
   aria?: string;
+  className?: string;
 }) {
   return (
     <div style={{ display: props.newLine ? "block" : "inline-block" }}>
@@ -152,7 +160,8 @@ export function BlogLinkExternal(props: {
         target="_blank"
         href={props.link}
         id={props.id}
-        title={props.aria ? props.aria : props.text}>
+        title={props.aria ? props.aria : props.text}
+        className={props.className}>
         {props.text}
       </a>
     </div>

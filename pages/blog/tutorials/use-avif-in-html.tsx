@@ -9,9 +9,9 @@ import {
 } from "@components/BlogComponents";
 
 import { useAvifInHtml as postdata } from "lib/meta";
-import { useAvifInHtml as post1 } from "lib/meta";
-import { useAvifInCss as post2 } from "lib/meta";
-import { useAvifInNextjs as post3 } from "lib/meta";
+import { useAvifInCss as post1 } from "lib/meta";
+import { useAvifInFrameworks as post2 } from "lib/meta";
+import { useAvifInFirefox as post3 } from "lib/meta";
 
 export default function BlogAvifInHtml() {
   return (

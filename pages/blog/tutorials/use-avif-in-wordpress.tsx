@@ -10,7 +10,7 @@ import {
 import { useAvifInWordpress as postdata } from "lib/meta";
 import { useAvifInHtml as post1 } from "lib/meta";
 import { useAvifInCss as post2 } from "lib/meta";
-import { useAvifInNextjs as post3 } from "lib/meta";
+import { useAvifInCloudflare as post3 } from "lib/meta";
 
 export default function BlogAvifInWordpress() {
   return (

@@ -2,9 +2,9 @@ import Blog from "@components/Blog";
 import { BlogSubtitle, BlogLink, BlogLinkExternal } from "@components/BlogComponents";
 
 import { useAvifInWindows as postdata } from "lib/meta";
-import { useAvifInHtml as post1 } from "lib/meta";
-import { useAvifInCss as post2 } from "lib/meta";
-import { useAvifInNextjs as post3 } from "lib/meta";
+import { useAvifInEdge as post1 } from "lib/meta";
+import { useAvifInWordpress as post2 } from "lib/meta";
+import { useAvifInGimp as post3 } from "lib/meta";
 
 export default function BlogAvif() {
   return (

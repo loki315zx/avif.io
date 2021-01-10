@@ -18,7 +18,7 @@ export default function BlogAvif() {
   return (
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
       <BlogSubtitle text="" />
-      aspect ratio
+      Placeholder
     </Blog>
   );
 }

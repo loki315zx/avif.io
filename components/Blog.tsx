@@ -8,14 +8,14 @@ import {
   BlogTitle,
   BlogPosts,
   BlogTags,
+  BlogLink,
 } from "@components/BlogComponents";
 import Meta from "@components/Meta";
 
 let randomNumber = Math.floor(Math.random() * 10 + 1);
 
 export default function Blog(props: { postdata: any; children: any; posts: any }) {
-  const url = props.postdata.url.substring(1);
-  const urlSplit = url.split("/");
+  const urlSplit = props.postdata.url.split("/");
 
   return (
     <div className={`blog background${randomNumber}`}>
@@ -37,16 +37,16 @@ export default function Blog(props: { postdata: any; children: any; posts: any }
           </div>
           <div className="breadcrumbs">
             <div>
-              <a className="white" target="_blank" href={`/${urlSplit[0]}/`}>
-                {urlSplit[0]}
-              </a>
+              <BlogLink className="white" link={`/${urlSplit[0]}/`} text={urlSplit[0]} />
             </div>
             {urlSplit[2] ? (
               <div>
                 <div>{"|"}</div>
-                <a className="white" target="_blank" href={`/${urlSplit}/${urlSplit[1]}/`}>
-                  {urlSplit[1]}
-                </a>
+                <BlogLink
+                  className="white"
+                  link={`/${urlSplit}/${urlSplit[1]}/`}
+                  text={urlSplit[1]}
+                />
               </div>
             ) : (
               ""
@@ -61,10 +61,11 @@ export default function Blog(props: { postdata: any; children: any; posts: any }
           {props.children}
           <BlogSubtitle text="Sources" />
           <BlogSources sources={props.postdata.sources} />
-          <BlogSubtitle text="Tags, Related Questions and Headlines" />
+
           <BlogTags tags={props.postdata.tags} questions={props.postdata.questions} />
         </div>
       </div>
+
       {props.posts[0] ? <BlogPosts posts={props.posts} /> : ""}
       <CTA />
       <Footer />

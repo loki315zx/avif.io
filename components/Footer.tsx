@@ -13,6 +13,7 @@ export default function Footer() {
           </div>
           <div>© 2020 avif.io</div>
         </div>
+        {/*
         <div id="footer-about">
           <div className="bold s1">About</div>
           <a title="title" href="#">
@@ -43,6 +44,7 @@ export default function Footer() {
             AVIF In-Depth
           </a>
         </div>
+        */}
         <div id="footer-more">
           <div className="bold s1">More</div>
           <BlogLink text="Blog" link="/blog" newLine />

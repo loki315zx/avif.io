@@ -40,7 +40,7 @@ export default function Tutorials() {
         <TutorialsBox cssclass="firefox" title="Firefox" url="firefox" />
         <TutorialsBox cssclass="edge" title="Edge" url="edge" />
         <TutorialsBox cssclass="gimp" title="GIMP" url="gimp" />
-        <TutorialsBox cssclass="netlify" title="Netlify" url="netlify" />
+        {/*<TutorialsBox cssclass="netlify" title="Netlify" url="netlify" />*/}
         <TutorialsBox cssclass="wordpress" title="WordPress" url="wordpress" />
         <TutorialsBox cssclass="cloudflare" title="Cloudflare" url="cloudflare" />
         <TutorialsBox cssclass="windows" title="Windows" url="windows" />
