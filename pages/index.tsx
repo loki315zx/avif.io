@@ -9,6 +9,7 @@ import Tutorials from "@components/Tutorials";
 import Advantages from "@components/Advantages";
 import Footer from "@components/Footer";
 import CTA from "@components/CTA";
+import Page from "@components/Page";
 
 import Converter from "@utils/converter";
 import { uniqueId } from "@utils/utils";
@@ -18,6 +19,8 @@ import comparison_avif from "@images/comparison.avif";
 
 import Head from "next/head";
 import Header from "@components/Header";
+
+import { index as postdata } from "lib/meta";
 
 interface FileWithId {
   file: File;
@@ -53,20 +56,9 @@ export default function App(): ReactElement {
   }
 
   return (
-    <>
+    <Page postdata={postdata}>
       <Head>
         <title>AVIF Converter | avif.io ✨</title>
-        <meta
-          name="description"
-          content="Convert all image types to AVIF for free.🚀 Supports bulk converting. Blazing fast. Privacy protected. Compress your images now!⏱"
-        />
-        <meta
-          property="og:description"
-          content="Convert all image types to AVIF for free.🚀 Supports bulk converting. Blazing fast. Privacy protected. Compress your images now!⏱"
-        />
-        <meta property="og:determiner" content="the" />
-        <meta property="og:url" content="https://avif.io" />
-        <meta property="og:site_name" content="AVIF Converter | avif.io ✨" />
       </Head>
       <div className="homepage">
         <Header />
@@ -140,7 +132,6 @@ export default function App(): ReactElement {
         and the highest compression rate achieved, we are only steps away from creating a truly
         modern web.
       </div>
-      <Footer />
-    </>
+    </Page>
   );
 }

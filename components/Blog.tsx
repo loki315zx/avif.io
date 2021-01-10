@@ -1,6 +1,7 @@
 import Header from "@components/Header";
 import Footer from "@components/Footer";
 import CTA from "@components/CTA";
+import SocialShare from "@components/SocialShare";
 import {
   BlogSources,
   BlogSubtitle,
@@ -21,7 +22,6 @@ export default function Blog(props: { postdata: any; children: any; posts: any }
       <Meta
         title={props.postdata.title}
         description={props.postdata.description}
-        keywords={props.postdata.keywords}
         author={props.postdata.author}
         url={props.postdata.url}
         image={props.postdata.image}
@@ -68,32 +68,7 @@ export default function Blog(props: { postdata: any; children: any; posts: any }
       {props.posts[0] ? <BlogPosts posts={props.posts} /> : ""}
       <CTA />
       <Footer />
-      <div className="share-container">
-        <a
-          className="share"
-          id="twitter"
-          target="_blank"
-          rel="noopener"
-          aria-label="Share on Twitter"
-          title="Share on Twitter"
-          href={`https://twitter.com/intent/tweet?source=${props.postdata.url}&text=${props.postdata.url}`}></a>
-        <a
-          className="share"
-          id="reddit"
-          target="_blank"
-          rel="noopener"
-          aria-label="Share on Reddit"
-          title="Share on Reddit"
-          href={`https://www.reddit.com/submit?url=${props.postdata.url}`}></a>
-        <a
-          className="share"
-          id="facebook"
-          target="_blank"
-          rel="noopener"
-          aria-label="Share on Facebook"
-          title="Share on Facebook"
-          href={`https://www.facebook.com/share.php?u=${props.postdata.url}`}></a>
-      </div>
+      <SocialShare />
     </div>
   );
 }

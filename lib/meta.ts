@@ -2,9 +2,8 @@ export const placeholder = {
   readingtime: "",
   title: "",
   description: "",
-  url: "/",
+  url: "",
   image: "",
-  keywords: [""],
   author: "Justin Schmitz",
   data_published: "22.10.20",
   date_modified: "22.10.20",
@@ -13,13 +12,32 @@ export const placeholder = {
   questions: [""],
 };
 
+export const index = {
+  description:
+    "Convert all image types to AVIF for free.🚀 Supports bulk converting. Blazing fast. Privacy protected. Compress your images now!⏱",
+  url: "",
+  image: "",
+  author: "Justin Schmitz",
+  data_published: "01.09.20",
+  date_modified: "10.01.21",
+};
+
+export const privacyPolicy = {
+  title: "Privacy Policy",
+  description: "Learn how we utilize your data to optimize our service.",
+  url: "privacy-policy/",
+  image: "",
+  author: "Justin Schmitz",
+  data_published: "01.09.20",
+  date_modified: "10.01.21",
+};
+
 export const useAvifInCloudflare = {
   description:
     "Cloudflare has added support for AVIF, a new image format. Learn how to optimize images and convert them to WebP or AVIF on demand.",
   title: "Do you benefit from Cloudwork's AVIF support?",
-  url: "/blog/tutorials/use-avif-in-cloudflare",
+  url: "blog/tutorials/use-avif-in-cloudflare",
   image: "",
-  keywords: ["avif", "cdn", "cloudflare", "image optimization"],
   author: "Justin Schmitz",
   data_published: "01.10.20",
   date_modified: "01.10.20",
@@ -77,9 +95,8 @@ export const useAvifInCss = {
   title: "Fully support AVIF in your CSS today.",
   description:
     "Learn how to boost your website by easily implementing the new AVIF image format in the `background-images` of your CSS.",
-  url: "/blog/tutorials/use-avif-in-css",
+  url: "blog/tutorials/use-avif-in-css",
   image: "",
-  keywords: ["avif", "css", "background image"],
   author: "Justin Schmitz",
   data_published: "01.10.20",
   date_modified: "01.10.20",
@@ -134,9 +151,8 @@ export const useAvifInEdge = {
   title: "View AVIF Images In Microsoft Edge",
   description:
     "Internet Explorer 6, the latest brow.. oh, it's called Edge? Well, okay. The current state about AVIF in Edge is difficult. Learn more about it here.",
-  url: "/blog/tutorials/use-avif-in-edge",
+  url: "blog/tutorials/use-avif-in-edge",
   image: "",
-  keywords: ["avif", "image optimization", "microsoft", "edge"],
   author: "Justin Schmitz",
   data_published: "07.10.20",
   date_modified: "07.10.20",
@@ -188,9 +204,8 @@ export const useAvifInFirefox = {
   title: "The Complete Guide about AVIF in Firefox for 2021",
   description:
     "Yes, you can! Learn how to activate AVIF support for Firefox with a simple tutorial.",
-  url: "/blog/tutorials/use-avif-in-edge",
+  url: "blog/tutorials/use-avif-in-edge",
   image: "",
-  keywords: ["firefox, avif in firefox, mozilla, av1, tutorial"],
   author: "Justin Schmitz",
   data_published: "14.10.20",
   date_modified: "14.10.20",
@@ -251,19 +266,8 @@ export const useAvifInFrameworks = {
   readingtime: "5",
   title: "Use AVIF in Frameworks like Vue, React & Angular",
   description: "Serving AVIF images via JavaScript frameworks is quite easy - find out more here.",
-  url: "/blog/tutorial/use-avif-in-frameworks",
+  url: "blog/tutorial/use-avif-in-frameworks",
   image: "",
-  keywords: [
-    "avif",
-    "image optimization",
-    "javascript",
-    "framework",
-    "angular",
-    "svelte",
-    "react",
-    "vue",
-    "nuxt",
-  ],
   author: "Justin Schmitz",
   data_published: "21.10.20",
   date_modified: "21.10.20",
@@ -301,9 +305,8 @@ export const useAvifInGimp = {
   title: "Discover the basics of AVIF in GIMP",
   description:
     "GIMP 2.10.22 now includes HEIC support and AVIF support. Learn how to take advantage of these new features.",
-  url: "/blog/tutorials/use-avif-in-gimp/",
+  url: "blog/tutorials/use-avif-in-gimp/",
   image: "",
-  keywords: ["gimp", "avif", "tutorial", "use avif in gimp"],
   author: "Justin Schmitz",
   data_published: "28.10.20",
   date_modified: "28.10.20",
@@ -352,9 +355,8 @@ export const useAvifInHtml = {
   title: "How to get started with AVIF using HTML",
   description:
     "Enjoy this in-depth guide on how to use AVIF in HTML. Featuring examples with modern delivery standards.",
-  url: "/blog/tutorials/use-avif-in-html",
+  url: "blog/tutorials/use-avif-in-html",
   image: "",
-  keywords: ["avif", "picture", "HTML", "image optimization"],
   author: "Justin Schmitz",
   data_published: "04.11.20",
   date_modified: "04.11.20",
@@ -414,9 +416,8 @@ export const useAvifInNextjs = {
   title: "Start using AVIF in your Next.JS project",
   description:
     "Curious to read on how to use AVIF images in Next.JS? Well, this site does exactly that! Learn more.",
-  url: "/blog/tutorials/use-avif-in-nextjs",
+  url: "blog/tutorials/use-avif-in-nextjs",
   image: "",
-  keywords: ["avif", "nextjs", "next", "react", "image optimization"],
   author: "Justin Schmitz",
   data_published: "11.11.20",
   date_modified: "11.11.20",
@@ -464,9 +465,8 @@ export const useAvifInWindows = {
   title: "Does Windows support AVIF already?",
   description:
     "Learn how to make AVIF images load on native Windows 10 applications such as Paint and File Explorer.",
-  url: "/blog/tutorials/use-avif-in-windows/",
+  url: "blog/tutorials/use-avif-in-windows/",
   image: "",
-  keywords: ["windows", "avif support", "file explorer", "thumbnail", "av1 codec extension"],
   author: "Justin Schmitz",
   data_published: "18.11.20",
   date_modified: "18.11.20",
@@ -531,9 +531,8 @@ export const useAvifInNetlify = {
   title: "Don't miss out on AVIF when using Netlify",
   description:
     "Learn how to proper configure Netlify so that you can use AVIF image files on your website today.",
-  url: "/blog/tutorials/use-avif-in-netlify/",
+  url: "blog/tutorials/use-avif-in-netlify/",
   image: "",
-  keywords: ["netlify", "avif", "configuration"],
   author: "Justin Schmitz",
   data_published: "25.11.20",
   date_modified: "25.11.20",
@@ -547,9 +546,8 @@ export const useAvifInWordpress = {
   title: "How To Use AVIF Images In WordPress",
   description:
     "WordPress doesn't allow uploading AVIF files. Learn how to still use AVIF images on your website today.",
-  url: "/blog/tutorials/use-avif-in-wordpress",
+  url: "blog/tutorials/use-avif-in-wordpress",
   image: "",
-  keywords: ["avif", "wordpress", "wp", "image optimization", "mime type"],
   author: "Justin Schmitz",
   data_published: "02.12.20",
   date_modified: "02.12.20",

@@ -38,9 +38,9 @@ export function BlogTitle(props: { text: string }) {
 
 export function BlogSubtitle(props: { text: string; id?: string }) {
   return (
-    <div id={props.id} className="content__subtitle">
+    <h2 id={props.id} className="content__subtitle">
       {props.text}
-    </div>
+    </h2>
   );
 }
 
@@ -137,10 +137,22 @@ export function BlogLink(props: { link: string; text: string; newLine?: boolean 
   );
 }
 
-export function BlogLinkExternal(props: { link: string; text: string; newLine?: boolean }) {
+export function BlogLinkExternal(props: {
+  link: string;
+  text?: string;
+  newLine?: boolean;
+  id?: string;
+  aria?: string;
+}) {
   return (
     <div style={{ display: props.newLine ? "block" : "inline-block" }}>
-      <a rel="noopener" target="_blank" title={props.text} href={props.link}>
+      <a
+        aria-label={props.aria}
+        rel="noopener"
+        target="_blank"
+        href={props.link}
+        id={props.id}
+        title={props.aria ? props.aria : props.text}>
         {props.text}
       </a>
     </div>
