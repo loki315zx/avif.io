@@ -59,6 +59,7 @@ export default function App(): ReactElement {
     <Page postdata={postdata}>
       <Head>
         <title>AVIF Converter | avif.io ✨</title>
+        <meta property="og:type" content="website" />
       </Head>
       <div className="homepage">
         <Header />
