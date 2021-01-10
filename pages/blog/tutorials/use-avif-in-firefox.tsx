@@ -9,6 +9,23 @@ import { useAvifInWordpress as post3 } from "lib/meta";
 export default function BlogAvif() {
   return (
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
+      <BlogSubtitle text="Update January 2021" />
+      YES! Finally. Firefox Nightly users needed to enable the feature manually to get it supported
+      in the Firefox browser at the time. Starting with version 86, which will be available on the
+      23th of February, 2021, Firefox is going to support AVIF by default.
+      <BlogSubtitle text="Update December 2020" />
+      There has been other industry adoption for AVIF images, such as Microsoft with Windows. Google
+      added support for AVIF to Chrome earlier this year and shipped it with Chrome 85. Mozilla
+      Firefox is also very soon expected to enable support for AVIF as an image format based on AV1
+      video coding. Mozilla has announced that current AVIF image support is complete. Also, they
+      claim previously encountered problems with the format have been resolved. There was a Mozilla
+      bug ticket tracking the default support of AVIF. The patch enabling default support has
+      initially been pushed but reverted as a result of broken tests. Those items have been reviewed
+      and AVIF appears to be ready to land now. In any case, Firefox will support AVIF images with
+      its next versions in early 2021. We can't wait for users to be able to directly use and view
+      AVIF images. For those looking to convert their images to AVIF, try out our fastest converter.
+      It works with Firefox already.
+      <BlogSubtitle text="Original Post" />
       Starting in version 77 (released in June 2020), Mozilla recently implemented experimental
       support for the AVIF image format in Firefox. The feature is not enabled by default in the web
       browser's production version. Still, users interested in adding support may do so at the time
@@ -45,18 +62,6 @@ export default function BlogAvif() {
         loading="lazy"
         width="720px"
       />
-      <BlogSubtitle text="Update January 2021" />
-      There has been other industry adoption for AVIF images, such as Microsoft with Windows. Google
-      added support for AVIF to Chrome earlier this year and shipped it with Chrome 85. Mozilla
-      Firefox is also very soon expected to enable support for AVIF as an image format based on AV1
-      video coding. Mozilla has announced that current AVIF image support is complete. Also, they
-      claim previously encountered problems with the format have been resolved. There was a Mozilla
-      bug ticket tracking the default support of AVIF. The patch enabling default support has
-      initially been pushed but reverted as a result of broken tests. Those items have been reviewed
-      and AVIF appears to be ready to land now. In any case, Firefox will support AVIF images with
-      its next versions in early 2021. We can't wait for users to be able to directly use and view
-      AVIF images. For those looking to convert their images to AVIF, try out our fastest converter.
-      It works with Firefox already.
     </Blog>
   );
 }
