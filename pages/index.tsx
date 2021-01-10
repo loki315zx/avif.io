@@ -73,6 +73,7 @@ export default function App(): ReactElement {
           <Dropzone onDrop={onFilesSelected} />
 
           <button
+            aria-label="settings panel"
             className={"will-change cog-button" + " " + (settingsBoxOpen ? "open" : "")}
             onClick={() => setSettingsBoxOpen(!settingsBoxOpen)}></button>
           <div className={"settings_cog" + " " + (settingsBoxOpen ? "open" : "")}>
@@ -94,7 +95,8 @@ export default function App(): ReactElement {
         <a
           className="producthunt"
           href="https://www.producthunt.com/posts/avif-io-avif-image-converter?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-avif-io-avif-image-converter"
-          target="_blank">
+          target="_blank"
+          rel="noreferrer">
           <img
             src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=273434&theme=dark"
             alt="✨ avif.io | Fastest AVIF image converter - Convert images to AVIF for free. No data sent, it's magic!✨ | Product Hunt"

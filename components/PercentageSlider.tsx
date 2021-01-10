@@ -3,6 +3,7 @@ export interface PercentageSliderProps {
   value: number;
   name: string;
   disabled?: boolean;
+  label?: string;
 
   onChange(value: number): void;
 }
@@ -16,15 +17,18 @@ export default function PercentageSlider(props: PercentageSliderProps) {
         </span>{" "}
         {props.name}
       </p>
-      <input
-        type={"range"}
-        value={props.value}
-        onChange={(e) => props.onChange(Number(e.target.value))}
-        min={0}
-        max={100}
-        disabled={props.disabled}
-        step={5}
-      />
+      <label>
+        {props.label}
+        <input
+          type={"range"}
+          value={props.value}
+          onChange={(e) => props.onChange(Number(e.target.value))}
+          min={0}
+          max={100}
+          disabled={props.disabled}
+          step={5}
+        />
+      </label>
     </div>
   );
 }

@@ -67,15 +67,18 @@ export default function SettingsBox(props: SettingsBoxProps) {
           value={effort}
           name={"Effort"}
           onChange={setEffort}
+          label="effort"
         />
         <PercentageSlider
           className={"align-left " + (lossless ? "disabled" : "")}
           value={quality}
           name={"Quality"}
           onChange={setQuality}
+          label="quality"
         />
         <label className={"lossless-checkbox"}>
-          <input type={"checkbox"} checked={lossless} onChange={onLosslessChanged} />
+          <input id="lossless" type={"checkbox"} checked={lossless} onChange={onLosslessChanged} />
+
           <p className={"checkbox-text"}>Lossless</p>
         </label>
       </div>

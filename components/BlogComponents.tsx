@@ -189,7 +189,14 @@ export function BlogImage(props: { alt: string; url: string }) {
           srcSet={`/images/${props.url}.jpg 1440w, /images/${props.url}-720.jpg 720w, /images/${props.url}-360.jpg 360w,`}
           type="image/jpeg"
         />*/}
-        <img decoding="async" loading="lazy" src={`/images/${props.url}.jpg`} alt={props.alt} />
+        <img
+          width="720"
+          height="405"
+          decoding="async"
+          loading="lazy"
+          src={`/images/${props.url}.jpg`}
+          alt={props.alt}
+        />
       </picture>
     </>
   );
