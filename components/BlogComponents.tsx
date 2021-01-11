@@ -144,9 +144,7 @@ export function BlogLink(props: {
   return (
     <div style={{ display: props.newLine ? "block" : "inline-block" }}>
       <Link href={props.link}>
-        <a rel="prefetch" title={props.text} className={props.className}>
-          {props.text}
-        </a>
+        <a className={props.className}>{props.text}</a>
       </Link>
     </div>
   );
