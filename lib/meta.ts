@@ -1,8 +1,8 @@
 export const placeholder = {
   readingtime: "",
-  title: "",
+  title: "Placeholder",
   description: "",
-  url: "",
+  url: "/placeholder",
   image: "",
   author: "Justin Schmitz",
   data_published: "22.10.20",
@@ -12,17 +12,18 @@ export const placeholder = {
   questions: [""],
 };
 
-export const index = {
-  description:
-    "Convert all image types to AVIF for free.🚀 Supports bulk converting. Blazing fast. Privacy protected. Compress your images now!⏱",
-  url: "",
+export const releaseIndex = {
+  title: "Release Notes",
+  description: "We constantly try to improve our service.",
+  url: "blog/releases/",
   image: "",
   author: "Justin Schmitz",
-  data_published: "01.09.20",
-  date_modified: "10.01.21",
+  data_published: "11.01.21",
+  date_modified: "11.01.21",
 };
 
 export const blog = {
+  title: "Articles about AVIF",
   description:
     "Get smarter. Read a lot of articles about AVIF and images on the web. Right here, right now.",
   url: "blog/",
@@ -33,8 +34,8 @@ export const blog = {
 };
 
 export const tutorials = {
-  description:
-    "Get smarter. Read a lot of articles about AVIF and images on the web. Right here, right now.",
+  title: "Tutorials",
+  description: "Find out how to use AVIF in different environment",
   url: "blog/tutorials/",
   image: "",
   author: "Justin Schmitz",
@@ -62,7 +63,6 @@ export const useAvifInCloudflare = {
   data_published: "01.10.20",
   date_modified: "01.10.20",
   sources: [
-    "blog.cloudflare.com/generate-avif-images-with-image-resizing",
     "blog.cloudflare.com/http3-the-past-present-and-future",
     "cloudflare.com/case-studies/discord",
     "cloudflare.com/case-studies/hubspot",
@@ -75,6 +75,7 @@ export const useAvifInCloudflare = {
     "meterpreter.org/cloudflare-supports-the-new-avif-image-format-in-image-resizing",
     "neowin.net/news/cloudflare-image-resizing-adds-support-for-avif-images",
     "w3techs.com/technologies/details/cn-cloudflare",
+    "blog.cloudflare.com/generate-avif-images-with-image-resizing/",
   ],
   tags: [
     "image format",

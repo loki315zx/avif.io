@@ -28,35 +28,32 @@ export default function Blog(props: { postdata: any; children: any; posts: any }
         date_published={props.postdata.date_published}
         date_modified={props.postdata.date_modified}
       />
+      <Header />
       <div className="blog__header overlay-after">
-        <Header />
-        <BlogTitle text={props.postdata.title} />
-        <div className="blog__meta white center">
-          <div className="s3">
-            {props.postdata.date_modified} · {props.postdata.readingtime} min read
-          </div>
-          <div className="breadcrumbs">
-            <div>
-              <BlogLink className="white" link={`/${urlSplit[0]}/`} text={urlSplit[0]} />
-            </div>
+        <div className="breadcrumbs">
+          <div>
+            <BlogLink className="white" link={`/${urlSplit[0]}/`} text={urlSplit[0]} />
             {urlSplit[2] ? (
-              <div>
-                <div>{"|"}</div>
+              <span className="white">
+                {" > "}
                 <BlogLink
                   className="white"
-                  link={`/${urlSplit}/${urlSplit[1]}/`}
+                  link={`/${urlSplit[0]}/${urlSplit[1]}/`}
                   text={urlSplit[1]}
                 />
-              </div>
+              </span>
             ) : (
               ""
             )}
           </div>
         </div>
+        <BlogTitle text={props.postdata.title} />
+        <div className="blog__meta white">
+          {props.postdata.date_modified} · {props.postdata.readingtime} min read
+        </div>
       </div>
 
       <div className="content__container">
-        <div className="author"></div>
         <div className="content">
           {props.children}
           <BlogSubtitle text="Sources" />

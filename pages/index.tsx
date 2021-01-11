@@ -7,7 +7,7 @@ import DownloadAllButton from "@components/DownloadAllButton";
 import SettingsBox, { Settings } from "@components/SettingsBox";
 import Tutorials from "@components/Tutorials";
 import Advantages from "@components/Advantages";
-import Page from "@components/Page";
+import SocialShare from "@components/SocialShare";
 
 import Converter from "@utils/converter";
 import { uniqueId } from "@utils/utils";
@@ -18,7 +18,8 @@ import comparison_avif from "@images/comparison.avif";
 import Head from "next/head";
 import Header from "@components/Header";
 
-import { index as postdata } from "lib/meta";
+import CTA from "@components/CTA";
+import Footer from "@components/Footer";
 
 interface FileWithId {
   file: File;
@@ -54,10 +55,33 @@ export default function App(): ReactElement {
   }
 
   return (
-    <Page postdata={postdata}>
+    <>
       <Head>
         <title>AVIF Converter | avif.io ✨</title>
         <meta property="og:type" content="website" />
+        <meta
+          name="description"
+          content="Convert all image types to AVIF for free.🚀 Supports bulk converting. Blazing fast. Privacy protected. Compress your images now!⏱"
+        />
+        <meta name="author" content="Justin Schmitz" />
+        <link rel="canonical" href="https://avif.io" />
+        <meta property="og:site_name" content="AVIF Converter | avif.io ✨" />
+        <meta property="og:url" content="https://avif.io" />
+        <meta property="og:title" content="AVIF Converter | avif.io ✨" />
+        <meta
+          property="og:description"
+          content="Convert all image types to AVIF for free.🚀 Supports bulk converting. Blazing fast. Privacy protected. Compress your images now!⏱"
+        />
+        <meta property="og:image" content="" />
+        <meta property="og:type" content="article" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:site" content="@jschmitz97" />
+        <meta property="twitter:url" content={"https://twitter.com/jschmitz97"} />
+        <meta property="twitter:title" content="AVIF Converter | avif.io ✨" />
+        <meta
+          property="twitter:description"
+          content="Convert all image types to AVIF for free.🚀 Supports bulk converting. Blazing fast. Privacy protected. Compress your images now!⏱"
+        />
       </Head>
       <div className="homepage">
         <Header />
@@ -143,6 +167,9 @@ export default function App(): ReactElement {
         and the highest compression rate achieved, we are only steps away from creating a truly
         modern web.
       </div>
-    </Page>
+      <CTA />
+      <Footer />
+      <SocialShare />
+    </>
   );
 }

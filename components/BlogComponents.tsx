@@ -50,6 +50,15 @@ export function BlogNote(props: { text: string }) {
 
 export function BlogSources(props: any) {
   const sources = props.sources;
+  for (var i = 0; i < sources.length; i++) {
+    sources[i] = sources[i].replace("https://", "");
+    sources[i] = sources[i].replace("http://", "");
+    sources[i] = sources[i].replace("www.", "");
+    if (sources[i].substring(sources[i].length - 1) == "/") {
+      sources[i] = sources[i].substring(0, sources[i].length - 1);
+    }
+  }
+  sources.sort();
   const listItems = sources.map((source: any, index: any) => (
     <li key={index} className="source">
       <a target="_blank" rel="noreferrer" href={`https://${source}`}>
@@ -87,11 +96,10 @@ export function BlogPosts(props: any) {
   const listItems = posts.map((post: any, index: any) => (
     <Link href={`/${post.url}`} key={index}>
       <div className="posts__item">
-        <div className="posts__img" /*style={{ backgroundImage: `url(${post.image})` }}*/>
-          {post.title}
-        </div>
+        <div className="posts__img" /*style={{ backgroundImage: `url(${post.image})` }}*/></div>
         <div className="posts__data">
-          <div className="posts__date">{post.date_modified}</div>
+          <div className="posts__title"> {post.title}</div>
+
           <div className="posts__summary">{post.description}</div>
         </div>
       </div>

@@ -4,13 +4,14 @@ export interface PercentageSliderProps {
   name: string;
   disabled?: boolean;
   label?: string;
+  id?: string;
 
   onChange(value: number): void;
 }
 
 export default function PercentageSlider(props: PercentageSliderProps) {
   return (
-    <div className={props.className + " " + "s1"}>
+    <div className={props.className + " " + "s1"} id={props.id}>
       <p className="s0 center">
         <span className="bold primary" style={{ marginRight: 5 }}>
           {props.value}%

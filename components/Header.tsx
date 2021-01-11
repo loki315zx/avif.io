@@ -10,7 +10,10 @@ export default function Header() {
             <Link href="/">
               <a className="logo">avif.io</a>
             </Link>
-            <div className="conversionscounter">
+            <div className="conversionscounter overlay-">
+              <Link href="/">
+                <div className="overlay"></div>
+              </Link>
               over <ConversionsCounter />
               files converted
             </div>
