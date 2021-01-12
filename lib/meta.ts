@@ -227,7 +227,7 @@ export const useAvifInFirefox = {
   title: "The Complete Guide about AVIF in Firefox for 2021",
   description:
     "Yes, you can! Learn how to activate AVIF support for Firefox with a simple tutorial.",
-  url: "blog/tutorials/use-avif-in-edge",
+  url: "blog/tutorials/use-avif-in-firefox",
   image: "",
   author: "Justin Schmitz",
   data_published: "14.10.20",
