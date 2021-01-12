@@ -26,8 +26,9 @@ export default function AvifIo({ Component, pageProps }: any) {
         <script src="/hotjar.js"></script>
       </Head>
       <Component {...pageProps} />
-      <script src="/__/firebase/8.2.1/firebase-app.js"></script>
-      <script src="/__/firebase/8.2.1/firebase-analytics.js"></script>
+      <script src="/__/firebase/8.2.2/firebase-app.js"></script>
+      <script src="/__/firebase/8.2.2/firebase-analytics.js"></script>
+      <script src="/__/firebase/8.2.2/firebase-performance.js"></script>
       <script src="/__/firebase/init.js"></script>
       <script>firebase.analytics();</script>
       <Cookies />
