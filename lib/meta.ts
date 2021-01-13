@@ -14,7 +14,7 @@ export const placeholder = {
 
 export const releaseIndex = {
   title: "Release Notes",
-  description: "We constantly try to improve our service.",
+  description: "We constantly try to improve our yada yada.",
   url: "blog/releases/",
   image: "",
   author: "Justin Schmitz",

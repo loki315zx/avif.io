@@ -119,12 +119,12 @@ export function BlogTags(props: any) {
 
   const listTags = tags.map((tag: any, index: any) => (
     <div key={index} className="tag">
-      {tag}
+      ({tag})
     </div>
   ));
   const listQuestions = questions.map((question: any, index: any) => (
     <div key={index} className="question">
-      {question}
+      ({question})
     </div>
   ));
   return (

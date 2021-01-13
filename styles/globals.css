@@ -411,13 +411,6 @@ ul {
   animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
 }
 
-.producthunt {
-  position: absolute;
-  bottom: var(--s0);
-  left: var(--s0);
-  z-index: 9999999;
-}
-
 .dropzone-container {
   height: 100%;
   width: 100%;
@@ -835,6 +828,7 @@ ul {
 /*  */
 /*  */
 
+/*
 .infobox {
   position: relative;
 }
@@ -873,6 +867,7 @@ h2.infobox:hover::before {
 #explainformats:hover::before {
   content: "png, jpg, jpeg, webp, gif, bmp, dib, ico, tiff, tif, pbm, pgm, ppm, pnm, dds, tga, icb, vda, vst, ff";
 }
+*/
 
 /*  */
 /*  */
@@ -1556,9 +1551,9 @@ h2.infobox:hover::before {
   background: var(--black4);
   padding: var(--s4) var(--s3);
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 .footer * {
@@ -1570,10 +1565,17 @@ h2.infobox:hover::before {
   margin-bottom: var(--s0);
 }
 
-#footer-about,
-#footer-learn,
-#footer-more {
-  justify-self: flex-end;
+a.discord {
+  background: #7289da;
+  padding: var(--s1) var(--s0);
+  border-radius: var(--radius300);
+  background-image: url(@assets/discord.svg);
+  background-size: var(--s2);
+  background-repeat: no-repeat;
+  background-position: var(--s0);
+  padding-left: var(--s3);
+  font-weight: bold;
+  display: inline-block;
 }
 
 /*  */
@@ -1590,7 +1592,7 @@ h2.infobox:hover::before {
   font-size: Var(--f0);
   bottom: 0;
   background: Var(--gray4);
-  width: calc(var(--s5) * 2);
+  width: calc(var(--s5) * 1.5);
   color: var(--white);
   border-radius: var(--radius300);
   right: 0;
@@ -2084,7 +2086,6 @@ input[type="checkbox"] {
 
 .tag,
 .question {
-  background: var(--black3);
   padding: var(--s0);
   border-radius: var(--radius300);
   margin-bottom: var(--s0);
@@ -2118,20 +2119,20 @@ picture img {
 .share-container {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   position: fixed;
   bottom: var(--s1);
   right: var(--s1);
   z-index: 999;
   padding: var(--s0) var(--s0) 0 var(--s0);
   background: var(--black3-8);
-  border-radius: var(--radius300);
+  border-radius: var(--radius100);
 }
 
 .share-container a {
   display: inline-flex;
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   margin-right: var(--s0);
 }
 
@@ -2440,9 +2441,6 @@ pre {
   .main-container {
     min-width: calc(var(--s5) * 2);
     max-width: calc(var(--s5) * 4);
-  }
-  .producthunt {
-    display: none;
   }
   .blog .blog__header {
     padding: var(--s5) var(--s2) var(--s3) var(--s2);

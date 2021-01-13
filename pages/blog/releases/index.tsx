@@ -13,6 +13,16 @@ const notes110120 = [
   "Several other linting and bug fixes",
 ];
 
+const notes150120 = [
+  "The 'Download all' button is now more prominent.",
+  "Tags under blog posts don't look like they are clickable",
+  "Our archives had empty sections, which are removed now",
+  "We've linked our Discord in the footer, as you like to click our names a lot",
+  "We've removed some techy tooltips as probably most people don't care about them",
+  "We've added a tooltip that you can hover items",
+  "Added a Discord channel :)",
+];
+
 const posts = [""];
 
 import { releaseIndex as postdata } from "lib/meta";
@@ -20,7 +30,9 @@ import { releaseIndex as postdata } from "lib/meta";
 export default function BlogAvif() {
   return (
     <Archive postdata={postdata} posts={posts}>
-      <BlogSubtitle text="11.01.2021" />
+      <BlogSubtitle text="15.01.2021 - Small Changes" />
+      <BlogAdvantages advantages={notes150120} checked />
+      <BlogSubtitle text="11.01.2021 - Small Changes" />
       <BlogAdvantages advantages={notes110120} checked />
     </Archive>
   );

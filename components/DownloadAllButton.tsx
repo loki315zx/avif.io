@@ -18,7 +18,7 @@ export default function DownloadAllButton(props: DownloadAllButtonProps) {
     <>
       <div className={`downloadall-container ${props.files.length > 1 ? "show" : "hide"}`}>
         <button className="downloadall" onClick={onClick}>
-          Download all
+          Download all images
         </button>
         <p className="donation">
           Enjoy using avif.io? Keep the project alive.{" "}

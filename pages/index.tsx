@@ -103,7 +103,7 @@ export default function App(): ReactElement {
           <div className={"settings_cog" + " " + (settingsBoxOpen ? "open" : "")}>
             <SettingsBox open={settingsBoxOpen} onSettingsUpdate={onSettingsUpdate} />
           </div>
-
+          <DownloadAllButton files={convertedFiles} />
           {converter &&
             files.map(({ file, id }) => (
               <Conversion
@@ -114,21 +114,7 @@ export default function App(): ReactElement {
                 key={id}
               />
             ))}
-          <DownloadAllButton files={convertedFiles} />
         </div>
-        <a
-          className="producthunt"
-          href="https://www.producthunt.com/posts/avif-io-avif-image-converter?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-avif-io-avif-image-converter"
-          target="_blank"
-          rel="noreferrer">
-          <img
-            src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=273434&theme=dark"
-            alt="✨ avif.io | Fastest AVIF image converter - Convert images to AVIF for free. No data sent, it's magic!✨ | Product Hunt"
-            style={{ width: 250, height: 54 }}
-            width="250"
-            height="54"
-          />
-        </a>
       </div>
       <Tutorials />
       <Advantages />

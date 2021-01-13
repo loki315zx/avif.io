@@ -27,6 +27,7 @@ export default function Archive(props: {
         <BlogTitle text={props.postdata.title} />
         <BlogSubtitle text={props.postdata.description} />
       </div>
+
       <BlogPosts posts={props.posts} />
 
       {props.children ? (

@@ -16,10 +16,12 @@ const posts = [post1, post2, post3, post4, post5, post6, post7, post8, post9, po
 
 import { blog as postdata } from "lib/meta";
 
+const filler = "";
+
 export default function BlogAvif() {
   return (
     <Archive postdata={postdata} posts={posts}>
-      a
+      {filler}
     </Archive>
   );
 }
