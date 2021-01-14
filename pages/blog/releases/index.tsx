@@ -14,12 +14,11 @@ const notes110120 = [
 ];
 
 const notes150120 = [
-  "The 'Download all' button is now more prominent.",
+  "The 'Download all' button is now more prominent",
   "Tags under blog posts don't look like they are clickable",
   "Our archives had empty sections, which are removed now",
   "We've linked our Discord in the footer, as you like to click our names a lot",
   "We've removed some techy tooltips as probably most people don't care about them",
-  "We've added a tooltip that you can hover items",
   "Added a Discord channel :)",
 ];
 
