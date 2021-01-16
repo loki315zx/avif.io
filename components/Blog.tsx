@@ -12,7 +12,7 @@ import {
 } from "@components/BlogComponents";
 import Meta from "@components/Meta";
 
-const randomNumber = Math.floor(Math.random() * 10 + 1);
+const randomNumber = Math.floor(Math.random() * 7 + 1);
 
 export default function Blog(props: { postdata: any; children: any; posts: any }) {
   const urlSplit = props.postdata.url.split("/");

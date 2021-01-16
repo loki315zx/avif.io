@@ -18,18 +18,12 @@ import { useAvifInWordpress as post10 } from "lib/meta";
 const posts = [post1, post2, post3, post4, post5, post6, post7, post8, post9, post10];
 
 import { tutorials as postdata } from "lib/meta";
+const filler = "";
 
 export default function BlogAvif() {
   return (
     <Archive postdata={postdata} posts={posts}>
-      <Header />
-      <div className="blog__header overlay-after">
-        <Header />
-        <BlogTitle text="Read all articles about AVIF" />
-        <div className="blog__meta white center"></div>
-      </div>
-      <CTA />
-      <Footer />
+      {filler}
     </Archive>
   );
 }

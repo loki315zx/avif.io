@@ -26,15 +26,11 @@ export default function AvifIo({ Component, pageProps }: any) {
         <script src="/hotjar.js"></script>
       </Head>
       <Component {...pageProps} />
+      <Cookies />
       <script src="/__/firebase/8.2.2/firebase-app.js"></script>
       <script src="/__/firebase/8.2.2/firebase-analytics.js"></script>
       <script src="/__/firebase/init.js"></script>
-      <script
-        data-ad-client="ca-pub-4499854243209236"
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       <script>firebase.analytics();</script>
-      <Cookies />
     </>
   );
 }

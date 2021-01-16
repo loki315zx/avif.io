@@ -1,21 +1,18 @@
-const withPlugins = require("next-compose-plugins");
-const images = require("next-images");
-const bundleAnalyzer = require("@next/bundle-analyzer")({
+const withImages = require("next-images");
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
 
 const baseUrl = "";
 
-module.exports = withPlugins([
-  images,
-  [
-    bundleAnalyzer,
-    {
-      trailingSlash: true,
-      basePath: baseUrl,
-      env: {
-        baseUrl: baseUrl,
-      },
+const nextConfig = {
+  bundleAnalyzerConfig: {
+    trailingSlash: true,
+    basePath: baseUrl,
+    env: {
+      baseUrl: baseUrl,
     },
-  ],
-]);
+  },
+};
+
+module.exports = withImages(withBundleAnalyzer(nextConfig));

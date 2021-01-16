@@ -109,6 +109,9 @@ export const useAvifInCloudflare = {
     "Resizing with Cloudflare Workers",
   ],
   readingtime: "8",
+  post1: "useAvifInCss",
+  post2: "useAvifInEdge",
+  post3: "useAvifInFirefox",
 };
 
 export const useAvifInCss = {

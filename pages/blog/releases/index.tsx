@@ -22,6 +22,12 @@ const notes150120 = [
   "Added a Discord channel :)",
 ];
 
+const notes160120 = [
+  "Fixed our Tutorials overview",
+  "removed Google Adsense Tests",
+  "Reduced overall page size",
+];
+
 const posts = [""];
 
 import { releaseIndex as postdata } from "lib/meta";
@@ -29,6 +35,8 @@ import { releaseIndex as postdata } from "lib/meta";
 export default function BlogAvif() {
   return (
     <Archive postdata={postdata} posts={posts}>
+      <BlogSubtitle text="16.01.2021 - Small Changes" />
+      <BlogAdvantages advantages={notes160120} checked />
       <BlogSubtitle text="15.01.2021 - Small Changes" />
       <BlogAdvantages advantages={notes150120} checked />
       <BlogSubtitle text="11.01.2021 - Small Changes" />
