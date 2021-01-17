@@ -15,15 +15,12 @@ export default function AvifIo({ Component, pageProps }: any) {
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="theme-color" content="#29A2FF" />
         <meta name="msapplication-TileColor" content="#140635" />
         <meta name="theme-color" content="#140635" />
         <meta name="msapplication-config" content="none" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:creator" content="@jschmitz97" />
         <script src="/avif.js"></script>
         <script src="/hotjar.js"></script>
       </Head>
