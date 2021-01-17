@@ -3,7 +3,7 @@ import Footer from "@components/Footer";
 import CTA from "@components/CTA";
 import SocialShare from "@components/SocialShare";
 import Meta from "@components/Meta";
-import { BlogSubtitle, BlogTitle, BlogLink, BlogPosts } from "./BlogComponents";
+import { BlogSubtitle, BlogLink, BlogPosts } from "./BlogComponents";
 
 export default function Archive(props: {
   posts: any;
@@ -12,7 +12,7 @@ export default function Archive(props: {
   className?: string;
 }) {
   return (
-    <div className={`archive`}>
+    <section className={`archive`}>
       <Meta
         title={props.postdata.title}
         description={props.postdata.description}
@@ -22,9 +22,9 @@ export default function Archive(props: {
         date_published={props.postdata.date_published}
         date_modified={props.postdata.date_modified}
       />
-      <Header />
+
       <div className="blog__header overlay-after white center">
-        <BlogTitle text={props.postdata.title} />
+        <h1>{props.postdata.title}</h1>
         <BlogSubtitle text={props.postdata.description} />
       </div>
 
@@ -37,10 +37,6 @@ export default function Archive(props: {
       ) : (
         ""
       )}
-
-      <CTA />
-      <Footer />
-      <SocialShare />
-    </div>
+    </section>
   );
 }

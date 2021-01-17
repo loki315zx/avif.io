@@ -1,4 +1,4 @@
-import { BlogPosts, BlogTitle } from "@components/BlogComponents";
+import { BlogPosts } from "@components/BlogComponents";
 import Archive from "@components/Archive";
 
 import { useAvifInCloudflare as post1 } from "lib/meta";

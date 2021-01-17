@@ -21,7 +21,9 @@ export default function Advantages() {
     <>
       <section id="avifbadge">
         <div className="white center badge__avif">
-          <p className="bold">.AVIF</p>
+          <p>
+            <b>.AVIF</b>
+          </p>
           <div className="badge__shadow overlay"></div>
         </div>
       </section>
@@ -31,7 +33,7 @@ export default function Advantages() {
           style={{ position: "relative", zIndex: 9999, marginBottom: 20 }}>
           sorry, you can't click these yet!!
         </div>
-        <div className="advantage__grid">
+        <div className="advantage__grid  grid">
           <AdvantageItem
             pre="usually"
             text="reduces file size"

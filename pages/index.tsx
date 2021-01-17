@@ -83,15 +83,11 @@ export default function App(): ReactElement {
           content="Convert all image types to AVIF for free.🚀 Supports bulk converting. Blazing fast. Privacy protected. Compress your images now!⏱"
         />
       </Head>
-      <div className="homepage">
-        <Header />
-      </div>
+
       <div className={"app-container"}>
         <div className="app-container-blur overlay"></div>
-        <h1 className={"f3 white bold s1"}>Convert any images to AVIF for free.</h1>
-        <h2 className={"f1 white s4 infobox"}>
-          No data is sent. The magic happens in your browser.
-        </h2>
+        <h1>Convert any images to AVIF for free.</h1>
+        <h2 className={"f1 m0 s4 center"}>No data is sent. The magic happens in your browser.</h2>
 
         <div className={"main-container" + " " + (settingsBoxOpen ? "open" : "")}>
           <Dropzone onDrop={onFilesSelected} />
@@ -103,7 +99,7 @@ export default function App(): ReactElement {
           <div className={"settings_cog" + " " + (settingsBoxOpen ? "open" : "")}>
             <SettingsBox open={settingsBoxOpen} onSettingsUpdate={onSettingsUpdate} />
           </div>
-          <DownloadAllButton files={convertedFiles} />
+
           {converter &&
             files.map(({ file, id }) => (
               <Conversion
@@ -114,6 +110,7 @@ export default function App(): ReactElement {
                 key={id}
               />
             ))}
+          <DownloadAllButton files={convertedFiles} />
         </div>
       </div>
       <Tutorials />
@@ -153,9 +150,6 @@ export default function App(): ReactElement {
         and the highest compression rate achieved, we are only steps away from creating a truly
         modern web.
       </div>
-      <CTA />
-      <Footer />
-      <SocialShare />
     </>
   );
 }

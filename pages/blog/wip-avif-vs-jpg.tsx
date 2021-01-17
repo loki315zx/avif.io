@@ -14,7 +14,6 @@ export default function BlogAvif() {
       <BlogSubtitle text="AVIF" />
       <BlogSubtitle text="Why should I convert JPG to AVIF?" />
       <BlogSubtitle text="How can I convert JPG to AVIF?" />
-      <CTA />
     </Blog>
   );
 }

@@ -22,7 +22,7 @@ function TutorialsBox(props: TutorialsBoxProps) {
 export default function Tutorials() {
   return (
     <section className="section__tutorials overlay-before overlay-after">
-      <div className="text-60 white f3">How to use AVIF in a productive environment.</div>
+      <h2 className="text-60">How to use AVIF in a productive environment.</h2>
       <div className="text-40 white s5">
         Support is constantly rising across browsers, software and hardware. Thanks to being
         royalty-free, companies can include the format without having to deal with patents. We

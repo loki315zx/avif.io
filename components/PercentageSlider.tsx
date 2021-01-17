@@ -13,8 +13,8 @@ export default function PercentageSlider(props: PercentageSliderProps) {
   return (
     <div className={props.className + " " + "s1"} id={props.id}>
       <p className="s0 center">
-        <span className="bold primary" style={{ marginRight: 5 }}>
-          {props.value}%
+        <span className="primary" style={{ marginRight: 5 }}>
+          <b>{props.value}%</b>
         </span>{" "}
         {props.name}
       </p>

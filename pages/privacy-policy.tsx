@@ -1,6 +1,6 @@
 import Header from "@components/Header";
 import Page from "@components/Page";
-import { BlogSubtitle, BlogTitle } from "@components/BlogComponents";
+import { BlogSubtitle } from "@components/BlogComponents";
 
 import { privacyPolicy as postdata } from "lib/meta";
 
@@ -8,8 +8,7 @@ export default function PrivacyPolicy(props: any) {
   return (
     <Page postdata={postdata}>
       <div className="blog">
-        <Header />
-        <BlogTitle text="Privacy Policy" />
+        <h1>Privacy Policy</h1>
         <div className="content__container">
           <div className="content">
             <BlogSubtitle text="Legal Stuff" />

@@ -3,11 +3,13 @@ import Head from "next/head";
 import "@styles/normalize.min.css";
 import "@styles/globals.css";
 import Cookies from "@components/Cookies";
+import Header from "@components/Header";
+import Footer from "@components/Footer";
+import SocialShare from "@components/SocialShare";
+import CTA from "@components/CTA";
 
 export default function AvifIo({ Component, pageProps }: any) {
   useEffect(arrayBufferPolyfill, []);
-  console.log = function () {};
-
   return (
     <>
       <Head>
@@ -25,8 +27,14 @@ export default function AvifIo({ Component, pageProps }: any) {
         <script src="/avif.js"></script>
         <script src="/hotjar.js"></script>
       </Head>
-      <Component {...pageProps} />
+      <Header />
+      <div className="page">
+        <Component {...pageProps} />
+      </div>
+      <CTA />
+      <Footer />
       <Cookies />
+      <SocialShare />
       <script src="/__/firebase/8.2.2/firebase-app.js"></script>
       <script src="/__/firebase/8.2.2/firebase-analytics.js"></script>
       <script src="/__/firebase/init.js"></script>

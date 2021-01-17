@@ -30,6 +30,4 @@ for (day = 0; day < days; day++) {
   count = Math.round(count / 40) * 40;
 }
 
-export default function ConversionsCounter() {
-  return <>~{count} </>;
-}
+export const conversions = count;

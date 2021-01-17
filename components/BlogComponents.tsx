@@ -32,16 +32,8 @@ export function BlogSyntax(props: { language: string; children: any }) {
   );
 }
 
-export function BlogTitle(props: { text: string }) {
-  return <h1 className="f3 white">{props.text}</h1>;
-}
-
 export function BlogSubtitle(props: { text: string; id?: string }) {
-  return (
-    <h2 id={props.id} className="content__subtitle">
-      {props.text}
-    </h2>
-  );
+  return <h2 id={props.id}>{props.text}</h2>;
 }
 
 export function BlogNote(props: { text: string }) {
@@ -82,11 +74,7 @@ export function BlogAdvantages(props: any) {
       {advantage}
     </li>
   ));
-  return (
-    <div id="checkboxes">
-      <ul>{listItems}</ul>
-    </div>
-  );
+  return <ul>{listItems}</ul>;
 }
 
 /* Todo: Add dynamic post image */
@@ -98,9 +86,9 @@ export function BlogPosts(props: any) {
       <div className="posts__item">
         <div className="posts__img" /*style={{ backgroundImage: `url(${post.image})` }}*/></div>
         <div className="posts__data">
-          <div className="posts__title"> {post.title}</div>
+          <div className="posts__title">{post.title}</div>
 
-          <div className="posts__summary">{post.description}</div>
+          <div>{post.description}</div>
         </div>
       </div>
     </Link>
@@ -108,7 +96,7 @@ export function BlogPosts(props: any) {
   return (
     <section className="posts">
       <BlogSubtitle text="Related articles" />
-      <div className="posts__container">{listItems}</div>
+      <div className="posts__container grid">{listItems}</div>
     </section>
   );
 }
@@ -129,7 +117,7 @@ export function BlogTags(props: any) {
   ));
   return (
     <section className="tags_container f0">
-      <BlogSubtitle text="Tags, Related Questions and Headlines" />
+      <h3>Tags, Related Questions and Headlines</h3>
       {listTags} {listQuestions}
     </section>
   );
@@ -144,7 +132,7 @@ export function BlogLink(props: {
   return (
     <div style={{ display: props.newLine ? "block" : "inline-block" }}>
       <Link href={props.link}>
-        <a className={props.className}>{props.text}</a>
+        <a className={`white ${props.className}`}>{props.text}</a>
       </Link>
     </div>
   );
@@ -167,7 +155,7 @@ export function BlogLinkExternal(props: {
         href={props.link}
         id={props.id}
         title={props.aria ? props.aria : props.text}
-        className={props.className}>
+        className={`white ${props.className}`}>
         {props.text}
       </a>
     </div>

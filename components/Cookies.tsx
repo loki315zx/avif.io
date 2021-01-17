@@ -19,9 +19,8 @@ const Cookies = () => {
   const [mode, setMode] = useStickyState("false", "true");
   return (
     <div className={`cookie ${mode}`}>
-      We use cookies to analyze improve traffic, performance, quality and safety. By using our
-      website you agree with the <BlogLink text="Policy" link="/privacy-policy" />. Click this
-      banner to close.
+      We use cookies to deliver our services. By using our website you agree with the{" "}
+      <BlogLink text="Policy" link="/privacy-policy" />.
       <div
         role="button"
         className="overlay flex-center"

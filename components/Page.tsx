@@ -3,7 +3,7 @@ import Footer from "@components/Footer";
 import CTA from "@components/CTA";
 import SocialShare from "@components/SocialShare";
 import Meta from "@components/Meta";
-import { BlogLink, BlogTitle } from "./BlogComponents";
+import { BlogLink } from "./BlogComponents";
 
 export default function Blog(props: { postdata: any; children: any; className?: string }) {
   const urlSplit = props.postdata.url.split("/");
@@ -18,10 +18,8 @@ export default function Blog(props: { postdata: any; children: any; className?: 
         date_published={props.postdata.date_published}
         date_modified={props.postdata.date_modified}
       />
-      <Header />
       <div className="blog__header overlay-after">
-        <Header />
-        <BlogTitle text={props.postdata.title} />
+        <h1>{props.postdata.title}</h1>
         <div className="blog__meta white center">
           <div className="breadcrumbs">
             <div>
@@ -45,9 +43,6 @@ export default function Blog(props: { postdata: any; children: any; className?: 
       <div className="content__container">
         <div className="content">{props.children}</div>
       </div>
-      <CTA />
-      <Footer />
-      <SocialShare />
     </div>
   );
 }
