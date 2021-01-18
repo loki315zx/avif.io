@@ -55,7 +55,7 @@
   --s5: calc(var(--s4) * 1.8);
   --s6: calc(var(--s5) * 1.8);
   --radius-small: var(--s0);
-  --radius-medium: var(--s2);
+  --radius-medium: 32px;
   --radius-large: 999999px;
   --color700: #ab0d5e;
   --color500: #cf0054;
@@ -168,6 +168,14 @@ li {
 
 input[type="checkbox"] {
   margin-right: var(--s0);
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.normal {
+  font-weight: normal;
 }
 
 .m0 {
@@ -300,7 +308,7 @@ input[type="checkbox"] {
 }
 
 .page > section {
-  padding: var(--s4);
+  padding: var(--s6);
 }
 
 /*  */
@@ -320,7 +328,8 @@ input[type="checkbox"] {
   align-items: center;
   justify-content: space-between;
   background: var(--black2-8);
-  height: var(--s4);
+  padding: var(--s1) 0;
+  backdrop-filter: blur(5px);
 }
 
 .header > * > * {
@@ -378,7 +387,7 @@ input[type="checkbox"] {
   text-align: center;
   flex-direction: column;
   backdrop-filter: blur(50px);
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.01);
   animation: bounce-in 1s forwards 1;
   animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
 }
@@ -396,7 +405,7 @@ input[type="checkbox"] {
 }
 
 .dropzone-root {
-  background-color: var(--white);
+  background-color: hsla(0, 0%, 100%, 0.05);
   border-radius: var(--radius-medium);
   padding: var(--s3) var(--s2);
   display: flex;
@@ -406,6 +415,7 @@ input[type="checkbox"] {
   flex-direction: column;
   transition: all 0.2s ease-out;
   color: var(--color500);
+  border: 4px dashed var(--gray1);
 }
 
 .cog-button {
@@ -418,7 +428,7 @@ input[type="checkbox"] {
   display: block;
   z-index: 999;
   cursor: pointer;
-  background-color: var(--gray2);
+  background-color: var(--white);
   mask-image: url("@assets/settings.svg");
   mask-size: 24px;
   mask-position: center center;
@@ -429,7 +439,7 @@ input[type="checkbox"] {
 .settings_cog {
   position: absolute;
   padding: var(--s2);
-  border-radius: var(--radius-medium);
+  border-radius: var(--radius-small);
   top: 0;
   right: 0;
   bottom: 0;
@@ -530,7 +540,7 @@ input[type="checkbox"] {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-radius: var(--radius-medium);
+  border-radius: var(--radius-small);
   margin-top: var(--s1);
   align-self: normal;
   position: relative;
@@ -567,7 +577,7 @@ input[type="checkbox"] {
 }
 
 .progress .bar-inner {
-  border-radius: var(--radius-medium) 0 0 var(--radius-medium);
+  border-radius: var(--radius-small) 0 0 var(--radius-small);
   background: var(--gray1);
 }
 
@@ -648,7 +658,7 @@ input[type="checkbox"] {
   right: 0;
   top: 0;
   height: 100%;
-  border-radius: 0 var(--radius-medium) var(--radius-medium) 0;
+  border-radius: 0 var(--radius-small) var(--radius-small) 0;
   background: radial-gradient(circle at bottom right, var(--color500) 30%, var(--color300) 100%);
   z-index: 9999;
   cursor: pointer;
@@ -660,7 +670,7 @@ input[type="checkbox"] {
   background-size: 25%;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 0 var(--radius-medium) var(--radius-medium) 0;
+  border-radius: 0 var(--radius-small) var(--radius-small) 0;
   z-index: 99999;
   transition: all 0.2s ease-out;
 }
@@ -678,7 +688,7 @@ input[type="checkbox"] {
   outline: none;
   border: none;
   padding: var(--s2) var(--s3);
-  border-radius: var(--radius-medium);
+  border-radius: var(--radius-small);
   cursor: pointer;
   position: relative;
   z-index: 0;
@@ -1028,7 +1038,7 @@ input[type="checkbox"] {
   background: var(--color500);
   z-index: -1;
   filter: blur(5px);
-  border-radius: var(--radius-medium);
+  border-radius: var(--radius-small);
   transform: scale(0);
 }
 
@@ -1046,7 +1056,7 @@ input[type="checkbox"] {
 }
 
 .badge__avif {
-  border-radius: var(--radius-medium);
+  border-radius: var(--radius-small);
   padding: var(--s5);
   position: relative;
   margin: var(--s4);
@@ -1126,7 +1136,7 @@ input[type="checkbox"] {
 }
 
 .advantage__visualizer {
-  border-radius: var(--radius-medium);
+  border-radius: var(--radius-small);
   background-size: contain;
   background-position: center right;
   background-repeat: no-repeat;
@@ -1215,7 +1225,7 @@ input[type="checkbox"] {
 }
 
 .avifcompare #fileformats div {
-  border-radius: var(--radius-medium);
+  border-radius: var(--radius-small);
 }
 
 #comparison__container {
@@ -1285,7 +1295,7 @@ input[type="checkbox"] {
     radial-gradient(circle at bottom center, var(--color500), transparent 75%),
     radial-gradient(circle at 80% 40%, var(--color700), transparent 75%), var(--black1);
   padding: var(--s3);
-  border-radius: var(--radius-medium);
+  border-radius: var(--radius-small);
   position: relative;
   cursor: pointer;
   overflow: hidden;
@@ -1333,7 +1343,7 @@ input[type="checkbox"] {
 
 .posts__item {
   background: var(--black3-8);
-  border-radius: var(--radius-medium);
+  border-radius: var(--radius-small);
   transition: all 0.3s ease-out;
   cursor: pointer;
   position: relative;
@@ -1342,7 +1352,7 @@ input[type="checkbox"] {
 
 .posts__img {
   background: linear-gradient(var(--color300), var(--color500));
-  border-radius: var(--radius-medium) 0 0 var(--radius-medium);
+  border-radius: var(--radius-small) 0 0 var(--radius-small);
   display: flex;
   align-items: center;
   background-size: 100%;
@@ -1428,7 +1438,7 @@ input[type="checkbox"] {
 a.discord {
   background: #7289da;
   padding: var(--s1) var(--s0);
-  border-radius: var(--radius-medium);
+  border-radius: var(--radius-small);
   background-image: url(@assets/discord.svg);
   background-size: var(--s2);
   background-repeat: no-repeat;
@@ -1453,7 +1463,7 @@ a.discord {
   bottom: 0;
   background: var(--gray4);
   width: calc(var(--s5) * 1.5);
-  border-radius: var(--radius-medium);
+  border-radius: var(--radius-small);
   right: 0;
 }
 
@@ -1461,7 +1471,7 @@ a.discord {
   justify-content: center;
   opacity: 0;
   background: var(--color500);
-  border-radius: var(--radius-medium);
+  border-radius: var(--radius-small);
 }
 
 .cookie:hover .overlay.flex-center {
@@ -1699,12 +1709,6 @@ a.discord {
   z-index: 3;
 }
 
-.blog .header {
-  position: fixed;
-  z-index: 99999999999;
-  backdrop-filter: blur(5px);
-}
-
 .blog__syntax__copy {
   opacity: 0;
   position: absolute;
@@ -1772,7 +1776,7 @@ a.discord {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--radius-medium);
+  border-radius: var(--radius-small);
   margin: var(--s2) 0 var(--s1);
 }
 
@@ -1789,7 +1793,7 @@ a.discord {
 .tag,
 .question {
   padding: calc(var(--s0 * 0.5));
-  border-radius: var(--radius-medium);
+  border-radius: var(--radius-small);
   font-size: var(--f0);
   display: inline-block;
 }
@@ -2031,7 +2035,7 @@ picture img {
 /*  */
 
 pre {
-  border-radius: var(--radius-medium);
+  border-radius: var(--radius-small);
   background: var(--black3);
 }
 
@@ -2060,6 +2064,9 @@ pre {
 
   .blog h1 {
     margin: 0;
+  }
+  .page > section {
+    padding: var(--s4);
   }
 }
 
@@ -2105,10 +2112,6 @@ pre {
     min-height: auto;
   }
 
-  .header {
-    padding: var(--s0) var(--s2);
-  }
-
   .avifcompare {
     text-align: center;
     padding: var(--s5) var(--s2);
@@ -2128,6 +2131,16 @@ pre {
 }
 
 @media only screen and (max-width: 767.98px) {
+  .blog > * {
+    padding: var(--s1);
+  }
+  .blog__header__content {
+    padding: var(--s4) 0 var(--s2);
+  }
+  .header > * > * {
+    padding: var(--s0) var(--s0);
+  }
+
   .cog-button,
   .settings_cog {
     display: none;
@@ -2159,7 +2172,7 @@ pre {
   }
 
   .header {
-    padding: 0 var(--s2);
+    padding: var(--s2) 0;
   }
 
   .conversionscounter {
@@ -2176,7 +2189,7 @@ pre {
   .question {
     background: var(--black2);
     padding: 1px;
-    border-radius: var(--radius-medium);
+    border-radius: var(--radius-small);
     margin-bottom: var(--s0);
     font-size: var(--f0);
     display: inline-block;
@@ -2205,7 +2218,7 @@ pre {
   }
 
   .header {
-    padding: 0 var(--s0);
+    padding: var(--s1) 0;
   }
 
   .menu > a {
@@ -2426,7 +2439,7 @@ input[type="range"] {
   appearance: none;
   width: 100%;
   height: var(--s0);
-  border-radius: var(--radius-medium);
+  border-radius: var(--radius-small);
   background: var(--gray1);
   outline: none;
   padding: 0;
@@ -2484,7 +2497,7 @@ input[type="range"]:focus::-webkit-slider-thumb {
 
 @media (orientation: landscape) {
   ::-webkit-scrollbar-thumb {
-    border-radius: var(--radius-medium);
+    border-radius: var(--radius-small);
     background-color: var(--color300);
     border: 3px solid var(--gray4);
   }
@@ -2492,7 +2505,7 @@ input[type="range"]:focus::-webkit-slider-thumb {
 
 @media (orientation: landscape) {
   ::-webkit-scrollbar-track {
-    border-radius: var(--radius-medium);
+    border-radius: var(--radius-small);
     background-color: transparent;
   }
 }

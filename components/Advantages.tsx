@@ -28,11 +28,6 @@ export default function Advantages() {
         </div>
       </section>
       <section id="avifadvantages">
-        <div
-          className="center white"
-          style={{ position: "relative", zIndex: 9999, marginBottom: 20 }}>
-          sorry, you can't click these yet!!
-        </div>
         <div className="advantage__grid  grid-larger">
           <AdvantageItem
             pre="usually"

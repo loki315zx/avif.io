@@ -48,10 +48,10 @@ export default function Dropzone(props: DropzoneProps) {
           <div className={"upload-button overlay-before overlay-after"}>
             <div className="upload-blur overlay"></div>
           </div>
-          <div className={"s0 gray4"}>
+          <div className={"s0"}>
             <b>Drop your images or browse</b>
           </div>
-          <div id="explainformats" className={"black500 infobox"}>
+          <div id="explainformats" className={"black500"}>
             supports png · jpg · webp · gif and more
           </div>
         </>
