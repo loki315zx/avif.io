@@ -10,13 +10,14 @@
     "check-style": "npx stylelint styles/",
     "prettier": "prettier --write .",
     "pull": "git pull && git fetch origin && git reset --hard origin/master",
-    "setup": "npm i && npm run build && next export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && npm run dev",
-    "release": "npm i && npm run build && next export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../",
+    "setup": "npm i -f && npm run build && next export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && npm run dev",
+    "release": "npm i -f && npm run build && next export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../",
     "analyze": "cross-env ANALYZE=true next build"
   },
   "dependencies": {
     "@next/bundle-analyzer": "^10.0.5",
     "@types/react-syntax-highlighter": "^13.5.0",
+    "fsevents": "^2.3.1",
     "jszip": "^3.5.0",
     "lodash": "^4.17.20",
     "next": "^10.0.5",
@@ -35,16 +36,16 @@
   },
   "devDependencies": {
     "@types/jszip": "^3.4.1",
-    "@types/lodash": "^4.14.167",
-    "@types/node": "^14.14.20",
+    "@types/lodash": "^4.14.168",
+    "@types/node": "^14.14.21",
     "@types/pretty-bytes": "^5.2.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-dropzone": "^5.1.0",
-    "@typescript-eslint/eslint-plugin": "^4.12.0",
-    "@typescript-eslint/parser": "^4.12.0",
+    "@typescript-eslint/eslint-plugin": "^4.14.0",
+    "@typescript-eslint/parser": "^4.14.0",
     "cross-env": "^7.0.3",
-    "eslint": "^7.17.0",
+    "eslint": "^7.18.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "4.2.0",
@@ -53,6 +54,9 @@
     "typescript": "^4.1.3",
     "webpack": "^4.44.2",
     "webpack-cli": "^4.3.1"
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.3.1"
   },
   "eslintConfig": {
     "env": {

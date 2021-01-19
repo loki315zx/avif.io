@@ -41,7 +41,7 @@ export default function BlogAvifInEdge() {
         text="Microsoft Store"
       />
       . It provides support for AV1 videos on Windows 10 devices and Edge. It also allows for
-      viewing avif images, including thumbnails, and editing them in Paint.
+      viewing AVIF images, including thumbnails, and editing them in Paint.
       <BlogImage url="edge-av1" alt="av1 extension" />
       Furthermore, this extension allows video apps installed on Windows 10 to play videos encoded
       using the AV1 video coding standard developed by the Alliance for Open Media. As already

@@ -53,7 +53,6 @@ export default function App(): ReactElement {
     convertedFiles.push(file);
     setConvertedFiles([...convertedFiles]);
   }
-
   return (
     <>
       <Head>
@@ -139,8 +138,8 @@ export default function App(): ReactElement {
         the increasing size of pictures on the web. For years, JPEG has remained the most popular
         picture format due to its high compatibility. AVIF is the modern solution. It is developed
         by the Alliance for Open Media, a collaboration of Google, Apple, Mozilla, Intel and other
-        tech giants. Avif is a codec for super-compressed images with acceptable quality, and it’s
-        constantly getting better. Avif offers significant reductions in file size over the current
+        tech giants. AVIF is a codec for super-compressed images with acceptable quality, and it’s
+        constantly getting better. AVIF offers significant reductions in file size over the current
         JPEG or WebP codecs. You can reduce file sizes by 20-90%, even for images with transparency
         and animated frames. Currently supported by Chrome, Opera and Firefox, you can expect it to
         get more support soon. The most influential tech companies develop AVIF. Netflix has already
@@ -148,7 +147,7 @@ export default function App(): ReactElement {
         image quality to compressed file size ratio. AV1 was created by industry leaders and
         technology innovators from all prestigious companies. They licensed their codec patents
         royalty-free to create an ecosystem that would endure. There is no other codec that seems as
-        promising as avif. With its widespread support, current feature rate, license-free usage,
+        promising as AVIF. With its widespread support, current feature rate, license-free usage,
         and the highest compression rate achieved, we are only steps away from creating a truly
         modern web.
       </div>

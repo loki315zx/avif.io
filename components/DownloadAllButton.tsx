@@ -25,7 +25,7 @@ export default function DownloadAllButton(props: DownloadAllButtonProps) {
           <a href="https://www.buymeacoffee.com/justinschmitz" title="Donate">
             Donate
           </a>{" "}
-          to support upcoming features like a REST API, CLI and more.
+          to support upcoming features like a REST API and more.
         </p>
       </div>
     </>

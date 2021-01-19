@@ -61,6 +61,7 @@ export default function SettingsBox(props: SettingsBoxProps) {
 
   return (
     <div className={"settings-box align-left secondary " + (props.open ? "open" : "closed")}>
+      <div className="f0 s2">Settings don't change a running conversion.</div>
       <div className={"align-left"}>
         <PercentageSlider
           className={"align-left"}

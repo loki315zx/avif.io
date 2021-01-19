@@ -415,7 +415,6 @@ input[type="checkbox"] {
   flex-direction: column;
   transition: all 0.2s ease-out;
   color: var(--color500);
-  border: 4px dashed var(--gray1);
 }
 
 .cog-button {
@@ -428,7 +427,7 @@ input[type="checkbox"] {
   display: block;
   z-index: 999;
   cursor: pointer;
-  background-color: var(--white);
+  background-color: var(--gray2);
   mask-image: url("@assets/settings.svg");
   mask-size: 24px;
   mask-position: center center;
@@ -438,20 +437,19 @@ input[type="checkbox"] {
 
 .settings_cog {
   position: absolute;
-  padding: var(--s2);
+  padding: var(--s1);
   border-radius: var(--radius-small);
   top: 0;
   right: 0;
-  bottom: 0;
-  height: calc(var(--s5) * 2);
+  height: auto;
   transform: scale(0);
   transition: all 0.3s ease-in-out;
   opacity: 0;
+  width: var(--s6);
   color: var(--gray4);
 }
 
 .settings-box label {
-  width: 100%;
   display: flex;
   align-items: center;
   margin: var(--s0) 0;
@@ -460,6 +458,7 @@ input[type="checkbox"] {
 #quality label,
 #effort label {
   font-size: 0;
+  width: var(--s5);
 }
 
 .upload-button {
@@ -746,8 +745,6 @@ input[type="checkbox"] {
   height: 100%;
   flex: 1;
   justify-content: space-between;
-  padding: var(--s2) 0;
-  max-height: 512px;
 }
 
 .open .settings-box {
@@ -1249,6 +1246,7 @@ input[type="checkbox"] {
   position: absolute;
   top: 0;
   color: var(--black1);
+  opacity: 0;
 }
 
 .avif #avif {
@@ -1501,6 +1499,10 @@ a.discord {
 
 .blog__header {
   max-width: 100%;
+}
+
+.page .blog__header {
+  padding: var(--s5) var(--s1);
 }
 
 .background1 .blog__header::after {
@@ -2152,6 +2154,7 @@ pre {
 
   .app-container {
     background-size: cover;
+    padding: var(--s4) var(--s0) var(--s4) var(--s0);
   }
 
   .text-20,
@@ -2249,6 +2252,12 @@ pre {
 
   .share-container {
     padding: var(--s0);
+  }
+  .remaining-time {
+    display: none;
+  }
+  .conversion {
+    font-size: var(--f0);
   }
 }
 

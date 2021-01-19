@@ -36,7 +36,7 @@ export default function Footer() {
             rel="noreferrer">
             <img
               src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=273434&theme=dark"
-              alt="✨ avif.io | Fastest AVIF image converter - Convert images to AVIF for free. No data sent, it's magic!✨ | Product Hunt"
+              alt="Fastest AVIF image converter, featured on Product Hunt"
               style={{ width: 250, height: 54 }}
               width="250"
               height="54"

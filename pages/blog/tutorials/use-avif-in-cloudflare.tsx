@@ -31,7 +31,7 @@ export default function BlogAvifInCloudflare() {
       are on this page because you are using Cloudflare services and would like to know how to turn
       on AVIF support. Oh, and by the way, this post is not sponsored in any way. Let's see:
       <BlogSubtitle text="Why Cloudflare supports avif" />
-      Regarding their latest blog post about avif, Cloudflare has made the decision to support avif
+      Regarding their latest blog post about AVIF, Cloudflare has made the decision to support AVIF
       for the following advantages:
       <BlogAdvantages
         advantages={[

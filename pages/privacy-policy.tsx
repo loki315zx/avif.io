@@ -8,7 +8,6 @@ export default function PrivacyPolicy(props: any) {
   return (
     <Page postdata={postdata}>
       <div className="blog">
-        <h1>Privacy Policy</h1>
         <div className="content__container">
           <div className="content">
             <BlogSubtitle text="Legal Stuff" />
