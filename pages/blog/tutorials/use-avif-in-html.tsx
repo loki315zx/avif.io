@@ -57,9 +57,11 @@ export default function BlogAvifInHtml() {
       and copy it if you want it for your website:
       <BlogSyntax language="html">
         {`<picture>
-<source srcset="image.avif" type="image/avif" loading="lazy">
-<source srcset="image.webp" type="image/webp" loading="lazy">
-<img src="image.jpg" alt="avif in html" loading="lazy" decoding="async">
+  <source srcSet="image.avif" type="image/avif" />
+  <source srcSet="image.webp" type="image/webp" />
+  <img
+  width="1280" height="720" decoding="async" loading="lazy"
+  src="image.jpg" alt="an avif image" />
 </picture>`}
       </BlogSyntax>
       <BlogNote text="PS: The lazy loading attribute is supported by 75% of all browsers, make use of it! Also, don't forget to add width & height to avoid a Layout Shift. Providing width and height is more important than ever." />
@@ -68,12 +70,30 @@ export default function BlogAvifInHtml() {
       <BlogSubtitle text="Responsiveness" />
       At this point, it seems to be great, right? Well, no, not yet. That is because our platform
       still lacks support for different types of devices. Creating an optimal experience for Retina
-      displays is a little more challenging.
+      displays is a little more challenging. Also, we would want to make sure that mobile devices do
+      not download images that are way larger than their screen.
       <BlogSyntax language="html">
         {`<picture>
-<source srcset="image.avif 1x, image@2x.avif 2x" type="image/avif" loading="lazy">
-<source srcset="image.webp 1x, image@2x.webp 2x" type="image/webp" loading="lazy">
-<img src="image.jpg 1x, image@2x.jpg 2x" alt="avif in html" loading="lazy">
+
+<source
+sizes="(max-width: 640px) 100vw, 640px"
+srcSet="/image-1280.avif 1280w, /image-640.avif 640w, /image-320.avif 320w"
+type="image/avif" />
+
+<source
+sizes="(max-width: 640px) 100vw, 640px"
+srcSet="/image-1280.avif 1280w, /image-640.webp 640w, /image-320.webp 320w"
+type="image/webp" />
+
+<source
+sizes="(max-width: 640px) 100vw, 640px"
+srcSet="/image-1280.avif 1280w, /image-640.jpg 640w, /image-320.jpg 320w"
+type="image/jpg" />
+
+<img
+width="1280" height="720" decoding="async" loading="lazy"
+src="/image.jpg" alt="an avif image" />
+
 </picture>`}
       </BlogSyntax>
       Okay, this is probably not as challenging as we originally believed, but creating AVIF images

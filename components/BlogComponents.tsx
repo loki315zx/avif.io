@@ -70,8 +70,8 @@ export function BlogAdvantages(props: any) {
 
   const listItems = advantages.map((advantage: any, index: any) => (
     <li key={index}>
-      <input type="checkbox" readOnly checked={props.checked} />
-      {advantage}
+      <input type="checkbox" readOnly checked={props.checked} name={props.advantage} />
+      <label htmlFor={props.advantage}>{advantage}</label>
     </li>
   ));
   return <ul>{listItems}</ul>;

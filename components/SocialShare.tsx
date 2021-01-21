@@ -10,7 +10,7 @@ export default function Blog() {
   const router = useRouter();
   const url = "https://avif.io" + router.pathname;
   return (
-    <div className="share-container">
+    <address className="share-container">
       <BlogLinkExternal
         link={`https://twitter.com/intent/tweet?source=${url}&text=${url}`}
         aria="Share on Twitter"
@@ -35,6 +35,6 @@ export default function Blog() {
           tabIndex={99}
           id="share"></a>
       </div>
-    </div>
+    </address>
   );
 }

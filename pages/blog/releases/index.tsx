@@ -37,6 +37,12 @@ const notes190120 = [
   "Added Hotjar Feedback widget to make friends with people that suffer from failed conversions",
 ];
 
+const notes210120 = [
+  "Made website more accessible by using semantic elements and aria attributes",
+  "Added JSON data for better search engine results",
+  "Linked Sitemap in footer",
+];
+
 const posts = [""];
 
 import { releaseIndex as postdata } from "lib/meta";
@@ -44,11 +50,13 @@ import { releaseIndex as postdata } from "lib/meta";
 export default function BlogAvif() {
   return (
     <Archive postdata={postdata} posts={posts}>
-      <BlogSubtitle text="19.01.2021 - Small Changes" />
+      <BlogSubtitle text="21.01.2021 - Misc Changes" />
+      <BlogAdvantages advantages={notes210120} checked />
+      <BlogSubtitle text="19.01.2021 - Misc Changes" />
       <BlogAdvantages advantages={notes190120} checked />
-      <BlogSubtitle text="15.01.2021 - Small Changes" />
+      <BlogSubtitle text="15.01.2021 - Misc Changes" />
       <BlogAdvantages advantages={notes150120} checked />
-      <BlogSubtitle text="11.01.2021 - Small Changes" />
+      <BlogSubtitle text="11.01.2021 - Misc Changes" />
       <BlogAdvantages advantages={notes110120} checked />
     </Archive>
   );

@@ -15,6 +15,13 @@ export interface MetaProps {
 }
 
 export default function Meta(props: MetaProps) {
+  const publishedSplit = props.date_published.split(".");
+  const publishedDate =
+    "20" + publishedSplit[2] + "-" + publishedSplit[1] + "-" + publishedSplit[0];
+
+  const modifiedSplit = props.date_modified.split(".");
+  const modifiedDate = "20" + modifiedSplit[2] + "-" + modifiedSplit[1] + "-" + modifiedSplit[0];
+
   return (
     <Head>
       <link rel="canonical" href={`https://avif.io/${props.url}`} />
@@ -51,8 +58,8 @@ export default function Meta(props: MetaProps) {
                 "url": "https://avif.io/json-logo.png",
               },
             },
-            "datePublished": props.date_published,
-            "dateModified": props.date_modified,
+            "datePublished": publishedDate,
+            "dateModified": modifiedDate,
             "isFamilyFriendly": true,
             "inLanguage": "en-US",
           })}

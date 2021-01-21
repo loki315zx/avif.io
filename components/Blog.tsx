@@ -1,15 +1,6 @@
-import Header from "@components/Header";
-import Footer from "@components/Footer";
-import CTA from "@components/CTA";
-import SocialShare from "@components/SocialShare";
-import {
-  BlogSources,
-  BlogSubtitle,
-  BlogPosts,
-  BlogTags,
-  BlogLink,
-} from "@components/BlogComponents";
+import { BlogSources, BlogPosts, BlogTags, BlogLink } from "@components/BlogComponents";
 import Meta from "@components/Meta";
+import Breadcrumbs from "@components/Breadcrumbs";
 
 const randomNumber = Math.floor(Math.random() * 7 + 1);
 
@@ -18,7 +9,7 @@ export default function Blog(props: { postdata: any; children: any; posts: any }
 
   return (
     <>
-      <div className={`blog background${randomNumber}`}>
+      <main className={`blog background${randomNumber}`}>
         <Meta
           title={props.postdata.title}
           description={props.postdata.description}
@@ -27,28 +18,12 @@ export default function Blog(props: { postdata: any; children: any; posts: any }
           image={props.postdata.image}
           date_published={props.postdata.date_published}
           date_modified={props.postdata.date_modified}
+          blog
         />
 
         <div className="blog__header overlay-after">
           <div className="blog__header__content">
-            <div className="breadcrumbs">
-              <div>
-                <BlogLink className="white" link={`/${urlSplit[0]}/`} text={urlSplit[0]} />
-                {urlSplit[2] ? (
-                  <span className="white">
-                    {" > "}
-                    <BlogLink
-                      className="white"
-                      link={`/${urlSplit[0]}/${urlSplit[1]}/`}
-                      text={urlSplit[1]}
-                    />
-                  </span>
-                ) : (
-                  ""
-                )}
-              </div>
-            </div>
-
+            <Breadcrumbs postdata={props.postdata} />
             <h1>{props.postdata.title}</h1>
             <div className="blog__meta white">
               {props.postdata.date_modified} · {props.postdata.readingtime} min read
@@ -64,7 +39,7 @@ export default function Blog(props: { postdata: any; children: any; posts: any }
             <BlogTags tags={props.postdata.tags} questions={props.postdata.questions} />
           </div>
         </div>
-      </div>
+      </main>
       {props.posts[0] ? <BlogPosts posts={props.posts} /> : ""}
     </>
   );

@@ -296,6 +296,14 @@ input[type="checkbox"] {
   will-change: auto;
 }
 
+.inline {
+  display: inline;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
 .overlay,
 .overlay-before::before,
 .overlay-after::after {
@@ -1501,6 +1509,11 @@ a.discord {
   max-width: 100%;
 }
 
+.page label,
+.blog label {
+  margin: var(--s0) 0;
+}
+
 .page .blog__header {
   padding: var(--s5) var(--s1);
 }
@@ -2365,8 +2378,6 @@ pre {
 
   input[type="checkbox"] + label,
   input[type="radio"] + label {
-    font-size: 14px;
-    line-height: 21px;
     display: inline-block;
     vertical-align: top;
     cursor: pointer;

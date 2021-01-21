@@ -23,6 +23,7 @@
     "next": "^10.0.5",
     "next-compose-plugins": "^2.2.1",
     "next-images": "^1.6.2",
+    "postcss": "^8.2.4",
     "prettier": "^2.2.1",
     "pretty-bytes": "^5.5.0",
     "react": "^17.0.1",
