@@ -32,7 +32,7 @@ export default function Meta(props: MetaProps) {
       <meta property="og:url" content={`https://avif.io/${props.url}`} />
       <meta property="og:title" content={"avif.io" + " | " + props.title} />
       <meta property="og:description" content={props.description} />
-      <meta property="og:image" content={props.image} />
+      <meta property="og:image" content={"https://avif.io" + props.image} />
       <meta property="og:type" content="article" />
       {props.blog ? (
         <script
