@@ -1,6 +1,5 @@
 import JSZip from "jszip";
 import { saveFile } from "@utils/utils";
-import { BlogLinkExternal } from "@components/BlogComponents";
 
 export interface DownloadAllButtonProps {
   files: File[];

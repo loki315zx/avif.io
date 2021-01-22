@@ -1,5 +1,5 @@
 import Blog from "@components/Blog";
-import { BlogSubtitle } from "@components/BlogComponents";
+
 import CTA from "@components/CTA";
 
 import { placeholder as postdata } from "lib/meta";
@@ -10,10 +10,10 @@ import { placeholder as post3 } from "lib/meta";
 export default function BlogAvif() {
   return (
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
-      <BlogSubtitle text="JPG" />
-      <BlogSubtitle text="AVIF" />
-      <BlogSubtitle text="Why should I convert JPG to AVIF?" />
-      <BlogSubtitle text="How can I convert JPG to AVIF?" />
+      <h2>JPG</h2>
+      <h2>AVIF</h2>
+      <h2>Why should I convert JPG to AVIF?</h2>
+      <h2>How can I convert JPG to AVIF?</h2>
     </Blog>
   );
 }

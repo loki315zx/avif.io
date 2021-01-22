@@ -1,8 +1,4 @@
 import Archive from "@components/Archive";
-import { BlogPosts } from "@components/BlogComponents";
-import CTA from "@components/CTA";
-import Footer from "@components/Footer";
-import Header from "@components/Header";
 
 import { useAvifInCloudflare as post1 } from "lib/meta";
 import { useAvifInCss as post2 } from "lib/meta";

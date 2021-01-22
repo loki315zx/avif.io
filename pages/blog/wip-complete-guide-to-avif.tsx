@@ -1,5 +1,4 @@
 import Blog from "@components/Blog";
-import { BlogSubtitle } from "@components/BlogComponents";
 
 import { placeholder as postdata } from "lib/meta";
 import { placeholder as post1 } from "lib/meta";
@@ -9,7 +8,7 @@ import { placeholder as post3 } from "lib/meta";
 export default function BlogAvifInCloudflare() {
   return (
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
-      <BlogSubtitle id="introduction" text="Overall Introduction" />
+      <h2 id="introduction">Overall Introduction</h2>
       AV1 Image File Format (AVIF) is a powerful new, open source, royalty-free file format that
       encodes AV1 bitstreams in the High Efficiency Image File Format (HEIF) container. Note: AVIF
       has potential to become thenext big thingfor sharing images in web content. It offers
@@ -66,7 +65,7 @@ export default function BlogAvifInCloudflare() {
       formats for web are JPG and PNG. A few years ago, WebP came on the scene, developed by Google,
       delivering images 30% smaller than JPG, keeping the same image quality. Now, AVIF promises
       images 50% smaller than JPG, and still keeping the same image quality.
-      <BlogSubtitle id="otherformats" text="Compression" />
+      <h2 id="otherformats">Compression</h2>
       First of all, why use better compression, doesn’t network bandwidth increase every year? Why
       media industry continues to push requirements for codec standards with even higher compression
       ratio? There are three major reasons for that: Network coverage. While you’re achieving 20
@@ -95,62 +94,62 @@ export default function BlogAvifInCloudflare() {
       software patents is unfortunately still a thing. Formats like JPEG XR didn’t achieve great
       adoption mostly because of patents involved. So AV1-based solutions are attractive from both
       technical and legal points of view.
-      <BlogSubtitle id="otherformats" text="Introduction to other formats" />
-      <BlogSubtitle id="aom" text="Alliance of Open Media" />
-      <BlogSubtitle id="aom" text="Introduction to video formats" />
-      A video codec is a software or a tool that executes specific compression algorithms on the
-      data (such as a video) and produces similar content but smaller in size (similar content does
-      not mean similar quality). A similar situation can be correlated while analyzing time and
-      space in computer science. Like a time-space tradeoff, a simple quality-data tradeoff is a
-      popular villain in deducing and inventing the compression algorithm. If you are raising your
-      bar for quality, the content will have to sacrifice the data limit. But as for computer
-      scientists and most people, compression is applied only to decrease the size. So definitely,
-      we cannot compromise on that parameter. The only way to achieve it is to compromise on the
-      quality. We call it a lossy compression, while the one in which we are producing no loss
-      during compression and decompression is called lossless compression. All the previous
-      compression algorithms did the same when the word “compression” was relatively new, and all
-      that the scientist wanted to do was adjust a video into a compact disk more than its size. The
-      journey of video codecs begins with H.261, a technique which most of you might not have heard
-      because of its low efficiency and a laying stone in the compression world. You might know all
-      the algorithms that followed the footsteps of H.261. In 1992, Joint Photographic Experts Group
-      (JPEG) became a standard for compressing the images and sending them over to the wires just
-      like any other thing in those days. Scientists could squeeze a video size using the same
-      algorithm, considering them as “moving pictures,” giving rise to a newer algorithm for
-      compressing the videos called Moving Pictures Expert Group or MPEG. These algorithms are well
-      known as extensions of their files, and JPEG was such a hit that it is still a part of most
-      images. Although we will not cover every codec in this article, the gist of what we tried to
-      convey here is that firstly, codecs have been with us for a long time and are improving every
-      day. Secondly, codecs play an essential part in our daily life, from surfing to capturing a
-      photo on our mobiles. The image you see at the top of this page is compressed and then shown
-      by the transmission channels with the browser support. Browser compatibility is another thing
-      we need to look on, as different browsers can display a particular image differently. Thirdly,
-      video codecs, and image codecs rely on almost similar algorithms with slight variations. Since
-      the base procedure remains the same, they are often named identical to each other. With this,
-      we will explore more codecs in this article. However, to understand the algorithm’s
-      significant parameters, you can go through a good research paper for reference.
-      <BlogSubtitle id="codec" text="Introduction of the AV1 Codec" /> AV1 is a coding format that
-      was originally designed for video transmission over the Internet. The format benefits from the
-      signficant advances in video encoding in recent years, and may potentially benefit from the
-      associated support for hardware rendering. However it also has disadvantages for some cases,
-      as video and image encoding have some different requirements. // AV1 is the most recent video
-      codec developed by Alliance for Open Media and hence the name AOMedia Video 1 codec (AV1
-      codec). The development of the AV1 video codec resulted from the collaboration between Google,
-      Xiph, and Cisco, who decided to combine their in-house video codecs into one single open,
-      royalty-free video codec to benefit everyone. Being royalty-free has been the highlighted
-      feature for AV1 since every other codec had a portion of royalties (except WebP). Therefore,
-      unlike JPEG, which was neither open nor royalty-free, AV1 has seen much faster progress and a
-      wider adoption among the top tech companies, including Google. The idea behind designing AV1
-      was to transmit the video over the internet. With a greater compression reach for the video
-      and reducing the number of overall bits, AV1 codec provides multiple coding techniques that
-      enable the encoders to use various inputs for their missions. If you wonder why we brought
-      this concept of video compression technique into an image compression post, video, and image
-      codec share similarities between them because of the same nature of the data. AV1 codec has
-      proved very advantageous for the internet by saving the bandwidth, which MPEG could not do,
-      although JPEG XR was still in the race but not as effective as AV1. When tech companies such
-      as Facebook and other video streaming websites started using AV1, the company decided to bring
-      an image format with the same efficiency and based on the same codec. AV1 codec is the
-      foundation of the AVIF image format that is taking the internet by storm.
-      <BlogSubtitle id="purpose" text="History" />
+      <h2 id="otherformats">Introduction to other formats</h2>
+      <h2 id="aom">Alliance of Open Media</h2>
+      <h2 id="aom">Introduction to video formats</h2>A video codec is a software or a tool that
+      executes specific compression algorithms on the data (such as a video) and produces similar
+      content but smaller in size (similar content does not mean similar quality). A similar
+      situation can be correlated while analyzing time and space in computer science. Like a
+      time-space tradeoff, a simple quality-data tradeoff is a popular villain in deducing and
+      inventing the compression algorithm. If you are raising your bar for quality, the content will
+      have to sacrifice the data limit. But as for computer scientists and most people, compression
+      is applied only to decrease the size. So definitely, we cannot compromise on that parameter.
+      The only way to achieve it is to compromise on the quality. We call it a lossy compression,
+      while the one in which we are producing no loss during compression and decompression is called
+      lossless compression. All the previous compression algorithms did the same when the word
+      “compression” was relatively new, and all that the scientist wanted to do was adjust a video
+      into a compact disk more than its size. The journey of video codecs begins with H.261, a
+      technique which most of you might not have heard because of its low efficiency and a laying
+      stone in the compression world. You might know all the algorithms that followed the footsteps
+      of H.261. In 1992, Joint Photographic Experts Group (JPEG) became a standard for compressing
+      the images and sending them over to the wires just like any other thing in those days.
+      Scientists could squeeze a video size using the same algorithm, considering them as “moving
+      pictures,” giving rise to a newer algorithm for compressing the videos called Moving Pictures
+      Expert Group or MPEG. These algorithms are well known as extensions of their files, and JPEG
+      was such a hit that it is still a part of most images. Although we will not cover every codec
+      in this article, the gist of what we tried to convey here is that firstly, codecs have been
+      with us for a long time and are improving every day. Secondly, codecs play an essential part
+      in our daily life, from surfing to capturing a photo on our mobiles. The image you see at the
+      top of this page is compressed and then shown by the transmission channels with the browser
+      support. Browser compatibility is another thing we need to look on, as different browsers can
+      display a particular image differently. Thirdly, video codecs, and image codecs rely on almost
+      similar algorithms with slight variations. Since the base procedure remains the same, they are
+      often named identical to each other. With this, we will explore more codecs in this article.
+      However, to understand the algorithm’s significant parameters, you can go through a good
+      research paper for reference.
+      <h2 id="codec">Introduction of the AV1 Codec</h2> AV1 is a coding format that was originally
+      designed for video transmission over the Internet. The format benefits from the signficant
+      advances in video encoding in recent years, and may potentially benefit from the associated
+      support for hardware rendering. However it also has disadvantages for some cases, as video and
+      image encoding have some different requirements. // AV1 is the most recent video codec
+      developed by Alliance for Open Media and hence the name AOMedia Video 1 codec (AV1 codec). The
+      development of the AV1 video codec resulted from the collaboration between Google, Xiph, and
+      Cisco, who decided to combine their in-house video codecs into one single open, royalty-free
+      video codec to benefit everyone. Being royalty-free has been the highlighted feature for AV1
+      since every other codec had a portion of royalties (except WebP). Therefore, unlike JPEG,
+      which was neither open nor royalty-free, AV1 has seen much faster progress and a wider
+      adoption among the top tech companies, including Google. The idea behind designing AV1 was to
+      transmit the video over the internet. With a greater compression reach for the video and
+      reducing the number of overall bits, AV1 codec provides multiple coding techniques that enable
+      the encoders to use various inputs for their missions. If you wonder why we brought this
+      concept of video compression technique into an image compression post, video, and image codec
+      share similarities between them because of the same nature of the data. AV1 codec has proved
+      very advantageous for the internet by saving the bandwidth, which MPEG could not do, although
+      JPEG XR was still in the race but not as effective as AV1. When tech companies such as
+      Facebook and other video streaming websites started using AV1, the company decided to bring an
+      image format with the same efficiency and based on the same codec. AV1 codec is the foundation
+      of the AVIF image format that is taking the internet by storm.
+      <h2 id="purpose">History</h2>
       The Alliance's motivations for creating AV1 included the high cost and uncertainty involved
       with the patent licensing of HEVC, the MPEG-designed codec expected to succeed AVC.[8][6]
       Additionally, the Alliance's seven founding members – Amazon, Cisco, Google, Intel, Microsoft,
@@ -194,7 +193,7 @@ export default function BlogAvifInCloudflare() {
       maturing the reference encoder. In March 2019, it was reported that the speed of the reference
       encoder had improved greatly and within the same order of magnitude as encoders for other
       common formats.[17]
-      <BlogSubtitle id="purpose" text="Purpose" />
+      <h2 id="purpose">Purpose</h2>
       AV1 aims to be a video format for the web that is both state of the art and royalty free.[2]
       The mission of the Alliance for Open Media is the same as that of the WebM project. A
       recurring concern in standards development, not least of royalty-free multimedia formats, is
@@ -243,7 +242,7 @@ export default function BlogAvifInCloudflare() {
       gains. It is therefore planned to support the color space from ITU-R Recommendation BT.2020
       and up to 12 bits of precision per color component.[32] AV1 is primarily intended for lossy
       encoding, although lossless compression is supported as well.[33]
-      <BlogSubtitle id="purpose" text="Technology" />
+      <h2 id="purpose">Technology</h2>
       AV1 is a traditional block-based frequency transform format featuring new techniques. Based on
       Google's VP9,[34] AV1 incorporates additional techniques that mainly give encoders more coding
       options to enable better adaptation to different types of input. The Alliance published a
@@ -259,7 +258,7 @@ export default function BlogAvifInCloudflare() {
       conditional compilation flags.[citation needed] To better and more reliably support HDR and
       color spaces, corresponding metadata can now be integrated into the video bitstream instead of
       being signaled in the container.
-      <BlogSubtitle id="purpose" text="Partitioning" />
+      <h2 id="purpose">Partitioning</h2>
       Frame content is separated into adjacent same-sized blocks referred to as superblocks. Similar
       to the concept of a macroblock, superblocks are square-shaped and can either be of size
       128×128 or 64×64 pixels. Superblocks can be divided in smaller blocks according to different
@@ -276,7 +275,7 @@ export default function BlogAvifInCloudflare() {
       needed] This enables more accurate separation of objects without the traditional staircase
       lines along the boundaries of square blocks. More encoder parallelism is possible thanks to
       configurable prediction dependency between tile rows (ext_tile).[38]
-      <BlogSubtitle id="purpose" text="Prediction" />
+      <h2 id="purpose">Prediction</h2>
       AV1 performs internal processing in higher precision (10 or 12 bits per sample), which leads
       to compression improvement due to smaller rounding errors in reference imagery. Predictions
       can be combined in more advanced ways (than a uniform average) in a block (compound
@@ -297,7 +296,7 @@ export default function BlogAvifInCloudflare() {
       frames from a higher-resolution version of the same video to allow switching to a lower
       resolution without the need for a full keyframe at the beginning of a video segment in the
       adaptive bitrate streaming use case.[41]
-      <BlogSubtitle id="purpose" text="Intra Prediction" />
+      <h2 id="purpose">Intra Prediction</h2>
       Intra prediction consists of predicting the pixels of a given blocks only using information
       available in the current frame. Most often, intra predictions are built from the neighboring
       pixels above and to the left of the predicted block. The DC predictor builds a prediction by
@@ -317,7 +316,7 @@ export default function BlogAvifInCloudflare() {
       block motion compensation (OBMC) can be used. This involves extending a block's size so that
       it overlaps with neighboring blocks by 2 to 32 pixels, and blending the overlapping parts
       together.[42]
-      <BlogSubtitle id="purpose" text="Filters" />
+      <h2 id="purpose">Filters</h2>
       For the in-loop filtering step, the integration of Thor's constrained low-pass filter and
       Daala's directional deringing filter has been fruitful: The combined Constrained Directional
       Enhancement Filter (cdef[citation needed]) exceeds the results of using the original filters
@@ -336,44 +335,43 @@ export default function BlogAvifInCloudflare() {
       back a synthetic, pseudorandom noise signal that's shaped after the original component. It is
       the visual equivalent of the Perceptual Noise Substitution technique used in AC3, AAC, Vorbis,
       and Opus audio codecs.
-      <BlogSubtitle id="purpose" text="Quality and efficiency of AV1" />
-      A first comparison from the beginning of June 2016[46] found AV1 roughly on par with HEVC, as
-      did one using code from late January 2017.[47] In April 2017, using the 8 enabled experimental
-      features at the time (of 77 total), Bitmovin was able to demonstrate favorable objective
-      metrics, as well as visual results, compared to HEVC on the Sintel and Tears of Steel short
-      films.[48] A follow-up comparison by Jan Ozer of Streaming Media Magazine confirmed this, and
-      concluded thatAV1 is at least as good as HEVC now".[49] Ozer noted that his and Bitmovin's
-      results contradicted a comparison by Fraunhofer Institute for Telecommunications from late
-      2016[50] that had found AV1 65.7% less efficient than HEVC, underperforming even H.264/AVC
-      which they concluded as being 10.5% more efficient, and justified this discrepancy by having
-      used encoding parameters endorsed by each encoder vendor, as well as having more features in
-      the newer AV1 encoder.[50] Decoding performance was at about half the speed of VP9 according
-      to internal measurements from 2017.[41] Tests from Netflix in 2017, based on measurements with
-      PSNR and VMAF at 720p, showed that AV1 was about 25% more efficient than VP9 (libvpx).[51]
-      Tests from Facebook conducted in 2018, based on PSNR, showed that the AV1 reference encoder
-      was able to achieve 34%, 46.2% and 50.3% higher data compression than libvpx-vp9, x264 high
-      profile, and x264 main profile respectively.[52][53] Tests from Moscow State University in
-      2017 found that VP9 required 31% and HEVC 22% more bitrate than AV1 in order to achieve
-      similar levels of quality.[54] The AV1 encoder was operating at a speed2500–3500 times lower
-      than competitorsdue to the lack of optimization (which was not available at that time).[55]
-      Tests from University of Waterloo in 2020 found that when using a mean opinion score (MOS) for
-      2160p (4K) video AV1 had bitrate saving of 9.5% compared to HEVC and 16.4% compared to VP9.
-      They also however concluded that at the time of the study at 2160p the AV1 video encodes on
-      average took 590.74× longer compared to encoding with AVC, HEVC took on average 4.2810× longer
-      and VP9 took on average 5.2856× longer than AVC respectively.[56][57] The latest encoder
-      comparison by Streaming Media Magazine as of September 2020, which used moderate encoding
-      speeds, VMAF, and a diverse set of short clips, indicated that the open-source libaom and
-      SVT-AV1 encoders took about twice as long time to encode as x265 in itsveryslowpreset while
-      using 15-20% less bitrate, or about 45% less bitrate than x264 veryslow. The best-in-test AV1
-      encoder, Visionular's Aurora1, in itsslowerpreset, was as fast as x265 veryslow while saving
-      50% bitrate over x264 veryslow.[58]
-      <BlogSubtitle id="browsers" text="Current Operating System Support" />
+      <h2 id="purpose">Quality and efficiency of AV1</h2>A first comparison from the beginning of
+      June 2016[46] found AV1 roughly on par with HEVC, as did one using code from late January
+      2017.[47] In April 2017, using the 8 enabled experimental features at the time (of 77 total),
+      Bitmovin was able to demonstrate favorable objective metrics, as well as visual results,
+      compared to HEVC on the Sintel and Tears of Steel short films.[48] A follow-up comparison by
+      Jan Ozer of Streaming Media Magazine confirmed this, and concluded thatAV1 is at least as good
+      as HEVC now".[49] Ozer noted that his and Bitmovin's results contradicted a comparison by
+      Fraunhofer Institute for Telecommunications from late 2016[50] that had found AV1 65.7% less
+      efficient than HEVC, underperforming even H.264/AVC which they concluded as being 10.5% more
+      efficient, and justified this discrepancy by having used encoding parameters endorsed by each
+      encoder vendor, as well as having more features in the newer AV1 encoder.[50] Decoding
+      performance was at about half the speed of VP9 according to internal measurements from
+      2017.[41] Tests from Netflix in 2017, based on measurements with PSNR and VMAF at 720p, showed
+      that AV1 was about 25% more efficient than VP9 (libvpx).[51] Tests from Facebook conducted in
+      2018, based on PSNR, showed that the AV1 reference encoder was able to achieve 34%, 46.2% and
+      50.3% higher data compression than libvpx-vp9, x264 high profile, and x264 main profile
+      respectively.[52][53] Tests from Moscow State University in 2017 found that VP9 required 31%
+      and HEVC 22% more bitrate than AV1 in order to achieve similar levels of quality.[54] The AV1
+      encoder was operating at a speed2500–3500 times lower than competitorsdue to the lack of
+      optimization (which was not available at that time).[55] Tests from University of Waterloo in
+      2020 found that when using a mean opinion score (MOS) for 2160p (4K) video AV1 had bitrate
+      saving of 9.5% compared to HEVC and 16.4% compared to VP9. They also however concluded that at
+      the time of the study at 2160p the AV1 video encodes on average took 590.74× longer compared
+      to encoding with AVC, HEVC took on average 4.2810× longer and VP9 took on average 5.2856×
+      longer than AVC respectively.[56][57] The latest encoder comparison by Streaming Media
+      Magazine as of September 2020, which used moderate encoding speeds, VMAF, and a diverse set of
+      short clips, indicated that the open-source libaom and SVT-AV1 encoders took about twice as
+      long time to encode as x265 in itsveryslowpreset while using 15-20% less bitrate, or about 45%
+      less bitrate than x264 veryslow. The best-in-test AV1 encoder, Visionular's Aurora1, in
+      itsslowerpreset, was as fast as x265 veryslow while saving 50% bitrate over x264 veryslow.[58]
+      <h2 id="browsers">Current Operating System Support</h2>
       Microsoft Windows: - Support introduced in Windows 10 October 2018 Update (1809) with AV1
       Video Extension add-on.[94] - Supported on Universal Windows Platform apps like Microsoft Edge
       and Films & TV. macos: No supported as of MacOS Catalina. BSD / Linux: Supported. Chrome OS:
       Supported from Chrome OS 70 onward. Android OS. Supported since Android 10. iOS: Unsupported
       as of ios13.
-      <BlogSubtitle id="browsers" text="Current Software Support" />
+      <h2 id="browsers">Current Software Support</h2>
       Firefox (since version 67.0, May 2019; enabled by default on all desktop platforms - Windows,
       macOS and Linux for both 32-bit and 64-bit systems)[90] Google Chrome (since version 70,
       October 2018)[91] Opera (since version 57, 28 November 2018)[92][93] Microsoft Edge (since
@@ -385,7 +383,7 @@ export default function BlogAvifInCloudflare() {
       K-Lite Codec Pack (since version 14.4.5, 13 September 2018)[101] HandBrake (since version
       1.3.0, 9 November 2019; decoding support)[102] PotPlayer (since version 1.7.14804, 16 October
       2018)[103] Google Duo (since April 2020)[104]
-      <BlogSubtitle id="browsers" text="Current Hardware Support" />
+      <h2 id="browsers">Current Hardware Support</h2>
       Several Alliance members demonstrated AV1 enabled products at IBC 2018,[129][130] including
       Socionext's hardware accelerated encoder. According to Socionext, the encoding accelerator is
       FPGA based and can run on an Amazon EC2 F1 cloud instance, where it runs 10 times faster than
@@ -427,7 +425,7 @@ export default function BlogAvifInCloudflare() {
       which added support for AV1 decoding on Linux.[118][119][143] On 10 October 2020, Microsoft
       confirmed support for AV1 hardware decoding on Xe-LP(Gen12), Ampere and RDNA2 with a blog
       post.[112]
-      <BlogSubtitle id="av1" text="Introduction to the AV Image Format" />
+      <h2 id="av1">Introduction to the AV Image Format</h2>
       AVIF (AV1 Still Image File Format) is a new still image format based on AV1. Specification was
       released and approved as 1.0.0 just recently, meaning it’s ready to be used in production.
       AVIF file is basically an AV1 key frame packed inside ISOBMFF container, almost identical to
@@ -471,7 +469,7 @@ export default function BlogAvifInCloudflare() {
       supports features likehigh dynamic range andwide color gamut to make it the most technically
       advanced form of high quality picture compression. High Dynamic Range is also known as HDR and
       wide color gamut is akin to what people now callUltra High Definition" photos and videos.
-      <BlogSubtitle id="advantages" text="Advantages of AVIF and technical features" />
+      <h2 id="advantages">Advantages of AVIF and technical features</h2>
       The format offers: Excellent lossy compression compared to JPG and PNG for visually similar
       compression levels (e.g. lossy AVIF images are around 50% smaller than JPEG images). Generally
       AVIF has better compression than WebP — median 50% vs 30% compression for the same JPG set
@@ -500,8 +498,8 @@ export default function BlogAvifInCloudflare() {
       the market. AVIF is a fairly new image format; though it’s gaining a lot of praise worldwide,
       AVIF still lacks browser support. Browsers are a primary medium for most images that we see in
       everyday life. Hence browser compatibility is crucial. //
-      <BlogSubtitle id="filesize" text="Reduced File Size" />
-      <BlogSubtitle id="chroma" text="4:2:0, 4:2:2, 4:4:4 chroma subsampling" />
+      <h2 id="filesize">Reduced File Size</h2>
+      <h2 id="chroma">4:2:0, 4:2:2, 4:4:4 chroma subsampling</h2>
       Chroma subsampling, often popularly referred to as color subsampling, is the heart of the
       invention of compression. All the compression algorithms for the video codes and images still
       today focus majorly on chroma subsampling. Chroma subsampling derives from the fact that the
@@ -561,11 +559,11 @@ export default function BlogAvifInCloudflare() {
       curves crossing over when encoding over multiple spatial resolutions. Shown below are
       rate-quality curves for two different source images from the boxshots-1 dataset, comparing
       JPEG and AVIF in both 444u and 444 configurations.
-      <BlogSubtitle id="chroma" text="film grain" />
-      <BlogSubtitle id="chroma" text="Lossless compression and lossy compression" />
-      <BlogSubtitle id="development" text="Actively developed" />
-      <BlogSubtitle id="royalty" text="Royalty-free" />
-      <BlogSubtitle id="encoder" text="already has different encoders" />
+      <h2 id="chroma">film grain</h2>
+      <h2 id="chroma">Lossless compression and lossy compression</h2>
+      <h2 id="development">Actively developed</h2>
+      <h2 id="royalty">Royalty-free</h2>
+      <h2 id="encoder">already has different encoders</h2>
       Libaom is the reference implementation. It includes an encoder (aomenc) and a decoder
       (aomdec). As the former research codec, it has the advantage of being made to justifiably
       demonstrate efficient use of every feature, but at the general cost of encoding speed. At
@@ -632,15 +630,15 @@ export default function BlogAvifInCloudflare() {
       won’t go into details, you can check final implementation in mp4.go, the code should be
       self-explanatory. Looks tedious to implement all that dozen of ISOBMFF boxes, but in fact it
       was a real fun.
-      <BlogSubtitle id="supported" text="highly supported for a new format" />
-      <BlogSubtitle id="transparency" text="supports transparency" />
-      <BlogSubtitle id="animated" text="supports animated frames" />
-      <BlogSubtitle id="hdr" text="High Dynamic range" />
-      <BlogSubtitle id="hdr" text="supports any color-space including wide color gamut" />
-      <BlogSubtitle id="vp10" text="based on the future-proof VP10 codec technology" />
-      <BlogSubtitle id="smartphone" text="is feature-rich" />
-      <BlogSubtitle id="others" text="AVIF vs other formats" />
-      <BlogSubtitle id="others" text="Acceptable quality" />
+      <h2 id="supported">highly supported for a new format</h2>
+      <h2 id="transparency">supports transparency</h2>
+      <h2 id="animated">supports animated frames</h2>
+      <h2 id="hdr">High Dynamic range</h2>
+      <h2 id="hdr">supports any color-space including wide color gamut</h2>
+      <h2 id="vp10">based on the future-proof VP10 codec technology</h2>
+      <h2 id="smartphone">is feature-rich</h2>
+      <h2 id="others">AVIF vs other formats</h2>
+      <h2 id="others">Acceptable quality</h2>
       For the majority of images on the web, my rules are: If a user looks at the image in the
       context of the page, and it strikes them as ugly due to compression, then that level of
       compression is not acceptable. But, one tiny notch above that boundary is fine. It's ok for
@@ -659,14 +657,14 @@ export default function BlogAvifInCloudflare() {
       which means I saw the image quickly. In this article, I'm optimising images as if they were
       appearing in an article, where their CSS width is around 50% of their pixel width, meaning
       they're optimised for high-density displays.
-      <BlogSubtitle id="size" text="Image size at similiar quality" />
-      <BlogSubtitle id="quality" text="Visual quality at the same size" />
-      I couldn't even get the JPEG and WebP down to 18 kB, even at lowest settings, so this isn't a
-      totally fair test. The JPEG suffers from awful banding, which started to appear as soon as I
-      went below 74 kB. The WebP is much better, but there's still noticeable blockiness compared to
-      the AVIF. I guess that's what a decade or two of progress looks like.
-      <BlogSubtitle id="progressive" text="Loading isn't progressive" />
-      <BlogSubtitle id="webp" text="AVIF vs WebP" />
+      <h2 id="size">Image size at similiar quality</h2>
+      <h2 id="quality">Visual quality at the same size</h2>I couldn't even get the JPEG and WebP
+      down to 18 kB, even at lowest settings, so this isn't a totally fair test. The JPEG suffers
+      from awful banding, which started to appear as soon as I went below 74 kB. The WebP is much
+      better, but there's still noticeable blockiness compared to the AVIF. I guess that's what a
+      decade or two of progress looks like.
+      <h2 id="progressive">Loading isn't progressive</h2>
+      <h2 id="webp">AVIF vs WebP</h2>
       WebP is one of the most popular image compression formats that is used widely in browsers
       today. WebP compression was developed by Google taking VP8 video format as the container
       support. WebP is considered one of the most successful image formats being transferred today
@@ -692,7 +690,7 @@ export default function BlogAvifInCloudflare() {
       chroma-from-luma. Most image formats store brightness separately from color hue. AVIF uses the
       brightness channel to guess what the color channel may look like. They are usually correlated,
       so a good guess gives smaller file sizes and sharper edges.
-      <BlogSubtitle id="jpg" text="AVIF vs JPG" />
+      <h2 id="jpg">AVIF vs JPG</h2>
       JPEG or Joint Photographic Experts Group has been ruling the media industry for quite some
       time. With advancements in digital technology, JPEG has provided better color resolution and
       24-bit pixel quality. It can further bring down the RGB picture in a single luminance.
@@ -703,7 +701,7 @@ export default function BlogAvifInCloudflare() {
       over JPEG: JPEG does not have support for animation and transparency JPEG support only 8-bit
       whereas AVIF supports 8, 10, and 12-bit AVIF has superior image quality AVIF encoding is
       better with less blocked artifacts
-      <BlogSubtitle id="svg" text="AVIF vs SVG" />
+      <h2 id="svg">AVIF vs SVG</h2>
       find it incredible that this image was created with SVG. However, it comes at a cost. The
       number of shapes and filters involved means it takes a lot of CPU for the browser to render
       it. It's one of those edge cases where it's better to avoid the original SVG, even if the
@@ -714,8 +712,8 @@ export default function BlogAvifInCloudflare() {
       it suffers in a similar way to PNG when it comes to the transparent gradient beneath the car.
       AVIF aces it again at a significantly smaller size, even compared to the SVG. Part of AVIF's
       advantage here is it supports a lossy alpha channel.
-      <BlogSubtitle id="nextgen" text="Why is AVIF better than other next-gen formats?" />
-      <BlogSubtitle id="jpegxl" text="AVIF vs JPEG-XL" />
+      <h2 id="nextgen">Why is AVIF better than other next-gen formats?</h2>
+      <h2 id="jpegxl">AVIF vs JPEG-XL</h2>
       One of the reasons we built Squoosh is so developers could bypass the claims made about
       particular codecs, and instead just try it for themselves. JPEG-XL isn't quite ready yet, but
       we'll get it into Squoosh as soon as possible. In the meantime, I'm trying to take JPEG-XL's
@@ -727,11 +725,11 @@ export default function BlogAvifInCloudflare() {
       most web images. But, the benefit of multi-pass rendering might mean it's worth taking a hit
       when it comes to file size. I guess we'll wait and see! There aren't many details around
       WebPv2 yet, so again it's best to wait and see until we can test it with our own images.
-      <BlogSubtitle id="webpv2" text="AVIF vs WebPv2" />
-      <BlogSubtitle id="create" text="How to create AVIF files?" />
-      <BlogSubtitle id="avifio" text="avif.io" />
-      <BlogSubtitle id="squoosh" text="squoosh" />
-      <BlogSubtitle id="support" text="Current and upcoming support" />
+      <h2 id="webpv2">AVIF vs WebPv2</h2>
+      <h2 id="create">How to create AVIF files?</h2>
+      <h2 id="avifio">avif.io</h2>
+      <h2 id="squoosh">squoosh</h2>
+      <h2 id="support">Current and upcoming support</h2>
       Although AVIF provides superior compression efficiency, it is still at an early deployment
       stage. Various tools exist to produce and consume AVIF images. The Alliance for Open Media is
       notably developing an open-source library, called libavif, that can encode and decode AVIF
@@ -768,9 +766,9 @@ export default function BlogAvifInCloudflare() {
       libaom, Intel SVT-AV1, libgav1, dav1d, and rav1e. This is a sign of a healthy adoption and a
       prerequisite to be a Web standard. Our Image Resizing is implemented in Rust, so we've chosen
       the rav1e encoder to create a pure-Rust implementation of AVIF.
-      <BlogSubtitle id="browsers" text="Current Operating System Support" />
-      <BlogSubtitle id="browsers" text="Current Software Support" />
-      <BlogSubtitle id="browsers" text="Current AVIF Browser Support" />
+      <h2 id="browsers">Current Operating System Support</h2>
+      <h2 id="browsers">Current Software Support</h2>
+      <h2 id="browsers">Current AVIF Browser Support</h2>
       Even with Windows adopting AVIF to save space in their systems and giving a push to increase
       the importance of this format, content providers still have to rely on JavaScript if they want
       to use this image format. In addition, although AVIF has been recently adopted and rolled out
@@ -780,9 +778,9 @@ export default function BlogAvifInCloudflare() {
       promising with companies like Netflix, Google, Microsoft, Paint.net, VLC, and many other big
       players already using it. JPEG is still the leading image format used in browsers, but the
       content providers are happy to start adopting new file format as well.
-      <BlogSubtitle id="software" text="Current AVIF Software Support" />
-      <BlogSubtitle id="hardware" text="Current AVIF Hardware Support" />
-      <BlogSubtitle id="aom" text="Current companies and content providers supporting avif" />
+      <h2 id="software">Current AVIF Software Support</h2>
+      <h2 id="hardware">Current AVIF Hardware Support</h2>
+      <h2 id="aom">Current companies and content providers supporting avif</h2>
       YouTube has begun rolling out AV1, starting with its AV1 Beta Launch Playlist. According to
       the description, the videos are (to begin with) encoded at high bitrate to test decoding
       performance, and YouTube hasambitious goals for rolling out AV1. YouTube for Android TV
@@ -799,8 +797,8 @@ export default function BlogAvifInCloudflare() {
       arrive in 2024 or 2025.[72] On 30 April 2020 iQIYI announced support for AV1 for users on PC
       web browsers and Android devices, becomingthe first and the only Chinese video streaming site
       to adopt the AV1 format to date."[73]
-      <BlogSubtitle id="others" text="Drawbacks" />
-      <BlogSubtitle id="encoding" text="Encoding Time" />
+      <h2 id="others">Drawbacks</h2>
+      <h2 id="encoding">Encoding Time</h2>
       Encoding AVIF takes a long time in general, but it's especially bad in Squoosh because we're
       using WebAssembly, which doesn't let us use SIMD or multiple threads. Those features are
       starting to arrive to standards and browsers, so hopefully we'll be able to improve things
@@ -815,7 +813,7 @@ export default function BlogAvifInCloudflare() {
       current workflow is to use Squoosh to figure out decent settings at 'effort' 2, then use
       libavif to try the same settings at 'effort' 10. Hopefully we can speed up the Squoosh version
       soon!
-      <BlogSubtitle id="decoding" text="Decoding Time" />
+      <h2 id="decoding">Decoding Time</h2>
       There's also a question of CPU usage vs other formats when it comes to decoding, but I haven't
       dug into that yet. Although AV1 is starting to get hardware support, I'm told that dedicated
       hardware will be tuned for video, and not so great at decoding a page full of images. //
@@ -827,7 +825,7 @@ export default function BlogAvifInCloudflare() {
       have lots of CPU cores, so we take advantage of this to make encoding faster. Image Resizing
       doesn’t use the maximum compression level possible in AVIF to further increase compression
       speed. Resized images are cached, so the encoding speed is noticeable only on a cache miss.
-      <BlogSubtitle id="progressive" text="Progressive rendering" />
+      <h2 id="progressive">Progressive rendering</h2>
       AVIF does not support progressive rendering, so files must be fully downloaded before they can
       be displayed. This often has little impact on real-world user experience because AVIF files
       are much smaller than the equivalent JPEG or PNG files, and hence can be downloaded and
@@ -854,7 +852,7 @@ export default function BlogAvifInCloudflare() {
       JPEG's size, so it somewhat overcomes the lack of progressive rendering with the sheer
       compression advantage. In this case only WebP is left behind, which has neither progressive
       rendering nor strong compression.
-      <BlogSubtitle id="future" text="Next steps" />
+      <h2 id="future">Next steps</h2>
       In this post, we have covered all the benefits of the brand-new image compression format AVIF.
       But the whole discussion comes to a halt by observing its acceptance and support in the market
       today. Although AVIF has the backing of big top tech companies and some of them like Netflix,
@@ -888,7 +886,7 @@ export default function BlogAvifInCloudflare() {
       have support in popular image viewers and converters too. AV1 decoder polyfill (dav1d.js)
       might be tinier and faster, it’s not tuned to the max yet. But since polyfill is only needed
       for old browsers, it’s not that important.
-      <BlogSubtitle id="future" text="Conclusion" />
+      <h2 id="future">Conclusion</h2>
       AVIF sounds and looks very promising and even though it’s still taking its first steps, it is
       set to be the next most popular image format on the internet. Having PNG and JPG rooted in the
       past, and WebP and HEIF behind patents that slows them down from being adopted as a standard,

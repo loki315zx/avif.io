@@ -1,6 +1,4 @@
-import Header from "@components/Header";
 import Page from "@components/Page";
-import { BlogSubtitle } from "@components/BlogComponents";
 
 import { privacyPolicy as postdata } from "lib/meta";
 
@@ -10,13 +8,13 @@ export default function PrivacyPolicy(props: any) {
       <div className="blog">
         <div className="content__container">
           <div className="content">
-            <BlogSubtitle text="Legal Stuff" />
+            <h2>Legal Stuff</h2>
             This service is brought to you by Justin Schmitz, resident in Germany. More information
             is not revealed for personal protection. You can request this information at
             support@avif.io.
-            <BlogSubtitle text="Privacy Policy" />
+            <h2>Privacy Policy</h2>
             Effective date: 23th of December, 2020
-            <BlogSubtitle text="Introduction" />
+            <h2>Introduction</h2>
             Welcome to avif.io. avif.io (“us”, “we”, or “our”) operates https://avif.io &
             http://avif.io & https://www.avif.io & http://avif.io and possibly an avif.io mobile
             application (hereinafter referred to as “Service”). Our Privacy Policy governs your
@@ -28,7 +26,7 @@ export default function PrivacyPolicy(props: any) {
             Policy, the terms used in this Privacy Policy have the same meanings as in our Terms and
             Conditions. Our Terms and Conditions (“Terms”) govern all use of our Service and
             together with the Privacy Policy constitutes your agreement with us (“agreement”).
-            <BlogSubtitle text="Definitions" />
+            <h2>Definitions</h2>
             SERVICE means the https://avif.io & http://avif.io & https://www.avif.io &
             http://avif.io website and possibly an avif.io mobile application operated by avif.io
             PERSONAL DATA means data about a living individual who can be identified from those data
@@ -45,10 +43,10 @@ export default function PrivacyPolicy(props: any) {
             effectively. DATA SUBJECT is any living individual who is the subject of Personal Data.
             THE USER is the individual using our Service. The User corresponds to the Data Subject,
             who is the subject of Personal Data.
-            <BlogSubtitle text="Information Collection and Use" />
+            <h2>Information Collection and Use</h2>
             We collect several different types of information for various purposes to provide and
             improve our Service to you.
-            <BlogSubtitle text="Types of Data Collected" />
+            <h2>Types of Data Collected</h2>
             Personal Data While using our Service, we may ask you to provide us with certain
             personally identifiable information that can be used to contact or identify you
             (“Personal Data”). Personally identifiable information may include, but is not limited
@@ -81,7 +79,7 @@ export default function PrivacyPolicy(props: any) {
             Cookies to remember your preferences and various settings. (c) Security Cookies: We use
             Security Cookies for security purposes. (d) Advertising Cookies: Advertising Cookies are
             used to serve you with advertisements that may be relevant to you and your interests.
-            <BlogSubtitle text="Use of Data" />
+            <h2>Use of Data</h2>
             avif.io uses the collected data for various purposes: (a) to provide and maintain our
             Service; (b) to notify you about changes to our Service; (c) to allow you to participate
             in interactive features of our Service when you choose to do so; (d) to provide customer
@@ -96,7 +94,7 @@ export default function PrivacyPolicy(props: any) {
             similar to those that you have already purchased or enquired about unless you have opted
             not to receive such information; (l) in any other way we may describe when you provide
             the information; (m) for any other purpose with your consent.
-            <BlogSubtitle text="Retention of Data" />
+            <h2>Retention of Data</h2>
             We will retain your Personal Data only for as long as is necessary for the purposes set
             out in this Privacy Policy. We will retain and use your Personal Data to the extent
             necessary to comply with our legal obligations (for example, if we are required to
@@ -105,7 +103,7 @@ export default function PrivacyPolicy(props: any) {
             purposes. Usage Data is generally retained for a shorter period, except when this data
             is used to strengthen the security or to improve the functionality of our Service, or we
             are legally obligated to retain this data for longer time periods.
-            <BlogSubtitle text="Transfer of Data" />
+            <h2>Transfer of Data</h2>
             Your information, including Personal Data, may be transferred to – and maintained on –
             computers located outside of your state, province, country or other governmental
             jurisdiction where the data protection laws may differ from those of your jurisdiction.
@@ -117,7 +115,7 @@ export default function PrivacyPolicy(props: any) {
             this Privacy Policy and no transfer of your Personal Data will take place to an
             organisation or a country unless there are adequate controls in place including the
             security of your data and other personal information.
-            <BlogSubtitle text="Disclosure of Data" />
+            <h2>Disclosure of Data</h2>
             We may disclose personal information that we collect, or you provide: (a) Disclosure for
             Law Enforcement. Under certain circumstances, we may be required to disclose your
             Personal Data if required to do so by law or in response to valid requests by public
@@ -130,12 +128,12 @@ export default function PrivacyPolicy(props: any) {
             when you provide the information; (vi) with your consent in any other cases; (vii) if we
             believe disclosure is necessary or appropriate to protect the rights, property, or
             safety of the Company, our customers, or others.
-            <BlogSubtitle text="Security of Data" />
+            <h2>Security of Data</h2>
             The security of your data is important to us but remember that no method of transmission
             over the Internet or method of electronic storage is 100% secure. While we strive to use
             commercially acceptable means to protect your Personal Data, we cannot guarantee its
             absolute security.
-            <BlogSubtitle text="Your Data Protection Rights Under General Data Protection Regulation (GDPR)" />
+            <h2>Your Data Protection Rights Under General Data Protection Regulation (GDPR)</h2>
             If you are a resident of the European Union (EU) and European Economic Area (EEA), you
             have certain data protection rights, covered by GDPR. – See more at
             https://eur-lex.europa.eu/eli/reg/2016/679/oj We aim to take reasonable steps to allow
@@ -156,7 +154,9 @@ export default function PrivacyPolicy(props: any) {
             data. You have the right to complain to a Data Protection Authority about our collection
             and use of your Personal Data. For more information, please contact your local data
             protection authority in the European Economic Area (EEA).
-            <BlogSubtitle text="Your Data Protection Rights under the California Privacy Protection Act (CalOPPA)" />
+            <h2>
+              Your Data Protection Rights under the California Privacy Protection Act (CalOPPA)
+            </h2>
             CalOPPA is the first state law in the nation to require commercial websites and online
             services to post a privacy policy. The law’s reach stretches well beyond California to
             require a person or company in the United States (and conceivable the world) that
@@ -175,7 +175,9 @@ export default function PrivacyPolicy(props: any) {
             preference you can set in your web browser to inform websites that you do not want to be
             tracked. You can enable or disable Do Not Track by visiting the Preferences or Settings
             page of your web browser.
-            <BlogSubtitle text="Your Data Protection Rights under the California Privacy Protection Act (CalOPPA)" />
+            <h2>
+              Your Data Protection Rights under the California Privacy Protection Act (CalOPPA)
+            </h2>
             If you are a California resident, you are entitled to learn what data we collect about
             you, ask to delete your data and not to sell (share) it. To exercise your data
             protection rights, you can make certain requests and ask us: (a) What personal
@@ -209,13 +211,13 @@ export default function PrivacyPolicy(props: any) {
             rights, described above, are covered by the CCPA, short for the California Consumer
             Privacy Act. To find out more, visit the official California Legislative Information
             website. The CCPA took effect on 01/01/2020.
-            <BlogSubtitle text="Service Providers" />
+            <h2>Service Providers</h2>
             We may employ third party companies and individuals to facilitate our Service (“Service
             Providers”), provide Service on our behalf, perform Service-related services or assist
             us in analysing how our Service is used. These third parties have access to your
             Personal Data only to perform these tasks on our behalf and are obligated not to
             disclose or use it for any other purpose.
-            <BlogSubtitle text="Analytics" />
+            <h2>Analytics</h2>
             We may use third-party Service Providers to monitor and analyze the use of our Service.
             Google Analytics Google Analytics is a web analytics service offered by Google that
             tracks and reports website traffic. Google uses the data collected to track and monitor
@@ -231,7 +233,7 @@ export default function PrivacyPolicy(props: any) {
             https://policies.google.com/privacy?hl=en For more information on what type of
             information Firebase collects, please visit the Google Privacy Terms web page:
             https://policies.google.com/privacy?hl=en
-            <BlogSubtitle text=" CI & CD Tools" />
+            <h2> CI & CD Tools</h2>
             We may use third-party Service Providers to automate the development process of our
             Service. GitHub GitHub is provided by GitHub, Inc. GitHub is a development platform to
             host and review code, manage projects, and build software. For more information on what
@@ -245,7 +247,7 @@ export default function PrivacyPolicy(props: any) {
             information on what data GitLab CI/CD collects for what purpose and how the protection
             of the data is ensured, please visit GitLab CI/CD Privacy Policy page:
             https://about.gitlab.com/privacy/.
-            <BlogSubtitle text="Advertising" />
+            <h2>Advertising</h2>
             We may use third-party Service Providers to show advertisements to you to help support
             and maintain our Service. Google AdSense DoubleClick Cookie Google, as a third party
             vendor, uses cookies to serve ads on our Service. Google's use of the DoubleClick cookie
@@ -264,7 +266,7 @@ export default function PrivacyPolicy(props: any) {
             uses the collected information, please visit the “How Google uses data when you use our
             partners' sites or app” page: http://www.google.com/policies/privacy/partners/ or visit
             the Privacy Policy of Google: http://www.google.com/policies/privacy/
-            <BlogSubtitle text="Behavioral Remarketing" />
+            <h2>Behavioral Remarketing</h2>
             avif.io uses remarketing services to advertise on third party websites to you after you
             visited our Service. We and our third-party vendors use cookies to inform, optimise and
             serve ads based on your past visits to our Service. Google Ads (AdWords) Google Ads
@@ -304,7 +306,7 @@ export default function PrivacyPolicy(props: any) {
             instructions: http://help.pinterest.com/en/articles/personalization-and-data You can
             learn more about the privacy practices and policies of Pinterest by visiting their
             Privacy Policy page: https://about.pinterest.com/en/privacy-policy
-            <BlogSubtitle text="Payments" />
+            <h2>Payments</h2>
             We may provide paid products and/or services within Service. In that case, we use
             third-party services for payment processing (e.g. payment processors). We will not store
             or collect your payment card details. That information is provided directly to our
@@ -341,27 +343,27 @@ export default function PrivacyPolicy(props: any) {
             at: https://go.wepay.com/privacy-policy WorldPay: Their Privacy Policy can be viewed at:
             https://online.worldpay.com/terms/privacy WeChat: Their Privacy Policy can be viewed at:
             https://www.wechat.com/en/privacy_policy.html
-            <BlogSubtitle text="Links to other sites" />
+            <h2>Links to other sites</h2>
             Our Service may contain links to other sites that are not operated by us. If you click a
             third party link, you will be directed to that third party's site. We strongly advise
             you to review the Privacy Policy of every site you visit. We have no control over and
             assume no responsibility for the content, privacy policies or practices of any third
             party sites or services.
-            <BlogSubtitle text="Children's Privacy" />
+            <h2>Children's Privacy</h2>
             Our Services are not intended for use by children under the age of 18 (“Child” or
             “Children”). We do not knowingly collect personally identifiable information from
             Children under 18. If you become aware that a Child has provided us with Personal Data,
             please contact us. If we become aware that we have collected Personal Data from Children
             without verification of parental consent, we take steps to remove that information from
             our servers.
-            <BlogSubtitle text="Changes to this Privacy Policy" />
+            <h2>Changes to this Privacy Policy</h2>
             We may update our Privacy Policy from time to time. We will notify you of any changes by
             posting the new Privacy Policy on this page. We will let you know via email and/or a
             prominent notice on our Service, prior to the change becoming effective and update
             “effective date” at the top of this Privacy Policy. You are advised to review this
             Privacy Policy periodically for any changes. Changes to this Privacy Policy are
             effective when they are posted on this page.
-            <BlogSubtitle text="Contact Us" />
+            <h2>Contact Us</h2>
             If you have any questions about this Privacy Policy, please contact us: By email:
             support@avif.io.
           </div>

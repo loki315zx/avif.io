@@ -1,5 +1,5 @@
 import React from "react";
-import { BlogLink } from "@components/BlogComponents";
+import BlogLink from "@components/BlogLink";
 
 function useStickyState(defaultValue: any, key: any) {
   const [value, setValue] = React.useState(defaultValue);

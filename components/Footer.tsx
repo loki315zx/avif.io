@@ -1,4 +1,4 @@
-import { BlogLink, BlogLinkExternal } from "./BlogComponents";
+import BlogLink from "@components/BlogLink";
 import { conversions } from "../lib/conversions";
 
 export default function Footer() {
@@ -18,10 +18,10 @@ export default function Footer() {
           <b>More</b>
         </div>
         <BlogLink text="Blog" link="/blog" newLine />
-        <BlogLinkExternal text="Contact" link="mailto:support@avif.io" newLine />
-        <BlogLinkExternal text="Donate" link="https://www.buymeacoffee.com/justinschmitz" newLine />
-        <BlogLinkExternal text="Sitemap" link="/sitemap.xml" newLine />
-        <BlogLinkExternal text="Legal & Privacy" link="/privacy-policy" newLine />
+        <BlogLink text="Contact" link="mailto:support@avif.io" newLine />
+        <BlogLink text="Donate" link="https://www.buymeacoffee.com/justinschmitz" newLine />
+        <BlogLink text="Sitemap" link="/sitemap.xml" newLine />
+        <BlogLink text="Legal & Privacy" link="/privacy-policy" newLine />
       </div>
       <div id="communication">
         <a

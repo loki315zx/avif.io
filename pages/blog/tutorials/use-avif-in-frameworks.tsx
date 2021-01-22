@@ -1,5 +1,7 @@
 import Blog from "@components/Blog";
-import { BlogSubtitle, BlogAdvantages, BlogSyntax, BlogImage } from "@components/BlogComponents";
+import { BlogAdvantages } from "@components/BlogComponents";
+import Code from "@components/Code";
+import Image from "@components/Image";
 
 import { useAvifInFrameworks as postdata } from "lib/meta";
 import { useAvifInNextjs as post1 } from "lib/meta";
@@ -27,7 +29,7 @@ export default function BlogAvifInFrameworks() {
         checked={true}
       />
       You can see some screenshots of our test on Angular and React below:
-      <BlogSubtitle id="other-frameworks" text="Other frameworks" />
+      <h2 id="other-frameworks">Other frameworks</h2>
       In principle, other frameworks might work differently. From our research, we found that Meteor
       and Ember support AVIF files without additional configuration. However because we have not
       experimented with the latest version live, we are listing them here as "maybe works" until
@@ -36,29 +38,29 @@ export default function BlogAvifInFrameworks() {
         advantages={["meteor/meteor", "jashkenas/backbone", "polymer/polymer", "emberjs/ember.js"]}
         checked={false}
       />
-      <BlogSubtitle text="An example code" />
+      <h2>An example code</h2>
       This is the code I've used to display the image below in React and Next.JS:
-      <BlogSyntax language="html">
+      <Code language="html">
         {`<picture>
           <source srcSet="/images/cloudflare-stats.avif" type="image/avif" />
           <source srcSet="/images/cloudflare-stats.webp" type="image/webp" />
           <img src="/images/cloudflare-stats.jpg" alt="avif in frameworks" />
         </picture>`}
-      </BlogSyntax>
-      <BlogImage url="react-avif" alt="using avif in react" />
-      <BlogImage url="react-render" alt="rendered avif in react" />
-      <BlogImage url="angular-avif" alt="using avif in angular" />
-      <BlogImage url="angular-render" alt="rendered avif in angular" />
-      <BlogSubtitle text="Webpack File Loader" />
+      </Code>
+      <Image url="react-avif" alt="using avif in react" />
+      <Image url="react-render" alt="rendered avif in react" />
+      <Image url="angular-avif" alt="using avif in angular" />
+      <Image url="angular-render" alt="rendered avif in angular" />
+      <h2>Webpack File Loader</h2>
       In some cases, especially with older versions and when using webpack, you may encounter some
       problems. Especially:
-      <BlogSyntax language="html">
+      <Code language="html">
         Module parse failed: Unexpected character ' ' (1:0) You may need an appropiate loader to
         handle this file type, currently no loaders are configured to process this fail. See
         https://webpack.js.org/concepts#loaders
-      </BlogSyntax>{" "}
+      </Code>{" "}
       Simply add the detection for AVIF files to the fileloader in your webpack.config.js:
-      <BlogSyntax language="javascript">
+      <Code language="javascript">
         {`module.exports = {
   module: {
     rules: [{
@@ -67,8 +69,8 @@ export default function BlogAvifInFrameworks() {
       }]
   }
 }`}
-      </BlogSyntax>
-      <BlogSubtitle text="Automatic conversion" />
+      </Code>
+      <h2>Automatic conversion</h2>
       We were unable to find a plugin that will convert the image into a different sizes and formats
       like AVIF to suit the needs of the client, and choose a modern format when possible. The
       Node.JS library sharp looks like its about to implement AVIF support. Did you ever come into

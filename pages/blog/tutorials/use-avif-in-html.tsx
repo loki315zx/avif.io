@@ -1,12 +1,8 @@
 import Blog from "@components/Blog";
-import {
-  BlogSubtitle,
-  BlogAdvantages,
-  BlogSyntax,
-  BlogNote,
-  BlogLink,
-  BlogLinkExternal,
-} from "@components/BlogComponents";
+import { BlogAdvantages } from "@components/BlogComponents";
+import BlogLink from "@components/BlogLink";
+
+import Code from "@components/Code";
 
 import { useAvifInHtml as postdata } from "lib/meta";
 import { useAvifInCss as post1 } from "lib/meta";
@@ -20,11 +16,10 @@ export default function BlogAvifInHtml() {
       my SEO rankings. AVIF is a file format based off a video codec that support high bit depth
       while keeping a low file size. You can find plenty of articles about how fantastic AVIF is
       right here, as well as everywhere else on the web. Or you can just enjoy my countless,
-      occasionally irritating{" "}
-      <BlogLinkExternal text="tweets" link="https://twitter.com/jschmitz97" /> about this site. You
-      clicked this article because you would like to learn how to use AVIF in HTML, so let's get
-      riiiiiight into the topic.
-      <BlogSubtitle text="Browser Support" />
+      occasionally irritating <BlogLink text="tweets" link="https://twitter.com/jschmitz97" /> about
+      this site. You clicked this article because you would like to learn how to use AVIF in HTML,
+      so let's get riiiiiight into the topic.
+      <h2>Browser Support</h2>
       The most important thing you should be aware of when using AVIF is that it unfortunately isn't
       supported everywhere yet. This is a shame, right? It took ten years for webP (another
       excellent image format, but not good enough to match avif) to become fully supported due to
@@ -34,7 +29,7 @@ export default function BlogAvifInHtml() {
       support yet. However, AVIF is an invention by the non-profit industry consortium Alliance of
       Open Media (AOM). The largest browser-creating giants Apple, Mozilla and Google are all part
       of the project, so you can expect support quite quickly.
-      <BlogSubtitle text="The picture element" />
+      <h2>The picture element</h2>
       For the time-being, you can still use the format in its almost-complete glory with the native{" "}
       {`<picture>`} element in HTML. Why, you may ask? Well, the {`<picture>`} element allows for
       progressive support. You can simply put all the image files in the order in which you want
@@ -50,12 +45,12 @@ export default function BlogAvifInHtml() {
         ]}
         checked={true}
       />
-      <BlogSubtitle text="Implementation" />
+      <h2>Implementation</h2>
       At the moment, 96% of browsers support the picture element. Still, even if your grandma is
       visiting your website with her disgusting Internet Explorer 6, her browser will simply fall
       back to using the default image format if you provide it. Take a look at the following example
       and copy it if you want it for your website:
-      <BlogSyntax language="html">
+      <Code language="html">
         {`<picture>
   <source srcSet="image.avif" type="image/avif" />
   <source srcSet="image.webp" type="image/webp" />
@@ -63,16 +58,20 @@ export default function BlogAvifInHtml() {
   width="1280" height="720" decoding="async" loading="lazy"
   src="image.jpg" alt="an avif image" />
 </picture>`}
-      </BlogSyntax>
-      <BlogNote text="PS: The lazy loading attribute is supported by 75% of all browsers, make use of it! Also, don't forget to add width & height to avoid a Layout Shift. Providing width and height is more important than ever." />
+      </Code>
+      <h5>
+        PS: The lazy loading attribute is supported by 75% of all browsers, make use of it! Also,
+        don't forget to add width & height to avoid a Layout Shift. Providing width and height is
+        more important than ever.
+      </h5>
       This is a nice set up for all visitors. Just make sure the first source tag is an AVIF image
       for the browser to display the first media type it can handle.
-      <BlogSubtitle text="Responsiveness" />
+      <h2>Responsiveness</h2>
       At this point, it seems to be great, right? Well, no, not yet. That is because our platform
       still lacks support for different types of devices. Creating an optimal experience for Retina
       displays is a little more challenging. Also, we would want to make sure that mobile devices do
       not download images that are way larger than their screen.
-      <BlogSyntax language="html">
+      <Code language="html">
         {`<picture>
 
 <source
@@ -95,7 +94,7 @@ width="1280" height="720" decoding="async" loading="lazy"
 src="/image.jpg" alt="an avif image" />
 
 </picture>`}
-      </BlogSyntax>
+      </Code>
       Okay, this is probably not as challenging as we originally believed, but creating AVIF images
       for every viewport with every format can be exhausting. Nevertheless, if your website does not
       have many images, it's a good way to prepare for the future. Please remember to provide

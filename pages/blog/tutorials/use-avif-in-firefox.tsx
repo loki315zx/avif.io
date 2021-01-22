@@ -1,5 +1,5 @@
 import Blog from "@components/Blog";
-import { BlogSubtitle, BlogNote, BlogImage } from "@components/BlogComponents";
+import Image from "@components/Image";
 
 import { useAvifInFirefox as postdata } from "lib/meta";
 import { useAvifInEdge as post1 } from "lib/meta";
@@ -9,11 +9,11 @@ import { useAvifInWordpress as post3 } from "lib/meta";
 export default function BlogAvif() {
   return (
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
-      <BlogSubtitle text="Update January 2021" />
+      <h2>Update January 2021</h2>
       YES! Finally. Firefox Nightly users needed to enable the feature manually to get it supported
       in the Firefox browser at the time. Starting with version 86, which will be available on the
       23th of February, 2021, Firefox is going to support AVIF by default.
-      <BlogSubtitle text="Update December 2020" />
+      <h2>Update December 2020</h2>
       There has been other industry adoption for AVIF images, such as Microsoft with Windows. Google
       added support for AVIF to Chrome earlier this year and shipped it with Chrome 85. Mozilla
       Firefox is also very soon expected to enable support for AVIF as an image format based on AV1
@@ -25,7 +25,7 @@ export default function BlogAvif() {
       its next versions in early 2021. We can't wait for users to be able to directly use and view
       AVIF images. For those looking to convert their images to AVIF, try out our fastest converter.
       It works with Firefox already.
-      <BlogSubtitle text="Original Post" />
+      <h2>Original Post</h2>
       Starting in version 77 (released in June 2020), Mozilla recently implemented experimental
       support for the AVIF image format in Firefox. The feature is not enabled by default in the web
       browser's production version. Still, users interested in adding support may do so at the time
@@ -33,27 +33,30 @@ export default function BlogAvif() {
       format supported by the web browser. AVIF was developed from the AV1 video format and uses
       HEIF as the container and AV1 frames. It is a new format. AV1 is already supported in most web
       browsers, and the work has begun to integrate AVIF too.
-      <BlogSubtitle text="Check your version" />
+      <h2>Check your version</h2>
       If you would like to find out your browser's version, open its settings and help menu and
       click 'about'. If you have version 77 or above, you will be able to use the tutorial below to
       enable the AVIF image format.
-      <BlogImage url="firefox-help" alt="opening the menu in firefox" />
-      <BlogImage url="firefox-help-about" alt="opening the about menu in firefox" />
-      <BlogImage url="firefox-version" alt="firefox version" />
-      <BlogSubtitle text="Enable AVIF support in Firefox" />
+      <Image url="firefox-help" alt="opening the menu in firefox" />
+      <Image url="firefox-help-about" alt="opening the about menu in firefox" />
+      <Image url="firefox-version" alt="firefox version" />
+      <h2>Enable AVIF support in Firefox</h2>
       Provided that you have installed a compatible version, you can easily add support for AVIF
       with the about:config configurations. Type ‘about:config’ (without the asterisks) inside the
       address bar and press Enter.{" "}
-      <BlogImage url="firefox-about" alt="typing about:config inside the browser url" /> Most likely
-      a warning message will appear, telling you to be careful. No worries, we will be handling
+      <Image url="firefox-about" alt="typing about:config inside the browser url" /> Most likely a
+      warning message will appear, telling you to be careful. No worries, we will be handling
       everything gently. Click on 'Accept the risk and continue'.{" "}
-      <BlogImage url="firefox-warning" alt="firefox warning" /> In the search bar at the top of the
+      <Image url="firefox-warning" alt="firefox warning" /> In the search bar at the top of the
       page, search for avif. The option ‘image.avif.enabled’ is the one you are looking for. If the
       second column's value is showing 'false', click the right switch button to set it to true. A
       'true' value means that Firefox supports AVIF, whereas a 'false' value means the browser's
       image format isn't supported.{" "}
-      <BlogImage url="firefox-avifsearch" alt="firefox search for avif support" />
-      <BlogNote text="Mozilla considers support to be experimental. However, most AVIF files should be rendered successfully, and full native support is expected to arrive in the early months of 2021." />
+      <Image url="firefox-avifsearch" alt="firefox search for avif support" />
+      <h5>
+        Mozilla considers support to be experimental. However, most AVIF files should be rendered
+        successfully, and full native support is expected to arrive in the early months of 2021.
+      </h5>
       Remember to restart Firefox. Then come back to this page to see this fantastic image:
       <img
         src="/images/comparison.avif"

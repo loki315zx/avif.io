@@ -3,7 +3,7 @@ import Footer from "@components/Footer";
 import CTA from "@components/CTA";
 import SocialShare from "@components/SocialShare";
 import Meta from "@components/Meta";
-import { BlogLink } from "./BlogComponents";
+import BlogLink from "@components/BlogLink";
 
 export default function Blog(props: { postdata: any; children: any; className?: string }) {
   const urlSplit = props.postdata.url.split("/");

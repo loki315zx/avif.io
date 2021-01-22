@@ -2,7 +2,7 @@ import Head from "next/head";
 import { BreadcrumbList } from "schema-dts";
 import { jsonLdScriptProps } from "react-schemaorg";
 
-import { BlogLink } from "@components/BlogComponents";
+import BlogLink from "@components/BlogLink";
 
 export default function Breadcrumbs(props: any) {
   const urlSplit = props.postdata.url.split("/");

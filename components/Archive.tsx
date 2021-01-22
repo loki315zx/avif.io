@@ -1,9 +1,5 @@
-import Header from "@components/Header";
-import Footer from "@components/Footer";
-import CTA from "@components/CTA";
-import SocialShare from "@components/SocialShare";
 import Meta from "@components/Meta";
-import { BlogSubtitle, BlogLink, BlogPosts } from "./BlogComponents";
+import { BlogPosts } from "./BlogComponents";
 
 export default function Archive(props: {
   posts: any;
@@ -25,7 +21,7 @@ export default function Archive(props: {
 
       <div className="blog__header overlay-after white center">
         <h1>{props.postdata.title}</h1>
-        <BlogSubtitle text={props.postdata.description} />
+        <h2>{props.postdata.description}</h2>
       </div>
 
       <BlogPosts posts={props.posts} />

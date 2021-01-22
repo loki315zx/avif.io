@@ -1,4 +1,4 @@
-import { BlogLinkExternal } from "@components/BlogComponents";
+import BlogLink from "@components/BlogLink";
 import { useRouter } from "next/router";
 
 export default function Blog() {
@@ -11,17 +11,17 @@ export default function Blog() {
   const url = "https://avif.io" + router.pathname;
   return (
     <address className="share-container">
-      <BlogLinkExternal
+      <BlogLink
         link={`https://twitter.com/intent/tweet?source=${url}&text=${url}`}
         aria="Share on Twitter"
         id="twitter"
       />
-      <BlogLinkExternal
+      <BlogLink
         link={`https://www.reddit.com/submit?url=${url}`}
         aria="Share on Reddit"
         id="reddit"
       />
-      <BlogLinkExternal
+      <BlogLink
         link={`https://www.facebook.com/share.php?u=${url}`}
         aria="Share on Facebook"
         id="facebook"

@@ -1,5 +1,5 @@
 import Blog from "@components/Blog";
-import { BlogSubtitle, BlogLink, BlogLinkExternal } from "@components/BlogComponents";
+import BlogLink from "@components/BlogLink";
 
 import { useAvifInWindows as postdata } from "lib/meta";
 import { useAvifInEdge as post1 } from "lib/meta";
@@ -9,19 +9,19 @@ import { useAvifInGimp as post3 } from "lib/meta";
 export default function BlogAvif() {
   return (
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
-      <BlogSubtitle text="Microsoft supports avif.." />
+      <h2>Microsoft supports avif..</h2>
       AVIF got a significant boost when Microsoft decided to add support for it in the Windows 10
       May 2019 Update. Windows 10 does not natively support the AVIF image format. However, the
       software giant incorporated this functionality into some of its core programs, specifically
       the File Explorer and the Paint program. As long as you have the proper AV1 video codec
       installed from the Microsoft Store on your computer, you will be able to view AVIF images
       natively within Windows 10 apps such as Paint and File Explorer.
-      <BlogSubtitle text="..with an extension" />
+      <h2>..with an extension</h2>
       Without the proper configuration, tools like Microsoft Paint throw an error that says that the
       AVIF file is not a valid format and is not supported by the application. If you are looking
       for AVIF support for Windows 10, you could either wait for Microsoft to implement it by
       default, or take a look{" "}
-      <BlogLinkExternal
+      <BlogLink
         link="
       https://www.microsoft.com/de-de/p/av1-video-extension/9mvzqvxjbq9v"
         text="at the extension"
@@ -29,7 +29,7 @@ export default function BlogAvif() {
       . The AV1 extension has been around since Windows 10's version 1809, which is where support
       for the AV1 video format first appeared. Since version 1903, the extension is also capable of
       handling AVIF files.
-      <BlogSubtitle text="Results" />
+      <h2>Results</h2>
       As you can see from the screenshot below, the File Explorer will generate a thumbnail for the
       AVIF image format after the extension is installed. Additionally, MSPaint will allow you to
       edit and save these images. You might want to use a more advanced image editor than Paint in

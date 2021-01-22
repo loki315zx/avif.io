@@ -1,5 +1,5 @@
 import Archive from "@components/Archive";
-import { BlogAdvantages, BlogSubtitle } from "@components/BlogComponents";
+import { BlogAdvantages } from "@components/BlogComponents";
 
 const notes110120 = [
   "Added a fixed header for easier navigation.",
@@ -50,13 +50,13 @@ import { releaseIndex as postdata } from "lib/meta";
 export default function BlogAvif() {
   return (
     <Archive postdata={postdata} posts={posts}>
-      <BlogSubtitle text="21.01.2021 - Misc Changes" />
+      <h2>21.01.2021 - Misc Changes</h2>
       <BlogAdvantages advantages={notes210120} checked />
-      <BlogSubtitle text="19.01.2021 - Misc Changes" />
+      <h2>19.01.2021 - Misc Changes</h2>
       <BlogAdvantages advantages={notes190120} checked />
-      <BlogSubtitle text="15.01.2021 - Misc Changes" />
+      <h2>15.01.2021 - Misc Changes</h2>
       <BlogAdvantages advantages={notes150120} checked />
-      <BlogSubtitle text="11.01.2021 - Misc Changes" />
+      <h2>11.01.2021 - Misc Changes</h2>
       <BlogAdvantages advantages={notes110120} checked />
     </Archive>
   );

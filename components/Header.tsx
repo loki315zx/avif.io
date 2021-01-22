@@ -1,5 +1,5 @@
 import { conversions } from "../lib/conversions";
-import { BlogLink, BlogLinkExternal } from "./BlogComponents";
+import BlogLink from "@components/BlogLink";
 
 export default function Header() {
   return (
@@ -13,7 +13,7 @@ export default function Header() {
         />
       </div>
       <nav className="menu">
-        <BlogLinkExternal text="Support" link="https://www.buymeacoffee.com/justinschmitz" />
+        <BlogLink text="Support" link="https://www.buymeacoffee.com/justinschmitz" />
         <BlogLink text="Blog" link="/blog/" />
         <BlogLink link="/" text="Convert" className="button-primary" />
       </nav>

@@ -20,7 +20,7 @@ export default function AvifIo({ Component, pageProps }: any) {
         <meta name="theme-color" content="#140635" />
         <meta name="msapplication-config" content="none" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <meta property="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="summary"></meta>
         <meta property="twitter:creator" content="@jschmitz97" />
         <script src="/avif.js"></script>
         <script src="/hotjar.js"></script>

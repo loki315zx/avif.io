@@ -1,6 +1,8 @@
-import { BlogSources, BlogPosts, BlogTags, BlogLink } from "@components/BlogComponents";
+import { BlogPosts, BlogTags } from "@components/BlogComponents";
 import Meta from "@components/Meta";
 import Breadcrumbs from "@components/Breadcrumbs";
+import BlogSources from "@components/BlogSources";
+import BlogLink from "@components/BlogLink";
 
 const randomNumber = Math.floor(Math.random() * 7 + 1);
 

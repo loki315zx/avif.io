@@ -115,7 +115,7 @@ a {
   text-decoration: none;
   outline: none !important;
   cursor: pointer;
-  color: var(--color300);
+  color: var(--white);
 }
 
 h1 {
@@ -137,6 +137,12 @@ h2 {
 h3 {
   font-weight: bold;
   margin: var(--s4) 0 var(--s1);
+}
+
+h5 {
+  font-size: var(--f0);
+  margin: var(--s1) 0;
+  color: var(--gray2);
 }
 
 div,
@@ -1772,10 +1778,8 @@ a.discord {
   background: var(--black2);
 }
 
-.content .note {
-  font-size: var(--f0);
-  margin: var(--s1) 0;
-  color: var(--gray2);
+.content__container a {
+  color: var(--color300);
 }
 
 .content .source {
@@ -1824,11 +1828,18 @@ picture img {
   object-fit: cover;
   height: auto;
   width: 100%;
+
   max-width: 100%;
   content-visibility: auto;
   contain-intrinsic-size: calc(720px - var(--s3) * 2)
     min(calc(720px * 0.5625), calc(720px - var(--s3) * 2));
   background-size: cover;
+}
+
+@supports (aspect-ratio: 1 / 1) {
+  picture img {
+    aspect-ratio: 16 / 9;
+  }
 }
 
 /*  */
