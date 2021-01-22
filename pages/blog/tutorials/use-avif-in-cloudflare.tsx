@@ -16,7 +16,7 @@ export default function BlogAvifInCloudflare() {
   return (
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
       <Image
-        src="/images/cloudflare-pricing.jpg"
+        src="images/cloudflare-pricing.jpg"
         alt="Picture of a triangle"
         width={500}
         height={500}
