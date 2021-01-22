@@ -4,8 +4,7 @@ import { BlogAdvantages } from "@components/BlogComponents";
 import BlogLink from "@components/BlogLink";
 
 import Code from "@components/Code";
-import Img from "@components/Img";
-import Image from "next/image";
+import Image from "@components/Image";
 
 import { useAvifInCloudflare as postdata } from "lib/meta";
 import { useAvifInHtml as post1 } from "lib/meta";
@@ -15,12 +14,6 @@ import { useAvifInNextjs as post3 } from "lib/meta";
 export default function BlogAvifInCloudflare() {
   return (
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
-      <Image
-        src="images/cloudflare-pricing.jpg"
-        alt="Picture of a triangle"
-        width={500}
-        height={500}
-      />
       Images compressed in AVIF can be reduced to half the size of JPEG and WebP. It combines the
       HEIF ISO standard with the royalty-free AV1 codec from Mozilla, Google, Cisco, and others.
       Cloudflare on the other hand provides hosting services and distribution services to many
@@ -28,7 +21,7 @@ export default function BlogAvifInCloudflare() {
       Cloudflare announced support for automatic serving of AVIF images. Upon reviewing web stats,
       let's point out that more than half of an average website is spent on pictures, and that over
       15% of all websites are powered by Cloudflare.
-      <Img url="cloudflare-stats" alt="cloudflare stats" />
+      <Image url="cloudflare-stats" alt="cloudflare stats" />
       Allowing users to optimize images into the new AVIF image format marks a major milestone in
       making the web a faster place. Improved image compression can reduce bandwidth usage and
       improve web performance. Services and companies like Discord, ILovePDF, Hubspot and Zendesk
@@ -55,7 +48,7 @@ export default function BlogAvifInCloudflare() {
       The Image Resizing feature converts images to the AVIF format. Unfortunately, this feature is
       not available for free but is part of the Business Plan. Since a Business plan costs around
       $200 or more per month, this seems overkill for such a small feature.
-      <Img url="cloudflare-pricing" alt="cloudflare pricing" />
+      <Image url="cloudflare-pricing" alt="cloudflare pricing" />
       However, in another comment section on the Cloudflare Blog, Kornel Lesinski from Cloudflare
       said that automatically converting your images into the best variant for your users will
       eventually be part of their Pro plans in the future. Pro Plans start at $20/month and come

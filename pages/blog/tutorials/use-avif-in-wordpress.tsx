@@ -1,7 +1,7 @@
 import Blog from "@components/Blog";
 import BlogLink from "@components/BlogLink";
 import Code from "@components/Code";
-import Img from "@components/Img";
+import Image from "@components/Image";
 
 import { useAvifInWordpress as postdata } from "lib/meta";
 import { useAvifInHtml as post1 } from "lib/meta";
@@ -20,7 +20,7 @@ export default function BlogAvifInWordpress() {
       websites in 2020. This means that around 35% of the web is powered by WordPress. Further
       statistics from WordPress reveal that as of November 2020, over 409 million people view more
       than 20 billion pages each month.
-      <Img url="wordpress-usage" alt="shows usage statistics of wordpress" />
+      <Image url="wordpress-usage" alt="shows usage statistics of wordpress" />
       <h2>Official Wordpress Support</h2>
       The WordPress core has implemented a security check for file uploading since version 4.7. This
       means that WordPress checks your uploaded files' file extension (say that 10x as fast as
@@ -39,7 +39,7 @@ export default function BlogAvifInWordpress() {
       It's pretty easy to explain: A media type consists of a type and subtype that defines content
       and file extension. An HTML file has the mime type 'text/html', an jpg the mime type
       'image/jpeg'.
-      <Img url="mimetype" alt="example showing mime types" />
+      <Image url="mimetype" alt="example showing mime types" />
       WordPress uses these mime types. They have a list of files they allow and a list of files they
       disallow. There are several methods to change this behavior and add mime types. See below.
       <h2>Functions.php</h2>
@@ -50,7 +50,7 @@ export default function BlogAvifInWordpress() {
       it by going to Appearance and choosing the Theme Editor. If a warning appears, feel free to
       ignore it. You know what you're doing. ;-) Choose your active theme in the right sidebar, and
       below you will find all theme files listed, including the functions.php.
-      <Img url="functionsphp" alt="place where the functions.php is located" />
+      <Image url="functionsphp" alt="place where the functions.php is located" />
       Click to open and scroll down to the bottom. Don't delete anything. Create a new line after
       the end of the file, and add the following:
       <Code language="php">
@@ -98,7 +98,7 @@ add_filter( 'upload_mimes', 'support_modern_images', 1, 1 );`}
       allow a particular file, leaving the door open for various kinds of attacks. Lord of the Files
       (previously known as "blob mimes") adds to this content-based validation and sanitizing,
       ensuring that files are what they say they are and safe for inclusion on your site.
-      <Img url="mimetype-plugin" alt="screenshot of the mime type plugin website" />
+      <Image url="mimetype-plugin" alt="screenshot of the mime type plugin website" />
       <h2>There's one remaining problem: No automatic conversion</h2>
       Uploading images is a cool thing, but there's a colossal problem remaining. For every image
       you wish to serve to your users, you have to convert it manually. Well, there are some *cough*

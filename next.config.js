@@ -1,4 +1,5 @@
 const withPlugins = require("next-compose-plugins");
+const images = require("next-images");
 const bundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
@@ -6,6 +7,7 @@ const bundleAnalyzer = require("@next/bundle-analyzer")({
 const baseUrl = "";
 
 module.exports = withPlugins([
+  images,
   [
     bundleAnalyzer,
     {

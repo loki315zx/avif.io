@@ -1,5 +1,5 @@
 import Blog from "@components/Blog";
-import Img from "@components/Img";
+import Image from "@components/Image";
 import BlogLink from "@components/BlogLink";
 
 import { useAvifInEdge as postdata } from "lib/meta";
@@ -18,7 +18,7 @@ export default function BlogAvifInEdge() {
       part of this alliance and everyone is interested in pushing out a new and modern format,
       expect Microsoft Edge to support AVIF files soon. By the time of writing, Edge does not yet
       support AVIF images; it refuses to render or otherwise open AVIF images.
-      <Img url="edge-new" alt="the new microsoft edge" />
+      <Image url="edge-new" alt="the new microsoft edge" />
       If you plan to enable experimental AV1 support, you can do so by downloading a plugin. At
       least YouTube videos will then stream in the new format.
       <h2>Your version of Edge</h2>
@@ -34,7 +34,7 @@ export default function BlogAvifInEdge() {
       own browser. You may quickly determine if you own a Chromium version of Edge by looking at the
       browser icon. The new version of Edge has a more minimalistic and gradient style, where the
       old one looks like a Van Gogh.
-      <Img url="edge-or-edge" alt="microsoft edge version difference" />
+      <Image url="edge-or-edge" alt="microsoft edge version difference" />
       <h2>AV1 Plugin</h2>
       The AV1 Extension add-on is available from the{" "}
       <BlogLink
@@ -43,7 +43,7 @@ export default function BlogAvifInEdge() {
       />
       . It provides support for AV1 videos on Windows 10 devices and Edge. It also allows for
       viewing AVIF images, including thumbnails, and editing them in Paint.
-      <Img url="edge-av1" alt="av1 extension" />
+      <Image url="edge-av1" alt="av1 extension" />
       Furthermore, this extension allows video apps installed on Windows 10 to play videos encoded
       using the AV1 video coding standard developed by the Alliance for Open Media. As already
       stated, there isn't support for AVIF images yet, even though avif.io converts images
