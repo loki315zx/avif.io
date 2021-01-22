@@ -124,7 +124,7 @@ dist
 
 # next.js
 /.next/
-#commented out for a test /out/
+/out/
 
 # production
 /build
