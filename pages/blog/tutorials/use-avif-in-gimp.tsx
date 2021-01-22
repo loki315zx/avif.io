@@ -1,6 +1,6 @@
 import Blog from "@components/Blog";
 import BlogLink from "@components/BlogLink";
-import Image from "@components/Image";
+import Img from "@components/Img";
 
 import { useAvifInGimp as postdata } from "lib/meta";
 import { useAvifInWindows as post1 } from "lib/meta";
@@ -19,7 +19,7 @@ export default function BlogAvifInGIMP() {
       functionality. Since then, thanks to the encoder libheif, it is now capable of supporting the
       AVIF image format natively, which means that you can import and export AV1-based AVIF images
       as you would any other supported format.
-      <Image url="gimp" alt="gimp can export as avif" />
+      <Img url="gimp" alt="gimp can export as avif" />
       When exporting an image from the editor, choose the "HEIF/AVIF" file type or use the ".avif"
       extension. A prompt will then appear, in which you will have the chance to select among
       several possible options. First, you will have the chance to choose the degree to which you
@@ -29,7 +29,7 @@ export default function BlogAvifInGIMP() {
       amount of colors that will be saved to your image. For comparison, JPG has 8 bits. So if
       you're not a photographer and just want to use AVIF images for your website, we recommend that
       you stick with 8-bit.
-      <Image url="gimp-bitdepth" alt="gimp export avif dialogue showing different bit depths" />
+      <Img url="gimp-bitdepth" alt="gimp export avif dialogue showing different bit depths" />
       <h2>AVIF Plugin</h2>
       There's also a plugin available called{" "}
       <BlogLink

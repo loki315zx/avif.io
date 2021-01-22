@@ -1,5 +1,5 @@
 import Blog from "@components/Blog";
-import Image from "@components/Image";
+import Img from "@components/Img";
 
 import { useAvifInFirefox as postdata } from "lib/meta";
 import { useAvifInEdge as post1 } from "lib/meta";
@@ -37,22 +37,21 @@ export default function BlogAvif() {
       If you would like to find out your browser's version, open its settings and help menu and
       click 'about'. If you have version 77 or above, you will be able to use the tutorial below to
       enable the AVIF image format.
-      <Image url="firefox-help" alt="opening the menu in firefox" />
-      <Image url="firefox-help-about" alt="opening the about menu in firefox" />
-      <Image url="firefox-version" alt="firefox version" />
+      <Img url="firefox-help" alt="opening the menu in firefox" />
+      <Img url="firefox-help-about" alt="opening the about menu in firefox" />
+      <Img url="firefox-version" alt="firefox version" />
       <h2>Enable AVIF support in Firefox</h2>
       Provided that you have installed a compatible version, you can easily add support for AVIF
       with the about:config configurations. Type ‘about:config’ (without the asterisks) inside the
       address bar and press Enter.{" "}
-      <Image url="firefox-about" alt="typing about:config inside the browser url" /> Most likely a
+      <Img url="firefox-about" alt="typing about:config inside the browser url" /> Most likely a
       warning message will appear, telling you to be careful. No worries, we will be handling
       everything gently. Click on 'Accept the risk and continue'.{" "}
-      <Image url="firefox-warning" alt="firefox warning" /> In the search bar at the top of the
-      page, search for avif. The option ‘image.avif.enabled’ is the one you are looking for. If the
-      second column's value is showing 'false', click the right switch button to set it to true. A
-      'true' value means that Firefox supports AVIF, whereas a 'false' value means the browser's
-      image format isn't supported.{" "}
-      <Image url="firefox-avifsearch" alt="firefox search for avif support" />
+      <Img url="firefox-warning" alt="firefox warning" /> In the search bar at the top of the page,
+      search for avif. The option ‘image.avif.enabled’ is the one you are looking for. If the second
+      column's value is showing 'false', click the right switch button to set it to true. A 'true'
+      value means that Firefox supports AVIF, whereas a 'false' value means the browser's image
+      format isn't supported. <Img url="firefox-avifsearch" alt="firefox search for avif support" />
       <h5>
         Mozilla considers support to be experimental. However, most AVIF files should be rendered
         successfully, and full native support is expected to arrive in the early months of 2021.

@@ -1,6 +1,6 @@
 import Blog from "@components/Blog";
 
-import Image from "@components/Image";
+import Img from "@components/Img";
 
 import { useAvifInNetlify as postdata } from "lib/meta";
 import { useAvifInHtml as post1 } from "lib/meta";

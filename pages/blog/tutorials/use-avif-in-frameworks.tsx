@@ -1,7 +1,7 @@
 import Blog from "@components/Blog";
 import { BlogAdvantages } from "@components/BlogComponents";
 import Code from "@components/Code";
-import Image from "@components/Image";
+import Img from "@components/Img";
 
 import { useAvifInFrameworks as postdata } from "lib/meta";
 import { useAvifInNextjs as post1 } from "lib/meta";
@@ -47,10 +47,10 @@ export default function BlogAvifInFrameworks() {
           <img src="/images/cloudflare-stats.jpg" alt="avif in frameworks" />
         </picture>`}
       </Code>
-      <Image url="react-avif" alt="using avif in react" />
-      <Image url="react-render" alt="rendered avif in react" />
-      <Image url="angular-avif" alt="using avif in angular" />
-      <Image url="angular-render" alt="rendered avif in angular" />
+      <Img url="react-avif" alt="using avif in react" />
+      <Img url="react-render" alt="rendered avif in react" />
+      <Img url="angular-avif" alt="using avif in angular" />
+      <Img url="angular-render" alt="rendered avif in angular" />
       <h2>Webpack File Loader</h2>
       In some cases, especially with older versions and when using webpack, you may encounter some
       problems. Especially:

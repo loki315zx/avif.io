@@ -2,7 +2,7 @@ import Blog from "@components/Blog";
 import BlogLink from "@components/BlogLink";
 
 import Code from "@components/Code";
-import Image from "@components/Image";
+import Img from "@components/Img";
 
 import { useAvifInCss as postdata } from "lib/meta";
 import { useAvifInHtml as post1 } from "lib/meta";
@@ -80,9 +80,9 @@ avif.onerror = function () {
       Using this script leads to the following screenshots. Back in the day, Firefox Quantum didn't
       support WebP or AVIF, so there is no class. Chrome currently supports AVIF, so AVIF is
       displayed. Edge does not support AVIF and supports WebP, so our site has a webp class.
-      <Image url="css-firefox" alt="firefox quantum without any class" />
-      <Image url="css-chrome" alt="our website on chrome gets an avif class" />
-      <Image url="css-edge" alt="microsoft edge with a webp class in the html element" />
+      <Img url="css-firefox" alt="firefox quantum without any class" />
+      <Img url="css-chrome" alt="our website on chrome gets an avif class" />
+      <Img url="css-edge" alt="microsoft edge with a webp class in the html element" />
       <h2>SCSS background mixin</h2>
       <BlogLink
         link="https://raoulkramer.de/avif-and-webp-images-as-css-background-images/"
