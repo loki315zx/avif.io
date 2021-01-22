@@ -5,6 +5,7 @@ import BlogLink from "@components/BlogLink";
 
 import Code from "@components/Code";
 import Img from "@components/Img";
+import Image from "next/image";
 
 import { useAvifInCloudflare as postdata } from "lib/meta";
 import { useAvifInHtml as post1 } from "lib/meta";
@@ -14,6 +15,12 @@ import { useAvifInNextjs as post3 } from "lib/meta";
 export default function BlogAvifInCloudflare() {
   return (
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
+      <Image
+        src="/images/cloudflare-pricing.jpg"
+        alt="Picture of a triangle"
+        width={500}
+        height={500}
+      />
       Images compressed in AVIF can be reduced to half the size of JPEG and WebP. It combines the
       HEIF ISO standard with the royalty-free AV1 codec from Mozilla, Google, Cisco, and others.
       Cloudflare on the other hand provides hosting services and distribution services to many
