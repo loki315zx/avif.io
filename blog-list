@@ -3,7 +3,7 @@
 
 
 #pages/blog
-- write good alt text + alt text in future
+- write good alt text + ein test derzeitiger apis + aussicht für die zukunft
 - avif encorders
 - avif support & caniuse
 - avif vs gif
@@ -14,6 +14,18 @@
 - avif complete guide to aviv
 - avif optimize images in 2021
 - avif perfect image sizes
+- Aspect Ratio CSS support on Chrome + examples + canIuse embed
+- placeholder for images / blurs / blurhash
+- blurhash promotion
+- Maybe blog articles out of https://aomediacodec.github.io/av1-avif/ ?
+- article about https://plaiceholder.co/
+
+
+
+#utilities
+- Generator für optimale Markups von Bildern / Specify Image sizes & and alt text & url
+- generator für alt texte? 
+
 
 
 #pages/blog/tutorials
