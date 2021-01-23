@@ -14,7 +14,8 @@
       "@images/*": ["./public/images/*"],
       "@utils/*": ["utils/*"],
       "@styles/*": ["styles/*"],
-      "@pages/*": ["pages/*"]
+      "@pages/*": ["pages/*"],
+      "@public/*": ["public/*"]
     },
     "allowSyntheticDefaultImports": true,
     "lib": ["dom", "dom.iterable", "esnext"],

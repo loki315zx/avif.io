@@ -1,3 +1,5 @@
+document.documentElement.lang = "en";
+
 function F(a) {
   document.documentElement.classList.add(a);
 }

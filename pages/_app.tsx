@@ -7,6 +7,7 @@ import Header from "@components/Header";
 import Footer from "@components/Footer";
 import SocialShare from "@components/SocialShare";
 import CTA from "@components/CTA";
+import Link from "next/link";
 
 export default function AvifIo({ Component, pageProps }: any) {
   useEffect(arrayBufferPolyfill, []);
@@ -23,7 +24,28 @@ export default function AvifIo({ Component, pageProps }: any) {
         <meta name="twitter:card" content="summary"></meta>
         <meta property="twitter:creator" content="@jschmitz97" />
         <script src="/avif.js"></script>
-        <script src="/hotjar.js"></script>
+        <script async={true} src="/hotjar.js"></script>
+        <link
+          rel="preload"
+          href="/fonts/patua-one.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="true"
+        />
+        <link
+          rel="preload"
+          href="/fonts/poppins-bold.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="true"
+        />
+        <link
+          rel="preload"
+          href="/fonts/poppins-regular.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="true"
+        />
       </Head>
       <Header />
       <div className="page">

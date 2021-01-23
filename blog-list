@@ -1,0 +1,26 @@
+#pages/
+- feedback
+
+
+#pages/blog
+- write good alt text + alt text in future
+- avif encorders
+- avif support & caniuse
+- avif vs gif
+- avif vs jpegxl
+- avif vs jpeg
+- avif vs png
+- avif vs webp
+- avif complete guide to aviv
+- avif optimize images in 2021
+- avif perfect image sizes
+
+
+#pages/blog/tutorials
+- use avif in netlify
+
+
+#pages/blog/releases
+- Release Page November: Remaining conversion time
+- Release Page January: Blog pages, reduced bundle size
+- Release Page December: Show number of total conversions, stop a running conversion
