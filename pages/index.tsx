@@ -7,19 +7,14 @@ import DownloadAllButton from "@components/DownloadAllButton";
 import SettingsBox, { Settings } from "@components/SettingsBox";
 import Tutorials from "@components/Tutorials";
 import Advantages from "@components/Advantages";
-import SocialShare from "@components/SocialShare";
 
 import Converter from "@utils/converter";
 import { uniqueId } from "@utils/utils";
 
-import comparison_jpg from "@images/comparison.jpg";
-import comparison_avif from "@images/comparison.avif";
+import comparison_jpg from "@assets/comparison.jpg";
+import comparison_avif from "@assets/comparison.avif";
 
 import Head from "next/head";
-import Header from "@components/Header";
-
-import CTA from "@components/CTA";
-import Footer from "@components/Footer";
 
 interface FileWithId {
   file: File;
@@ -71,9 +66,6 @@ export default function App(): ReactElement {
           property="og:description"
           content="Convert all image types to AVIF for free.🚀 Supports bulk converting. Blazing fast. Privacy protected. Compress your images now!⏱"
         />
-        <meta property="og:image" content="" />
-        <meta property="og:type" content="article" />
-        <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:site" content="@jschmitz97" />
         <meta property="twitter:url" content={"https://twitter.com/jschmitz97"} />
         <meta property="twitter:title" content="AVIF Converter | avif.io ✨" />
