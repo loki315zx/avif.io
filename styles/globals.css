@@ -1838,7 +1838,7 @@ picture img {
 
 @supports (aspect-ratio: 1 / 1) {
   picture img {
-    aspect-ratio: 16 / 9;
+    aspect-ratio: auto 16 / 9;
   }
 }
 
