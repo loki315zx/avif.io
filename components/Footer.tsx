@@ -17,11 +17,11 @@ export default function Footer() {
         <div className="s1">
           <b>More</b>
         </div>
-        <BlogLink text="Blog" link="/blog" newLine />
+        <BlogLink text="Blog" link="/blog/" newLine />
         <BlogLink text="Contact" link="mailto:support@avif.io" newLine />
         <BlogLink text="Donate" link="https://www.buymeacoffee.com/justinschmitz" newLine />
         <BlogLink text="Sitemap" link="/sitemap.xml" newLine />
-        <BlogLink text="Legal & Privacy" link="/privacy-policy" newLine />
+        <BlogLink text="Legal & Privacy" link="/privacy-policy/" newLine />
       </div>
       <div id="communication">
         <a

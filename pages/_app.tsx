@@ -7,7 +7,6 @@ import Header from "@components/Header";
 import Footer from "@components/Footer";
 import SocialShare from "@components/SocialShare";
 import CTA from "@components/CTA";
-import Link from "next/link";
 
 export default function AvifIo({ Component, pageProps }: any) {
   useEffect(arrayBufferPolyfill, []);
