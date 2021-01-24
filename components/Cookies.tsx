@@ -20,7 +20,7 @@ const Cookies = () => {
   return (
     <div className={`cookie ${mode}`}>
       We use cookies to deliver our services. By using our website you agree with the{" "}
-      <BlogLink text="Policy" link="/" />.
+      <BlogLink text="Policy" link="/privacy-policy/" />.
       <div
         role="button"
         className="overlay flex-center"
