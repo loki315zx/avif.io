@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
 import vs2015 from "react-syntax-highlighter/dist/cjs/styles/hljs/vs2015";
 import js from "react-syntax-highlighter/dist/cjs/languages/hljs/javascript";

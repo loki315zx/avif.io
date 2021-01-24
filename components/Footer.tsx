@@ -39,7 +39,7 @@ export default function Footer() {
         </a>
         <a
           className="discord white"
-          href="https://discord.gg/6w42YpF5hm"
+          href="https://discord.com/invite/6w42YpF5hm"
           target="_blank"
           rel="noreferrer">
           Talk to us on Discord!

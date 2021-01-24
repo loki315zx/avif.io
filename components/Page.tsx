@@ -1,12 +1,6 @@
-import Header from "@components/Header";
-import Footer from "@components/Footer";
-import CTA from "@components/CTA";
-import SocialShare from "@components/SocialShare";
 import Meta from "@components/Meta";
-import BlogLink from "@components/BlogLink";
 
-export default function Blog(props: { postdata: any; children: any; className?: string }) {
-  const urlSplit = props.postdata.url.split("/");
+export default function Page(props: { postdata: any; children: any; className?: string }) {
   return (
     <>
       <Meta
@@ -21,8 +15,10 @@ export default function Blog(props: { postdata: any; children: any; className?: 
       <div className="blog__header overlay-after">
         <h1>{props.postdata.title}</h1>
       </div>
-      <div className="content__container">
-        <div className="content">{props.children}</div>
+      <div className="blog">
+        <div className="content__container">
+          <div className="content">{props.children}</div>
+        </div>
       </div>
     </>
   );

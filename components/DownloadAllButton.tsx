@@ -14,19 +14,12 @@ export default function DownloadAllButton(props: DownloadAllButtonProps) {
   }
 
   return (
-    <>
-      <div className={`downloadall-container ${props.files.length > 1 ? "show" : "hide"}`}>
-        <button className="downloadall" onClick={onClick}>
-          Download all images
-        </button>
-        <p className="donation">
-          Enjoy using avif.io? Keep the project alive.{" "}
-          <a href="https://www.buymeacoffee.com/justinschmitz" title="Donate">
-            Donate
-          </a>{" "}
-          to support upcoming features like a REST API and more.
-        </p>
-      </div>
-    </>
+    <div className={`downloadall-container ${props.files.length > 1 ? "show" : "hide"}`}>
+      <button onClick={onClick}> Download all images </button>
+      Enjoying avif.io?{" "}
+      <a className="color300" href="https://www.buymeacoffee.com/justinschmitz" title="Donate">
+        Help keeping the project alive.
+      </a>{" "}
+    </div>
   );
 }

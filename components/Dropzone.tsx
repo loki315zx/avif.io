@@ -44,17 +44,11 @@ export default function Dropzone(props: DropzoneProps) {
     <a onClick={onBrowseClick} className={`dropzone-container ${isDragActive ? "active" : ""}`}>
       <div className={"dropzone-root"} {...getRootProps()}>
         <input {...getInputProps()} />
-        <>
-          <div className={"upload-button overlay-before overlay-after"}>
-            <div className="upload-blur overlay"></div>
-          </div>
-          <div className={"s0"}>
-            <b>Drop your images or browse</b>
-          </div>
-          <div id="explainformats" className={"black500"}>
-            supports png · jpg · webp · gif and more
-          </div>
-        </>
+        <div className={"upload-button overlay-before overlay-after"}>
+          <div className="upload-blur overlay"></div>
+        </div>
+        <b>Drop your images or browse</b>
+        <div className="black500">supports png · jpg · webp · gif and more</div>
       </div>
     </a>
   );
