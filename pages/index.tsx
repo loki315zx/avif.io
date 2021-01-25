@@ -82,7 +82,7 @@ export default function App(): ReactElement {
           No data is sent. The magic happens in your browser.
         </h2>
 
-        <div className={"main-container" + " " + (settingsBoxOpen ? "open" : "")}>
+        <div className={"main-container center" + " " + (settingsBoxOpen ? "open" : "")}>
           <Dropzone onDrop={onFilesSelected} />
 
           <button

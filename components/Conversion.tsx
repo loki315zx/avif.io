@@ -120,7 +120,7 @@ export default function Conversion(props: ConversionProps): ReactElement {
           </span>
         </div>
         {status === "inProgress" && (
-          <a role="button" className="conversion__cancel" onClick={cancelConverison}>
+          <a role="button" className="conversion__cancel center" onClick={cancelConverison}>
             cancel
           </a>
         )}

@@ -3,7 +3,7 @@ import { conversions } from "../lib/conversions";
 
 export default function Footer() {
   return (
-    <footer className="footer">
+    <footer>
       <div id="footer-info">
         <div className="s2 f2">
           <b>avif.io</b>
