@@ -3,7 +3,7 @@ import BlogLink from "@components/BlogLink";
 
 export default function Header() {
   return (
-    <header className="header">
+    <header>
       <div className="flex-center">
         <BlogLink link="/" text="avif.io" className="logo" />
         <BlogLink

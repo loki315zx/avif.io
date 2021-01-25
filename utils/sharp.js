@@ -2,11 +2,11 @@ const sharp = require("sharp");
 const fs = require("fs");
 const path = require("path");
 
-const output = "../public/images/";
+const output = "../public/img/";
 const input = "../images/";
 const jpgQuality = { quality: 70, progressive: true };
-const webpQuality = { quality: 70, reductionEffort: 0 };
-const avifQuality = { quality: 70, speed: 6 };
+const webpQuality = { quality: 70, reductionEffort: 6 };
+const avifQuality = { quality: 70, speed: 0 };
 const sizes = [1440, 720, 630, 540, 450, 360];
 
 fs.readdir(input, (err, files) => {

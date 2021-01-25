@@ -344,7 +344,7 @@ button {
 /*  */
 /*  */
 
-.header {
+header {
   position: fixed;
   left: 0;
   right: 0;
@@ -354,12 +354,13 @@ button {
   padding: 0 var(--s4);
   align-items: center;
   justify-content: space-between;
-  background: var(--black2-8);
   padding: var(--s1) 0;
   backdrop-filter: blur(5px);
+  background: var(--black1);
+  border-bottom: 2px solid var(--black3);
 }
 
-.header > * > * {
+header > * > * {
   padding: var(--s0) var(--s1);
 }
 
@@ -1519,7 +1520,7 @@ a.discord {
 }
 
 .page .blog__header {
-  padding: var(--s5) var(--s1);
+  padding: 0 var(--s1) var(--s5);
 }
 
 .background1 .blog__header::after {
@@ -2167,7 +2168,7 @@ pre {
   .blog__header__content {
     padding: var(--s4) 0 var(--s2);
   }
-  .header > * > * {
+  header > * > * {
     padding: var(--s0) var(--s0);
   }
 
@@ -2202,7 +2203,7 @@ pre {
     padding: var(--s2);
   }
 
-  .header {
+  header {
     padding: var(--s2) 0;
   }
 
@@ -2248,7 +2249,7 @@ pre {
     grid-column: 1/3;
   }
 
-  .header {
+  header {
     padding: var(--s1) 0;
   }
 
@@ -2525,16 +2526,16 @@ input[type="range"]:focus::-webkit-slider-thumb {
 
 @media (orientation: landscape) {
   ::-webkit-scrollbar {
-    width: 16px;
-    background-color: var(--gray4-8);
+    width: 12px;
+    background-color: var(--gray3);
   }
 }
 
 @media (orientation: landscape) {
   ::-webkit-scrollbar-thumb {
     border-radius: var(--radius-small);
-    background-color: var(--color300);
-    border: 3px solid var(--gray4);
+    background-color: var(--black2);
+    border: 3px solid var(--gray3);
   }
 }
 
