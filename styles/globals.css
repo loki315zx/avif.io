@@ -181,12 +181,14 @@ button {
   outline: none;
   cursor: pointer;
   z-index: 0;
-  margin-bottom: var(--s2);
   color: var(--white);
   font-weight: 700;
   padding: var(--s1) var(--s2);
   border-radius: var(--radius-small);
   background: var(--color500);
+  display: block;
+  margin: 0 auto var(--s2);
+  text-align: center;
 }
 
 .bold {
@@ -356,7 +358,7 @@ header {
   justify-content: space-between;
   padding: var(--s1) 0;
   backdrop-filter: blur(5px);
-  background: var(--black1);
+  background: var(--black1-8);
   border-bottom: 2px solid var(--black3);
 }
 

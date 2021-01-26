@@ -13,7 +13,7 @@ export default function Header() {
         />
       </div>
       <nav className="menu">
-        <BlogLink text="Support" link="https://www.buymeacoffee.com/justinschmitz" />
+        <BlogLink text="Discord" link="https://discord.com/invite/6w42YpF5hm" external />
         <BlogLink text="Blog" link="/blog/" />
         <BlogLink link="/" text="Convert" className="button-primary" />
       </nav>
