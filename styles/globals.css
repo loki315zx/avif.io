@@ -2113,6 +2113,10 @@ pre {
     padding: var(--s3);
   }
 
+  .page .blog__header {
+    padding: var(--s4) var(--s1) var(--s3);
+  }
+
   .blog h1 {
     padding: var(--s1) 0 var(--s1) 0;
     margin: 0;
