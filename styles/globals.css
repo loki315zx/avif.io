@@ -2100,6 +2100,9 @@ pre {
 }
 
 @media only screen and (max-width: 991.98px) {
+  body {
+    overflow-x: hidden;
+  }
   .text-20,
   .text-40,
   .text-60,
