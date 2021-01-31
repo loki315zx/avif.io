@@ -185,7 +185,6 @@ button {
   font-weight: 700;
   padding: var(--s1) var(--s2);
   border-radius: var(--radius-small);
-  background: var(--color500);
   display: block;
   margin: 0 auto var(--s2);
   text-align: center;
@@ -353,7 +352,6 @@ header {
   top: 0;
   z-index: 999999999;
   display: flex;
-  padding: 0 var(--s4);
   align-items: center;
   justify-content: space-between;
   padding: var(--s1) 0;
@@ -1827,7 +1825,6 @@ picture img {
   object-fit: cover;
   height: auto;
   width: 100%;
-
   max-width: 100%;
   content-visibility: auto;
   contain-intrinsic-size: calc(720px - var(--s3) * 2)
@@ -2096,6 +2093,7 @@ pre {
   .blog h1 {
     margin: 0;
   }
+
   .page > section {
     padding: var(--s4);
   }
@@ -2169,9 +2167,11 @@ pre {
   .blog > * {
     padding: var(--s1);
   }
+
   .blog__header__content {
     padding: var(--s4) 0 var(--s2);
   }
+
   header > * > * {
     padding: var(--s0) var(--s0);
   }
@@ -2286,9 +2286,11 @@ pre {
   .share-container {
     padding: var(--s0);
   }
+
   .remaining-time {
     display: none;
   }
+
   .conversion {
     font-size: var(--f0);
   }

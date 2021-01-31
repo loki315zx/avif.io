@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "check-all": "prettier --write . && eslint . --ext .js && eslint . --ext .tsx && npx stylelint styles/ && cross-env ANALYZE=true next build",
+    "check-all": "npx stylelint styles/ --fix && prettier --write . && cross-env ANALYZE=true next build && eslint . --ext .js --ext .tsx",
     "pull": "git pull && git fetch origin && git reset --hard origin/master",
     "setup": "npm i -f && npm run build && next export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && npm run dev",
     "release": "npm i -f && npm run build && next export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && firebase deploy",
@@ -100,7 +100,8 @@
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/explicit-module-boundary-types": "off",
       "jsx-a11y/anchor-is-valid": "off",
-      "react/react-in-jsx-scope": "off"
+      "react/react-in-jsx-scope": "off",
+      "react/no-unescaped-entities": 0
     }
   },
   "prettier": {
@@ -117,6 +118,7 @@
     "extends": "stylelint-config-standard",
     "rules": {
       "indentation": 2,
+      "no-descending-specificity": null,
       "rule-empty-line-before": "always",
       "comment-empty-line-before": [
         "always",

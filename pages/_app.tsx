@@ -22,6 +22,7 @@ export default function AvifIo({ Component, pageProps }: any) {
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <meta name="twitter:card" content="summary"></meta>
         <meta property="twitter:creator" content="@jschmitz97" />
+        <meta property="og:image" content="https://avif.io/json-logo.png" />
         <script src="/avif.js"></script>
         <script async={true} src="/hotjar.js"></script>
         <link

@@ -1,6 +1,6 @@
 export default function BlogSources(props: any) {
   const sources = props.sources;
-  for (var i = 0; i < sources.length; i++) {
+  for (let i = 0; i < sources.length; i++) {
     sources[i] = sources[i].replace("https://", "");
     sources[i] = sources[i].replace("http://", "");
     sources[i] = sources[i].replace("www.", "");

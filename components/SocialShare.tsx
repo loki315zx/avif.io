@@ -32,7 +32,7 @@ export default function Blog() {
           onClick={() => share()}
           onKeyPress={() => share()}
           aria-label="share"
-          tabIndex={99}
+          title="share on social media"
           id="share"></a>
       </div>
     </address>

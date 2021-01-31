@@ -31,7 +31,7 @@ export default function Footer() {
           rel="noreferrer">
           <img
             src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=273434&theme=dark"
-            alt="Fastest AVIF image converter, featured on Product Hunt"
+            alt="Fastest AVIF converter, featured on Product Hunt"
             style={{ width: 250, height: 54 }}
             width="250"
             height="54"

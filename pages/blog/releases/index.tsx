@@ -43,6 +43,16 @@ const notes210120 = [
   "Linked Sitemap in footer",
 ];
 
+{
+  /*
+const notes310120 = [
+  "Moved image slider upwards on our homepage",
+  "added detailed explanations for our avif advantages on click",
+  "Created a tooltip for the settings panel so people notice it more",
+];
+*/
+}
+
 const posts = [""];
 
 import { releaseIndex as postdata } from "lib/meta";
@@ -50,6 +60,8 @@ import { releaseIndex as postdata } from "lib/meta";
 export default function BlogAvif() {
   return (
     <Archive postdata={postdata} posts={posts}>
+      {/*<h2>31.01.2021 - Misc Changes</h2>
+      <BlogAdvantages advantages={notes210120} checked />*/}
       <h2>21.01.2021 - Misc Changes</h2>
       <BlogAdvantages advantages={notes210120} checked />
       <h2>19.01.2021 - Misc Changes</h2>

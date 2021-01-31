@@ -6,8 +6,6 @@ import BlogSources from "@components/BlogSources";
 const randomNumber = Math.floor(Math.random() * 7 + 1);
 
 export default function Blog(props: { postdata: any; children: any; posts: any }) {
-  const urlSplit = props.postdata.url.split("/");
-
   return (
     <>
       <main className={`blog background${randomNumber}`}>
