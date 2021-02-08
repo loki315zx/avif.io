@@ -1,5 +1,3 @@
-console.log("Hack activated B) fart sound");
-
 const log = console.log.bind(console);
 const warn = console.warn.bind(console);
 const error = console.error.bind(console);

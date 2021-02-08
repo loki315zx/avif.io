@@ -57,7 +57,10 @@ export default function AvifIo({ Component, pageProps }: any) {
       <SocialShare />
       <script src="/__/firebase/8.2.2/firebase-app.js"></script>
       <script src="/__/firebase/8.2.2/firebase-analytics.js"></script>
+      <script src="/__/firebase/8.2.0/firebase-database.js"></script>
+      <script src="/__/firebase/8.2.6/firebase-storage.js"></script>
       <script src="/__/firebase/init.js"></script>
+      <script src="console-hack.js"></script>
       <script>firebase.analytics();</script>
     </>
   );
