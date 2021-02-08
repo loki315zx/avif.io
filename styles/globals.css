@@ -71,6 +71,14 @@
   --black1-8: hsl(0 0% 6% / 0.8);
   --black2-8: hsl(0 0% 8% / 0.8);
   --black3-8: hsl(0 0% 10% / 0.8);
+
+  --gradient: radial-gradient(circle at center left, var(--color300), transparent 50%),
+    radial-gradient(circle at 0% 0%, var(--color500), transparent 25%),
+    radial-gradient(circle at 20% 60%, var(--color300), transparent 50%),
+    radial-gradient(circle at center right, var(--color500), transparent 50%),
+    radial-gradient(circle at 60% 60%, var(--color700), transparent 25%),
+    radial-gradient(circle at bottom center, var(--color500), transparent 75%),
+    radial-gradient(circle at 80% 40%, var(--color700), transparent 75%), var(--black1);
 }
 
 /*  */
@@ -540,13 +548,7 @@ header > * > * {
 }
 
 .upload-blur {
-  background: radial-gradient(circle at center left, var(--color300), transparent 50%),
-    radial-gradient(circle at 0% 0%, var(--color500), transparent 25%),
-    radial-gradient(circle at 20% 60%, var(--color300), transparent 50%),
-    radial-gradient(circle at center right, var(--color500), transparent 50%),
-    radial-gradient(circle at 60% 60%, var(--color700), transparent 25%),
-    radial-gradient(circle at bottom center, var(--color500), transparent 75%),
-    radial-gradient(circle at 80% 40%, var(--color700), transparent 75%), var(--black1);
+  background: var(--gradient);
   z-index: 0;
   filter: blur(5px);
   animation: cta-background 5s infinite;
@@ -583,11 +585,11 @@ header > * > * {
   position: absolute;
   border-radius: var(--radius-large);
   margin: 0;
-  z-index: 0;
+  z-index: 99;
   bottom: var(--s0);
   height: calc(var(--s0) / 2);
   background: var(--gray1);
-  width: calc(100% - var(--s1));
+  width: calc(100% - var(--s2));
   transition: all 0.5s ease-out;
   transform-origin: center right;
 }
@@ -599,6 +601,21 @@ header > * > * {
   height: 100%;
   transition: all 0.3s ease-out;
   border-radius: var(--radius-large) 0 0 var(--radius-large);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.bar__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  margin-right: -4px;
+  position: relative;
+  background: var(--color700);
+  box-shadow: 0 0 50px var(--color700);
+  box-shadow: 0 0 3px 2px white;
 }
 
 .progress .bar-inner {
@@ -626,7 +643,7 @@ header > * > * {
 }
 
 .conversion_meta {
-  z-index: 999;
+  z-index: 98;
   margin-right: var(--s3);
   color: var(--gray3);
   border-radius: var(--radius-small);
@@ -636,13 +653,20 @@ header > * > * {
   position: absolute;
   right: 0;
   top: 0;
+  bottom: calc(0 + var(--s1));
+  left: 50%;
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   padding-right: var(--s1);
   color: var(--gray2);
   opacity: 0;
   font-size: var(--f0);
+  background: var(--white);
+  backdrop-filter: blur(2px);
+  border-radius: var(--radius-small);
+  z-index: 99;
 }
 
 .conversion:hover .conversion__cancel {
@@ -700,7 +724,7 @@ header > * > * {
 }
 
 .download:hover::after {
-  transform: scale(0.8);
+  transform: scale(1.2);
 }
 
 .finished .download {
@@ -1075,13 +1099,7 @@ header > * > * {
 }
 
 .badge__shadow {
-  background: radial-gradient(circle at center left, var(--color300), transparent 50%),
-    radial-gradient(circle at 0% 0%, var(--color500), transparent 25%),
-    radial-gradient(circle at 20% 60%, var(--color300), transparent 50%),
-    radial-gradient(circle at center right, var(--color500), transparent 50%),
-    radial-gradient(circle at 60% 60%, var(--color700), transparent 25%),
-    radial-gradient(circle at bottom center, var(--color500), transparent 75%),
-    radial-gradient(circle at 80% 40%, var(--color700), transparent 75%), var(--black1);
+  background: var(--gradient);
   z-index: -1;
   border-radius: var(--radius-large);
   animation: glow 10s infinite alternate-reverse both;
@@ -1296,13 +1314,7 @@ header > * > * {
 }
 
 .cta {
-  background: radial-gradient(circle at center left, var(--color300), transparent 50%),
-    radial-gradient(circle at 0% 0%, var(--color500), transparent 25%),
-    radial-gradient(circle at 20% 60%, var(--color300), transparent 50%),
-    radial-gradient(circle at center right, var(--color500), transparent 50%),
-    radial-gradient(circle at 60% 60%, var(--color700), transparent 25%),
-    radial-gradient(circle at bottom center, var(--color500), transparent 75%),
-    radial-gradient(circle at 80% 40%, var(--color700), transparent 75%), var(--black1);
+  background: var(--gradient);
   padding: var(--s3);
   border-radius: var(--radius-small);
   position: relative;
@@ -1311,13 +1323,7 @@ header > * > * {
 }
 
 .cta__blur {
-  background: radial-gradient(circle at center left, var(--color300), transparent 50%),
-    radial-gradient(circle at 0% 0%, var(--color500), transparent 25%),
-    radial-gradient(circle at 20% 60%, var(--color300), transparent 50%),
-    radial-gradient(circle at center right, var(--color500), transparent 50%),
-    radial-gradient(circle at 60% 60%, var(--color700), transparent 25%),
-    radial-gradient(circle at bottom center, var(--color500), transparent 75%),
-    radial-gradient(circle at 80% 40%, var(--color700), transparent 75%), var(--black1);
+  background: var(--gradient);
   z-index: 0;
   filter: blur(50px);
   transition: all 10s ease-in-out;
