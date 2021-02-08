@@ -1418,12 +1418,6 @@ header > * > * {
   opacity: 0.5;
 }
 
-/* Archive */
-
-.archive .posts h2 {
-  display: none;
-}
-
 /*  */
 /*  */
 /* Footer */
@@ -1774,6 +1768,25 @@ a.discord {
 .content__container {
   background: var(--black2);
 }
+
+/* Archive */
+
+.archive .posts h2 {
+  display: none;
+}
+
+.archive .blog__header {
+  padding-top: var(--s5);
+}
+
+.archive .content__container {
+  padding: var(--s5) var(--s3) var(--s2);
+  max-width: -moz-calc(720px + var(--s3) + var(--s3));
+  max-width: calc(720px + var(--s3) + var(--s3));
+  margin: 0 auto;
+}
+
+/* */
 
 .content__container a {
   color: var(--color300);
@@ -2244,6 +2257,9 @@ pre {
 }
 
 @media only screen and (max-width: 575.98px) {
+  .button-primary {
+    display: none;
+  }
   footer {
     grid-template-columns: 1fr 1fr;
   }

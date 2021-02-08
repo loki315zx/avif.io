@@ -8,7 +8,7 @@ export default function Archive(props: {
   className?: string;
 }) {
   return (
-    <section className={`archive`}>
+    <main className="archive">
       <Meta
         title={props.postdata.title}
         description={props.postdata.description}
@@ -19,12 +19,12 @@ export default function Archive(props: {
         date_modified={props.postdata.date_modified}
       />
 
-      <div className="blog__header overlay-after white center">
+      <div className="blog__header white center">
         <h1>{props.postdata.title}</h1>
         <h2>{props.postdata.description}</h2>
       </div>
 
-      <BlogPosts posts={props.posts} />
+      {/* <BlogPosts posts={props.posts} /> */}
 
       {props.children ? (
         <div className="content__container">
@@ -33,6 +33,6 @@ export default function Archive(props: {
       ) : (
         ""
       )}
-    </section>
+    </main>
   );
 }
