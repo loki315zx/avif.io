@@ -15,11 +15,11 @@ export default function Page(props: { postdata: any; children: any; className?: 
       <div className="blog__header overlay-after">
         <h1>{props.postdata.title}</h1>
       </div>
-      <div className="blog">
+      <main className="blog">
         <div className="content__container">
           <div className="content">{props.children}</div>
         </div>
-      </div>
+      </main>
     </>
   );
 }

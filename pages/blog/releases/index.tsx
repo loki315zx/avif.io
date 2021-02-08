@@ -1,7 +1,7 @@
 import Archive from "@components/Archive";
 import { BlogAdvantages } from "@components/BlogComponents";
 
-const notes110120 = [
+const notes110121 = [
   "Added a fixed header for easier navigation.",
   "Browser Console errors do not show up.",
   "If you accept the Cookie Banner, it won't show again",
@@ -13,7 +13,7 @@ const notes110120 = [
   "Several other linting and bug fixes",
 ];
 
-const notes150120 = [
+const notes150121 = [
   "The 'Download all' button is now more prominent",
   "Tags under blog posts don't look like they are clickable",
   "Our archives had empty sections, which are removed now",
@@ -22,7 +22,7 @@ const notes150120 = [
   "Added a Discord channel :)",
 ];
 
-const notes190120 = [
+const notes190121 = [
   "Fixed our Tutorials overview",
   "removed Google Adsense Tests",
   "Reduced overall page size",
@@ -37,7 +37,7 @@ const notes190120 = [
   "Added Hotjar Feedback widget to make friends with people that suffer from failed conversions",
 ];
 
-const notes210120 = [
+const notes210121 = [
   "Made website more accessible by using semantic elements and aria attributes",
   "Added JSON data for better search engine results",
   "Linked Sitemap in footer",
@@ -45,10 +45,12 @@ const notes210120 = [
 
 {
   /*
-const notes310120 = [
+const notes150221 = [
   "Moved image slider upwards on our homepage",
   "added detailed explanations for our avif advantages on click",
   "Created a tooltip for the settings panel so people notice it more",
+  "If the conversion fails, you will be asked if we can use your image for further testing",
+  "improved overall website performance"
 ];
 */
 }
@@ -63,13 +65,13 @@ export default function BlogAvif() {
       {/*<h2>31.01.2021 - Misc Changes</h2>
       <BlogAdvantages advantages={notes210120} checked />*/}
       <h2>21.01.2021 - Misc Changes</h2>
-      <BlogAdvantages advantages={notes210120} checked />
+      <BlogAdvantages advantages={notes210121} checked />
       <h2>19.01.2021 - Misc Changes</h2>
-      <BlogAdvantages advantages={notes190120} checked />
+      <BlogAdvantages advantages={notes190121} checked />
       <h2>15.01.2021 - Misc Changes</h2>
-      <BlogAdvantages advantages={notes150120} checked />
+      <BlogAdvantages advantages={notes150121} checked />
       <h2>11.01.2021 - Misc Changes</h2>
-      <BlogAdvantages advantages={notes110120} checked />
+      <BlogAdvantages advantages={notes110121} checked />
     </Archive>
   );
 }

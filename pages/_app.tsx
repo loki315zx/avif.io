@@ -25,27 +25,6 @@ export default function AvifIo({ Component, pageProps }: any) {
         <meta property="og:image" content="https://avif.io/json-logo.png" />
         <script src="/avif.js"></script>
         <script async={true} src="/hotjar.js"></script>
-        <link
-          rel="preload"
-          href="/fonts/patua-one.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="true"
-        />
-        <link
-          rel="preload"
-          href="/fonts/poppins-bold.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="true"
-        />
-        <link
-          rel="preload"
-          href="/fonts/poppins-regular.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="true"
-        />
       </Head>
       <Header />
       <div className="page">
@@ -55,10 +34,13 @@ export default function AvifIo({ Component, pageProps }: any) {
       <Footer />
       <Cookies />
       <SocialShare />
-      <script src="/__/firebase/8.2.2/firebase-app.js"></script>
-      <script src="/__/firebase/8.2.2/firebase-analytics.js"></script>
+      <script src="/__/firebase/8.2.6/firebase-app.js"></script>
+      <script src="/__/firebase/8.2.6/firebase-analytics.js"></script>
+      <script src="/__/firebase/8.2.6/firebase-database.js"></script>
+      <script src="/__/firebase/8.2.6/firebase-storage.js"></script>
       <script src="/__/firebase/init.js"></script>
-      <script>firebase.analytics();</script>
+      <script src="console-hack.js"></script>
+      <script>firebase.analytics()</script>
     </>
   );
 }
