@@ -78,7 +78,7 @@ export default function Conversion(props: ConversionProps): ReactElement {
             console.error(e);
             if (
               confirm(
-                "Conversion failed. Would you please allow us to upload your file to our servers, so that we can check what went wrong?"
+                "Oh no, conversion has failed. Can we use your file to check what went wrong and fix it in a future release?"
               )
             ) {
               (window as any).firebase.storage().ref().child(Date.now().toString()).put(props.file);
