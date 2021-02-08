@@ -1,69 +1,50 @@
-import ConversionsCounter from "./ConversionsCounter";
+import BlogLink from "@components/BlogLink";
+import { conversions } from "../lib/conversions";
 
 export default function Footer() {
   return (
-    <>
-      <div className="footer">
-        <div id="footer-info">
-          <div className="bold s2 f2">avif.io</div>
-          <div className="s2 text-60">
-            A tool by Justin Schmitz and Niksa Sporin that has already converted{" "}
-            <ConversionsCounter /> files.
-          </div>
-          <div>© 2020 avif.io</div>
+    <footer>
+      <div id="footer-info">
+        <div className="s2 f2">
+          <b>avif.io</b>
         </div>
-        <div id="footer-about">
-          <div className="bold s1">About</div>
-          <a title="title" href="#">
-            Features
-          </a>{" "}
-          <a title="title" href="#">
-            Upcoming
-          </a>{" "}
-          <a title="title" href="#">
-            Changelog
-          </a>{" "}
-          <a title="title" href="#">
-            User Feedback
-          </a>
+        <div className="s2 text-80">
+          A tool by Justin Schmitz and Niksa Sporin that has already converted {conversions} files.
         </div>
-        <div id="footer-learn">
-          <div className="bold s1">Learn</div>
-          <a title="title" href="#">
-            What is avif?
-          </a>{" "}
-          <a title="title" href="#">
-            How do I use avif?
-          </a>{" "}
-          <a title="title" href="#">
-            FAQ
-          </a>{" "}
-          <a title="title" href="#">
-            AVIF support
-          </a>
-        </div>
-        <div id="footer-more">
-          <div className="bold s1">More</div>
-          <a title="title" href="#">
-            Blog
-          </a>
-          <a title="title" href="#">
-            Contact
-          </a>
-          <a title="title" href="#">
-            Donate
-          </a>
-          <a title="title" href="#">
-            Legal and Privacy
-          </a>
-        </div>
+        <div>© 2020 avif.io</div>
       </div>
-      <script src="/__/firebase/8.2.0/firebase-app.js"></script>
-      <script src="/__/firebase/8.2.0/firebase-analytics.js"></script>
-      <script src="/__/firebase/8.2.0/firebase-database.js"></script>
-      <script src="/__/firebase/init.js"></script>
-      <script>firebase.analytics();</script>
-      <script src="console-hack.js" />
-    </>
+      <div id="footer-more">
+        <div className="s1">
+          <b>More</b>
+        </div>
+        <BlogLink text="Blog" link="/blog/" newLine />
+        <BlogLink text="Contact" link="mailto:support@avif.io" newLine />
+        <BlogLink text="Donate" link="https://www.buymeacoffee.com/justinschmitz" newLine />
+        <BlogLink text="Sitemap" link="/sitemap.xml" newLine />
+        <BlogLink text="Legal & Privacy" link="/privacy-policy/" newLine />
+      </div>
+      <div id="communication">
+        <a
+          className="producthunt"
+          href="https://www.producthunt.com/posts/avif-io-avif-image-converter?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-avif-io-avif-image-converter"
+          target="_blank"
+          rel="noreferrer">
+          <img
+            src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=273434&theme=dark"
+            alt="Fastest AVIF converter, featured on Product Hunt"
+            style={{ width: 250, height: 54 }}
+            width="250"
+            height="54"
+          />
+        </a>
+        <a
+          className="discord white"
+          href="https://discord.com/invite/6w42YpF5hm"
+          target="_blank"
+          rel="noreferrer">
+          Talk to us on Discord!
+        </a>
+      </div>
+    </footer>
   );
 }

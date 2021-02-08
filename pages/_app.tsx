@@ -2,28 +2,63 @@ import { useEffect } from "react";
 import Head from "next/head";
 import "@styles/normalize.min.css";
 import "@styles/globals.css";
+import Cookies from "@components/Cookies";
+import Header from "@components/Header";
+import Footer from "@components/Footer";
+import SocialShare from "@components/SocialShare";
+import CTA from "@components/CTA";
 
 export default function AvifIo({ Component, pageProps }: any) {
   useEffect(arrayBufferPolyfill, []);
-
   return (
     <>
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="theme-color" content="#29A2FF" />
+        <meta httpEquiv="content-language" content="en-us" />
         <meta name="msapplication-TileColor" content="#140635" />
         <meta name="theme-color" content="#140635" />
         <meta name="msapplication-config" content="none" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-        <script>{`var A=new Image;A.src="data:image/avif;base64,AAAAFGZ0eXBhdmlmAAAAAG1pZjEAAACgbWV0YQAAAAAAAAAOcGl0bQAAAAAAAQAAAB5pbG9jAAAAAEQAAAEAAQAAAAEAAAC8AAAAGwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAARWlwcnAAAAAoaXBjbwAAABRpc3BlAAAAAAAAAAQAAAAEAAAADGF2MUOBAAAAAAAAFWlwbWEAAAAAAAAAAQABAgECAAAAI21kYXQSAAoIP8R8hAQ0BUAyDWeeUy0JG+QAACANEkA=",A.onload=function(){document.documentElement.classList.add("avif")},A.onerror=function(){var A=new Image;A.src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==",A.onload=document.documentElement.classList.add("webp")};`}</script>
-        <script>{``}</script>
+        <meta name="twitter:card" content="summary"></meta>
+        <meta property="twitter:creator" content="@jschmitz97" />
+        <meta property="og:image" content="https://avif.io/json-logo.png" />
+        <script src="/avif.js"></script>
+        <script async={true} src="/hotjar.js"></script>
+        <link
+          rel="preload"
+          href="/fonts/patua-one.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="true"
+        />
+        <link
+          rel="preload"
+          href="/fonts/poppins-bold.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="true"
+        />
+        <link
+          rel="preload"
+          href="/fonts/poppins-regular.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="true"
+        />
       </Head>
-      <Component {...pageProps} />
+      <Header />
+      <div className="page">
+        <Component {...pageProps} />
+      </div>
+      <CTA />
+      <Footer />
+      <Cookies />
+      <SocialShare />
+      <script src="/__/firebase/8.2.2/firebase-app.js"></script>
+      <script src="/__/firebase/8.2.2/firebase-analytics.js"></script>
+      <script src="/__/firebase/init.js"></script>
+      <script>firebase.analytics();</script>
     </>
   );
 }

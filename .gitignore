@@ -78,7 +78,8 @@ web_modules/
 
 # Next.js build output
 .next
-out
+/out/
+out/
 
 # Nuxt.js build / generate output
 .nuxt
@@ -152,3 +153,6 @@ yarn-error.log*
 #firebase
 firebase/
 .firebase/
+
+#custom
+public/img/*

@@ -1,29 +1,22 @@
-import Link from "next/link";
-import ConversionsCounter from "./ConversionsCounter";
+import { conversions } from "../lib/conversions";
+import BlogLink from "@components/BlogLink";
 
 export default function Header() {
   return (
-    <>
-      {
-        <div className="header">
-          <div className="flex-center">
-            <Link href="/">
-              <a className="logo">avif.io</a>
-            </Link>
-            <div className="conversionscounter">
-              over <ConversionsCounter />
-              files converted
-            </div>
-          </div>
-          <div className="menu">
-            <Link href="https://www.buymeacoffee.com/justinschmitz">Support</Link>
-            <Link href="https://www.buymeacoffee.com/justinschmitz">Blog</Link>
-            <Link href="/">
-              <a className="button-primary">Convert</a>
-            </Link>
-          </div>
-        </div>
-      }
-    </>
+    <header>
+      <div className="flex-center">
+        <BlogLink link="/" text="avif.io" className="logo" />
+        <BlogLink
+          className="conversionscounter"
+          link="/"
+          text={`over ${conversions} files converted`}
+        />
+      </div>
+      <nav className="menu">
+        <BlogLink text="Discord" link="https://discord.com/invite/6w42YpF5hm" external />
+        <BlogLink text="Blog" link="/blog/" />
+        <BlogLink link="/" text="Convert" className="button-primary" />
+      </nav>
+    </header>
   );
 }

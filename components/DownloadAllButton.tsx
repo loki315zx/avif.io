@@ -1,5 +1,6 @@
 import JSZip from "jszip";
 import { saveFile } from "@utils/utils";
+import BlogLink from "@components/BlogLink";
 
 export interface DownloadAllButtonProps {
   files: File[];
@@ -14,21 +15,15 @@ export default function DownloadAllButton(props: DownloadAllButtonProps) {
   }
 
   return (
-    <>
-      {
-        <div className={`downloadall-container ${props.files.length > 1 ? "show" : "hide"}`}>
-          <button className="downloadall" onClick={onClick}>
-            Download all
-          </button>
-          <p className="donation">
-            Enjoy using avif.io? Keep the project alive.{" "}
-            <a href="https://www.buymeacoffee.com/justinschmitz" className="blue">
-              Donate
-            </a>{" "}
-            to support upcoming features like a REST API, CLI and more.
-          </p>
-        </div>
-      }
-    </>
+    <div className={`downloadall-container ${props.files.length > 1 ? "show" : "hide"}`}>
+      <button onClick={onClick}> Download all images </button>
+      Enjoying avif.io?{" "}
+      <BlogLink
+        className="color300"
+        text="Join our Discord!"
+        link="https://discord.com/invite/6w42YpF5hm"
+        external
+      />
+    </div>
   );
 }

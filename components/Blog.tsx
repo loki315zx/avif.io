@@ -1,55 +1,45 @@
-import Header from "@components/Header";
-import Footer from "@components/Footer";
-import CTA from "@components/CTA";
-import {
-  BlogSources,
-  BlogSubtitle,
-  BlogTitle,
-  BlogPosts,
-  BlogTags,
-} from "@components/BlogComponents";
+import { BlogPosts, BlogTags } from "@components/BlogComponents";
 import Meta from "@components/Meta";
+import Breadcrumbs from "@components/Breadcrumbs";
+import BlogSources from "@components/BlogSources";
 
-let randomNumber = Math.floor(Math.random() * 10 + 1);
+const randomNumber = Math.floor(Math.random() * 7 + 1);
 
 export default function Blog(props: { postdata: any; children: any; posts: any }) {
   return (
-    <div className={`blog background${randomNumber}`}>
-      <Meta
-        title={props.postdata.title}
-        description={props.postdata.description}
-        keywords={props.postdata.keywords}
-        author={props.postdata.author}
-        url={props.postdata.url}
-        image={props.postdata.image}
-        date_published={props.postdata.date_published}
-        date_modified={props.postdata.date_modified}
-      />
-      <div className="blog__header overlay-after">
-        <Header />
+    <>
+      <main className={`blog background${randomNumber}`}>
+        <Meta
+          title={props.postdata.title}
+          description={props.postdata.description}
+          author={props.postdata.author}
+          url={props.postdata.url}
+          image={props.postdata.image}
+          date_published={props.postdata.date_published}
+          date_modified={props.postdata.date_modified}
+          blog
+        />
 
-        <BlogTitle text={props.postdata.title} />
-
-        <div className="blog__meta">
-          <div className="white center">
-            {props.postdata.date_modified} · {props.postdata.readingtime} min read
+        <div className="blog__header overlay-after">
+          <div className="blog__header__content">
+            <Breadcrumbs postdata={props.postdata} />
+            <h1>{props.postdata.title}</h1>
+            <div className="blog__meta white">
+              {props.postdata.date_modified} · {props.postdata.readingtime} min read
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="content__container">
-        <div className="author"></div>
-        <div className="content">
-          {props.children}
-          <BlogSubtitle text="Sources" />
-          <BlogSources sources={props.postdata.sources} />
-          <BlogSubtitle text="Tags, Related Questions and Headlines" />
-          <BlogTags tags={props.postdata.tags} questions={props.postdata.questions} />
+        <div className="content__container">
+          <div className="content">
+            {props.children}
+            <h3>Sources</h3>
+            <BlogSources sources={props.postdata.sources} />
+            <BlogTags tags={props.postdata.tags} questions={props.postdata.questions} />
+          </div>
         </div>
-      </div>
-      <BlogPosts posts={props.posts} />
-      <CTA />
-      <Footer />
-    </div>
+      </main>
+      {props.posts[0] ? <BlogPosts posts={props.posts} /> : ""}
+    </>
   );
 }

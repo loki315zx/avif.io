@@ -21,12 +21,14 @@ export default function Advantages() {
     <>
       <section id="avifbadge">
         <div className="white center badge__avif">
-          <p className="bold">.AVIF</p>
+          <p>
+            <b>.AVIF</b>
+          </p>
           <div className="badge__shadow overlay"></div>
         </div>
       </section>
       <section id="avifadvantages">
-        <div className="advantage__grid">
+        <div className="advantage__grid  grid-larger">
           <AdvantageItem
             pre="usually"
             text="reduces file size"
