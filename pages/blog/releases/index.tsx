@@ -50,7 +50,8 @@ const notes150221 = [
   "added detailed explanations for our avif advantages on click",
   "Created a tooltip for the settings panel so people notice it more",
   "If the conversion fails, you will be asked if we can use your image for further testing",
-  "improved overall website performance"
+  "improved overall website performance",
+  "Added a new progress indicator to support visually impaired people"
 ];
 */
 }
