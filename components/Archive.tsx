@@ -8,7 +8,7 @@ export default function Archive(props: {
   className?: string;
 }) {
   return (
-    <main className="archive">
+    <main className={`archive ${props.className}`}>
       <Meta
         title={props.postdata.title}
         description={props.postdata.description}
@@ -24,7 +24,7 @@ export default function Archive(props: {
         <h2>{props.postdata.description}</h2>
       </div>
 
-      {/* <BlogPosts posts={props.posts} /> */}
+      <BlogPosts posts={props.posts} />
 
       {props.children ? (
         <div className="content__container">

@@ -18,8 +18,14 @@ export default function Footer() {
           <b>More</b>
         </div>
         <BlogLink text="Blog" link="/blog/" newLine />
+        <BlogLink text="Release Notes" link="/blog/releases/" newLine />
         <BlogLink text="Contact" link="mailto:support@avif.io" newLine />
         <BlogLink text="Donate" link="https://www.buymeacoffee.com/justinschmitz" newLine />
+      </div>
+      <div id="footer-about">
+        <div className="s1">
+          <b>Misc</b>
+        </div>
         <BlogLink text="Sitemap" link="/sitemap.xml" newLine />
         <BlogLink text="Legal & Privacy" link="/privacy-policy/" newLine />
       </div>

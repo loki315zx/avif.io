@@ -43,15 +43,20 @@ const notes210121 = [
   "Linked Sitemap in footer",
 ];
 
-{
-  /*
-const notes150221 = [
+const notes130221 = [
   "Moved image slider upwards on our homepage",
-  "added detailed explanations for our avif advantages on click",
   "Created a tooltip for the settings panel so people notice it more",
   "If the conversion fails, you will be asked if we can use your image for further testing",
   "improved overall website performance",
-  "Added a new progress indicator to support visually impaired people"
+  "Added a new progress indicator to support visually impaired people",
+  "Cancelled conversions will disappear after a short period so they don't take up scape.",
+  "We were aware that conversion wasn't working on the latest Chrome, Opera & Safari versions. It should be doing well now.",
+];
+
+{
+  /*
+const notes150221 = [
+  "added detailed explanations for our avif advantages on click"
 ];
 */
 }
@@ -62,9 +67,9 @@ import { releaseIndex as postdata } from "lib/meta";
 
 export default function BlogAvif() {
   return (
-    <Archive postdata={postdata} posts={posts}>
-      {/*<h2>31.01.2021 - Misc Changes</h2>
-      <BlogAdvantages advantages={notes210120} checked />*/}
+    <Archive className="archive" postdata={postdata} posts={posts}>
+      <h2>13.02.2021 - Usability Changes</h2>
+      <BlogAdvantages advantages={notes130221} checked />
       <h2>21.01.2021 - Misc Changes</h2>
       <BlogAdvantages advantages={notes210121} checked />
       <h2>19.01.2021 - Misc Changes</h2>

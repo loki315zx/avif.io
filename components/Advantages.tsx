@@ -28,7 +28,7 @@ export default function Advantages() {
         </div>
       </section>
       <section id="avifadvantages">
-        <div className="advantage__grid  grid-larger">
+        <div className="advantage__grid  grid">
           <AdvantageItem
             pre="usually"
             text="reduces file size"

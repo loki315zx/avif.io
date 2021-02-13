@@ -22,7 +22,7 @@ function TutorialsBox(props: TutorialsBoxProps) {
 export default function Tutorials() {
   return (
     <section className="section__tutorials overlay-before overlay-after">
-      <h2 className="text-60">How to use AVIF in a productive environment.</h2>
+      <h2>How to use AVIF</h2>
       <div className="text-40 white s5">
         Support is constantly rising across browsers, software and hardware. Thanks to being
         royalty-free, companies can include the format without having to deal with patents. We
@@ -40,7 +40,7 @@ export default function Tutorials() {
         <TutorialsBox cssclass="firefox" title="Firefox" url="firefox" />
         <TutorialsBox cssclass="edge" title="Edge" url="edge" />
         <TutorialsBox cssclass="gimp" title="GIMP" url="gimp" />
-        {/*<TutorialsBox cssclass="netlify" title="Netlify" url="netlify" />*/}
+        <TutorialsBox cssclass="netlify" title="Netlify" url="netlify" />
         <TutorialsBox cssclass="wordpress" title="WordPress" url="wordpress" />
         <TutorialsBox cssclass="cloudflare" title="Cloudflare" url="cloudflare" />
         <TutorialsBox cssclass="windows" title="Windows" url="windows" />

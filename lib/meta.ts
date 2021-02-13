@@ -24,8 +24,7 @@ export const releaseIndex = {
 
 export const blog = {
   title: "Articles about AVIF",
-  description:
-    "Get smarter. Read a lot of articles about AVIF and images on the web. Right here, right now.",
+  description: "Read a lot of articles related to AVIF and images on the web.",
   url: "blog/",
   image: "/logo_draft.png",
   author: "Justin Schmitz",
@@ -105,16 +104,14 @@ export const useAvifInCloudflare = {
     "Resizing with Cloudflare Workers",
   ],
   readingtime: "8",
-  post1: "useAvifInCss",
-  post2: "useAvifInEdge",
-  post3: "useAvifInFirefox",
+  keyword: "cloudflare",
 };
 
 export const useAvifInCss = {
   readingtime: "8",
   title: "Fully support AVIF in your CSS today.",
   description:
-    "Learn how to boost your website by easily implementing the new AVIF image format in the `background-images` of your CSS.",
+    "Learn how to boost your website by using the new AVIF image format in the `background-images` of your CSS.",
   url: "blog/tutorials/use-avif-in-css",
   image: "/logo_draft.png",
   author: "Justin Schmitz",
@@ -160,6 +157,7 @@ export const useAvifInCss = {
     "Delivering New Image Formats",
     "css background-image usage of avif and webp",
   ],
+  keyword: "css",
 };
 
 export const useAvifInEdge = {
@@ -208,13 +206,14 @@ export const useAvifInEdge = {
     "What is AVIF or AV1? How to enable its support in Chrome and Firefox?",
     "What is AVIF or AV1 image format",
   ],
+  keyword: "edge",
 };
 
 export const useAvifInFirefox = {
   readingtime: "8",
   title: "The Complete Guide about AVIF in Firefox for 2021",
   description:
-    "Yes, you can! Learn how to activate AVIF support for Firefox with a simple tutorial.",
+    "Learn about the current state of AVIF in Firefox and how to enable support with a simple tutorial.",
   url: "blog/tutorials/use-avif-in-firefox",
   image: "/logo_draft.png",
   author: "Justin Schmitz",
@@ -268,6 +267,7 @@ export const useAvifInFirefox = {
     "What is AVIF image format",
     "Is AVIF lossless",
   ],
+  keyword: "firefox",
 };
 
 export const useAvifInFrameworks = {
@@ -306,6 +306,7 @@ export const useAvifInFrameworks = {
     "javascript framework",
   ],
   questions: ["How do I use AVIF images in React Single page Web App"],
+  keyword: "Frameworks",
 };
 
 export const useAvifInGimp = {
@@ -350,6 +351,7 @@ export const useAvifInGimp = {
     "What is AVIF? How to Use AV1 Image Format Images in GIMP",
     "How to Start Using AVIF Images in GIMP",
   ],
+  keyword: "GIMP",
 };
 
 export const useAvifInHtml = {
@@ -408,6 +410,7 @@ export const useAvifInHtml = {
     "How to convert images to the AVIF file format",
     "How to create AVIF images",
   ],
+  keyword: "html",
 };
 
 export const useAvifInNextjs = {
@@ -457,6 +460,7 @@ export const useAvifInNextjs = {
     "What are the advantages of using, for instance, Next.js over Gatsby, in that case?",
     "How Gatsby and Next.js really work (and what it means for speed and SEO)",
   ],
+  keyword: "NextJS",
 };
 
 export const useAvifInWindows = {
@@ -518,6 +522,7 @@ export const useAvifInWindows = {
     "Windows 10 will support AVIF images format",
     "Display the AVIF Images in Windows 10",
   ],
+  keyword: "Windows",
 };
 
 export const useAvifInNetlify = {
@@ -530,9 +535,22 @@ export const useAvifInNetlify = {
   author: "Justin Schmitz",
   date_published: "25.11.20",
   date_modified: "25.11.20",
-  sources: [""],
-  tags: [""],
-  questions: [""],
+  sources: [
+    "https://reachlightspeed.com/blog/using-the-new-high-performance-avif-image-format-on-the-web-today/",
+    "https://community.netlify.com/t/improved-image-optimisation-on-netlify-netlify-large-media/2565/16",
+    "https://www.lambdatest.com/blog/avif-image-format/",
+    "https://docs.netlify.com/routing/headers/",
+  ],
+  tags: [
+    "Netlify",
+    "Netlify / Netlify Large Media",
+    "Netlify Analytics",
+    "Netlify Functions",
+    "browser compatibility",
+    "next-gen image compression format",
+  ],
+  questions: ["Using AVIF in Web Development Today", "AVIF Content-Type Headers + Netlify"],
+  keyword: "Netlify",
 };
 
 export const useAvifInWordpress = {
@@ -591,4 +609,5 @@ export const useAvifInWordpress = {
     "Optimizing your images as a way to speed up your WordPress site",
     "Upload AVIF to WordPress",
   ],
+  keyword: "WordPress",
 };

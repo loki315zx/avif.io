@@ -76,7 +76,6 @@ export default function App(): ReactElement {
       </Head>
 
       <div className={"app-container"}>
-        <div className="app-container-blur overlay"></div>
         <h1>Convert any images to AVIF for free.</h1>
         <h2 className={"f1 m0 s4 center normal"}>
           No data is sent. The magic happens in your browser.
@@ -106,7 +105,6 @@ export default function App(): ReactElement {
           <DownloadAllButton files={convertedFiles} />
         </div>
       </div>
-      <Tutorials />
       <Advantages />
       <section className="avifcompare overlay-after">
         <div id="comparison__container">
@@ -124,6 +122,8 @@ export default function App(): ReactElement {
           <p id="avif">avif · 45kB</p>
         </div>
       </section>
+      <Tutorials />
+
       <div className="advantages-explainer">
         In the last ten years, an average website’s size has increased from 500kb to 2000kb. Images
         have always been taking up half the amount. There's a need for a new image format to stop

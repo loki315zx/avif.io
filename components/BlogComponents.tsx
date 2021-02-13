@@ -17,10 +17,11 @@ export function BlogPosts(props: any) {
   const listItems = posts.map((post: any, index: any) => (
     <Link href={`/${post.url}`} key={index}>
       <div className="posts__item">
-        <div className="posts__img"></div>
-        <div className="posts__data">
+        <div className="posts__img">
+          <div className="posts__tag">#{post.keyword}</div>{" "}
           <div className="posts__title">{post.title}</div>
-
+        </div>
+        <div className="posts__data">
           <div>{post.description}</div>
         </div>
       </div>
@@ -49,9 +50,9 @@ export function BlogTags(props: any) {
     </div>
   ));
   return (
-    <section className="tags_container f0">
+    <div className="tags_container f0">
       <h3>Tags, Related Questions and Headlines</h3>
       {listTags} {listQuestions}
-    </section>
+    </div>
   );
 }

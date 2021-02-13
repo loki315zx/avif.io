@@ -10,15 +10,16 @@ import { useAvifInHtml as post7 } from "lib/meta";
 import { useAvifInNextjs as post8 } from "lib/meta";
 import { useAvifInWindows as post9 } from "lib/meta";
 import { useAvifInWordpress as post10 } from "lib/meta";
+import { useAvifInNetlify as post11 } from "lib/meta";
 
-const posts = [post1, post2, post3, post4, post5, post6, post7, post8, post9, post10];
+const posts = [post1, post2, post3, post4, post5, post6, post7, post8, post9, post10, post11];
 
 import { tutorials as postdata } from "lib/meta";
 const filler = "";
 
 export default function BlogAvif() {
   return (
-    <Archive postdata={postdata} posts={posts}>
+    <Archive className="tutorials" postdata={postdata} posts={posts}>
       {filler}
     </Archive>
   );
