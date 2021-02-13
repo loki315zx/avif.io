@@ -51,6 +51,7 @@ const notes130221 = [
   "Added a new progress indicator to support visually impaired people",
   "Cancelled conversions will disappear after a short period so they don't take up scape.",
   "We were aware that conversion wasn't working on the latest Chrome, Opera & Safari versions. It should be doing well now.",
+  "We updated to the latest rav1e version, which speeds of the conversion process.",
 ];
 
 {
