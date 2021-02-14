@@ -1,37 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-    <url>
-        <loc>https://avif.io/blog/releases/</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq>
-    </url>    <url>
-        <loc>https://avif.io/blog/</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq>
-    </url>    <url>
-        <loc>https://avif.io/blog/tutorials/</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq>
-    </url>    <url>
-        <loc>https://avif.io/privacy-policy/</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq>
-    </url>    <url>
-        <loc>https://avif.io/blog/tutorials/use-avif-in-cloudflare/</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq>
-    </url>    <url>
-        <loc>https://avif.io/blog/tutorials/use-avif-in-css/</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq>
-    </url>    <url>
-        <loc>https://avif.io/blog/tutorials/use-avif-in-edge/</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq>
-    </url>    <url>
-        <loc>https://avif.io/blog/tutorials/use-avif-in-firefox/</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq>
-    </url>    <url>
-        <loc>https://avif.io/blog/tutorials/use-avif-in-frameworks/</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq>
-    </url>    <url>
-        <loc>https://avif.io/blog/tutorials/use-avif-in-gimp/</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq>
-    </url>    <url>
-        <loc>https://avif.io/blog/tutorials/use-avif-in-html/</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq>
-    </url>    <url>
-        <loc>https://avif.io/blog/tutorials/use-avif-in-nextjs/</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq>
-    </url>    <url>
-        <loc>https://avif.io/blog/tutorials/use-avif-in-windows/</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq>
-    </url>    <url>
-        <loc>https://avif.io/blog/tutorials/use-avif-in-wordpress</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq>
-    </url>
-    <url>
-        <loc>https://avif.io/</loc><lastmod>2021-01-11</lastmod><priority>1.0</priority><changefreq>monthly</changefreq>
-    </url>
+<!--Misc Pages-->
+<url><loc>https://avif.io/</loc><lastmod>2021-01-11</lastmod><priority>1.0</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://avif.io/privacy-policy/</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq></url>
+
+<!--Archive Pages-->
+<url><loc>https://avif.io/blog/</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://avif.io/blog/tutorials/</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://avif.io/blog/releases/</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq></url>
+
+<!--Release Notes-->
+<url><loc>https://avif.io/blog/releases/2021-january/</loc><lastmod>2021-01-29</lastmod><priority>0.5</priority><changefreq>never</changefreq></url> 
+<url><loc>https://avif.io/blog/releases/2021-february/</loc><lastmod>2021-02-14</lastmod><priority>0.5</priority><changefreq>never</changefreq></url> 
+
+
+<!--Tutorials-->
+<url><loc>https://avif.io/blog/tutorials/use-avif-in-cloudflare/</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://avif.io/blog/tutorials/use-avif-in-css/</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://avif.io/blog/tutorials/use-avif-in-edge/</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://avif.io/blog/tutorials/use-avif-in-firefox/</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://avif.io/blog/tutorials/use-avif-in-frameworks/</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://avif.io/blog/tutorials/use-avif-in-gimp/</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://avif.io/blog/tutorials/use-avif-in-html/</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://avif.io/blog/tutorials/use-avif-in-nextjs/</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://avif.io/blog/tutorials/use-avif-in-windows/</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://avif.io/blog/tutorials/use-avif-in-wordpress</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://avif.io/blog/tutorials/use-avif-in-netlify</loc><lastmod>2021-02-14</lastmod><priority>0.5</priority><changefreq>monthly</changefreq></url>
 
 </urlset>

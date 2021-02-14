@@ -5,10 +5,10 @@ import BlogSources from "@components/BlogSources";
 
 const randomNumber = Math.floor(Math.random() * 7 + 1);
 
-export default function Blog(props: { postdata: any; children: any; posts: any }) {
+export default function Blog(props: { postdata: any; children: any; posts: any; className?: any }) {
   return (
     <>
-      <main className={`blog background${randomNumber}`}>
+      <main className={`blog background${randomNumber} ${props.className}`}>
         <Meta
           title={props.postdata.title}
           description={props.postdata.description}
@@ -33,7 +33,7 @@ export default function Blog(props: { postdata: any; children: any; posts: any }
         <div className="content__container">
           <div className="content">
             {props.children}
-            <h3>Sources</h3>
+            <h3>Related topics, websites and sources</h3>
             <BlogSources sources={props.postdata.sources} />
             <BlogTags tags={props.postdata.tags} questions={props.postdata.questions} />
           </div>

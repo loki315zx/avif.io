@@ -2,7 +2,7 @@ export const placeholder = {
   readingtime: "",
   title: "Placeholder",
   description: "",
-  url: "/placeholder",
+  url: "/placeholder/",
   image: "/logo_draft.png",
   author: "Justin Schmitz",
   date_published: "22.10.20",
@@ -20,6 +20,7 @@ export const releaseIndex = {
   author: "Justin Schmitz",
   date_published: "11.01.21",
   date_modified: "11.01.21",
+  keyword: "news",
 };
 
 export const blog = {
@@ -52,11 +53,50 @@ export const privacyPolicy = {
   date_modified: "10.01.21",
 };
 
+export const january2021 = {
+  title: "Changelog for January 2021",
+  description:
+    "This release focuses on the aftermath of the huge December update, with several user experience focused changes.",
+  url: "blog/releases/january-2021/",
+  image: "/logo_draft.png",
+  author: "Justin Schmitz",
+  date_published: "29.01.21",
+  date_modified: "29.01.21",
+  sources: ["https://www.hotjar.com/"],
+  tags: [],
+  questions: [],
+  readingtime: "5",
+  keyword: "21-01",
+};
+
+export const february2021 = {
+  title: "Changelog for February 2021",
+  description:
+    "This release focuses on faster conversions and improves the usability and accessibility drastically.",
+  url: "blog/releases/february-2021/",
+  image: "/logo_draft.png",
+  author: "Justin Schmitz",
+  date_published: "14.02.21",
+  date_modified: "14.02.21",
+  sources: [
+    "https://github.com/xiph/rav1e/releases",
+    "https://github.com/xiph/rav1e/releases/tag/v0.4.0",
+    "https://www.xiph.org/",
+    "https://en.wikipedia.org/wiki/Xiph.Org_Foundation",
+    "https://developer.mozilla.org/en-US/docs/Glossary/Semantics",
+    "https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb",
+  ],
+  tags: [],
+  questions: [],
+  readingtime: "5",
+  keyword: "21-02",
+};
+
 export const useAvifInCloudflare = {
   description:
     "Cloudflare has added support for AVIF, a new image format. Learn how to optimize images and convert them to WebP or AVIF on demand.",
   title: "Do you benefit from Cloudwork's AVIF support?",
-  url: "blog/tutorials/use-avif-in-cloudflare",
+  url: "blog/tutorials/use-avif-in-cloudflare/",
   image: "/logo_draft.png",
   author: "Justin Schmitz",
   date_published: "01.10.20",
@@ -112,7 +152,7 @@ export const useAvifInCss = {
   title: "Fully support AVIF in your CSS today.",
   description:
     "Learn how to boost your website by using the new AVIF image format in the `background-images` of your CSS.",
-  url: "blog/tutorials/use-avif-in-css",
+  url: "blog/tutorials/use-avif-in-css/",
   image: "/logo_draft.png",
   author: "Justin Schmitz",
   date_published: "01.10.20",
@@ -165,7 +205,7 @@ export const useAvifInEdge = {
   title: "View AVIF Images In Microsoft Edge",
   description:
     "Internet Explorer 6, the latest brow.. oh, it's called Edge? Well, okay. The current state about AVIF in Edge is difficult. Learn more about it here.",
-  url: "blog/tutorials/use-avif-in-edge",
+  url: "blog/tutorials/use-avif-in-edge/",
   image: "/logo_draft.png",
   author: "Justin Schmitz",
   date_published: "07.10.20",
@@ -214,7 +254,7 @@ export const useAvifInFirefox = {
   title: "The Complete Guide about AVIF in Firefox for 2021",
   description:
     "Learn about the current state of AVIF in Firefox and how to enable support with a simple tutorial.",
-  url: "blog/tutorials/use-avif-in-firefox",
+  url: "blog/tutorials/use-avif-in-firefox/",
   image: "/logo_draft.png",
   author: "Justin Schmitz",
   date_published: "14.10.20",
@@ -274,7 +314,7 @@ export const useAvifInFrameworks = {
   readingtime: "5",
   title: "Use AVIF in Frameworks like Vue, React & Angular",
   description: "Serving AVIF images via JavaScript frameworks is quite easy - find out more here.",
-  url: "blog/tutorials/use-avif-in-frameworks",
+  url: "blog/tutorials/use-avif-in-frameworks/",
   image: "/logo_draft.png",
   author: "Justin Schmitz",
   date_published: "21.10.20",
@@ -359,7 +399,7 @@ export const useAvifInHtml = {
   title: "How to get started with AVIF using HTML",
   description:
     "Enjoy this in-depth guide on how to use AVIF in HTML. Featuring examples with modern delivery standards.",
-  url: "blog/tutorials/use-avif-in-html",
+  url: "blog/tutorials/use-avif-in-html/",
   image: "/logo_draft.png",
   author: "Justin Schmitz",
   date_published: "04.11.20",
@@ -418,7 +458,7 @@ export const useAvifInNextjs = {
   title: "Start using AVIF in your Next.JS project",
   description:
     "Curious to read on how to use AVIF images in Next.JS? Well, this site does exactly that! Learn more.",
-  url: "blog/tutorials/use-avif-in-nextjs",
+  url: "blog/tutorials/use-avif-in-nextjs/",
   image: "/logo_draft.png",
   author: "Justin Schmitz",
   date_published: "11.11.20",
@@ -558,7 +598,7 @@ export const useAvifInWordpress = {
   title: "How To Use AVIF Images In WordPress",
   description:
     "WordPress doesn't allow uploading AVIF files. Learn how to still use AVIF images on your website today.",
-  url: "blog/tutorials/use-avif-in-wordpress",
+  url: "blog/tutorials/use-avif-in-wordpress/",
   image: "/logo_draft.png",
   author: "Justin Schmitz",
   date_published: "02.12.20",

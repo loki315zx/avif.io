@@ -135,7 +135,7 @@ export default function Conversion(props: ConversionProps): ReactElement {
           title={`download ${fileName}`}
           download={`${fileName}.avif`}
           href={outputObjectURL}
-          className={"download overlay-after"}
+          className={"download overlay-after overlay-before"}
         />
         {status === "inProgress" && <ProgressBar progress={progress} />}
       </div>
