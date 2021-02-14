@@ -5,6 +5,45 @@ import { privacyPolicy as postdata } from "lib/meta";
 export default function PrivacyPolicy() {
   return (
     <Page postdata={postdata}>
+      <h2>Short version for the common user</h2>
+      Hi. You are visiting the Legal Page & Privacy Policy of avif.io, a tool made by Justin Schmitz
+      and Niksa Sporin. Most parts of this page are created through privacy policy generators and of
+      course they do feature a lot of legal terms. I really don't want you to have to read through
+      all of this, but since you are here, I created this little paragraph to tell you how and what
+      data we use in a short and 'friendly to read' way:
+      <h3>Can we see images?</h3>
+      No. Basically, I dislike storing data that doesn't belong to me and try to cut this to a
+      minumum. This is why we solely convert images in the browser. We use a bunch of technology so
+      that no images are uploaded during the process and we can never just view your images. There
+      is one exception: If a conversion fails, we ask you in a prompt if you'd like to send the
+      image to us so we can further evaluate what has gone wrong. Again, under no circumstances, we
+      send images without your consent. Besides that, I really don't care about your 500 dog
+      pictures. I'm sorry.
+      <h3>What about analytics?</h3>
+      We use Hotjar and Google Analytics. Google Analytics doesn't track your IP. The only reason we
+      use it is because we get useful data from it which allows us to optimize our service. While
+      this sounds like a blank phrase, it's certainly true and I'll tell you how. We get data on the
+      most used browsers, devices and resolutions. We integrate this information into our testing
+      process with Selenium (a framework that automated testing processes). So that whenver we
+      release a new version, we test our tool on the most used devices from our users. Makes sense,
+      right? Also, it allows us to track views on websites, so we can see which content or marketing
+      strategy goes well. We don't want to spam my website ads on people that aren't interested in
+      it, but rather target the people that can benefit from it. It also allows us to evaluate
+      growth and maybe get an investor in the future. Probably it's even good for which countries
+      are our primary targets so that we can offer personalized content (like translations) Cool?
+      Cool. The thing about Hotjar is, that we just recently found this tool and we absolutely love
+      it. What Hotjar does is that it records your web session on our site. While this sounds scary
+      at first, there is no need to be afraid. We can't see you through your webcam, nor can we see
+      anything else BUT our website. It doesn't store IP adresses, only your country, browser and
+      OS. Since the day we activated it, we added and fixed so many tiny things that overall
+      drastically improved the user experience. After viewing a web session recording, we delete it.
+      <h3>Below is the full version of the privacy policy.</h3>
+      This is all we do for now. We might integrate a Rest API in the future, or show Ads. Also,
+      there might be some sort of payments. Whatever the case, we will update the Privacy Policy
+      accordingly (as we have and want to). If you are interested in spending a week reading the
+      below generated Privacy Policy and Legal Terms, don't hesitate. If you want a simple question
+      answered, feel free to write a mail to support@avif.io or just tweet @jschmitz97. I'm happy to
+      help and answer any questions.
       <h2>Legal Stuff</h2>
       This service is brought to you by Justin Schmitz, resident in Germany. More information is not
       revealed for personal protection. You can request this information at support@avif.io.
@@ -214,6 +253,19 @@ export default function PrivacyPolicy() {
       https://policies.google.com/privacy?hl=en For more information on what type of information
       Firebase collects, please visit the Google Privacy Terms web page:
       https://policies.google.com/privacy?hl=en
+      <h2>Hotjar</h2>
+      "We use Hotjar in order to better understand our users’ needs and to optimize this service and
+      experience. Hotjar is a technology service that helps us better understand our users’
+      experience (e.g. how much time they spend on which pages, which links they choose to click,
+      what users do and don’t like, etc.) and this enables us to build and maintain our service with
+      user feedback. Hotjar uses cookies and other technologies to collect data on our users’
+      behavior and their devices. This includes a device's IP address (processed during your session
+      and stored in a de-identified form), device screen size, device type (unique device
+      identifiers), browser information, geographic location (country only), and the preferred
+      language used to display our website. Hotjar stores this information on our behalf in a
+      pseudonymized user profile. Hotjar is contractually forbidden to sell any of the data
+      collected on our behalf. For further details, please see the ‘about Hotjar’ section of
+      Hotjar’s support site."
       <h2> CI & CD Tools</h2>
       We may use third-party Service Providers to automate the development process of our Service.
       GitHub GitHub is provided by GitHub, Inc. GitHub is a development platform to host and review
