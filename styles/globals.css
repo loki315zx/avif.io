@@ -401,8 +401,10 @@ header > * > * {
   padding: 4px;
   background: var(--black3);
   border-radius: var(--radius-small);
-  margin-left: var(--s0);
+  margin: 0 var(--s0);
   position: relative;
+  color: var(--white);
+  z-index: 99999;
 }
 
 .tutorial::after {
@@ -412,11 +414,39 @@ header > * > * {
   text-align: left;
   left: 120%;
   line-height: 1.3em;
+  background: var(--black2);
+  border-radius: var(--radius-small);
+  padding: var(--s0);
+  z-index: 999999;
   display: none;
+  top: -20px;
+}
+
+#zeropercent {
+  display: inline-block;
+  height: auto;
+}
+
+#zeropercent::after {
+  content: "Adjust your conversion settings to achieve higher compression.";
+  background-image: url("@assets/white-settings.svg");
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: 95% center;
+  padding-right: var(--s3);
+  width: var(--s6);
 }
 
 .tutorial:hover::after {
+  display: initial;
+}
+
+.tutorial-cog {
   display: block;
+  z-index: 999;
+  cursor: pointer;
+  background-color: var(--gray2);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .app-container {
@@ -482,12 +512,41 @@ header > * > * {
   display: block;
   z-index: 999;
   cursor: pointer;
-  background-color: var(--gray2);
+  background-color: var(--black3);
   mask-image: url("@assets/settings.svg");
   mask-size: 24px;
   mask-position: center center;
   mask-repeat: no-repeat;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: heartbeat 3.5s ease-in-out 10 both;
+}
+
+@keyframes heartbeat {
+  from {
+    transform: scale(1);
+    transform-origin: center center;
+    animation-timing-function: ease-out;
+  }
+
+  10% {
+    transform: scale(0.91);
+    animation-timing-function: ease-in;
+  }
+
+  17% {
+    transform: scale(0.98);
+    animation-timing-function: ease-out;
+  }
+
+  33% {
+    transform: scale(0.87);
+    animation-timing-function: ease-in;
+  }
+
+  45% {
+    transform: scale(1);
+    animation-timing-function: ease-out;
+  }
 }
 
 .settings_cog {
@@ -550,11 +609,6 @@ header > * > * {
 
 .dropzone-container.active {
   box-shadow: 0 0 0 2000px rgb(0 0 0 / 95%);
-}
-
-.dropzone-container.active + .cog-button,
-.dropzone-container:hover + .cog-button {
-  opacity: 0;
 }
 
 .dropzone-container.active .upload-button {
@@ -734,7 +788,6 @@ header > * > * {
   top: 0;
   height: 100%;
   border-radius: 0 var(--radius-small) var(--radius-small) 0;
-  z-index: 9999;
   cursor: pointer;
   overflow: hidden;
 }
@@ -807,6 +860,7 @@ header > * > * {
 
 .cog-button.open {
   transform: rotate(180deg);
+  background-color: var(--color500);
 }
 
 .settings_cog.open {
@@ -824,11 +878,6 @@ header > * > * {
 
 .open .settings-box {
   opacity: 1;
-}
-
-.settings-box div {
-  width: 100%;
-  text-align: left;
 }
 
 .open .dropzone-container {
@@ -1503,6 +1552,7 @@ a.discord {
   opacity: 0;
   background: var(--color500);
   border-radius: var(--radius-small);
+  color: var(--white);
 }
 
 .cookie:hover .overlay.flex-center {
@@ -2249,6 +2299,7 @@ pre {
     padding: var(--s0) var(--s0);
   }
 
+  .settings-tooltip,
   .cog-button,
   .settings_cog {
     display: none;

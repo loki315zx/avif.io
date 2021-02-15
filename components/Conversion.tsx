@@ -123,11 +123,21 @@ export default function Conversion(props: ConversionProps): ReactElement {
           </span>
 
           <span className="conversion_outcome">
+            {percentageSaved === 0 && (
+              <div id="zeropercent" className="tutorial">
+                Why 0%?
+              </div>
+            )}
             {percentageSaved}% smaller · {prettyBytes(outputSize)}
           </span>
         </div>
         {status === "inProgress" && (
-          <a role="button" className="conversion__cancel center" onClick={cancelConverison}>
+          <a
+            role="button"
+            className="conversion__cancel center"
+            onClick={cancelConverison}
+            onKeyPress={cancelConverison}
+            tabIndex={0}>
             cancel
           </a>
         )}
