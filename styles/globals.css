@@ -65,12 +65,12 @@
   --gray2: #bbb;
   --gray3: #353535;
   --gray4: #111;
-  --black1: hsl(0 0% 6% / 1);
-  --black2: hsl(0 0% 8% / 1);
-  --black3: hsl(0 0% 10% / 1);
-  --black1-8: hsl(0 0% 6% / 0.8);
-  --black2-8: hsl(0 0% 8% / 0.8);
-  --black3-8: hsl(0 0% 10% / 0.8);
+  --black1: hsl(0 0% 5% / 1);
+  --black2: hsl(0 0% 9% / 1);
+  --black3: hsl(0 0% 13% / 1);
+  --black1-8: hsl(0 0% 5% / 0.8);
+  --black2-8: hsl(0 0% 9% / 0.8);
+  --black3-8: hsl(0 0% 13% / 0.8);
   --gradient: radial-gradient(circle at center left, var(--color300), transparent 50%),
     radial-gradient(circle at 0% 0%, var(--color500), transparent 25%),
     radial-gradient(circle at 20% 60%, var(--color300), transparent 50%),
@@ -1222,6 +1222,10 @@ header > * > * {
   transform: scale(1.05);
 }
 
+.advantage__grid__item:hover .advantage__text {
+  color: var(--white);
+}
+
 .advantage__important {
   color: var(--color500);
   font-weight: bold;
@@ -1607,6 +1611,10 @@ section.posts .posts__container.grid {
 
 .blog__header::after {
   transform: rotate(357deg) scale(1.2);
+}
+
+.releases .posts__tag {
+  display: none;
 }
 
 .release .tags_container {

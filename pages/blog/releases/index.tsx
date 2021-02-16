@@ -11,7 +11,7 @@ import { releaseIndex as postdata } from "lib/meta";
 
 export default function BlogAvif() {
   return (
-    <Archive className="archive" postdata={postdata} posts={posts}>
+    <Archive className="releases" postdata={postdata} posts={posts}>
       {filler}
     </Archive>
   );
