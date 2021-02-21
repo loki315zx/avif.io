@@ -1078,10 +1078,6 @@ header > * > * {
   background-image: url("@assets/html.svg");
 }
 
-#js .tutorial__overflow::before {
-  background-image: url("@assets/js.svg");
-}
-
 #windows .tutorial__overflow::before {
   background-image: url("@assets/windows.svg");
 }
@@ -1104,10 +1100,6 @@ header > * > * {
 
 #gimp .tutorial__overflow::before {
   background-image: url("@assets/gimp.svg");
-}
-
-#svelte .tutorial__overflow::before {
-  background-image: url("@assets/svelte.svg");
 }
 
 #netlify .tutorial__overflow::before {
