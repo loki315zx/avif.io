@@ -15,8 +15,8 @@ export default function BlogLink(props: {
         <a
           title={props.aria ? props.aria : props.text}
           href={props.link}
-          rel={props.external ? "noreferrer" : ""}
-          target={props.external ? "_blank" : ""}
+          rel={props.external ? "noreferrer" : "prerender"}
+          target={props.external ? "_blank" : "_self"}
           id={props.id}
           aria-label={props.aria}
           className={props.className}>
