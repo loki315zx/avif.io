@@ -162,7 +162,6 @@ export const useAvifInCss = {
     "caniuse.com/avif ",
     "drafts.csswg.org/css-images-4",
     "dev.to/nucliweb/detect-avif-image-support-to-use-in-your-css-4pen",
-    "dev.to/nucliweb/detect-avif-image-support-to-use-in-your-css-4pen",
     "ghacks.net/2021/01/10/firefox-86-avif-support-enabled-by-default/",
     "github.com/djpogo/avif-webp-css-support",
     "omgubuntu.co.uk/2021/01/firefox-86-avif-image-support",

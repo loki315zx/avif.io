@@ -1932,8 +1932,6 @@ picture img {
   width: 100%;
   max-width: 100%;
   content-visibility: auto;
-  contain-intrinsic-size: calc(720px - var(--s3) * 2)
-    min(calc(720px * 0.5625), calc(720px - var(--s3) * 2));
   background-size: cover;
   border-radius: var(--radius-small);
 }

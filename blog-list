@@ -1,8 +1,8 @@
 #pages/
 - feedback
 
-
 #pages/blog
+-avifcss: add postcss plugin from joan
 - write good alt text + ein test derzeitiger apis + aussicht für die zukunft. The current state of ALT text. The future state
 - avif encorders
 - avif support & caniuse. list all tools, software, hardware. like they are heroes.
@@ -11,31 +11,18 @@
 - avif vs jpeg
 - avif vs png
 - avif vs webp
-- The Benefits of AVIF Format for Your Website.
+- The Benefits of AVIF Format (for Your Website), see starting page.
 - The Importance of Image Compression.
-- avif complete guide to aviv
+- avif complete guide to avif
 - avif optimize images in 2021
 - avif perfect image sizes
 - Aspect Ratio CSS support on Chrome + examples + canIuse embed
-- placeholder for images / blurs / blurhash
+- placeholder for images / blurs / blurhash. article about https://plaiceholder.co/ + integrate on avif.io?
 - blurhash promotion
-- Maybe blog articles out of https://aomediacodec.github.io/av1-avif/ ?
-- article about https://plaiceholder.co/
+- Maybe blog articles out of https://aomediacodec.github.io/av1-avif/ ? 
 - simple way to optimize your image descriptions  
-
-
+- test images by using google chrome rendering tab
 
 #utilities
 - Generator für optimale Markups von Bildern / Specify Image sizes & and alt text & url
 - generator für alt texte? 
-
-
-
-#pages/blog/tutorials
-- use avif in netlify
-
-
-#pages/blog/releases
-- Release Page November: Remaining conversion time
-- Release Page January: Blog pages, reduced bundle size
-- Release Page December: Show number of total conversions, stop a running conversion
