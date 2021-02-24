@@ -14,6 +14,7 @@
     "release-img": "npm i -f && cd utils && node sharp && cd ../ && npm run build && next export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && firebase deploy"
   },
   "dependencies": {
+    "@ampproject/toolbox-optimizer": "^2.7.6",
     "jszip": "^3.5.0",
     "lodash": "^4.17.21",
     "next": "^10.0.7",
@@ -39,7 +40,6 @@
     "@types/react-syntax-highlighter": "^13.5.0",
     "@typescript-eslint/eslint-plugin": "^4.15.1",
     "@typescript-eslint/parser": "^4.15.1",
-    "caniuse-lite": "^1.0.30001190",
     "cross-env": "^7.0.3",
     "eslint": "^7.20.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
