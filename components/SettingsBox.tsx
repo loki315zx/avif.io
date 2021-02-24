@@ -1,5 +1,6 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 import PercentageSlider from "@components/PercentageSlider";
+import { getCookieJson, setCookieJson } from "@utils/cookies";
 
 export interface Settings {
   effort: number;
@@ -14,6 +15,16 @@ export interface SettingsBoxProps {
   onSettingsUpdate(settings: Settings): void;
 }
 
+const settingsCookieKey = "settings";
+
+function saveSettings(settings: Settings) {
+  setCookieJson(settingsCookieKey, settings);
+}
+
+function loadSettings(): Settings | undefined {
+  return getCookieJson(settingsCookieKey);
+}
+
 export default function SettingsBox(props: SettingsBoxProps) {
   const [effort, setEffort] = useState(0);
   const [quality, setQuality] = useState(60);
@@ -21,12 +32,26 @@ export default function SettingsBox(props: SettingsBoxProps) {
   const [keepTransparency, setKeepTransparency] = useState(true);
   const [lossless, setLossless] = useState(false);
 
-  useEffect(() => props.onSettingsUpdate({ effort, quality, useYuv444, keepTransparency }), [
-    effort,
-    quality,
-    useYuv444,
-    keepTransparency,
-  ]);
+  useEffect(() => {
+    const loadedSettings = loadSettings();
+    if (loadedSettings !== undefined) {
+      console.log(loadedSettings);
+      setEffort(loadedSettings.effort);
+      setQuality(loadedSettings.quality);
+      setUseYuv444(loadedSettings.useYuv444);
+      setKeepTransparency(loadedSettings.keepTransparency);
+    }
+  }, []);
+
+  useEffect(() => {
+    saveSettings({
+      effort,
+      quality,
+      useYuv444,
+      keepTransparency,
+    });
+    props.onSettingsUpdate({ effort, quality, useYuv444, keepTransparency });
+  }, [effort, quality, useYuv444, keepTransparency]);
 
   function onLosslessChanged(event: ChangeEvent<HTMLInputElement>) {
     if (event.target.checked) {
