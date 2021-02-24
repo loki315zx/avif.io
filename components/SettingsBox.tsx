@@ -9,6 +9,10 @@ export interface Settings {
   keepTransparency: boolean;
 }
 
+interface StoredSettings extends Settings {
+  lossless: boolean;
+}
+
 export interface SettingsBoxProps {
   open: boolean;
 
@@ -17,14 +21,6 @@ export interface SettingsBoxProps {
 
 const settingsCookieKey = "settings";
 
-function saveSettings(settings: Settings) {
-  setCookieJson(settingsCookieKey, settings);
-}
-
-function loadSettings(): Settings | undefined {
-  return getCookieJson(settingsCookieKey);
-}
-
 export default function SettingsBox(props: SettingsBoxProps) {
   const [effort, setEffort] = useState(0);
   const [quality, setQuality] = useState(60);
@@ -32,30 +28,33 @@ export default function SettingsBox(props: SettingsBoxProps) {
   const [keepTransparency, setKeepTransparency] = useState(true);
   const [lossless, setLossless] = useState(false);
 
+  function saveSettings() {
+    setCookieJson(settingsCookieKey, { effort, quality, useYuv444, keepTransparency, lossless });
+  }
+
+  function loadSettings(): StoredSettings | undefined {
+    return getCookieJson(settingsCookieKey);
+  }
+
   useEffect(() => {
     const loadedSettings = loadSettings();
     if (loadedSettings !== undefined) {
-      console.log(loadedSettings);
       setEffort(loadedSettings.effort);
       setQuality(loadedSettings.quality);
       setUseYuv444(loadedSettings.useYuv444);
       setKeepTransparency(loadedSettings.keepTransparency);
+      setLossless(loadedSettings.lossless);
     }
   }, []);
 
   useEffect(() => {
-    saveSettings({
-      effort,
-      quality,
-      useYuv444,
-      keepTransparency,
-    });
+    saveSettings();
     props.onSettingsUpdate({ effort, quality, useYuv444, keepTransparency });
   }, [effort, quality, useYuv444, keepTransparency]);
 
-  function onLosslessChanged(event: ChangeEvent<HTMLInputElement>) {
-    if (event.target.checked) {
-      setLossless(true);
+  useEffect(() => {
+    saveSettings();
+    if (lossless) {
       props.onSettingsUpdate({
         useYuv444,
         quality: 100,
@@ -63,9 +62,12 @@ export default function SettingsBox(props: SettingsBoxProps) {
         keepTransparency,
       });
     } else {
-      setLossless(false);
       props.onSettingsUpdate({ useYuv444, quality, effort, keepTransparency });
     }
+  }, [lossless]);
+
+  function onLosslessChanged(event: ChangeEvent<HTMLInputElement>) {
+    setLossless(event.target.checked);
   }
 
   function on420Changed(event: ChangeEvent<HTMLInputElement>) {
