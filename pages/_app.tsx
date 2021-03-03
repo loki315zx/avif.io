@@ -39,7 +39,7 @@ export default function AvifIo({ Component, pageProps }: any) {
       <script src="/__/firebase/8.2.8/firebase-database.js"></script>
       <script src="/__/firebase/8.2.8/firebase-storage.js"></script>
       <script src="/__/firebase/init.js"></script>
-      <script src="console-hack.js"></script>
+      <script src="console.js"></script>
       <script>firebase.analytics()</script>
     </>
   );
