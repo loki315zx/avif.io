@@ -29,6 +29,15 @@
             "value": "application/javascript"
           }
         ]
+      },
+      {
+        "source": "**/conversion.js",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/javascript"
+          }
+        ]
       }
     ],
     "rewrites": [
