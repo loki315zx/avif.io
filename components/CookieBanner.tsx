@@ -1,5 +1,5 @@
 import React from "react";
-import BlogLink from "@components/BlogLink";
+import SmartLink from "@components/SmartLink";
 
 function useStickyState(defaultValue: any, key: any) {
   const [value, setValue] = React.useState(defaultValue);
@@ -15,12 +15,12 @@ function useStickyState(defaultValue: any, key: any) {
   return [value, setValue];
 }
 
-const Cookies = () => {
+const CookieBanner = () => {
   const [mode, setMode] = useStickyState("false", "true");
   return (
     <div className={`cookie ${mode}`}>
       We use cookies to deliver our services. By using our website you agree with the{" "}
-      <BlogLink text="Policy" link="/privacy-policy/" />.
+      <SmartLink text="Policy" link="/privacy-policy/" />.
       <div
         role="button"
         className="overlay flex-center"
@@ -33,4 +33,4 @@ const Cookies = () => {
   );
 };
 
-export default Cookies;
+export default CookieBanner;

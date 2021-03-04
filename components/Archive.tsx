@@ -1,5 +1,5 @@
 import Meta from "@components/Meta";
-import { BlogPosts } from "./BlogComponents";
+import Posts from "@components/Posts";
 
 export default function Archive(props: {
   posts: any;
@@ -24,7 +24,7 @@ export default function Archive(props: {
         <h2>{props.postdata.description}</h2>
       </div>
 
-      <BlogPosts posts={props.posts} />
+      <Posts posts={props.posts} />
 
       {props.children ? (
         <div className="content__container">

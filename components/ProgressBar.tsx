@@ -1,5 +1,5 @@
 export interface ProgressBarProps {
-  progress: number; // A floating point number in the range 0 to 1
+  progress: number;
 }
 
 export default function ProgressBar(props: ProgressBarProps) {

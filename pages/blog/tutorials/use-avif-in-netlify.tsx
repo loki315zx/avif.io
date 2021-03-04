@@ -1,5 +1,5 @@
 import Blog from "@components/Blog";
-import BlogLink from "@components/BlogLink";
+import SmartLink from "@components/SmartLink";
 import Code from "@components/Code";
 
 import { useAvifInNetlify as postdata } from "lib/meta";
@@ -16,7 +16,7 @@ export default function BlogAvif() {
       21, there is no easy way to enable this feature. Instead, you can enable AVIF files via the
       header tag of Netlify, and you can then serve AVIF files by using a native picture HTML tag,
       as we explained here:{" "}
-      <BlogLink link="blog/tutorials/use-avif-in-html" text="How to use AVIF in HTML" />
+      <SmartLink link="blog/tutorials/use-avif-in-html" text="How to use AVIF in HTML" />
       <h2>Defining custom headers with netlify.toml</h2>
       While using the picture tag on Netlify seems to work, there was a problem when using .avif
       files. When attempting to view the images within Firefox, we noticed that the images were not
@@ -34,7 +34,7 @@ Content-Type = "image/avif"`}
       Enabling AVIF support on Netlify is not easy as simply clicking a single button. But it can be
       easily achieved by customizing the configuration file to satisfy your specific needs. If this
       is your first time hearing about the configuration file, I suggest you to take a look at their{" "}
-      <BlogLink
+      <SmartLink
         external
         link="https://docs.netlify.com/configure-builds/file-based-configuration/"
         text="documentation"

@@ -2,11 +2,11 @@ import { useEffect } from "react";
 import Head from "next/head";
 import "@styles/normalize.min.css";
 import "@styles/globals.css";
-import Cookies from "@components/Cookies";
+import CookieBanner from "@components/CookieBanner";
 import Header from "@components/Header";
 import Footer from "@components/Footer";
-import SocialShare from "@components/SocialShare";
-import CTA from "@components/CTA";
+import Share from "@components/Share";
+import CTA from "@components/CallToAction";
 
 export default function AvifIo({ Component, pageProps }: any) {
   useEffect(arrayBufferPolyfill, []);
@@ -32,14 +32,14 @@ export default function AvifIo({ Component, pageProps }: any) {
       </div>
       <CTA />
       <Footer />
-      <Cookies />
-      <SocialShare />
-      <script src="/__/firebase/8.2.8/firebase-app.js"></script>
-      <script src="/__/firebase/8.2.8/firebase-analytics.js"></script>
-      <script src="/__/firebase/8.2.8/firebase-database.js"></script>
-      <script src="/__/firebase/8.2.8/firebase-storage.js"></script>
+      <CookieBanner />
+      <Share />
+      <script src="/__/firebase/8.2.9/firebase-app.js"></script>
+      <script src="/__/firebase/8.2.9/firebase-analytics.js"></script>
+      <script src="/__/firebase/8.2.9/firebase-database.js"></script>
+      <script src="/__/firebase/8.2.9/firebase-storage.js"></script>
       <script src="/__/firebase/init.js"></script>
-      <script src="console.js"></script>
+      <script src="/console.js"></script>
       <script>firebase.analytics()</script>
     </>
   );

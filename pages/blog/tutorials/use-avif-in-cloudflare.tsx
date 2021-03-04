@@ -1,7 +1,7 @@
 import Blog from "@components/Blog";
-import { BlogAdvantages } from "@components/BlogComponents";
+import Checkbox from "@components/Checkbox";
 
-import BlogLink from "@components/BlogLink";
+import SmartLink from "@components/SmartLink";
 
 import Code from "@components/Code";
 import Image from "@components/Image";
@@ -31,7 +31,7 @@ export default function BlogAvifInCloudflare() {
       <h2>Why Cloudflare supports avif</h2>
       Regarding their latest blog post about AVIF, Cloudflare has made the decision to support AVIF
       for the following advantages:
-      <BlogAdvantages
+      <Checkbox
         advantages={[
           "fixes WebP biggest flaws",
           "uses the next generation VP10 video codec",
@@ -84,7 +84,7 @@ export default function BlogAvifInCloudflare() {
       are the only ones that can be resized.
       <h2>The picture element</h2>
       In our Tutorial on{" "}
-      <BlogLink link="/blog/tutorials/use-avif-in-html" text="how to use avif in HTML" />, we
+      <SmartLink link="/blog/tutorials/use-avif-in-html" text="how to use avif in HTML" />, we
       present you the {`<picture>`} element as the best option to serve AVIF files in an HTML
       environment. Cloudflare allows you to use their image optimization endpoint to perform the
       conversion if you don't want to use Workers.
@@ -102,7 +102,7 @@ export default function BlogAvifInCloudflare() {
       Cloudflare does regularly. They already have preliminary support for HTTP/3 as well. Is there
       anything else you'd like to know about avif? Got a good suggestion on an advanced worker
       script?{" "}
-      <BlogLink link="https://twitter.com/jschmitz97" text="Let us know on Justin's Twitter." />
+      <SmartLink link="https://twitter.com/jschmitz97" text="Let us know on Justin's Twitter." />
     </Blog>
   );
 }

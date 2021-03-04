@@ -1,4 +1,4 @@
-import { BlogAdvantages } from "@components/BlogComponents";
+import Checkbox from "@components/Checkbox";
 import Blog from "@components/Blog";
 
 import { february2021 as postdata } from "lib/meta";
@@ -20,7 +20,7 @@ export default function February2021() {
       the latest version 0.4.0 successfully. It provides solid speed improvements on both x86_64 and
       aarch64. The overall speedup is solid across the speed levels, both for 8bit and 10bit
       encoding. With some drastic improvement for aarch64 on speed 10. Inluded, but not limited to:
-      <BlogAdvantages
+      <Checkbox
         advantages={[
           "Improved 4:2:2 support (37% reduction in encoding time, 0.8% to 5% improvement to coding efficiency)",
           "Thread CDEF loop filter with tiles (1.2% reduction in encoding time with 4 tiles)",
@@ -45,7 +45,7 @@ export default function February2021() {
       <h2>Usability</h2>
       Based on an analysis of 500 Hotjar recordings and reading more in depth about several topics,
       we've made several changes for the common user, to improve accessibility and SEO.
-      <BlogAdvantages
+      <Checkbox
         advantages={[
           "higher use of semantic elements and aria attributes",
           "added JSON data for better search engine results",

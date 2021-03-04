@@ -1,7 +1,8 @@
-import { BlogPosts, BlogTags } from "@components/BlogComponents";
+import Posts from "@components/Posts";
+import Tags from "@components/Tags";
 import Meta from "@components/Meta";
 import Breadcrumbs from "@components/Breadcrumbs";
-import BlogSources from "@components/BlogSources";
+import Sources from "@components/Sources";
 
 const randomNumber = Math.floor(Math.random() * 7 + 1);
 
@@ -34,12 +35,12 @@ export default function Blog(props: { postdata: any; children: any; posts: any; 
           <div className="content">
             {props.children}
             <h3>Related topics, websites and sources</h3>
-            <BlogSources sources={props.postdata.sources} />
-            <BlogTags tags={props.postdata.tags} questions={props.postdata.questions} />
+            <Sources sources={props.postdata.sources} />
+            <Tags tags={props.postdata.tags} questions={props.postdata.questions} />
           </div>
         </div>
       </main>
-      {props.posts[0] ? <BlogPosts posts={props.posts} /> : ""}
+      {props.posts[0] ? <Posts posts={props.posts} /> : ""}
     </>
   );
 }

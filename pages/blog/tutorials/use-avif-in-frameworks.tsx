@@ -1,5 +1,5 @@
 import Blog from "@components/Blog";
-import { BlogAdvantages } from "@components/BlogComponents";
+import Checkbox from "@components/Checkbox";
 import Code from "@components/Code";
 import Image from "@components/Image";
 
@@ -16,7 +16,7 @@ export default function BlogAvifInFrameworks() {
       implement!’ The answer is simple. Most javascript frontend frameworks support AVIF natively
       and rely on HTML and CSS implementation. To make sure we weren't talking nonsense, we tested
       it with the following frameworks:
-      <BlogAdvantages
+      <Checkbox
         advantages={[
           "facebook/react",
           "vuejs/vue",
@@ -34,7 +34,7 @@ export default function BlogAvifInFrameworks() {
       and Ember support AVIF files without additional configuration. However because we have not
       experimented with the latest version live, we are listing them here as "maybe works" until
       we've been in the science lab.
-      <BlogAdvantages
+      <Checkbox
         advantages={["meteor/meteor", "jashkenas/backbone", "polymer/polymer", "emberjs/ember.js"]}
         checked={false}
       />

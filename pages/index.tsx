@@ -3,7 +3,7 @@ import ReactCompareImage from "react-compare-image";
 
 import Conversion from "@components/Conversion";
 import Dropzone from "@components/Dropzone";
-import DownloadAllButton from "@components/DownloadAllButton";
+import DownloadButton from "@components/DownloadButton";
 import SettingsBox, { Settings } from "@components/SettingsBox";
 import Tutorials from "@components/Tutorials";
 import Advantages from "@components/Advantages";
@@ -103,7 +103,7 @@ export default function App(): ReactElement {
                 key={id}
               />
             ))}
-          <DownloadAllButton files={convertedFiles} />
+          <DownloadButton files={convertedFiles} />
         </div>
       </div>
       <Advantages />

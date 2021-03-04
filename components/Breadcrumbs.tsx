@@ -2,7 +2,7 @@ import Head from "next/head";
 import { BreadcrumbList } from "schema-dts";
 import { jsonLdScriptProps } from "react-schemaorg";
 
-import BlogLink from "@components/BlogLink";
+import SmartLink from "@components/SmartLink";
 
 export default function Breadcrumbs(props: any) {
   const urlSplit = props.postdata.url.split("/");
@@ -35,11 +35,11 @@ export default function Breadcrumbs(props: any) {
       </Head>
       <div className="breadcrumbs">
         <div>
-          <BlogLink className="white" link={`/${urlSplit[0]}/`} text={urlSplit[0]} />
+          <SmartLink className="white" link={`/${urlSplit[0]}/`} text={urlSplit[0]} />
           {urlSplit[2] ? (
             <div className="white inline">
               {" > "}
-              <BlogLink
+              <SmartLink
                 className="white"
                 link={`/${urlSplit[0]}/${urlSplit[1]}/`}
                 text={urlSplit[1]}

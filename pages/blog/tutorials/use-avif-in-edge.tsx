@@ -1,6 +1,6 @@
 import Blog from "@components/Blog";
 import Image from "@components/Image";
-import BlogLink from "@components/BlogLink";
+import SmartLink from "@components/SmartLink";
 
 import { useAvifInEdge as postdata } from "lib/meta";
 import { useAvifInWindows as post1 } from "lib/meta";
@@ -24,7 +24,7 @@ export default function BlogAvifInEdge() {
       <h2>Your version of Edge</h2>
       If you are looking for a way to test the functionality and capabilities of AV1 on Microsoft
       Edge, you should{" "}
-      <BlogLink
+      <SmartLink
         link="https://www.microsoft.com/edge"
         text="download the latest version of the browser"
       />{" "}
@@ -37,7 +37,7 @@ export default function BlogAvifInEdge() {
       <Image url="edge-or-edge" alt="microsoft edge version difference" />
       <h2>AV1 Plugin</h2>
       The AV1 Extension add-on is available from the{" "}
-      <BlogLink
+      <SmartLink
         link="https://www.microsoft.com/en-us/p/av1-video-extension/9mvzqvxjbq9v"
         text="Microsoft Store"
       />

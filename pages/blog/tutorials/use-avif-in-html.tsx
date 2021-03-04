@@ -1,6 +1,6 @@
 import Blog from "@components/Blog";
-import { BlogAdvantages } from "@components/BlogComponents";
-import BlogLink from "@components/BlogLink";
+import Checkbox from "@components/Checkbox";
+import SmartLink from "@components/SmartLink";
 
 import Code from "@components/Code";
 
@@ -16,9 +16,9 @@ export default function BlogAvifInHtml() {
       my SEO rankings. AVIF is a file format based off a video codec that support high bit depth
       while keeping a low file size. You can find plenty of articles about how fantastic AVIF is
       right here, as well as everywhere else on the web. Or you can just enjoy my countless,
-      occasionally irritating <BlogLink text="tweets" link="https://twitter.com/jschmitz97" /> about
-      this site. You clicked this article because you would like to learn how to use AVIF in HTML,
-      so let's get riiiiiight into the topic.
+      occasionally irritating <SmartLink text="tweets" link="https://twitter.com/jschmitz97" />{" "}
+      about this site. You clicked this article because you would like to learn how to use AVIF in
+      HTML, so let's get riiiiiight into the topic.
       <h2>Browser Support</h2>
       The most important thing you should be aware of when using AVIF is that it unfortunately isn't
       supported everywhere yet. This is a shame, right? It took ten years for webP (another
@@ -36,7 +36,7 @@ export default function BlogAvifInHtml() {
       them to be loaded. The wanky browsers of your visitors will only load one image at the same
       time, thus reducing the load on the server. Also, there's no need for a script to handle
       multiple images. Everyone is happy.
-      <BlogAdvantages
+      <Checkbox
         advantages={[
           "Does not download more than one image at a time",
           "Native support for selecting the most appropriate image",
@@ -101,8 +101,8 @@ src="/image.jpg" alt="an avif image" />
       fallback images for older versions of browsers or experimental usage like in Firefox. Else
       your User Experience might be suffering as images won't get rendered. AVIF is good for
       backgrounds as well. Check out the{" "}
-      <BlogLink text="CSS article" link="/blog/tutorials/use-avif-in-css" />. How about{" "}
-      <BlogLink text="frameworks" link="/blog/tutorials/use-avif-in-frameworks" />? Enjoy this
+      <SmartLink text="CSS article" link="/blog/tutorials/use-avif-in-css" />. How about{" "}
+      <SmartLink text="frameworks" link="/blog/tutorials/use-avif-in-frameworks" />? Enjoy this
       article featuring the different types of frameworks you can use. :)
     </Blog>
   );

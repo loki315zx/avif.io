@@ -1,5 +1,5 @@
 import Blog from "@components/Blog";
-import BlogLink from "@components/BlogLink";
+import SmartLink from "@components/SmartLink";
 
 import { useAvifInWindows as postdata } from "lib/meta";
 import { useAvifInEdge as post1 } from "lib/meta";
@@ -21,7 +21,7 @@ export default function BlogAvif() {
       AVIF file is not a valid format and is not supported by the application. If you are looking
       for AVIF support for Windows 10, you could either wait for Microsoft to implement it by
       default, or take a look{" "}
-      <BlogLink
+      <SmartLink
         link="
       https://www.microsoft.com/de-de/p/av1-video-extension/9mvzqvxjbq9v"
         text="at the extension"
@@ -34,7 +34,7 @@ export default function BlogAvif() {
       AVIF image format after the extension is installed. Additionally, MSPaint will allow you to
       edit and save these images. You might want to use a more advanced image editor than Paint in
       order to work on image files like AVIF. You can look into our{" "}
-      <BlogLink text="article on GIMP" link="/blog/tutorials/use-avif-in-gimp" /> for more details
+      <SmartLink text="article on GIMP" link="/blog/tutorials/use-avif-in-gimp" /> for more details
       on that.
     </Blog>
   );

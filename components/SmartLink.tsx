@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function BlogLink(props: {
+export default function SmartLink(props: {
   link: any;
   text?: string;
   newLine?: boolean;

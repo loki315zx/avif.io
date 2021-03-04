@@ -1,5 +1,5 @@
 import Blog from "@components/Blog";
-import BlogLink from "@components/BlogLink";
+import SmartLink from "@components/SmartLink";
 import Image from "@components/Image";
 
 import { useAvifInGimp as postdata } from "lib/meta";
@@ -32,7 +32,7 @@ export default function BlogAvifInGIMP() {
       <Image url="gimp-bitdepth" alt="gimp export avif dialogue showing different bit depths" />
       <h2>AVIF Plugin</h2>
       There's also a plugin available called{" "}
-      <BlogLink
+      <SmartLink
         text="gimp-avif-plugin by novemesk"
         link="https://github.com/novomesk/gimp-avif-plugin"
       />
@@ -44,7 +44,7 @@ export default function BlogAvifInGIMP() {
       <h2>AVIF Support for existing images</h2>
       If you look to have a lot of images converted, it's a lot easier to convert them all in one
       go. Make life easier for yourself by{" "}
-      <BlogLink text="using our AVIF converter, which is free" link="/" />.
+      <SmartLink text="using our AVIF converter, which is free" link="/" />.
     </Blog>
   );
 }

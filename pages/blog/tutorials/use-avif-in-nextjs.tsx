@@ -1,5 +1,5 @@
 import Blog from "@components/Blog";
-import BlogLink from "@components/BlogLink";
+import SmartLink from "@components/SmartLink";
 import Code from "@components/Code";
 
 import { useAvifInNextjs as postdata } from "lib/meta";
@@ -47,14 +47,14 @@ module.exports = withImages()`}
 (..)`}</Code>
       <h2>The component is not com..plete</h2>
       While it does convert images into newer formats, it yet does not do the same for AVIF. There's
-      a <BlogLink link="https://github.com/vercel/next.js/pull/20381" text="canary version" /> on
+      a <SmartLink link="https://github.com/vercel/next.js/pull/20381" text="canary version" /> on
       Github which references AVIF on more than one occasion, so hopefully we will see this
       supported in future releases. As a final note, the images loaded through CSS do not get
       optimized, although we are praying this will be the case in future releases.
       <h2>Next Optimized Images</h2>
       Until that point, if you rely heavily on CSS images, you can use the third-party plugin in
       Next.JS called{" "}
-      <BlogLink
+      <SmartLink
         text="next-optimized-images"
         link="https://github.com/cyrilwanner/next-optimized-images"
       />

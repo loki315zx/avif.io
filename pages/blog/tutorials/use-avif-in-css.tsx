@@ -1,5 +1,5 @@
 import Blog from "@components/Blog";
-import BlogLink from "@components/BlogLink";
+import SmartLink from "@components/SmartLink";
 
 import Code from "@components/Code";
 import Image from "@components/Image";
@@ -13,7 +13,7 @@ export default function BlogAvif() {
   return (
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
       Serving AVIF images through HTML is very easy, as you can read{" "}
-      <BlogLink text="in this tutorial" link="/blog/tutorials/use-avif-in-html" />. Furthermore, it
+      <SmartLink text="in this tutorial" link="/blog/tutorials/use-avif-in-html" />. Furthermore, it
       is straightforward because HTML offers a media-type hint, which helps the browser deliver the
       best version of your image. Unfortunately, CSS does not have an option like this. However,
       with a simple Javascript function, we can easily support WebP and AVIF. We have created a
@@ -84,7 +84,7 @@ avif.onerror = function () {
       <Image url="css-chrome" alt="our website on chrome gets an avif class" />
       <Image url="css-edge" alt="microsoft edge with a webp class in the html element" />
       <h2>SCSS background mixin</h2>
-      <BlogLink
+      <SmartLink
         link="https://raoulkramer.de/avif-and-webp-images-as-css-background-images/"
         text="Raoul Kramer"
       />{" "}
@@ -128,7 +128,7 @@ avif.onerror = function () {
       yet. This is a brand new feature for CSS4. Until browsers support this feature, we have to use
       JavaScript to detect AVIF and WebP support.
       <h2>Generating AVIF images</h2>
-      Creating AVIF files with <BlogLink text="avif.io" link="/" /> is a nobrainer. Simply drag the
+      Creating AVIF files with <SmartLink text="avif.io" link="/" /> is a nobrainer. Simply drag the
       files into the converter and it'll do the rest. You'll get the best results with the least
       time.
       <h2>One last hacky way by Marble_Wraith</h2>

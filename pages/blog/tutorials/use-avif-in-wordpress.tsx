@@ -1,5 +1,5 @@
 import Blog from "@components/Blog";
-import BlogLink from "@components/BlogLink";
+import SmartLink from "@components/SmartLink";
 import Code from "@components/Code";
 import Image from "@components/Image";
 
@@ -88,12 +88,16 @@ add_filter( 'upload_mimes', 'support_modern_images', 1, 1 );`}
       say Goodbye'. Mhh mhh mhh, no no no. There is a solution that is working independently.
       Financially indepen.. sorry, the memes. Let me get back on track: Multiple plugin solutions
       exist. Take a look at these beauties:
-      <BlogLink
+      <SmartLink
         link="https://wordpress.org/plugins/wp-add-mime-types/"
         text="WP Add Mime Types"
         newLine
       />
-      <BlogLink link="https://wordpress.org/plugins/blob-mimes/" text="Lord of the Files" newLine />
+      <SmartLink
+        link="https://wordpress.org/plugins/blob-mimes/"
+        text="Lord of the Files"
+        newLine
+      />
       To quote: WordPress relies mostly on name-based validation when deciding whether or not to
       allow a particular file, leaving the door open for various kinds of attacks. Lord of the Files
       (previously known as "blob mimes") adds to this content-based validation and sanitizing,
@@ -102,9 +106,9 @@ add_filter( 'upload_mimes', 'support_modern_images', 1, 1 );`}
       <h2>There's one remaining problem: No automatic conversion</h2>
       Uploading images is a cool thing, but there's a colossal problem remaining. For every image
       you wish to serve to your users, you have to convert it manually. Well, there are some *cough*
-      <BlogLink text=" exceptional bulk converters.. like avif.io.." link="/" /> probably you've
+      <SmartLink text=" exceptional bulk converters.. like avif.io.." link="/" /> probably you've
       heard of it already. However, the work of{" "}
-      <BlogLink
+      <SmartLink
         className="text"
         text="using the HTML picture tag"
         link="/blog/tutorials/use-avif-in-html"
