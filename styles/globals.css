@@ -40,7 +40,7 @@
 
 :root {
   --f0: 0.8333333rem;
-  --f1: 1.125rem; /*18px*/
+  --f1: 1.125rem; /* 18px */
   --f2: 1.3333333rem;
   --f3: 2.3333333rem;
   --s0: 0.6666666rem;
@@ -81,28 +81,33 @@
 /*  */
 
 html {
-  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased; /* font antialias */
+  -moz-osx-font-smoothing: grayscale; /* font antialias */
+  cursor: default; /* prevent text select cursor */
+  overflow-x: hidden; /* prevent horizontal scrolling */
+  box-sizing: border-box; /* border box behavior */
   font-family: "Poppins", sans-serif;
   font-weight: 400;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   font-size: var(--f1);
-  line-height: 1.666666rem;
-  scroll-behavior: smooth;
   background: var(--black1);
-  cursor: default;
-  overflow-x: hidden;
   color: var(--white);
-  box-sizing: border-box;
 }
 
 *,
-*:before,
-*:after {
-  box-sizing: inherit;
+*::before,
+*::after {
+  box-sizing: inherit; /* border box behavior */
 }
+
 img {
-  box-sizing: content-box;
+  box-sizing: content-box; /* images with borders don't resize */
+}
+
+:is(p, li, h1, h2, h3, h4, div) {
+  word-break: break-word; /* Help prevent overflow of long words */
+  hyphens: auto; /* Optional, not supported for all languages */
+  line-height: calc(2.5ex + 6px); /* Perfect line height for all text */
+  text-rendering: optimizeLegibility; /* enables the use of special kerning and optional ligature information */
 }
 
 ::selection {
@@ -116,16 +121,10 @@ a {
   color: var(--white);
 }
 
-:is(h1, h2, h3) {
-  font-weight: bold;
-  text-rendering: optimizeLegibility;
-}
-
 h1 {
   text-align: center;
   font-size: var(--f3);
   font-family: "Patua One", serif;
-  line-height: 1.3;
   margin: var(--s3) 0 var(--s1);
   letter-spacing: 1px;
 }
@@ -139,6 +138,10 @@ h2 {
 h3 {
   margin: var(--s4) 0 var(--s1);
   font-size: var(--f1);
+}
+
+:is(h1, h2, h3) {
+  font-weight: bold;
 }
 
 h5 {
@@ -193,6 +196,10 @@ button {
   text-align: center;
 }
 
+/*  */
+/* UTILITY CLASSES */
+/*  */
+
 .bold {
   font-weight: bold;
 }
@@ -206,7 +213,7 @@ button {
 }
 
 .f0 {
-  font-size: calc(var(--f2) / 2);
+  font-size: var(--f0);
 }
 
 .f1 {
@@ -215,7 +222,6 @@ button {
 
 .f2 {
   font-size: var(--f2);
-  line-height: 1.333em;
 }
 
 .f3 {
@@ -404,7 +410,6 @@ header > * > * {
   width: var(--s5);
   text-align: left;
   left: 120%;
-  line-height: 1.3em;
   background: var(--black2);
   border-radius: var(--radius-small);
   padding: var(--s0);
@@ -1339,7 +1344,6 @@ header > * > * {
   margin: var(--s3) auto;
   text-align: center;
   max-width: 800px;
-  line-height: 2;
 }
 
 /*  */
@@ -1509,7 +1513,6 @@ a.discord {
   margin: var(--s0);
   padding: var(--s0);
   font-size: var(--f0);
-  line-height: var(--f1);
   bottom: 0;
   background: var(--gray4);
   width: calc(var(--s5) * 1.5);
@@ -2187,8 +2190,9 @@ pre {
 
 @media only screen and (max-width: 991.98px) {
   :root {
-    --f1: 1rem; /*18px*/
+    --f1: 1rem; /* 18px */
   }
+
   body {
     overflow-x: hidden;
   }
@@ -2636,5 +2640,20 @@ input[type="range"]:focus::-webkit-slider-thumb {
   ::-webkit-scrollbar-track {
     border-radius: var(--radius-small);
     background-color: transparent;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
   }
 }
