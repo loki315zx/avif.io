@@ -144,7 +144,7 @@ export const useAvifInCloudflare = {
     "Resizing with Cloudflare Workers",
   ],
   readingtime: "8",
-  keyword: "cloudflare",
+  keyword: "Cloudflare",
 };
 
 export const useAvifInCss = {
@@ -196,7 +196,7 @@ export const useAvifInCss = {
     "Delivering New Image Formats",
     "css background-image usage of avif and webp",
   ],
-  keyword: "css",
+  keyword: "CSS",
 };
 
 export const useAvifInEdge = {
@@ -245,7 +245,7 @@ export const useAvifInEdge = {
     "What is AVIF or AV1? How to enable its support in Chrome and Firefox?",
     "What is AVIF or AV1 image format",
   ],
-  keyword: "edge",
+  keyword: "Edge",
 };
 
 export const useAvifInFirefox = {
@@ -306,7 +306,7 @@ export const useAvifInFirefox = {
     "What is AVIF image format",
     "Is AVIF lossless",
   ],
-  keyword: "firefox",
+  keyword: "Firefox",
 };
 
 export const useAvifInFrameworks = {
@@ -449,7 +449,7 @@ export const useAvifInHtml = {
     "How to convert images to the AVIF file format",
     "How to create AVIF images",
   ],
-  keyword: "html",
+  keyword: "HTML",
 };
 
 export const useAvifInNextjs = {

@@ -75,7 +75,7 @@ export default function App(): ReactElement {
         />
       </Head>
 
-      <div className={"app-container"}>
+      <section className={"app-container"}>
         <h1>Convert any images to AVIF for free.</h1>
         <h2 className={"f1 m0 s4 center normal"}>
           No data is sent. The magic happens in your browser.
@@ -105,7 +105,7 @@ export default function App(): ReactElement {
             ))}
           <DownloadButton files={convertedFiles} />
         </div>
-      </div>
+      </section>
       <Advantages />
       <section className="avifcompare overlay-after">
         <div id="comparison__container">
