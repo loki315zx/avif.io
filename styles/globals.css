@@ -2136,7 +2136,7 @@ pre {
 @media only screen and (max-width: 1799.98px) {
   .page section,
   .page section.posts {
-    padding: var(--s4) var(--s5);
+    padding: var(--s5) var(--s5) var(--s4);
   }
 }
 
@@ -2193,7 +2193,7 @@ pre {
   }
 
   .blog h1 {
-    padding: var(--s1) 0 var(--s1) 0;
+    padding: var(--s3) 0 var(--s1) 0;
     margin: 0;
   }
 
@@ -2241,6 +2241,9 @@ pre {
 }
 
 @media only screen and (max-width: 767.98px) {
+  .page {
+    margin-top: var(--s3);
+  }
   .blog > * {
     padding: var(--s5) var(--s1) var(--s2);
   }
