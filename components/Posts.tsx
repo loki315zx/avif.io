@@ -7,9 +7,9 @@ export default function BlogPosts(props: any) {
       <div className="posts__item">
         <div className="posts__img">
           <div className="posts__tag">#{post.keyword}</div>{" "}
-          <div className="posts__title">{post.title}</div>
         </div>
         <div className="posts__data">
+          <div className="posts__title">{post.title}</div>
           <div>{post.description}</div>
         </div>
       </div>

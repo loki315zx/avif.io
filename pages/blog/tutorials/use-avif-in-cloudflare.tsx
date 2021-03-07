@@ -40,7 +40,7 @@ export default function BlogAvifInCloudflare() {
           "uses chrome-from-luma compression technique for smaller file size",
           "is already seeing faster adoption than previous royalty-free codecs",
           "is a feature-rich format with lots of possibilities",
-          "already has multiple independent implementations like rav1e (we use this for avif.io!)",
+          "already has multiple independent implementations like rav1e",
         ]}
         checked={true}
       />

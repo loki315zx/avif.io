@@ -8,7 +8,7 @@ export interface Advantages {
 function AdvantageItem(props: Advantages) {
   return (
     <div className="advantage__grid__item">
-      <div className="advantage__text">
+      <div className="advantage__text f2">
         {props.pre} <span className="advantage__important">{props.text}</span> {props.post}
       </div>
       <div className="advantage__visualizer overlay" id={props.number}></div>
