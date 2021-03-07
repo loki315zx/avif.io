@@ -1289,6 +1289,9 @@ header > * > * {
 /* IMAGECOMPARE */
 /*  */
 
+.avifcompare {
+  z-index: 9;
+}
 .avifcompare * {
   border-radius: var(--radius-medium);
 }
