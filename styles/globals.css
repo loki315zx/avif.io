@@ -197,6 +197,7 @@ button {
   display: block;
   margin: 0 auto var(--s2);
   text-align: center;
+  border: none;
 }
 
 section {
