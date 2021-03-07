@@ -1,6 +1,6 @@
 const days = Math.round(Date.now() / 8640000 - 185860);
 
-let count = 30000;
+let count = 45000; //Start value
 let b = 50;
 let c = 2;
 let d = 0.1;
@@ -27,7 +27,7 @@ for (day = 0; day < days; day++) {
   d = Math.round(d * 10) / 10;
   e = Math.round(e * 10) / 10;
   count += Math.pow(b + c + d, e) / 10;
-  count = Math.round(count / 40) * 40;
+  count = Math.round(count / 100) * 100;
 }
 
 export const conversions = count;
