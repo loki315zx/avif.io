@@ -8,12 +8,14 @@ export default function SmartLink(props: {
   className?: string;
   aria?: string;
   external?: boolean;
+  tabindex?: number;
 }) {
   return (
     <div {...(props.newLine ? null : { style: { display: "inline-block" } })}>
       <Link href={props.link}>
         <a
-          title={props.aria ? props.aria : props.text}
+          title={props.aria ? props.aria : undefined}
+          tabIndex={props.tabindex ? props.tabindex : undefined}
           href={props.link}
           rel={props.external ? "noreferrer" : "prerender"}
           target={props.external ? "_blank" : "_self"}

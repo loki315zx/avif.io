@@ -86,7 +86,7 @@ export default function App(): ReactElement {
           <Dropzone onDrop={onFilesSelected} />
 
           <button
-            aria-label="settings panel"
+            aria-label="Conversion settings"
             className={"will-change cog-button" + " " + (settingsBoxOpen ? "open" : "")}
             onClick={() => setSettingsBoxOpen(!settingsBoxOpen)}></button>
           <div className={"settings_cog" + " " + (settingsBoxOpen ? "open" : "")}>

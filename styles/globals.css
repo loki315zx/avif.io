@@ -116,9 +116,12 @@ img {
 
 a {
   text-decoration: none;
-  outline: none !important;
   cursor: pointer;
   color: var(--white);
+}
+
+:focus:not(:focus-visible) {
+  outline: none; /* keyboard focus but no mouse focus*/
 }
 
 h1 {
@@ -524,6 +527,10 @@ header > * > * {
   animation: heartbeat 3.5s ease-in-out 10 both;
 }
 
+.cog-button:focus {
+  background-color: var(--color500);
+}
+
 @keyframes heartbeat {
   from {
     transform: scale(1);
@@ -810,13 +817,8 @@ header > * > * {
   background: var(--gradient);
   z-index: 9999;
   cursor: pointer;
-  background-size: 100%;
+  background-size: 200%;
   background-position: center center;
-  animation: rotate-center 15s linear infinite both;
-}
-
-.download:hover::before {
-  transform: scale(5);
 }
 
 .download:hover::after {

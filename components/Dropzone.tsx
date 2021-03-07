@@ -41,7 +41,11 @@ export default function Dropzone(props: DropzoneProps) {
   }
 
   return (
-    <a onClick={onBrowseClick} className={`dropzone-container ${isDragActive ? "active" : ""}`}>
+    <a
+      tabIndex={0}
+      aria-label="This is the dropzone. Choose your images here to convert them to AVIF"
+      onClick={onBrowseClick}
+      className={`dropzone-container ${isDragActive ? "active" : ""}`}>
       <div className={"dropzone-root"} {...getRootProps()}>
         <input {...getInputProps()} />
         <div className={"upload-button overlay-before overlay-after"}>

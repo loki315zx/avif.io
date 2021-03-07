@@ -113,7 +113,7 @@ export default function Conversion(props: ConversionProps): ReactElement {
             {finished ? ".avif " : " "}
             {cancelled ? " · cancelled " : " "}
           </p>
-          <p className="remaining-time">
+          <p className="remaining-time" tabIndex={0}>
             {status === "inProgress" && remainingTime ? " · " + remainingTime : ""}
           </p>
         </div>
