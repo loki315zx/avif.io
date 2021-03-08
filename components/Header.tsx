@@ -13,8 +13,8 @@ export default function Header() {
         />
       </div>
       <nav className="menu">
-        <SmartLink text="Releases" link="/blog/releases/" />
         <SmartLink text="Discord" link="https://discord.com/invite/6w42YpF5hm" external />
+        <SmartLink text="News" link="/blog/#Releases" />
         <SmartLink text="Blog" link="/blog/" />
       </nav>
     </header>

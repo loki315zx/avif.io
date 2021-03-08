@@ -1,4 +1,5 @@
-import Archive from "@components/Archive";
+import Meta from "@components/Meta";
+import Posts from "@components/Posts";
 
 import { useAvifInCloudflare as post1 } from "lib/meta";
 import { useAvifInCss as post2 } from "lib/meta";
@@ -14,14 +15,33 @@ import { useAvifInNetlify as post11 } from "lib/meta";
 
 const posts = [post1, post2, post3, post4, post5, post6, post7, post8, post9, post10, post11];
 
-import { blog as postdata } from "lib/meta";
+import { january2021 as post101 } from "lib/meta";
+import { february2021 as post102 } from "lib/meta";
 
-const filler = "";
+const releases = [post102, post101];
+
+import { blog as postdata } from "lib/meta";
 
 export default function BlogAvif() {
   return (
-    <Archive className="blog" postdata={postdata} posts={posts}>
-      {filler}
-    </Archive>
+    <main className="archive blog">
+      <Meta
+        title={postdata.title}
+        description={postdata.description}
+        author={postdata.author}
+        url={postdata.url}
+        image={postdata.image}
+        date_published={postdata.date_published}
+        date_modified={postdata.date_modified}
+      />
+
+      <div className="blog__header white center">
+        <h1>{postdata.title}</h1>
+        <h2>{postdata.description}</h2>
+      </div>
+
+      <Posts posts={posts} title="Tutorials" />
+      <Posts posts={releases} title="Releases" />
+    </main>
   );
 }

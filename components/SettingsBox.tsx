@@ -88,7 +88,6 @@ export default function SettingsBox(props: SettingsBoxProps) {
 
   return (
     <div className={"settings-box align-left secondary " + (props.open ? "open" : "closed")}>
-      <div className="f0 s2">Settings don't change a running conversion.</div>
       <div className={"align-left"}>
         <PercentageSlider
           className={"align-left"}
@@ -98,6 +97,7 @@ export default function SettingsBox(props: SettingsBoxProps) {
           label="effort"
           id="effort"
         />
+
         <PercentageSlider
           className={"align-left " + (lossless ? "disabled" : "")}
           value={quality}
@@ -106,6 +106,7 @@ export default function SettingsBox(props: SettingsBoxProps) {
           label="quality"
           id="quality"
         />
+
         <label className={"lossless-checkbox"}>
           <input id="lossless" type={"checkbox"} checked={lossless} onChange={onLosslessChanged} />
           Lossless
@@ -132,7 +133,7 @@ export default function SettingsBox(props: SettingsBoxProps) {
           </label>
         </div>
     </div>*/}
-      <div className={"misc"}>
+      <div className={"misc s2"}>
         <label>
           <input
             type={"checkbox"}
@@ -142,6 +143,7 @@ export default function SettingsBox(props: SettingsBoxProps) {
           Keep transparency
         </label>
       </div>
+      <div className="f0">Settings don't change a running conversion.</div>
     </div>
   );
 }

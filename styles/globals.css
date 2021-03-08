@@ -91,7 +91,6 @@ html {
   font-size: var(--f1);
   background: var(--black1);
   color: var(--white);
-  width: 100vw;
 }
 
 *,
@@ -104,7 +103,7 @@ img {
   box-sizing: content-box; /* images with borders don't resize */
 }
 
-:is(p, li, h1, h2, h3, h4, div) {
+:is(p, li, h1, h2, h3, h4, div, ::before, ::after, span) {
   word-break: break-word; /* Help prevent overflow of long words */
   line-height: calc(2.5ex + 6px); /* Perfect line height for all text */
   text-rendering: optimizeLegibility; /* enables the use of special kerning and optional ligature information */
@@ -389,6 +388,8 @@ header > * > * {
 
 .logo {
   font-family: "Patua One", serif;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .conversionscounter {
@@ -413,21 +414,31 @@ header > * > * {
   margin: 0 var(--s0);
   position: relative;
   color: var(--white);
-  z-index: 99999;
+  z-index: 999;
 }
 
 .tutorial::after {
   content: "We use Rav1e, Rust, and WASM to convert your images clientside.";
   position: absolute;
-  width: var(--s5);
+  width: calc(var(--s5) * 1.5);
   text-align: left;
   left: 120%;
   background: var(--black2);
   border-radius: var(--radius-small);
   padding: var(--s0);
-  z-index: 999999;
+  z-index: 99999999;
   display: none;
   top: -20px;
+  line-height: 2.5ex;
+  border: 1px solid var(--black3-8);
+}
+
+#effort .tutorial::after {
+  content: "Set the processing power. More effort means longer time of conversion, but better compression.";
+}
+
+#quality .tutorial::after {
+  content: "Set the output quality. 100% almost equals lossless conversion.";
 }
 
 #zeropercent {
@@ -457,7 +468,17 @@ header > * > * {
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.app-container {
+.settings-box .tutorial {
+  min-width: var(--s1);
+  height: var(--s1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: calc(var(--s0) / 2);
+  background: var(--black3-8);
+}
+
+.page section.app-container {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -529,7 +550,7 @@ header > * > * {
 }
 
 .cog-button:focus {
-  background-color: var(--color500);
+  background-color: var(--black1-8);
 }
 
 @keyframes heartbeat {
@@ -1354,9 +1375,8 @@ header > * > * {
 
 .cta__container {
   position: relative;
-  max-width: 1080px;
-  margin: var(--s3) auto;
-  padding: var(--s1);
+  max-width: calc(720px + var(--s3) + var(--s3));
+  margin: var(--s4) auto var(--s5);
 }
 
 .cta {
@@ -1401,8 +1421,9 @@ header > * > * {
 /*  */
 
 .page section.posts {
-  max-width: 100%;
-  padding: var(--s4);
+  padding: 0;
+  max-width: calc(720px + var(--s3) * 6);
+  margin: 0 auto;
 }
 
 .posts__item {
@@ -1419,6 +1440,7 @@ header > * > * {
   background-position: center center;
   padding: var(--s1);
   border-radius: var(--radius-small) var(--radius-small) 0 0;
+  border-bottom: 2px solid var(--black1-8);
 }
 
 .posts__item:hover .posts__img {
@@ -1429,9 +1451,13 @@ header > * > * {
   font-size: var(--f0);
 }
 
-.posts h2 {
-  margin-bottom: var(--f3);
+.posts h2#related {
   text-align: center;
+}
+
+.posts h2:before {
+  content: "";
+  margin: var(--s5) 0 var(--s3) 0;
 }
 
 .posts__title {
@@ -1495,6 +1521,7 @@ a.discord {
   width: calc(var(--s5) * 1.5);
   border-radius: var(--radius-small);
   right: 0;
+  border: 1px solid var(--black3-8);
 }
 
 .cookie .overlay.flex-center {
@@ -1535,10 +1562,6 @@ a.discord {
 
 .blog .posts__title {
   display: none;
-}
-
-.archive h2 {
-  margin: var(--s2) 0 var(--s2);
 }
 
 section.posts .posts__container.grid {
@@ -1826,17 +1849,12 @@ section.posts .posts__container.grid {
 
 /* Archive */
 
-.archive .posts h2 {
-  display: none;
-}
-
 .archive .blog__header {
   padding-top: var(--s5);
 }
 
 .archive .content__container {
   padding: var(--s5) var(--s3) var(--s2);
-  max-width: -moz-calc(720px + var(--s3) + var(--s3));
   max-width: calc(720px + var(--s3) + var(--s3));
   margin: 0 auto;
 }
@@ -1845,6 +1863,10 @@ section.posts .posts__container.grid {
   text-align: center;
   max-width: 100%;
   padding: initial;
+}
+
+.archive h2 {
+  margin: var(--s4) 0 var(--s3);
 }
 
 /* */
@@ -2139,13 +2161,6 @@ pre {
 /* MEDIA QUERIES */
 /*  */
 
-@media only screen and (max-width: 1799.98px) {
-  .page section,
-  .page section.posts {
-    padding: var(--s5) var(--s5) var(--s4);
-  }
-}
-
 @media only screen and (max-width: 1399.98px) {
   .tutorial__title {
     font-size: var(--f2);
@@ -2195,7 +2210,7 @@ pre {
   }
 
   .page .blog__header {
-    padding: var(--s4) var(--s1) var(--s3);
+    padding: var(--s4) var(--s1) var(--s1);
   }
 
   .blog h1 {
@@ -2233,10 +2248,6 @@ pre {
     padding: var(--s5) var(--s2);
   }
 
-  .cta {
-    margin: var(--s3) 0;
-  }
-
   .cta::before {
     display: none;
   }
@@ -2270,7 +2281,7 @@ pre {
 
   .page section,
   .page section.posts {
-    padding: var(--s2);
+    padding: 0;
   }
 
   .text-20,
@@ -2287,7 +2298,7 @@ pre {
   }
 
   .cta {
-    padding: var(--s2);
+    border-radius: 0;
   }
 
   header {
@@ -2323,13 +2334,11 @@ pre {
 }
 
 @media only screen and (max-width: 575.98px) {
+  .archive.blog {
+    padding: var(--s1);
+  }
   footer {
     grid-template-columns: 1fr;
-  }
-
-  .page section,
-  .page section.posts {
-    padding: var(--s1);
   }
 
   #footer-info {
@@ -2559,7 +2568,7 @@ input::-moz-focus-outer {
 input[type="range"] {
   appearance: none;
   width: 100%;
-  height: var(--s0);
+  height: 6px;
   border-radius: var(--radius-small);
   background: var(--gray1);
   outline: none;

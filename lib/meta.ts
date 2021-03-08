@@ -35,7 +35,7 @@ export const blog = {
 
 export const tutorials = {
   title: "Tutorials",
-  description: "Find out how to use AVIF in different environment",
+  description: "Find out how to use AVIF in different environments",
   url: "blog/tutorials/",
   image: "/logo_draft.png",
   author: "Justin Schmitz",
