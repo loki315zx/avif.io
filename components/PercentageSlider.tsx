@@ -5,8 +5,6 @@ export interface PercentageSliderProps {
   disabled?: boolean;
   label?: string;
   id?: string;
-  description: string;
-
   onChange(value: number): void;
 }
 
