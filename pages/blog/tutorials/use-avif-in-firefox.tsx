@@ -34,9 +34,9 @@ export default function BlogAvif() {
       HEIF as the container and AV1 frames. It is a new format. AV1 is already supported in most web
       browsers, and the work has begun to integrate AVIF too.
       <h2>Check your version</h2>
-      If you would like to find out your browser's version, open its settings and help menu and
-      click 'about'. If you have version 77 or above, you will be able to use the tutorial below to
-      enable the AVIF image format.
+      If you would like to find out your browser's version, open the Firefox settings located the
+      top right, head to the help menu and click 'about'. If you have version 77 or above, you will
+      be able to use the tutorial below to enable the AVIF image format.
       <Image url="firefox-help" alt="opening the menu in firefox" />
       <Image url="firefox-help-about" alt="opening the about menu in firefox" />
       <Image url="firefox-version" alt="firefox version" />
