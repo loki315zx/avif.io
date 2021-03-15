@@ -928,12 +928,12 @@ header > * > * {
 }
 
 .section__tutorials .white.s5.center {
-  max-width: 800px;
+  max-width: 720px;
   margin: 0 auto var(--s5);
 }
 
 .explainer {
-  max-width: 800px;
+  max-width: 720px;
   margin: 0 auto var(--s3);
 }
 
@@ -1346,7 +1346,7 @@ header > * > * {
 .advantages-explainer {
   margin: var(--s5) auto var(--s3);
   text-align: center;
-  max-width: 800px;
+  max-width: 720px;
 }
 
 /*  */
@@ -1355,7 +1355,7 @@ header > * > * {
 
 .cta__container {
   position: relative;
-  max-width: calc(720px + var(--s3) + var(--s3));
+  max-width: 720px;
   margin: var(--s4) auto var(--s5);
 }
 
@@ -1530,14 +1530,19 @@ a.discord {
 
 .blog > *,
 .blog__header__content {
-  padding: var(--s4) var(--s3) var(--s2);
-  max-width: calc(720px + var(--s3) + var(--s3));
-  margin: 0 auto;
+  padding: var(--s4) 0 var(--s2);
 }
 
 .blog__header__content {
   position: relative;
   z-index: 5;
+  max-width:720px;
+  margin:0 auto
+}
+
+.blog .content {
+  max-width: 720px;
+  margin: 0 auto;
 }
 
 .blog .posts__title {
@@ -1828,7 +1833,9 @@ section.posts .posts__container.grid {
 .content__container {
   background: var(--black2);
   border-radius: 0 0 var(--radius-small) var(--radius-small);
-  padding: var(--s5) var(--s3) var(--s2);
+  padding: var(--s5) 0 var(--s2);
+  max-width:calc(720px + var(--s4));
+  margin:0 auto
 }
 
 /* Archive */
@@ -1843,7 +1850,7 @@ section.posts .posts__container.grid {
 
 .archive .content__container {
   padding: var(--s5) var(--s3) var(--s2);
-  max-width: calc(720px + var(--s3) + var(--s3));
+  max-width: 720px;
   margin: 0 auto;
 }
 
@@ -2269,7 +2276,7 @@ pre {
     margin-top: var(--s3);
   }
   .blog > * {
-    padding: var(--s5) var(--s1) var(--s2);
+    padding: var(--s5) var(--s0) var(--s2);
   }
 
   .blog__header__content {

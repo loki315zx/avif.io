@@ -63,7 +63,7 @@ export default function BlogAvif() {
         alt="your browser may show this AVIF img"
         decoding="async"
         loading="lazy"
-        width="720px"
+        width="800px"
       />
     </Blog>
   );
