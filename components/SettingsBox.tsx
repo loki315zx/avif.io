@@ -22,7 +22,7 @@ export interface SettingsBoxProps {
 const settingsCookieKey = "settings";
 
 export default function SettingsBox(props: SettingsBoxProps) {
-  const [effort, setEffort] = useState(0);
+  const [effort, setEffort] = useState(20);
   const [quality, setQuality] = useState(60);
   const [useYuv444, setUseYuv444] = useState(true);
   const [keepTransparency, setKeepTransparency] = useState(true);

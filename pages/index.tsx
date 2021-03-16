@@ -13,10 +13,6 @@ import { uniqueId } from "@utils/utils";
 
 import comparison_jpg from "@assets/comparison.jpg";
 import comparison_avif from "@assets/comparison.avif";
-
-import { Product } from "schema-dts";
-import { jsonLdScriptProps } from "react-schemaorg";
-
 import Head from "next/head";
 
 interface FileWithId {
@@ -147,22 +143,6 @@ export default function App(): ReactElement {
         and the highest compression rate achieved, we are only steps away from creating a truly
         modern web.
       </div>
-      <script
-        {...jsonLdScriptProps<Product>({
-          "@context": "https://schema.org",
-          "@type": "Product",
-          "category": "Productivity",
-          "name": "AVIF converter avif.io",
-          "image": "https://avif.io/img/screenshot.jpg",
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "bestRating": "5",
-            "worstRating": "1",
-            "ratingCount": 80,
-          },
-        })}
-      />
     </>
   );
 }
