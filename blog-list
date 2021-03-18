@@ -5,6 +5,7 @@
 - magento
 - android
 - opera
+- safari / webkit
 
 #pages/blog
 -avifcss: add postcss plugin from joan
