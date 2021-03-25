@@ -66,7 +66,7 @@ export const january2021 = {
   tags: [],
   questions: [],
   readingtime: "5",
-  keyword: "21-01",
+  keyword: "Changelog 21-01",
 };
 
 export const february2021 = {
@@ -89,7 +89,7 @@ export const february2021 = {
   tags: [],
   questions: [],
   readingtime: "5",
-  keyword: "21-02",
+  keyword: "Changelog 21-02",
 };
 
 export const useAvifInCloudflare = {

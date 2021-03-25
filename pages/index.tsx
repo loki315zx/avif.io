@@ -75,7 +75,7 @@ export default function App(): ReactElement {
       </Head>
 
       <section className={"app-container"}>
-        <h1>Convert any image to AVIF for free.</h1>
+        <h1>Convert all images to AVIF for free.</h1>
         <h2 className={"f1 m0 s4 center normal"}>
           No data is sent. The magic happens in your browser.
           <span className="tutorial">How?</span>

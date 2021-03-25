@@ -1447,6 +1447,7 @@ header > * > * {
 
 .posts__data {
   padding: var(--s1);
+  min-height: 180px;
 }
 
 .posts__date {
@@ -1536,8 +1537,8 @@ a.discord {
 .blog__header__content {
   position: relative;
   z-index: 5;
-  max-width:720px;
-  margin:0 auto
+  max-width: 720px;
+  margin: 0 auto;
 }
 
 .blog .content {
@@ -1577,6 +1578,10 @@ section.posts .posts__container.grid {
 }
 
 .releases .posts__tag {
+  display: none;
+}
+
+.releases .posts #related {
   display: none;
 }
 
@@ -1834,8 +1839,8 @@ section.posts .posts__container.grid {
   background: var(--black2);
   border-radius: 0 0 var(--radius-small) var(--radius-small);
   padding: var(--s5) 0 var(--s2);
-  max-width:calc(720px + var(--s4));
-  margin:0 auto
+  max-width: calc(720px + var(--s4));
+  margin: 0 auto;
 }
 
 /* Archive */
