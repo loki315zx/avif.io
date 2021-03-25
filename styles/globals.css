@@ -120,7 +120,7 @@ a {
 }
 
 :focus:not(:focus-visible) {
-  outline: none; /* keyboard focus but no mouse focus*/
+  outline: none; /* keyboard focus but no mouse focus */
 }
 
 h1 {
@@ -1296,6 +1296,7 @@ header > * > * {
 .avifcompare {
   z-index: 9;
 }
+
 .avifcompare * {
   border-radius: var(--radius-medium);
 }
@@ -1435,7 +1436,7 @@ header > * > * {
   text-align: center;
 }
 
-.posts h2:before {
+.posts h2::before {
   content: "";
   margin: var(--s5) 0 var(--s3) 0;
 }
@@ -2165,9 +2166,11 @@ pre {
   .tutorials__container {
     grid-template-columns: 1fr 1fr 1fr;
   }
+
   .page section {
     padding: var(--s4) var(--s5);
   }
+
   .tutorial__title {
     font-size: var(--f2);
   }
@@ -2202,7 +2205,8 @@ pre {
     transform: scale(1) translateX(calc(-50% + var(--s2)));
     z-index: 99999;
   }
-  .settings_cog:after {
+
+  .settings_cog::after {
     position: absolute;
     top: 0;
     right: 0;
@@ -2212,6 +2216,7 @@ pre {
     box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.95);
     z-index: -1;
   }
+
   .cog-button {
     z-index: 9999999;
   }
@@ -2280,6 +2285,7 @@ pre {
   .page {
     margin-top: var(--s3);
   }
+
   .blog > * {
     padding: var(--s5) var(--s0) var(--s2);
   }
@@ -2291,12 +2297,16 @@ pre {
   header > * > * {
     padding: var(--s0) var(--s0);
   }
+
   .cta {
     padding: var(--s3) var(--s1);
+    border-radius: 0;
   }
+
   .cta__container {
     margin: var(--s4) auto 0;
   }
+
   footer {
     padding: var(--s3) var(--s1);
   }
@@ -2324,10 +2334,6 @@ pre {
     width: 90%;
     padding: calc(90% - var(--s2)) var(--s2) var(--s2) var(--s2);
     margin: 0 auto;
-  }
-
-  .cta {
-    border-radius: 0;
   }
 
   header {
@@ -2368,28 +2374,36 @@ pre {
     padding: calc(90% - var(--s2)) var(--s2) var(--s2) var(--s2);
     margin: var(--s1) auto;
   }
+
   div[aria-label="anchor point"] {
     display: none;
   }
+
   .page section.app-container {
     padding: var(--s2) 0 var(--s5);
   }
+
   .app-container h2 {
     margin-bottom: var(--s2);
   }
+
   .page {
     padding: var(--s0);
   }
+
   #comparison__container > div {
     height: 75vh !important;
   }
+
   .avifcompare * {
     border-radius: 0;
   }
+
   .page section.avifcompare {
     margin: 0;
     padding: 0;
   }
+
   footer {
     grid-template-columns: 1fr;
   }
