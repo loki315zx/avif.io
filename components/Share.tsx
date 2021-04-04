@@ -10,7 +10,7 @@ export default function Blog() {
   const router = useRouter();
   const url = "https://avif.io" + router.pathname;
   return (
-    <address className="share-container">
+    <dialog className="share-container">
       <SmartLink
         link={`https://twitter.com/intent/tweet?source=${url}&text=${url}`}
         aria="Share on Twitter"
@@ -30,14 +30,13 @@ export default function Blog() {
         tabindex={0}
       />
       <div>
-        <a
-          role="button"
+        <button
           onClick={() => share()}
           onKeyPress={() => share()}
           aria-label="share"
           title="share on social media"
-          id="share"></a>
+          id="share"></button>
       </div>
-    </address>
+    </dialog>
   );
 }

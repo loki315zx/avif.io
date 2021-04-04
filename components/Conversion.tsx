@@ -113,7 +113,7 @@ export default function Conversion(props: ConversionProps): ReactElement {
             {finished ? ".avif " : " "}
             {cancelled ? " · cancelled " : " "}
           </p>
-          <p className="remaining-time" tabIndex={0}>
+          <p className="remaining-time">
             {status === "inProgress" && remainingTime ? " · " + remainingTime : ""}
           </p>
         </div>
@@ -142,11 +142,14 @@ export default function Conversion(props: ConversionProps): ReactElement {
           </a>
         )}
         <a
+          role="button"
+          tabIndex={0}
           title={`download ${fileName}`}
           download={`${fileName}.avif`}
           href={outputObjectURL}
-          className={"download overlay-after overlay-before"}
-        />
+          className={"download overlay-after overlay-before"}>
+          Download
+        </a>
         {status === "inProgress" && <ProgressBar progress={progress} />}
       </div>
     </>

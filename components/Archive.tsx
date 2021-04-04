@@ -28,7 +28,7 @@ export default function Archive(props: {
 
       {props.children ? (
         <div className="content__container">
-          <div className="content">{props.children}</div>
+          <article className="content">{props.children}</article>
         </div>
       ) : (
         ""

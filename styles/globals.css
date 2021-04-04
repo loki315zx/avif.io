@@ -120,7 +120,7 @@ a {
 }
 
 :focus:not(:focus-visible) {
-  outline: none; /* keyboard focus but no mouse focus */
+  outline: none !important; /* keyboard focus but no mouse focus */
 }
 
 h1 {
@@ -184,8 +184,6 @@ input[type="checkbox"] {
 }
 
 button {
-  background-color: var(--color500);
-  outline: none;
   cursor: pointer;
   z-index: 0;
   color: var(--white);
@@ -455,6 +453,7 @@ header > * > * {
   width: var(--s6);
 }
 
+.tutorial:focus::after,
 .tutorial:hover::after {
   display: initial;
 }
@@ -553,7 +552,7 @@ header > * > * {
 }
 
 .cog-button:focus {
-  background-color: var(--black1-8);
+  background-color: var(--color500);
 }
 
 .settings_cog {
@@ -750,6 +749,7 @@ header > * > * {
   z-index: 99;
 }
 
+.conversion__cancel:focus,
 .conversion:hover .conversion__cancel {
   opacity: 1;
 }
@@ -822,6 +822,10 @@ header > * > * {
   transform: scale(1.2);
 }
 
+.progress .download {
+  visibility: hidden;
+}
+
 .finished .download {
   transform: scale(1);
 }
@@ -830,6 +834,10 @@ header > * > * {
   opacity: 0;
   height: 0;
   display: none;
+}
+
+.downloadall-container button {
+  background: var(--gradient);
 }
 
 .downloadall-container.show {
@@ -899,6 +907,25 @@ header > * > * {
 
 .subsampling-options label {
   margin-right: var(--s1);
+}
+
+div[role="listitem"] {
+  display: flex;
+  margin-bottom: var(--s0);
+  align-items: baseline;
+}
+
+.checklist {
+  font-size: var(--f0);
+  background: var(--color300);
+  padding: var(--s0);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  margin-right: var(--s0);
 }
 
 .checkbox-text {
@@ -1503,7 +1530,7 @@ a.discord {
   width: calc(var(--s5) * 1.5);
   border-radius: var(--radius-small);
   right: 0;
-  border: 1px solid var(--black3-8);
+  line-height: 1.3em;
 }
 
 .cookie .overlay.flex-center {
@@ -1792,7 +1819,7 @@ section.posts .posts__container.grid {
 }
 
 .blog__syntax__copy {
-  opacity: 0;
+  opacity: 0.1;
   position: absolute;
   top: var(--s0);
   right: var(--s0);
@@ -1812,6 +1839,7 @@ section.posts .posts__container.grid {
   position: relative;
 }
 
+.blog__syntax__copy:focus,
 .blog__syntax:hover .blog__syntax__copy {
   opacity: 1;
 }
@@ -1927,6 +1955,12 @@ picture img {
 /* Share Cointer */
 /*  */
 
+dialog {
+  left: inherit;
+  border: none;
+  outline: none;
+}
+
 .share-container {
   display: flex;
   align-items: center;
@@ -1967,6 +2001,9 @@ picture img {
 }
 
 #share {
+  background-color: inherit;
+  padding: var(--s1);
+  margin: 0;
   background-image: url(@assets/share.svg);
   margin-right: 0;
   display: none;
@@ -2681,6 +2718,10 @@ input[type="range"]:active::-moz-range-thumb {
 
 input[type="range"]:focus::-webkit-slider-thumb {
   box-shadow: 0 0 0 3px #fff, 0 0 0 6px var(--color700);
+}
+
+input:focus-visible {
+  border: 2px solid var(--black1) !important;
 }
 
 /* Scrollbar */

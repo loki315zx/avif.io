@@ -7,6 +7,7 @@ export default function Header() {
       <div className="flex-center">
         <SmartLink link="/" text="avif.io" className="logo button-primary" />
         <SmartLink
+          tabindex={-1}
           className="conversionscounter"
           link="/"
           text={`over ${conversions} files converted`}

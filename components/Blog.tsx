@@ -32,12 +32,12 @@ export default function Blog(props: { postdata: any; children: any; posts: any; 
         </div>
 
         <div className="content__container">
-          <div className="content">
+          <article className="content">
             {props.children}
             <h3>Related topics, websites and sources</h3>
             <Sources sources={props.postdata.sources} />
             <Tags tags={props.postdata.tags} questions={props.postdata.questions} />
-          </div>
+          </article>
         </div>
       </main>
       {props.posts[0] ? <Posts posts={props.posts} /> : ""}

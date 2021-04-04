@@ -78,7 +78,9 @@ export default function App(): ReactElement {
         <h1>Convert all images to AVIF for free.</h1>
         <h2 className={"f1 m0 s4 center normal"}>
           No data is sent. The magic happens in your browser.
-          <span className="tutorial">How?</span>
+          <span tabIndex={0} role="button" className="tutorial">
+            How?
+          </span>
         </h2>
 
         <div className={"main-container" + " " + (settingsBoxOpen ? "open" : "")}>
@@ -114,7 +116,7 @@ export default function App(): ReactElement {
             leftImageAlt="jpg image"
             rightImageAlt="avif image"
             sliderLineWidth={4}
-            handle={<div id="handle" />}
+            handle={<div role="button" tabIndex={0} id="handle" />}
             sliderLineColor="rgba(255,255,255,0.2)"
             sliderPositionPercentage={0.5}
           />

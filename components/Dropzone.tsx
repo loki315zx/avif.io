@@ -42,7 +42,8 @@ export default function Dropzone(props: DropzoneProps) {
 
   return (
     <a
-      tabIndex={0}
+      href="#"
+      role="button"
       aria-label="This is the dropzone. Choose your images here to convert them to AVIF"
       onClick={onBrowseClick}
       className={`dropzone-container center ${isDragActive ? "active" : ""}`}>

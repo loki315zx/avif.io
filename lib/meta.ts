@@ -92,6 +92,37 @@ export const february2021 = {
   keyword: "Changelog 21-02",
 };
 
+export const march2021 = {
+  title: "Changelog for March 2021",
+  description:
+    "This release focuses on improving accessibility drastically and provides new information for our upcoming API and conversion.",
+  url: "blog/releases/march-2021/",
+  image: "/logo_draft.png",
+  author: "Justin Schmitz",
+  date_published: "04.04.21",
+  date_modified: "04.04.21",
+  sources: [
+    "https://github.com/strukturag/libheif",
+    "https://bugzilla.mozilla.org/show_bug.cgi?id=1700723",
+    "https://bugzilla.mozilla.org/show_bug.cgi?id=1689806",
+    "https://bugzilla.mozilla.org/show_bug.cgi?id=1696056",
+    "https://bugzilla.mozilla.org/show_bug.cgi?id=1687443",
+    "https://bugzilla.mozilla.org/show_bug.cgi?id=1700723",
+    "https://aomediacodec.github.io/av1-avif/",
+    "https://github.com/mozilla/mp4parse-rust/issues/236",
+    "https://github.com/AOMediaCodec/libavif/issues/480",
+    "https://github.com/MPEGGroup/MIAF/issues/5",
+    "https://github.com/MPEGGroup/FileFormat/issues/23",
+    "https://github.com/kornelski/avif-serialize/issues",
+    "https://github.com/kornelski/cavif-rs",
+    "https://github.com/kornelski/cavif-rs/issues/13",
+  ],
+  tags: [],
+  questions: [],
+  readingtime: "5",
+  keyword: "Changelog 21-03",
+};
+
 export const useAvifInCloudflare = {
   description:
     "Cloudflare has added support for AVIF, a new image format. Learn how to optimize images and convert them to WebP or AVIF on demand.",

@@ -13,7 +13,9 @@ export default function PercentageSlider(props: PercentageSliderProps) {
     <div className={props.className + " " + "s2"} id={props.id}>
       <div style={{ display: "flex", alignItems: "center" }}>
         <p className="center bold">{props.name}</p>
-        <span className="tutorial">?</span>
+        <span tabIndex={0} role="button" className="tutorial">
+          ?
+        </span>
       </div>
       <div style={{ display: "flex" }}>
         <label>
@@ -23,12 +25,12 @@ export default function PercentageSlider(props: PercentageSliderProps) {
             value={props.value}
             onChange={(e) => props.onChange(Number(e.target.value))}
             min={0}
-            max={100}
+            max={90}
             disabled={props.disabled}
             step={5}
           />
         </label>
-        <b style={{ marginLeft: 10 }}>{props.value}%</b>
+        <b style={{ marginLeft: 10 }}>{props.value + 10}%</b>
       </div>
     </div>
   );

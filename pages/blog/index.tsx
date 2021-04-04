@@ -17,8 +17,9 @@ const posts = [post1, post2, post3, post4, post5, post6, post7, post8, post9, po
 
 import { january2021 as post101 } from "lib/meta";
 import { february2021 as post102 } from "lib/meta";
+import { march2021 as post103 } from "lib/meta";
 
-const releases = [post102, post101];
+const releases = [post103, post102, post101];
 
 import { blog as postdata } from "lib/meta";
 
