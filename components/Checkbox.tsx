@@ -1,12 +1,10 @@
 export default function Checkbox(props: any) {
   const advantages = props.advantages;
   const listItems = advantages.map((advantage: any, index: any) => (
-    <div role="list" key={index}>
-      <div role="listitem">
-        <span className="checklist">✓</span>
-        {advantage}
-      </div>
-    </div>
+    <li key={index}>
+      <span className="checklist">✓</span>
+      {advantage}
+    </li>
   ));
-  return <ul>{listItems}</ul>;
+  return <ul className="checkbox-list">{listItems}</ul>;
 }

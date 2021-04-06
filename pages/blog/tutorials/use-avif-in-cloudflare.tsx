@@ -14,13 +14,13 @@ import { useAvifInNextjs as post3 } from "lib/meta";
 export default function BlogAvifInCloudflare() {
   return (
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
-      Images compressed in AVIF can be reduced to half the size of JPEG and WebP. It combines the
-      HEIF ISO standard with the royalty-free AV1 codec from Mozilla, Google, Cisco, and others.
-      Cloudflare on the other hand provides hosting services and distribution services to many
-      websites to optimize the loading of content on the user's side. On the 3rd of October,
-      Cloudflare announced support for automatic serving of AVIF images. Upon reviewing web stats,
-      let's point out that more than half of an average website is spent on pictures, and that over
-      15% of all websites are powered by Cloudflare.
+      Images compressed in AVIF typically take half the space of JPEG and WebP. It takes advantage
+      of the HEIF ISO standard and AV1 codec from Mozilla, Google, Cisco, and others. On the other
+      hand, Cloudflare supplies hosting and distribution services for websites to optimize content
+      loading for the user. On the 3rd of October, Cloudflare announced support for automatic AVIF
+      image serving. Reviewing web stats, we can see that more than half of an average website size
+      is taken up by images. We can also see that about 15% of websites are powered by Cloudflare,
+      giving Cloudflare a lot of sway to speed up the web.
       <Image url="cloudflare-stats" alt="cloudflare stats" />
       Allowing users to optimize images into the new AVIF image format marks a major milestone in
       making the web a faster place. Improved image compression can reduce bandwidth usage and

@@ -909,7 +909,7 @@ header > * > * {
   margin-right: var(--s1);
 }
 
-div[role="listitem"] {
+.checkbox-list li {
   display: flex;
   margin-bottom: var(--s0);
   align-items: baseline;
