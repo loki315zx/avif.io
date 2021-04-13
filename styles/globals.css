@@ -1383,7 +1383,7 @@ header > * > * {
 
 .cta__container {
   position: relative;
-  max-width: 720px;
+  max-width: calc(720px + var(--s3) * 6);
   margin: var(--s4) auto var(--s5);
 }
 
@@ -1440,6 +1440,7 @@ header > * > * {
   transition: all 0.3s ease-out;
   cursor: pointer;
   position: relative;
+  height: 100%;
 }
 
 .posts__img {
@@ -1469,7 +1470,7 @@ header > * > * {
 }
 
 .posts__title {
-  padding: var(--s1) 0;
+  padding: 0 0 var(--s1) 0;
   font-weight: bold;
 }
 

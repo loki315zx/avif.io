@@ -27,9 +27,9 @@ export default function BlogAvif() {
       loads the image, the {`<html>`} gets a 'webp' class. Of course, this feature is optionally and
       you can remove it based on your preferences. If very unlikely, your browser also fails this
       test, the HTML element gets no class at all.
-      <Code language="html">{`<html> <!--no class at all, which means you have to use jpg (oh god)-->
-<html class="webp"> <!--which means you can use webp-->
-<html class="avif"> <!--which means you can use avif (heck yeah!)-->`}</Code>
+      <Code language="html">{`<html></html> <!-- no class at all, you have to use jpg (oh god)-->
+<html class="webp"></html> <!-- you can use webp-->
+<html class="avif"></html> <!-- you can use avif (heck yeah!)-->`}</Code>
       <h2>The Script</h2>
       To avoid visible image switching when the avif/webp class is added to your DOM, add the
       contents as an inline script in your {`<head>`} above any CSS content. The minified version of
