@@ -14,7 +14,7 @@ export default function BlogTags(props: any) {
   ));
   return (
     <div className="tags_container f0">
-      <h3>Related Questions, tags and headlines</h3>
+      <h3>Related questions, tags and headlines</h3>
       {listTags} {listQuestions}
     </div>
   );

@@ -12,31 +12,10 @@ export const placeholder = {
   questions: [""],
 };
 
-export const releaseIndex = {
-  title: "Release Notes",
-  description: "We constantly try to improve our yada yada.",
-  url: "blog/releases/",
-  image: "/logo_draft.png",
-  author: "Justin Schmitz",
-  date_published: "11.01.21",
-  date_modified: "11.01.21",
-  keyword: "news",
-};
-
 export const blog = {
   title: "Articles about AVIF",
   description: "Read a lot of articles related to AVIF and images on the web.",
   url: "blog/",
-  image: "/logo_draft.png",
-  author: "Justin Schmitz",
-  date_published: "01.09.20",
-  date_modified: "10.01.21",
-};
-
-export const tutorials = {
-  title: "Tutorials",
-  description: "Find out how to use AVIF in different environments",
-  url: "blog/tutorials/",
   image: "/logo_draft.png",
   author: "Justin Schmitz",
   date_published: "01.09.20",
@@ -66,7 +45,7 @@ export const january2021 = {
   tags: [],
   questions: [],
   readingtime: "5",
-  keyword: "Changelog 21-01",
+  keyword: "Changelog January 2021",
 };
 
 export const february2021 = {
@@ -89,7 +68,7 @@ export const february2021 = {
   tags: [],
   questions: [],
   readingtime: "5",
-  keyword: "Changelog 21-02",
+  keyword: "Changelog February 2021",
 };
 
 export const march2021 = {
@@ -120,7 +99,7 @@ export const march2021 = {
   tags: [],
   questions: [],
   readingtime: "5",
-  keyword: "Changelog 21-03",
+  keyword: "Changelog March 2021",
 };
 
 export const useAvifInCloudflare = {
@@ -377,6 +356,45 @@ export const useAvifInFrameworks = {
   ],
   questions: ["How do I use AVIF images in React Single page Web App"],
   keyword: "Frameworks",
+};
+
+export const useAvifInMagento = {
+  readingtime: "5",
+  title: "Magento 2 AVIF Support? Native and with extensions!",
+  description: "Find out about the current state of AVIF support in Magento 2.",
+  url: "blog/tutorials/use-avif-in-magento/",
+  image: "/logo_draft.png",
+  author: "Justin Schmitz",
+  date_published: "21.04.21",
+  date_modified: "21.04.21",
+  sources: [
+    "https://www.yireo.com/blog/2020-12-29-magento2-webp-becomes-next-gen",
+    "https://packagist.org/packages/yireo/magento2-next-gen-images",
+    "https://www.jajuma.de/en/jajuma-develop/extensions/ultimate-image-optimizer-extension-for-magento-2",
+    "https://marketplace.magento.com/jajuma-module-imageoptimizerultimate.html",
+    "https://github.com/magento/magento2/pull/32400",
+    "https://github.com/magento/magento2/issues/32495",
+    "https://github.com/magento/devdocs/blob/master/src/marketplace/sellers/image-tips.md",
+  ],
+  tags: [
+    "avif",
+    "image optimization",
+    "magento",
+    "optimizer",
+    "magento 2",
+    "yireo",
+    "image size",
+    "format",
+    "resizing",
+    "all-in-one image optimization extension",
+    "magento 2 marketplace",
+    "magento ecommerce",
+    "image solutions",
+    "visual quality",
+    "next generation images",
+  ],
+  questions: ["How do I enable AVIF support on Magento?"],
+  keyword: "Magento",
 };
 
 export const useAvifInGimp = {

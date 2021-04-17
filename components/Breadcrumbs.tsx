@@ -25,7 +25,7 @@ export default function Breadcrumbs(props: any) {
                     "@type": "ListItem",
                     "position": 2,
                     "name": urlSplit[1],
-                    "item": "https://avif.io/blog/" + urlSplit[1] + "/",
+                    "item": "https://avif.io/blog#" + urlSplit[1],
                   }
                 : "",
             ],
@@ -41,7 +41,7 @@ export default function Breadcrumbs(props: any) {
               {" > "}
               <SmartLink
                 className="white"
-                link={`/${urlSplit[0]}/${urlSplit[1]}/`}
+                link={`/${urlSplit[0]}#${urlSplit[1]}`}
                 text={urlSplit[1]}
               />
             </div>

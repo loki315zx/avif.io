@@ -4,7 +4,7 @@ import SmartLink from "@components/SmartLink";
 
 import { march2021 as postdata } from "lib/meta";
 
-import { releaseIndex as post1 } from "lib/meta";
+import { useAvifInWordpress as post1 } from "lib/meta";
 import { january2021 as post2 } from "lib/meta";
 import { february2021 as post3 } from "lib/meta";
 

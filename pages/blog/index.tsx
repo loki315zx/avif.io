@@ -12,8 +12,22 @@ import { useAvifInNextjs as post8 } from "lib/meta";
 import { useAvifInWindows as post9 } from "lib/meta";
 import { useAvifInWordpress as post10 } from "lib/meta";
 import { useAvifInNetlify as post11 } from "lib/meta";
+import { useAvifInMagento as post12 } from "lib/meta";
 
-const posts = [post1, post2, post3, post4, post5, post6, post7, post8, post9, post10, post11];
+const posts = [
+  post1,
+  post2,
+  post3,
+  post4,
+  post5,
+  post6,
+  post7,
+  post8,
+  post9,
+  post10,
+  post11,
+  post12,
+];
 
 import { january2021 as post101 } from "lib/meta";
 import { february2021 as post102 } from "lib/meta";
@@ -41,8 +55,8 @@ export default function BlogAvif() {
         <h2>{postdata.description}</h2>
       </div>
 
-      <Posts posts={posts} title="Tutorials" />
-      <Posts posts={releases} title="Releases" />
+      <Posts posts={posts} title="tutorials" />
+      <Posts posts={releases} title="releases" />
     </main>
   );
 }

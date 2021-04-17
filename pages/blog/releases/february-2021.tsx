@@ -3,7 +3,7 @@ import Blog from "@components/Blog";
 
 import { february2021 as postdata } from "lib/meta";
 
-import { releaseIndex as post1 } from "lib/meta";
+import { march2021 as post1 } from "lib/meta";
 import { january2021 as post2 } from "lib/meta";
 import { useAvifInWordpress as post3 } from "lib/meta";
 

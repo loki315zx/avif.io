@@ -7,8 +7,6 @@
 
 <!--Archive Pages-->
 <url><loc>https://avif.io/blog/</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq></url>
-<url><loc>https://avif.io/blog/tutorials/</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq></url>
-<url><loc>https://avif.io/blog/releases/</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq></url>
 
 <!--Release Notes-->
 <url><loc>https://avif.io/blog/releases/2021-january/</loc><lastmod>2021-01-29</lastmod><priority>0.5</priority><changefreq>never</changefreq></url> 
@@ -27,5 +25,6 @@
 <url><loc>https://avif.io/blog/tutorials/use-avif-in-windows/</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq></url>
 <url><loc>https://avif.io/blog/tutorials/use-avif-in-wordpress</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq></url>
 <url><loc>https://avif.io/blog/tutorials/use-avif-in-netlify</loc><lastmod>2021-02-14</lastmod><priority>0.5</priority><changefreq>monthly</changefreq></url>
+<url><loc>https://avif.io/blog/tutorials/use-avif-in-magento</loc><lastmod>2021-04-17</lastmod><priority>0.5</priority><changefreq>monthly</changefreq></url>
 
 </urlset>
