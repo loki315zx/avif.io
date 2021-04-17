@@ -1162,6 +1162,14 @@ header > * > * {
   background-image: url("@assets/edge.svg");
 }
 
+#magento .tutorial__overflow::before {
+  background-image: url("@assets/magento.svg");
+}
+
+#safari .tutorial__overflow::before {
+  background-image: url("@assets/safari.svg");
+}
+
 .tutorials__box:hover .tutorial_shadow {
   transform: scale(1);
 }

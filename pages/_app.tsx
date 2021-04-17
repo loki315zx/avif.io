@@ -33,10 +33,10 @@ export default function AvifIo({ Component, pageProps }: any) {
       <Footer />
       <CookieBanner />
       <Share />
-      <script src="/__/firebase/8.2.9/firebase-app.js"></script>
-      <script src="/__/firebase/8.2.9/firebase-analytics.js"></script>
-      <script src="/__/firebase/8.2.9/firebase-database.js"></script>
-      <script src="/__/firebase/8.2.9/firebase-storage.js"></script>
+      <script src="/__/firebase/8.4.1/firebase-app.js"></script>
+      <script src="/__/firebase/8.4.1/firebase-analytics.js"></script>
+      <script src="/__/firebase/8.4.1/firebase-database.js"></script>
+      <script src="/__/firebase/8.4.1/firebase-storage.js"></script>
       <script src="/__/firebase/init.js"></script>
       <script src="/console.js"></script>
       <script>firebase.analytics()</script>

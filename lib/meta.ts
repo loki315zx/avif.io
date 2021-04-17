@@ -1,3 +1,6 @@
+import { ENGINE_METHOD_ALL } from "node:constants";
+import { format } from "node:path";
+
 export const placeholder = {
   readingtime: "",
   title: "Placeholder",
@@ -256,6 +259,46 @@ export const useAvifInEdge = {
     "What is AVIF or AV1 image format",
   ],
   keyword: "Edge",
+};
+
+export const useAvifInSafari = {
+  readingtime: "5",
+  title: "Is Safari adding AVIF support in 2021?",
+  description:
+    "Everyone is ready to use AVIF, is Apple ready as well? Find out more about the current state in Webkit and Safari.",
+  url: "blog/tutorials/use-avif-in-safari/",
+  image: "/logo_draft.png",
+  author: "Justin Schmitz",
+  date_published: "19.04.21",
+  date_modified: "19.04.21",
+  sources: [
+    "https://en.wikipedia.org/wiki/AV1#cite_note-172",
+    "https://bugs.webkit.org/show_bug.cgi?id=207750",
+    "https://www.reddit.com/r/AV1/comments/m8ij2s/safari_adding_avif_support_soon/",
+    "https://bugs.webkit.org/show_bug.cgi?id=222804",
+    "https://github.com/WebKit/WebKit/blob/main/Tools/gtk/jhbuild.modules#L129",
+    "https://trac.webkit.org/changeset/273970/webkit",
+  ],
+  tags: [
+    "Webkit Engine",
+    "Apple Browser",
+    "Safari Support",
+    "Safari AVIF",
+    "AVIF-capable browsers",
+    "incompatible browsers",
+    "core of safari",
+    "versions of safari",
+    "modern image format",
+    "image compression format",
+    "Next-Generation Image Coding",
+    "AVIF images",
+  ],
+  questions: [
+    "Safari adding avif support soon?",
+    "Is your browser capable of displaying AVIF images?",
+    "Which browsers are capable of displaying AVIF pictures?",
+  ],
+  keyword: "Safari",
 };
 
 export const useAvifInFirefox = {

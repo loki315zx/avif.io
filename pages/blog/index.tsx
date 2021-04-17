@@ -13,6 +13,7 @@ import { useAvifInWindows as post9 } from "lib/meta";
 import { useAvifInWordpress as post10 } from "lib/meta";
 import { useAvifInNetlify as post11 } from "lib/meta";
 import { useAvifInMagento as post12 } from "lib/meta";
+import { useAvifInSafari as post13 } from "lib/meta";
 
 const posts = [
   post1,
@@ -27,6 +28,7 @@ const posts = [
   post10,
   post11,
   post12,
+  post13,
 ];
 
 import { january2021 as post101 } from "lib/meta";

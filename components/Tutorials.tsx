@@ -33,19 +33,21 @@ export default function Tutorials() {
         and we will write an article about it.
       </div>
       <div className="tutorials__container">
+        <TutorialsBox cssclass="firefox" title="Firefox" url="firefox" />
+        <TutorialsBox cssclass="safari" title="Safari" url="safari" />
+        <TutorialsBox cssclass="edge" title="Edge" url="edge" />
         <TutorialsBox cssclass="css" title="CSS" url="css" />
         <TutorialsBox cssclass="html" title="HTML" url="html" />
         <TutorialsBox cssclass="angular" title="Angular" url="frameworks" />
         <TutorialsBox cssclass="react" title="React" url="frameworks" />
         <TutorialsBox cssclass="vue" title="Vue" url="frameworks" />
         <TutorialsBox cssclass="nextjs" title="Next.JS" url="nextjs" />
-        <TutorialsBox cssclass="firefox" title="Firefox" url="firefox" />
-        <TutorialsBox cssclass="edge" title="Edge" url="edge" />
-        <TutorialsBox cssclass="gimp" title="GIMP" url="gimp" />
         <TutorialsBox cssclass="netlify" title="Netlify" url="netlify" />
-        <TutorialsBox cssclass="wordpress" title="WordPress" url="wordpress" />
         <TutorialsBox cssclass="cloudflare" title="Cloudflare" url="cloudflare" />
+        <TutorialsBox cssclass="wordpress" title="WordPress" url="wordpress" />
+        <TutorialsBox cssclass="magento" title="Magento" url="magento" />
         <TutorialsBox cssclass="windows" title="Windows" url="windows" />
+        <TutorialsBox cssclass="gimp" title="GIMP" url="gimp" />
       </div>
     </section>
   );
