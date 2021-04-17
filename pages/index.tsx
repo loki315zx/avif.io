@@ -120,8 +120,8 @@ export default function App(): ReactElement {
             sliderLineColor="rgba(255,255,255,0.2)"
             sliderPositionPercentage={0.5}
           />
-          <p id="jpg">jpg · 45kB</p>
-          <p id="avif">avif · 45kB</p>
+          <p id="jpg">jpg · 18kB</p>
+          <p id="avif">avif · 18kB</p>
         </div>
       </section>
       <Tutorials />
