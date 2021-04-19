@@ -977,6 +977,10 @@ header > * > * {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
+.tutorials__container a:nth-child(even) {
+  padding: 15px 15px 0 15px;
+}
+
 .tutorials__box {
   width: 100%;
   border-radius: var(--radius-medium);
@@ -2412,6 +2416,10 @@ pre {
 
   .tutorials__container {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .tutorials__container a:nth-child(even) {
+    padding: 0;
   }
 }
 
