@@ -9,6 +9,10 @@ import { useAvifInWordpress as post3 } from "lib/meta";
 export default function BlogAvif() {
   return (
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
+      <h2>Update March 2021</h2>
+      Several open bugs and issues have lead to support still not being the default. This has mainly
+      to do with the current AVIF spec from AOM. We can expect Firefox 89 to have a full, compliant
+      AVIF support that is enabled by default. Version 89 will be released at the 1st of July.
       <h2>Update January 2021</h2>
       YES! Finally. Firefox Nightly users needed to enable the feature manually to get it supported
       in the Firefox browser at the time. Starting with version 86, which will be available on the

@@ -4,18 +4,13 @@
 #support/
 - android
 - opera
-- safari / webkit
 
 #pages/blog
 - write good alt text + ein test derzeitiger apis + aussicht für die zukunft. The current state of ALT text. The future state + simple way to optimize your image descriptions 
-- generator für alt texte? 
-- avif encorders
+- generator für alt texte?
+- avif encoders
 - avif support & caniuse. list all tools, software, hardware. like they are heroes.
-- avif vs gif
-- avif vs jpegxl
-- avif vs jpeg
-- avif vs png
-- avif vs webp
+
 - The Benefits of AVIF Format (for Your Website), see starting page.
 - The Importance of Image Compression.
 - avif complete guide to avif
@@ -25,6 +20,12 @@
 - blurhash promotion: placeholder for images / blurs / blurhash. article about https://plaiceholder.co/ + integrate on avif.io?
 - Maybe blog articles out of https://aomediacodec.github.io/av1-avif/ ? 
 - test images by using google chrome rendering tab
+
+- avif vs gif
+- avif vs jpegxl
+- avif vs jpeg
+- avif vs png
+- avif vs webp
 
 #utilities
 - Generator für optimale Markups von Bildern / Specify Image sizes & and alt text & url

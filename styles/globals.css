@@ -562,7 +562,7 @@ header > * > * {
   top: 0;
   right: 0;
   height: auto;
-  transform: scale(0);
+  transform: translate3d(0, 0, 0) scale(0);
   transition: all 0.3s ease-in-out;
   opacity: 0;
   width: var(--s6);
@@ -610,7 +610,7 @@ header > * > * {
 .dropzone-container:hover .dropzone-root,
 .dropzone-container.active,
 .dropzone-container:active {
-  transform: scale(0.95);
+  transform: translate3d(0, 0, 0) scale(0.95);
 }
 
 .dropzone-container.active {
@@ -618,7 +618,7 @@ header > * > * {
 }
 
 .dropzone-container.active .upload-button {
-  transform: scale(1.15);
+  transform: translate3d(0, 0, 0) scale(1.15);
   transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
@@ -789,7 +789,7 @@ header > * > * {
 
 .download {
   width: var(--s3);
-  transform: scale(0);
+  transform: translate3d(0, 0, 0) scale(0);
   position: absolute;
   right: 0;
   top: 0;
@@ -819,7 +819,7 @@ header > * > * {
 }
 
 .download:hover::after {
-  transform: scale(1.2);
+  transform: translate3d(0, 0, 0) scale(1.2);
 }
 
 .progress .download {
@@ -827,7 +827,7 @@ header > * > * {
 }
 
 .finished .download {
-  transform: scale(1);
+  transform: translate3d(0, 0, 0) scale(1);
 }
 
 .downloadall-container.hide {
@@ -868,7 +868,7 @@ header > * > * {
 }
 
 .cog-button.open {
-  transform: rotate(180deg);
+  transform: translate3d(0, 0, 0) rotate(180deg);
   background-color: var(--color500);
 }
 
@@ -993,7 +993,7 @@ header > * > * {
 }
 
 .tutorials__box:hover {
-  transform: scale(1.03) rotate(3deg);
+  transform: translate3d(0, 0, 0) scale(1.03) rotate(3deg);
 }
 
 .tutorials__box:hover::before {
@@ -1107,7 +1107,7 @@ header > * > * {
   right: 0;
   left: 0;
   bottom: 0;
-  transform: scale(1.2);
+  transform: translate3d(0, 0, 0) scale(1.2);
 }
 
 #css .tutorial__overflow::before {
@@ -1171,7 +1171,7 @@ header > * > * {
 }
 
 .tutorials__box:hover .tutorial_shadow {
-  transform: scale(1);
+  transform: translate3d(0, 0, 0) scale(1);
 }
 
 .tutorial__shadow {
@@ -1179,7 +1179,7 @@ header > * > * {
   z-index: -1;
   filter: blur(5px);
   border-radius: var(--radius-small);
-  transform: scale(0);
+  transform: translate3d(0, 0, 0) scale(0);
 }
 
 /*  */
@@ -1234,7 +1234,7 @@ header > * > * {
   cursor: default;
   position: relative;
   overflow: hidden;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   z-index: 99;
 }
 
@@ -1247,7 +1247,7 @@ header > * > * {
 
 .advantage__grid__item:hover {
   background: var(--black2);
-  transform: scale(1.05);
+  transform: translate3d(0, 0, 0) scale(1.05);
 }
 
 .advantage__grid__item:hover .advantage__text {
@@ -1321,7 +1321,7 @@ header > * > * {
 .advantage__grid__item:hover .visualizer {
   filter: blur(10px);
   opacity: 0.05;
-  transform: scale(1.1);
+  transform: translate3d(0, 0, 0) scale(1.1);
 }
 
 /*  */
@@ -1462,6 +1462,7 @@ header > * > * {
 
 .posts__item:hover .posts__img {
   background: var(--gradient);
+  border-bottom: 2px solid transparent;
 }
 
 .posts__tag {
@@ -1611,7 +1612,7 @@ section.posts .posts__container.grid {
 }
 
 .blog__header::after {
-  transform: rotate(357deg) scale(1.2);
+  transform: translate3d(0, 0, 0) rotate(357deg) scale(1.2);
 }
 
 .releases .posts__tag {
@@ -1854,12 +1855,12 @@ section.posts .posts__container.grid {
 }
 
 .blog__syntax__copy:focus {
-  transform: scale(0.9);
+  transform: translate3d(0, 0, 0) scale(0.9);
   background: var(--color700);
 }
 
 .blog__syntax__copy:active {
-  transform: scale(0.8);
+  transform: translate3d(0, 0, 0) scale(0.8);
 }
 
 .blog h1 {
@@ -2062,62 +2063,62 @@ dialog {
 @keyframes cta-background {
   from {
     background-position: 100% 50%;
-    transform: rotate(0deg) scale(1.2);
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1.2);
   }
 
   to {
     background-position: 25% 50%;
-    transform: rotate(360deg) scale(1.4);
+    transform: translate3d(0, 0, 0) rotate(360deg) scale(1.4);
   }
 }
 
 @keyframes glow {
   0% {
-    transform: scale(1.55);
+    transform: translate3d(0, 0, 0) scale(1.55);
   }
 
   100% {
-    transform: scale(1.6) rotate(360deg);
+    transform: translate3d(0, 0, 0) scale(1.6) rotate(360deg);
   }
 }
 
 @keyframes rotate-center {
   0% {
-    transform: rotate(0) scale(2);
+    transform: translate3d(0, 0, 0) rotate(0) scale(2);
   }
 
   100% {
-    transform: rotate(360deg) scale(2);
+    transform: translate3d(0, 0, 0) rotate(360deg) scale(2);
   }
 }
 
 @keyframes bounce-in {
   0% {
-    transform: scale(1, 1);
+    transform: translate3d(0, 0, 0) scale(1, 1);
   }
 
   10% {
-    transform: scale(1.04, 0.92);
+    transform: translate3d(0, 0, 0) scale(1.04, 0.92);
   }
 
   30% {
-    transform: scale(0.92, 1.04);
+    transform: translate3d(0, 0, 0) scale(0.92, 1.04);
   }
 
   50% {
-    transform: scale(1.02, 0.96);
+    transform: translate3d(0, 0, 0) scale(1.02, 0.96);
   }
 
   57% {
-    transform: scale(1, 1);
+    transform: translate3d(0, 0, 0) scale(1, 1);
   }
 
   64% {
-    transform: scale(1.01, 0.99);
+    transform: translate3d(0, 0, 0) scale(1.01, 0.99);
   }
 
   100% {
-    transform: scale(1, 1);
+    transform: translate3d(0, 0, 0) scale(1, 1);
   }
 }
 
@@ -2133,40 +2134,40 @@ dialog {
 
   0% {
     opacity: 0;
-    transform: scale3d(0.97, 0.97, 0.97);
+    transform: translate3d(0, 0, 0) scale3d(0.97, 0.97, 0.97);
   }
 
   20% {
-    transform: scale3d(1.02, 1.02, 1.02);
+    transform: translate3d(0, 0, 0) scale3d(1.02, 1.02, 1.02);
   }
 
   40% {
-    transform: scale3d(0.98, 0.98, 0.98);
+    transform: translate3d(0, 0, 0) scale3d(0.98, 0.98, 0.98);
   }
 
   60% {
     opacity: 1;
-    transform: scale3d(1.01, 1.01, 1.01);
+    transform: translate3d(0, 0, 0) scale3d(1.01, 1.01, 1.01);
   }
 
   80% {
-    transform: scale3d(0.99, 0.99, 0.99);
+    transform: translate3d(0, 0, 0) scale3d(0.99, 0.99, 0.99);
   }
 
   to {
     opacity: 1;
-    transform: scaleX(1);
+    transform: translate3d(0, 0, 0) scaleX(1);
   }
 }
 
 @keyframes flip-in-hor-bottom {
   0% {
-    transform: rotateX(80deg);
+    transform: translate3d(0, 0, 0) rotateX(80deg);
     opacity: 0;
   }
 
   100% {
-    transform: rotateX(0);
+    transform: translate3d(0, 0, 0) rotateX(0);
     opacity: 1;
   }
 }
@@ -2619,7 +2620,7 @@ pre {
     border-left: 0;
     left: 7px;
     top: 4px;
-    transform: rotate(var(--r, 20deg));
+    transform: translate3d(0, 0, 0) rotate(var(--r, 20deg));
   }
 
   input[type="checkbox"]:not(.switch):checked {
@@ -2660,7 +2661,7 @@ pre {
     border-radius: 50%;
     background: var(--active-inner);
     opacity: 0;
-    transform: scale(var(--s, 0.7));
+    transform: translate3d(0, 0, 0) scale(var(--s, 0.7));
   }
 
   input[type="radio"]:checked {
