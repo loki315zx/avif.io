@@ -19,9 +19,7 @@ const CookieBanner = () => {
   const [mode, setMode] = useStickyState("false", "true");
   return (
     <div className={`cookie ${mode}`}>
-      We serve cookies on this site to analyze traffic, remember your preferences, and optimize your
-      experience.
-      <SmartLink text="More Details" link="/privacy-policy/" />.
+      We serve cookies to optimize your experience.
       <div
         role="button"
         className="overlay flex-center"
