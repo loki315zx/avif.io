@@ -4,7 +4,7 @@ const path = require("path");
 
 const output = "../public/img/";
 const input = "../images/";
-const jpgQuality = { mozjpeg: true, quality: 70, progressive: true };
+const jpgQuality = { mozjpeg: true, quality: 60, progressive: true };
 const webpQuality = { quality: 60, reductionEffort: 6 };
 const avifQuality = { quality: 50, speed: 1 };
 const sizes = [1440, 720, 540, 360];
