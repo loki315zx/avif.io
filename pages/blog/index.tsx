@@ -15,6 +15,14 @@ import { useAvifInNetlify as post11 } from "lib/meta";
 import { useAvifInMagento as post12 } from "lib/meta";
 import { useAvifInSafari as post13 } from "lib/meta";
 
+import { january2021 as post101 } from "lib/meta";
+import { february2021 as post102 } from "lib/meta";
+import { march2021 as post103 } from "lib/meta";
+
+import { imageOptimizationIn2021 as post1001 } from "lib/meta";
+
+const releases = [post103, post102, post101];
+const articles = [post1001];
 const posts = [
   post1,
   post2,
@@ -30,12 +38,6 @@ const posts = [
   post12,
   post13,
 ];
-
-import { january2021 as post101 } from "lib/meta";
-import { february2021 as post102 } from "lib/meta";
-import { march2021 as post103 } from "lib/meta";
-
-const releases = [post103, post102, post101];
 
 import { blog as postdata } from "lib/meta";
 
@@ -57,6 +59,7 @@ export default function BlogAvif() {
         <h2>{postdata.description}</h2>
       </div>
 
+      <Posts posts={articles} title="articles" />
       <Posts posts={posts} title="tutorials" />
       <Posts posts={releases} title="releases" />
     </main>

@@ -14,7 +14,9 @@ export default function BlogTags(props: any) {
   ));
   return (
     <div className="tags_container f0">
-      <h3>Related questions, tags and headlines</h3>
+      <h3>Topic cluster</h3>
+      Topics referenced across search results organized in clusters, sorted by frequency across top
+      search results. Followed by related questions asked on Google.
       {listTags} {listQuestions}
     </div>
   );

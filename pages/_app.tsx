@@ -41,10 +41,6 @@ export default function AvifIo({ Component, pageProps }: any) {
       <script src="/__/firebase/init.js"></script>
       <script src="/console.js"></script>
       <script>firebase.analytics()</script>
-      <script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499854243209236"
-        crossOrigin="anonymous"></script>
     </>
   );
 }

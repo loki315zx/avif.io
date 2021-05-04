@@ -133,7 +133,7 @@ h1 {
 
 h2 {
   font-size: var(--f2);
-  margin: var(--s4) 0 var(--s2);
+  margin: var(--s5) 0 var(--s2);
 }
 
 h3 {
@@ -145,10 +145,15 @@ h3 {
   font-weight: bold;
 }
 
+h4 {
+  margin: var(--s3) 0 var(--s1) 0;
+  font-size: var(--f1);
+}
+
 h5 {
   font-size: var(--f0);
-  margin: var(--s1) 0;
-  color: var(--gray2);
+  margin: var(--s2) 0 var(--s0);
+  font-weight: normal;
 }
 
 div,
@@ -2779,4 +2784,15 @@ input:focus-visible {
     transition-duration: 0s !important;
     transition-delay: 0s !important;
   }
+}
+
+.avifcompare,
+.section__tutorials,
+.advantages-explainer,
+.cta__container,
+footer,
+#sources,
+.tags_container,
+section.posts {
+  content-visibility: auto;
 }
