@@ -272,7 +272,7 @@ export default function BlogAvifInCloudflare() {
       There are a few strategies to efficiently encode images, such as:
       <Checkbox
         advantages={[
-          "Manually compressing with tools like http://avif.io or Imageoptim",
+          "Manually compressing with tools like avif.io or Imageoptim",
           "NodeJS: sharp librbary",
           "Drupal:  Consider using a module that automatically optimizes and reduces the size of images. Ensure you are using the Drupal's built-in Responsive Image Styles",
           "Joomla: Consider using an image optimization plugin that compresses your images while retaining quality.",
