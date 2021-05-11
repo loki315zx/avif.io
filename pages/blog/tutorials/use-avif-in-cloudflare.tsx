@@ -1,4 +1,5 @@
 import Blog from "@components/Blog";
+import H from "@components/H";
 import Checkbox from "@components/Checkbox";
 
 import SmartLink from "@components/SmartLink";
@@ -28,7 +29,7 @@ export default function BlogAvifInCloudflare() {
       technology provided by Cloudflare to function. We assume that you are on this page because you
       are using Cloudflare services and want to know how to turn on AVIF support. Oh, and by the
       way, this post is not sponsored in any way. Let's see:
-      <h2>Why Cloudflare supports avif</h2>
+      <H level={2} text="Why Cloudflare supports avif" />
       Regarding their latest blog post about AVIF, Cloudflare made the decision to support AVIF
       because of the following benefits:
       <Checkbox
@@ -44,7 +45,7 @@ export default function BlogAvifInCloudflare() {
         ]}
         checked={true}
       />
-      <h2>Business & Pro Plan</h2>
+      <H level={2} text="Business and Pro Plan" />
       The Image Resizing feature converts images to the AVIF format. Unfortunately, this feature is
       not free, but part of the Business Plan. Since a Business plan costs about $200 or more per
       month, this seems excessive for such a small feature.
@@ -56,7 +57,7 @@ export default function BlogAvifInCloudflare() {
       image optimization, a better firewall, captchas, cache analytics, etc. For an emerging small
       to medium-sized business, this seems like an attractive investment to get the last bit of
       performance out of your website.
-      <h2>Implementation with Workers</h2>
+      <H level={2} text="Implementation with Workers" />
       Browsers with AVIF support add an image/avif note to their Accept request header. To request
       the AVIF format from the Image Resizing module of Cloudflare, simply set the format option to
       avif. Using a worker script, you can easily automatically detect and enable AVIF support:
@@ -81,7 +82,7 @@ export default function BlogAvifInCloudflare() {
       beneficial to dynamically operate more image functions based on the state of the network.
       Crisp images in 4K are still incredible if your visitors have a bandwidth that supports it,
       and you can still handle the large file size.
-      <h2>The picture element</h2>
+      <H level={2} text="The picture element" />
       In our Tutorial on{" "}
       <SmartLink link="/blog/tutorials/use-avif-in-html" text="how to use avif in HTML" />, we
       present you the {`<picture>`} element as the best option to serve AVIF files in an HTML

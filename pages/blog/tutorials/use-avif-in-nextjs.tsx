@@ -1,4 +1,5 @@
 import Blog from "@components/Blog";
+import H from "@components/H";
 import SmartLink from "@components/SmartLink";
 import Code from "@components/Code";
 
@@ -14,7 +15,7 @@ export default function BlogAvifInNextJS() {
       reading uses both the latest version of React and NextJS. And not only that: the bundler
       automatically detects AVIF files and handles them accordingly. We didn't have to do anything
       for this work. That's what we call a first-class service, gentlemen!
-      <h2>That's it?</h2>
+      <H level={2} text="That's it?" />
       Yes. You simply need to include the AVIF files in your project and insert them via the usual
       methods using HTML or CSS. No configuration is required, but you must make sure that
       next.config.js includes the following:
@@ -23,7 +24,7 @@ export default function BlogAvifInNextJS() {
 module.exports = withImages()`}
       </Code>
       Next.JS will handle all the hard work behind the scenes for you.
-      <h2>You gotta be kidding me</h2>
+      <H level={2} text="You gotta be kidding me" />
       The team behind Next. JS has been working to improve image processing since version 10. They
       now offer both an integrated image component and a service for automatic image optimization.
       They describe their image component as "an extension of the HTML img element designed for the
@@ -33,7 +34,7 @@ module.exports = withImages()`}
       images support the Core Web Vitals by not shifting their layouts. Furthermore, this service
       can also be used if the server that contains the images of the website is a CDN and not a
       server hosted by the website.
-      <h2>Use the Next.JS image component</h2>
+      <H level={2} text="Use the Next.JS image component" />
       All in all, it's a simple "Put this image in your project, add it to the component and we'll
       do the entire conversion and optimization. That's perfect for lazy folks like us. Booyah!
       <Code language="javascript">{`import Image from 'next/image'
@@ -45,13 +46,13 @@ module.exports = withImages()`}
         height={0}
       />
 (..)`}</Code>
-      <h2>The component is not com..plete</h2>
+      <H level={2} text="The component is not com..plete" />
       While it converts images to newer formats, it does not yet do so for AVIF. There is a{" "}
       <SmartLink link="https://github.com/vercel/next.js/pull/20381" text="canary version" /> on
       Github that refers to AVIF more than once, so hopefully we will see this supported in future
       versions. Finally, the images loaded via CSS will not be optimized, although we pray that this
       will be the case in future versions.
-      <h2>Next Optimized Images</h2>
+      <H level={2} text="Next Optimized Images" />
       Until this point, if you rely heavily on CSS images, you can use the third-party plugin in
       Next.JS called
       <SmartLink

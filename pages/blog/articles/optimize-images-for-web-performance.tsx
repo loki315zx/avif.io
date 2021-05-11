@@ -1,8 +1,7 @@
 import Blog from "@components/Blog";
+import H from "@components/H";
 import Checkbox from "@components/Checkbox";
-import SmartLink from "@components/SmartLink";
 import Code from "@components/Code";
-import Image from "@components/Image";
 
 import { imageOptimizationIn2021 as postdata } from "lib/meta";
 import { useAvifInHtml as post1 } from "lib/meta";
@@ -12,7 +11,7 @@ import { useAvifInWordpress as post3 } from "lib/meta";
 export default function BlogAvifInCloudflare() {
   return (
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
-      <h2>TL;DR</h2>
+      <H level={2} text="TL;DR" />
       <Checkbox
         advantages={[
           "Serve images in next-gen formats: Use AVIF and WebP, with JPG as fallback",
@@ -24,11 +23,14 @@ export default function BlogAvifInCloudflare() {
         ]}
         checked={true}
       />
-      <h2>Introduction</h2>
-      <h5>
+      <H level={2} text="Introduction" />
+      <H
+        level={5}
+        text="
         Summary: Images are a huge part of the web. Performance is one of the biggest success
         factors for websites. Optimize your images to improve your user’s experience.
-      </h5>
+      "
+      />
       When building a modern web experience, it is essential to measure, optimize and monitor the
       speed of your website. Performance plays a significant role in the success of any website, as
       powerful websites appeal to and engage users better than low-performing websites. Websites
@@ -43,18 +45,18 @@ export default function BlogAvifInCloudflare() {
       formatted your images for better performance and follow best practices. In that case, your
       page will become more popular with search engines, browsers and networks and will load faster
       for your readers. Especially with half of your visitors likely using a mobile device,
-      delivering optimal image file formats & sizes is even more critical. Otherwise, your
+      delivering optimal image file formats and sizes is even more critical. Otherwise, your
       hard-earned traffic will decrease, and your Google rankings will also decline. Feel free to
       skip to the last chapter, which contains an action list and a fully coded example that you can
       copy to reproduce the results.
-      <h3>Google Core Web Vitals</h3>
+      <H level={3} text="Google Core Web Vitals" />
       To understand how and why we should optimize our images, we should understand Core Web Vitals.
       Several case studies confirm that increased page load time leads to frustrated users and an
       increased bounce rate. To address this problem, Google has introduced Core Web Vitals to
       create optimal page load time and user experience guidelines. Google approves these metrics so
       much that they will be an integral part of its ranking algorithm from July 2021. These
       guidelines are based on three performance metrics:
-      <h4>Largest Contentful Paint (LCP)</h4>
+      <H level={4} text="Largest Contentful Paint (LCP)" />
       LCP is the period during which the most significant content element in the viewport is made
       visible as soon as the user requests the URL. It is an important, user-centric metric for
       measuring the perceived load speed. It marks the point in the timeline where the page's main
@@ -63,7 +65,7 @@ export default function BlogAvifInCloudflare() {
       elements that are considered for the LCP. LCP is primarily influenced by slow servers, load
       times of resources and client-side rendering. We will minimize LCP by reducing bytes, caching
       and lazy loading.
-      <h4>First Input Delay (FID)</h4>
+      <H level={4} text="First Input Delay (FID)" />
       FID is a crucial, user-centered measure of load responsiveness. It quantifies the experience
       users feel when trying to interact with non-responsive pages - it ensures that the site is
       usable. The first impression users have of how quickly your website is can be measured with
@@ -77,7 +79,7 @@ export default function BlogAvifInCloudflare() {
       important on pages where the user needs to do something because then the page becomes
       interactive. By using our techniques, we will reduce FID through reduced (main-thread) CPU
       usage.
-      <h4>Cumulative Layout Shift (CLS)</h4>
+      <H level={4} text="Cumulative Layout Shift (CLS)" />
       CLS is an important, user-centric metric for measuring visual stability because it helps
       quantify how often users experience unexpected layout shifts—a low CLS helps ensure that the
       page is delightful. Have you ever been reading an article online when something suddenly
@@ -88,7 +90,7 @@ export default function BlogAvifInCloudflare() {
       lifespan of the page. This is important to us because for example having images without
       dimensions can cause elements shift while a user is trying to interact with it, leading to a
       bad user experience. With techniques in this article, we will keep CLS to zero.
-      <h3>Summarization of image optimization benefits</h3>
+      <H level={3} text="Summarization of image optimization benefits" />
       When you visit a website, the server calls up all the files that the website is supposed to
       load on your screen. Depending on how your website is structured, images could make up the
       bulk of data that needs to be loaded. The smaller the file sizes of the images, the faster a
@@ -97,7 +99,7 @@ export default function BlogAvifInCloudflare() {
       use. Properly optimized images still have their visual quality intact - and when you run an
       e-commerce site, that's really important to win customers' trust. In fact, 92.6% of people say
       that visual input is the leading factor influencing their purchasing decision.
-      <h4>Here is a look at the main advantages</h4>
+      <H level={4} text="Here is a look at the main advantages" />
       <Checkbox
         advantages={[
           "Faster Loading: It improves the loading speed of your site. If your site takes too long to load, your visitors might get tired of waiting and move on to something else.",
@@ -107,11 +109,14 @@ export default function BlogAvifInCloudflare() {
         ]}
         checked={true}
       />
-      <h2>1) Serve images in next-gen formats: Know when to use which file format</h2>
-      <h5>
+      <H level={2} text="1) Serve images in next-gen formats: Know when to use which file format" />
+      <H
+        level={5}
+        text="
         Summary: Use AVIF, then WebP and JPG as a fallback. Try to automate this process for your
         own sake.
-      </h5>
+      "
+      />
       The primary goal of formatting your images is to find the balance between the lowest file size
       and acceptable quality. The two primary things to consider are the file format and the type of
       compression you use. You need to experiment with some images to see what works best. When
@@ -119,7 +124,7 @@ export default function BlogAvifInCloudflare() {
       website. The goal is not to compare enlarged 1:1 previews of high-resolution files, but to
       compare images with realistic pixel dimensions. This chapter focuses on the file format, while
       the next chapter will focus on the type of compression.
-      <h3>Other formats than JPG and PNG</h3>
+      <H level={3} text="Other formats than JPG and PNG" />
       If you know the right file formats and how to handle different types of images in different
       file formats, you can know which file type to use to speed up the loading time of your website
       while maintaining good image quality. Most websites provide images in JPEG and PNG formats
@@ -134,7 +139,7 @@ export default function BlogAvifInCloudflare() {
       example, can be an excellent replacement for JPEG, PNG and even GIF images in many cases. It
       also supports lossless compression, lossy compression and animated images. In most cases, WebP
       images can reduce image file size by about 25-50%.
-      <h3>Browser compatibility</h3>
+      <H level={3} text="Browser compatibility" />
       If your target audience falls into one of the unsupported browser / device categories, you
       should ship optimized fallback images in the original JPEG / PNG format so that your users do
       not see a broken or poorly designed page. There are several types of files you can use that
@@ -152,8 +157,8 @@ export default function BlogAvifInCloudflare() {
         ]}
         checked={true}
       />
-      <h3>Explaining the best usecase for all formats</h3>
-      <h4>Using GIF</h4>
+      <H level={3} text="Explaining the best usecase for all formats" />
+      <H level={4} text="Using GIF" />
       Most platforms that host short videos do not use GIFs because animated GIFs can be quite
       large. Twitter, for instance, converts animated GIFs to video file formats such as MP4 to
       significantly reduce the total file size. Even GIPHY, an online directory and search engine
@@ -167,7 +172,7 @@ export default function BlogAvifInCloudflare() {
       />
       Luckily, you can recreate these behaviors using the video element.
       <Code language="html">{`<video autoplay loop muted playsinline></video>`}</Code>
-      <h4>Using PNG</h4>
+      <H level={4} text="Using PNG" />
       The Portable Network Graphics PNGs format was best used when saving graphics with limited
       colors. Logos and icons are good examples of images that would use the .png file format.
       Simple graphics with few colors can be saved as .png files to create high-quality images with
@@ -177,7 +182,7 @@ export default function BlogAvifInCloudflare() {
       colored backgrounds. The compromise is that PNG images are larger than JPG images, so their
       use will have a much worse impact on loading time. However, since newer file formats support
       transparency and a good compression rate, you should never use PNG.
-      <h4>Using JPG</h4>
+      <H level={4} text="Using JPG" />
       JPG has done an excellent job in keeping file sizes small over the last 20 years. It uses
       lossy compression, which allows dynamic compromise between quality and file size. It is by far
       the most widely used image format in the world, as it is supported by almost every digital
@@ -189,7 +194,7 @@ export default function BlogAvifInCloudflare() {
       mozjpeg for the file size of your images, a production-quality JPEG encoder that improves
       compression while maintaining compatibility with the vast majority of decoders used. Utilizing
       it will save around 15% of the high file size that jpg has in comparison to newer formats.
-      <h4>Using SVG</h4>
+      <H level={4} text="Using SVG" />
       Vector images are images that do not use pixel data, but use mathematical code-based data to
       create an image. Vector files have historically been used for all printing forms because a
       vector image retains its quality regardless of size. A vector-format logo can be printed on a
@@ -199,24 +204,24 @@ export default function BlogAvifInCloudflare() {
       meaning that symbols and graphs are displayed correctly regardless of how they are viewed.
       They are typically very small file sizes and help to increase loading speed. Use them for
       every image that has precise geometric shapes and doesn't rely too much on color.
-      <h4>Using WebP</h4>
+      <H level={4} text="Using WebP" />
       WebP is a modern image format developed by Google to provide superior lossless and lossy
       compression for optimizing web images. At a comparable quality compared to JPG, WebP images
       are 25% smaller. In addition to better compression, the format also supports transparency and
       is therefore a good substitute for PNG. Browser support for WebP is almost universal at 95%.
       You will need to provide a PNG or JPEG image for other browser support. Instructions on how to
       do this can be found at the end of this chapter.
-      <h4>Using AVIF</h4>
+      <H level={4} text="Using AVIF" />
       AVIF is the newest image format that has taken hold in web browsers and is currently supported
       in Chrome, Opera and Firefox. Safari support is not yet available, but is being actively
       edited. As Apple is in the group behind the format, we can expect future support. AVIF is
       remarkable because it significantly exceeds JPEG in every aspect, especially the file size.
-      <h4>Using JXL</h4>A modern image format optimized for web environments. JPEG XL generally has
-      better compression than WebP, JPEG, PNG and GIF, and was designed to supersede them. JPEG XL
-      competes with AVIF, which has similar compression quality but fewer features overall.
-      Unfortunately, it is not yet supported by any browser and should therefore not be a concern
-      for the time being.
-      <h3>How to convert all these image formats correctly?</h3>
+      <H level={4} text="Using JXL" />A modern image format optimized for web environments. JPEG XL
+      generally has better compression than WebP, JPEG, PNG and GIF, and was designed to supersede
+      them. JPEG XL competes with AVIF, which has similar compression quality but fewer features
+      overall. Unfortunately, it is not yet supported by any browser and should therefore not be a
+      concern for the time being.
+      <H level={3} text="How to convert all these image formats correctly?" />
       Opt for JPG as a general fallback, followed by WebP, which is better and has broad support,
       followed by AVIF, which is the latest active file format with slightly less support. To
       implement this progressive improvement for AVIF, use the picture element. The actual img
@@ -228,7 +233,7 @@ export default function BlogAvifInCloudflare() {
    <source srcset="image.webp" type="image/webp">
    <img src="image.jpg" alt="AVIF example with WebP and JPEG fallback">
 </picture>`}</Code>
-      <h4>There are more possibilities for support and conversion</h4>
+      <H level={4} text="There are more possibilities for support and conversion" />
       <Checkbox
         advantages={[
           "NodeJS: Use the sharp library",
@@ -241,12 +246,15 @@ export default function BlogAvifInCloudflare() {
         ]}
         checked={true}
       />
-      <h2>2) Efficiently encode images: Compression quality vs size</h2>
-      <h5>
+      <H level={2} text="2) Efficiently encode images: Compression quality vs size" />
+      <H
+        level={5}
+        text="
         Summary: Always compress images. Find a good compromise between the quality settings and
         compression of images. Use lossless compression for photography, lossy for everything else.
         Images shouldn’t look blurry or pixelated.
-      </h5>
+      "
+      />
       When you look at your page requests, images are likely to account for the majority of your
       total page size compared to HTML, CSS, or JavaScript files. If these images are uncompressed,
       they waste bandwidth and increase page load times, as the browser has to spend more time
@@ -256,7 +264,7 @@ export default function BlogAvifInCloudflare() {
       on your page, file sizes can increase significantly and result in a very slow page. Efficient
       image encoding reduces your image file and thus the page size and helps to speed up page
       loading.
-      <h3>Lossy vs. lossless compression</h3>
+      <H level={3} text="Lossy vs. lossless compression" />
       It is also important to understand that there are two types of compression, lossy and
       lossless. Images are optimized by reducing the amount of data contained in an image, called
       data compression. Lossy - this is a filter that eliminates some of the data, which degrades
@@ -268,11 +276,11 @@ export default function BlogAvifInCloudflare() {
       optimization tool to handle image compression for you, at the quality level you feel
       comfortable with. Rule of thumb: Lossless suits photography websites, use lossy for everything
       else.
-      <h3>How to efficiently encode images?</h3>
+      <H level={3} text="How to efficiently encode images?" />
       There are a few strategies to efficiently encode images, such as:
       <Checkbox
         advantages={[
-          "Manually compressing with tools like avif.io or Imageoptim",
+          "Manually compressing with tools like npmavif.io or Imageoptim",
           "NodeJS: sharp librbary",
           "Drupal:  Consider using a module that automatically optimizes and reduces the size of images. Ensure you are using the Drupal's built-in Responsive Image Styles",
           "Joomla: Consider using an image optimization plugin that compresses your images while retaining quality.",
@@ -283,7 +291,7 @@ export default function BlogAvifInCloudflare() {
         ]}
         checked={true}
       />
-      <h2>3) Properly size images: Choosing correct image dimensions</h2>
+      <H level={2} text="3) Properly size images: Choosing correct image dimensions" />
       One of the most worthwhile optimizations you can make in the interest of web performance is to
       provide images in the correct size. An all too common problem is that images are uploaded at
       full resolution or of enormous dimensions. In this case, the browser must resize these images
@@ -314,7 +322,7 @@ export default function BlogAvifInCloudflare() {
       flood our servers with billions of images. Of course, the above example only works for images
       within a fixed width container. If you want a full width image, consider creating your images
       with typical screen widths such as 2560px, 1920px or 1366px.
-      <h3>How do we implement different sizes in our code?</h3>
+      <H level={3} text="How do we implement different sizes in our code?" />
       We use the attributes srcset and sizes as shown below. The w selector tells the browser which
       URL to use based on the physical pixels that would be used if the image was drawn to the
       user's device given the width calculated from the sizes attribute. Hereby, the browser always
@@ -339,7 +347,7 @@ sizes="(max-width: 720px) 100vw, 720px">
 <img loading="lazy" decoding="async" width="2880" height="1620" src="/img/image-1440.jpg" alt="example image">
 
 </picture>`}</Code>
-      <h3>How do we automate the resize process?</h3>
+      <H level={3} text="How do we automate the resize process?" />
       With so many lines of code, manually performing this task can be a difficult process for any
       image, so here are some automation options:
       <Checkbox
@@ -355,12 +363,15 @@ sizes="(max-width: 720px) 100vw, 720px">
         ]}
         checked={true}
       />
-      <h2>4) How to optimize the image loading process</h2>
-      <h5>
+      <H level={2} text="4) How to optimize the image loading process" />
+      <H
+        level={5}
+        text="
         Summary: Optimize the loading process by using an explicit width and height for aspect ratio
         as well as lazy-loading.
-      </h5>
-      <h3>a) Use a responsive layout</h3>
+      "
+      />
+      <H level={3} text="a) Use a responsive layout" />
       This is a well-understood technique for using an image horizontally up to its maximum size
       while maintaining the aspect ratio. A new feature in 2020 is that web browsers reserve the
       correct vertical space for the image before it is loaded when the width and height attributes
@@ -374,7 +385,7 @@ sizes="(max-width: 720px) 100vw, 720px">
 </style>
 <!-- Providing width and height is more important than ever. -->
 <img height="853" width="1280" … />`}</Code>
-      <h3>b) Use explicit width and height on image elements</h3>
+      <H level={3} text="b) Use explicit width and height on image elements" />
       Always include width and height size attributes to your images and video elements. This
       approach ensures that the browser can allocate the right amount of space in the document while
       loading the image. Image and / or video elements that are not explicitly declared with height
@@ -391,7 +402,7 @@ sizes="(max-width: 720px) 100vw, 720px">
       information right at the beginning of the layout calculation. As soon as an image has a
       certain width, for example width: 100%, the aspect ratio is used to calculate the height.
       <Code language="html">{`<img src="image.jpg" width="640" height="360" alt="Image">`}</Code>
-      <h3>c) Defer offscreen images</h3>
+      <H level={3} text="c) Defer offscreen images" />
       Deferring offscreen images or lazy loading is the practice of delaying the loading of images
       that are not in your visitors "viewport until they are needed. Generally, when the browser
       loads a page, it downloads all the requested images, even those that are not immediately
@@ -416,7 +427,7 @@ sizes="(max-width: 720px) 100vw, 720px">
         ]}
         checked={true}
       />
-      <h3>d) Content-visibility</h3>
+      <H level={3} text="d) Content-visibility" />
       The content-visibility property could be one of the most powerful new CSS properties to
       improve the performance of page loading. content-visibility allows the user agent to skip the
       rendering work of an element, including layout and painting, until it is needed. Since the
@@ -429,17 +440,20 @@ sizes="(max-width: 720px) 100vw, 720px">
     content-visibility: auto;
   }
 </style>`}</Code>
-      <h3>e) Asynchronous decoding</h3>
+      <H level={3} text="e) Asynchronous decoding" />
       Adding decoding="async" to the image gives the browser permission to decode the image off the
       main thread avoiding user impact of the CPU time used to decode the image.
       <Code language="html">{`<img src="image.jpg" decoding="async">`}</Code>
-      <h2>5) Improve your hosting behavior</h2>
-      <h5>
+      <H level={2} text="5) Improve your hosting behavior" />
+      <H
+        level={5}
+        text="
         Summary: Configure a cache-control header with a high max-age so users don’t have to
         download images multiple times. Use an image CDN and disable hotlinking to optimize your
         ressources
-      </h5>
-      <h3>Caching</h3>
+      "
+      />
+      <H level={3} text="Caching" />
       Browser caching instructs the visitor’s browser to save certain files on the local system of
       the visitor instead of downloading them repeatedly. Thus, for example, a visitor must download
       the logo image of a website on the first visit. However, after each subsequent visit, such a
@@ -449,7 +463,7 @@ sizes="(max-width: 720px) 100vw, 720px">
       cache control: public, max-age = 31536000. max-age = 31536000 is the fallback to the cache for
       one year. public is important to allow your CDN to cache the image and deliver it from the
       edge. But only use that if it is appropriate from a privacy perspective.
-      <h3>Use an image CDN</h3>
+      <H level={3} text="Use an image CDN" />
       Are you serving an international audience? Then you might think of a Content Delivery Network.
       A Content Delivery Network, or CDN, is a geographically diverse network of servers that helps
       speed up page loading times by reducing the distance between the visitor to the website and
@@ -468,7 +482,7 @@ sizes="(max-width: 720px) 100vw, 720px">
         ]}
         checked={true}
       />
-      <h3>Disable hotlinking</h3>
+      <H level={3} text="Disable hotlinking" />
       Hotlinking means when an individual or company copies the URL of an image that belongs to
       another website and embeds it on their website, causing the image to appear as if it were
       their own content. Hotlinking is a neighbor of copyright infringement, but despite this fact,
@@ -484,8 +498,11 @@ sizes="(max-width: 720px) 100vw, 720px">
         ]}
         checked={true}
       />
-      <h2>6) SEO Image Optimization</h2>
-      <h5>Summary: Use an explanatory file name as well as describing title and alt attributes.</h5>
+      <H level={2} text="6) SEO Image Optimization" />
+      <H
+        level={5}
+        text="Summary: Use an explanatory file name as well as describing title and alt attributes."
+      />
       SEO stands for Search Engine Optimization, and it refers to all the small improvements that
       can be made to a website to make it more readable to search engine crawlers - and therefore
       more likely to rank high on search engine results pages. SEO is so critical to a website's
@@ -499,16 +516,16 @@ sizes="(max-width: 720px) 100vw, 720px">
       SEO image optimization differs from the more comprehensive image optimization described above.
       So how can you use SEO image optimization for better performance? There are a number of ways
       to make your images more accessible to search engines, which we will explain below.
-      <h3>1. Optimize image file names</h3>
+      <H level={3} text="1. Optimize image file names" />
       Storing images with any default filenames can be secondary - but this random string of letters
       and numbers can hurt you in the long run. Before uploading an image to your website, it is
       important to make sure the filename is relevant, because search engines not only search the
       text on your pages - they also search image filenames and other attributes.
-      <h3>2. Optimize title</h3>
+      <H level={3} text="2. Optimize title" />
       Similar to filenames, picture titles are another attribute we are talking about. You have the
       option to add an image title after you upload it, and it can be similar or even the same as
       the filename - just keep it short and relevant to what the picture actually represents!
-      <h3>3. Insert Alt-Text</h3>
+      <H level={3} text="3. Insert Alt-Text" />
       Alt text or alternative text is text that appears in the place of an image when the image is
       not loaded. Alt text is important not only for screen readers, but also for SEO, because it
       helps crawlers understand the image file and the content of a page to provide more accurate
@@ -516,7 +533,7 @@ sizes="(max-width: 720px) 100vw, 720px">
       to enter the title and alt text of an image once you upload it. In basic HTML, you can simply
       use the alt attribute. Use your best judgement and only label images when the information is
       useful to visitors.
-      <h2>Summarized action list and full code example</h2>
+      <H level={2} text="Summarized action list and full code example" />
       <Checkbox
         advantages={[
           "Serve images in next-gen formats: Use AVIF and WebP, with JPG as fallback",
@@ -545,7 +562,7 @@ sizes="(max-width: 720px) 100vw, 720px">
 <img loading="lazy" decoding="async" width="2880" height="1620" src="/img/image-1440.jpg" alt="example image">
 
 </picture>`}</Code>
-      <h2>More Tips</h2>
+      <H level={2} text="More Tips" />
       Thanks for reading the article! Have fun implementing all the features mentioned above. Here
       are some more general best practices when it comes down to how to optimize images for web:
       <Checkbox
@@ -563,36 +580,36 @@ sizes="(max-width: 720px) 100vw, 720px">
         ]}
         checked={true}
       />
-      <h2>List of all Image optimization tools and plugins</h2>
+      <H level={2} text="List of all Image optimization tools and plugins" />
       There are a lot of tools and programs out there, both premium and free, that you can use to
       optimize your images. Some give you the tools to perform your own optimizations and others do
       the work for you.
-      <h4>Image editors</h4>
+      <H level={4} text="Image editors" />
       <Checkbox advantages={["Adobe Photoshop", "Gimp", "Paint.NET"]} checked={true} />
-      <h4>Online conversion</h4>
+      <H level={4} text="Online conversion" />
       <Checkbox
         advantages={[
           "avif.io (for avif conversion)",
           "Bulkresizephotos (for resizing)",
-          "TinyPng (for jpg & png compression)",
+          "TinyPng (for jpg and png compression)",
         ]}
         checked={true}
       />
-      <h4>Image CDNs</h4>
+      <H level={4} text="Image CDNs" />
       <Checkbox
         advantages={["Cloudflare", "Kraken.io", "ImageKit", "ImageEngine"]}
         checked={true}
       />
-      <h4>Command line tools</h4>
+      <H level={4} text="Command line tools" />
       <Checkbox
         advantages={["GIFsicle", "JPEGtran", "JPEG Mini", "OptiPNG", "pngquant"]}
         checked={true}
       />
-      <h4>GUI desktop tools</h4>
+      <H level={4} text="GUI desktop tools" />
       <Checkbox advantages={["FileOptimizer", "ImageOptim", "Trimage"]} checked={true} />
-      <h4>Node.JS Libraries</h4>
+      <H level={4} text="Node.JS Libraries" />
       <Checkbox advantages={["sharp"]} checked={true} />
-      <h4>Wordpress plugins</h4>
+      <H level={4} text="Wordpress plugins" />
       <Checkbox
         advantages={[
           "Imagify Image Optimizer",
@@ -603,7 +620,7 @@ sizes="(max-width: 720px) 100vw, 720px">
         ]}
         checked={true}
       />
-      <h4>Shopify plugins</h4>
+      <H level={4} text="Shopify plugins" />
       <Checkbox advantages={["Crush.pics", "Minifier"]} checked={true} />
     </Blog>
   );

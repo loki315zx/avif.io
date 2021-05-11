@@ -1,4 +1,5 @@
 import Blog from "@components/Blog";
+import H from "@components/H";
 import SmartLink from "@components/SmartLink";
 
 import { useAvifInWindows as postdata } from "lib/meta";
@@ -9,14 +10,14 @@ import { useAvifInGimp as post3 } from "lib/meta";
 export default function BlogAvif() {
   return (
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
-      <h2>Microsoft supports avif..</h2>
+      <H level={2} text="Microsoft supports avif.." />
       AVIF got a significant boost when Microsoft decided to add support for it in the Windows 10
       May 2019 Update. Windows 10 does not support the AVIF image format natively, but the software
       giant has incorporated this functionality into some of its core programs, notably the File
       Explorer and Paint program. As long as you have the correct AV1 video codec from the Microsoft
       Store installed on your computer, you can view AVIF images natively within Windows 10 apps
       like Paint and File Explorer.
-      <h2>..with an extension</h2>
+      <H level={2} text="..with an extension" />
       Without proper configuration, tools like Microsoft Paint throw a bug that says that the AVIF
       file is not a valid format and is not supported by the application. If you are looking for
       AVIF support for Windows 10, you can either wait until Microsoft implements it by default, or
@@ -28,7 +29,7 @@ export default function BlogAvif() {
       />
       . AV1 extension has been around since Windows 10 version 1809, when support for the AV1 video
       format first appeared. Since version 1903, the extension is also able to process AVIF files.
-      <h2>Results</h2>
+      <H level={2} text="Results" />
       As you can see on the screenshot below, after installing the extension, File Explorer
       generates a thumbnail image for the AVIF image format. Additionally, MSPaint allows editing
       and saving these images. You may want to use a more advanced image editor than Paint to work

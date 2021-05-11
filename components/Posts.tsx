@@ -19,11 +19,9 @@ export default function BlogPosts(props: any) {
   ));
   return (
     <section className="posts">
-      <div
-        id={props.title ? props.title : "related"}
-        style={{ opacity: 0, height: 100 }}
-        aria-label="anchor point"></div>
-      <h2>{props.title ? props.title : "Related articles"}</h2>
+      <h2 id={props.title ? props.title : "related"}>
+        {props.title ? props.title : "Related articles"}
+      </h2>
       <div className="posts__container grid">{listItems}</div>
     </section>
   );

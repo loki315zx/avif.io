@@ -1,5 +1,6 @@
 import Checkbox from "@components/Checkbox";
 import Blog from "@components/Blog";
+import H from "@components/H";
 
 import { february2021 as postdata } from "lib/meta";
 
@@ -10,7 +11,7 @@ import { useAvifInWordpress as post3 } from "lib/meta";
 export default function February2021() {
   return (
     <Blog className="release" postdata={postdata} posts={[post1, post2, post3]}>
-      <h2>Conversion speed</h2>
+      <H level={2} text="Conversion speed" />
       As you know, the conversion speed for AVIF is a little bit painful. Indeed, other than the
       lack of progressive loading, it's the only thing we have a problem with when it comes to
       embedding AVIF images onto our web projects. This makes it even better that Xiph keeps
@@ -34,7 +35,7 @@ export default function February2021() {
       />
       If this doesn't say much to you, here's a tldr: Your conversion process is ~15% faster now.
       And yes, we are keeping a close eye to the already released 0.5 Alpha version.
-      <h2>Website performance</h2>
+      <H level={2} text="Website performance" />
       We discovered that our website had become unaccessible a few days ago. Great! A
       chromium/Chrome update has changed some ways web workers did their job. Ours just couldn't
       handle the change and users on Chrome and Opera were unable to convert any images. We also had
@@ -42,7 +43,7 @@ export default function February2021() {
       experience anything unusual, feel free to write us at support@avif.io. Besides these fixes, we
       have made some changes to the code splitting behavior so that the overall website performance
       increased.
-      <h2>Usability</h2>
+      <H level={2} text="Usability" />
       Based on an analysis of 500 Hotjar recordings and reading more in depth about several topics,
       we've made several changes for the common user, to improve accessibility and SEO.
       <Checkbox

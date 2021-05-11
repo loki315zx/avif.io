@@ -1,4 +1,5 @@
 import Blog from "@components/Blog";
+import H from "@components/H";
 import SmartLink from "@components/SmartLink";
 import Image from "@components/Image";
 
@@ -13,7 +14,7 @@ export default function BlogAvifInGIMP() {
       GNU Image Manipulation Program (GIMP) is a free and open-source graphics editor. Although it
       was developed as a Linux image editor, it has become an effective alternative for Adobe
       Photoshop, while remaining both free and open source.
-      <h2>AVIF Support for new images</h2>
+      <H level={2} text="AVIF Support for new images" />
       As GIMP 3.0 development has been going on, on the 7th of October 2020, GIMP 2.10.22 was
       released. This release is titled a bug fix, however it had severe effects on GIMP's
       functionality. Since then, thanks to the encoder libheif, it is now capable of supporting the
@@ -30,7 +31,7 @@ export default function BlogAvifInGIMP() {
       photographer and only want to use AVIF images for your website, we recommend sticking to 8
       bits.
       <Image url="gimp-bitdepth" alt="gimp export avif dialogue showing different bit depths" />
-      <h2>AVIF Plugin</h2>
+      <H level={2} text="AVIF Plugin" />
       There is also a plugin called{" "}
       <SmartLink
         text="gimp-avif-plugin by novemesk"
@@ -41,7 +42,7 @@ export default function BlogAvifInGIMP() {
       speed, alpha channel settings, EXIF data and XMP data processing, as well as the ICC color
       profile. If you do not understand most of these settings, don't worry, you will probably get
       along well with the default interface.
-      <h2>AVIF Support for existing images</h2>
+      <H level={2} text="AVIF Support for existing images" />
       If you look to have a lot of images converted, it's a lot easier to convert them all in one
       go. Make life easier for yourself by{" "}
       <SmartLink text="using our AVIF converter, which is free" link="/" />.

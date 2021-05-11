@@ -1,3 +1,4 @@
+import H from "@components/H";
 export default function BlogTags(props: any) {
   const tags = props.tags;
   const questions = props.questions;

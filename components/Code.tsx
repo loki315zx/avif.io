@@ -5,11 +5,13 @@ import js from "react-syntax-highlighter/dist/cjs/languages/hljs/javascript";
 import html from "react-syntax-highlighter/dist/cjs/languages/hljs/htmlbars";
 import css from "react-syntax-highlighter/dist/cjs/languages/hljs/css";
 import scss from "react-syntax-highlighter/dist/cjs/languages/hljs/scss";
+import xml from "react-syntax-highlighter/dist/cjs/languages/hljs/xml";
 
 SyntaxHighlighter.registerLanguage("javascript", js);
 SyntaxHighlighter.registerLanguage("html", html);
 SyntaxHighlighter.registerLanguage("css", css);
 SyntaxHighlighter.registerLanguage("scss", scss);
+SyntaxHighlighter.registerLanguage("xml", xml);
 
 export default function Code(props: { language: string; children: any }) {
   const [copySuccess, setCopySuccess] = useState("Copy");

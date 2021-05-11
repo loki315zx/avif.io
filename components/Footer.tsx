@@ -28,7 +28,7 @@ export default function Footer() {
           <b>Misc</b>
         </div>
         <SmartLink text="Sitemap" link="/sitemap.xml" newLine />
-        <SmartLink text="Legal & Privacy" link="/privacy-policy/" newLine />
+        <SmartLink text="Legal and Privacy" link="/privacy-policy/" newLine />
       </div>
       <div id="communication">
         <a

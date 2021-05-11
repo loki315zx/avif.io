@@ -1,4 +1,5 @@
 import Blog from "@components/Blog";
+import H from "@components/H";
 import Checkbox from "@components/Checkbox";
 import Code from "@components/Code";
 import Image from "@components/Image";
@@ -29,7 +30,7 @@ export default function BlogAvifInFrameworks() {
         checked={true}
       />
       You can see some screenshots of our test on Angular and React below:
-      <h2 id="other-frameworks">Other frameworks</h2>
+      <H level={2} text="Other frameworks" />
       In principle, other frameworks might work differently. We found out from our research that
       Meteor and Ember support AVIF files without additional configuration, but since we did not
       experiment with the latest version live, we list it here as "maybe works" until we were in the
@@ -38,7 +39,7 @@ export default function BlogAvifInFrameworks() {
         advantages={["meteor/meteor", "jashkenas/backbone", "polymer/polymer", "emberjs/ember.js"]}
         checked={false}
       />
-      <h2>An example code</h2>
+      <H level={2} text="An example code" />
       This is the code we used to display the image below in React and Next.JS:
       <Code language="html">
         {`<picture>
@@ -51,7 +52,7 @@ export default function BlogAvifInFrameworks() {
       <Image url="react-render" alt="rendered avif in react" />
       <Image url="angular-avif" alt="using avif in angular" />
       <Image url="angular-render" alt="rendered avif in angular" />
-      <h2>Webpack File Loader</h2>
+      <H level={2} text="Webpack File Loader" />
       In some cases, especially with older versions and when using webpack, you may encounter some
       problems. Especially:
       <Code language="html">
@@ -70,7 +71,7 @@ export default function BlogAvifInFrameworks() {
   }
 }`}
       </Code>
-      <h2>Automatic conversion</h2>
+      <H level={2} text="Automatic conversion" />
       We could not find a plugin that converts the image to other sizes and formats such as AVIF to
       meet the needs of the client, and if possible choose a modern format. Node.JS library Sharp
       implemented AVIF support, which might be a good choice for you. Have you ever contacted such a

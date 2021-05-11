@@ -1,4 +1,5 @@
 import Blog from "@components/Blog";
+import H from "@components/H";
 import Checkbox from "@components/Checkbox";
 import SmartLink from "@components/SmartLink";
 
@@ -17,7 +18,7 @@ export default function BlogAvifInHtml() {
       while maintaining a small file size. You can find many articles about how fantastic AVIF is
       right here, as well as anywhere else on the web. You clicked on this article because you want
       to learn how to use AVIF in HTML, so let's take a look at the topic.
-      <h2>Browser Support</h2>
+      <H level={2} text="Browser Support" />
       The most important thing to keep in mind when using AVIF is that it is unfortunately not yet
       supported everywhere. That's a pity, isn't it? It took WebP (another excellent image format,
       but not good enough to keep up with AVIF) ten years to be fully supported as Apple wasn't
@@ -26,7 +27,7 @@ export default function BlogAvifInHtml() {
       support it from June 2021. Safari doesn't yet have AVIF support. However, AVIF is an invention
       of the non-profit industry consortium Alliance of Open Media AOM. Major browser giants Apple,
       Mozilla and Google are all part of the project, so support can be expected relatively quickly.
-      <h2>The picture element</h2>
+      <H level={2} text="The picture element" />
       For now, you can still use the format in its almost complete glory with the native{" "}
       {`<picture>`} element in HTML. Why, you may ask? Well, the {`<picture>`}element allows
       progressive support. You can simply drop all image files in the order in which you want to
@@ -41,7 +42,7 @@ export default function BlogAvifInHtml() {
         ]}
         checked={true}
       />
-      <h2>Implementation</h2>
+      <H level={2} text="Implementation" />
       Currently 96% of browsers support the picture element. Even if your grandma visits your
       website with her disgusting Internet Explorer 6, her browser will simply revert to the default
       image format when you specify it. Have a look at the following example and copy it if you want
@@ -55,14 +56,17 @@ export default function BlogAvifInHtml() {
   src="image.jpg" alt="an avif image" />
 </picture>`}
       </Code>
-      <h5>
+      <H
+        level={5}
+        text="
         PS: The lazy loading attribute is supported by 75% of all browsers, make use of it! Also,
-        don't forget to add width & height to avoid a Layout Shift. Providing width and height is
+        don't forget to add width and height to avoid a Layout Shift. Providing width and height is
         more important than ever.
-      </h5>
+      "
+      />
       This is a nice set up for all visitors. Just make sure the first source tag is an AVIF image
       for the browser to display the first media type it can handle.
-      <h2>Responsiveness</h2>
+      <H level={2} text="Responsiveness" />
       At this point, it seems great, doesn't it? Well, no, not yet, because our platform still lacks
       support for different types of devices. It's a little more difficult to create an optimal
       experience for Retina displays. We also want to make sure that mobile devices don't download

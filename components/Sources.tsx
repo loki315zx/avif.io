@@ -1,5 +1,6 @@
 export default function Sources(props: any) {
   const sources = props.sources;
+
   for (let i = 0; i < sources.length; i++) {
     sources[i] = sources[i].replace("https://", "");
     sources[i] = sources[i].replace("http://", "");
@@ -8,7 +9,9 @@ export default function Sources(props: any) {
       sources[i] = sources[i].substring(0, sources[i].length - 1);
     }
   }
+
   sources.sort();
+
   const listItems = sources.map((source: any, index: any) => (
     <li key={index} className="source">
       <a target="_blank" rel="noreferrer" href={`https://${source}`}>
@@ -16,6 +19,7 @@ export default function Sources(props: any) {
       </a>
     </li>
   ));
+
   return (
     <div id="sources">
       <ol>{listItems}</ol>

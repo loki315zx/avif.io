@@ -35,7 +35,7 @@ export default function Blog(props: { postdata: any; children: any; posts: any; 
           <article className="content">
             {props.children}
             <h3>Related topics, websites and sources</h3>
-            Sources that offer more information or have been used as sources for this article.
+            Links that offer more information or have been used as sources for this article.
             <Sources sources={props.postdata.sources} />
             <Tags tags={props.postdata.tags} questions={props.postdata.questions} />
           </article>

@@ -361,7 +361,7 @@ export const useAvifInFirefox = {
 
 export const useAvifInFrameworks = {
   readingtime: "5",
-  title: "Use AVIF in Frameworks like Vue, React & Angular",
+  title: "Use AVIF in Frameworks like Vue, React and Angular",
   description: "Serving AVIF images via JavaScript frameworks is quite easy - find out more here.",
   url: "blog/tutorials/use-avif-in-frameworks/",
   image: "/logo_draft.png",
@@ -646,7 +646,7 @@ export const useAvifInWindows = {
     "File Explorer and Paint to get support for AVIF images in Windows 10",
     "Windows File Explorer and Microsoft Paint will soon support AVIF images",
     "Windows 10 1903 Version Support for AVIF File Type (Format)",
-    "Compare File Explorer & Paint to the Older Version",
+    "Compare File Explorer and Paint to the Older Version",
     "Windows 10 will support AVIF images format",
     "Display the AVIF Images in Windows 10",
   ],

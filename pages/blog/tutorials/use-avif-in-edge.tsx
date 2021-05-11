@@ -1,4 +1,5 @@
 import Blog from "@components/Blog";
+import H from "@components/H";
 import Image from "@components/Image";
 import SmartLink from "@components/SmartLink";
 
@@ -10,7 +11,7 @@ import { useAvifInGimp as post3 } from "lib/meta";
 export default function BlogAvifInEdge() {
   return (
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
-      <h2>Current status and future plans</h2>
+      <H level={2} text="Current status and future plans" />
       While Google can quickly implement new browser features, other companies such as Microsoft and
       Mozilla are much slower. AVIF was created as part of the development of AV1, which was
       developed by the Alliance for Open Media. Since all the major browser manufacturers are part
@@ -20,7 +21,7 @@ export default function BlogAvifInEdge() {
       <Image url="edge-new" alt="the new microsoft edge" />
       If you want to enable experimental AV1 support, you can do so by downloading a plugin. At
       least YouTube videos will then be streamed in the new format.
-      <h2>Your version of Edge</h2>
+      <H level={2} text="Your version of Edge" />
       If you are looking for a way to test the functionality and capabilities of AV1 on Microsoft
       Edge, you should{" "}
       <SmartLink
@@ -34,7 +35,7 @@ export default function BlogAvifInEdge() {
       icon. The new version of Edge has a more minimalist and gradient style, while the old one
       looks like a Van Gogh.
       <Image url="edge-or-edge" alt="microsoft edge version difference" />
-      <h2>AV1 Plugin</h2>
+      <H level={2} text="AV1 Plugin" />
       The AV1 Extension add-on is available from the{" "}
       <SmartLink
         link="https://www.microsoft.com/en-us/p/av1-video-extension/9mvzqvxjbq9v"

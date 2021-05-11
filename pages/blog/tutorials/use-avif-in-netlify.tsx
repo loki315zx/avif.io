@@ -1,4 +1,5 @@
 import Blog from "@components/Blog";
+import H from "@components/H";
 import SmartLink from "@components/SmartLink";
 import Code from "@components/Code";
 
@@ -10,13 +11,13 @@ import { useAvifInWordpress as post3 } from "lib/meta";
 export default function BlogAvif() {
   return (
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
-      <h2>Users wish for native support</h2>
+      <H level={2} text="Users wish for native support" />
       Many Netlify users wanted a native solution that would allow them to deliver images in WebP or
       AVIF format at any time. However, at the time of the article on February 21, there is no easy
       way to enable this feature. Instead, you can enable AVIF files through Netlify's header tag
       and then ship AVIF files with a native image HTML tag, as we explained here:{" "}
       <SmartLink link="blog/tutorials/use-avif-in-html" text="How to use AVIF in HTML" />
-      <h2>Defining custom headers with netlify.toml</h2>
+      <H level={2} text="Defining custom headers with netlify.toml" />
       While using the image tag on Netlify seems to work, there was a problem with using. avif
       files. When trying to view the images inside Firefox, we noticed that the images did not show
       up. This problem did not occur in Chrome, but it did happen in Firefox. We found that the
@@ -29,7 +30,7 @@ for = "*.avif"
 [headers.values]
 Content-Type = "image/avif"`}
       </Code>
-      <h2>Summary</h2>
+      <H level={2} text="Summary" />
       to find more ways to utilize this file.// Enabling AVIF support on Netlify is not easy as
       simply clicking a single button. However, it can be easily achieved by customizing the
       configuration file to your specific needs. If this is the first time you hear about the
