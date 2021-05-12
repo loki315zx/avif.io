@@ -1,21 +1,31 @@
-export default function Sources(props: any) {
-  const sources = props.sources;
+import _ from "lodash";
 
-  for (let i = 0; i < sources.length; i++) {
-    sources[i] = sources[i].replace("https://", "");
-    sources[i] = sources[i].replace("http://", "");
-    sources[i] = sources[i].replace("www.", "");
-    if (sources[i].substring(sources[i].length - 1) == "/") {
-      sources[i] = sources[i].substring(0, sources[i].length - 1);
+export interface SourcesProps {
+  sources: string[];
+}
+
+export default function Sources(props: SourcesProps) {
+  let sources = props.sources.map((original) => {
+    original = original.replace(/^https?:\/\//, "");
+    let short = original.replace(/\/$/, "");
+    if (short.length >= 60) {
+      const split = short.split(/[/]/);
+      if (split.length > 1) {
+        const a = split[0];
+        const b = short.slice(-20);
+        short = `${a} (..) ${b}`;
+      }
     }
-  }
+    original = `https://${original}`;
+    short = short.replace(/\//g, " · ");
+    return { original, short };
+  });
+  sources = _.sortBy(sources, (s) => s.short);
 
-  sources.sort();
-
-  const listItems = sources.map((source: any, index: any) => (
-    <li key={index} className="source">
-      <a target="_blank" rel="noreferrer" href={`https://${source}`}>
-        {source.toString().replace(/\//g, " · ")}
+  const listItems = sources.map((source: any) => (
+    <li key={source.original} className="source">
+      <a target="_blank" rel="noreferrer" href={source.original}>
+        {source.short}
       </a>
     </li>
   ));
