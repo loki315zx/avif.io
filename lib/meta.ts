@@ -1,5 +1,4 @@
 export const placeholder = {
-  readingtime: "",
   title: "Placeholder",
   description: "",
   url: "/placeholder/",
@@ -44,7 +43,6 @@ export const january2021 = {
   sources: ["hotjar.com/"],
   tags: [],
   questions: [],
-  readingtime: "5",
   keyword: "Changelog January 2021",
 };
 
@@ -67,7 +65,6 @@ export const february2021 = {
   ],
   tags: [],
   questions: [],
-  readingtime: "5",
   keyword: "Changelog February 2021",
 };
 
@@ -98,7 +95,6 @@ export const march2021 = {
   ],
   tags: [],
   questions: [],
-  readingtime: "5",
   keyword: "Changelog March 2021",
 };
 
@@ -153,12 +149,10 @@ export const useAvifInCloudflare = {
     "AVIF, a next-gen image format for the web",
     "Resizing with Cloudflare Workers",
   ],
-  readingtime: "8",
   keyword: "Cloudflare",
 };
 
 export const useAvifInCss = {
-  readingtime: "8",
   title: "Fully support AVIF in your CSS today.",
   description:
     "Learn how to boost your website by using the new AVIF image format in the `background-images` of your CSS.",
@@ -210,7 +204,6 @@ export const useAvifInCss = {
 };
 
 export const useAvifInEdge = {
-  readingtime: "5",
   title: "View AVIF Images In Microsoft Edge",
   description:
     "Internet Explorer 6, the latest brow.. oh, it's called Edge? Well, okay. The current state about AVIF in Edge is difficult. Learn more about it here.",
@@ -259,7 +252,6 @@ export const useAvifInEdge = {
 };
 
 export const useAvifInSafari = {
-  readingtime: "5",
   title: "Is Safari adding AVIF support in 2021?",
   description:
     "Everyone is ready to use AVIF, is Apple ready as well? Find out more about the current state in Webkit and Safari.",
@@ -299,7 +291,6 @@ export const useAvifInSafari = {
 };
 
 export const useAvifInFirefox = {
-  readingtime: "8",
   title: "The Complete Guide about AVIF in Firefox for 2021",
   description:
     "Learn about the current state of AVIF in Firefox and how to enable support with a simple tutorial.",
@@ -360,7 +351,6 @@ export const useAvifInFirefox = {
 };
 
 export const useAvifInFrameworks = {
-  readingtime: "5",
   title: "Use AVIF in Frameworks like Vue, React and Angular",
   description: "Serving AVIF images via JavaScript frameworks is quite easy - find out more here.",
   url: "blog/tutorials/use-avif-in-frameworks/",
@@ -399,7 +389,6 @@ export const useAvifInFrameworks = {
 };
 
 export const useAvifInMagento = {
-  readingtime: "5",
   title: "Magento 2 AVIF Support? Native and with extensions!",
   description: "Find out about the current state of AVIF support in Magento 2.",
   url: "blog/tutorials/use-avif-in-magento/",
@@ -438,7 +427,6 @@ export const useAvifInMagento = {
 };
 
 export const useAvifInGimp = {
-  readingtime: "5",
   title: "Discover the basics of AVIF in GIMP",
   description:
     "GIMP 2.10.22 now includes HEIC support and AVIF support. Learn how to take advantage of these new features.",
@@ -483,7 +471,6 @@ export const useAvifInGimp = {
 };
 
 export const useAvifInHtml = {
-  readingtime: "8",
   title: "How to get started with AVIF using HTML",
   description:
     "Enjoy this in-depth guide on how to use AVIF in HTML. Featuring examples with modern delivery standards.",
@@ -542,7 +529,6 @@ export const useAvifInHtml = {
 };
 
 export const useAvifInNextjs = {
-  readingtime: "6",
   title: "Start using AVIF in your Next.JS project",
   description:
     "Curious to read on how to use AVIF images in Next.JS? Well, this site does exactly that! Learn more.",
@@ -592,7 +578,6 @@ export const useAvifInNextjs = {
 };
 
 export const useAvifInWindows = {
-  readingtime: "6",
   title: "Does Windows support AVIF already?",
   description:
     "Learn how to make AVIF images load on native Windows 10 applications such as Paint and File Explorer.",
@@ -654,7 +639,6 @@ export const useAvifInWindows = {
 };
 
 export const useAvifInNetlify = {
-  readingtime: "6",
   title: "Don't miss out on AVIF when using Netlify",
   description:
     "Learn how to proper configure Netlify so that you can use AVIF image files on your website today.",
@@ -682,7 +666,6 @@ export const useAvifInNetlify = {
 };
 
 export const useAvifInWordpress = {
-  readingtime: "11",
   title: "How To Use AVIF Images In WordPress",
   description:
     "WordPress doesn't allow uploading AVIF files. Learn how to still use AVIF images on your website today.",
@@ -741,7 +724,6 @@ export const useAvifInWordpress = {
 };
 
 export const imageOptimizationIn2021 = {
-  readingtime: "20",
   title: "Optimizing Images for Web Performance - a 6-step guide for 2021",
   description:
     "Straightforward and actionale optimization tips, for beginners and experts. Maximally improve your image performance with this 6-step guide.",

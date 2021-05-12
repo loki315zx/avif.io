@@ -4,10 +4,22 @@ import Questions from "@components/Questions";
 import Meta from "@components/Meta";
 import Breadcrumbs from "@components/Breadcrumbs";
 import Sources from "@components/Sources";
+import { useEffect, useRef, useState } from "react";
 
 const randomNumber = Math.floor(Math.random() * 7 + 1);
 
 export default function Blog(props: { postdata: any; children: any; posts: any; className?: any }) {
+  const articleRef = useRef<HTMLElement>(null);
+  const [readingTime, setReadingTime] = useState(0);
+
+  useEffect(() => {
+    if (articleRef.current == null) return;
+    const text = articleRef.current.textContent ?? "";
+    const wordCount = text.split(/\s+/).length;
+    const averageWordsPerMinute = 250; // XXX Tweak this if you want
+    setReadingTime(Math.ceil(wordCount / averageWordsPerMinute));
+  }, [articleRef]);
+
   return (
     <>
       <main className={`blog background${randomNumber} ${props.className}`}>
@@ -27,13 +39,13 @@ export default function Blog(props: { postdata: any; children: any; posts: any; 
             <Breadcrumbs postdata={props.postdata} />
             <h1>{props.postdata.title}</h1>
             <div className="blog__meta white">
-              {props.postdata.date_modified} · {props.postdata.readingtime} min read
+              {props.postdata.date_modified} · {readingTime} min read
             </div>
           </div>
         </div>
 
         <div className="content__container">
-          <article className="content">
+          <article ref={articleRef} className="content">
             {props.children}
             <h3>Related topics, websites and sources</h3>
             <h5>
