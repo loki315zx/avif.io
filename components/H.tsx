@@ -1,11 +1,25 @@
-import Router from "next/router";
+import Router, { useRouter } from "next/router";
+import { useEffect } from "react";
+import { ContentTableEntry } from "./ContentTable";
 
-export default function H(props: { text: string; level: number }) {
+export interface HProps {
+  text: string;
+  level: number;
+  contentTableCallback?: (entry: ContentTableEntry) => void;
+}
+
+export default function H(props: HProps) {
   const CustomTag = `h${props.level}` as keyof JSX.IntrinsicElements;
   const trimmedText = props.text.replace(/\s/g, "").toLowerCase();
+  const router = useRouter();
+  const href = `https://avif.io${router.pathname}#${trimmedText}`;
+
+  useEffect(() => {
+    props.contentTableCallback?.({ text: props.text, href, level: props.level });
+  }, []);
 
   function copyToClipboard(e: any) {
-    navigator.clipboard.writeText("https://avif.io" + Router.pathname + "#" + trimmedText);
+    navigator.clipboard.writeText(href);
     e.target.focus();
   }
 
