@@ -1,11 +1,20 @@
 import Page from "@components/Page";
 import H from "@components/H";
+import { useState } from "react";
+import ContentTable, { ContentTableEntry } from "@components/ContentTable";
 
 import { privacyPolicy as postdata } from "lib/meta";
 
-export default function PrivacyPolicy() {
+export default function BlogPost() {
+  const [contentTable, setContentTable] = useState<ContentTableEntry[]>([]);
+
+  function contentTableCallback(entry: ContentTableEntry) {
+    contentTable.push(entry);
+    setContentTable([...contentTable]);
+  }
   return (
     <Page postdata={postdata}>
+      <ContentTable contentTable={contentTable} />
       <H
         contentTableCallback={contentTableCallback}
         level={2}
