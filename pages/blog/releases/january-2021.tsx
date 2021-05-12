@@ -8,17 +8,28 @@ import { march2021 as post1 } from "lib/meta";
 import { february2021 as post2 } from "lib/meta";
 import { useAvifInWordpress as post3 } from "lib/meta";
 
-export default function February2021() {
+import { useState } from "react";
+import ContentTable, { ContentTableEntry } from "@components/ContentTable";
+
+export default function BlogPost() {
+  const [contentTable, setContentTable] = useState<ContentTableEntry[]>([]);
+
+  function contentTableCallback(entry: ContentTableEntry) {
+    contentTable.push(entry);
+    setContentTable([...contentTable]);
+  }
   return (
     <Blog className="release" postdata={postdata} posts={[post1, post2, post3]}>
-      <H level={2} text="Performance" />
+      <ContentTable contentTable={contentTable} />
+      <H contentTableCallback={contentTableCallback} level={2} text="TL;DR" />
+      <H contentTableCallback={contentTableCallback} level={2} text="Performance" />
       Although improving the speed of the file conversion is our primary priority next to shipping
       new features, we constantly aim to improve the overall loading time of the website. Since the
       image conversion takes place client-side, we aim to minimize the overall clutter caused by the
       conversion to preserve your computer's resources. In this release, we were able to clean up a
       lot of code and remove some dependencies.
       <Checkbox advantages={["Reduced overall page size by 25%"]} checked={true} />
-      <H level={2} text="User Experience" />
+      <H contentTableCallback={contentTableCallback} level={2} text="User Experience" />
       Constantly measuring the User Experience is like a drug to us. We once again ensured that
       everything ran smoothly after the big December release, or even better than before. Thanks to
       Hotjar and your feedback, we will make even more changes in this direction in the future.
@@ -36,17 +47,17 @@ export default function February2021() {
         ]}
         checked={true}
       />
-      <H level={2} text="Community" />
+      <H contentTableCallback={contentTableCallback} level={2} text="Community" />
       We have a Discord now! We linked it in our header and footer, as you like to click our names a
       lot!
       <Checkbox advantages={["Discord channel!"]} checked={true} />
-      <H level={2} text="Accessibility" />
+      <H contentTableCallback={contentTableCallback} level={2} text="Accessibility" />
       We fixed several mistakes in terms of accessibility.
       <Checkbox
         advantages={["More awesome website for visually impaired people!"]}
         checked={true}
       />
-      <H level={2} text="Misc" />
+      <H contentTableCallback={contentTableCallback} level={2} text="Misc" />
       Yada yada. Just some misc stuff I thought I should write into this changelog, even though you
       most likely won't care.
       <Checkbox
@@ -62,7 +73,7 @@ export default function February2021() {
         ]}
         checked={true}
       />
-      <H level={2} text="Bugs smashed" />
+      <H contentTableCallback={contentTableCallback} level={2} text="Bugs smashed" />
       We smashed some of these good ol' bugs.
       <Checkbox
         advantages={[

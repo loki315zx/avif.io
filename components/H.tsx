@@ -1,4 +1,4 @@
-import Router, { useRouter } from "next/router";
+import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { ContentTableEntry } from "./ContentTable";
 
@@ -15,7 +15,7 @@ export default function H(props: HProps) {
   const href = `https://avif.io${router.pathname}#${trimmedText}`;
 
   useEffect(() => {
-    props.contentTableCallback?.({ text: props.text, href, level: props.level });
+    props.contentTableCallback?.({ text: props.text, href });
   }, []);
 
   function copyToClipboard(e: any) {

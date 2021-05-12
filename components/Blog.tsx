@@ -47,16 +47,14 @@ export default function Blog(props: { postdata: any; children: any; posts: any; 
         <div className="content__container">
           <article ref={articleRef} className="content">
             {props.children}
-            <h3>Related topics, websites and sources</h3>
-            <h5>
-              Links that offer more information or have been used as sources for this article.
-            </h5>
-            <Sources sources={props.postdata.sources} />
-            <h3>Topic cluster and Questions</h3>
-            Topics referenced across search results organized in clusters. Followed by related
-            questions and titles mentioned on Google, Reddit and Stackoverflow.
-            <Tags tags={props.postdata.tags} />
-            <Questions questions={props.postdata.questions} />
+            <div className="content__details">
+              <h5>Sources</h5>
+              <Sources sources={props.postdata.sources} />
+              <h5>Topic clusters</h5>
+              <Tags tags={props.postdata.tags} />
+              <h5>People also ask</h5>
+              <Questions questions={props.postdata.questions} />
+            </div>
           </article>
         </div>
       </main>

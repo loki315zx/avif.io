@@ -9,9 +9,20 @@ import { useAvifInNextjs as post1 } from "lib/meta";
 import { useAvifInCss as post2 } from "lib/meta";
 import { useAvifInHtml as post3 } from "lib/meta";
 
-export default function BlogAvifInFrameworks() {
+import { useState } from "react";
+import ContentTable, { ContentTableEntry } from "@components/ContentTable";
+
+export default function BlogPost() {
+  const [contentTable, setContentTable] = useState<ContentTableEntry[]>([]);
+
+  function contentTableCallback(entry: ContentTableEntry) {
+    contentTable.push(entry);
+    setContentTable([...contentTable]);
+  }
   return (
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
+      <ContentTable contentTable={contentTable} />
+      <H contentTableCallback={contentTableCallback} level={2} text="TL;DR" />
       Now that you've learned how fantastic AVIF is, you may be asking yourself, "How do I use AVIF
       images in frameworks? Since AVIF is relatively new, the implementation must be super
       complicated and time-consuming!" The answer is simple: Most Javascript front-end frameworks
@@ -30,7 +41,7 @@ export default function BlogAvifInFrameworks() {
         checked={true}
       />
       You can see some screenshots of our test on Angular and React below:
-      <H level={2} text="Other frameworks" />
+      <H contentTableCallback={contentTableCallback} level={2} text="Other frameworks" />
       In principle, other frameworks might work differently. We found out from our research that
       Meteor and Ember support AVIF files without additional configuration, but since we did not
       experiment with the latest version live, we list it here as "maybe works" until we were in the
@@ -39,7 +50,7 @@ export default function BlogAvifInFrameworks() {
         advantages={["meteor/meteor", "jashkenas/backbone", "polymer/polymer", "emberjs/ember.js"]}
         checked={false}
       />
-      <H level={2} text="An example code" />
+      <H contentTableCallback={contentTableCallback} level={2} text="An example code" />
       This is the code we used to display the image below in React and Next.JS:
       <Code language="html">
         {`<picture>
@@ -52,7 +63,7 @@ export default function BlogAvifInFrameworks() {
       <Image url="react-render" alt="rendered avif in react" />
       <Image url="angular-avif" alt="using avif in angular" />
       <Image url="angular-render" alt="rendered avif in angular" />
-      <H level={2} text="Webpack File Loader" />
+      <H contentTableCallback={contentTableCallback} level={2} text="Webpack File Loader" />
       In some cases, especially with older versions and when using webpack, you may encounter some
       problems. Especially:
       <Code language="html">
@@ -71,7 +82,7 @@ export default function BlogAvifInFrameworks() {
   }
 }`}
       </Code>
-      <H level={2} text="Automatic conversion" />
+      <H contentTableCallback={contentTableCallback} level={2} text="Automatic conversion" />
       We could not find a plugin that converts the image to other sizes and formats such as AVIF to
       meet the needs of the client, and if possible choose a modern format. Node.JS library Sharp
       implemented AVIF support, which might be a good choice for you. Have you ever contacted such a

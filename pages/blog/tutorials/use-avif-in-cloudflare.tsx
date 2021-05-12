@@ -12,9 +12,20 @@ import { useAvifInHtml as post1 } from "lib/meta";
 import { useAvifInCss as post2 } from "lib/meta";
 import { useAvifInNextjs as post3 } from "lib/meta";
 
-export default function BlogAvifInCloudflare() {
+import { useState } from "react";
+import ContentTable, { ContentTableEntry } from "@components/ContentTable";
+
+export default function BlogPost() {
+  const [contentTable, setContentTable] = useState<ContentTableEntry[]>([]);
+
+  function contentTableCallback(entry: ContentTableEntry) {
+    contentTable.push(entry);
+    setContentTable([...contentTable]);
+  }
   return (
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
+      <ContentTable contentTable={contentTable} />
+      <H contentTableCallback={contentTableCallback} level={2} text="TL;DR" />
       Images compressed in AVIF usually take up half the storage space of JPEG and WebP. It uses the
       HEIF ISO standard and AV1 codec from Mozilla, Google, Cisco and others. On the other hand,
       Cloudflare provides hosting and distribution services for websites to optimize the loading of
@@ -29,7 +40,11 @@ export default function BlogAvifInCloudflare() {
       technology provided by Cloudflare to function. We assume that you are on this page because you
       are using Cloudflare services and want to know how to turn on AVIF support. Oh, and by the
       way, this post is not sponsored in any way. Let's see:
-      <H level={2} text="Why Cloudflare supports avif" />
+      <H
+        contentTableCallback={contentTableCallback}
+        level={2}
+        text="Why Cloudflare supports avif"
+      />
       Regarding their latest blog post about AVIF, Cloudflare made the decision to support AVIF
       because of the following benefits:
       <Checkbox
@@ -45,7 +60,7 @@ export default function BlogAvifInCloudflare() {
         ]}
         checked={true}
       />
-      <H level={2} text="Business and Pro Plan" />
+      <H contentTableCallback={contentTableCallback} level={2} text="Business and Pro Plan" />
       The Image Resizing feature converts images to the AVIF format. Unfortunately, this feature is
       not free, but part of the Business Plan. Since a Business plan costs about $200 or more per
       month, this seems excessive for such a small feature.
@@ -57,7 +72,7 @@ export default function BlogAvifInCloudflare() {
       image optimization, a better firewall, captchas, cache analytics, etc. For an emerging small
       to medium-sized business, this seems like an attractive investment to get the last bit of
       performance out of your website.
-      <H level={2} text="Implementation with Workers" />
+      <H contentTableCallback={contentTableCallback} level={2} text="Implementation with Workers" />
       Browsers with AVIF support add an image/avif note to their Accept request header. To request
       the AVIF format from the Image Resizing module of Cloudflare, simply set the format option to
       avif. Using a worker script, you can easily automatically detect and enable AVIF support:
@@ -82,7 +97,7 @@ export default function BlogAvifInCloudflare() {
       beneficial to dynamically operate more image functions based on the state of the network.
       Crisp images in 4K are still incredible if your visitors have a bandwidth that supports it,
       and you can still handle the large file size.
-      <H level={2} text="The picture element" />
+      <H contentTableCallback={contentTableCallback} level={2} text="The picture element" />
       In our Tutorial on{" "}
       <SmartLink link="/blog/tutorials/use-avif-in-html" text="how to use avif in HTML" />, we
       present you the {`<picture>`} element as the best option to serve AVIF files in an HTML

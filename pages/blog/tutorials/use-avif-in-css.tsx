@@ -10,16 +10,27 @@ import { useAvifInHtml as post1 } from "lib/meta";
 import { useAvifInFrameworks as post2 } from "lib/meta";
 import { useAvifInWindows as post3 } from "lib/meta";
 
-export default function BlogAvif() {
+import { useState } from "react";
+import ContentTable, { ContentTableEntry } from "@components/ContentTable";
+
+export default function BlogPost() {
+  const [contentTable, setContentTable] = useState<ContentTableEntry[]>([]);
+
+  function contentTableCallback(entry: ContentTableEntry) {
+    contentTable.push(entry);
+    setContentTable([...contentTable]);
+  }
   return (
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
+      <ContentTable contentTable={contentTable} />
+      <H contentTableCallback={contentTableCallback} level={2} text="TL;DR" />
       Using AVIF images via HTML is very easy, as you can read{" "}
       <SmartLink text="in this tutorial" link="/blog/tutorials/use-avif-in-html" />. Furthermore, it
       is easy because HTML provides a media-type hint that helps the browser deliver the best
       version of your image. Unfortunately, CSS does not have such an option. However, with a simple
       Javascript function, we can easily support WebP and AVIF. We have created a detection script
       that manipulates the HTML element of your page by writing classes.
-      <H level={2} text="How it works" />
+      <H contentTableCallback={contentTableCallback} level={2} text="How it works" />
       We must remember that in CSS, the first rule does not win, but the last rule wins. We have
       created a script that checks AVIF and WebP support by loading an AVIF-encoded 1x1 pixel image.
       If the browser successfully loads the AVIF image, the HTML element receives an "avif" class.
@@ -31,7 +42,7 @@ export default function BlogAvif() {
       <Code language="html">{`<html></html> <!-- no class at all, you have to use jpg (oh god)-->
 <html class="webp"></html> <!-- you can use webp-->
 <html class="avif"></html> <!-- you can use avif (heck yeah!)-->`}</Code>
-      <H level={2} text="The Script" />
+      <H contentTableCallback={contentTableCallback} level={2} text="The Script" />
       To avoid visible image changes when adding the avif/webp class to your DOM, add the content as
       an inline script in your header, above any CSS content. The minified version of this script is
       a tiny 600 byte piece and takes 5ms to load, which is perfectly fine for the benefit it
@@ -58,7 +69,7 @@ avif.onerror = function () {
       <Code language="javascript">
         {`var A=new Image;A.src="data:image/avif;base64,AAAAFGZ0eXBhdmlmAAAAAG1pZjEAAACgbWV0YQAAAAAAAAAOcGl0bQAAAAAAAQAAAB5pbG9jAAAAAEQAAAEAAQAAAAEAAAC8AAAAGwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAARWlwcnAAAAAoaXBjbwAAABRpc3BlAAAAAAAAAAQAAAAEAAAADGF2MUOBAAAAAAAAFWlwbWEAAAAAAAAAAQABAgECAAAAI21kYXQSAAoIP8R8hAQ0BUAyDWeeUy0JG+QAACANEkA=",A.onload=function(){document.documentElement.classList.add("avif")};`}{" "}
       </Code>
-      <H level={2} text="Usage" />
+      <H contentTableCallback={contentTableCallback} level={2} text="Usage" />
       Once implemented, we can simply use the following CSS due to the high level classes.
       <Code language="css">
         {`/* Simple approach */
@@ -77,14 +88,14 @@ avif.onerror = function () {
     .avif .img { background-image: url('avif-in-css@2x.avif') }
 }`}
       </Code>
-      <H level={2} text="The outcome (05.01.21)" />
+      <H contentTableCallback={contentTableCallback} level={2} text="The outcome (05.01.21)" />
       Using this script leads to the following screenshots. Back in the day, Firefox Quantum didn't
       support WebP or AVIF, so there is no class. Chrome currently supports AVIF, so AVIF is
       displayed. Edge does not support AVIF and supports WebP, so our site has a webp class.
       <Image url="css-firefox" alt="firefox quantum without any class" />
       <Image url="css-chrome" alt="our website on chrome gets an avif class" />
       <Image url="css-edge" alt="microsoft edge with a webp class in the html element" />
-      <H level={2} text="SCSS background mixin" />
+      <H contentTableCallback={contentTableCallback} level={2} text="SCSS background mixin" />
       <SmartLink
         link="https://raoulkramer.de/avif-and-webp-images-as-css-background-images/"
         text="Raoul Kramer"
@@ -108,7 +119,7 @@ avif.onerror = function () {
   }
 }`}
       </Code>
-      <H level={2} text="Look into the future" />
+      <H contentTableCallback={contentTableCallback} level={2} text="Look into the future" />
       The World Wide Web Consortium (W3C) is developing the CSS Images Module Level 4, which allows
       us to define the image type. The image-set property allows us to specify different image
       formats. The browser renders the first image format supported by the browser. The following
@@ -128,7 +139,7 @@ avif.onerror = function () {
       Currently, image-set is supported by 90% of browsers, but does not yet support type
       declaration. This is a brand-new feature for CSS4. Until browsers support this feature, we
       must use JavaScript to detect AVIF and WebP support.
-      <H level={2} text="Generating AVIF images" />
+      <H contentTableCallback={contentTableCallback} level={2} text="Generating AVIF images" />
       Creating AVIF files with <SmartLink text="avif.io" link="/" /> is child's play. Simply drag
       the files into the converter and it will do the rest. You will get the best results in the
       shortest time.

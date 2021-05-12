@@ -9,9 +9,20 @@ import { useAvifInHtml as post1 } from "lib/meta";
 import { useAvifInCss as post2 } from "lib/meta";
 import { useAvifInCloudflare as post3 } from "lib/meta";
 
-export default function BlogAvifInWordpress() {
+import { useState } from "react";
+import ContentTable, { ContentTableEntry } from "@components/ContentTable";
+
+export default function BlogPost() {
+  const [contentTable, setContentTable] = useState<ContentTableEntry[]>([]);
+
+  function contentTableCallback(entry: ContentTableEntry) {
+    contentTable.push(entry);
+    setContentTable([...contentTable]);
+  }
   return (
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
+      <ContentTable contentTable={contentTable} />
+      <H contentTableCallback={contentTableCallback} level={2} text="TL;DR" />
       "Sorry, this file type is not permitted for security reasons," is the wonderful answer you get
       when trying to upload AVIF images to WordPress. There is no official support. However,
       WordPress needs AVIF for two reasons: First, technicians and end users often have to deal with
@@ -21,7 +32,7 @@ export default function BlogAvifInWordpress() {
       that about 35% of the web is powered by WordPress. Further statistics of WordPress show that
       in November 2020 over 409 million people view more than 20 billion pages every month.
       <Image url="wordpress-usage" alt="shows usage statistics of wordpress" />
-      <H level={2} text="Official Wordpress Support" />
+      <H contentTableCallback={contentTableCallback} level={2} text="Official Wordpress Support" />
       The WordPress core has implemented a security check for uploading files since version 4.7.
       This means that WordPress checks the file extension of your uploaded files and rejects files
       that do not match their pattern. Most of you will know this due to the restriction on
@@ -32,7 +43,7 @@ export default function BlogAvifInWordpress() {
       there are several ways around this security check. If you are looking for an easy way to
       automatically generate images and offer the user the best, skip the next lines and take a look
       at the plugin section.
-      <H level={2} text="Mime Types" />
+      <H contentTableCallback={contentTableCallback} level={2} text="Mime Types" />
       WordPress restricts files that do not match its list of Internet media types, also known as
       content types or mime-types. The MIME type is a two-part identifier for file formats and
       format content that is transferred on the Internet. Yes, we copied this explanation from
@@ -42,7 +53,7 @@ export default function BlogAvifInWordpress() {
       <Image url="mimetype" alt="example showing mime types" />
       WordPress uses these mime types. They have a list of files they allow and a list of files they
       do not allow. There are several methods to change this behavior and add mime types. See below.
-      <H level={2} text="Functions.php" />
+      <H contentTableCallback={contentTableCallback} level={2} text="Functions.php" />
       The old powerful and glorious functions.php. It is a file that appears on every theme in
       WordPress and contains basic functionalities. You can open it by going to Appearance and
       choosing the Theme Editor. If a warning appears, do not hesitate to ignore it. You know what
@@ -74,12 +85,16 @@ add_filter( 'upload_mimes', 'allow_avif', 1, 1 );`}
 }
 add_filter( 'upload_mimes', 'support_modern_images', 1, 1 );`}
       </Code>
-      <H level={2} text="FTP Upload" />
+      <H contentTableCallback={contentTableCallback} level={2} text="FTP Upload" />
       Another way to bypass the restriction is to upload your files via FTP. Simply connect to your
       server and drop your images in the upload folder, where most of your current photos should be
       saved. If you don't know how to access your files directly, please ask your web host. Most
       providers offer great tutorials.
-      <H level={2} text="Plugins for mime type support" />
+      <H
+        contentTableCallback={contentTableCallback}
+        level={2}
+        text="Plugins for mime type support"
+      />
       There's a considerable disadvantage when modifying the functions.php. It's theme related. This
       means whenever you switch a theme or proceed to update your current one, most likely the
       shortcode snippet will be gone. Multiple plugin solutions exist for this issue:
@@ -98,7 +113,11 @@ add_filter( 'upload_mimes', 'support_modern_images', 1, 1 );`}
       (previously known as "blob mimes") adds to this content-based validation and sanitizing,
       ensuring that files are what they say they are and safe for inclusion on your site.
       <Image url="mimetype-plugin" alt="screenshot of the mime type plugin website" />
-      <H level={2} text="There's one remaining problem: No automatic conversion" />
+      <H
+        contentTableCallback={contentTableCallback}
+        level={2}
+        text="There's one remaining problem: No automatic conversion"
+      />
       Uploading images is a cool thing, but a colossal problem remains. For every image you want to
       serve to your users, you need to convert it manually. Well, there are some *cough*{" "}
       <SmartLink text=" exceptional bulk converters.. like avif.io." link="/" />. You've probably
@@ -113,7 +132,7 @@ add_filter( 'upload_mimes', 'support_modern_images', 1, 1 );`}
       creating an easy-to-use plugin that will handle all these requests without you having to
       configure anything. Until then, do not hesitate to try other plugins. Unfortunately, none of
       these plugins supports avif yet, but WebP is also an advantage!
-      <H level={2} text="Plugin Support and Summary" />
+      <H contentTableCallback={contentTableCallback} level={2} text="Plugin Support and Summary" />
       As we said earlier, all major WordPress services and plugins for image optimization currently
       do not support AVIF. WordPress does not support AVIF files. WordPress does not even support
       WebP. We are currently creating a fantastic plugin for you. In the meantime, you can still

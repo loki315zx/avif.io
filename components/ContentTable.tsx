@@ -1,7 +1,6 @@
 export interface ContentTableEntry {
   text: string;
   href: string;
-  level: number;
 }
 
 export interface ContentTableProps {
@@ -9,16 +8,18 @@ export interface ContentTableProps {
 }
 
 export default function ContentTable(props: ContentTableProps) {
+  const contentItem = props.contentTable.map((entry) => (
+    <li key={entry.href}>
+      <a href={entry.href}>{entry.text}</a>
+    </li>
+  ));
+
   return (
     <>
-      {props.contentTable.map((entry) => (
-        // Use entry.level (2 or 3) to style them nice
-        <p key={entry.href}>
-          <a href={entry.href}>
-            {entry.level} {entry.text}
-          </a>
-        </p>
-      ))}
+      <ol className="tableofcontent">
+        <h4>Table of Content</h4>
+        {contentItem}
+      </ol>
     </>
   );
 }

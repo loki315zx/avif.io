@@ -8,10 +8,25 @@ import { useAvifInWindows as post1 } from "lib/meta";
 import { useAvifInFirefox as post2 } from "lib/meta";
 import { useAvifInGimp as post3 } from "lib/meta";
 
-export default function BlogAvifInEdge() {
+import { useState } from "react";
+import ContentTable, { ContentTableEntry } from "@components/ContentTable";
+
+export default function BlogPost() {
+  const [contentTable, setContentTable] = useState<ContentTableEntry[]>([]);
+
+  function contentTableCallback(entry: ContentTableEntry) {
+    contentTable.push(entry);
+    setContentTable([...contentTable]);
+  }
   return (
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
-      <H level={2} text="Current status and future plans" />
+      <ContentTable contentTable={contentTable} />
+      <H contentTableCallback={contentTableCallback} level={2} text="TL;DR" />
+      <H
+        contentTableCallback={contentTableCallback}
+        level={2}
+        text="Current status and future plans"
+      />
       While Google can quickly implement new browser features, other companies such as Microsoft and
       Mozilla are much slower. AVIF was created as part of the development of AV1, which was
       developed by the Alliance for Open Media. Since all the major browser manufacturers are part
@@ -21,7 +36,7 @@ export default function BlogAvifInEdge() {
       <Image url="edge-new" alt="the new microsoft edge" />
       If you want to enable experimental AV1 support, you can do so by downloading a plugin. At
       least YouTube videos will then be streamed in the new format.
-      <H level={2} text="Your version of Edge" />
+      <H contentTableCallback={contentTableCallback} level={2} text="Your version of Edge" />
       If you are looking for a way to test the functionality and capabilities of AV1 on Microsoft
       Edge, you should{" "}
       <SmartLink
@@ -35,7 +50,7 @@ export default function BlogAvifInEdge() {
       icon. The new version of Edge has a more minimalist and gradient style, while the old one
       looks like a Van Gogh.
       <Image url="edge-or-edge" alt="microsoft edge version difference" />
-      <H level={2} text="AV1 Plugin" />
+      <H contentTableCallback={contentTableCallback} level={2} text="AV1 Plugin" />
       The AV1 Extension add-on is available from the{" "}
       <SmartLink
         link="https://www.microsoft.com/en-us/p/av1-video-extension/9mvzqvxjbq9v"
