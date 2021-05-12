@@ -42,7 +42,7 @@ export default function Blog(props: { postdata: any; children: any; posts: any; 
             <Sources sources={props.postdata.sources} />
             <h3>Topic cluster and Questions</h3>
             Topics referenced across search results organized in clusters. Followed by related
-            questions asked on Google, Reddit and Stackoverflow.
+            questions and titles mentioned on Google, Reddit and Stackoverflow.
             <Tags tags={props.postdata.tags} />
             <Questions questions={props.postdata.questions} />
           </article>
