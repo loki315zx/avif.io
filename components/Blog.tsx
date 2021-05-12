@@ -1,5 +1,6 @@
 import Posts from "@components/Posts";
 import Tags from "@components/Tags";
+import Questions from "@components/Questions";
 import Meta from "@components/Meta";
 import Breadcrumbs from "@components/Breadcrumbs";
 import Sources from "@components/Sources";
@@ -35,9 +36,15 @@ export default function Blog(props: { postdata: any; children: any; posts: any; 
           <article className="content">
             {props.children}
             <h3>Related topics, websites and sources</h3>
-            Links that offer more information or have been used as sources for this article.
+            <h5>
+              Links that offer more information or have been used as sources for this article.
+            </h5>
             <Sources sources={props.postdata.sources} />
-            <Tags tags={props.postdata.tags} questions={props.postdata.questions} />
+            <h3>Topic cluster and Questions</h3>
+            Topics referenced across search results organized in clusters. Followed by related
+            questions asked on Google, Reddit and Stackoverflow.
+            <Tags tags={props.postdata.tags} />
+            <Questions questions={props.postdata.questions} />
           </article>
         </div>
       </main>

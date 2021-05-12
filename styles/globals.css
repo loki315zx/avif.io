@@ -1671,6 +1671,11 @@ h5 .heading-anchor-wrapper {
   display: none;
 }
 
+.questions_wrapper,
+.tags_wrapper {
+  margin-top: var(--s2);
+}
+
 .background1 .blog__header::after {
   background-image: radial-gradient(
       circle at 79% 30%,
@@ -1989,10 +1994,12 @@ h5 .heading-anchor-wrapper {
 
 .tag,
 .question {
-  padding: calc(var(--s0 * 0.5));
-  border-radius: var(--radius-small);
   font-size: var(--f0);
   display: inline-block;
+  background: rgb(224 77 85 / 5%);
+  border-radius: 4px;
+  margin: 4px;
+  padding: 2px 4px;
 }
 
 picture {
@@ -2292,16 +2299,6 @@ pre {
   .badge__avif {
     padding: var(--s2);
     margin: var(--s4) 0 0 0;
-  }
-
-  .tag,
-  .question {
-    background: var(--black2);
-    padding: 1px;
-    border-radius: var(--radius-small);
-    margin-bottom: var(--s0);
-    font-size: var(--f0);
-    display: inline-block;
   }
 
   .section__tutorials .text-40.white.s5 {

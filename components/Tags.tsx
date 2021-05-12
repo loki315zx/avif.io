@@ -1,24 +1,30 @@
-import H from "@components/H";
-export default function BlogTags(props: any) {
-  const tags = props.tags;
-  const questions = props.questions;
+import _ from "lodash";
 
-  const listTags = tags.map((tag: any, index: any) => (
-    <div key={index} className="tag">
-      ({tag})
-    </div>
+export interface TagsProps {
+  tags: string[];
+}
+
+export default function Tags(props: TagsProps) {
+  let tags = props.tags.map((original) => {
+    original = original.replace(/\s+/g, "+").toLowerCase();
+    let short = original.replace(/\/$/, "");
+    original = `https://www.google.com/search?q=${original}`;
+    short = short.replace(/\+/g, " ");
+    return { original, short };
+  });
+  tags = _.sortBy(tags, (s) => s.short);
+
+  const listTags = tags.map((source: any) => (
+    <li key={source.original} className="tag">
+      <a target="_blank" rel="noreferrer" href={source.original}>
+        {source.short}
+      </a>
+    </li>
   ));
-  const listQuestions = questions.map((question: any, index: any) => (
-    <div key={index} className="question">
-      ({question})
-    </div>
-  ));
+
   return (
     <div className="tags_container f0">
-      <h3>Topic cluster</h3>
-      Topics referenced across search results organized in clusters, sorted by frequency across top
-      search results. Followed by related questions asked on Google.
-      {listTags} {listQuestions}
+      <div className="tags_wrapper">{listTags}</div>
     </div>
   );
 }
