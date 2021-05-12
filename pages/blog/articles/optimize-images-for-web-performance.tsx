@@ -15,9 +15,9 @@ export default function BlogAvifInCloudflare() {
       <Checkbox
         advantages={[
           "Serve images in next-gen formats: Use AVIF and WebP, with JPG as fallback",
-          "Efficiently encode images with the tool of your choice",
-          "Properly size images: Use a responsive layout, set an explicit width and height and create multiple images sizes",
-          "Optimize loading using content-visibility, lazy loading and async decoding",
+          "Efficiently encode images with a balance between compression and quality",
+          "Properly size images: Use a responsive layout, set an explicit width and height and create multiple image sizes",
+          "Optimize image loading using content-visibility, lazy loading and async decoding",
           "Serve images with an efficient cache policy, use a CDN if necessary",
           "Mind SEO and screen readers, use alt attributes",
         ]}
