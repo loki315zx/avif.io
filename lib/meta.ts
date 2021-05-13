@@ -237,6 +237,13 @@ export const useAvifInEdge = {
     "image file format",
     "av1 image",
     "video codec",
+    "file size reduction",
+    "Lossless compression",
+    "compression efficiency",
+    "compression method",
+    "compression algorithms",
+    "lossy JPEG compression",
+    "AV1 Video",
   ],
   questions: [
     "Windows 10 graphics: GPU-powered AV1 video compression coming soon",
@@ -247,6 +254,7 @@ export const useAvifInEdge = {
     "Enable AVIF or AV1 support in Chrome, Edge and Firefox",
     "What is AVIF or AV1? How to enable its support in Chrome and Firefox?",
     "What is AVIF or AV1 image format",
+    "Windows 10 AVIF Support Gone?",
   ],
   keyword: "Edge",
 };
