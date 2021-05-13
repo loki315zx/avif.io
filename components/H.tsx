@@ -12,14 +12,13 @@ export default function H(props: HProps) {
   const CustomTag = `h${props.level}` as keyof JSX.IntrinsicElements;
   const trimmedText = props.text.replace(/\s/g, "").toLowerCase();
   const router = useRouter();
-  const href = `https://avif.io${router.pathname}#${trimmedText}`;
 
   useEffect(() => {
-    props.contentTableCallback?.({ text: props.text, href });
+    props.contentTableCallback?.({ text: props.text, href: `#${trimmedText}` });
   }, []);
 
   function copyToClipboard(e: any) {
-    navigator.clipboard.writeText(href);
+    navigator.clipboard.writeText(`https://avif.io${router.pathname}#${trimmedText}`);
     e.target.focus();
   }
 
