@@ -1,4 +1,3 @@
-import SmartLink from "@components/SmartLink";
 import { useRouter } from "next/router";
 
 export default function Blog() {
@@ -11,24 +10,33 @@ export default function Blog() {
   const url = "https://avif.io" + router.pathname;
   return (
     <dialog className="share-container">
-      <SmartLink
-        link={`https://twitter.com/intent/tweet?source=${url}&text=${url}`}
-        aria="Share on Twitter"
+      <button
+        onClick={() =>
+          window.open(`https://twitter.com/intent/tweet?source=${url}&text=${url}`, "_blank")
+        }
+        onKeyPress={() =>
+          window.open(`https://twitter.com/intent/tweet?source=${url}&text=${url}`, "_blank")
+        }
+        type="button"
+        title="Share on Twitter"
         id="twitter"
-        tabindex={0}
-      />
-      <SmartLink
-        link={`https://www.reddit.com/submit?url=${url}`}
-        aria="Share on Reddit"
+        tabIndex={0}></button>
+
+      <button
+        onClick={() => window.open(`https://www.reddit.com/submit?url=${url}`, "_blank")}
+        onKeyPress={() => window.open(`https://www.reddit.com/submit?url=${url}`, "_blank")}
+        type="button"
+        title="Share on Reddit"
         id="reddit"
-        tabindex={0}
-      />
-      <SmartLink
-        link={`https://www.facebook.com/share.php?u=${url}`}
-        aria="Share on Facebook"
+        tabIndex={0}></button>
+
+      <button
+        onClick={() => window.open(`https://www.facebook.com/share.php?u=${url}`, "_blank")}
+        onKeyPress={() => window.open(`https://www.facebook.com/share.php?u=${url}`, "_blank")}
+        type="button"
+        title="Share on Facebook"
         id="facebook"
-        tabindex={0}
-      />
+        tabIndex={0}></button>
       <div>
         <button
           onClick={() => share()}

@@ -25,8 +25,8 @@ export default function BlogPost() {
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="TL;DR" />
       Using AVIF images via HTML is very easy, as you can read{" "}
-      <SmartLink text="in this tutorial" link="/blog/tutorials/use-avif-in-html" />. Furthermore, it
-      is easy because HTML provides a media-type hint that helps the browser deliver the best
+      <SmartLink text="in this tutorial" link="/blog/tutorials/use-avif-in-html/" />. Furthermore,
+      it is easy because HTML provides a media-type hint that helps the browser deliver the best
       version of your image. Unfortunately, CSS does not have such an option. However, with a simple
       Javascript function, we can easily support WebP and AVIF. We have created a detection script
       that manipulates the HTML element of your page by writing classes.

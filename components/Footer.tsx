@@ -9,8 +9,8 @@ export default function Footer() {
           <b>avif.io</b>
         </div>
         <div className="s2 text-80">
-          A tool by <SmartLink text="Justin Schmitz" link="http://justinschmitz.de/" external /> and
-          Niksa Sporin that has already converted {conversions} files.
+          A tool by <SmartLink text="Justin Schmitz" link="https://justinschmitz.de/" external />{" "}
+          and Niksa Sporin that has already converted {conversions} files.
         </div>
         <div>© 2020 avif.io</div>
       </div>
@@ -19,7 +19,7 @@ export default function Footer() {
           <b>More</b>
         </div>
         <SmartLink text="Blog" link="/blog/" newLine />
-        <SmartLink text="Release Notes" link="/blog/releases/" newLine />
+        <SmartLink text="Release Notes" link="/blog#releases" newLine />
         <SmartLink text="Contact" link="mailto:support@avif.io" newLine />
         <SmartLink text="Donate" link="https://www.buymeacoffee.com/justinschmitz" newLine />
       </div>

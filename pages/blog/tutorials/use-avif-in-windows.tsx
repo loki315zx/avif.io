@@ -45,7 +45,7 @@ export default function BlogPost() {
       generates a thumbnail image for the AVIF image format. Additionally, MSPaint allows editing
       and saving these images. You may want to use a more advanced image editor than Paint to work
       on image files such as AVIF. For more details, see our{" "}
-      <SmartLink text="article about GIMP" link="/blog/tutorials/use-avif-in-gimp" />.
+      <SmartLink text="article about GIMP" link="/blog/tutorials/use-avif-in-gimp/" />.
     </Blog>
   );
 }

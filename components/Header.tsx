@@ -15,7 +15,7 @@ export default function Header() {
       </div>
       <nav className="menu">
         <SmartLink text="Discord" link="https://discord.com/invite/6w42YpF5hm" external />
-        <SmartLink text="News" link="/blog/#releases" />
+        <SmartLink text="News" link="/blog#releases" />
         <SmartLink text="Blog" link="/blog/" />
       </nav>
     </header>

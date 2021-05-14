@@ -9,9 +9,9 @@
 <url><loc>https://avif.io/blog/</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq></url>
 
 <!--Release Notes-->
-<url><loc>https://avif.io/blog/releases/2021-january/</loc><lastmod>2021-01-29</lastmod><priority>0.5</priority><changefreq>never</changefreq></url> 
-<url><loc>https://avif.io/blog/releases/2021-february/</loc><lastmod>2021-02-14</lastmod><priority>0.5</priority><changefreq>never</changefreq></url> 
-<url><loc>https://avif.io/blog/releases/2021-march/</loc><lastmod>2021-04-04</lastmod><priority>0.5</priority><changefreq>never</changefreq></url> 
+<url><loc>https://avif.io/blog/releases/january-2021/</loc><lastmod>2021-01-29</lastmod><priority>0.5</priority><changefreq>never</changefreq></url> 
+<url><loc>https://avif.io/blog/releases/february-2021/</loc><lastmod>2021-02-14</lastmod><priority>0.5</priority><changefreq>never</changefreq></url> 
+<url><loc>https://avif.io/blog/releases/march-2021/</loc><lastmod>2021-04-04</lastmod><priority>0.5</priority><changefreq>never</changefreq></url> 
 
 <!--Tutorials-->
 <url><loc>https://avif.io/blog/tutorials/use-avif-in-cloudflare/</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq></url>

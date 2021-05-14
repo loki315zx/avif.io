@@ -8,8 +8,8 @@ export interface TutorialsBoxProps {
 
 function TutorialsBox(props: TutorialsBoxProps) {
   return (
-    <Link href={`/blog/tutorials/use-avif-in-${props.url}`}>
-      <a href={`/blog/tutorials/use-avif-in-${props.url}`} tabIndex={0}>
+    <Link href={`/blog/tutorials/use-avif-in-${props.url}/`}>
+      <a href={`/blog/tutorials/use-avif-in-${props.url}/`} tabIndex={0}>
         <div className={"tutorials__box overlay-before"} id={props.cssclass}>
           <div className={"tutorial__overflow overlay"}>
             <span className="tutorial__title">{props.title}</span>

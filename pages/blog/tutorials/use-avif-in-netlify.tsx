@@ -31,7 +31,7 @@ export default function BlogPost() {
       AVIF format at any time. However, at the time of the article on February 21, there is no easy
       way to enable this feature. Instead, you can enable AVIF files through Netlify's header tag
       and then ship AVIF files with a native image HTML tag, as we explained here:{" "}
-      <SmartLink link="blog/tutorials/use-avif-in-html" text="How to use AVIF in HTML" />
+      <SmartLink link="/blog/tutorials/use-avif-in-html/" text="How to use AVIF in HTML" />
       <H
         contentTableCallback={contentTableCallback}
         level={2}

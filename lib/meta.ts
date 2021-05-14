@@ -336,7 +336,7 @@ export const useAvifInFrameworks = {
   sources: [
     "github.com/angular/angular-cli/releases?after=v11.0.2",
     "github.com/facebook/create-react-app/pull/9611",
-    "image.nuxtjs.org/nuxt-picture",
+    "image.nuxtjs.org/",
     "newreleases.io/project/github/angular/angular-cli/release/v11.0.0-rc.1",
     "nuxtjs.org/docs/release-notes",
     "stackoverflow.com/questions/59433854/how-do-i-use-avif-images-in-react-single-page-web-app",
@@ -567,7 +567,7 @@ export const useAvifInWindows = {
     "minitool.com/news/file-explorer-microsoft-paint-support-avif-images",
     "winbuzzer.com/2018/12/27/microsoft-brings-avif-support-to-windows-10-through-file-explorer-and-paint-xcxwbn",
     "howto-connect.com/windows-10-1903-version-support-avif-file-type",
-    "techdows.com/2020/08/chrome-85-to-support-avif-image-format",
+    "techdows.com/2020/08/chrome-85-to-support-avif-image-format.html",
     "onmsft.com/news/latest-windows-insider-build-adds-avif-image-format-support",
     "bleepingcomputer.com/news/microsoft/microsoft-is-adding-avif-image-support-to-windows-10",
   ],
