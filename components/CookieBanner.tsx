@@ -1,5 +1,4 @@
 import React from "react";
-import SmartLink from "@components/SmartLink";
 
 function useStickyState(defaultValue: any, key: any) {
   const [value, setValue] = React.useState(defaultValue);

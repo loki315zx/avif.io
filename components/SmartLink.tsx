@@ -17,7 +17,7 @@ export default function SmartLink(props: {
           title={props.aria ? props.aria : undefined}
           tabIndex={props.tabindex ? props.tabindex : undefined}
           href={props.link}
-          rel={props.external ? "noreferrer" : "prerender"}
+          rel={props.external ? "noreferrer" : "prerender"} // eslint-disable-line
           target={props.external ? "_blank" : "_self"}
           id={props.id}
           aria-label={props.aria}

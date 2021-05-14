@@ -34,10 +34,11 @@ export default function AvifIo({ Component, pageProps }: any) {
       <Footer />
       <CookieBanner />
       <Share />
-      <script src="/__/firebase/8.4.1/firebase-app.js"></script>
-      <script src="/__/firebase/8.4.1/firebase-analytics.js"></script>
-      <script src="/__/firebase/8.4.1/firebase-database.js"></script>
-      <script src="/__/firebase/8.4.1/firebase-storage.js"></script>
+      <script src="/__/firebase/8.6.1/firebase-app.js"></script>
+      <script src="/__/firebase/8.6.1/firebase-analytics.js"></script>
+      <script src="/__/firebase/8.6.1/firebase-database.js"></script>
+      <script src="/__/firebase/8.6.1/firebase-storage.js"></script>
+      <script src="/__/firebase/8.6.1/firebase-performance.js"></script>
       <script src="/__/firebase/init.js"></script>
       <script src="/console.js"></script>
       <script>firebase.analytics()</script>
@@ -52,7 +53,7 @@ function arrayBufferPolyfill() {
 
   function myArrayBuffer(this: File | Blob): Promise<ArrayBuffer> {
     return new Promise((resolve) => {
-      let fr = new FileReader();
+      const fr = new FileReader();
       fr.onload = () => {
         resolve(fr.result as ArrayBuffer);
       };
