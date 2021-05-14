@@ -25,7 +25,7 @@ export default function Meta(props: MetaProps) {
   return (
     <Head>
       <link rel="canonical" href={`https://avif.io/${props.url}`} />
-      <title>avif.io | {props.title}</title>
+      <title>{props.title} | avif.io</title>
       <meta name="description" content={props.description} />
       <meta name="author" content={props.author} />
       <meta property="og:site_name" content="AVIF Converter | avif.io ✨" />

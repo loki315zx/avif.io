@@ -2,6 +2,7 @@ import Blog from "@components/Blog";
 import H from "@components/H";
 import SmartLink from "@components/SmartLink";
 import Code from "@components/Code";
+import Image from "@components/Image";
 
 import { useAvifInNextjs as postdata } from "lib/meta";
 import { useAvifInFrameworks as post1 } from "lib/meta";
@@ -22,10 +23,10 @@ export default function BlogPost() {
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="TL;DR" />
-      So you're expecting a colossal blog post? Well, that's not going to happen. The blog you're
-      reading uses both the latest version of React and NextJS. And not only that: the bundler
-      automatically detects AVIF files and handles them accordingly. We didn't have to do anything
-      for this work. That's what we call a first-class service, gentlemen!
+      So you're expecting a colossal blog post? Well, that's not going to happen. Nextjs images is
+      easy! The blog you're reading uses both the latest version of React and NextJS. And not only
+      that: the bundler automatically detects AVIF files and handles them accordingly. We didn't
+      have to do anything for this work. That's what we call a first-class service, gentlemen!
       <H contentTableCallback={contentTableCallback} level={2} text="That's it?" />
       Yes. You simply need to include the AVIF files in your project and insert them via the usual
       methods using HTML or CSS. No configuration is required, but you must make sure that
@@ -82,6 +83,86 @@ module.exports = withImages()`}
       useful for our use-case. However, the plugin does not yet support AVIF as well. Nevertheless,
       the author is currently working on a complete overhaul of the entire plugin, and a Canary
       version is already published. We have linked to the plugin in the sources below.
+      <H
+        contentTableCallback={contentTableCallback}
+        level={2}
+        text="How do we at avif.io deal with AVIF support?"
+      />
+      As we don't want to rely on Vercel or third-party components, we perform the following steps.
+      <H
+        contentTableCallback={contentTableCallback}
+        level={3}
+        text="1. Add a browser support detection script"
+      />
+      To find out if you as a visitor have a browser with AVIF support, we have implemented the
+      following 600-byte script in our header:
+      <Code language="javascript">
+        {`function F(a){document.documentElement.classList.add(a)}var A=new Image;A.src="data:image/avif;base64,AAAAFGZ0eXBhdmlmAAAAAG1pZjEAAACgbWV0YQAAAAAAAAAOcGl0bQAAAAAAAQAAAB5pbG9jAAAAAEQAAAEAAQAAAAEAAAC8AAAAGwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAARWlwcnAAAAAoaXBjbwAAABRpc3BlAAAAAAAAAAQAAAAEAAAADGF2MUOBAAAAAAAAFWlwbWEAAAAAAAAAAQABAgECAAAAI21kYXQSAAoIP8R8hAQ0BUAyDWeeUy0JG+QAACANEkA=",A.onload=function(){F("avif")},A.onerror=function(){var a=new Image;a.src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==",a.onload=function(){F("webp")}};`}{" "}
+      </Code>
+      <H
+        contentTableCallback={contentTableCallback}
+        level={3}
+        text="2. Create an image component with modern markup"
+      />
+      We have developed our own image component, which uses all the features that modern image
+      markup should take into account, from the lazy load to the aspect ratio. We only have to
+      choose a path and an alt text. For more information on the perfect image markup visit{" "}
+      <SmartLink
+        text="Guide to Image Performance"
+        link="/blog/articles/optimize-images-for-web-performance/"
+      />
+      .
+      <Image url="image-component" alt="screenshot of code that resembles our image component" />
+      <H
+        contentTableCallback={contentTableCallback}
+        level={3}
+        text="3. Convert images with sharp on build time"
+      />
+      Finally, we have the NodeJS library{" "}
+      <SmartLink text="sharp" external link="sharp.pixelplumbing.com/" /> integrated into our build
+      and release script to convert images before we upload our website data to Firebase. The sharp
+      script detects all images in a specific folder and converts them into all the different
+      formats and sizes we need. Below is the current script we are using.
+      <Code language="javascript">
+        {`const sharp = require("sharp");
+const fs = require("fs");
+const path = require("path");
+
+const output = "../public/img/";
+const input = "../images/";
+const jpgQuality = { mozjpeg: true, quality: 50, progressive: true };
+const webpQuality = { quality: 50, reductionEffort: 6 };
+const avifQuality = { quality: 45, speed: 1 };
+const sizes = [1440, 720, 360];
+
+fs.readdir(input, (err, files) => {
+  console.log("Found " + files.length + " files. Converting now, please be patient..");
+
+  files.forEach((file) => {
+    function convert(size) {
+      let fileShort = path.parse(file).name;
+      sharp(input + file)
+        .jpeg(jpgQuality)
+        .resize({ width: size })
+        .toFile(output + fileShort + "-" + size + ".jpg");
+      sharp(input + file)
+        .webp(webpQuality)
+        .resize({ width: size })
+        .toFile(output + fileShort + "-" + size + ".webp");
+      sharp(input + file)
+        .avif(avifQuality)
+        .resize({ width: size })
+        .toFile(output + fileShort + "-" + size + ".avif");
+    }
+    if (file.endsWith(".png") || file.endsWith(".jpg") || file.endsWith(".jpeg")) {
+      for (let i = 0; i < sizes.length; i++) {
+        convert(sizes[i]);
+      }
+    }
+  });
+});
+`}{" "}
+      </Code>
     </Blog>
   );
 }

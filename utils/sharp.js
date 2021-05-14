@@ -10,10 +10,11 @@ const avifQuality = { quality: 45, speed: 1 };
 const sizes = [1440, 720, 540, 360];
 
 fs.readdir(input, (err, files) => {
-  console.log("Found " + files.length + " files.");
+  console.log("Found " + files.length + " files. Converting now, please be patient..");
 
   files.forEach((file) => {
     function convert(size) {
+      let fileShort = path.parse(file).name;
       sharp(input + file)
         .jpeg(jpgQuality)
         .resize({ width: size })
@@ -28,7 +29,6 @@ fs.readdir(input, (err, files) => {
         .toFile(output + fileShort + "-" + size + ".avif");
     }
     if (file.endsWith(".png") || file.endsWith(".jpg") || file.endsWith(".jpeg")) {
-      fileShort = path.parse(file).name;
       for (let i = 0; i < sizes.length; i++) {
         convert(sizes[i]);
       }
