@@ -24,6 +24,7 @@ export default function Image(props: { alt: string; url: string }) {
           height={1620}
           src={`/img/${props.url}-1440.jpg`}
           alt={props.alt}
+          title={props.alt}
         />
       </picture>
     </>
