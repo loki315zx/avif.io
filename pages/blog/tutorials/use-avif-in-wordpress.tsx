@@ -125,7 +125,7 @@ add_filter( 'upload_mimes', 'support_modern_images', 1, 1 );`}
       <SmartLink
         className="text"
         text="using the HTML picture tag"
-        link="/blog/tutorials/use-avif-in-html"
+        link="/blog/tutorials/use-avif-in-html/"
       />{" "}
       remains. A simpler idea would be an image plugin that automatically converts images to modern
       formats and offers the best solution based on your user's browser. We are currently working on

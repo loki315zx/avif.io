@@ -99,7 +99,7 @@ export default function BlogPost() {
       and you can still handle the large file size.
       <H contentTableCallback={contentTableCallback} level={2} text="The picture element" />
       In our Tutorial on{" "}
-      <SmartLink link="/blog/tutorials/use-avif-in-html" text="how to use avif in HTML" />, we
+      <SmartLink link="/blog/tutorials/use-avif-in-html/" text="how to use avif in HTML" />, we
       present you the {`<picture>`} element as the best option to serve AVIF files in an HTML
       environment. Cloudflare allows you to use their image optimization endpoint to perform the
       conversion if you don't want to use Workers.
