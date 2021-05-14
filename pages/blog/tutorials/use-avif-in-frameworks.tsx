@@ -67,7 +67,7 @@ export default function BlogPost() {
       In some cases, especially with older versions and when using webpack, you may encounter some
       problems. Especially:
       <Code language="html">
-        Module parse failed: Unexpected character ' ' (1:0) You may need an appropiate loader to
+        Module parse failed: Unexpected character ' ' (1:0) You may need an appropriate loader to
         handle this file type, currently no loaders are configured to process this fail. See
         https://webpack.js.org/concepts#loaders
       </Code>{" "}

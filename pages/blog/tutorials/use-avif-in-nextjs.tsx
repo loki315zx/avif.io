@@ -41,10 +41,10 @@ module.exports = withImages()`}
       They describe their image component as "an extension of the HTML img element designed for the
       modern web." Why, you may ask? Well, images in this component are resized, optimized and
       automatically served in the correct format based on the visitor's device and browser. For
-      example, you would not deliver a high-resolution image to a Nintendo Gameboy. Furthermore, the
-      images support the Core Web Vitals by not shifting their layouts. Furthermore, this service
-      can also be used if the server that contains the images of the website is a CDN and not a
-      server hosted by the website.
+      example, you would not deliver a high-resolution image to a Nintendo Game Boy. Furthermore,
+      the images support the Core Web Vitals by not shifting their layouts. Furthermore, this
+      service can also be used if the server that contains the images of the website is a CDN and
+      not a server hosted by the website.
       <H
         contentTableCallback={contentTableCallback}
         level={2}
