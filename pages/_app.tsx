@@ -42,6 +42,7 @@ export default function AvifIo({ Component, pageProps }: any) {
       <script src="/__/firebase/init.js"></script>
       <script src="/console.js"></script>
       <script>firebase.analytics()</script>
+      <script>var perf = firebase.performance();</script>
     </>
   );
 }
