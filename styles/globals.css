@@ -1675,9 +1675,11 @@ h5 .heading-anchor-wrapper {
   content: counter(step-counter);
   margin-right: 20px;
   font-size: 80%;
-  color: rgb(224 77 85 / 50%);
+  color: rgb(224 77 85/50%);
   border-radius: 11px;
-  text-align: right;
+  text-align: left;
+  width: 20px;
+  display: inline-block;
 }
 
 .tableofcontent h4 {
@@ -1994,6 +1996,8 @@ h5 .heading-anchor-wrapper {
 
 .content__container a {
   color: var(--color300);
+  transform: translateX(-10px);
+  display: inline-block;
 }
 
 .content .tutorial__number {
