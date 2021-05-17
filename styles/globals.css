@@ -1968,6 +1968,14 @@ h5 .heading-anchor-wrapper {
   font-size: var(--f4);
 }
 
+.archive.blog h2 {
+  font-size: var(--f3);
+}
+
+.archive h3 {
+  text-transform: capitalize;
+}
+
 .breadcrumbs {
   margin-top: var(--s2);
 }

@@ -19,9 +19,9 @@ export default function BlogPosts(props: any) {
   ));
   return (
     <section className="posts">
-      <h2 id={props.title ? props.title : "related"}>
+      <h3 id={props.title ? props.title : "related"}>
         {props.title ? props.title : "Related articles"}
-      </h2>
+      </h3>
       <div className="posts__container grid">{listItems}</div>
     </section>
   );
