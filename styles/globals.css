@@ -404,7 +404,7 @@ header > * > * {
   position: relative;
 }
 
-.menu > a {
+header nav > a {
   margin-left: var(--s3);
 }
 
@@ -1671,6 +1671,11 @@ h5 .heading-anchor-wrapper {
   display: list-item;
 }
 
+.tableofcontent li a {
+  transform: translateX(-10px);
+  display: inline-block;
+}
+
 .tableofcontent li::before {
   content: counter(step-counter);
   margin-right: 20px;
@@ -1932,14 +1937,23 @@ h5 .heading-anchor-wrapper {
 }
 
 .blog__syntax__copy:focus {
-  transform: translate3d(0, 0, 0) scale(0.9);
-  transform-origin: center left;
   background: rgba(207, 0, 84, 1);
   color: white;
 }
 
-.blog__syntax__copy:active {
-  transform: translate3d(0, 0, 0) scale(0.8);
+.blog__syntax__copy::after {
+  content: "✓";
+  margin-left: var(--s0);
+  display: inline-block;
+  transform: scale(0) rotate(50deg);
+  transform-origin: center center;
+  transition: 0.1s all ease-in;
+}
+
+.blog__syntax__copy:focus::after {
+  transform: scale(1) rotate(0);
+  opacity: 1;
+  transition: 0.1s all ease-out;
 }
 
 .blog h1 {
@@ -1996,7 +2010,6 @@ h5 .heading-anchor-wrapper {
 
 .content__container a {
   color: var(--color300);
-  transform: translateX(-10px);
   display: inline-block;
 }
 
@@ -2398,7 +2411,7 @@ pre {
     padding: var(--s1) 0;
   }
 
-  .menu > a {
+  header nav > a {
     margin-left: var(--s2);
   }
 

@@ -33,7 +33,7 @@ export default function Footer() {
       <div id="communication">
         <a
           className="producthunt"
-          href="https://www.producthunt.com/posts/avif-io-avif-image-converter?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-avif-io-avif-image-converter"
+          href="https://www.producthunt.com/posts/avif-io-avif-image-converter"
           target="_blank"
           rel="noreferrer">
           <img

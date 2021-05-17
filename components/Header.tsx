@@ -13,7 +13,7 @@ export default function Header() {
           text={`over ${conversions} files converted`}
         />
       </div>
-      <nav className="menu">
+      <nav>
         <SmartLink text="Discord" link="https://discord.com/invite/6w42YpF5hm" external />
         <SmartLink text="News" link="/blog/#releases" />
         <SmartLink text="Blog" link="/blog/" />
