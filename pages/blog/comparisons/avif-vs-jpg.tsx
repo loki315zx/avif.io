@@ -48,10 +48,10 @@ export default function BlogPost() {
       <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
       Today, we have many image codecs to work with. Images come in all shapes and sizes but also
       formats. However, many do not realize how important it is to have more than one image codec to
-      choose from. Today, JPG / JPEG is among the most popular image codecs used worldwide. JPEG /
-      JPG is an image file format and an abbreviation for Joint Photographic Expert Group. Invented
-      in 1992, it is one of the oldest and most common image file formats on the Web. It is widely
-      used on the Internet and beyond and offers excellent image compression.
+      choose from. Today, JPEG is among the most popular image codecs used worldwide. JPEG / JPG is
+      an image file format and an abbreviation for Joint Photographic Expert Group. Invented in
+      1992, it is one of the oldest and most common image file formats on the Web. It is widely used
+      on the Internet and beyond and offers excellent image compression.
       <br />
       For over two decades, JPG has been the default choice - but now, various alternatives and
       rivals are appearing that can compete with JPG as the default image codec. Interestingly, the
