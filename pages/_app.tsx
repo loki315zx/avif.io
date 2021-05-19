@@ -24,7 +24,9 @@ export default function AvifIo({ Component, pageProps }: any) {
         <meta property="og:image" content="https://avif.io/json-logo.png" />
         <meta name="twitter:image" content="https://avif.io/twitter.png" />
         <script src="/avif.js"></script>
+        {/*
         <script async={true} src="/hotjar.js"></script>
+        */}
       </Head>
       <Header />
       <div className="page">
