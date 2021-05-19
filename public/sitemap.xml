@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+<!-- #NOTE Can this file be automated? Changefreq and priority aren't required.
+Lastmod probably containing the date when the file was edited the last time?-->
+
 <!--Misc Pages-->
 <url><loc>https://avif.io/</loc><lastmod>2021-01-11</lastmod><priority>1.0</priority><changefreq>monthly</changefreq></url>
 <url><loc>https://avif.io/privacy-policy/</loc><lastmod>2021-01-11</lastmod><priority>0.5</priority><changefreq>monthly</changefreq></url>

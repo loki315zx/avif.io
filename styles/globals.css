@@ -212,6 +212,12 @@ section > * {
   position: relative;
 }
 
+br {
+  margin-top: var(--s0);
+  display: block;
+  content: "";
+}
+
 /*  */
 /* UTILITY CLASSES */
 /*  */

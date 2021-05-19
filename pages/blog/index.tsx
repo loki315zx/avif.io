@@ -1,6 +1,23 @@
 import Meta from "@components/Meta";
 import Posts from "@components/Posts";
 
+/*
+
+#NOTE
+
+I can bet there are thousands of more efficient ways to do this.
+Whenever I create a new blog post, I import the meta data from lib/meta.
+I add it inside an array of a constant, which then is being used inside the Posts component (see below).
+
+I'd love to have an automatic way, like:
+
+1. Load meta file
+2. Check for existing categories in that file
+3. Map through all blog posts
+4. Create sections with title+posts accordingly.
+
+*/
+
 import { useAvifInCloudflare as post1 } from "lib/meta";
 import { useAvifInCss as post2 } from "lib/meta";
 import { useAvifInEdge as post3 } from "lib/meta";
@@ -21,6 +38,9 @@ import { march2021 as post103 } from "lib/meta";
 
 import { imageOptimizationIn2021 as post1001 } from "lib/meta";
 
+import { avifVsJpg as post2001 } from "lib/meta";
+
+const comparisons = [post2001];
 const releases = [post103, post102, post101];
 const articles = [post1001];
 const posts = [
@@ -61,6 +81,7 @@ export default function BlogAvif() {
 
       <Posts posts={articles} title="articles" />
       <Posts posts={posts} title="tutorials" />
+      <Posts posts={comparisons} title="comparisons" />
       <Posts posts={releases} title="releases" />
     </main>
   );

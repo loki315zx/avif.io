@@ -8,7 +8,7 @@ export default function Sources(props: SourcesProps) {
   let sources = props.sources.map((original) => {
     original = original.replace(/^https?:\/\//, "");
     let short = original.replace(/\/$/, "");
-    if (short.length >= 60) {
+    if (short.length >= 40) {
       const split = short.split(/[/]/);
       if (split.length > 1) {
         const a = split[0];
