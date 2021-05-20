@@ -131,7 +131,8 @@ export default function App(): ReactElement {
           </p>
         </div>
       </section>
-      <div className="badge__shadow overlay"></div>
+      {/* 
+      <div className="badge__shadow overlay"></div>*/}
       <section id="avifadvantages">
         <div className="advantage__grid  grid">
           <AdvantageItem
