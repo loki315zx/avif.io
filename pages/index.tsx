@@ -93,7 +93,7 @@ export default function App(): ReactElement {
 
       <section className={"app-container"}>
         <h1>Convert all images to AVIF for free.</h1>
-        <h2 className={"f1 m0 s4 center normal"}>
+        <h2 className={"f1 m0 s3 center normal"}>
           No data is sent. The magic happens in your browser.
           <span tabIndex={0} role="button" className="tutorial">
             How?
@@ -131,8 +131,8 @@ export default function App(): ReactElement {
           </p>
         </div>
       </section>
-      {/* 
-      <div className="badge__shadow overlay"></div>*/}
+
+      <div className="badge__shadow"></div>
       <section id="avifadvantages">
         <div className="advantage__grid  grid">
           <AdvantageItem

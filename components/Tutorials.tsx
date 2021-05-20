@@ -23,8 +23,8 @@ function TutorialsBox(props: TutorialsBoxProps) {
 
 export default function Tutorials() {
   return (
-    <section className="section__tutorials overlay-before overlay-after">
-      <h2 className="f3 center">How to use AVIF</h2>
+    <section className="section__tutorials">
+      <h2 className="center">How to use AVIF</h2>
       <div className="white s3 center explainer">
         Support is constantly rising across browsers, software and hardware. Thanks to being
         royalty-free, companies can include the format without having to deal with patents. We
