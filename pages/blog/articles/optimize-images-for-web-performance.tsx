@@ -45,51 +45,48 @@ export default function BlogPost() {
       speed of your website. Performance plays a significant role in the success of any website, as
       powerful websites appeal to and engage users better than low-performing websites. Websites
       should focus on optimizing user-centric happiness metrics. Consider this: No one likes small
-      but ugly images, but no one wants to wait. Welcome to the world of image compression. You
-      might think optimizing your images is as easy as pulling a lever, but you have many tasks
-      ahead of you. Fortunately, many of these tasks are easy to do and even automatable. Some of
-      these techniques are more established, while others are somewhat new. In this article, I
-      outline all the methods to optimize your images. They minimize the bandwidth used to load
-      images and reduce the CPU usage for displaying images. In addition, I offer you all kinds of
-      solutions to ensure perfect optimization, including SEO-related tasks. Suppose you have
+      but ugly images, but no one wants to wait. Welcome to the world of image compression. <br />
+      In this article, we outline all the methods to optimize your images. We minimize the bandwidth
+      used to load images and reduce the CPU usage for displaying images. In addition, I offer you
+      all kinds of solutions to ensure perfect optimization, including SEO. Suppose you have
       formatted your images for better performance and follow best practices. In that case, your
       page will become more popular with search engines, browsers and networks and will load faster
       for your readers. Especially with half of your visitors likely using a mobile device,
       delivering optimal image file formats and sizes is even more critical. Otherwise, your
-      hard-earned traffic will decrease, and your Google rankings will also decline. Feel free to
-      skip to the last chapter, which contains an action list and a fully coded example that you can
-      copy to reproduce the results.
+      hard-earned traffic will decrease, and your Google rankings will also decline.
       <H level={3} text="Google Core Web Vitals" />
-      To understand how and why we should optimize our images, we should understand Core Web Vitals.
-      Several case studies confirm that increased page load time leads to frustrated users and an
-      increased bounce rate. To address this problem, Google has introduced Core Web Vitals to
-      create optimal page load time and user experience guidelines. Google approves these metrics so
-      much that they will be an integral part of its ranking algorithm from July 2021. These
-      guidelines are based on three performance metrics:
-      <H level={4} text="Largest Contentful Paint (LCP)" />
+      To understand how and why we should optimize our images, we need to understand Core Web
+      Vitals. Several case studies confirm that increased page load time leads to frustrated users
+      and an increased bounce rate. To address this problem, Google has introduced Core Web Vitals,
+      which will become an integral part of its ranking algorithm starting from July 2021. Core Web
+      Vitals provides you with a comprehensive view of how the performance of your application
+      impacts your end-user experience. It consists of three main components that optimize the page
+      experience.
+      <H level={4} text="1. Largest Contentful Paint (LCP)" />
       LCP is the period during which the most significant content element in the viewport is made
       visible as soon as the user requests the URL. It is an important, user-centric metric for
       measuring the perceived load speed. It marks the point in the timeline where the page's main
       content is likely to have been loaded. This is important because it tells the reader that the
       URL is actually loading and the page is helpful. Images are one of the most important types of
       elements that are considered for the LCP. LCP is primarily influenced by slow servers, load
-      times of resources and client-side rendering. We will minimize LCP by reducing bytes, caching
+      times of resources and client-side rendering. Optimizing your LCP will demonstrate that your
+      page is usable and that content is displayed quickly. We will do so by reducing bytes, caching
       and lazy loading.
-      <H level={4} text="First Input Delay (FID)" />
-      FID is a crucial, user-centered measure of load responsiveness. It quantifies the experience
-      users feel when trying to interact with non-responsive pages - it ensures that the site is
-      usable. The first impression users have of how quickly your website is can be measured with
-      First Contentful Paint FCP). But how fast your website can paint pixels on the screen is only
-      part of the story. Equally important is how responsive your website reacts when users try to
-      interact with these pixels! The FID metric helps measure your user's first impression of the
-      interactivity and responsiveness of your website. FID measures the time from the first time a
-      user interacts with a page, i.e., when they click a link or tap on a button, to the time when
-      the browser is actually able to process event handlers in response to that interaction. This
-      measurement is taken from whatever interactive element that the user clicks on first. This is
-      important on pages where the user needs to do something because then the page becomes
-      interactive. By using our techniques, we will reduce FID through reduced (main-thread) CPU
-      usage.
-      <H level={4} text="Cumulative Layout Shift (CLS)" />
+      <H level={4} text="2. First Input Delay (FID)" />
+      The FID metric helps measure your user's first impression of the interactivity and
+      responsiveness of your website. FID is a crucial, user-centered measure of load
+      responsiveness. It quantifies the experience users feel when trying to interact with
+      non-responsive pages - it ensures that the site is usable. The first impression users have of
+      how quickly your website is can be measured with First Contentful Paint (FCP). But how fast
+      your website can paint pixels on the screen is only part of the story. Equally important is
+      how responsive your website reacts when users try to interact with these pixels. If you have
+      ever tried clicking within an input box and nothing happens, then you are familiar with the
+      frustration that can be caused by large input delays. FID measures the time from the first
+      time a user interacts with a page, i.e., when they click a link or tap on a button, to the
+      time when the browser is actually able to process event handlers in response to that
+      interaction. This measurement is taken from whatever interactive element that the user clicks
+      on first. By using our techniques, we will reduce FID through reduced (main-thread) CPU usage.
+      <H level={4} text="3. Cumulative Layout Shift (CLS)" />
       CLS is an important, user-centric metric for measuring visual stability because it helps
       quantify how often users experience unexpected layout shifts—a low CLS helps ensure that the
       page is delightful. Have you ever been reading an article online when something suddenly
@@ -100,16 +97,14 @@ export default function BlogPost() {
       lifespan of the page. This is important to us because for example having images without
       dimensions can cause elements shift while a user is trying to interact with it, leading to a
       bad user experience. With techniques in this article, we will keep CLS to zero.
-      <H level={3} text="Summarization of image optimization benefits" />
-      When you visit a website, the server calls up all the files that the website is supposed to
-      load on your screen. Depending on how your website is structured, images could make up the
-      bulk of data that needs to be loaded. The smaller the file sizes of the images, the faster a
-      website loads. But you don't want to end up with a grainy or blurry-looking website,
-      especially in times of high-resolution screens. It's crucial to know what type of image to
-      use. Properly optimized images still have their visual quality intact - and when you run an
-      e-commerce site, that's really important to win customers' trust. In fact, 92.6% of people say
-      that visual input is the leading factor influencing their purchasing decision.
-      <H level={4} text="Here is a look at the main advantages" />
+      <H level={3} text="Summary of image optimization benefits" />
+      Depending on how your website is structured, images make up the bulk of data that needs to be
+      loaded. The smaller the file sizes of the images, the faster a website loads. But you don't
+      want to end up with a grainy or blurry-looking website, especially in times of high-resolution
+      screens. Properly optimized images still have their visual quality intact - and when you run
+      an e-commerce site, that's really important to win customers' trust. By improving your vitals,
+      you can boost your site's ranking in comparison with your competitors.
+      <H level={4} text="Main advantages" />
       <Checkbox
         advantages={[
           "Faster Loading: It improves the loading speed of your site. If your site takes too long to load, your visitors might get tired of waiting and move on to something else.",
@@ -119,6 +114,7 @@ export default function BlogPost() {
         ]}
         checked={true}
       />
+      Let's examine they ways in which you can improve your images.
       <H
         contentTableCallback={contentTableCallback}
         level={2}

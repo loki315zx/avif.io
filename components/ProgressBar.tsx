@@ -11,7 +11,7 @@ export default function ProgressBar(props: ProgressBarProps) {
 
   return (
     <div className={"bar__container"}>
-      <div className={"bar__inner"} style={innerStyle}>
+      <div className={"bar__inner will-change"} style={innerStyle}>
         <div className="bar__dot" />
       </div>
     </div>

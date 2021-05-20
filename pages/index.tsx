@@ -129,13 +129,13 @@ export default function App(): ReactElement {
           <p>
             <b>.AVIF</b>
           </p>
-          <div className="badge__shadow overlay"></div>
         </div>
       </section>
+      <div className="badge__shadow overlay"></div>
       <section id="avifadvantages">
         <div className="advantage__grid  grid">
           <AdvantageItem
-            pre="usually"
+            pre="typically"
             text="reduces file size"
             post="of images by 20-90% for faster page loading"
             number="visualizer-1"

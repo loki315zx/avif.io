@@ -102,56 +102,55 @@ export default function Conversion(props: ConversionProps): ReactElement {
   const cancelled = status === "cancelled";
 
   return (
-    <>
-      <div
-        className={`will-change conversion ${finished ? "finished" : "progress"} ${
-          cancelled ? "cancelled" : ""
-        }`}>
-        <div className="conversion_information">
-          <p className="filename">
-            {fileName?.substring(0, 15)}
-            {finished ? ".avif " : " "}
-            {cancelled ? " · cancelled " : " "}
-          </p>
-          <p className="remaining-time">
-            {status === "inProgress" && remainingTime ? " · " + remainingTime : ""}
-          </p>
-        </div>
-        <div className="conversion_meta">
-          <span className="conversion_format">
-            {originalFormat} · {prettyBytes(originalSize)}
-          </span>
+    <div
+      className={`conversion ${finished ? "finished" : "progress"} ${
+        cancelled ? "cancelled" : ""
+      }`}>
+      <div className="conversion_information">
+        <p className="filename">
+          {fileName?.substring(0, 15)}
+          {finished ? ".avif " : " "}
+          {cancelled ? " · cancelled " : " "}
+        </p>
+        <p className="remaining-time">
+          {status === "inProgress" && remainingTime ? " · " + remainingTime : ""}
+        </p>
+      </div>
+      <div className="conversion_meta">
+        <span className="conversion_format">
+          {originalFormat} · {prettyBytes(originalSize)}
+        </span>
 
-          <span className="conversion_outcome">
-            {percentageSaved === 0 && (
-              <div id="zeropercent" className="tutorial">
-                Why 0%?
-              </div>
-            )}
-            {percentageSaved}% smaller · {prettyBytes(outputSize)}
-          </span>
-        </div>
-        {status === "inProgress" && (
-          <a
-            role="button"
-            className="conversion__cancel center"
-            onClick={cancelConverison}
-            onKeyPress={cancelConverison}
-            tabIndex={0}>
-            cancel
-          </a>
-        )}
+        <span className="conversion_outcome">
+          {percentageSaved === 0 && (
+            <div id="zeropercent" className="tutorial">
+              Why 0%?
+            </div>
+          )}
+          {percentageSaved}% smaller · {prettyBytes(outputSize)}
+        </span>
+      </div>
+      <a
+        role="button"
+        tabIndex={0}
+        title={`download ${fileName}`}
+        download={`${fileName}.avif`}
+        href={outputObjectURL}
+        className={"download overlay-after overlay-before"}>
+        Download
+      </a>
+      {status === "inProgress" && <ProgressBar progress={progress} />}
+      {status === "inProgress" && (
         <a
           role="button"
-          tabIndex={0}
-          title={`download ${fileName}`}
-          download={`${fileName}.avif`}
-          href={outputObjectURL}
-          className={"download overlay-after overlay-before"}>
-          Download
+          title="stop conversion"
+          className="conversion__cancel center"
+          onClick={cancelConverison}
+          onKeyPress={cancelConverison}
+          tabIndex={0}>
+          ■
         </a>
-        {status === "inProgress" && <ProgressBar progress={progress} />}
-      </div>
-    </>
+      )}
+    </div>
   );
 }
