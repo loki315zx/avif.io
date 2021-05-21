@@ -1,11 +1,6 @@
 import Blog from "@components/Blog";
 
-/*
-
-#NOTE
-
-I declare the header component "H" on every blog article. Is there a way to automatically include it with the Blog component?
-*/
+/* #NOTE: I declare the header component "H" on every blog article. Is there a way to automatically include it with the Blog component? */
 
 import H from "@components/H";
 import Checkbox from "@components/Checkbox";
