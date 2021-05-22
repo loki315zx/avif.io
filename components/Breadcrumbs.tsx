@@ -25,7 +25,7 @@ export default function Breadcrumbs(props: any) {
                     "@type": "ListItem",
                     "position": 2,
                     "name": urlSplit[1],
-                    "item": "https://avif.io/blog#" + urlSplit[1],
+                    "item": "https://avif.io/blog/#" + urlSplit[1],
                   }
                 : "",
             ],
