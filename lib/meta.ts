@@ -6,6 +6,7 @@ export const blog = {
   author: "Justin Schmitz",
   date_published: "01.09.20",
   date_modified: "10.01.21",
+  category: "misc",
 };
 
 export const privacyPolicy = {
@@ -16,6 +17,7 @@ export const privacyPolicy = {
   author: "Justin Schmitz",
   date_published: "01.09.20",
   date_modified: "10.01.21",
+  category: "misc",
 };
 
 export const january2021 = {
@@ -31,6 +33,7 @@ export const january2021 = {
   tags: [],
   questions: [],
   keyword: "Changelog January 2021",
+  category: "changelog",
 };
 
 export const february2021 = {
@@ -53,6 +56,7 @@ export const february2021 = {
   tags: [],
   questions: [],
   keyword: "Changelog February 2021",
+  category: "changelog",
 };
 
 export const march2021 = {
@@ -83,6 +87,7 @@ export const march2021 = {
   tags: [],
   questions: [],
   keyword: "Changelog March 2021",
+  category: "changelog",
 };
 
 export const useAvifInCloudflare = {
@@ -131,6 +136,7 @@ export const useAvifInCloudflare = {
     "Resizing with Cloudflare Workers",
   ],
   keyword: "Cloudflare",
+  category: "tutorials",
 };
 
 export const useAvifInCss = {
@@ -175,6 +181,7 @@ export const useAvifInCss = {
     "css background-image usage of avif and webp",
   ],
   keyword: "CSS",
+  category: "tutorials",
 };
 
 export const useAvifInEdge = {
@@ -224,6 +231,7 @@ export const useAvifInEdge = {
     "Windows 10 AVIF Support Gone?",
   ],
   keyword: "Edge",
+  category: "tutorials",
 };
 
 export const useAvifInSafari = {
@@ -263,6 +271,7 @@ export const useAvifInSafari = {
     "Which browsers are capable of displaying AVIF pictures?",
   ],
   keyword: "Safari",
+  category: "tutorials",
 };
 
 export const useAvifInFirefox = {
@@ -323,6 +332,7 @@ export const useAvifInFirefox = {
     "Is AVIF lossless",
   ],
   keyword: "Firefox",
+  category: "tutorials",
 };
 
 export const useAvifInFrameworks = {
@@ -361,6 +371,7 @@ export const useAvifInFrameworks = {
   ],
   questions: ["How do I use AVIF images in React Single page Web App"],
   keyword: "Frameworks",
+  category: "tutorials",
 };
 
 export const useAvifInMagento = {
@@ -443,6 +454,7 @@ export const useAvifInGimp = {
     "How to Start Using AVIF Images in GIMP",
   ],
   keyword: "GIMP",
+  category: "tutorials",
 };
 
 export const useAvifInHtml = {
@@ -499,6 +511,7 @@ export const useAvifInHtml = {
     "How to create AVIF images",
   ],
   keyword: "HTML",
+  category: "tutorials",
 };
 
 export const useAvifInNextjs = {
@@ -543,6 +556,7 @@ export const useAvifInNextjs = {
     "How Gatsby and Next.js really work (and what it means for speed and SEO)",
   ],
   keyword: "NextJS",
+  category: "tutorials",
 };
 
 export const useAvifInWindows = {
@@ -604,6 +618,7 @@ export const useAvifInWindows = {
     "Display the AVIF Images in Windows 10",
   ],
   keyword: "Windows",
+  category: "tutorials",
 };
 
 export const useAvifInNetlify = {
@@ -631,6 +646,7 @@ export const useAvifInNetlify = {
   ],
   questions: ["Using AVIF in Web Development Today", "AVIF Content-Type Headers + Netlify"],
   keyword: "Netlify",
+  category: "tutorials",
 };
 
 export const useAvifInWordpress = {
@@ -689,6 +705,7 @@ export const useAvifInWordpress = {
     "Upload AVIF to WordPress",
   ],
   keyword: "WordPress",
+  category: "tutorials",
 };
 
 export const imageOptimizationIn2021 = {
@@ -781,6 +798,7 @@ export const imageOptimizationIn2021 = {
     "How To Compress Images Automatically For Your Website?",
   ],
   keyword: "Image Optimization",
+  category: "article",
 };
 
 export const avifVsJpg = {
@@ -841,4 +859,5 @@ export const avifVsJpg = {
     "Does AVIF support transparency",
   ],
   keyword: "jpg",
+  category: "comparison",
 };

@@ -5,7 +5,6 @@ import Posts from "@components/Posts";
 
 #NOTE
 
-I can bet there are thousands of more efficient ways to do this.
 Whenever I create a new blog post, I import the meta data from lib/meta.
 I add it inside an array of a constant, which then is being used inside the Posts component (see below).
 
