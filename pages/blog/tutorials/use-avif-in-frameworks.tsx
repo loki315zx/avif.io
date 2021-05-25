@@ -70,7 +70,7 @@ export default function BlogPost() {
         Module parse failed: Unexpected character ' ' (1:0) You may need an appropriate loader to
         handle this file type, currently no loaders are configured to process this fail. See
         https://webpack.js.org/concepts#loaders
-      </Code>{" "}
+      </Code>
       Simply add the detection for AVIF files to the fileloader in your webpack.config.js:
       <Code language="javascript">
         {`module.exports = {

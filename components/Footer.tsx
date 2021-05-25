@@ -9,7 +9,7 @@ export default function Footer() {
           <b>avif.io</b>
         </div>
         <div className="s2 text-80">
-          A tool by <SmartLink text="Justin Schmitz" link="https://justinschmitz.de/" external />{" "}
+          A tool by <SmartLink text="Justin Schmitz" link="https://justinschmitz.de/" external />
           and Niksa Sporin that has already converted {conversions} files.
         </div>
         <div>© 2020 avif.io</div>

@@ -43,7 +43,7 @@ export default function BlogPost() {
       bits.
       <Image url="gimp-bitdepth" alt="gimp export avif dialogue showing different bit depths" />
       <H contentTableCallback={contentTableCallback} level={2} text="AVIF Plugin" />
-      There is also a plugin called{" "}
+      There is also a plugin called
       <SmartLink
         text="gimp-avif-plugin by novemesk"
         link="https://github.com/novomesk/gimp-avif-plugin"
@@ -55,7 +55,7 @@ export default function BlogPost() {
       along well with the default interface.
       <H contentTableCallback={contentTableCallback} level={2} text="Converting existing images" />
       If you look to have a lot of images converted, it's a lot easier to convert them all in one
-      go. Make life easier for yourself by{" "}
+      go. Make life easier for yourself by
       <SmartLink text="using our AVIF converter, which is free" link="/" />.
     </Blog>
   );

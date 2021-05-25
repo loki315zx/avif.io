@@ -11,20 +11,23 @@ export default function SmartLink(props: {
   tabindex?: number;
 }) {
   return (
-    <div {...(props.newLine ? null : { style: { display: "inline-block" } })}>
-      <Link href={props.link}>
-        <a
-          title={props.aria ? props.aria : undefined}
-          tabIndex={props.tabindex ? props.tabindex : undefined}
-          href={props.link}
-          rel={props.external ? "noreferrer" : "prerender"}
-          target={props.external ? "_blank" : "_self"}
-          id={props.id}
-          aria-label={props.aria}
-          className={props.className}>
-          {props.text}
-        </a>
-      </Link>
-    </div>
+    <>
+      {" "}
+      <div {...(props.newLine ? null : { style: { display: "inline-block" } })}>
+        <Link href={props.link}>
+          <a
+            title={props.aria ? props.aria : undefined}
+            tabIndex={props.tabindex ? props.tabindex : undefined}
+            href={props.link}
+            rel={props.external ? "noreferrer" : "prerender"}
+            target={props.external ? "_blank" : "_self"}
+            id={props.id}
+            aria-label={props.aria}
+            className={props.className}>
+            {props.text}
+          </a>
+        </Link>
+      </div>{" "}
+    </>
   );
 }

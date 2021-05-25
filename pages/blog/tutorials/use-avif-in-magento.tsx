@@ -34,7 +34,7 @@ export default function BlogPost() {
       local and automatic conversion. Please note that this post is not sponsored. As there is no
       free demo of Magento, we could not test them individually on our computers. However, several
       sources confirm that both plugins work perfectly, so we would encourage you to try them out if
-      you like. Also,{" "}
+      you like. Also,
       <SmartLink
         external
         link="https://github.com/magento/magento2/pull/32400"
@@ -50,7 +50,7 @@ export default function BlogPost() {
         external
         link="https://www.jajuma.de/en/jajuma-develop/extensions/ultimate-image-optimizer-extension-for-magento-2"
         text="Ultimate Image Optimizer Extension for Magento 2"
-      />{" "}
+      />
       was the first extension to support AVIF images for Magento 2 stores. In addition to local and
       automatic AVIF conversion, WebP images and original images are available as a fallback. In
       addition, developers have added lazy loading and retinal support options, giving Magento 2
@@ -65,21 +65,21 @@ export default function BlogPost() {
       future. This enthusiasm has also led him to merge his existing WebP module with the
       theoretical AVIF module into the new Next-Gen image module. Soon, the extensions could include
       a CLI to generate these images in advance rather than generating them in no time at all. I
-      suggest{" "}
+      suggest
       <SmartLink
         external
         link="https://packagist.org/packages/yireo/magento2-next-gen-images"
         text="visiting his module page on Packagist"
-      />{" "}
-      or his{" "}
+      />
+      or his
       <SmartLink
         external
         link="https://www.yireo.com/blog/2020-12-29-magento2-webp-becomes-next-gen"
         text="blog post"
-      />{" "}
+      />
       , where he gives more information about the current state of the plugin, as well as errors he
       sees when activating AVIF modules on the server, such as not optimizing the view.xml. Have you
-      also created an AVIF module / extension? Let us know so we can add it to the list.{" "}
+      also created an AVIF module / extension? Let us know so we can add it to the list.
     </Blog>
   );
 }

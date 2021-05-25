@@ -31,7 +31,7 @@ export default function BlogPost() {
       Without proper configuration, tools like Microsoft Paint throw a bug that says that the AVIF
       file is not a valid format and is not supported by the application. If you are looking for
       AVIF support for Windows 10, you can either wait until Microsoft implements it by default, or
-      take a look{" "}
+      take a look
       <SmartLink
         link="
       https://www.microsoft.com/de-de/p/av1-video-extension/9mvzqvxjbq9v"
@@ -43,7 +43,7 @@ export default function BlogPost() {
       As you can see on the screenshot below, after installing the extension, File Explorer
       generates a thumbnail image for the AVIF image format. Additionally, MSPaint allows editing
       and saving these images. You may want to use a more advanced image editor than Paint to work
-      on image files such as AVIF. For more details, see our{" "}
+      on image files such as AVIF. For more details, see our
       <SmartLink text="article about GIMP" link="/blog/tutorials/use-avif-in-gimp/" />.
     </Blog>
   );

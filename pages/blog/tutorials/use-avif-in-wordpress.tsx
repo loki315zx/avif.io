@@ -53,7 +53,7 @@ export default function BlogPost() {
       <Image url="mimetype" alt="example showing mime types" />
       WordPress uses these mime types. They have a list of files they allow and a list of files they
       do not allow. There are several methods to change this behavior and add mime types. See below.
-      <H contentTableCallback={contentTableCallback} level={3} text="Functions.php" />
+      <H level={3} text="Functions.php" />
       The old powerful and glorious functions.php. It is a file that appears on every theme in
       WordPress and contains basic functionalities. You can open it by going to Appearance and
       choosing the Theme Editor. If a warning appears, do not hesitate to ignore it. You know what
@@ -85,16 +85,12 @@ add_filter( 'upload_mimes', 'allow_avif', 1, 1 );`}
 }
 add_filter( 'upload_mimes', 'support_modern_images', 1, 1 );`}
       </Code>
-      <H contentTableCallback={contentTableCallback} level={3} text="FTP Upload" />
+      <H level={3} text="FTP Upload" />
       Another way to bypass the restriction is to upload your files via FTP. Simply connect to your
       server and drop your images in the upload folder, where most of your current photos should be
       saved. If you don't know how to access your files directly, please ask your web host. Most
       providers offer great tutorials.
-      <H
-        contentTableCallback={contentTableCallback}
-        level={3}
-        text="Plugins for mime type support"
-      />
+      <H level={3} text="Plugins for mime type support" />
       There's a considerable disadvantage when modifying the functions.php. It's theme related. This
       means whenever you switch a theme or proceed to update your current one, most likely the
       shortcode snippet will be gone. Multiple plugin solutions exist for this issue:
@@ -115,14 +111,10 @@ add_filter( 'upload_mimes', 'support_modern_images', 1, 1 );`}
       <Image url="mimetype-plugin" alt="screenshot of the mime type plugin website" />
       <H contentTableCallback={contentTableCallback} level={2} text="No automatic conversion" />
       Uploading images is a cool thing, but a colossal problem remains. For every image you want to
-      serve to your users, you need to convert it manually. Well, there are some *cough*{" "}
+      serve to your users, you need to convert it manually. Well, there are some *cough*
       <SmartLink text=" exceptional bulk converters.. like avif.io." link="/" />. You've probably
-      heard of it. However,{" "}
-      <SmartLink
-        className="text"
-        text="using the HTML picture tag"
-        link="/blog/tutorials/use-avif-in-html/"
-      />{" "}
+      heard of it. However,
+      <SmartLink text="using the HTML picture tag" link="/blog/tutorials/use-avif-in-html/" />
       remains. A simpler idea would be an image plugin that automatically converts images to modern
       formats and offers the best solution based on your user's browser. We are currently working on
       creating an easy-to-use plugin that will handle all these requests without you having to

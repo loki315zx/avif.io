@@ -25,7 +25,7 @@ export default function BlogPost() {
       Many Netlify users wanted a native solution that would allow them to deliver images in WebP or
       AVIF format at any time. However, at the time of the article on February 21, there is no easy
       way to enable this feature. Instead, you can enable AVIF files through Netlify's header tag
-      and then ship AVIF files with a native image HTML tag, as we explained here:{" "}
+      and then ship AVIF files with a native image HTML tag, as we explained here:
       <SmartLink link="/blog/tutorials/use-avif-in-html/" text="How to use AVIF in HTML" />
       <H contentTableCallback={contentTableCallback} level={2} text="Defining custom headers" />
       While using the image tag on Netlify seems to work, there was a problem with using. avif
@@ -44,12 +44,12 @@ Content-Type = "image/avif"`}
       to find more ways to utilize this file.// Enabling AVIF support on Netlify is not easy as
       simply clicking a single button. However, it can be easily achieved by customizing the
       configuration file to your specific needs. If this is the first time you hear about the
-      configuration file, I suggest you take a look at its{" "}
+      configuration file, I suggest you take a look at its
       <SmartLink
         external
         link="https://docs.netlify.com/configure-builds/file-based-configuration/"
         text="documentation"
-      />{" "}
+      />
       to find other ways to use this file.
     </Blog>
   );

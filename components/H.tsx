@@ -24,7 +24,7 @@ export default function H(props: HProps) {
 
   return (
     <CustomTag id={trimmedText}>
-      {props.text}{" "}
+      {props.text}
       <span role="presentation" className="heading-anchor-wrapper tutorial">
         <a className="header-link" href={`#${props.text}`} onClick={copyToClipboard}>
           <span role="img" aria-label="copy" className="css-1i2mldy">

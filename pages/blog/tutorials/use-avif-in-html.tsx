@@ -111,7 +111,7 @@ src="/image.jpg" alt="an avif image" />
       many images, it is a good way to prepare for the future. Please remember to provide fallback
       images for older browser versions or experimental use as in Firefox. Otherwise, your user
       experience may suffer as images are not rendered. AVIF is also good for backgrounds. Check out
-      the <SmartLink text="CSS article" link="/blog/tutorials/use-avif-in-css/" />. How about{" "}
+      the <SmartLink text="CSS article" link="/blog/tutorials/use-avif-in-css/" />. How about
       <SmartLink text="frameworks" link="/blog/tutorials/use-avif-in-frameworks/" />? Enjoy this
       article with the different types of frameworks you can use.
     </Blog>

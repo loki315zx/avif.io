@@ -7,7 +7,7 @@ export default function BlogPosts(props: any) {
       <a href={`/${post.url}`} tabIndex={0}>
         <div className="posts__item">
           <div className="posts__img">
-            <div className="posts__tag">#{post.keyword}</div>{" "}
+            <div className="posts__tag">#{post.keyword}</div>
           </div>
           <div className="posts__data">
             <div className="posts__title">{post.title}</div>

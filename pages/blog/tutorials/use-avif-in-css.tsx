@@ -24,7 +24,7 @@ export default function BlogPost() {
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
-      Using AVIF images via HTML is very easy, as you can read{" "}
+      Using AVIF images via HTML is very easy, as you can read
       <SmartLink text="in this tutorial" link="/blog/tutorials/use-avif-in-html/" />. Furthermore,
       it is easy because HTML provides a media-type hint that helps the browser deliver the best
       version of your image. Unfortunately, CSS does not have such an option. However, with a simple
@@ -99,11 +99,11 @@ avif.onerror = function () {
       <Image url="css-chrome" alt="our website on chrome gets an avif class" />
       <Image url="css-edge" alt="microsoft edge with a webp class in the html element" />
       <H contentTableCallback={contentTableCallback} level={2} text="SCSS background mixin" />
-      Earlier this week,{" "}
+      Earlier this week,
       <SmartLink
         link="https://raoulkramer.de/avif-and-webp-images-as-css-background-images/"
         text="Raoul Kramer"
-      />{" "}
+      />
       posted an absolutely amazing SCSS background mixin that can be used to support AVIF and WebP.
       <Code language="scss">
         {`@mixin bg-url($url, $url2x: false, $webp1x: false, $webp2x: false, $avif1x: false, $avif2x: false) {

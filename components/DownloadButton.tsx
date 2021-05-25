@@ -17,7 +17,7 @@ export default function DownloadButton(props: DownloadButtonProps) {
   return (
     <div className={`downloadall-container ${props.files.length > 1 ? "show" : "hide"}`}>
       <button onClick={onClick}> Download all images </button>
-      Enjoying avif.io?{" "}
+      Enjoying avif.io?
       <SmartLink
         className="color300"
         text="Join our Discord!"

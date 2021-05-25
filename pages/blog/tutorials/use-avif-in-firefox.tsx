@@ -62,15 +62,15 @@ export default function BlogPost() {
       />
       Provided that you have installed a compatible version, you can easily add support for AVIF
       with the about:config configurations. Type ‘about:config’ (without the asterisks) inside the
-      address bar and press Enter.{" "}
+      address bar and press Enter.
       <Image url="firefox-about" alt="typing about:config inside the browser url" /> Most likely a
       warning message will appear, telling you to be careful. No worries, we will be handling
-      everything gently. Click on 'Accept the risk and continue'.{" "}
+      everything gently. Click on 'Accept the risk and continue'.
       <Image url="firefox-warning" alt="firefox warning" /> In the search bar at the top of the
       page, search for avif. The option ‘image.avif.enabled’ is the one you are looking for. If the
       second column's value is showing 'false', click the right switch button to set it to true. A
       'true' value means that Firefox supports AVIF, whereas a 'false' value means the browser's
-      image format isn't supported.{" "}
+      image format isn't supported.
       <Image url="firefox-avifsearch" alt="firefox search for avif support" />
       <H
         level={5}
