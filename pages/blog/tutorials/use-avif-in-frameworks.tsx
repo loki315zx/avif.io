@@ -22,7 +22,7 @@ export default function BlogPost() {
   return (
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
-      <H contentTableCallback={contentTableCallback} level={2} text="TL;DR" />
+      <H contentTableCallback={contentTableCallback} level={2} text="Framework List" />
       Now that you've learned how fantastic AVIF is, you may be asking yourself, "How do I use AVIF
       images in frameworks? Since AVIF is relatively new, the implementation must be super
       complicated and time-consuming!" The answer is simple: Most Javascript front-end frameworks
@@ -50,7 +50,7 @@ export default function BlogPost() {
         advantages={["meteor/meteor", "jashkenas/backbone", "polymer/polymer", "emberjs/ember.js"]}
         checked={false}
       />
-      <H contentTableCallback={contentTableCallback} level={2} text="An example code" />
+      <H contentTableCallback={contentTableCallback} level={2} text="Example code" />
       This is the code we used to display the image below in React and Next.JS:
       <Code language="html">
         {`<picture>

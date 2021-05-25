@@ -23,7 +23,7 @@ export default function BlogPost() {
   return (
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
-      <H contentTableCallback={contentTableCallback} level={2} text="TL;DR" />
+      <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
       I'm not wasting your time with 10,000 word passages of text about how awesome AVIF is just to
       boost SEO rankings. AVIF is a file format based on a video codec and supports a high bit depth
       while maintaining a small file size. You can find many articles about how fantastic AVIF is

@@ -747,6 +747,11 @@ header nav > a {
   padding: var(--s1) 0;
 }
 
+.cancelled .conversion_meta,
+.cancelled .conversion_information {
+  opacity: 0;
+}
+
 .conversion_meta {
   z-index: 98;
   margin-right: var(--s3);
@@ -782,20 +787,11 @@ header nav > a {
 }
 
 .conversion.cancelled {
-  opacity: 0.5 !important;
-  padding: 0 var(--s1);
-  animation: cssAnimation 0s ease-in 5s forwards;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-
-@keyframes cssAnimation {
-  to {
-    width: 0;
-    margin-top: 0;
-    height: 0;
-    overflow: hidden;
-  }
+  opacity: 0 !important;
+  height: 0;
+  padding: 0;
+  transition: all 0.8s ease-out;
+  margin: 0;
 }
 
 .remaining-time {

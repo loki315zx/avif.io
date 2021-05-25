@@ -148,7 +148,7 @@ export default function BlogPost() {
       <H
         contentTableCallback={contentTableCallback}
         level={2}
-        text="Main differences for marketeers"
+        text="Main differences for Marketeers"
       />
       Simply put, AVIF has a better chance of being supported in the long term. It also has a higher
       degree of compression efficiency and can work with a broader range of functions as described

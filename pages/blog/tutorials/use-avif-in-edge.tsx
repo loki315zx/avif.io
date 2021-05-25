@@ -21,12 +21,7 @@ export default function BlogPost() {
   return (
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
-      <H contentTableCallback={contentTableCallback} level={2} text="TL;DR" />
-      <H
-        contentTableCallback={contentTableCallback}
-        level={2}
-        text="Current status and future plans"
-      />
+      <H contentTableCallback={contentTableCallback} level={2} text="Current status" />
       While Google can quickly implement new browser features, other companies such as Microsoft and
       Mozilla are much slower. AVIF was created as part of the development of AV1, which was
       developed by the Alliance for Open Media. Since all the major browser manufacturers are part
@@ -36,7 +31,7 @@ export default function BlogPost() {
       <Image url="edge-new" alt="the new microsoft edge" />
       If you want to enable experimental AV1 support, you can do so by downloading a plugin. At
       least YouTube videos will then be streamed in the new format.
-      <H contentTableCallback={contentTableCallback} level={2} text="Your version of Edge" />
+      <H contentTableCallback={contentTableCallback} level={2} text="Your Edge version" />
       If you are looking for a way to test the functionality and capabilities of AV1 on Microsoft
       Edge, you should{" "}
       <SmartLink

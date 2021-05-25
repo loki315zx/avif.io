@@ -259,7 +259,7 @@ export default function BlogPost() {
       <H
         contentTableCallback={contentTableCallback}
         level={2}
-        text="2) Efficiently encode images: Compression quality vs size"
+        text="2) Efficiently encode images"
       />
       <H
         level={5}
@@ -305,11 +305,7 @@ export default function BlogPost() {
         ]}
         checked={true}
       />
-      <H
-        contentTableCallback={contentTableCallback}
-        level={2}
-        text="3) Properly size images: Choosing correct image dimensions"
-      />
+      <H contentTableCallback={contentTableCallback} level={2} text="3) Properly size images" />
       One of the most worthwhile optimizations you can make in the interest of web performance is to
       provide images in the correct size. An all too common problem is that images are uploaded at
       full resolution or of enormous dimensions. In this case, the browser must resize these images
@@ -384,7 +380,7 @@ sizes="(max-width: 720px) 100vw, 720px">
       <H
         contentTableCallback={contentTableCallback}
         level={2}
-        text="4) How to optimize the image loading process"
+        text="4) Optimize image loading process"
       />
       <H
         level={5}
@@ -466,11 +462,7 @@ sizes="(max-width: 720px) 100vw, 720px">
       Adding decoding="async" to the image gives the browser permission to decode the image off the
       main thread avoiding user impact of the CPU time used to decode the image.
       <Code language="html">{`<img src="image.jpg" decoding="async">`}</Code>
-      <H
-        contentTableCallback={contentTableCallback}
-        level={2}
-        text="5) Improve your hosting behavior"
-      />
+      <H contentTableCallback={contentTableCallback} level={2} text="5) Improve hosting behavior" />
       <H
         level={5}
         text="
@@ -562,7 +554,7 @@ sizes="(max-width: 720px) 100vw, 720px">
       <H
         contentTableCallback={contentTableCallback}
         level={2}
-        text="Summarized action list and full code example"
+        text="Summary Checklist and code example"
       />
       <Checkbox
         advantages={[
@@ -613,7 +605,7 @@ sizes="(max-width: 720px) 100vw, 720px">
       <H
         contentTableCallback={contentTableCallback}
         level={2}
-        text="List of all Image optimization tools and plugins"
+        text="All Image optimization tools"
       />
       There are a lot of tools and programs out there, both premium and free, that you can use to
       optimize your images. Some give you the tools to perform your own optimizations and others do

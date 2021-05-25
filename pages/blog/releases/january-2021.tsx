@@ -21,7 +21,6 @@ export default function BlogPost() {
   return (
     <Blog className="release" postdata={postdata} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
-      <H contentTableCallback={contentTableCallback} level={2} text="TL;DR" />
       <H contentTableCallback={contentTableCallback} level={2} text="Performance" />
       Although improving the speed of the file conversion is our primary priority next to shipping
       new features, we constantly aim to improve the overall loading time of the website. Since the

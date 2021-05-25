@@ -21,22 +21,13 @@ export default function BlogPost() {
   return (
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
-      <H contentTableCallback={contentTableCallback} level={2} text="TL;DR" />
-      <H
-        contentTableCallback={contentTableCallback}
-        level={2}
-        text="Users wish for native support"
-      />
+      <H contentTableCallback={contentTableCallback} level={2} text="Wishing for native support" />
       Many Netlify users wanted a native solution that would allow them to deliver images in WebP or
       AVIF format at any time. However, at the time of the article on February 21, there is no easy
       way to enable this feature. Instead, you can enable AVIF files through Netlify's header tag
       and then ship AVIF files with a native image HTML tag, as we explained here:{" "}
       <SmartLink link="/blog/tutorials/use-avif-in-html/" text="How to use AVIF in HTML" />
-      <H
-        contentTableCallback={contentTableCallback}
-        level={2}
-        text="Defining custom headers with netlify.toml"
-      />
+      <H contentTableCallback={contentTableCallback} level={2} text="Defining custom headers" />
       While using the image tag on Netlify seems to work, there was a problem with using. avif
       files. When trying to view the images inside Firefox, we noticed that the images did not show
       up. This problem did not occur in Chrome, but it did happen in Firefox. We found that the

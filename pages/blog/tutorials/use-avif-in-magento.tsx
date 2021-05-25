@@ -20,7 +20,6 @@ export default function BlogPost() {
   return (
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
-      <H contentTableCallback={contentTableCallback} level={2} text="TL;DR" />
       <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
       Every online store shows a lot of images - product photos, brand images, etc. But with all
       these images come challenges and opportunities for optimization. Image optimization is a
@@ -45,7 +44,7 @@ export default function BlogPost() {
       <H
         contentTableCallback={contentTableCallback}
         level={2}
-        text="Ultimate Image Optimizer Extension for Magento 2 by JaJuMa"
+        text="Ultimate Image Optimizer Extension"
       />
       <SmartLink
         external
@@ -57,11 +56,7 @@ export default function BlogPost() {
       addition, developers have added lazy loading and retinal support options, giving Magento 2
       stores a complete image optimization solution. Their customers benefit from improved page
       loading times and high-quality images.
-      <H
-        contentTableCallback={contentTableCallback}
-        level={2}
-        text="magento2-next-gen-images by Yireo"
-      />
+      <H contentTableCallback={contentTableCallback} level={2} text="magento2-next-gen-images" />
       Jisse Reitsma, the founder of Yireo, provides a Magento module that does exactly the same. He
       describes it as a module to add support for NextGen images. Those who love Magento and image
       optimization have probably seen Yireo's work before, as he maintains the Yireo_Webp2 module,

@@ -21,9 +21,6 @@ export default function BlogPost() {
   return (
     <Blog className="release" postdata={postdata} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
-      <H contentTableCallback={contentTableCallback} level={2} text="TL;DR" />
-      <ContentTable contentTable={contentTable} />
-      <H contentTableCallback={contentTableCallback} level={2} text="TL;DR" />
       <H contentTableCallback={contentTableCallback} level={2} text="Conversion speed" />
       As you know, the conversion speed for AVIF is a little bit painful. Indeed, other than the
       lack of progressive loading, it's the only thing we have a problem with when it comes to

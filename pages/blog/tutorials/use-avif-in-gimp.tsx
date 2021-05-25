@@ -21,11 +21,11 @@ export default function BlogPost() {
   return (
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
-      <H contentTableCallback={contentTableCallback} level={2} text="TL;DR" />
+      <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
       GNU Image Manipulation Program (GIMP) is a free and open-source graphics editor. Although it
       was developed as a Linux image editor, it has become an effective alternative for Adobe
       Photoshop, while remaining both free and open source.
-      <H contentTableCallback={contentTableCallback} level={2} text="AVIF Support for new images" />
+      <H contentTableCallback={contentTableCallback} level={2} text="Exporting as AVIF" />
       As GIMP 3.0 development has been going on, on the 7th of October 2020, GIMP 2.10.22 was
       released. This release is titled a bug fix, however it had severe effects on GIMP's
       functionality. Since then, thanks to the encoder libheif, it is now capable of supporting the
@@ -53,11 +53,7 @@ export default function BlogPost() {
       speed, alpha channel settings, EXIF data and XMP data processing, as well as the ICC color
       profile. If you do not understand most of these settings, don't worry, you will probably get
       along well with the default interface.
-      <H
-        contentTableCallback={contentTableCallback}
-        level={2}
-        text="AVIF Support for existing images"
-      />
+      <H contentTableCallback={contentTableCallback} level={2} text="Converting existing images" />
       If you look to have a lot of images converted, it's a lot easier to convert them all in one
       go. Make life easier for yourself by{" "}
       <SmartLink text="using our AVIF converter, which is free" link="/" />.

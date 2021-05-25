@@ -19,7 +19,6 @@ export default function BlogPost() {
   return (
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
-      <H contentTableCallback={contentTableCallback} level={2} text="TL;DR" />
       <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
       AVIF support is under development in web browsers. A version of Google Chrome was released in
       mid-August 2020 that includes full AVIF support. Opera also supports the image format, and
@@ -29,11 +28,7 @@ export default function BlogPost() {
       actively developing AVIF, we can expect them to release support faster than they did with
       WebP. This is at least our hope, as incompatible browsers are one major factor for an
       unsupported format. As for Safari for macOS, support for AV1 is still pending as well.
-      <H
-        contentTableCallback={contentTableCallback}
-        level={2}
-        text="Safari adding AVIF support soon"
-      />
+      <H contentTableCallback={contentTableCallback} level={2} text="Safari AVIF support soon" />
       But there's great news in the bug tracker for Webkit, which is the core of Safari. It's the
       engine that's mainly used in Apple's Safari web browser, along with all iOS web browsers.
       WebKit is also used in the BlackBerry browser, PlayStation consoles starting with the PS3,

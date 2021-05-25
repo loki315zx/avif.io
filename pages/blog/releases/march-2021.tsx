@@ -22,7 +22,6 @@ export default function BlogPost() {
   return (
     <Blog className="release" postdata={postdata} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
-      <H contentTableCallback={contentTableCallback} level={2} text="TL;DR" />
       <H contentTableCallback={contentTableCallback} level={2} text="Accessibility" />
       One would think a website that heavily focuses on images wouldn't care about accessibility,
       right? Wrong! There are a lot of people with physical disabilities that affect how they
