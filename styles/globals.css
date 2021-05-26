@@ -1588,22 +1588,26 @@ h5 .heading-anchor-wrapper {
 
 .tableofcontent {
   padding: var(--s2) var(--s3);
-  list-style-type: none;
   background: rgb(224 77 85 / 5%);
   border-radius: var(--radius-small);
 }
 
-.tableofcontent li {
-  display: list-item;
-  counter-increment: step-counter;
+.tableofcontent ol {
+  list-style-type: none;
 }
 
-.tableofcontent li a {
+.tableofcontent ol li {
+  display: list-item;
+  counter-increment: step-counter;
+  padding: 4px 0;
+}
+
+.tableofcontent ol li a {
   display: inline-block;
   transform: translateX(-10px);
 }
 
-.tableofcontent li::before {
+.tableofcontent ol li::before {
   display: inline-block;
   width: 20px;
   margin-right: 20px;
@@ -2083,11 +2087,12 @@ pre {
   font-family: "Poppins", monospace;
   background: var(--black2) !important;
   border-radius: var(--radius-small) 0 var(--radius-small) var(--radius-small);
+  color: var(--white);
 }
 
 .react-syntax-highlighter-line-number {
   font-size: var(--f0);
-  opacity: 0.2;
+  opacity: 0.5;
 }
 
 /*  */

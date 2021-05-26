@@ -15,11 +15,9 @@ export default function ContentTable(props: ContentTableProps) {
   ));
 
   return (
-    <>
-      <ol className="tableofcontent">
-        <h4>Table of Content</h4>
-        {contentItem}
-      </ol>
-    </>
+    <div className="tableofcontent">
+      <h4>Table of Content</h4>
+      <ol>{contentItem}</ol>
+    </div>
   );
 }

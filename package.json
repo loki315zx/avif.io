@@ -8,11 +8,10 @@
     "start": "next start",
     "check-all": "npx stylelint styles/ --fix && prettier --write . && cross-env ANALYZE=true next build && eslint . --ext .js --ext .tsx",
     "pull": "git pull && git fetch origin && git reset --hard origin/master",
-    "setup": "npm i -f && npm run build && next export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && next-sitemap && npm run dev",
-    "setup-img": "npm i -f && cd utils && node sharp && cd ../ && npm run build && next export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && next-sitemap && npm run dev",
-    "release": "npm i -f && npm run build && next export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && next-sitemap && firebase deploy",
-    "release-img": "npm i -f && cd utils && node sharp && cd ../ && npm run build && next export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && next-sitemap && firebase deploy",
-    "postbuild": "next-sitemap"
+    "setup": "npm i -f && npm run build && next export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && next-sitemap --config next-sitemap.config.js && npm run dev",
+    "setup-img": "npm i -f && cd utils && node sharp && cd ../ && npm run build && next export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && next-sitemap --config next-sitemap.config.js && npm run dev",
+    "release": "npm i -f && npm run build && next export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && next-sitemap --config next-sitemap.config.js && firebase deploy",
+    "release-img": "npm i -f && cd utils && node sharp && cd ../ && npm run build && next export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && next-sitemap --config next-sitemap.config.js && firebase deploy"
   },
   "dependencies": {
     "@ampproject/toolbox-optimizer": "^2.7.6",

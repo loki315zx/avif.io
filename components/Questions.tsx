@@ -24,7 +24,7 @@ export default function Questions(props: QuestionsProps) {
 
   return (
     <div className="questions_container f0">
-      <div className="questions_wrapper">{listQuestions}</div>
+      <ol className="questions_wrapper">{listQuestions}</ol>
     </div>
   );
 }
