@@ -46,8 +46,8 @@ Content-Type = "image/avif"`}
       configuration file to your specific needs. If this is the first time you hear about the
       configuration file, I suggest you take a look at its
       <SmartLink
-        external
-        link="https://docs.netlify.com/configure-builds/file-based-configuration/"
+        ext
+        link="docs.netlify.com/configure-builds/file-based-configuration/"
         text="documentation"
       />
       to find other ways to use this file.

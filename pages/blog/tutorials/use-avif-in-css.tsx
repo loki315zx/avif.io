@@ -25,7 +25,7 @@ export default function BlogPost() {
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
       Using AVIF images via HTML is very easy, as you can read
-      <SmartLink text="in this tutorial" link="/blog/tutorials/use-avif-in-html/" />. Furthermore,
+      <SmartLink text="in this tutorial." link="/blog/tutorials/use-avif-in-html/" /> Furthermore,
       it is easy because HTML provides a media-type hint that helps the browser deliver the best
       version of your image. Unfortunately, CSS does not have such an option. However, with a simple
       Javascript function, we can easily support WebP and AVIF. We have created a detection script
@@ -101,8 +101,9 @@ avif.onerror = function () {
       <H contentTableCallback={contentTableCallback} level={2} text="SCSS background mixin" />
       Earlier this week,
       <SmartLink
-        link="https://raoulkramer.de/avif-and-webp-images-as-css-background-images/"
+        link="raoulkramer.de/avif-and-webp-images-as-css-background-images/"
         text="Raoul Kramer"
+        ext
       />
       posted an absolutely amazing SCSS background mixin that can be used to support AVIF and WebP.
       <Code language="scss">

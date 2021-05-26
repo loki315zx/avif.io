@@ -44,10 +44,7 @@ export default function BlogPost() {
       <Image url="gimp-bitdepth" alt="gimp export avif dialogue showing different bit depths" />
       <H contentTableCallback={contentTableCallback} level={2} text="AVIF Plugin" />
       There is also a plugin called
-      <SmartLink
-        text="gimp-avif-plugin by novemesk"
-        link="https://github.com/novomesk/gimp-avif-plugin"
-      />
+      <SmartLink text="gimp-avif-plugin by novemesk" link="github.com/novomesk/gimp-avif-plugin" />
       . Despite the non-creative name, the user interface is fantastic. It allows you to choose from
       many options, such as minimum and maximum quantizer, pixel format, bit depth, encoder, encoder
       speed, alpha channel settings, EXIF data and XMP data processing, as well as the ICC color
@@ -56,7 +53,7 @@ export default function BlogPost() {
       <H contentTableCallback={contentTableCallback} level={2} text="Converting existing images" />
       If you look to have a lot of images converted, it's a lot easier to convert them all in one
       go. Make life easier for yourself by
-      <SmartLink text="using our AVIF converter, which is free" link="/" />.
+      <SmartLink text="using our AVIF converter, which is free." link="/" />
     </Blog>
   );
 }

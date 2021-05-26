@@ -446,7 +446,7 @@ header nav > a {
 
 .heading-anchor-wrapper.tutorial {
   background: none;
-  margin: 0;
+  margin: 0 0 0 var(--s0);
 }
 
 .heading-anchor-wrapper.tutorial::after {
@@ -1980,6 +1980,15 @@ h5 .heading-anchor-wrapper {
 
 .blog h2 {
   font-size: var(--f4);
+}
+
+.blog h2,
+.blog h3 {
+  position: relative;
+}
+
+.blog h5 {
+  margin-top: 0;
 }
 
 .archive.blog h2 {

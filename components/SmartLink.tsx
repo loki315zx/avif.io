@@ -7,20 +7,20 @@ export default function SmartLink(props: {
   id?: string;
   className?: string;
   aria?: string;
-  external?: boolean;
+  ext?: boolean;
   tabindex?: number;
 }) {
   return (
     <>
       {" "}
       <div {...(props.newLine ? null : { style: { display: "inline-block" } })}>
-        <Link href={props.link}>
+        <Link href={props.ext ? `https://` + props.link : props.link}>
           <a
             title={props.aria ? props.aria : undefined}
             tabIndex={props.tabindex ? props.tabindex : undefined}
-            href={props.link}
-            rel={props.external ? "noreferrer" : "prerender"}
-            target={props.external ? "_blank" : "_self"}
+            href={props.ext ? `https://` + props.link : props.link}
+            rel={props.ext ? "noreferrer" : "prerender"}
+            target={props.ext ? "_blank" : "_self"}
             id={props.id}
             aria-label={props.aria}
             className={props.className}>

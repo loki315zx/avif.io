@@ -824,7 +824,7 @@ export const avifVsJpg = {
     "developers.google.com/speed/webp/docs/riff_container",
     "netflixtechblog.com/avif-for-next-generation-image-coding-b1d75675fe4",
     "caniuse.com/avif",
-    "www.ctrl.blog/entry/webp-avif-comparison.html",
+    "ctrl.blog/entry/webp-avif-comparison.html",
     "developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation/List_of_default_Accept_values",
   ],
   tags: [

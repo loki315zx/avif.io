@@ -21,8 +21,8 @@ export default function DownloadButton(props: DownloadButtonProps) {
       <SmartLink
         className="color300"
         text="Join our Discord!"
-        link="https://discord.com/invite/6w42YpF5hm"
-        external
+        link="discord.com/invite/6w42YpF5hm"
+        ext
       />
     </div>
   );

@@ -19,7 +19,7 @@ The Rust code is in `conversion/`.
 ## Details
 
 The root of the project is a [Next.js](https://nextjs.org) application
-written in [TypeScript](https://www.typescriptlang.org/).
+written in [TypeScript](https://typescriptlang.org/).
 You can run the application via `npm start`, and watch and reload the
 files via `npm dev`. The `wasm-pack`ed Rust code ends up in `public/dist`.
 

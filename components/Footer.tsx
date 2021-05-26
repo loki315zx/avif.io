@@ -9,7 +9,7 @@ export default function Footer() {
           <b>avif.io</b>
         </div>
         <div className="s2 text-80">
-          A tool by <SmartLink text="Justin Schmitz" link="https://justinschmitz.de/" external />
+          A tool by <SmartLink text="Justin Schmitz" link="justinschmitz.de/" ext />
           and Niksa Sporin that has already converted {conversions} files.
         </div>
         <div>© 2020 avif.io</div>
@@ -21,7 +21,7 @@ export default function Footer() {
         <SmartLink text="Blog" link="/blog/" newLine />
         <SmartLink text="Release Notes" link="/blog#releases" newLine />
         <SmartLink text="Contact" link="mailto:support@avif.io" newLine />
-        <SmartLink text="Donate" link="https://www.buymeacoffee.com/justinschmitz" newLine />
+        <SmartLink text="Donate" link="buymeacoffee.com/justinschmitz" newLine />
       </div>
       <div id="footer-about">
         <div className="s1">
@@ -33,10 +33,10 @@ export default function Footer() {
       <div id="communication">
         <a
           className="producthunt"
-          href="https://www.producthunt.com/posts/avif-io-avif-image-converter"
+          href="https://producthunt.com/posts/avif-io-avif-image-converter"
           target="_blank"
           rel="noreferrer">
-          <svg width="250" height="54" xmlns="http://www.w3.org/2000/svg">
+          <svg width="250" height="54" xmlns="https://w3.org/2000/svg">
             <g fill="none" fillRule="evenodd">
               <rect fill="#0c0014" x=".5" y=".5" width="249" height="53" rx="10" />
               <text fontFamily="Poppins" fontSize="9" fontWeight="normal" fill="#FFF">

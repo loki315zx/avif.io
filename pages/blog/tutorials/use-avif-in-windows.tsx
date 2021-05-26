@@ -34,17 +34,17 @@ export default function BlogPost() {
       take a look
       <SmartLink
         link="
-      https://www.microsoft.com/de-de/p/av1-video-extension/9mvzqvxjbq9v"
-        text="at the extension"
+      https://microsoft.com/de-de/p/av1-video-extension/9mvzqvxjbq9v"
+        text="at the extension."
       />
-      . AV1 extension has been around since Windows 10 version 1809, when support for the AV1 video
+      AV1 extension has been around since Windows 10 version 1809, when support for the AV1 video
       format first appeared. Since version 1903, the extension is also able to process AVIF files.
       <H contentTableCallback={contentTableCallback} level={2} text="Results" />
       As you can see on the screenshot below, after installing the extension, File Explorer
       generates a thumbnail image for the AVIF image format. Additionally, MSPaint allows editing
       and saving these images. You may want to use a more advanced image editor than Paint to work
       on image files such as AVIF. For more details, see our
-      <SmartLink text="article about GIMP" link="/blog/tutorials/use-avif-in-gimp/" />.
+      <SmartLink text="article about GIMP." link="/blog/tutorials/use-avif-in-gimp/" />
     </Blog>
   );
 }

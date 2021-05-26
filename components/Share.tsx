@@ -23,16 +23,16 @@ export default function Blog() {
         tabIndex={0}></button>
 
       <button
-        onClick={() => window.open(`https://www.reddit.com/submit?url=${url}`, "_blank")}
-        onKeyPress={() => window.open(`https://www.reddit.com/submit?url=${url}`, "_blank")}
+        onClick={() => window.open(`https://reddit.com/submit?url=${url}`, "_blank")}
+        onKeyPress={() => window.open(`https://reddit.com/submit?url=${url}`, "_blank")}
         type="button"
         title="Share on Reddit"
         id="reddit"
         tabIndex={0}></button>
 
       <button
-        onClick={() => window.open(`https://www.facebook.com/share.php?u=${url}`, "_blank")}
-        onKeyPress={() => window.open(`https://www.facebook.com/share.php?u=${url}`, "_blank")}
+        onClick={() => window.open(`https://facebook.com/share.php?u=${url}`, "_blank")}
+        onKeyPress={() => window.open(`https://facebook.com/share.php?u=${url}`, "_blank")}
         type="button"
         title="Share on Facebook"
         id="facebook"

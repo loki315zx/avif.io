@@ -53,8 +53,8 @@ export default function BlogPost() {
       quality using an SSIM measure, as well as training an AI model on our data in the future. All
       of course, while keeping your privacy. Your images will not be analyzed, viewed or stored. We
       are super excited for all the upcoming steps.
-      <SmartLink text="Join our Discord" link="https://discord.com/invite/6w42YpF5hm" /> for staying
-      up to date on latest changes and being part of the development.
+      <SmartLink text="Join our Discord" link="discord.com/invite/6w42YpF5hm" /> for staying up to
+      date on latest changes and being part of the development.
       <H contentTableCallback={contentTableCallback} level={2} text="Conversion issues" />
       These past few weeks, we've gotten a lot of correspondence from the Firefox developers,
       specifically Jon Bauman, the guy who is responsible for the AVIF implementation, especially
@@ -62,21 +62,21 @@ export default function BlogPost() {
       Long story short, they (or well, a user)
       <SmartLink
         aria="reported bug on mozilla bug forum"
-        text="experienced a few bugs when it comes to our converter"
-        link="https://bugzilla.mozilla.org/show_bug.cgi?id=1700723"
+        text="experienced a few bugs when it comes to our converter."
+        link="bugzilla.mozilla.org/show_bug.cgi?id=1700723"
       />
-      . It seems like our AVIF serialization
+      It seems like our AVIF serialization
       <SmartLink
         aria="bugtracker for avif-serialize issues"
         text="is running with a third party dependency"
-        link="https://github.com/mozilla/mp4parse-rust/issues/236"
+        link="github.com/mozilla/mp4parse-rust/issues/236"
       />
       that does not comply with the official AVIF spec. In order to work around this and also give
       us more flexibility in the future, we are currently looking into the
       <SmartLink
         aria="libheif github page"
         text="inclusion of libheif"
-        link="https://github.com/strukturag/libheif"
+        link="github.com/strukturag/libheif"
       />
       in our conversion process.
     </Blog>

@@ -1,40 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="https://sitemaps.org/schemas/sitemap/0.9">
 
-<!-- #NOTE Can this file be automated? Changefreq and priority aren't required.
-Lastmod probably containing the date when the file was edited the last time?-->
+<!-- #NOTE Can this file be automated? Lastmod probably containing the date when the file was edited the last time?-->
 
 <!--Misc Pages-->
-<url><loc>https://avif.io/</loc><lastmod>2021-01-11</lastmod><changefreq>monthly</changefreq></url>
-<url><loc>https://avif.io/privacy-policy/</loc><lastmod>2021-01-11</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://avif.io/</loc><lastmod>2021-01-11</lastmod></url>
+<url><loc>https://avif.io/privacy-policy/</loc><lastmod>2021-01-11</lastmod></url>
 
 <!--Archive Pages-->
-<url><loc>https://avif.io/blog/</loc><lastmod>2021-01-11</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://avif.io/blog/</loc><lastmod>2021-01-11</lastmod></url>
 
 <!--Release Notes-->
-<url><loc>https://avif.io/blog/releases/january-2021/</loc><lastmod>2021-01-29</lastmod><changefreq>yearly</changefreq></url> 
-<url><loc>https://avif.io/blog/releases/february-2021/</loc><lastmod>2021-02-14</lastmod><changefreq>yearly</changefreq></url> 
-<url><loc>https://avif.io/blog/releases/march-2021/</loc><lastmod>2021-04-04</lastmod><changefreq>yearly</changefreq></url> 
+<url><loc>https://avif.io/blog/releases/january-2021/</loc><lastmod>2021-01-29</lastmod></url> 
+<url><loc>https://avif.io/blog/releases/february-2021/</loc><lastmod>2021-02-14</lastmod></url> 
+<url><loc>https://avif.io/blog/releases/march-2021/</loc><lastmod>2021-04-04</lastmod></url> 
 
 <!--Tutorials-->
-<url><loc>https://avif.io/blog/tutorials/use-avif-in-cloudflare/</loc><lastmod>2021-01-11</lastmod><changefreq>monthly</changefreq></url>
-<url><loc>https://avif.io/blog/tutorials/use-avif-in-css/</loc><lastmod>2021-01-11</lastmod><changefreq>monthly</changefreq></url>
-<url><loc>https://avif.io/blog/tutorials/use-avif-in-edge/</loc><lastmod>2021-01-11</lastmod><changefreq>monthly</changefreq></url>
-<url><loc>https://avif.io/blog/tutorials/use-avif-in-firefox/</loc><lastmod>2021-01-11</lastmod><changefreq>monthly</changefreq></url>
-<url><loc>https://avif.io/blog/tutorials/use-avif-in-frameworks/</loc><lastmod>2021-01-11</lastmod><changefreq>monthly</changefreq></url>
-<url><loc>https://avif.io/blog/tutorials/use-avif-in-gimp/</loc><lastmod>2021-01-11</lastmod><changefreq>monthly</changefreq></url>
-<url><loc>https://avif.io/blog/tutorials/use-avif-in-html/</loc><lastmod>2021-01-11</lastmod><changefreq>monthly</changefreq></url>
-<url><loc>https://avif.io/blog/tutorials/use-avif-in-nextjs/</loc><lastmod>2021-01-11</lastmod><changefreq>monthly</changefreq></url>
-<url><loc>https://avif.io/blog/tutorials/use-avif-in-windows/</loc><lastmod>2021-01-11</lastmod><changefreq>monthly</changefreq></url>
-<url><loc>https://avif.io/blog/tutorials/use-avif-in-wordpress/</loc><lastmod>2021-01-11</lastmod><changefreq>monthly</changefreq></url>
-<url><loc>https://avif.io/blog/tutorials/use-avif-in-netlify/</loc><lastmod>2021-02-14</lastmod><changefreq>monthly</changefreq></url>
-<url><loc>https://avif.io/blog/tutorials/use-avif-in-magento/</loc><lastmod>2021-04-17</lastmod><changefreq>monthly</changefreq></url>
-<url><loc>https://avif.io/blog/tutorials/use-avif-in-safari/</loc><lastmod>2021-04-18</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://avif.io/blog/tutorials/use-avif-in-cloudflare/</loc><lastmod>2021-01-11</lastmod></url>
+<url><loc>https://avif.io/blog/tutorials/use-avif-in-css/</loc><lastmod>2021-01-11</lastmod></url>
+<url><loc>https://avif.io/blog/tutorials/use-avif-in-edge/</loc><lastmod>2021-01-11</lastmod></url>
+<url><loc>https://avif.io/blog/tutorials/use-avif-in-firefox/</loc><lastmod>2021-01-11</lastmod></url>
+<url><loc>https://avif.io/blog/tutorials/use-avif-in-frameworks/</loc><lastmod>2021-01-11</lastmod></url>
+<url><loc>https://avif.io/blog/tutorials/use-avif-in-gimp/</loc><lastmod>2021-01-11</lastmod></url>
+<url><loc>https://avif.io/blog/tutorials/use-avif-in-html/</loc><lastmod>2021-01-11</lastmod></url>
+<url><loc>https://avif.io/blog/tutorials/use-avif-in-nextjs/</loc><lastmod>2021-01-11</lastmod></url>
+<url><loc>https://avif.io/blog/tutorials/use-avif-in-windows/</loc><lastmod>2021-01-11</lastmod></url>
+<url><loc>https://avif.io/blog/tutorials/use-avif-in-wordpress/</loc><lastmod>2021-01-11</lastmod></url>
+<url><loc>https://avif.io/blog/tutorials/use-avif-in-netlify/</loc><lastmod>2021-02-14</lastmod></url>
+<url><loc>https://avif.io/blog/tutorials/use-avif-in-magento/</loc><lastmod>2021-04-17</lastmod></url>
+<url><loc>https://avif.io/blog/tutorials/use-avif-in-safari/</loc><lastmod>2021-04-18</lastmod></url>
 
 <!--Comparisons-->
-<url><loc>https://avif.io/blog/comparisons/avif-vs-jpg/</loc><lastmod>2021-05-19</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://avif.io/blog/comparisons/avif-vs-jpg/</loc><lastmod>2021-05-19</lastmod></url>
 
 <!--Articles-->
-<url><loc>https://avif.io/blog/articles/optimize-images-for-web-performance/</loc><lastmod>2021-05-04</lastmod><changefreq>monthly</changefreq></url>
+<url><loc>https://avif.io/blog/articles/optimize-images-for-web-performance/</loc><lastmod>2021-05-04</lastmod></url>
 
 </urlset>

@@ -94,16 +94,8 @@ add_filter( 'upload_mimes', 'support_modern_images', 1, 1 );`}
       There's a considerable disadvantage when modifying the functions.php. It's theme related. This
       means whenever you switch a theme or proceed to update your current one, most likely the
       shortcode snippet will be gone. Multiple plugin solutions exist for this issue:
-      <SmartLink
-        link="https://wordpress.org/plugins/wp-add-mime-types/"
-        text="WP Add Mime Types"
-        newLine
-      />
-      <SmartLink
-        link="https://wordpress.org/plugins/blob-mimes/"
-        text="Lord of the Files"
-        newLine
-      />
+      <SmartLink link="wordpress.org/plugins/wp-add-mime-types/" text="WP Add Mime Types" newLine />
+      <SmartLink link="wordpress.org/plugins/blob-mimes/" text="Lord of the Files" newLine />
       To quote: WordPress relies mostly on name-based validation when deciding whether or not to
       allow a particular file, leaving the door open for various kinds of attacks. Lord of the Files
       (previously known as "blob mimes") adds to this content-based validation and sanitizing,
@@ -111,9 +103,9 @@ add_filter( 'upload_mimes', 'support_modern_images', 1, 1 );`}
       <Image url="mimetype-plugin" alt="screenshot of the mime type plugin website" />
       <H contentTableCallback={contentTableCallback} level={2} text="No automatic conversion" />
       Uploading images is a cool thing, but a colossal problem remains. For every image you want to
-      serve to your users, you need to convert it manually. Well, there are some *cough*
-      <SmartLink text=" exceptional bulk converters.. like avif.io." link="/" />. You've probably
-      heard of it. However,
+      serve to your users, you need to convert it manually. There are some
+      <SmartLink text=" exceptional bulk converters like avif.io." link="/" /> You've probably heard
+      of it. However,
       <SmartLink text="using the HTML picture tag" link="/blog/tutorials/use-avif-in-html/" />
       remains. A simpler idea would be an image plugin that automatically converts images to modern
       formats and offers the best solution based on your user's browser. We are currently working on

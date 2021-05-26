@@ -35,14 +35,13 @@ export default function Breadcrumbs(props: any) {
       </Head>
       <div className="breadcrumbs">
         <div>
-          <SmartLink className="white" link={`/${urlSplit[0]}/`} text={urlSplit[0]} />
+          <SmartLink className="white" link={`/${urlSplit[0]}/`} text={`#${urlSplit[0]}`} />
           {urlSplit[2] ? (
             <div className="white inline">
-              {" > "}
               <SmartLink
                 className="white"
                 link={`/${urlSplit[0]}#${urlSplit[1]}`}
-                text={urlSplit[1]}
+                text={`#${urlSplit[1]}`}
               />
             </div>
           ) : (

@@ -22,7 +22,7 @@ export default function BlogPost() {
   return (
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
-      <H contentTableCallback={contentTableCallback} level={2} text="TL;DR" />
+      <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
       So you're expecting a colossal blog post? Well, that's not going to happen. Nextjs images is
       easy! The blog you're reading uses both the latest version of React and NextJS. And not only
       that: the bundler automatically detects AVIF files and handles them accordingly. We didn't
@@ -46,7 +46,12 @@ module.exports = withImages()`}
       website is a CDN and not a server hosted by the website.
       <H contentTableCallback={contentTableCallback} level={2} text="Next.JS image component" />
       All in all, it's a simple "Put this image in your project, add it to the component and we'll
-      do the entire conversion and optimization. That's perfect for lazy folks like us.
+      do the entire conversion and optimization" approach. While it converts images to newer
+      formats, it does not yet do so for AVIF. There is a
+      <SmartLink link="github.com/vercel/next.js/pull/20381" text="canary version" /> on Github that
+      refers to AVIF more than once, so hopefully we will see this supported in future versions.
+      Finally, the images loaded via CSS will not be optimized, although we pray that this will be
+      the case in future versions.
       <Code language="javascript">{`import Image from 'next/image'
 (..)
       <Image
@@ -56,18 +61,10 @@ module.exports = withImages()`}
         height={0}
       />
 (..)`}</Code>
-      While it converts images to newer formats, it does not yet do so for AVIF. There is a
-      <SmartLink link="https://github.com/vercel/next.js/pull/20381" text="canary version" /> on
-      Github that refers to AVIF more than once, so hopefully we will see this supported in future
-      versions. Finally, the images loaded via CSS will not be optimized, although we pray that this
-      will be the case in future versions.
       <H contentTableCallback={contentTableCallback} level={2} text="Next Optimized Images" />
       Until this point, if you rely heavily on CSS images, you can use the third-party plugin in
       Next.JS called
-      <SmartLink
-        text="next-optimized-images"
-        link="https://github.com/cyrilwanner/next-optimized-images"
-      />
+      <SmartLink text="next-optimized-images" link="github.com/cyrilwanner/next-optimized-images" />
       . It has many additional features, and it supports loading images with CSS, which is very
       useful for our use-case. However, the plugin does not yet support AVIF as well. Nevertheless,
       the author is currently working on a complete overhaul of the entire plugin, and a Canary
@@ -97,10 +94,9 @@ module.exports = withImages()`}
       markup should take into account, from the lazy load to the aspect ratio. We only have to
       choose a path and an alt text. For more information on the perfect image markup visit
       <SmartLink
-        text="Guide to Image Performance"
+        text="Guide to Image Performance."
         link="/blog/articles/optimize-images-for-web-performance/"
       />
-      .
       <Image url="image-component" alt="screenshot of code that resembles our image component" />
       <H
         contentTableCallback={contentTableCallback}
@@ -108,8 +104,8 @@ module.exports = withImages()`}
         text="3. Convert images with sharp on build time"
       />
       Finally, we have the NodeJS library
-      <SmartLink text="sharp" external link="sharp.pixelplumbing.com/" /> integrated into our build
-      and release script to convert images before we upload our website data to Firebase. The sharp
+      <SmartLink text="sharp" ext link="sharp.pixelplumbing.com/" /> integrated into our build and
+      release script to convert images before we upload our website data to Firebase. The sharp
       script detects all images in a specific folder and converts them into all the different
       formats and sizes we need. Below is the current script we are using.
       <Code language="javascript">
@@ -155,11 +151,10 @@ fs.readdir(input, (err, files) => {
       Keep in mind that this is only suitable for website without many images, as it significantly
       increases build time. A way to bypass that could be creating an own sharp API and using
       <SmartLink
-        text="Incremental Static Regeneration"
-        link="https://www.youtube.com/watch?v=nrfuN_Hyd3Y"
-        external
+        text="Incremental Static Regeneration."
+        link="youtube.com/watch?v=nrfuN_Hyd3Y"
+        ext
       />
-      .
     </Blog>
   );
 }

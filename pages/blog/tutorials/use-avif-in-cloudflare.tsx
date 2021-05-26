@@ -25,7 +25,7 @@ export default function BlogPost() {
   return (
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
-      <H contentTableCallback={contentTableCallback} level={2} text="TL;DR" />
+      <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
       Images compressed in AVIF usually take up half the storage space of JPEG and WebP. It uses the
       HEIF ISO standard and AV1 codec from Mozilla, Google, Cisco and others. On the other hand,
       Cloudflare provides hosting and distribution services for websites to optimize the loading of
@@ -117,7 +117,7 @@ export default function BlogPost() {
       Cloudflare does regularly. They already have preliminary support for HTTP/3. Is there anything
       else you would like to know about avif? Do you have a good suggestion for an advanced worker
       script?
-      <SmartLink link="https://twitter.com/jschmitz97" text="Tell us on Justin's Twitter." />
+      <SmartLink link="twitter.com/jschmitz97" text="Tell us on Justin's Twitter." />
     </Blog>
   );
 }

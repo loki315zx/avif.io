@@ -36,8 +36,8 @@ export default function BlogPost() {
       sources confirm that both plugins work perfectly, so we would encourage you to try them out if
       you like. Also,
       <SmartLink
-        external
-        link="https://github.com/magento/magento2/pull/32400"
+        ext
+        link="github.com/magento/magento2/pull/32400"
         text="according to a Github pull request"
       />
       , Magento will add native support for AVIF headers shortly.
@@ -47,8 +47,8 @@ export default function BlogPost() {
         text="Ultimate Image Optimizer Extension"
       />
       <SmartLink
-        external
-        link="https://www.jajuma.de/en/jajuma-develop/extensions/ultimate-image-optimizer-extension-for-magento-2"
+        ext
+        link="jajuma.de/en/jajuma-develop/extensions/ultimate-image-optimizer-extension-for-magento-2"
         text="Ultimate Image Optimizer Extension for Magento 2"
       />
       was the first extension to support AVIF images for Magento 2 stores. In addition to local and
@@ -67,14 +67,14 @@ export default function BlogPost() {
       a CLI to generate these images in advance rather than generating them in no time at all. I
       suggest
       <SmartLink
-        external
-        link="https://packagist.org/packages/yireo/magento2-next-gen-images"
+        ext
+        link="packagist.org/packages/yireo/magento2-next-gen-images"
         text="visiting his module page on Packagist"
       />
       or his
       <SmartLink
-        external
-        link="https://www.yireo.com/blog/2020-12-29-magento2-webp-becomes-next-gen"
+        ext
+        link="yireo.com/blog/2020-12-29-magento2-webp-becomes-next-gen"
         text="blog post"
       />
       , where he gives more information about the current state of the plugin, as well as errors he

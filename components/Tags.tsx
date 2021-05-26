@@ -8,7 +8,7 @@ export default function Tags(props: TagsProps) {
   let tags = props.tags.map((original) => {
     original = original.replace(/\s+/g, "+").toLowerCase();
     let short = original.replace(/\/$/, "");
-    original = `https://www.google.com/search?q=${original}`;
+    original = `https://google.com/search?q=${original}`;
     short = short.replace(/\+/g, " ");
     return { original, short };
   });
