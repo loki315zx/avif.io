@@ -20,7 +20,8 @@ export default function Blog() {
         type="button"
         title="Share on Twitter"
         id="twitter"
-        tabIndex={0}></button>
+        tabIndex={0}
+      ></button>
 
       <button
         onClick={() => window.open(`https://reddit.com/submit?url=${url}`, "_blank")}
@@ -28,7 +29,8 @@ export default function Blog() {
         type="button"
         title="Share on Reddit"
         id="reddit"
-        tabIndex={0}></button>
+        tabIndex={0}
+      ></button>
 
       <button
         onClick={() => window.open(`https://facebook.com/share.php?u=${url}`, "_blank")}
@@ -36,14 +38,16 @@ export default function Blog() {
         type="button"
         title="Share on Facebook"
         id="facebook"
-        tabIndex={0}></button>
+        tabIndex={0}
+      ></button>
       <div>
         <button
           onClick={() => share()}
           onKeyPress={() => share()}
           aria-label="share"
           title="share on social media"
-          id="share"></button>
+          id="share"
+        ></button>
       </div>
     </dialog>
   );

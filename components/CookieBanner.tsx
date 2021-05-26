@@ -24,7 +24,8 @@ const CookieBanner = () => {
         className="overlay flex-center"
         onKeyDown={() => setMode("true")}
         onClick={() => setMode("true")}
-        tabIndex={0}>
+        tabIndex={0}
+      >
         Close
       </div>
     </div>

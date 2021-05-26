@@ -35,7 +35,8 @@ export default function Footer() {
           className="producthunt"
           href="https://producthunt.com/posts/avif-io-avif-image-converter"
           target="_blank"
-          rel="noreferrer">
+          rel="noreferrer"
+        >
           <svg width="250" height="54" xmlns="https://w3.org/2000/svg">
             <g fill="none" fillRule="evenodd">
               <rect fill="#0c0014" x=".5" y=".5" width="249" height="53" rx="10" />
@@ -55,7 +56,8 @@ export default function Footer() {
                   fontFamily="Poppins"
                   fontSize="13"
                   fontWeight="normal"
-                  transform="translate(201 13)">
+                  transform="translate(201 13)"
+                >
                   <tspan x="9.1" y="27">
                     109
                   </tspan>
@@ -73,7 +75,8 @@ export default function Footer() {
           className="discord white"
           href="https://discord.com/invite/6w42YpF5hm"
           target="_blank"
-          rel="noreferrer">
+          rel="noreferrer"
+        >
           Talk to us on Discord!
         </a>
       </div>

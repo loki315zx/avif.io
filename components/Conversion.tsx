@@ -103,9 +103,8 @@ export default function Conversion(props: ConversionProps): ReactElement {
 
   return (
     <div
-      className={`conversion ${finished ? "finished" : "progress"} ${
-        cancelled ? "cancelled" : ""
-      }`}>
+      className={`conversion ${finished ? "finished" : "progress"} ${cancelled ? "cancelled" : ""}`}
+    >
       <div className="conversion_information">
         <p className="filename">
           {fileName?.substring(0, 15)}
@@ -136,7 +135,8 @@ export default function Conversion(props: ConversionProps): ReactElement {
         title={`download ${fileName}`}
         download={`${fileName}.avif`}
         href={outputObjectURL}
-        className={"download overlay-after overlay-before"}>
+        className={"download overlay-after overlay-before"}
+      >
         Download
       </a>
       {status === "inProgress" && <ProgressBar progress={progress} />}
@@ -147,7 +147,8 @@ export default function Conversion(props: ConversionProps): ReactElement {
           className="conversion__cancel center"
           onClick={cancelConverison}
           onKeyPress={cancelConverison}
-          tabIndex={0}>
+          tabIndex={0}
+        >
           ■
         </a>
       )}

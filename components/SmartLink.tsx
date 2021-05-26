@@ -23,7 +23,8 @@ export default function SmartLink(props: {
             target={props.ext ? "_blank" : "_self"}
             id={props.id}
             aria-label={props.aria}
-            className={props.className}>
+            className={props.className}
+          >
             {props.text}
           </a>
         </Link>

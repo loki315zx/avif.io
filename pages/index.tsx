@@ -106,7 +106,8 @@ export default function App(): ReactElement {
           <button
             aria-label="Conversion settings"
             className={"will-change cog-button" + " " + (settingsBoxOpen ? "open" : "")}
-            onClick={() => setSettingsBoxOpen(!settingsBoxOpen)}></button>
+            onClick={() => setSettingsBoxOpen(!settingsBoxOpen)}
+          ></button>
           <div className={"settings_cog" + " " + (settingsBoxOpen ? "open" : "")}>
             <SettingsBox open={settingsBoxOpen} onSettingsUpdate={onSettingsUpdate} />
           </div>

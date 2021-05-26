@@ -30,7 +30,8 @@ export default function H(props: HProps) {
           <a
             className="header-link"
             href={`${router.pathname}/#${trimmedText}`}
-            onClick={copyToClipboard}>
+            onClick={copyToClipboard}
+          >
             <span role="img" aria-label="copy" className="css-1i2mldy">
               <svg width="24" height="24">
                 <g fill="currentColor" fillRule="evenodd">
