@@ -19,9 +19,9 @@ export default function Footer() {
           <b>More</b>
         </div>
         <SmartLink text="Blog" link="/blog/" newLine />
-        <SmartLink text="Release Notes" link="/blog#releases" newLine />
-        <SmartLink text="Contact" link="mailto:support@avif.io" newLine />
-        <SmartLink text="Donate" link="buymeacoffee.com/justinschmitz" newLine />
+        <SmartLink text="Release Notes" link="/blog/#releases" newLine />
+        <SmartLink text="Contact" link="mailto:support@avif.io" newLine ext />
+        <SmartLink text="Donate" link="buymeacoffee.com/justinschmitz" newLine ext />
       </div>
       <div id="footer-about">
         <div className="s1">
