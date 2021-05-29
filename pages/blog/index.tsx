@@ -66,7 +66,6 @@ export default function BlogAvif() {
       <Meta
         title={postdata.title}
         description={postdata.description}
-        author={postdata.author}
         url={postdata.url}
         image={postdata.image}
         date_published={postdata.date_published}
