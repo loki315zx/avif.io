@@ -2134,12 +2134,6 @@ pre {
   :root {
     --f1: 1rem; /* 18px */
   }
-
-  body {
-    position: relative;
-    overflow-x: hidden;
-  }
-
   .settings_cog.open {
     z-index: 99999;
     transform: scale(1) translateX(calc(-50% + var(--s2)));
@@ -2240,10 +2234,6 @@ pre {
 
   .blog__header__content {
     padding: var(--s0) 0 var(--s2);
-  }
-
-  header > * > * {
-    padding: var(--s0) var(--s0);
   }
 
   .cta {
