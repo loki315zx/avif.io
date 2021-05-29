@@ -1,7 +1,7 @@
 import Blog from "@components/Blog";
 import H from "@components/H";
-import Checkbox from "@components/Checkbox";
-import Code from "@components/Code";
+import Checklist from "@components/Checklist";
+import Syntax from "@components/Syntax";
 
 import { imageOptimizationIn2021 as postdata } from "lib/meta";
 import { useAvifInHtml as post1 } from "lib/meta";
@@ -22,7 +22,7 @@ export default function BlogPost() {
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="TL;DR" />
-      <Checkbox
+      <Checklist
         advantages={[
           "Serve images in next-gen formats: Use AVIF and WebP, with JPG as fallback",
           "Efficiently encode images with a balance between compression and quality",
@@ -105,7 +105,7 @@ export default function BlogPost() {
       an e-commerce site, that's really important to win customers' trust. By improving your vitals,
       you can boost your site's ranking in comparison with your competitors.
       <H level={4} text="Main advantages" />
-      <Checkbox
+      <Checklist
         advantages={[
           "Faster Loading: It improves the loading speed of your site. If your site takes too long to load, your visitors might get tired of waiting and move on to something else.",
           "Better SEO: Page speed has been a ranking factor in Google's algorithm for some time, but it will be an even more significant part in the future. Your site will rank higher in search engine results.",
@@ -143,7 +143,7 @@ export default function BlogPost() {
       reduce your image file sizes. Moving to these next-generation image formats reduces the size
       of image files and pages, resulting in faster loading times, especially on mobile devices.
       This is especially important for the page experience of your visitors. These formats are:
-      <Checkbox advantages={["WebP", "AVIF", "JPEGXL"]} checked={true} />
+      <Checklist advantages={["WebP", "AVIF", "JPEGXL"]} checked={true} />
       Although device and browser compatibility varies for each format, it is worth evaluating for
       the reduction in image file size and overall faster downloading of your website. WebP, for
       example, can be an excellent replacement for JPEG, PNG and even GIF images in many cases. It
@@ -155,7 +155,7 @@ export default function BlogPost() {
       not see a broken or poorly designed page. There are several types of files you can use that
       you can see below. There are several others, such as JPEG XR, JPEG2000 and HEIC. However, they
       are quite old and have no support for their age.
-      <Checkbox
+      <Checklist
         advantages={[
           "PNG - produces higher quality images, but also has a larger file size. Created as a lossless image format, although it can also be lossy",
           "JPEG - uses lossy and lossless optimization. You can adjust the quality level for a good balance between quality and file size",
@@ -176,12 +176,12 @@ export default function BlogPost() {
       Fortunately, this is one of the areas where you can achieve significant results with
       relatively little effort. By converting large GIFs to videos, you can reduce your bandwidth
       requirements. Animated GIFs have three main features that a video must replicate:
-      <Checkbox
+      <Checklist
         advantages={["They play automatically", "They loop continuously", "They're silent"]}
         checked={true}
       />
       Luckily, you can recreate these behaviors using the video element.
-      <Code language="html">{`<video autoplay loop muted playsinline></video>`}</Code>
+      <Syntax language="html">{`<video autoplay loop muted playsinline></video>`}</Syntax>
       <H level={4} text="Using PNG" />
       The Portable Network Graphics PNGs format was best used when saving graphics with limited
       colors. Logos and icons are good examples of images that would use the .png file format.
@@ -238,13 +238,13 @@ export default function BlogPost() {
       element is nested in the picture. Until recently, it was relatively difficult to actually
       encode AVIF images on the server side, but with the latest version of libraries like sharp it
       is now trivial.
-      <Code language="html">{`<picture>
+      <Syntax language="html">{`<picture>
    <source srcset="image.avif" type="image/avif">
    <source srcset="image.webp" type="image/webp">
    <img src="image.jpg" alt="AVIF example with WebP and JPEG fallback">
-</picture>`}</Code>
+</picture>`}</Syntax>
       <H level={4} text="There are more possibilities for support and conversion" />
-      <Checkbox
+      <Checklist
         advantages={[
           "NodeJS: Use the sharp library",
           "AMP: Consider displaying all amp-img components in WebP formats while setting an appropriate fallback for other browsers.",
@@ -292,7 +292,7 @@ export default function BlogPost() {
       else.
       <H level={3} text="How to efficiently encode images?" />
       There are a few strategies to efficiently encode images, such as:
-      <Checkbox
+      <Checklist
         advantages={[
           "Manually compressing with tools like npmavif.io or Imageoptim",
           "NodeJS: sharp librbary",
@@ -322,7 +322,7 @@ export default function BlogPost() {
       first determine the image dimensions to know how wide your content area is on your site. Take
       this site as an example. The content area of this site has an exact maximum of 720px, which is
       why the image sizes in my blog content exist in the following dimensions:
-      <Checkbox
+      <Checklist
         advantages={[
           "1440px for retina devices",
           "720px as a default for desktop",
@@ -344,7 +344,7 @@ export default function BlogPost() {
       it selects a smaller image if the user has, for example, opted for some kind of data saving
       mode. Provide more source elements with srcsets for browsers that only support older image
       formats.
-      <Code language="html">{`<picture>
+      <Syntax language="html">{`<picture>
 
 <source type="image/avif"
 srcset="/img/image-1440.avif 1440w, /img/image-720.avif 720w, /img/image-540.avif 540w, /img/image-360.avif 360w"
@@ -360,11 +360,11 @@ sizes="(max-width: 720px) 100vw, 720px">
 
 <img loading="lazy" decoding="async" width="2880" height="1620" src="/img/image-1440.jpg" alt="example image">
 
-</picture>`}</Code>
+</picture>`}</Syntax>
       <H level={3} text="How do we automate the resize process?" />
       With so many lines of code, manually performing this task can be a difficult process for any
       image, so here are some automation options:
-      <Checkbox
+      <Checklist
         advantages={[
           "NPMJS: Use tools like sharp, gulp-responsive or responsive-images-generator",
           "AMP: Use the amp-img component's support for srcset to specify which image assets to use based on the screen size",
@@ -394,7 +394,7 @@ sizes="(max-width: 720px) 100vw, 720px">
       while maintaining the aspect ratio. A new feature in 2020 is that web browsers reserve the
       correct vertical space for the image before it is loaded when the width and height attributes
       are provided for the img element.
-      <Code language="html">{`<style>
+      <Syntax language="html">{`<style>
   img {
     max-width: 100%;
     height: auto;
@@ -402,7 +402,7 @@ sizes="(max-width: 720px) 100vw, 720px">
   }
 </style>
 <!-- Providing width and height is more important than ever. -->
-<img height="853" width="1280" … />`}</Code>
+<img height="853" width="1280" … />`}</Syntax>
       <H level={3} text="b) Use explicit width and height on image elements" />
       Always include width and height size attributes to your images and video elements. This
       approach ensures that the browser can allocate the right amount of space in the document while
@@ -419,7 +419,7 @@ sizes="(max-width: 720px) 100vw, 720px">
       used to calculate the aspect ratio of the image before it is loaded. It provides this
       information right at the beginning of the layout calculation. As soon as an image has a
       certain width, for example width: 100%, the aspect ratio is used to calculate the height.
-      <Code language="html">{`<img src="image.jpg" width="640" height="360" alt="Image">`}</Code>
+      <Syntax language="html">{`<img src="image.jpg" width="640" height="360" alt="Image">`}</Syntax>
       <H level={3} text="c) Defer offscreen images" />
       Deferring offscreen images or lazy loading is the practice of delaying the loading of images
       that are not in your visitors "viewport until they are needed. Generally, when the browser
@@ -434,8 +434,8 @@ sizes="(max-width: 720px) 100vw, 720px">
       Firefox versions 75 and higher) support native lazy-loading for images embedded in your HTML.
       Adding loading="lazy" to the img instructs the browser not to fetch the image until it moves
       closer to the screen and is likely to actually be rendered.
-      <Code language="html">{`<img src="image.jpg" loading="lazy">`}</Code>
-      <Checkbox
+      <Syntax language="html">{`<img src="image.jpg" loading="lazy">`}</Syntax>
+      <Checklist
         advantages={[
           "AMP: Automatically lazy-load images with amp-img. See the Images guide.",
           "Drupal: Install a Drupal module that can lazy load images. Such modules provide the ability to defer any offscreen images to improve performance.",
@@ -453,15 +453,15 @@ sizes="(max-width: 720px) 100vw, 720px">
       visibility property makes the initial user load much faster. It also allows for faster
       interactions with the content on the screen. Pretty neat. The main advantage for us could be
       that the browser doesn't bother decoding the image unless it must, and saves the CPU.
-      <Code language="html">{`<style>
+      <Syntax language="html">{`<style>
   img {
     content-visibility: auto;
   }
-</style>`}</Code>
+</style>`}</Syntax>
       <H level={3} text="e) Asynchronous decoding" />
       Adding decoding="async" to the image gives the browser permission to decode the image off the
       main thread avoiding user impact of the CPU time used to decode the image.
-      <Code language="html">{`<img src="image.jpg" decoding="async">`}</Code>
+      <Syntax language="html">{`<img src="image.jpg" decoding="async">`}</Syntax>
       <H contentTableCallback={contentTableCallback} level={2} text="5) Improve hosting behavior" />
       <H
         level={5}
@@ -488,7 +488,7 @@ sizes="(max-width: 720px) 100vw, 720px">
       the server. Content Delivery Networks are powerful tools for site optimization. Cloudflare is
       an example of a CDN that balances traffic across multiple destinations by using 155 + global
       data centers (where servers are housed). You can use its most basic services for free.
-      <Checkbox
+      <Checklist
         advantages={[
           "Inbuilt image optimization features",
           "Audience segmentation based on device viewport becomes easy",
@@ -507,7 +507,7 @@ sizes="(max-width: 720px) 100vw, 720px">
       the practice is widespread. In many cases, hotlinking is unintentional, but can cost the
       original owner of the image some money. It can even affect the performance of the website if
       an outflow of the server's resources occurs.
-      <Checkbox
+      <Checklist
         advantages={[
           "WordPress offers plugins to disable hotlinking",
           "Ask your host to disable hotlinking",
@@ -556,7 +556,7 @@ sizes="(max-width: 720px) 100vw, 720px">
         level={2}
         text="Summary Checklist and code example"
       />
-      <Checkbox
+      <Checklist
         advantages={[
           "Serve images in next-gen formats: Use AVIF and WebP, with JPG as fallback",
           "Efficiently encode images with the tool of your choice",
@@ -567,7 +567,7 @@ sizes="(max-width: 720px) 100vw, 720px">
         ]}
         checked={true}
       />
-      <Code language="html">{`<picture>
+      <Syntax language="html">{`<picture>
 
 <source type="image/avif"
 srcset="/img/image-1440.avif 1440w, /img/image-720.avif 720w, /img/image-540.avif 540w, /img/image-360.avif 360w"
@@ -583,11 +583,11 @@ sizes="(max-width: 720px) 100vw, 720px">
 
 <img loading="lazy" decoding="async" width="2880" height="1620" src="/img/image-1440.jpg" alt="example image">
 
-</picture>`}</Code>
+</picture>`}</Syntax>
       <H contentTableCallback={contentTableCallback} level={2} text="More Tips" />
       Thanks for reading the article! Have fun implementing all the features mentioned above. Here
       are some more general best practices when it comes down to how to optimize images for web:
-      <Checkbox
+      <Checklist
         advantages={[
           "Use SVG whenver possible alongside PNG or JPG",
           "Use CSS effects as much as possible (the hero gradient background on top of this page is pure CSS!)",
@@ -611,9 +611,9 @@ sizes="(max-width: 720px) 100vw, 720px">
       optimize your images. Some give you the tools to perform your own optimizations and others do
       the work for you.
       <H level={4} text="Image editors" />
-      <Checkbox advantages={["Adobe Photoshop", "Gimp", "Paint.NET"]} checked={true} />
+      <Checklist advantages={["Adobe Photoshop", "Gimp", "Paint.NET"]} checked={true} />
       <H level={4} text="Online conversion" />
-      <Checkbox
+      <Checklist
         advantages={[
           "avif.io (for avif conversion)",
           "Bulkresizephotos (for resizing)",
@@ -622,21 +622,21 @@ sizes="(max-width: 720px) 100vw, 720px">
         checked={true}
       />
       <H level={4} text="Image CDNs" />
-      <Checkbox
+      <Checklist
         advantages={["Cloudflare", "Kraken.io", "ImageKit", "ImageEngine"]}
         checked={true}
       />
       <H level={4} text="Command line tools" />
-      <Checkbox
+      <Checklist
         advantages={["GIFsicle", "JPEGtran", "JPEG Mini", "OptiPNG", "pngquant"]}
         checked={true}
       />
       <H level={4} text="GUI desktop tools" />
-      <Checkbox advantages={["FileOptimizer", "ImageOptim", "Trimage"]} checked={true} />
+      <Checklist advantages={["FileOptimizer", "ImageOptim", "Trimage"]} checked={true} />
       <H level={4} text="Node.JS Libraries" />
-      <Checkbox advantages={["sharp"]} checked={true} />
+      <Checklist advantages={["sharp"]} checked={true} />
       <H level={4} text="Wordpress plugins" />
-      <Checkbox
+      <Checklist
         advantages={[
           "Imagify Image Optimizer",
           "Shortpixel Image Optimizer",
@@ -647,7 +647,7 @@ sizes="(max-width: 720px) 100vw, 720px">
         checked={true}
       />
       <H level={4} text="Shopify plugins" />
-      <Checkbox advantages={["Crush.pics", "Minifier"]} checked={true} />
+      <Checklist advantages={["Crush.pics", "Minifier"]} checked={true} />
     </Blog>
   );
 }

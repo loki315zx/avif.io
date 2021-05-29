@@ -1,10 +1,10 @@
 import Blog from "@components/Blog";
 import H from "@components/H";
-import Checkbox from "@components/Checkbox";
+import Checklist from "@components/Checklist";
 
 import SmartLink from "@components/SmartLink";
 
-import Code from "@components/Code";
+import Syntax from "@components/Syntax";
 import Image from "@components/Image";
 
 import { useAvifInCloudflare as postdata } from "lib/meta";
@@ -47,7 +47,7 @@ export default function BlogPost() {
       />
       Regarding their latest blog post about AVIF, Cloudflare made the decision to support AVIF
       because of the following benefits:
-      <Checkbox
+      <Checklist
         advantages={[
           "fixes WebP biggest flaws",
           "uses the next generation VP10 video codec",
@@ -76,7 +76,7 @@ export default function BlogPost() {
       Browsers with AVIF support add an image/avif note to their Accept request header. To request
       the AVIF format from the Image Resizing module of Cloudflare, simply set the format option to
       avif. Using a worker script, you can easily automatically detect and enable AVIF support:
-      <Code language="javascript">
+      <Syntax language="javascript">
         {`addEventListener('fetch', event => {
   const imageURL = "https://yourdomain.com/image.jpg";
 
@@ -92,7 +92,7 @@ export default function BlogPost() {
   }
   event.respondWith(fetch(imageURL), {cf:{image: resizingOptions}})
 })`}
-      </Code>
+      </Syntax>
       The resizing is done via the options of a fetch subrequest within a worker. It could also be
       beneficial to dynamically operate more image functions based on the state of the network.
       Crisp images in 4K are still incredible if your visitors have a bandwidth that supports it,
@@ -103,13 +103,13 @@ export default function BlogPost() {
       present you the {`<picture>`} element as the best option to serve AVIF files in an HTML
       environment. Cloudflare allows you to use their image optimization endpoint to perform the
       conversion if you don't want to use Workers.
-      <Code language="html">
+      <Syntax language="html">
         {`<picture>
     <source type="image/avif" 
             srcset="/cdn-cgi/image/format=avif/image.jpg">
     <img src="/image.jpg">
 </picture>`}
-      </Code>
+      </Syntax>
       Keep in mind that support for the AVIF image format is still missing, but vendors such as
       Apple for Safari or Mozilla for Firefox have confirmed integration. Please do not hesitate to
       look at the sources below for additional information about Cloudflare and their Avif support.

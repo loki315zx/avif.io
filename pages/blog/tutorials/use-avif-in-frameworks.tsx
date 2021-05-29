@@ -1,7 +1,7 @@
 import Blog from "@components/Blog";
 import H from "@components/H";
-import Checkbox from "@components/Checkbox";
-import Code from "@components/Code";
+import Checklist from "@components/Checklist";
+import Syntax from "@components/Syntax";
 import Image from "@components/Image";
 
 import { useAvifInFrameworks as postdata } from "lib/meta";
@@ -28,7 +28,7 @@ export default function BlogPost() {
       complicated and time-consuming!" The answer is simple: Most Javascript front-end frameworks
       support AVIF natively and rely on HTML and CSS implementation. To make sure we are not talking
       nonsense, we tested it with the following frameworks:
-      <Checkbox
+      <Checklist
         advantages={[
           "facebook/react",
           "vuejs/vue",
@@ -46,19 +46,19 @@ export default function BlogPost() {
       Meteor and Ember support AVIF files without additional configuration, but since we did not
       experiment with the latest version live, we list it here as "maybe works" until we were in the
       science lab.
-      <Checkbox
+      <Checklist
         advantages={["meteor/meteor", "jashkenas/backbone", "polymer/polymer", "emberjs/ember.js"]}
         checked={false}
       />
       <H contentTableCallback={contentTableCallback} level={2} text="Example code" />
       This is the code we used to display the image below in React and Next.JS:
-      <Code language="html">
+      <Syntax language="html">
         {`<picture>
           <source srcSet="/images/cloudflare-stats.avif" type="image/avif" />
           <source srcSet="/images/cloudflare-stats.webp" type="image/webp" />
           <img src="/images/cloudflare-stats.jpg" alt="avif in frameworks" />
         </picture>`}
-      </Code>
+      </Syntax>
       <Image url="react-avif" alt="using avif in react" />
       <Image url="react-render" alt="rendered avif in react" />
       <Image url="angular-avif" alt="using avif in angular" />
@@ -66,13 +66,13 @@ export default function BlogPost() {
       <H contentTableCallback={contentTableCallback} level={2} text="Webpack File Loader" />
       In some cases, especially with older versions and when using webpack, you may encounter some
       problems. Especially:
-      <Code language="html">
+      <Syntax language="html">
         Module parse failed: Unexpected character ' ' (1:0) You may need an appropriate loader to
         handle this file type, currently no loaders are configured to process this fail. See
         https://webpack.js.org/concepts#loaders
-      </Code>
+      </Syntax>
       Simply add the detection for AVIF files to the fileloader in your webpack.config.js:
-      <Code language="javascript">
+      <Syntax language="javascript">
         {`module.exports = {
   module: {
     rules: [{
@@ -81,7 +81,7 @@ export default function BlogPost() {
       }]
   }
 }`}
-      </Code>
+      </Syntax>
       <H contentTableCallback={contentTableCallback} level={2} text="Automatic conversion" />
       We could not find a plugin that converts the image to other sizes and formats such as AVIF to
       meet the needs of the client, and if possible choose a modern format. Node.JS library Sharp

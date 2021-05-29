@@ -125,6 +125,7 @@ export default function App(): ReactElement {
           <DownloadButton files={convertedFiles} />
         </div>
       </section>
+      <div className="badge__shadow overlay"></div>
       <section id="avifbadge">
         <div className="white center badge__avif">
           <p>
@@ -132,8 +133,6 @@ export default function App(): ReactElement {
           </p>
         </div>
       </section>
-
-      <div className="badge__shadow"></div>
       <section id="avifadvantages">
         <div className="advantage__grid  grid">
           <AdvantageItem

@@ -1,4 +1,4 @@
-import Page from "@components/Page";
+import Blog from "@components/Blog";
 import H from "@components/H";
 import { useState } from "react";
 import ContentTable, { ContentTableEntry } from "@components/ContentTable";
@@ -13,14 +13,14 @@ export default function BlogPost() {
     setContentTable([...contentTable]);
   }
   return (
-    <Page postdata={postdata}>
+    <Blog postdata={postdata} posts={[]}>
       <ContentTable contentTable={contentTable} />
       <H
         contentTableCallback={contentTableCallback}
         level={2}
         text="Short version for the common user"
       />
-      Hello, you are visiting the Legal Page and Privacy Policy of avif.io, a tool by Justin Schmitz
+      Hello, you are visiting the Legal Blog and Privacy Policy of avif.io, a tool by Justin Schmitz
       and Niksa Sporin. Most parts of this site are created by privacy generators and of course,
       contain many legal terms. I don't want you to have to read all this, but since you are here, I
       have created this small paragraph to tell you how and which data we use in a short and "easy
@@ -217,7 +217,7 @@ export default function BlogPost() {
       According to CalOPPA we agree to the following: (a) users can visit our site anonymously; (b)
       our Privacy Policy link includes the word “Privacy”, and can easily be found on the page
       specified above on the home page of our website; (c) users will be notified of any privacy
-      policy changes on our Privacy Policy Page; (d) users are able to change their personal
+      policy changes on our Privacy Policy Blog; (d) users are able to change their personal
       information by emailing us at support@avif.io. Our Policy on “Do Not Track” Signals: We honor
       Do Not Track signals and do not track, plant cookies, or use advertising when a Do Not Track
       browser mechanism is in place. Do Not Track is a preference you can set in your web browser to
@@ -418,6 +418,6 @@ export default function BlogPost() {
       <H contentTableCallback={contentTableCallback} level={2} text="Contact Us" />
       If you have any questions about this Privacy Policy, please contact us: By email:
       support@avif.io.
-    </Page>
+    </Blog>
   );
 }

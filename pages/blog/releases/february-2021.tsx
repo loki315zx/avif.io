@@ -1,4 +1,4 @@
-import Checkbox from "@components/Checkbox";
+import Checklist from "@components/Checklist";
 import Blog from "@components/Blog";
 import H from "@components/H";
 
@@ -31,7 +31,7 @@ export default function BlogPost() {
       the latest version 0.4.0 successfully. It provides solid speed improvements on both x86_64 and
       aarch64. The overall speedup is solid across the speed levels, both for 8bit and 10bit
       encoding. With some drastic improvement for aarch64 on speed 10. Inluded, but not limited to:
-      <Checkbox
+      <Checklist
         advantages={[
           "Improved 4:2:2 support (37% reduction in encoding time, 0.8% to 5% improvement to coding efficiency)",
           "Thread CDEF loop filter with tiles (1.2% reduction in encoding time with 4 tiles)",
@@ -56,7 +56,7 @@ export default function BlogPost() {
       <H contentTableCallback={contentTableCallback} level={2} text="Usability" />
       Based on an analysis of 500 Hotjar recordings and reading more in depth about several topics,
       we've made several changes for the common user, to improve accessibility and SEO.
-      <Checkbox
+      <Checklist
         advantages={[
           "higher use of semantic elements and aria attributes",
           "added JSON data for better search engine results",

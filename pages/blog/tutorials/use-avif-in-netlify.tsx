@@ -1,7 +1,7 @@
 import Blog from "@components/Blog";
 import H from "@components/H";
 import SmartLink from "@components/SmartLink";
-import Code from "@components/Code";
+import Syntax from "@components/Syntax";
 
 import { useAvifInNetlify as postdata } from "lib/meta";
 import { useAvifInCloudflare as post1 } from "lib/meta";
@@ -34,12 +34,12 @@ export default function BlogPost() {
       response headers returned the Content-Type: application/octet-stream, which caused Firefox to
       refuse to display data. We resolved the bug by defining custom headers within the Netlify
       configuration file (Netlify.toml).
-      <Code language="js">
+      <Syntax language="js">
         {`[[headers]]
 for = "*.avif"
 [headers.values]
 Content-Type = "image/avif"`}
-      </Code>
+      </Syntax>
       <H contentTableCallback={contentTableCallback} level={2} text="Summary" />
       to find more ways to utilize this file.// Enabling AVIF support on Netlify is not easy as
       simply clicking a single button. However, it can be easily achieved by customizing the

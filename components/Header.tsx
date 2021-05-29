@@ -1,22 +1,26 @@
-import { conversions } from "../lib/conversions";
+import React, { useState, useEffect } from "react";
 import SmartLink from "@components/SmartLink";
 
 export default function Header() {
+  const [isFixed, setIsFixed] = useState(true);
+
+  const handleScroll = () => {
+    window.pageYOffset < 60 ? setIsFixed(true) : setIsFixed(false);
+  };
+
+  useEffect(() => {
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header>
-      <div className="flex-center">
-        <SmartLink link="/" text="avif.io" className="logo button-primary" />
-        <SmartLink
-          tabindex={-1}
-          className="conversionscounter"
-          link="/"
-          text={`over ${conversions} files converted`}
-        />
-      </div>
+    <header className={isFixed ? undefined : "fixed"}>
       <nav>
-        <SmartLink text="Discord" link="discord.com/invite/6w42YpF5hm" ext />
-        <SmartLink text="News" link="/blog/#releases" />
+        <SmartLink link="/" text="avif.io" className="logo" />
         <SmartLink text="Blog" link="/blog/" />
+        <SmartLink text="Tutorials" link="/blog/#tutorials" />
+        <SmartLink text="Discord" link="discord.com/invite/6w42YpF5hm" ext />
       </nav>
     </header>
   );

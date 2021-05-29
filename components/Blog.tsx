@@ -2,21 +2,21 @@ import Posts from "@components/Posts";
 import Tags from "@components/Tags";
 import Questions from "@components/Questions";
 import Meta from "@components/Meta";
-import Breadcrumbs from "@components/Breadcrumbs";
 import Sources from "@components/Sources";
 import { useEffect, useRef, useState } from "react";
-
-const randomNumber = Math.floor(Math.random() * 7 + 1);
+import Share from "@components/Share";
+import Breadcrumbs from "@components/Breadcrumbs";
 
 export default function Blog(props: { postdata: any; children: any; posts: any; className?: any }) {
   const articleRef = useRef<HTMLElement>(null);
   const [readingTime, setReadingTime] = useState(0);
+  const randomNumber = Math.floor(Math.random() * 7 + 1);
 
   useEffect(() => {
     if (articleRef.current == null) return;
     const text = articleRef.current.textContent ?? "";
     const wordCount = text.split(/\s+/).length;
-    const averageWordsPerMinute = 250; // XXX Tweak this if you want
+    const averageWordsPerMinute = 250;
     setReadingTime(Math.ceil(wordCount / averageWordsPerMinute));
   }, [articleRef]);
 
@@ -26,7 +26,6 @@ export default function Blog(props: { postdata: any; children: any; posts: any; 
         <Meta
           title={props.postdata.title}
           description={props.postdata.description}
-          author={props.postdata.author}
           url={props.postdata.url}
           image={props.postdata.image}
           date_published={props.postdata.date_published}
@@ -48,17 +47,32 @@ export default function Blog(props: { postdata: any; children: any; posts: any; 
           <article ref={articleRef} className="content">
             {props.children}
             <div className="content__details">
-              <h5>Sources</h5>
-              <Sources sources={props.postdata.sources} />
-              <h5>Topic clusters</h5>
-              <Tags tags={props.postdata.tags} />
-              <h5>People also ask</h5>
-              <Questions questions={props.postdata.questions} />
+              {props.postdata.sources && (
+                <>
+                  <h5>Sources</h5>
+                  <Sources sources={props.postdata.sources} />
+                </>
+              )}
+
+              {props.postdata.tags && (
+                <>
+                  <h5>Topic clusters</h5>
+                  <Tags tags={props.postdata.tags} />
+                </>
+              )}
+
+              {props.postdata.questions && (
+                <>
+                  <h5>People also ask</h5>
+                  <Questions questions={props.postdata.questions} />
+                </>
+              )}
             </div>
           </article>
         </div>
       </main>
-      {props.posts[0] ? <Posts posts={props.posts} /> : ""}
+      {props.posts[0] && <Posts posts={props.posts} />}
+      <Share />
     </>
   );
 }

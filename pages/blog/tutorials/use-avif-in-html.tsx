@@ -1,9 +1,9 @@
 import Blog from "@components/Blog";
 import H from "@components/H";
-import Checkbox from "@components/Checkbox";
+import Checklist from "@components/Checklist";
 import SmartLink from "@components/SmartLink";
 
-import Code from "@components/Code";
+import Syntax from "@components/Syntax";
 
 import { useAvifInHtml as postdata } from "lib/meta";
 import { useAvifInCss as post1 } from "lib/meta";
@@ -44,7 +44,7 @@ export default function BlogPost() {
       progressive support. You can simply drop all image files in the order in which you want to
       load them. Your visitors' browsers load only one image at a time, which reduces the load on
       the server. Besides, you don't need a script to process multiple images.
-      <Checkbox
+      <Checklist
         advantages={[
           "Does not download more than one image at a time",
           "Native support for selecting the most appropriate image",
@@ -58,7 +58,7 @@ export default function BlogPost() {
       website with her disgusting Internet Explorer 6, her browser will simply revert to the default
       image format when you specify it. Have a look at the following example and copy it if you want
       to use it for your website:
-      <Code language="html">
+      <Syntax language="html">
         {`<picture>
   <source srcSet="image.avif" type="image/avif" />
   <source srcSet="image.webp" type="image/webp" />
@@ -66,7 +66,7 @@ export default function BlogPost() {
   width="1280" height="720" decoding="async" loading="lazy"
   src="image.jpg" alt="an avif image" />
 </picture>`}
-      </Code>
+      </Syntax>
       <H
         level={5}
         text="
@@ -82,7 +82,7 @@ export default function BlogPost() {
       support for different types of devices. It's a little more difficult to create an optimal
       experience for Retina displays. We also want to make sure that mobile devices don't download
       images that are much larger than their screen.
-      <Code language="html">
+      <Syntax language="html">
         {`<picture>
 
 <source
@@ -105,7 +105,7 @@ width="1280" height="720" decoding="async" loading="lazy"
 src="/image.jpg" alt="an avif image" />
 
 </picture>`}
-      </Code>
+      </Syntax>
       Okay, this is probably not as challenging as we originally thought, but creating AVIF images
       for any viewport of any format can be exhausting. Nevertheless, if your website does not have
       many images, it is a good way to prepare for the future. Please remember to provide fallback

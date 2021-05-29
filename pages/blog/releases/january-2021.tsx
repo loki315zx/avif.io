@@ -1,4 +1,4 @@
-import Checkbox from "@components/Checkbox";
+import Checklist from "@components/Checklist";
 import Blog from "@components/Blog";
 import H from "@components/H";
 
@@ -27,12 +27,12 @@ export default function BlogPost() {
       image conversion takes place client-side, we aim to minimize the overall clutter caused by the
       conversion to preserve your computer's resources. In this release, we were able to clean up a
       lot of code and remove some dependencies.
-      <Checkbox advantages={["Reduced overall page size by 25%"]} checked={true} />
+      <Checklist advantages={["Reduced overall page size by 25%"]} checked={true} />
       <H contentTableCallback={contentTableCallback} level={2} text="User Experience" />
       Constantly measuring the User Experience is like a drug to us. We once again ensured that
       everything ran smoothly after the big December release, or even better than before. Thanks to
       Hotjar and your feedback, we will make even more changes in this direction in the future.
-      <Checkbox
+      <Checklist
         advantages={[
           "Added a fixed header for easier navigation",
           "If you accept the Cookie Banner, it won't show again",
@@ -49,17 +49,17 @@ export default function BlogPost() {
       <H contentTableCallback={contentTableCallback} level={2} text="Community" />
       We have a Discord now! We linked it in our header and footer, as you like to click our names a
       lot!
-      <Checkbox advantages={["Discord channel!"]} checked={true} />
+      <Checklist advantages={["Discord channel!"]} checked={true} />
       <H contentTableCallback={contentTableCallback} level={2} text="Accessibility" />
       We fixed several mistakes in terms of accessibility.
-      <Checkbox
+      <Checklist
         advantages={["More awesome website for visually impaired people!"]}
         checked={true}
       />
       <H contentTableCallback={contentTableCallback} level={2} text="Misc" />
       Yada yada. Just some misc stuff I thought I should write into this changelog, even though you
       most likely won't care.
-      <Checkbox
+      <Checklist
         advantages={[
           "Browser Console errors do not show up",
           "Fixed several links not working",
@@ -74,7 +74,7 @@ export default function BlogPost() {
       />
       <H contentTableCallback={contentTableCallback} level={2} text="Bugs smashed" />
       We smashed some of these good ol' bugs.
-      <Checkbox
+      <Checklist
         advantages={[
           "Several other linting and bug fixes",
           "Fixed our Tutorials overview",

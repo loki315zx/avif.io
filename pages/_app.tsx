@@ -5,7 +5,6 @@ import "@styles/globals.css";
 import CookieBanner from "@components/CookieBanner";
 import Header from "@components/Header";
 import Footer from "@components/Footer";
-import Share from "@components/Share";
 import CTA from "@components/CallToAction";
 
 export default function AvifIo({ Component, pageProps }: any) {
@@ -32,16 +31,13 @@ export default function AvifIo({ Component, pageProps }: any) {
       <CTA />
       <Footer />
       <CookieBanner />
-      <Share />
       <script src="/__/firebase/8.6.1/firebase-app.js"></script>
       <script src="/__/firebase/8.6.1/firebase-analytics.js"></script>
       <script src="/__/firebase/8.6.1/firebase-database.js"></script>
       <script src="/__/firebase/8.6.1/firebase-storage.js"></script>
-      <script src="/__/firebase/8.6.1/firebase-performance.js"></script>
       <script src="/__/firebase/init.js"></script>
       <script src="/console.js"></script>
       <script>firebase.analytics()</script>
-      <script>var perf = firebase.performance();</script>
     </>
   );
 }

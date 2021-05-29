@@ -1,4 +1,4 @@
-import Checkbox from "@components/Checkbox";
+import Checklist from "@components/Checklist";
 import Blog from "@components/Blog";
 import H from "@components/H";
 import SmartLink from "@components/SmartLink";
@@ -28,7 +28,7 @@ export default function BlogPost() {
       perceive colors, images, and websites. We've been spending days and weeks learning how to
       design websites for a good accessibility, especially when using screenreaders or being unable
       to use a pointer like a mouse but only rely on the keyboard.
-      <Checkbox
+      <Checklist
         advantages={[
           "Navigation through the website is possible without the mouse",
           "More semantic HTML elements",

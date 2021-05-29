@@ -12,7 +12,7 @@ SyntaxHighlighter.registerLanguage("css", css);
 SyntaxHighlighter.registerLanguage("scss", scss);
 SyntaxHighlighter.registerLanguage("xml", xml);
 
-export default function Code(props: { language: string; children: any }) {
+export default function Syntax(props: { language: string; children: any }) {
   function copyToClipboard(e: any) {
     navigator.clipboard.writeText(props.children);
     e.target.focus();

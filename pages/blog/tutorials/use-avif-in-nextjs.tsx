@@ -1,7 +1,7 @@
 import Blog from "@components/Blog";
 import H from "@components/H";
 import SmartLink from "@components/SmartLink";
-import Code from "@components/Code";
+import Syntax from "@components/Syntax";
 import Image from "@components/Image";
 
 import { useAvifInNextjs as postdata } from "lib/meta";
@@ -30,10 +30,10 @@ export default function BlogPost() {
       simply need to include the AVIF files in your project and insert them via the usual methods
       using HTML or CSS. No configuration is required, but you must make sure that next.config.js
       includes the following:
-      <Code language="javascript">
+      <Syntax language="javascript">
         {`const images = require("next-images");
 module.exports = withImages()`}
-      </Code>
+      </Syntax>
       Next.JS will handle all the hard work behind the scenes for you. The team behind Next. JS has
       been working to improve image processing since version 10. They now offer both an integrated
       image component and a service for automatic image optimization. They describe their image
@@ -52,7 +52,7 @@ module.exports = withImages()`}
       refers to AVIF more than once, so hopefully we will see this supported in future versions.
       Finally, the images loaded via CSS will not be optimized, although we pray that this will be
       the case in future versions.
-      <Code language="javascript">{`import Image from 'next/image'
+      <Syntax language="javascript">{`import Image from 'next/image'
 (..)
       <Image
         src="/yourmum.jpg"
@@ -60,7 +60,7 @@ module.exports = withImages()`}
         width={9001}
         height={0}
       />
-(..)`}</Code>
+(..)`}</Syntax>
       <H contentTableCallback={contentTableCallback} level={2} text="Next Optimized Images" />
       Until this point, if you rely heavily on CSS images, you can use the third-party plugin in
       Next.JS called
@@ -82,9 +82,9 @@ module.exports = withImages()`}
       />
       To find out if you as a visitor have a browser with AVIF support, we have implemented the
       following 600-byte script in our header:
-      <Code language="javascript">
+      <Syntax language="javascript">
         {`function F(a){document.documentElement.classList.add(a)}var A=new Image;A.src="data:image/avif;base64,AAAAFGZ0eXBhdmlmAAAAAG1pZjEAAACgbWV0YQAAAAAAAAAOcGl0bQAAAAAAAQAAAB5pbG9jAAAAAEQAAAEAAQAAAAEAAAC8AAAAGwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAARWlwcnAAAAAoaXBjbwAAABRpc3BlAAAAAAAAAAQAAAAEAAAADGF2MUOBAAAAAAAAFWlwbWEAAAAAAAAAAQABAgECAAAAI21kYXQSAAoIP8R8hAQ0BUAyDWeeUy0JG+QAACANEkA=",A.onload=function(){F("avif")},A.onerror=function(){var a=new Image;a.src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==",a.onload=function(){F("webp")}};`}
-      </Code>
+      </Syntax>
       <H
         contentTableCallback={contentTableCallback}
         level={3}
@@ -108,7 +108,7 @@ module.exports = withImages()`}
       release script to convert images before we upload our website data to Firebase. The sharp
       script detects all images in a specific folder and converts them into all the different
       formats and sizes we need. Below is the current script we are using.
-      <Code language="javascript">
+      <Syntax language="javascript">
         {`const sharp = require("sharp");
 const fs = require("fs");
 const path = require("path");
@@ -147,7 +147,7 @@ fs.readdir(input, (err, files) => {
   });
 });
 `}
-      </Code>
+      </Syntax>
       Keep in mind that this is only suitable for website without many images, as it significantly
       increases build time. A way to bypass that could be creating an own sharp API and using
       <SmartLink

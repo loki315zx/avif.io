@@ -1,7 +1,7 @@
 import Blog from "@components/Blog";
 import H from "@components/H";
 import SmartLink from "@components/SmartLink";
-import Code from "@components/Code";
+import Syntax from "@components/Syntax";
 import Image from "@components/Image";
 
 import { useAvifInWordpress as postdata } from "lib/meta";
@@ -62,17 +62,17 @@ export default function BlogPost() {
       <Image url="functionsphp" alt="place where the functions.php is located" />
       Click to open and scroll down to the bottom. Don't delete anything. Create a new line after
       the end of the file, and add the following:
-      <Code language="php">
+      <Syntax language="php">
         {`function allow_avif( $mime_types ) {
   $mime_types['avif'] = 'image/avif';
   return $mime_types
 }
 add_filter( 'upload_mimes', 'allow_avif', 1, 1 );`}
-      </Code>
+      </Syntax>
       This code will automatically allow you to upload AVIF files just like you upload any other
       image. If you wish to add more support for all the new image formats out there in the wild,
       copy the code below.
-      <Code language="php">
+      <Syntax language="php">
         {`function support_modern_images( $mime_types ) {
   $mime_types['webp'] = 'image/webp';
   $mime_types['heic'] = 'image/heic';
@@ -84,7 +84,7 @@ add_filter( 'upload_mimes', 'allow_avif', 1, 1 );`}
   return $mime_types;
 }
 add_filter( 'upload_mimes', 'support_modern_images', 1, 1 );`}
-      </Code>
+      </Syntax>
       <H level={3} text="FTP Upload" />
       Another way to bypass the restriction is to upload your files via FTP. Simply connect to your
       server and drop your images in the upload folder, where most of your current photos should be

@@ -6,7 +6,6 @@ import { jsonLdScriptProps } from "react-schemaorg";
 export interface MetaProps {
   title: string;
   description: string;
-  author: string;
   url: string;
   image?: string;
   date_published: string;
@@ -27,12 +26,13 @@ export default function Meta(props: MetaProps) {
       <link rel="canonical" href={`https://avif.io/${props.url}`} />
       <title>{props.title} | avif.io</title>
       <meta name="description" content={props.description} />
-      <meta name="author" content={props.author} />
+      <meta name="author" content="Justin Schmitz" />
       <meta property="og:site_name" content="AVIF Converter | avif.io ✨" />
+      <meta property="og:type" content="article" />
       <meta property="og:url" content={`https://avif.io/${props.url}`} />
       <meta property="og:title" content={"avif.io" + " | " + props.title} />
       <meta property="og:description" content={props.description} />
-      <meta property="og:type" content="article" />
+
       {props.image && <meta property="og:image" content={`${props.image}`} />}
       {props.blog ? (
         <script
@@ -48,7 +48,7 @@ export default function Meta(props: MetaProps) {
             "image": props.image,
             "author": {
               "@type": "Person",
-              "name": props.author,
+              "name": "Justin Schmitz",
             },
             "publisher": {
               "@type": "Organization",

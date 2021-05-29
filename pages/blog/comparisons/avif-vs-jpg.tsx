@@ -3,7 +3,7 @@ import Blog from "@components/Blog";
 /* #NOTE: I declare the header component "H" on every blog article. Is there a way to automatically include it with the Blog component? */
 
 import H from "@components/H";
-import Checkbox from "@components/Checkbox";
+import Checklist from "@components/Checklist";
 
 import { avifVsJpg as postdata } from "lib/meta";
 
@@ -117,7 +117,7 @@ export default function BlogPost() {
       <H contentTableCallback={contentTableCallback} level={2} text="Main differences for Nerds" />
       There are some crucial differences when it comes to looking at the differences in the JPEG vs.
       AVIF debate. For example, you will find that AVIF supports features such as:
-      <Checkbox
+      <Checklist
         advantages={[
           "Any color space including wide color gamut, ISO/IEC-CICP, and ICC",
           "NCLX support: sRGB, linear sRGB, linear Rec2020, etc.",
@@ -154,7 +154,7 @@ export default function BlogPost() {
       degree of compression efficiency and can work with a broader range of functions as described
       above. Typically, the main differences between AVIF and JPEG could then be broken down as
       follows, with AVIF providing:
-      <Checkbox
+      <Checklist
         advantages={[
           "higher image quality.",
           "lower image size.",

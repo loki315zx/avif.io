@@ -1,4 +1,4 @@
-export default function Checkbox(props: any) {
+export default function Checklist(props: any) {
   const listItems = props.advantages.map((advantage: any) => (
     <li key={advantage}>
       <span className="checklist">✓</span>
