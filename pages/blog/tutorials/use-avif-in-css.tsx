@@ -26,19 +26,22 @@ export default function BlogPost() {
       <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
       Using AVIF images via HTML is very easy, as you can read
       <SmartLink text="in this tutorial." link="/blog/tutorials/use-avif-in-html/" /> Furthermore,
-      it is easy because HTML provides a media-type hint that helps the browser deliver the best
-      version of your image. Unfortunately, CSS does not have such an option. However, with a simple
-      Javascript function, we can easily support WebP and AVIF. We have created a detection script
-      that manipulates the HTML element of your page by writing classes.
+      it is easy because <b>HTML provides a media-type hint</b> that helps the browser deliver the
+      best version of your image. Unfortunately, CSS does not have such an option. However, with a
+      simple Javascript function, we can easily support WebP and AVIF. We have created a detection
+      script that manipulates the HTML element of your page by writing classes.
       <H contentTableCallback={contentTableCallback} level={2} text="How CSS works" />
-      We must remember that in CSS, the first rule does not win, but the last rule wins. We have
-      created a script that checks AVIF and WebP support by loading an AVIF-encoded 1x1 pixel image.
-      If the browser successfully loads the AVIF image, the HTML element receives an "avif" class.
+      We must remember that in CSS, the first rule does not win, but <b>the last rule wins</b>. We
+      have created a script that checks AVIF and WebP support by loading an AVIF-encoded 1x1 pixel
+      image. If the browser successfully loads the AVIF image, the HTML element receives an "avif"
+      class.
+      <br />
       If the browser does not load the AVIF image, the script will further check the browser's
       support for WebP using the method described above. If your browser successfully loads the
       image, the HTML element gets a "webp" class. Of course, this function is optional, and you can
-      remove it according to your preferences. If it is very unlikely that your browser will not
-      pass this test, the HTML element will not get any class at all.
+      remove it according to your preferences.
+      <br /> If it is very unlikely that your browser will not pass this test, the HTML element will
+      not get any class at all.
       <Syntax language="html">{`<html></html> <!-- no class at all, you have to use jpg (oh god)-->
 <html class="webp"></html> <!-- you can use webp-->
 <html class="avif"></html> <!-- you can use avif (heck yeah!)-->`}</Syntax>
@@ -126,12 +129,13 @@ avif.onerror = function () {
       <H contentTableCallback={contentTableCallback} level={2} text="Future implementation" />
       The World Wide Web Consortium (W3C) is developing the CSS Images Module Level 4, which allows
       us to define the image type. The image-set property allows us to specify different image
-      formats. The browser renders the first image format supported by the browser. The following
-      example shows how the type() can be used to deliver multiple images in high-quality formats
-      and older formats that are more widely used. Note that the AVIF is shown first, as both images
-      have the same resolution. JPEG, which comes second, is automatically deleted in user agents
-      that support AVIF images. Older user agents, however, ignore AVIF images because they know
-      they do not support image / avif files, and instead select JPEG images.
+      formats. <b>The browser renders the first image format supported by the browser.</b>
+      <br /> The following example shows how the type() can be used to deliver multiple images in
+      high-quality formats and older formats that are more widely used. Note that the AVIF is shown
+      first, as both images have the same resolution. JPEG, which comes second, is automatically
+      deleted in user agents that support AVIF images. <br />
+      Older user agents, however, ignore AVIF images because they know they do not support image /
+      avif files, and instead select JPEG images.
       <Syntax language="css">
         {`background-image:
 	image-set(

@@ -23,13 +23,17 @@ export default function BlogPost() {
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
-      So you're expecting a colossal blog post? Well, that's not going to happen. Nextjs images is
-      easy! The blog you're reading uses both the latest version of React and NextJS. And not only
-      that: the bundler automatically detects AVIF files and handles them accordingly. We didn't
-      have to do anything for this work. That's what we call a first-class service, gentlemen! You
-      simply need to include the AVIF files in your project and insert them via the usual methods
-      using HTML or CSS. No configuration is required, but you must make sure that next.config.js
-      includes the following:
+      NextJS images is easy! The blog you're reading uses both the latest version of React and
+      NextJS. And not only that: the bundler automatically detects AVIF files and handles them
+      accordingly. We didn't have to do anything for this work. That's what we call a first-class
+      service, gentlemen!
+      <br />{" "}
+      <b>
+        You simply need to include the AVIF files in your project and insert them via the usual
+        methods using HTML or CSS
+      </b>
+      . No configuration is required, but you must make sure that next.config.js includes the
+      following:
       <Syntax language="javascript">
         {`const images = require("next-images");
 module.exports = withImages()`}
@@ -37,13 +41,13 @@ module.exports = withImages()`}
       Next.JS will handle all the hard work behind the scenes for you. The team behind Next. JS has
       been working to improve image processing since version 10. They now offer both an integrated
       image component and a service for automatic image optimization. They describe their image
-      component as "an extension of the HTML img element designed for the modern web."
+      component as <b>an extension of the HTML img element designed for the modern web.</b>
       <br /> Why, you may ask? Well, images in this component are resized, optimized and
       automatically served in the correct format based on the visitor's device and browser. For
       example, you would not deliver a high-resolution image to a Nintendo Game Boy.
-      <br /> Furthermore, the images support the Core Web Vitals by not shifting their layouts.
-      Furthermore, this service can also be used if the server that contains the images of the
-      website is a CDN and not a server hosted by the website.
+      <br /> Furthermore, the images <b>support the Core Web Vitals</b> by not shifting their
+      layouts. Furthermore, this service can also be used if the server that contains the images of
+      the website is a CDN and not a server hosted by the website.
       <H contentTableCallback={contentTableCallback} level={2} text="Next.JS image component" />
       All in all, it's a simple "Put this image in your project, add it to the component and we'll
       do the entire conversion and optimization" approach. While it converts images to newer
@@ -69,10 +73,10 @@ module.exports = withImages()`}
         link="github.com/cyrilwanner/next-optimized-images"
         ext
       />
-      . It has many additional features, and it supports loading images with CSS, which is very
-      useful for our use-case. However, the plugin does not yet support AVIF as well. Nevertheless,
-      the author is currently working on a complete overhaul of the entire plugin, and a Canary
-      version is already published. We have linked to the plugin in the sources below.
+      . It has many additional features, and it <b> supports loading images with CSS</b>, which is
+      very useful. However, the plugin does not yet support AVIF as well. Nevertheless, the author
+      is currently working on a complete overhaul of the entire plugin, and a Canary version is
+      already published.
       <H
         contentTableCallback={contentTableCallback}
         level={2}

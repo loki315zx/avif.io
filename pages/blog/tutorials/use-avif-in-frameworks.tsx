@@ -23,11 +23,12 @@ export default function BlogPost() {
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Framework List" />
-      Now that you've learned how fantastic AVIF is, you may be asking yourself, "How do I use AVIF
-      images in frameworks? Since AVIF is relatively new, the implementation must be super
-      complicated and time-consuming!" The answer is simple: Most Javascript front-end frameworks
-      support AVIF natively and rely on HTML and CSS implementation. To make sure we are not talking
-      nonsense, we tested it with the following frameworks:
+      Now that you've learned how fantastic AVIF is, you may be asking yourself, "
+      <b>How do I use AVIF images in frameworks?</b> Since AVIF is relatively new, the
+      implementation must be super complicated and time-consuming!" The answer is simple:{" "}
+      <b>Most Javascript front-end frameworks support AVIF natively</b> and rely on HTML and CSS
+      implementation. To make sure we are not talking nonsense, we tested it with the following
+      frameworks:
       <Checklist
         advantages={[
           "facebook/react",
@@ -60,9 +61,7 @@ export default function BlogPost() {
         </picture>`}
       </Syntax>
       <Image url="react-avif" alt="using avif in react" />
-      <Image url="react-render" alt="rendered avif in react" />
       <Image url="angular-avif" alt="using avif in angular" />
-      <Image url="angular-render" alt="rendered avif in angular" />
       <H contentTableCallback={contentTableCallback} level={2} text="Webpack File Loader" />
       In some cases, especially with older versions and when using webpack, you may encounter some
       problems. Especially:
@@ -84,10 +83,9 @@ export default function BlogPost() {
       </Syntax>
       <H contentTableCallback={contentTableCallback} level={2} text="Automatic conversion" />
       We could not find a plugin that converts the image to other sizes and formats such as AVIF to
-      meet the needs of the client, and if possible choose a modern format. Node.JS library Sharp
-      implemented AVIF support, which might be a good choice for you. Have you ever contacted such a
-      plugin? Have you had any good or bad experiences with it? Please let us know so we can
-      complete this article.
+      match the device of the client. Node.JS library Sharp implemented AVIF support, which might be
+      a good choice for you. Have you ever encountered such a plugin? Have you had any good or bad
+      experiences with it? Please let us know so we can complete this article.
     </Blog>
   );
 }

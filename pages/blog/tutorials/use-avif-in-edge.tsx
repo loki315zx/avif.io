@@ -22,12 +22,13 @@ export default function BlogPost() {
     <Blog postdata={postdata} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Current status" />
-      While Google can quickly implement new browser features, other companies such as Microsoft and
-      Mozilla are much slower. AVIF was created as part of the development of AV1, which was
-      developed by the Alliance for Open Media. Since all the major browser manufacturers are part
-      of this alliance and everyone is interested in displacing a new and modern format, you expect
-      Microsoft Edge to support AVIF files soon. At the time of writing, Edge does not yet support
-      AVIF images; it refuses to render or otherwise open AVIF images.
+      While Google can quickly implement new browser features, other companies such as Microsoft are
+      much slower. AVIF was created as part of the development of AV1, which was developed by the
+      Alliance for Open Media. Since{" "}
+      <b> all the major browser manufacturers are part of this alliance </b>
+      and everyone is interested in displacing a new and modern format, you expect Microsoft Edge to
+      support AVIF files soon. At the time of writing, Edge does not yet support AVIF images; it
+      refuses to render or otherwise open AVIF images.
       <Image url="edge-new" alt="the new microsoft edge" />
       If you want to enable experimental AV1 support, you can do so by downloading a plugin. At
       least YouTube videos will then be streamed in the new format.
@@ -35,6 +36,7 @@ export default function BlogPost() {
       If you are looking for a way to test the functionality and capabilities of AV1 on Microsoft
       Edge, you should
       <SmartLink link="microsoft.com/edge" text="download the latest version of the browser." ext />
+      <br />
       The new Microsoft Edge is based on Chromium and was first released in early 2020. It is
       compatible with all versions of Windows and macOS for whatever reason. Microsoft claims it is
       the only browser you will ever need, but well, who wouldn't say that about their own browser.
@@ -49,13 +51,12 @@ export default function BlogPost() {
         text="Microsoft Store."
         ext
       />
-      The AV1 Extension add-on is available from the Microsoft Store. It provides support for AV1
-      videos on Windows 10 devices and Edge. It also allows viewing AVIF images, including
-      thumbnails, and editing in Paint.
+      It provides <b>support for AV1 videos on Windows 10 devices and Edge</b>. It also allows
+      viewing AVIF images, including thumbnails, and editing in Paint.
       <Image url="edge-av1" alt="av1 extension" />
       In addition, this extension enables video apps installed on Windows 10 to play videos encoded
       using the AV1 video encoding standard developed by the Alliance for Open Media. As already
-      mentioned, there is no support for AVIF images yet, although avif.io converts images
+      mentioned, <b>there is no support for AVIF images yet</b>, although avif.io converts images
       seamlessly in Edge. However, since Microsoft Edge uses the same Chromium engine, support for
       Edge should be introduced soon.
     </Blog>
