@@ -117,7 +117,7 @@ export default function BlogPost() {
       Cloudflare does regularly. They already have preliminary support for HTTP/3. Is there anything
       else you would like to know about avif? Do you have a good suggestion for an advanced worker
       script?
-      <SmartLink link="twitter.com/jschmitz97" text="Tell us on Justin's Twitter." />
+      <SmartLink link="twitter.com/jschmitz97" text="Tell us on Justin's Twitter." ext />
     </Blog>
   );
 }

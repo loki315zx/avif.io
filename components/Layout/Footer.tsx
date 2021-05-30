@@ -17,7 +17,7 @@ export default function Footer() {
         <SmartLink text="Blog" link="/blog/" newLine />
         <SmartLink text="Release Notes" link="/blog#releases" newLine />
         <SmartLink text="Contact" link="mailto:support@avif.io" newLine />
-        <SmartLink text="Donate" link="buymeacoffee.com/justinschmitz" newLine />
+        <SmartLink text="Donate" link="buymeacoffee.com/justinschmitz" newLine ext />
         <br />
         <SmartLink text="Sitemap" link="/sitemap.xml" newLine />
         <SmartLink text="Legal and Privacy" link="/privacy-policy/" newLine />

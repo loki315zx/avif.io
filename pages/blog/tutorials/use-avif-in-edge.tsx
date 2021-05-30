@@ -34,7 +34,7 @@ export default function BlogPost() {
       <H contentTableCallback={contentTableCallback} level={2} text="Your Edge version" />
       If you are looking for a way to test the functionality and capabilities of AV1 on Microsoft
       Edge, you should
-      <SmartLink link="microsoft.com/edge" text="download the latest version of the browser." />
+      <SmartLink link="microsoft.com/edge" text="download the latest version of the browser." ext />
       The new Microsoft Edge is based on Chromium and was first released in early 2020. It is
       compatible with all versions of Windows and macOS for whatever reason. Microsoft claims it is
       the only browser you will ever need, but well, who wouldn't say that about their own browser.
@@ -47,6 +47,7 @@ export default function BlogPost() {
       <SmartLink
         link="microsoft.com/en-us/p/av1-video-extension/9mvzqvxjbq9v"
         text="Microsoft Store."
+        ext
       />
       The AV1 Extension add-on is available from the Microsoft Store. It provides support for AV1
       videos on Windows 10 devices and Edge. It also allows viewing AVIF images, including

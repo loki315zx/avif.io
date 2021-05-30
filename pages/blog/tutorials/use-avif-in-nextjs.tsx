@@ -48,10 +48,10 @@ module.exports = withImages()`}
       All in all, it's a simple "Put this image in your project, add it to the component and we'll
       do the entire conversion and optimization" approach. While it converts images to newer
       formats, it does not yet do so for AVIF. There is a
-      <SmartLink link="github.com/vercel/next.js/pull/20381" text="canary version" /> on Github that
-      refers to AVIF more than once, so hopefully we will see this supported in future versions.
-      Finally, the images loaded via CSS will not be optimized, although we pray that this will be
-      the case in future versions.
+      <SmartLink link="github.com/vercel/next.js/pull/20381" text="canary version" ext /> on Github
+      that refers to AVIF more than once, so hopefully we will see this supported in future
+      versions. Finally, the images loaded via CSS will not be optimized, although we pray that this
+      will be the case in future versions.
       <Syntax language="javascript">{`import Image from 'next/image'
 (..)
       <Image
@@ -64,7 +64,11 @@ module.exports = withImages()`}
       <H contentTableCallback={contentTableCallback} level={2} text="Next Optimized Images" />
       Until this point, if you rely heavily on CSS images, you can use the third-party plugin in
       Next.JS called
-      <SmartLink text="next-optimized-images" link="github.com/cyrilwanner/next-optimized-images" />
+      <SmartLink
+        text="next-optimized-images"
+        link="github.com/cyrilwanner/next-optimized-images"
+        ext
+      />
       . It has many additional features, and it supports loading images with CSS, which is very
       useful for our use-case. However, the plugin does not yet support AVIF as well. Nevertheless,
       the author is currently working on a complete overhaul of the entire plugin, and a Canary
@@ -104,7 +108,7 @@ module.exports = withImages()`}
         text="3. Convert images with sharp on build time"
       />
       Finally, we have the NodeJS library
-      <SmartLink text="sharp" ext link="sharp.pixelplumbing.com/" /> integrated into our build and
+      <SmartLink text="sharp" link="sharp.pixelplumbing.com/" ext /> integrated into our build and
       release script to convert images before we upload our website data to Firebase. The sharp
       script detects all images in a specific folder and converts them into all the different
       formats and sizes we need. Below is the current script we are using.

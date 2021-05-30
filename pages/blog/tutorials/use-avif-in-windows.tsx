@@ -36,6 +36,7 @@ export default function BlogPost() {
         link="
       https://microsoft.com/de-de/p/av1-video-extension/9mvzqvxjbq9v"
         text="at the extension."
+        ext
       />
       AV1 extension has been around since Windows 10 version 1809, when support for the AV1 video
       format first appeared. Since version 1903, the extension is also able to process AVIF files.
