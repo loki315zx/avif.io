@@ -1,7 +1,7 @@
 import Blog from "@components/Blog";
-import H from "@components/H";
+import H from "@components/Blog/H";
 import { useState } from "react";
-import ContentTable, { ContentTableEntry } from "@components/ContentTable";
+import ContentTable, { ContentTableEntry } from "@components/Blog/ContentTable";
 
 import { privacyPolicy as postdata } from "lib/meta";
 

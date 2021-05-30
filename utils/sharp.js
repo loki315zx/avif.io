@@ -5,16 +5,15 @@ const path = require("path");
 const output = "../public/img/";
 const input = "../images/";
 const jpgQuality = { mozjpeg: true, quality: 50, progressive: true };
-const webpQuality = { quality: 50, reductionEffort: 5 };
-const avifQuality = { quality: 45, speed: 1 };
+const webpQuality = { quality: 50, reductionEffort: 3 };
+const avifQuality = { quality: 45, speed: 3 };
 const sizes = [1440, 720, 540, 360];
 
 fs.readdir(input, (err, files) => {
   console.log("Found " + files.length + " files. Converting now, please be patient..");
-
   files.forEach((file) => {
+    let fileShort = path.parse(file).name;
     function convert(size) {
-      let fileShort = path.parse(file).name;
       sharp(input + file)
         .jpeg(jpgQuality)
         .resize({ width: size })
@@ -28,10 +27,14 @@ fs.readdir(input, (err, files) => {
         .resize({ width: size })
         .toFile(output + fileShort + "-" + size + ".avif");
     }
-    if (file.endsWith(".png") || file.endsWith(".jpg") || file.endsWith(".jpeg")) {
-      for (let i = 0; i < sizes.length; i++) {
-        convert(sizes[i]);
-      }
+    if (file.endsWith(".avif")) {
+      sharp(input + file).toFile(output + fileShort + ".avif");
+    }
+    if (file.endsWith(".jpg")) {
+      sharp(input + file).toFile(output + fileShort + ".jpg");
+    }
+    for (let i = 0; i < sizes.length; i++) {
+      convert(sizes[i]);
     }
   });
 });

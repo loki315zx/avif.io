@@ -1,9 +1,9 @@
 import Blog from "@components/Blog";
-import H from "@components/H";
-import Checklist from "@components/Checklist";
+import H from "@components/Blog/H";
+import Checklist from "@components/Blog/Checklist";
 import SmartLink from "@components/SmartLink";
 
-import Syntax from "@components/Syntax";
+import Syntax from "@components/Blog/Syntax";
 
 import { useAvifInHtml as postdata } from "lib/meta";
 import { useAvifInCss as post1 } from "lib/meta";
@@ -11,7 +11,7 @@ import { useAvifInFrameworks as post2 } from "lib/meta";
 import { useAvifInFirefox as post3 } from "lib/meta";
 
 import { useState } from "react";
-import ContentTable, { ContentTableEntry } from "@components/ContentTable";
+import ContentTable, { ContentTableEntry } from "@components/Blog/ContentTable";
 
 export default function BlogPost() {
   const [contentTable, setContentTable] = useState<ContentTableEntry[]>([]);

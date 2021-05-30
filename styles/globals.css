@@ -1364,18 +1364,11 @@ header nav > div > a {
   animation: cta-background 10s infinite alternate-reverse both;
 }
 
-.cta::before {
-  z-index: 1;
-  background: url("@assets/arrow-right.svg");
-  background-repeat: no-repeat;
-  background-position: 90% center;
-}
-
 .cta__title {
   position: relative;
   z-index: 1;
   font-weight: bold;
-  font-size: var(--f4);
+  font-size: var(--f3);
 }
 
 .cta__subtitle {
@@ -1437,14 +1430,15 @@ header nav > div > a {
 
 footer {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  align-items: flex-start;
+  justify-content: space-between;
   padding: var(--s4) var(--s3);
   background: var(--black3);
 }
 
 footer a {
   display: block;
-  margin-bottom: var(--s0);
 }
 
 a.discord {
@@ -1458,6 +1452,14 @@ a.discord {
   background-position: var(--s0);
   background-size: var(--s2);
   border-radius: var(--radius-small);
+}
+
+#footer-info {
+  padding-right: var(--s4);
+}
+
+#communication {
+  align-self: flex-end;
 }
 
 /*  */
@@ -2110,6 +2112,7 @@ pre {
   :root {
     --f1: 1rem; /* 18px */
   }
+
   .settings_cog.open {
     z-index: 99999;
     transform: scale(1) translateX(calc(-50% + var(--s2)));
@@ -2151,20 +2154,6 @@ pre {
     font-size: var(--f3);
   }
 
-  footer {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  #footer-info {
-    grid-column: 1/4;
-    margin-bottom: var(--s3);
-  }
-
-  footer > div {
-    align-self: flex-start;
-    margin-bottom: var(--s3);
-  }
-
   .advantage__grid__item {
     min-height: auto;
   }
@@ -2174,12 +2163,16 @@ pre {
     text-align: center;
   }
 
-  .cta::before {
-    display: none;
-  }
-
   .tutorials__container {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  footer {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  #footer-info {
+    grid-column: 1/4;
   }
 }
 
@@ -2194,15 +2187,11 @@ pre {
 
   .cta {
     padding: var(--s3) var(--s1);
-    border-radius: 0;
   }
 
   .cta__container {
-    margin: var(--s4) auto 0;
-  }
-
-  footer {
-    padding: var(--s2);
+    margin: var(--s4) auto;
+    padding: var(--s1);
   }
 
   .settings-tooltip,
@@ -2243,6 +2232,10 @@ pre {
   .tutorials__container a:nth-child(even) {
     padding: 0;
   }
+
+  footer {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media only screen and (max-width: 575.98px) {
@@ -2275,14 +2268,6 @@ pre {
   .page section.avifcompare {
     margin: 0;
     padding: 0;
-  }
-
-  footer {
-    grid-template-columns: 1fr;
-  }
-
-  #footer-info {
-    grid-column: 1/4;
   }
 
   header {
@@ -2332,7 +2317,29 @@ pre {
   }
 
   .tutorials__box {
-    padding: 33%;
+    padding: 20%;
+    border-radius: var(--radius-small);
+  }
+
+  .tutorials__box::before {
+    border-radius: var(--radius-small);
+  }
+
+  footer {
+    grid-template-columns: 1fr;
+  }
+
+  #footer-info {
+    grid-column: 1/1;
+    padding-right: 0;
+  }
+
+  footer {
+    padding: var(--s3) var(--s1);
+  }
+
+  #communication {
+    padding: var(--s3) 0 0;
   }
 }
 

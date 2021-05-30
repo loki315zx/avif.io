@@ -1,18 +1,23 @@
 import { ReactElement, useEffect, useState } from "react";
+import Link from "next/link";
+
 import ReactCompareImage from "react-compare-image";
 
 import Conversion from "@components/Conversion";
 import Dropzone from "@components/Dropzone";
 import DownloadButton from "@components/DownloadButton";
 import SettingsBox, { Settings } from "@components/SettingsBox";
-import Tutorials from "@components/Tutorials";
 
 import Converter from "@utils/converter";
 import { uniqueId } from "@utils/utils";
 
-import comparison_jpg from "@assets/comparison.jpg";
-import comparison_avif from "@assets/comparison.avif";
-import Head from "next/head";
+import { index } from "lib/meta";
+
+import Layout from "@components/Layout";
+
+/*
+ Interfaces
+*/
 
 interface FileWithId {
   file: File;
@@ -20,20 +25,46 @@ interface FileWithId {
 }
 
 interface Advantages {
-  pre: string;
-  text: string;
-  post: string;
-  number: string;
+  pre?: string;
+  text?: string;
+  post?: string;
+  number?: string;
 }
+
+interface TutorialsBoxProps {
+  cssclass: string;
+  title: string;
+  url: string;
+}
+
+/*
+ Interfaces
+*/
 
 function AdvantageItem(props: Advantages) {
   return (
     <div className="advantage__grid__item">
       <div className="advantage__text f2">
-        {props.pre} <span className="advantage__important">{props.text}</span> {props.post}
+        {props.pre && props.pre} <span className="advantage__important">{props.text}</span>{" "}
+        {props.post}
       </div>
       <div className="advantage__visualizer overlay" id={props.number}></div>
     </div>
+  );
+}
+
+function TutorialsBox(props: TutorialsBoxProps) {
+  return (
+    <Link href={`/blog/tutorials/use-avif-in-${props.url}/`}>
+      <a href={`/blog/tutorials/use-avif-in-${props.url}/`} tabIndex={0}>
+        <div className={"tutorials__box overlay-before"} id={props.cssclass}>
+          <div className={"tutorial__overflow overlay"}>
+            <span className="tutorial__title">{props.title}</span>
+          </div>
+          <div className="tutorial__shadow overlay"></div>
+        </div>
+      </a>
+    </Link>
   );
 }
 
@@ -64,33 +95,9 @@ export default function App(): ReactElement {
     convertedFiles.push(file);
     setConvertedFiles([...convertedFiles]);
   }
-  return (
-    <>
-      <Head>
-        <title>AVIF Converter | avif.io ✨</title>
-        <meta property="og:type" content="website" />
-        <meta
-          name="description"
-          content="Convert all image types to AVIF for free.🚀 Supports bulk converting. Blazing fast. Privacy protected. Compress your images now!⏱"
-        />
-        <meta name="author" content="Justin Schmitz" />
-        <link rel="canonical" href="https://avif.io" />
-        <meta property="og:site_name" content="AVIF Converter | avif.io ✨" />
-        <meta property="og:url" content="https://avif.io" />
-        <meta property="og:title" content="AVIF Converter | avif.io ✨" />
-        <meta
-          property="og:description"
-          content="Convert all image types to AVIF for free.🚀 Supports bulk converting. Blazing fast. Privacy protected. Compress your images now!⏱"
-        />
-        <meta property="twitter:site" content="@jschmitz97" />
-        <meta property="twitter:url" content={"https://twitter.com/jschmitz97"} />
-        <meta property="twitter:title" content="AVIF Converter | avif.io ✨" />
-        <meta
-          property="twitter:description"
-          content="Convert all image types to AVIF for free.🚀 Supports bulk converting. Blazing fast. Privacy protected. Compress your images now!⏱"
-        />
-      </Head>
 
+  return (
+    <Layout meta={index}>
       <section className={"app-container"}>
         <h1>Convert all images to AVIF for free.</h1>
         <h2 className={"f1 m0 s3 center normal"}>
@@ -136,25 +143,21 @@ export default function App(): ReactElement {
       <section id="avifadvantages">
         <div className="advantage__grid  grid">
           <AdvantageItem
-            pre="typically"
             text="reduces file size"
             post="of images by 20-90% for faster page loading"
             number="visualizer-1"
           />
           <AdvantageItem
-            pre=""
             text="decreases required bandwidth"
             post="for service providers"
             number="visualizer-2"
           />
           <AdvantageItem
-            pre="is"
             text="actively developed by tech giants"
             post="like Google, Apple and Microsoft"
             number="visualizer-3"
           />
           <AdvantageItem
-            pre="is"
             text="open to use and royalty-free"
             post="for everyone"
             number="visualizer-4"
@@ -168,23 +171,19 @@ export default function App(): ReactElement {
           <AdvantageItem
             pre="already"
             text="supported by Chrome, Opera and Firefox"
-            post=""
             number="visualizer-6"
           />
           <AdvantageItem
-            pre=""
             text="supports transparency"
             post="and is therefore a better version of PNG"
             number="visualizer-7"
           />
           <AdvantageItem
-            pre=""
             text="supports animated frames"
             post="which can replace GIFs and aPNGs"
             number="visualizer-8"
           />
           <AdvantageItem
-            pre=""
             text="embraces HDR"
             post="with 12-bit color depth and wide color gamut"
             number="visualizer-9"
@@ -192,17 +191,14 @@ export default function App(): ReactElement {
           <AdvantageItem
             pre="provides"
             text="future-proof VP-10 codec technology"
-            post=""
             number="visualizer-10"
           />
           <AdvantageItem
             pre="latest GPUs already support"
             text="hardware decoding"
-            post=""
             number="visualizer-11"
           />
           <AdvantageItem
-            pre="is"
             text="rich of features for smartphones"
             post="like live photos"
             number="visualizer-12"
@@ -212,8 +208,8 @@ export default function App(): ReactElement {
       <section className="avifcompare overlay-after">
         <div id="comparison__container">
           <ReactCompareImage
-            leftImage={comparison_jpg}
-            rightImage={comparison_avif}
+            leftImage={"/img/comparison.jpg"}
+            rightImage={"/img/comparison.avif"}
             leftImageAlt="jpg image"
             rightImageAlt="avif image"
             sliderLineWidth={4}
@@ -225,7 +221,33 @@ export default function App(): ReactElement {
           <p id="avif">avif · 18kB</p>
         </div>
       </section>
-      <Tutorials />
+      <section className="section__tutorials">
+        <h2 className="center">How to use AVIF</h2>
+        <div className="white s3 center explainer">
+          Support is constantly rising across browsers, software and hardware. Thanks to being
+          royalty-free, companies can include the format without having to deal with patents. We
+          created articles for you on how to get started on all different type of browsers,
+          operating systems and software. We didn't cover your software? Feel free to tell us on
+          support@avif.io and we will write an article about it.
+        </div>
+        <div className="tutorials__container">
+          <TutorialsBox cssclass="firefox" title="Firefox" url="firefox" />
+          <TutorialsBox cssclass="safari" title="Safari" url="safari" />
+          <TutorialsBox cssclass="edge" title="Edge" url="edge" />
+          <TutorialsBox cssclass="css" title="CSS" url="css" />
+          <TutorialsBox cssclass="html" title="HTML" url="html" />
+          <TutorialsBox cssclass="angular" title="Angular" url="frameworks" />
+          <TutorialsBox cssclass="react" title="React" url="frameworks" />
+          <TutorialsBox cssclass="vue" title="Vue" url="frameworks" />
+          <TutorialsBox cssclass="nextjs" title="Next.JS" url="nextjs" />
+          <TutorialsBox cssclass="netlify" title="Netlify" url="netlify" />
+          <TutorialsBox cssclass="cloudflare" title="Cloudflare" url="cloudflare" />
+          <TutorialsBox cssclass="wordpress" title="WordPress" url="wordpress" />
+          <TutorialsBox cssclass="magento" title="Magento" url="magento" />
+          <TutorialsBox cssclass="windows" title="Windows" url="windows" />
+          <TutorialsBox cssclass="gimp" title="GIMP" url="gimp" />
+        </div>
+      </section>
 
       <div className="advantages-explainer">
         In the last ten years, the size of an average web page has increased from 500 kb to 2000 kb.
@@ -247,6 +269,6 @@ export default function App(): ReactElement {
         web. avif.io helps strengthening the support of AVIF by providing information, news,
         ressources and an image converter.
       </div>
-    </>
+    </Layout>
   );
 }

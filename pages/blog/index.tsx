@@ -1,5 +1,5 @@
-import Meta from "@components/Meta";
-import Posts from "@components/Posts";
+import Posts from "@components/Blog/Posts";
+import Layout from "@components/Layout";
 
 /*
 
@@ -62,25 +62,17 @@ import { blog as postdata } from "lib/meta";
 
 export default function BlogAvif() {
   return (
-    <main className="archive blog">
-      <Meta
-        title={postdata.title}
-        description={postdata.description}
-        url={postdata.url}
-        image={postdata.image}
-        date_published={postdata.date_published}
-        date_modified={postdata.date_modified}
-      />
-
-      <div className="blog__header white center">
-        <h1>{postdata.title}</h1>
-        <h2>{postdata.description}</h2>
-      </div>
-
-      <Posts posts={articles} title="articles" />
-      <Posts posts={posts} title="tutorials" />
-      <Posts posts={comparisons} title="comparisons" />
-      <Posts posts={releases} title="releases" />
-    </main>
+    <Layout meta={postdata}>
+      <main className="archive blog">
+        <div className="blog__header white center">
+          <h1>{postdata.title}</h1>
+          <h2>{postdata.description}</h2>
+        </div>
+        <Posts posts={articles} title="articles" />
+        <Posts posts={posts} title="tutorials" />
+        <Posts posts={comparisons} title="comparisons" />
+        <Posts posts={releases} title="releases" />
+      </main>
+    </Layout>
   );
 }

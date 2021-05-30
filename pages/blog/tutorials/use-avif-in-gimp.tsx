@@ -1,7 +1,7 @@
 import Blog from "@components/Blog";
-import H from "@components/H";
+import H from "@components/Blog/H";
 import SmartLink from "@components/SmartLink";
-import Image from "@components/Image";
+import Image from "@components/Blog/Image";
 
 import { useAvifInGimp as postdata } from "lib/meta";
 import { useAvifInWindows as post1 } from "lib/meta";
@@ -9,7 +9,7 @@ import { useAvifInHtml as post2 } from "lib/meta";
 import { useAvifInWordpress as post3 } from "lib/meta";
 
 import { useState } from "react";
-import ContentTable, { ContentTableEntry } from "@components/ContentTable";
+import ContentTable, { ContentTableEntry } from "@components/Blog/ContentTable";
 
 export default function BlogPost() {
   const [contentTable, setContentTable] = useState<ContentTableEntry[]>([]);

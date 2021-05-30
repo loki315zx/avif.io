@@ -1,14 +1,14 @@
 import Blog from "@components/Blog";
-import H from "@components/H";
-import Checklist from "@components/Checklist";
-import Syntax from "@components/Syntax";
+import H from "@components/Blog/H";
+import Checklist from "@components/Blog/Checklist";
+import Syntax from "@components/Blog/Syntax";
 
 import { imageOptimizationIn2021 as postdata } from "lib/meta";
 import { useAvifInHtml as post1 } from "lib/meta";
 import { useAvifInCss as post2 } from "lib/meta";
 import { useAvifInWordpress as post3 } from "lib/meta";
 import { useState } from "react";
-import ContentTable, { ContentTableEntry } from "@components/ContentTable";
+import ContentTable, { ContentTableEntry } from "@components/Blog/ContentTable";
 
 export default function BlogPost() {
   const [contentTable, setContentTable] = useState<ContentTableEntry[]>([]);

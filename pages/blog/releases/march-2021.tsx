@@ -1,6 +1,6 @@
-import Checklist from "@components/Checklist";
+import Checklist from "@components/Blog/Checklist";
 import Blog from "@components/Blog";
-import H from "@components/H";
+import H from "@components/Blog/H";
 import SmartLink from "@components/SmartLink";
 
 import { march2021 as postdata } from "lib/meta";
@@ -10,7 +10,7 @@ import { january2021 as post2 } from "lib/meta";
 import { february2021 as post3 } from "lib/meta";
 
 import { useState } from "react";
-import ContentTable, { ContentTableEntry } from "@components/ContentTable";
+import ContentTable, { ContentTableEntry } from "@components/Blog/ContentTable";
 
 export default function BlogPost() {
   const [contentTable, setContentTable] = useState<ContentTableEntry[]>([]);

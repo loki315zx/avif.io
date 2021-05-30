@@ -1,6 +1,6 @@
 import Blog from "@components/Blog";
-import H from "@components/H";
-import Image from "@components/Image";
+import H from "@components/Blog/H";
+import Image from "@components/Blog/Image";
 
 import { useAvifInFirefox as postdata } from "lib/meta";
 import { useAvifInEdge as post1 } from "lib/meta";
@@ -8,7 +8,7 @@ import { useAvifInHtml as post2 } from "lib/meta";
 import { useAvifInWordpress as post3 } from "lib/meta";
 
 import { useState } from "react";
-import ContentTable, { ContentTableEntry } from "@components/ContentTable";
+import ContentTable, { ContentTableEntry } from "@components/Blog/ContentTable";
 
 export default function BlogPost() {
   const [contentTable, setContentTable] = useState<ContentTableEntry[]>([]);
@@ -81,7 +81,7 @@ export default function BlogPost() {
       />
       Remember to restart Firefox. Then come back to this page to see this fantastic image:
       <img
-        src="/images/comparison.avif"
+        src="/images/firefox.avif"
         alt="your browser may show this AVIF img"
         decoding="async"
         loading="lazy"

@@ -1,11 +1,20 @@
+export const index = {
+  title: "AVIF Converter",
+  description:
+    "Convert all image types to AVIF for free.🚀 Supports bulk converting. Blazing fast. Privacy protected. Compress your images now!⏱",
+  url: "/",
+  image: "/logo_draft.png",
+  datePublished: "01.09.20",
+  dateModified: "30.05.21",
+};
+
 export const blog = {
   title: "Articles about AVIF",
   description: "Read a lot of articles related to AVIF and images on the web.",
   url: "blog/",
   image: "/logo_draft.png",
-  date_published: "01.09.20",
-  date_modified: "10.01.21",
-  category: "misc",
+  datePublished: "01.09.20",
+  dateModified: "10.01.21",
 };
 
 export const privacyPolicy = {
@@ -13,9 +22,8 @@ export const privacyPolicy = {
   description: "Learn how we utilize your data to optimize our service.",
   url: "privacy-policy/",
   image: "/logo_draft.png",
-  date_published: "01.09.20",
-  date_modified: "10.01.21",
-  category: "misc",
+  datePublished: "01.09.20",
+  dateModified: "10.01.21",
 };
 
 export const january2021 = {
@@ -24,11 +32,13 @@ export const january2021 = {
     "This release focuses on the aftermath of the huge December update, with several user experience focused changes.",
   url: "blog/releases/january-2021/",
   image: "/logo_draft.png",
-  date_published: "29.01.21",
-  date_modified: "29.01.21",
+  datePublished: "29.01.21",
+  dateModified: "29.01.21",
   sources: ["hotjar.com/"],
   keyword: "Changelog January 2021",
   category: "changelog",
+
+  blog: true,
 };
 
 export const february2021 = {
@@ -38,8 +48,8 @@ export const february2021 = {
   url: "blog/releases/february-2021/",
   image: "/logo_draft.png",
 
-  date_published: "14.02.21",
-  date_modified: "14.02.21",
+  datePublished: "14.02.21",
+  dateModified: "14.02.21",
   sources: [
     "github.com/xiph/rav1e/releases",
     "github.com/xiph/rav1e/releases/tag/v0.4.0",
@@ -50,6 +60,8 @@ export const february2021 = {
   ],
   keyword: "Changelog February 2021",
   category: "changelog",
+
+  blog: true,
 };
 
 export const march2021 = {
@@ -59,8 +71,8 @@ export const march2021 = {
   url: "blog/releases/march-2021/",
   image: "/logo_draft.png",
 
-  date_published: "04.04.21",
-  date_modified: "04.04.21",
+  datePublished: "04.04.21",
+  dateModified: "04.04.21",
   sources: [
     "github.com/strukturag/libheif",
     "bugzilla.mozilla.org/show_bug.cgi?id=1700723",
@@ -79,6 +91,7 @@ export const march2021 = {
   ],
   keyword: "Changelog March 2021",
   category: "changelog",
+  blog: true,
 };
 
 export const useAvifInCloudflare = {
@@ -88,8 +101,8 @@ export const useAvifInCloudflare = {
   url: "blog/tutorials/use-avif-in-cloudflare/",
   image: "/logo_draft.png",
 
-  date_published: "01.10.20",
-  date_modified: "01.10.20",
+  datePublished: "01.10.20",
+  dateModified: "01.10.20",
   sources: [
     "blog.cloudflare.com/http3-the-past-present-and-future",
     "cloudflare.com/case-studies/discord",
@@ -128,6 +141,7 @@ export const useAvifInCloudflare = {
   ],
   keyword: "Cloudflare",
   category: "tutorials",
+  blog: true,
 };
 
 export const useAvifInCss = {
@@ -137,8 +151,8 @@ export const useAvifInCss = {
   url: "blog/tutorials/use-avif-in-css/",
   image: "/logo_draft.png",
 
-  date_published: "01.10.20",
-  date_modified: "01.10.20",
+  datePublished: "01.10.20",
+  dateModified: "01.10.20",
   sources: [
     "caniuse.com/css-image-set",
     "caniuse.com/avif ",
@@ -173,6 +187,7 @@ export const useAvifInCss = {
   ],
   keyword: "CSS",
   category: "tutorials",
+  blog: true,
 };
 
 export const useAvifInEdge = {
@@ -182,8 +197,8 @@ export const useAvifInEdge = {
   url: "blog/tutorials/use-avif-in-edge/",
   image: "/logo_draft.png",
 
-  date_published: "07.10.20",
-  date_modified: "07.10.20",
+  datePublished: "07.10.20",
+  dateModified: "07.10.20",
   sources: [
     "en.wikipedia.org/wiki/AV1",
     "microsoft.com/en-us/p/av1-video-extension/9mvzqvxjbq9v",
@@ -223,6 +238,7 @@ export const useAvifInEdge = {
   ],
   keyword: "Edge",
   category: "tutorials",
+  blog: true,
 };
 
 export const useAvifInSafari = {
@@ -232,8 +248,8 @@ export const useAvifInSafari = {
   url: "blog/tutorials/use-avif-in-safari/",
   image: "/logo_draft.png",
 
-  date_published: "19.04.21",
-  date_modified: "19.04.21",
+  datePublished: "19.04.21",
+  dateModified: "19.04.21",
   sources: [
     "en.wikipedia.org/wiki/AV1#cite_note-172",
     "bugs.webkit.org/show_bug.cgi?id=207750",
@@ -263,6 +279,7 @@ export const useAvifInSafari = {
   ],
   keyword: "Safari",
   category: "tutorials",
+  blog: true,
 };
 
 export const useAvifInFirefox = {
@@ -272,8 +289,8 @@ export const useAvifInFirefox = {
   url: "blog/tutorials/use-avif-in-firefox/",
   image: "/logo_draft.png",
 
-  date_published: "14.10.20",
-  date_modified: "14.10.20",
+  datePublished: "14.10.20",
+  dateModified: "14.10.20",
   sources: [
     "bugzilla.mozilla.org/buglist.cgi?short_desc_type=allwordssubstr&query_format=advanced&short_desc=AVIF",
     "bugzilla.mozilla.org/show_bug.cgi?id=1443863",
@@ -324,6 +341,7 @@ export const useAvifInFirefox = {
   ],
   keyword: "Firefox",
   category: "tutorials",
+  blog: true,
 };
 
 export const useAvifInFrameworks = {
@@ -332,8 +350,8 @@ export const useAvifInFrameworks = {
   url: "blog/tutorials/use-avif-in-frameworks/",
   image: "/logo_draft.png",
 
-  date_published: "21.10.20",
-  date_modified: "21.10.20",
+  datePublished: "21.10.20",
+  dateModified: "21.10.20",
   sources: [
     "github.com/angular/angular-cli/releases?after=v11.0.2",
     "github.com/facebook/create-react-app/pull/9611",
@@ -363,6 +381,7 @@ export const useAvifInFrameworks = {
   questions: ["How do I use AVIF images in React Single page Web App"],
   keyword: "Frameworks",
   category: "tutorials",
+  blog: true,
 };
 
 export const useAvifInMagento = {
@@ -371,8 +390,8 @@ export const useAvifInMagento = {
   url: "blog/tutorials/use-avif-in-magento/",
   image: "/logo_draft.png",
 
-  date_published: "21.04.21",
-  date_modified: "21.04.21",
+  datePublished: "21.04.21",
+  dateModified: "21.04.21",
   sources: [
     "yireo.com/blog/2020-12-29-magento2-webp-becomes-next-gen",
     "packagist.org/packages/yireo/magento2-next-gen-images",
@@ -401,6 +420,7 @@ export const useAvifInMagento = {
   ],
   questions: ["How do I enable AVIF support on Magento?"],
   keyword: "Magento",
+  blog: true,
 };
 
 export const useAvifInGimp = {
@@ -410,8 +430,8 @@ export const useAvifInGimp = {
   url: "blog/tutorials/use-avif-in-gimp/",
   image: "/logo_draft.png",
 
-  date_published: "28.10.20",
-  date_modified: "28.10.20",
+  datePublished: "28.10.20",
+  dateModified: "28.10.20",
   sources: [
     "gimp.org/news/2020/10/07/gimp-2-10-22-released",
     "github.com/novomesk/gimp-avif-plugin",
@@ -446,6 +466,7 @@ export const useAvifInGimp = {
   ],
   keyword: "GIMP",
   category: "tutorials",
+  blog: true,
 };
 
 export const useAvifInHtml = {
@@ -455,8 +476,8 @@ export const useAvifInHtml = {
   url: "blog/tutorials/use-avif-in-html/",
   image: "/logo_draft.png",
 
-  date_published: "04.11.20",
-  date_modified: "04.11.20",
+  datePublished: "04.11.20",
+  dateModified: "04.11.20",
   sources: [
     "aomedia.org/about",
     "aomedia.org/av1-features/get-started",
@@ -503,6 +524,7 @@ export const useAvifInHtml = {
   ],
   keyword: "HTML",
   category: "tutorials",
+  blog: true,
 };
 
 export const useAvifInNextjs = {
@@ -512,8 +534,8 @@ export const useAvifInNextjs = {
   url: "blog/tutorials/use-avif-in-nextjs/",
   image: "/logo_draft.png",
 
-  date_published: "11.11.20",
-  date_modified: "11.11.20",
+  datePublished: "11.11.20",
+  dateModified: "11.11.20",
   sources: [
     "github.com/cyrilwanner/next-optimized-images",
     "github.com/twopluszero/next-images",
@@ -548,6 +570,7 @@ export const useAvifInNextjs = {
   ],
   keyword: "NextJS",
   category: "tutorials",
+  blog: true,
 };
 
 export const useAvifInWindows = {
@@ -557,8 +580,8 @@ export const useAvifInWindows = {
   url: "blog/tutorials/use-avif-in-windows/",
   image: "/logo_draft.png",
 
-  date_published: "18.11.20",
-  date_modified: "18.11.20",
+  datePublished: "18.11.20",
+  dateModified: "18.11.20",
   sources: [
     "zdnet.com/article/chrome-and-firefox-are-getting-support-for-the-new-avif-image-format",
     "techzdudes.com/new-avif-image-format-support-is-coming-soon-to-chrome-and-firefox",
@@ -610,6 +633,7 @@ export const useAvifInWindows = {
   ],
   keyword: "Windows",
   category: "tutorials",
+  blog: true,
 };
 
 export const useAvifInNetlify = {
@@ -619,8 +643,8 @@ export const useAvifInNetlify = {
   url: "blog/tutorials/use-avif-in-netlify/",
   image: "/logo_draft.png",
 
-  date_published: "25.11.20",
-  date_modified: "25.11.20",
+  datePublished: "25.11.20",
+  dateModified: "25.11.20",
   sources: [
     "reachlightspeed.com/blog/using-the-new-high-performance-avif-image-format-on-the-web-today/",
     "community.netlify.com/t/improved-image-optimisation-on-netlify-netlify-large-media/2565/16",
@@ -638,6 +662,7 @@ export const useAvifInNetlify = {
   questions: ["Using AVIF in Web Development Today", "AVIF Content-Type Headers + Netlify"],
   keyword: "Netlify",
   category: "tutorials",
+  blog: true,
 };
 
 export const useAvifInWordpress = {
@@ -647,8 +672,8 @@ export const useAvifInWordpress = {
   url: "blog/tutorials/use-avif-in-wordpress/",
   image: "/logo_draft.png",
 
-  date_published: "02.12.20",
-  date_modified: "02.12.20",
+  datePublished: "02.12.20",
+  dateModified: "02.12.20",
   sources: [
     "blog.shortpixel.com/what-is-avif-and-why-is-it-good",
     "chrisyee.ca/blog/uploading-avif-images-in-wordpress",
@@ -697,6 +722,7 @@ export const useAvifInWordpress = {
   ],
   keyword: "WordPress",
   category: "tutorials",
+  blog: true,
 };
 
 export const imageOptimizationIn2021 = {
@@ -706,8 +732,8 @@ export const imageOptimizationIn2021 = {
   url: "blog/articles/optimize-images-for-web-performance/",
   image: "/logo_draft.png",
 
-  date_published: "04.05.21",
-  date_modified: "04.05.21",
+  datePublished: "04.05.21",
+  dateModified: "04.05.21",
   sources: [
     "httparchive.org/reports/page-weight",
     "kinsta.com/blog/optimize-images-for-web/",
@@ -790,6 +816,7 @@ export const imageOptimizationIn2021 = {
   ],
   keyword: "Image Optimization",
   category: "article",
+  blog: true,
 };
 
 export const avifVsJpg = {
@@ -799,8 +826,8 @@ export const avifVsJpg = {
   url: "blog/comparisons/avif-vs-jpg/",
   image: "/logo_draft.png",
 
-  date_published: "19.05.21",
-  date_modified: "19.05.21",
+  datePublished: "19.05.21",
+  dateModified: "19.05.21",
   sources: [
     "cloudinary.com/blog/time_for_next_gen_codecs_to_dethrone_jpeg",
     "reachlightspeed.com/blog/using-the-new-high-performance-avif-image-format-on-the-web-today/",
@@ -851,4 +878,5 @@ export const avifVsJpg = {
   ],
   keyword: "jpg",
   category: "comparison",
+  blog: true,
 };
