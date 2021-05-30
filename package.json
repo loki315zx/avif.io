@@ -10,8 +10,8 @@
     "pull": "git pull && git fetch origin && git reset --hard origin/master",
     "develop": "npm i -f && npm run build && next export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && npm run dev",
     "develop-img": "npm i -f && cd utils && node sharp && cd ../ && npm run build && next export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ npm run dev",
-    "release": "npm i -f && npm run build && next export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && next-sitemap --config next-sitemap.config.js && firebase deploy",
-    "release-img": "npm i -f && cd utils && node sharp && cd ../ && npm run build && next export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && next-sitemap --config next-sitemap.config.js && firebase deploy"
+    "release": "npm run build && next export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && next-sitemap --config next-sitemap.config.js && firebase deploy",
+    "release-img": "cd utils && node sharp && cd ../ && npm run build && next export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && next-sitemap --config next-sitemap.config.js && firebase deploy"
   },
   "dependencies": {
     "@next/bundle-analyzer": "^10.2.3",

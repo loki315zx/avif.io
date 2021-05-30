@@ -2,12 +2,11 @@ import React, { useState, useEffect } from "react";
 import SmartLink from "@components/SmartLink";
 
 export default function Header() {
+  /* Detect scroll for fixed header */
   const [isFixed, setIsFixed] = useState(true);
-
   const handleScroll = () => {
     window.pageYOffset < 60 ? setIsFixed(true) : setIsFixed(false);
   };
-
   useEffect(() => {
     handleScroll();
     window.addEventListener("scroll", handleScroll);
