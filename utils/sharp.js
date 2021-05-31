@@ -38,3 +38,13 @@ fs.readdir(input, (err, files) => {
     }
   });
 });
+
+fs.copyFile("../images/comparison.jpg", "../public/img/comparison.jpg", (err) => {
+  if (err) throw err;
+  console.log("source.txt was copied to destination.txt");
+});
+
+fs.copyFile("../images/comparison.avif", "../public/img/comparison.avif", (err) => {
+  if (err) throw err;
+  console.log("source.txt was copied to destination.txt");
+});
