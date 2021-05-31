@@ -36,7 +36,7 @@ export default function BlogPost() {
       take a look
       <SmartLink
         link="
-      https://microsoft.com/de-de/p/av1-video-extension/9mvzqvxjbq9v"
+      microsoft.com/de-de/p/av1-video-extension/9mvzqvxjbq9v"
         text="at the extension."
         ext
       />
