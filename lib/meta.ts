@@ -97,7 +97,7 @@ export const march2021 = {
 export const useAvifInCloudflare = {
   description:
     "Cloudflare has added support for AVIF, a new image format. Learn how to optimize images and convert them to WebP or AVIF on demand.",
-  title: "Do you benefit from Cloudwork's AVIF support?",
+  title: "Boost your images with Cloudflare AVIF support",
   url: "blog/tutorials/use-avif-in-cloudflare/",
   image: "/logo_draft.png",
 
@@ -145,7 +145,7 @@ export const useAvifInCloudflare = {
 };
 
 export const useAvifInCss = {
-  title: "Fully support AVIF in your CSS today.",
+  title: "Use AVIF images as CSS Background",
   description:
     "Learn how to boost your website by using the new AVIF image format in the `background-images` of your CSS.",
   url: "blog/tutorials/use-avif-in-css/",
@@ -283,7 +283,7 @@ export const useAvifInSafari = {
 };
 
 export const useAvifInFirefox = {
-  title: "The Complete Guide about AVIF in Firefox for 2021",
+  title: "Firefox supports AVIF, Updated Guide June 20201",
   description:
     "Learn about the current state of AVIF in Firefox and how to enable support with a simple tutorial.",
   url: "blog/tutorials/use-avif-in-firefox/",
@@ -424,7 +424,7 @@ export const useAvifInMagento = {
 };
 
 export const useAvifInGimp = {
-  title: "Discover the basics of AVIF in GIMP",
+  title: "GIMP supports AVIF! Learn how to use it.",
   description:
     "GIMP 2.10.22 now includes HEIC support and AVIF support. Learn how to take advantage of these new features.",
   url: "blog/tutorials/use-avif-in-gimp/",
@@ -820,7 +820,7 @@ export const imageOptimizationIn2021 = {
 };
 
 export const avifVsJpg = {
-  title: "AVIF vs JPG – What are the main differences in each image codec?",
+  title: "AVIF vs JPG – Which image codec will survive?",
   description:
     "JPG is the de facto choice of image for the majority of digital imagery. AVIF offers an alternative. What are the main differences between each codec?",
   url: "blog/comparisons/avif-vs-jpg/",
