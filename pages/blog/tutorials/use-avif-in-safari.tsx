@@ -1,11 +1,7 @@
-import { Blog, ContentTable, H } from "@components/Blog/";
-import { ContentTableEntry } from "@components/Blog/ContentTable";
-import {
-  tutorialEdge as post2,
-  tutorialFirefox as post1,
-  tutorialHtml as post3,
-  tutorialSafari as meta,
-} from "lib/meta";
+import ContentTable, { ContentTableEntry } from "@components/Blog/ContentTable";
+import H from "@components/Blog/H";
+import meta from "@lib/meta.json";
+import Blog from "@components/Blog";
 import { useState } from "react";
 
 export default function BlogPost() {
@@ -16,7 +12,7 @@ export default function BlogPost() {
     setContentTable([...contentTable]);
   }
   return (
-    <Blog postMeta={meta} posts={[post1, post2, post3]}>
+    <Blog postMeta={meta.tutSafari} posts={[meta.tutHtml, meta.tutFirefox, meta.tutEdge]}>
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
       AVIF support is under development in web browsers. A version of Google Chrome was released in

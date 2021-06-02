@@ -1,11 +1,9 @@
-import { Blog, ContentTable, H, Image, Link } from "@components/Blog/";
-import { ContentTableEntry } from "@components/Blog/ContentTable";
-import {
-  tutorialGimp as meta,
-  tutorialHtml as post2,
-  tutorialWindows as post1,
-  tutorialWordpress as post3,
-} from "lib/meta";
+import ContentTable, { ContentTableEntry } from "@components/Blog/ContentTable";
+import H from "@components/Blog/H";
+import Image from "@components/Blog/Image";
+import Link from "@components/Link";
+import meta from "@lib/meta.json";
+import Blog from "@components/Blog";
 import { useState } from "react";
 
 export default function BlogPost() {
@@ -16,7 +14,7 @@ export default function BlogPost() {
     setContentTable([...contentTable]);
   }
   return (
-    <Blog postMeta={meta} posts={[post1, post2, post3]}>
+    <Blog postMeta={meta.tutGimp} posts={[meta.tutHtml, meta.tutWindows, meta.tutWordpress]}>
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
       GNU Image Manipulation Program (GIMP) is a free and open-source graphics editor. Although it

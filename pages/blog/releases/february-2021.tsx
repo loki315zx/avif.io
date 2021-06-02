@@ -1,11 +1,8 @@
-import { Blog, Checklist, ContentTable, H } from "@components/Blog/";
-import { ContentTableEntry } from "@components/Blog/ContentTable";
-import {
-  february2021 as meta,
-  january2021 as post2,
-  march2021 as post1,
-  tutorialWordpress as post3,
-} from "lib/meta";
+import Checklist from "@components/Blog/Checklist";
+import ContentTable, { ContentTableEntry } from "@components/Blog/ContentTable";
+import H from "@components/Blog/H";
+import meta from "@lib/meta.json";
+import Blog from "@components/Blog";
 import { useState } from "react";
 
 export default function BlogPost() {
@@ -16,7 +13,11 @@ export default function BlogPost() {
     setContentTable([...contentTable]);
   }
   return (
-    <Blog className="release" postMeta={meta} posts={[post1, post2, post3]}>
+    <Blog
+      className="release"
+      postMeta={meta.february2021}
+      posts={[meta.january2021, meta.march2021, meta.tutWordpress]}
+    >
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Conversion speed" />
       As you know, the conversion speed for AVIF is a little bit painful. Indeed, other than the

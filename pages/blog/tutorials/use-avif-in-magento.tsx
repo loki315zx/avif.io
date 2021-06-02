@@ -1,11 +1,8 @@
-import { Blog, ContentTable, H, Link } from "@components/Blog/";
-import { ContentTableEntry } from "@components/Blog/ContentTable";
-import {
-  tutorialCloudflare as post1,
-  tutorialMagento as meta,
-  tutorialNetlify as post2,
-  tutorialWordpress as post3,
-} from "lib/meta";
+import ContentTable, { ContentTableEntry } from "@components/Blog/ContentTable";
+import H from "@components/Blog/H";
+import Link from "@components/Link";
+import meta from "@lib/meta.json";
+import Blog from "@components/Blog";
 import { useState } from "react";
 
 export default function BlogPost() {
@@ -16,7 +13,10 @@ export default function BlogPost() {
     setContentTable([...contentTable]);
   }
   return (
-    <Blog postMeta={meta} posts={[post1, post2, post3]}>
+    <Blog
+      postMeta={meta.tutMagento}
+      posts={[meta.tutCloudflare, meta.tutNetlify, meta.tutWordpress]}
+    >
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
       Every online store shows a lot of images - product photos, brand images, etc. But with all

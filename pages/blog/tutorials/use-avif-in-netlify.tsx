@@ -1,11 +1,9 @@
-import { Blog, ContentTable, H, Link, Syntax } from "@components/Blog/";
-import { ContentTableEntry } from "@components/Blog/ContentTable";
-import {
-  tutorialCloudflare as post1,
-  tutorialFrameworks as post2,
-  tutorialNetlify as meta,
-  tutorialWordpress as post3,
-} from "lib/meta";
+import ContentTable, { ContentTableEntry } from "@components/Blog/ContentTable";
+import H from "@components/Blog/H";
+import Syntax from "@components/Blog/Syntax";
+import Link from "@components/Link";
+import meta from "@lib/meta.json";
+import Blog from "@components/Blog";
 import { useState } from "react";
 
 export default function BlogPost() {
@@ -16,7 +14,10 @@ export default function BlogPost() {
     setContentTable([...contentTable]);
   }
   return (
-    <Blog postMeta={meta} posts={[post1, post2, post3]}>
+    <Blog
+      postMeta={meta.tutNetlify}
+      posts={[meta.tutCloudflare, meta.tutFrameworks, meta.tutWordpress]}
+    >
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Wishing for native support" />
       Many Netlify users wanted a native solution that would allow them to deliver images in WebP or

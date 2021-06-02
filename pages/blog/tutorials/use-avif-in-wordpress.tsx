@@ -1,11 +1,10 @@
-import { Blog, ContentTable, H, Image, Link, Syntax } from "@components/Blog/";
-import { ContentTableEntry } from "@components/Blog/ContentTable";
-import {
-  tutorialCloudflare as post3,
-  tutorialCss as post2,
-  tutorialHtml as post1,
-  tutorialWordpress as meta,
-} from "lib/meta";
+import ContentTable, { ContentTableEntry } from "@components/Blog/ContentTable";
+import H from "@components/Blog/H";
+import Image from "@components/Blog/Image";
+import Syntax from "@components/Blog/Syntax";
+import Link from "@components/Link";
+import meta from "@lib/meta.json";
+import Blog from "@components/Blog";
 import { useState } from "react";
 
 export default function BlogPost() {
@@ -16,7 +15,7 @@ export default function BlogPost() {
     setContentTable([...contentTable]);
   }
   return (
-    <Blog postMeta={meta} posts={[post1, post2, post3]}>
+    <Blog postMeta={meta.tutWordpress} posts={[meta.tutHtml, meta.tutCss, meta.tutCloudflare]}>
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
       "Sorry, this file type is not permitted for security reasons".{" "}

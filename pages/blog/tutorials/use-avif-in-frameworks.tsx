@@ -1,11 +1,10 @@
-import { Blog, Checklist, ContentTable, H, Image, Syntax } from "@components/Blog/";
-import { ContentTableEntry } from "@components/Blog/ContentTable";
-import {
-  tutorialCss as post2,
-  tutorialFrameworks as meta,
-  tutorialHtml as post3,
-  tutorialNextjs as post1,
-} from "lib/meta";
+import Checklist from "@components/Blog/Checklist";
+import ContentTable, { ContentTableEntry } from "@components/Blog/ContentTable";
+import H from "@components/Blog/H";
+import Image from "@components/Blog/Image";
+import Syntax from "@components/Blog/Syntax";
+import meta from "@lib/meta.json";
+import Blog from "@components/Blog";
 import { useState } from "react";
 
 export default function BlogPost() {
@@ -16,7 +15,7 @@ export default function BlogPost() {
     setContentTable([...contentTable]);
   }
   return (
-    <Blog postMeta={meta} posts={[post1, post2, post3]}>
+    <Blog postMeta={meta.tutFrameworks} posts={[meta.tutCss, meta.tutHtml, meta.tutNextjs]}>
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Framework List" />
       Now that you've learned how fantastic AVIF is, you may be asking yourself, "

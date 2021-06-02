@@ -1,11 +1,8 @@
-import { Blog, ContentTable, H, Link } from "@components/Blog/";
-import { ContentTableEntry } from "@components/Blog/ContentTable";
-import {
-  tutorialEdge as post1,
-  tutorialGimp as post3,
-  tutorialWindows as meta,
-  tutorialWordpress as post2,
-} from "lib/meta";
+import ContentTable, { ContentTableEntry } from "@components/Blog/ContentTable";
+import H from "@components/Blog/H";
+import Link from "@components/Link";
+import meta from "@lib/meta.json";
+import Blog from "@components/Blog";
 import { useState } from "react";
 
 export default function BlogPost() {
@@ -16,7 +13,7 @@ export default function BlogPost() {
     setContentTable([...contentTable]);
   }
   return (
-    <Blog postMeta={meta} posts={[post1, post2, post3]}>
+    <Blog postMeta={meta.tutWindows} posts={[meta.tutGimp, meta.tutEdge, meta.tutWordpress]}>
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Microsoft supports AVIF" />
       AVIF got a significant boost when Microsoft{" "}

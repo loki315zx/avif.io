@@ -1,11 +1,8 @@
-import { Blog, ContentTable, H, Image } from "@components/Blog/";
-import { ContentTableEntry } from "@components/Blog/ContentTable";
-import {
-  tutorialEdge as post1,
-  tutorialFirefox as meta,
-  tutorialHtml as post2,
-  tutorialWordpress as post3,
-} from "lib/meta";
+import ContentTable, { ContentTableEntry } from "@components/Blog/ContentTable";
+import H from "@components/Blog/H";
+import Image from "@components/Blog/Image";
+import meta from "@lib/meta.json";
+import Blog from "@components/Blog";
 import { useState } from "react";
 
 export default function BlogPost() {
@@ -16,7 +13,7 @@ export default function BlogPost() {
     setContentTable([...contentTable]);
   }
   return (
-    <Blog postMeta={meta} posts={[post1, post2, post3]}>
+    <Blog postMeta={meta.tutFirefox} posts={[meta.tutEdge, meta.tutHtml, meta.tutWordpress]}>
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Update March 2021" />
       Several open bugs and issues have lead to support still not being the default. This has mainly

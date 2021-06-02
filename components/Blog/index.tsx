@@ -1,15 +1,9 @@
 import Breadcrumbs from "@components/Blog/Breadcrumbs";
-import Checklist from "@components/Blog/Checklist";
-import ContentTable from "@components/Blog/ContentTable";
-import H from "@components/Blog/H";
-import Image from "@components/Blog/Image";
 import Posts from "@components/Blog/Posts";
 import Questions from "@components/Blog/Questions";
 import Sources from "@components/Blog/Sources";
-import Syntax from "@components/Blog/Syntax";
 import Tags from "@components/Blog/Tags";
 import Layout from "@components/Layout";
-import Link from "@components/Link";
 import { useEffect, useRef, useState } from "react";
 
 export default function Blog(props: { postMeta: any; children: any; posts: any; className?: any }) {
@@ -70,18 +64,3 @@ export default function Blog(props: { postMeta: any; children: any; posts: any; 
     </Layout>
   );
 }
-
-export {
-  Blog,
-  Breadcrumbs,
-  Checklist,
-  ContentTable,
-  H,
-  Image,
-  Link,
-  Posts,
-  Questions,
-  Sources,
-  Tags,
-  Syntax,
-};

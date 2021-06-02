@@ -1,11 +1,9 @@
-import { Blog, Checklist, ContentTable, H, Link } from "@components/Blog/";
-import { ContentTableEntry } from "@components/Blog/ContentTable";
-import {
-  february2021 as post3,
-  january2021 as post2,
-  march2021 as meta,
-  tutorialWordpress as post1,
-} from "lib/meta";
+import Checklist from "@components/Blog/Checklist";
+import ContentTable, { ContentTableEntry } from "@components/Blog/ContentTable";
+import H from "@components/Blog/H";
+import Link from "@components/Link";
+import meta from "@lib/meta.json";
+import Blog from "@components/Blog";
 import { useState } from "react";
 
 export default function BlogPost() {
@@ -16,7 +14,11 @@ export default function BlogPost() {
     setContentTable([...contentTable]);
   }
   return (
-    <Blog className="release" postMeta={meta} posts={[post1, post2, post3]}>
+    <Blog
+      className="release"
+      postMeta={meta.march2021}
+      posts={[meta.february2021, meta.january2021, meta.tutWordpress]}
+    >
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Accessibility" />
       One would think a website that heavily focuses on images wouldn't care about accessibility,

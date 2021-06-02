@@ -1,11 +1,8 @@
-import { Blog, Checklist, ContentTable, H } from "@components/Blog/";
-import { ContentTableEntry } from "@components/Blog/ContentTable";
-import {
-  avifVsJpg as meta,
-  tutorialCss as post2,
-  tutorialHtml as post1,
-  tutorialWordpress as post3,
-} from "lib/meta";
+import Checklist from "@components/Blog/Checklist";
+import ContentTable, { ContentTableEntry } from "@components/Blog/ContentTable";
+import H from "@components/Blog/H";
+import meta from "@lib/meta.json";
+import Blog from "@components/Blog";
 import { useState } from "react";
 
 export default function BlogPost() {
@@ -17,21 +14,8 @@ export default function BlogPost() {
   }
 
   return (
-    /*
-    Posts = posts1,post2, .. serves as a way to show 3 related blog posts under each article.
-    I’d love to get rid of that completely and offer an automatic way to display 3 blog posts of the same category.
-    I currently only categorize blog posts through the folder structure and index blog file, not in the lib/meta, which might be the better idea.
-    */
-    <Blog postMeta={meta} posts={[post1, post2, post3]}>
-      {/*
-      The content table is used with every blog post, but is repeatingly declared in every single blog posts.
-      Is there a way to integrate it into the Blog component?
-      */}
+    <Blog postMeta={meta.avifVsJpg} posts={[meta.tutCss, meta.tutHtml, meta.tutWordpress]}>
       <ContentTable contentTable={contentTable} />
-      {/*
-      contentTableCallback={contentTableCallback} has to be declared in order for the Table of Content to know which elements should be included inside it.
-      Is there a way to automatically include level=2 and level=3 headings, without having to write the contentTableCallback attribute all the time?
-      */}
       <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
       Today, we have many image codecs to work with. Images come in all shapes and sizes but also
       formats. However, many do not realize how important it is to have more than one image codec to

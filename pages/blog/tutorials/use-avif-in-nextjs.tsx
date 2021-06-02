@@ -1,11 +1,10 @@
-import { Blog, ContentTable, H, Image, Link, Syntax } from "@components/Blog/";
-import { ContentTableEntry } from "@components/Blog/ContentTable";
-import {
-  tutorialCss as post2,
-  tutorialFrameworks as post1,
-  tutorialHtml as post3,
-  tutorialNextjs as meta,
-} from "lib/meta";
+import ContentTable, { ContentTableEntry } from "@components/Blog/ContentTable";
+import H from "@components/Blog/H";
+import Image from "@components/Blog/Image";
+import Syntax from "@components/Blog/Syntax";
+import Link from "@components/Link";
+import meta from "@lib/meta.json";
+import Blog from "@components/Blog";
 import { useState } from "react";
 
 export default function BlogPost() {
@@ -16,7 +15,7 @@ export default function BlogPost() {
     setContentTable([...contentTable]);
   }
   return (
-    <Blog postMeta={meta} posts={[post1, post2, post3]}>
+    <Blog postMeta={meta.tutNextjs} posts={[meta.tutCss, meta.tutFrameworks, meta.tutHtml]}>
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
       NextJS images is easy! The blog you're reading uses both the latest version of React and

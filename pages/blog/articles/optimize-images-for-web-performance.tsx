@@ -1,11 +1,9 @@
-import { Blog, Checklist, ContentTable, H, Syntax } from "@components/Blog/";
-import { ContentTableEntry } from "@components/Blog/ContentTable";
-import {
-  imageOptimizationIn2021 as meta,
-  tutorialCss as post2,
-  tutorialHtml as post1,
-  tutorialWordpress as post3,
-} from "lib/meta";
+import Checklist from "@components/Blog/Checklist";
+import ContentTable, { ContentTableEntry } from "@components/Blog/ContentTable";
+import H from "@components/Blog/H";
+import Syntax from "@components/Blog/Syntax";
+import meta from "@lib/meta.json";
+import Blog from "@components/Blog";
 import { useState } from "react";
 
 export default function BlogPost() {
@@ -16,7 +14,10 @@ export default function BlogPost() {
   }
 
   return (
-    <Blog postMeta={meta} posts={[post1, post2, post3]}>
+    <Blog
+      postMeta={meta.imageOptimizationIn2021}
+      posts={[meta.tutCss, meta.tutHtml, meta.tutWordpress]}
+    >
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Takeaways" />
       <Checklist

@@ -1,11 +1,10 @@
-import { Blog, Checklist, ContentTable, H, Link, Syntax } from "@components/Blog/";
-import { ContentTableEntry } from "@components/Blog/ContentTable";
-import {
-  tutorialCss as post1,
-  tutorialFirefox as post3,
-  tutorialFrameworks as post2,
-  tutorialHtml as meta,
-} from "lib/meta";
+import Checklist from "@components/Blog/Checklist";
+import ContentTable, { ContentTableEntry } from "@components/Blog/ContentTable";
+import H from "@components/Blog/H";
+import Syntax from "@components/Blog/Syntax";
+import Link from "@components/Link";
+import meta from "@lib/meta.json";
+import Blog from "@components/Blog";
 import { useState } from "react";
 
 export default function BlogPost() {
@@ -16,7 +15,7 @@ export default function BlogPost() {
     setContentTable([...contentTable]);
   }
   return (
-    <Blog postMeta={meta} posts={[post1, post2, post3]}>
+    <Blog postMeta={meta.tutHtml} posts={[meta.tutCss, meta.tutFirefox, meta.tutFrameworks]}>
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
       AVIF is a file format based on a video codec and supports a high bit depth while maintaining a

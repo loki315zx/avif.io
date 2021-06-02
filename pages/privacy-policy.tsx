@@ -1,6 +1,7 @@
-import { Blog, ContentTable, H } from "@components/Blog/";
-import { ContentTableEntry } from "@components/Blog/ContentTable";
-import { privacyPolicy as meta } from "lib/meta";
+import ContentTable, { ContentTableEntry } from "@components/Blog/ContentTable";
+import H from "@components/Blog/H";
+import meta from "@lib/meta.json";
+import Blog from "@components/Blog";
 import { useState } from "react";
 
 export default function BlogPost() {
@@ -11,7 +12,7 @@ export default function BlogPost() {
     setContentTable([...contentTable]);
   }
   return (
-    <Blog postMeta={meta} posts={[]}>
+    <Blog postMeta={meta.privacyPolicy} posts={[]}>
       <ContentTable contentTable={contentTable} />
       <H
         contentTableCallback={contentTableCallback}

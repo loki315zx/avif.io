@@ -1900,8 +1900,8 @@ h5 .heading-anchor-wrapper {
 
 .blog h5 {
   margin-top: 0;
-  background: var(--black2);
   padding: var(--s1);
+  background: var(--black2);
   border-radius: var(--radius-small);
 }
 

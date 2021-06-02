@@ -1,11 +1,9 @@
-import { Blog, ContentTable, H, Image, Link } from "@components/Blog/";
-import { ContentTableEntry } from "@components/Blog/ContentTable";
-import {
-  tutorialEdge as meta,
-  tutorialFirefox as post2,
-  tutorialGimp as post3,
-  tutorialWindows as post1,
-} from "lib/meta";
+import ContentTable, { ContentTableEntry } from "@components/Blog/ContentTable";
+import H from "@components/Blog/H";
+import Image from "@components/Blog/Image";
+import Link from "@components/Link";
+import meta from "@lib/meta.json";
+import Blog from "@components/Blog";
 import { useState } from "react";
 
 export default function BlogPost() {
@@ -16,7 +14,7 @@ export default function BlogPost() {
     setContentTable([...contentTable]);
   }
   return (
-    <Blog postMeta={meta} posts={[post1, post2, post3]}>
+    <Blog postMeta={meta.tutEdge} posts={[meta.tutFirefox, meta.tutGimp, meta.tutWindows]}>
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Current status" />
       While Google can quickly implement new browser features, other companies such as Microsoft are

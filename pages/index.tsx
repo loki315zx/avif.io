@@ -5,10 +5,10 @@ import Layout from "@components/Layout";
 import SettingsBox, { Settings } from "@components/SettingsBox";
 import Converter from "@utils/converter";
 import { uniqueId } from "@utils/utils";
-import { index } from "lib/meta";
 import Link from "next/link";
 import { ReactElement, useEffect, useState } from "react";
 import ReactCompareImage from "react-compare-image";
+import meta from "@lib/meta.json";
 
 /*
  Interfaces
@@ -92,7 +92,7 @@ export default function App(): ReactElement {
   }
 
   return (
-    <Layout meta={index}>
+    <Layout meta={meta.index}>
       <section className={"app-container"}>
         <h1>Convert all images to AVIF for free.</h1>
         <h2 className={"f1 m0 s3 center normal"}>
