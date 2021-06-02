@@ -2,7 +2,7 @@ import { Blog, ContentTable, H, Image } from "@components/Blog/";
 import { ContentTableEntry } from "@components/Blog/ContentTable";
 import SmartLink from "@components/SmartLink";
 import {
-  useAvifInEdge as postdata,
+  useAvifInEdge as meta,
   useAvifInFirefox as post2,
   useAvifInGimp as post3,
   useAvifInWindows as post1,
@@ -17,7 +17,7 @@ export default function BlogPost() {
     setContentTable([...contentTable]);
   }
   return (
-    <Blog postdata={postdata} posts={[post1, post2, post3]}>
+    <Blog postMeta={meta} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Current status" />
       While Google can quickly implement new browser features, other companies such as Microsoft are

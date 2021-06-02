@@ -3,7 +3,7 @@ import { ContentTableEntry } from "@components/Blog/ContentTable";
 import SmartLink from "@components/SmartLink";
 import {
   useAvifInCloudflare as post1,
-  useAvifInMagento as postdata,
+  useAvifInMagento as meta,
   useAvifInNetlify as post2,
   useAvifInWordpress as post3,
 } from "lib/meta";
@@ -17,7 +17,7 @@ export default function BlogPost() {
     setContentTable([...contentTable]);
   }
   return (
-    <Blog postdata={postdata} posts={[post1, post2, post3]}>
+    <Blog postMeta={meta} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
       Every online store shows a lot of images - product photos, brand images, etc. But with all

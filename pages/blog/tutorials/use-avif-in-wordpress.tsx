@@ -5,7 +5,7 @@ import {
   useAvifInCloudflare as post3,
   useAvifInCss as post2,
   useAvifInHtml as post1,
-  useAvifInWordpress as postdata,
+  useAvifInWordpress as meta,,
 } from "lib/meta";
 import { useState } from "react";
 
@@ -17,7 +17,7 @@ export default function BlogPost() {
     setContentTable([...contentTable]);
   }
   return (
-    <Blog postdata={postdata} posts={[post1, post2, post3]}>
+    <Blog postMeta={meta} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
       "Sorry, this file type is not permitted for security reasons".{" "}

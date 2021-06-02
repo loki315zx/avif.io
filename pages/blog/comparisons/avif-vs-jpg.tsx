@@ -1,7 +1,7 @@
 import { Blog, Checklist, ContentTable, H } from "@components/Blog/";
 import { ContentTableEntry } from "@components/Blog/ContentTable";
 import {
-  avifVsJpg as postdata,
+  avifVsJpg as meta,
   useAvifInCss as post2,
   useAvifInHtml as post1,
   useAvifInWordpress as post3,
@@ -22,7 +22,7 @@ export default function BlogPost() {
     I’d love to get rid of that completely and offer an automatic way to display 3 blog posts of the same category.
     I currently only categorize blog posts through the folder structure and index blog file, not in the lib/meta, which might be the better idea.
     */
-    <Blog postdata={postdata} posts={[post1, post2, post3]}>
+    <Blog postMeta={meta} posts={[post1, post2, post3]}>
       {/*
       The content table is used with every blog post, but is repeatingly declared in every single blog posts.
       Is there a way to integrate it into the Blog component?

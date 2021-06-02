@@ -4,7 +4,7 @@ import { jsonLdScriptProps } from "react-schemaorg";
 import { BreadcrumbList } from "schema-dts";
 
 export default function Breadcrumbs(props: any) {
-  const urlSplit = props.postdata.url.split("/");
+  const urlSplit = props.postMeta.url.split("/");
   return (
     <>
       <Head>

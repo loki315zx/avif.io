@@ -5,7 +5,7 @@ import {
   useAvifInCss as post1,
   useAvifInFirefox as post3,
   useAvifInFrameworks as post2,
-  useAvifInHtml as postdata,
+  useAvifInHtml as meta,,
 } from "lib/meta";
 import { useState } from "react";
 
@@ -17,7 +17,7 @@ export default function BlogPost() {
     setContentTable([...contentTable]);
   }
   return (
-    <Blog postdata={postdata} posts={[post1, post2, post3]}>
+    <Blog postMeta={meta} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
       AVIF is a file format based on a video codec and supports a high bit depth while maintaining a

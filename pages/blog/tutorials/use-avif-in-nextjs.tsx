@@ -5,7 +5,7 @@ import {
   useAvifInCss as post2,
   useAvifInFrameworks as post1,
   useAvifInHtml as post3,
-  useAvifInNextjs as postdata,
+  useAvifInNextjs as meta,,
 } from "lib/meta";
 import { useState } from "react";
 
@@ -17,7 +17,7 @@ export default function BlogPost() {
     setContentTable([...contentTable]);
   }
   return (
-    <Blog postdata={postdata} posts={[post1, post2, post3]}>
+    <Blog postMeta={meta} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
       NextJS images is easy! The blog you're reading uses both the latest version of React and

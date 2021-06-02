@@ -1,7 +1,7 @@
 import { Blog, Checklist, ContentTable, H, Syntax } from "@components/Blog/";
 import { ContentTableEntry } from "@components/Blog/ContentTable";
 import {
-  imageOptimizationIn2021 as postdata,
+  imageOptimizationIn2021 as meta,
   useAvifInCss as post2,
   useAvifInHtml as post1,
   useAvifInWordpress as post3,
@@ -16,7 +16,7 @@ export default function BlogPost() {
   }
 
   return (
-    <Blog postdata={postdata} posts={[post1, post2, post3]}>
+    <Blog postMeta={meta} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="TL;DR" />
       <Checklist

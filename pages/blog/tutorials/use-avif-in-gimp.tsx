@@ -2,7 +2,7 @@ import { Blog, ContentTable, H, Image } from "@components/Blog/";
 import { ContentTableEntry } from "@components/Blog/ContentTable";
 import SmartLink from "@components/SmartLink";
 import {
-  useAvifInGimp as postdata,
+  useAvifInGimp as meta,
   useAvifInHtml as post2,
   useAvifInWindows as post1,
   useAvifInWordpress as post3,
@@ -17,7 +17,7 @@ export default function BlogPost() {
     setContentTable([...contentTable]);
   }
   return (
-    <Blog postdata={postdata} posts={[post1, post2, post3]}>
+    <Blog postMeta={meta} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
       GNU Image Manipulation Program (GIMP) is a free and open-source graphics editor. Although it

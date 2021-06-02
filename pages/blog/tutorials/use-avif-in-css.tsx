@@ -2,7 +2,7 @@ import { Blog, ContentTable, H, Image, Syntax } from "@components/Blog/";
 import { ContentTableEntry } from "@components/Blog/ContentTable";
 import SmartLink from "@components/SmartLink";
 import {
-  useAvifInCss as postdata,
+  useAvifInCss as meta,
   useAvifInFrameworks as post2,
   useAvifInHtml as post1,
   useAvifInWindows as post3,
@@ -17,7 +17,7 @@ export default function BlogPost() {
     setContentTable([...contentTable]);
   }
   return (
-    <Blog postdata={postdata} posts={[post1, post2, post3]}>
+    <Blog postMeta={meta} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
       Using AVIF images via HTML is very easy, as you can read

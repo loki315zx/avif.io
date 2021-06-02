@@ -4,7 +4,7 @@ import SmartLink from "@components/SmartLink";
 import {
   useAvifInCloudflare as post1,
   useAvifInFrameworks as post2,
-  useAvifInNetlify as postdata,
+  useAvifInNetlify as meta,
   useAvifInWordpress as post3,
 } from "lib/meta";
 import { useState } from "react";
@@ -17,7 +17,7 @@ export default function BlogPost() {
     setContentTable([...contentTable]);
   }
   return (
-    <Blog postdata={postdata} posts={[post1, post2, post3]}>
+    <Blog postMeta={meta} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Wishing for native support" />
       Many Netlify users wanted a native solution that would allow them to deliver images in WebP or

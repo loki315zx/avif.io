@@ -4,7 +4,7 @@ import {
   useAvifInEdge as post2,
   useAvifInFirefox as post1,
   useAvifInHtml as post3,
-  useAvifInSafari as postdata,
+  useAvifInSafari as meta,,
 } from "lib/meta";
 import { useState } from "react";
 
@@ -16,7 +16,7 @@ export default function BlogPost() {
     setContentTable([...contentTable]);
   }
   return (
-    <Blog postdata={postdata} posts={[post1, post2, post3]}>
+    <Blog postMeta={meta} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
       AVIF support is under development in web browsers. A version of Google Chrome was released in

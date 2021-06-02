@@ -4,7 +4,7 @@ import SmartLink from "@components/SmartLink";
 import {
   useAvifInEdge as post1,
   useAvifInGimp as post3,
-  useAvifInWindows as postdata,
+  useAvifInWindows as meta,
   useAvifInWordpress as post2,
 } from "lib/meta";
 import { useState } from "react";
@@ -17,7 +17,7 @@ export default function BlogPost() {
     setContentTable([...contentTable]);
   }
   return (
-    <Blog postdata={postdata} posts={[post1, post2, post3]}>
+    <Blog postMeta={meta} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Microsoft supports AVIF" />
       AVIF got a significant boost when Microsoft{" "}

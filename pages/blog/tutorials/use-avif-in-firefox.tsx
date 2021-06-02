@@ -2,7 +2,7 @@ import { Blog, ContentTable, H, Image } from "@components/Blog/";
 import { ContentTableEntry } from "@components/Blog/ContentTable";
 import {
   useAvifInEdge as post1,
-  useAvifInFirefox as postdata,
+  useAvifInFirefox as meta,
   useAvifInHtml as post2,
   useAvifInWordpress as post3,
 } from "lib/meta";
@@ -16,7 +16,7 @@ export default function BlogPost() {
     setContentTable([...contentTable]);
   }
   return (
-    <Blog postdata={postdata} posts={[post1, post2, post3]}>
+    <Blog postMeta={meta} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Update March 2021" />
       Several open bugs and issues have lead to support still not being the default. This has mainly

@@ -4,7 +4,7 @@ import SmartLink from "@components/SmartLink";
 import {
   february2021 as post3,
   january2021 as post2,
-  march2021 as postdata,
+  march2021 as meta,
   useAvifInWordpress as post1,
 } from "lib/meta";
 import { useState } from "react";
@@ -17,7 +17,7 @@ export default function BlogPost() {
     setContentTable([...contentTable]);
   }
   return (
-    <Blog className="release" postdata={postdata} posts={[post1, post2, post3]}>
+    <Blog className="release" postMeta={meta} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Accessibility" />
       One would think a website that heavily focuses on images wouldn't care about accessibility,

@@ -2,7 +2,7 @@ import { Blog, Checklist, ContentTable, H, Image, Syntax } from "@components/Blo
 import { ContentTableEntry } from "@components/Blog/ContentTable";
 import SmartLink from "@components/SmartLink";
 import {
-  useAvifInCloudflare as postdata,
+  useAvifInCloudflare as meta,
   useAvifInCss as post2,
   useAvifInHtml as post1,
   useAvifInNextjs as post3,
@@ -17,7 +17,7 @@ export default function BlogPost() {
     setContentTable([...contentTable]);
   }
   return (
-    <Blog postdata={postdata} posts={[post1, post2, post3]}>
+    <Blog postMeta={meta} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
       Images compressed in AVIF usually take up half the storage space of JPEG and WebP. It uses the

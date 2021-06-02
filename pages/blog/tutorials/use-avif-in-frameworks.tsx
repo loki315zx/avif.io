@@ -2,7 +2,7 @@ import { Blog, Checklist, ContentTable, H, Image, Syntax } from "@components/Blo
 import { ContentTableEntry } from "@components/Blog/ContentTable";
 import {
   useAvifInCss as post2,
-  useAvifInFrameworks as postdata,
+  useAvifInFrameworks as meta,
   useAvifInHtml as post3,
   useAvifInNextjs as post1,
 } from "lib/meta";
@@ -16,7 +16,7 @@ export default function BlogPost() {
     setContentTable([...contentTable]);
   }
   return (
-    <Blog postdata={postdata} posts={[post1, post2, post3]}>
+    <Blog postMeta={meta} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Framework List" />
       Now that you've learned how fantastic AVIF is, you may be asking yourself, "

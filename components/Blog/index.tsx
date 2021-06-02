@@ -12,7 +12,7 @@ import Layout from "@components/Layout";
 
 import { useEffect, useRef, useState } from "react";
 
-export default function Blog(props: { postdata: any; children: any; posts: any; className?: any }) {
+export default function Blog(props: { postMeta: any; children: any; posts: any; className?: any }) {
   const articleRef = useRef<HTMLElement>(null);
   const [readingTime, setReadingTime] = useState(0);
   const randomNumber = Math.floor(Math.random() * 7 + 1);
@@ -26,14 +26,14 @@ export default function Blog(props: { postdata: any; children: any; posts: any; 
   }, [articleRef]);
 
   return (
-    <Layout meta={props.postdata}>
+    <Layout meta={props.postMeta}>
       <main className={`blog background${randomNumber} ${props.className}`}>
         <div className="blog__header overlay-after">
           <div className="blog__header__content">
-            <Breadcrumbs postdata={props.postdata} />
-            <h1>{props.postdata.title}</h1>
+            <Breadcrumbs postMeta={props.postMeta} />
+            <h1>{props.postMeta.title}</h1>
             <div className="blog__meta white">
-              {props.postdata.dateModified} · {readingTime} min read
+              {props.postMeta.dateModified} · {readingTime} min read
             </div>
           </div>
         </div>
@@ -42,24 +42,24 @@ export default function Blog(props: { postdata: any; children: any; posts: any; 
           <article ref={articleRef} className="content">
             {props.children}
             <div className="content__details">
-              {props.postdata.sources && (
+              {props.postMeta.sources && (
                 <>
                   <h5>Sources</h5>
-                  <Sources sources={props.postdata.sources} />
+                  <Sources sources={props.postMeta.sources} />
                 </>
               )}
 
-              {props.postdata.tags && (
+              {props.postMeta.tags && (
                 <>
                   <h5>Topic clusters</h5>
-                  <Tags tags={props.postdata.tags} />
+                  <Tags tags={props.postMeta.tags} />
                 </>
               )}
 
-              {props.postdata.questions && (
+              {props.postMeta.questions && (
                 <>
                   <h5>People also ask</h5>
-                  <Questions questions={props.postdata.questions} />
+                  <Questions questions={props.postMeta.questions} />
                 </>
               )}
             </div>

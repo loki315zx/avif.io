@@ -1,7 +1,7 @@
 import { Blog, Checklist, ContentTable, H } from "@components/Blog/";
 import { ContentTableEntry } from "@components/Blog/ContentTable";
 import {
-  february2021 as postdata,
+  february2021 as meta,
   january2021 as post2,
   march2021 as post1,
   useAvifInWordpress as post3,
@@ -16,7 +16,7 @@ export default function BlogPost() {
     setContentTable([...contentTable]);
   }
   return (
-    <Blog className="release" postdata={postdata} posts={[post1, post2, post3]}>
+    <Blog className="release" postMeta={meta} posts={[post1, post2, post3]}>
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Conversion speed" />
       As you know, the conversion speed for AVIF is a little bit painful. Indeed, other than the

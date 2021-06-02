@@ -17,7 +17,7 @@ I'd love to have an automatic way, like:
 */
 import {
   avifVsJpg as post2001,
-  blog as postdata,
+  blog as meta,
   february2021 as post102,
   imageOptimizationIn2021 as post1001,
   january2021 as post101,
@@ -58,11 +58,11 @@ const posts = [
 
 export default function BlogAvif() {
   return (
-    <Layout meta={postdata}>
+    <Layout meta={postMeta}>
       <main className="archive blog">
         <div className="blog__header white center">
-          <h1>{postdata.title}</h1>
-          <h2>{postdata.description}</h2>
+          <h1>{postMeta.title}</h1>
+          <h2>{postMeta.description}</h2>
         </div>
         <Posts posts={articles} title="articles" />
         <Posts posts={posts} title="tutorials" />
