@@ -40,11 +40,11 @@
 
 :root {
   --f0: 0.875rem; /* 0.77 | 14px */
-  --f1: 1.125rem; /* 1.00 | 18px */
-  --f2: 1.44rem; /* 1.30 | 23px */
-  --f3: 1.86rem; /* 1.69 | 30px */
-  --f4: 2.5rem; /* 2.20 | 40px */
-  --f5: 3.19rem; /* 2.86 | 51px */
+  --f1: 1.25rem; /* 1.25 | 20px */
+  --f2: 1.65rem; /* 1.65 | 26px */
+  --f3: 1.86rem; /* 2.125 | 34px */
+  --f4: 2.5rem; /* 2.75 | 44px */
+  --f5: 3.19rem; /* 3.56 | 55px */
   --s0: 0.6666666rem;
   --s1: 1rem;
   --s2: 1.3333333rem;
@@ -433,7 +433,7 @@ header nav > div > a {
 
 .heading-anchor-wrapper.tutorial::after {
   top: -50%;
-  width: 200px;
+  width: 220px;
   text-align: center;
   content: "Copy link to heading";
 }
@@ -1900,6 +1900,9 @@ h5 .heading-anchor-wrapper {
 
 .blog h5 {
   margin-top: 0;
+  background: var(--black2);
+  padding: var(--s1);
+  border-radius: var(--radius-small);
 }
 
 .archive.blog h2 {
@@ -2248,6 +2251,10 @@ pre {
     width: 90%;
     margin: var(--s1) auto;
     padding: calc(90% - var(--s2)) var(--s2) var(--s2) var(--s2);
+  }
+
+  header nav > div > a {
+    padding: var(--s0);
   }
 
   .page section.app-container {

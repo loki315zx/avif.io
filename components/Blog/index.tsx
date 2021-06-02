@@ -58,7 +58,7 @@ export default function Blog(props: { postMeta: any; children: any; posts: any; 
 
               {props.postMeta.questions && (
                 <>
-                  <h5>People also ask</h5>
+                  <h5>Related search terms</h5>
                   <Questions questions={props.postMeta.questions} />
                 </>
               )}
