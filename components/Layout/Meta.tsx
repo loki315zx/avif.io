@@ -1,7 +1,6 @@
 import Head from "next/head";
-
-import { BlogPosting } from "schema-dts";
 import { jsonLdScriptProps } from "react-schemaorg";
+import { BlogPosting } from "schema-dts";
 
 export interface MetaProps {
   title?: string;

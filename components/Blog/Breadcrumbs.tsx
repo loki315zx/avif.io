@@ -1,8 +1,7 @@
-import Head from "next/head";
-import { BreadcrumbList } from "schema-dts";
-import { jsonLdScriptProps } from "react-schemaorg";
-
 import SmartLink from "@components/SmartLink";
+import Head from "next/head";
+import { jsonLdScriptProps } from "react-schemaorg";
+import { BreadcrumbList } from "schema-dts";
 
 export default function Breadcrumbs(props: any) {
   const urlSplit = props.postdata.url.split("/");

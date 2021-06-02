@@ -1,11 +1,16 @@
-import Posts from "@components/Blog/Posts";
-import Tags from "@components/Blog/Tags";
-import Questions from "@components/Blog/Questions";
-import Layout from "@components/Layout";
-import Sources from "@components/Blog/Sources";
-import { useEffect, useRef, useState } from "react";
-
 import Breadcrumbs from "@components/Blog/Breadcrumbs";
+import Checklist from "@components/Blog/Checklist";
+import ContentTable from "@components/Blog/ContentTable";
+import H from "@components/Blog/H";
+import Image from "@components/Blog/Image";
+import Posts from "@components/Blog/Posts";
+import Questions from "@components/Blog/Questions";
+import Sources from "@components/Blog/Sources";
+import Tags from "@components/Blog/Tags";
+import Syntax from "@components/Blog/Syntax";
+import Layout from "@components/Layout";
+
+import { useEffect, useRef, useState } from "react";
 
 export default function Blog(props: { postdata: any; children: any; posts: any; className?: any }) {
   const articleRef = useRef<HTMLElement>(null);
@@ -65,3 +70,17 @@ export default function Blog(props: { postdata: any; children: any; posts: any; 
     </Layout>
   );
 }
+
+export {
+  Blog,
+  Breadcrumbs,
+  Checklist,
+  ContentTable,
+  H,
+  Image,
+  Posts,
+  Questions,
+  Sources,
+  Tags,
+  Syntax,
+};

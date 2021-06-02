@@ -1,20 +1,12 @@
-import Blog from "@components/Blog";
-
-/* #NOTE: I declare the header component "H" on every blog article. Is there a way to automatically include it with the Blog component? */
-
-import H from "@components/Blog/H";
-import Checklist from "@components/Blog/Checklist";
-
-import { avifVsJpg as postdata } from "lib/meta";
-
-/* The 3 following lines import metadata from similar posts.
-See below comments on why this is an issue*/
-import { useAvifInHtml as post1 } from "lib/meta";
-import { useAvifInCss as post2 } from "lib/meta";
-import { useAvifInWordpress as post3 } from "lib/meta";
-
+import { Blog, Checklist, ContentTable, H } from "@components/Blog/";
+import { ContentTableEntry } from "@components/Blog/ContentTable";
+import {
+  avifVsJpg as postdata,
+  useAvifInCss as post2,
+  useAvifInHtml as post1,
+  useAvifInWordpress as post3,
+} from "lib/meta";
 import { useState } from "react";
-import ContentTable, { ContentTableEntry } from "@components/Blog/ContentTable";
 
 export default function BlogPost() {
   const [contentTable, setContentTable] = useState<ContentTableEntry[]>([]);

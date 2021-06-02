@@ -1,6 +1,6 @@
-import JSZip from "jszip";
-import { saveFile } from "@utils/utils";
 import SmartLink from "@components/SmartLink";
+import { saveFile } from "@utils/utils";
+import JSZip from "jszip";
 
 export interface DownloadButtonProps {
   files: File[];

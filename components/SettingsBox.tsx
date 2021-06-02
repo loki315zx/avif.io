@@ -1,6 +1,6 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
 import PercentageSlider from "@components/PercentageSlider";
 import { getCookieJson, setCookieJson } from "@utils/cookies";
+import React, { ChangeEvent, useEffect, useState } from "react";
 
 export interface Settings {
   effort: number;

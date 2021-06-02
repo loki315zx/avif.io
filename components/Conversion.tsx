@@ -1,10 +1,10 @@
-import { ReactElement, useEffect, useState } from "react";
-import prettyBytes from "pretty-bytes";
-import Converter, { ConversionId, ConversionResult } from "@utils/converter";
-import { splitNameAndExtension } from "@utils/utils";
 import ProgressBar from "@components/ProgressBar";
 import { Settings } from "@components/SettingsBox";
 import ConversionTimeEstimator from "@utils/ConversionTimeEstimator";
+import Converter, { ConversionId, ConversionResult } from "@utils/converter";
+import { splitNameAndExtension } from "@utils/utils";
+import prettyBytes from "pretty-bytes";
+import { ReactElement, useEffect, useState } from "react";
 
 export interface ConversionProps {
   file: File;

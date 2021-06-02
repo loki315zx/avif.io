@@ -1,19 +1,14 @@
-import { ReactElement, useEffect, useState } from "react";
-import Link from "next/link";
-
-import ReactCompareImage from "react-compare-image";
-
 import Conversion from "@components/Conversion";
-import Dropzone from "@components/Dropzone";
 import DownloadButton from "@components/DownloadButton";
+import Dropzone from "@components/Dropzone";
+import Layout from "@components/Layout";
 import SettingsBox, { Settings } from "@components/SettingsBox";
-
 import Converter from "@utils/converter";
 import { uniqueId } from "@utils/utils";
-
 import { index } from "lib/meta";
-
-import Layout from "@components/Layout";
+import Link from "next/link";
+import { ReactElement, useEffect, useState } from "react";
+import ReactCompareImage from "react-compare-image";
 
 /*
  Interfaces

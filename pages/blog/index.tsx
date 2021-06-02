@@ -1,6 +1,5 @@
 import Posts from "@components/Blog/Posts";
 import Layout from "@components/Layout";
-
 /*
 
 #NOTE
@@ -16,28 +15,27 @@ I'd love to have an automatic way, like:
 4. Create sections with title+posts accordingly.
 
 */
-
-import { useAvifInCloudflare as post1 } from "lib/meta";
-import { useAvifInCss as post2 } from "lib/meta";
-import { useAvifInEdge as post3 } from "lib/meta";
-import { useAvifInFirefox as post4 } from "lib/meta";
-import { useAvifInFrameworks as post5 } from "lib/meta";
-import { useAvifInGimp as post6 } from "lib/meta";
-import { useAvifInHtml as post7 } from "lib/meta";
-import { useAvifInNextjs as post8 } from "lib/meta";
-import { useAvifInWindows as post9 } from "lib/meta";
-import { useAvifInWordpress as post10 } from "lib/meta";
-import { useAvifInNetlify as post11 } from "lib/meta";
-import { useAvifInMagento as post12 } from "lib/meta";
-import { useAvifInSafari as post13 } from "lib/meta";
-
-import { january2021 as post101 } from "lib/meta";
-import { february2021 as post102 } from "lib/meta";
-import { march2021 as post103 } from "lib/meta";
-
-import { imageOptimizationIn2021 as post1001 } from "lib/meta";
-
-import { avifVsJpg as post2001 } from "lib/meta";
+import {
+  avifVsJpg as post2001,
+  blog as postdata,
+  february2021 as post102,
+  imageOptimizationIn2021 as post1001,
+  january2021 as post101,
+  march2021 as post103,
+  useAvifInCloudflare as post1,
+  useAvifInCss as post2,
+  useAvifInEdge as post3,
+  useAvifInFirefox as post4,
+  useAvifInFrameworks as post5,
+  useAvifInGimp as post6,
+  useAvifInHtml as post7,
+  useAvifInMagento as post12,
+  useAvifInNetlify as post11,
+  useAvifInNextjs as post8,
+  useAvifInSafari as post13,
+  useAvifInWindows as post9,
+  useAvifInWordpress as post10,
+} from "lib/meta";
 
 const comparisons = [post2001];
 const releases = [post103, post102, post101];
@@ -57,8 +55,6 @@ const posts = [
   post12,
   post13,
 ];
-
-import { blog as postdata } from "lib/meta";
 
 export default function BlogAvif() {
   return (

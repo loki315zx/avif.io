@@ -2181,6 +2181,7 @@ pre {
   body {
     overflow-x: hidden;
   }
+
   .blog > * {
     padding: var(--s5) var(--s0) var(--s2);
   }

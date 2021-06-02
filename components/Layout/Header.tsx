@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
 import SmartLink from "@components/SmartLink";
+import React, { useEffect, useState } from "react";
 
 export default function Header() {
   /* Detect scroll for fixed header */

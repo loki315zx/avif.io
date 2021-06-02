@@ -1,7 +1,7 @@
-import { useEffect } from "react";
-import Head from "next/head";
-import "@styles/normalize.min.css";
 import "@styles/globals.css";
+import "@styles/normalize.min.css";
+import Head from "next/head";
+import { useEffect } from "react";
 
 export default function AvifIo({ Component, pageProps }: any) {
   useEffect(arrayBufferPolyfill, []);

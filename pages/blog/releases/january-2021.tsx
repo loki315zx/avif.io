@@ -1,15 +1,12 @@
-import Checklist from "@components/Blog/Checklist";
-import Blog from "@components/Blog";
-import H from "@components/Blog/H";
-
-import { january2021 as postdata } from "lib/meta";
-
-import { march2021 as post1 } from "lib/meta";
-import { february2021 as post2 } from "lib/meta";
-import { useAvifInWordpress as post3 } from "lib/meta";
-
+import { Blog, Checklist, ContentTable, H } from "@components/Blog/";
+import { ContentTableEntry } from "@components/Blog/ContentTable";
+import {
+  february2021 as post2,
+  january2021 as postdata,
+  march2021 as post1,
+  useAvifInWordpress as post3,
+} from "lib/meta";
 import { useState } from "react";
-import ContentTable, { ContentTableEntry } from "@components/Blog/ContentTable";
 
 export default function BlogPost() {
   const [contentTable, setContentTable] = useState<ContentTableEntry[]>([]);

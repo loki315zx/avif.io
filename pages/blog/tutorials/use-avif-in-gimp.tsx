@@ -1,15 +1,13 @@
-import Blog from "@components/Blog";
-import H from "@components/Blog/H";
+import { Blog, ContentTable, H, Image } from "@components/Blog/";
+import { ContentTableEntry } from "@components/Blog/ContentTable";
 import SmartLink from "@components/SmartLink";
-import Image from "@components/Blog/Image";
-
-import { useAvifInGimp as postdata } from "lib/meta";
-import { useAvifInWindows as post1 } from "lib/meta";
-import { useAvifInHtml as post2 } from "lib/meta";
-import { useAvifInWordpress as post3 } from "lib/meta";
-
+import {
+  useAvifInGimp as postdata,
+  useAvifInHtml as post2,
+  useAvifInWindows as post1,
+  useAvifInWordpress as post3,
+} from "lib/meta";
 import { useState } from "react";
-import ContentTable, { ContentTableEntry } from "@components/Blog/ContentTable";
 
 export default function BlogPost() {
   const [contentTable, setContentTable] = useState<ContentTableEntry[]>([]);
