@@ -1,4 +1,4 @@
-import SmartLink from "@components/SmartLink";
+import Link from "@components/Link";
 import React, { useEffect, useState } from "react";
 
 export default function Header() {
@@ -16,10 +16,10 @@ export default function Header() {
   return (
     <header className={isFixed ? undefined : "fixed"}>
       <nav>
-        <SmartLink link="/" text="avif.io" className="logo" />
-        <SmartLink text="Blog" link="/blog/" />
-        <SmartLink text="Tutorials" link="/blog/#tutorials" />
-        <SmartLink text="Discord" link="discord.com/invite/6w42YpF5hm" ext />
+        <Link link="/" text="avif.io" className="logo" />
+        <Link text="Blog" link="/blog/" />
+        <Link text="Tutorials" link="/blog/#tutorials" />
+        <Link text="Discord" link="discord.com/invite/6w42YpF5hm" ext />
       </nav>
     </header>
   );

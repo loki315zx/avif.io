@@ -1,11 +1,10 @@
-import { Blog, Checklist, ContentTable, H } from "@components/Blog/";
+import { Blog, Checklist, ContentTable, H, Link } from "@components/Blog/";
 import { ContentTableEntry } from "@components/Blog/ContentTable";
-import SmartLink from "@components/SmartLink";
 import {
   february2021 as post3,
   january2021 as post2,
   march2021 as meta,
-  useAvifInWordpress as post1,
+  tutorialWordpress as post1,
 } from "lib/meta";
 import { useState } from "react";
 
@@ -26,7 +25,7 @@ export default function BlogPost() {
       design websites for a good accessibility, especially when using screenreaders or being unable
       to use a pointer like a mouse but only rely on the keyboard.
       <Checklist
-        advantages={[
+        items={[
           "Navigation through the website is possible without the mouse",
           "More semantic HTML elements",
           "Improved markup for screenreaders",
@@ -50,21 +49,21 @@ export default function BlogPost() {
       quality using an SSIM measure, as well as training an AI model on our data in the future. All
       of course, while keeping your privacy. Your images will not be analyzed, viewed or stored. We
       are super excited for all the upcoming steps.
-      <SmartLink text="Join our Discord" link="discord.com/invite/6w42YpF5hm" ext /> for staying up
-      to date on latest changes and being part of the development.
+      <Link text="Join our Discord" link="discord.com/invite/6w42YpF5hm" ext /> for staying up to
+      date on latest changes and being part of the development.
       <H contentTableCallback={contentTableCallback} level={2} text="Conversion issues" />
       These past few weeks, we've gotten a lot of correspondence from the Firefox developers,
       specifically Jon Bauman, the guy who is responsible for the AVIF implementation, especially
       the recent upcoming full public release, without AVIF support hidden behind a developer flag.
       Long story short, they (or well, a user)
-      <SmartLink
+      <Link
         aria="reported bug on mozilla bug forum"
         text="experienced a few bugs when it comes to our converter."
         link="bugzilla.mozilla.org/show_bug.cgi?id=1700723"
         ext
       />
       It seems like our AVIF serialization
-      <SmartLink
+      <Link
         aria="bugtracker for avif-serialize issues"
         text="is running with a third party dependency"
         link="github.com/mozilla/mp4parse-rust/issues/236"
@@ -72,7 +71,7 @@ export default function BlogPost() {
       />
       that does not comply with the official AVIF spec. In order to work around this and also give
       us more flexibility in the future, we are currently looking into the
-      <SmartLink
+      <Link
         aria="libheif github page"
         text="inclusion of libheif"
         link="github.com/strukturag/libheif"

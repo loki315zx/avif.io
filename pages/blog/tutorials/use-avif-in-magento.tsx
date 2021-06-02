@@ -1,11 +1,10 @@
-import { Blog, ContentTable, H } from "@components/Blog/";
+import { Blog, ContentTable, H, Link } from "@components/Blog/";
 import { ContentTableEntry } from "@components/Blog/ContentTable";
-import SmartLink from "@components/SmartLink";
 import {
-  useAvifInCloudflare as post1,
-  useAvifInMagento as meta,
-  useAvifInNetlify as post2,
-  useAvifInWordpress as post3,
+  tutorialCloudflare as post1,
+  tutorialMagento as meta,
+  tutorialNetlify as post2,
+  tutorialWordpress as post3,
 } from "lib/meta";
 import { useState } from "react";
 
@@ -36,7 +35,7 @@ export default function BlogPost() {
       <br /> Please note that this post is not sponsored. As there is no free demo of Magento, we
       could not test them individually on our computers. However, several sources confirm that both
       plugins work perfectly, so we would encourage you to try them out if you like. Also,
-      <SmartLink
+      <Link
         ext
         link="github.com/magento/magento2/pull/32400"
         text="according to a Github pull request,"
@@ -47,7 +46,7 @@ export default function BlogPost() {
         level={2}
         text="Ultimate Image Optimizer Extension"
       />
-      <SmartLink
+      <Link
         ext
         link="jajuma.de/en/jajuma-develop/extensions/ultimate-image-optimizer-extension-for-magento-2"
         text="Ultimate Image Optimizer Extension for Magento 2"
@@ -68,18 +67,14 @@ export default function BlogPost() {
       module into the new Next-Gen image module. Soon, the extensions could include a CLI to
       generate these images in advance rather than generating them in no time at all.
       <br /> I suggest
-      <SmartLink
+      <Link
         ext
         link="packagist.org/packages/yireo/magento2-next-gen-images"
         text="visiting his module page on Packagist"
       />
       or his
-      <SmartLink
-        ext
-        link="yireo.com/blog/2020-12-29-magento2-webp-becomes-next-gen"
-        text="blog post"
-      />
-      , where he gives more information about the current state of the plugin, as well as errors he
+      <Link ext link="yireo.com/blog/2020-12-29-magento2-webp-becomes-next-gen" text="blog post" />,
+      where he gives more information about the current state of the plugin, as well as errors he
       sees when activating AVIF modules on the server, such as not optimizing the view.xml. Have you
       also created an AVIF module / extension? Let us know so we can add it to the list.
     </Blog>

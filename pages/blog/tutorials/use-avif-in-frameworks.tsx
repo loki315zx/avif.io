@@ -1,10 +1,10 @@
 import { Blog, Checklist, ContentTable, H, Image, Syntax } from "@components/Blog/";
 import { ContentTableEntry } from "@components/Blog/ContentTable";
 import {
-  useAvifInCss as post2,
-  useAvifInFrameworks as meta,
-  useAvifInHtml as post3,
-  useAvifInNextjs as post1,
+  tutorialCss as post2,
+  tutorialFrameworks as meta,
+  tutorialHtml as post3,
+  tutorialNextjs as post1,
 } from "lib/meta";
 import { useState } from "react";
 
@@ -26,7 +26,7 @@ export default function BlogPost() {
       implementation. To make sure we are not talking nonsense, we tested it with the following
       frameworks:
       <Checklist
-        advantages={[
+        items={[
           "facebook/react",
           "vuejs/vue",
           "angular/angular",
@@ -44,7 +44,7 @@ export default function BlogPost() {
       experiment with the latest version live, we list it here as "maybe works" until we were in the
       science lab.
       <Checklist
-        advantages={["meteor/meteor", "jashkenas/backbone", "polymer/polymer", "emberjs/ember.js"]}
+        items={["meteor/meteor", "jashkenas/backbone", "polymer/polymer", "emberjs/ember.js"]}
         checked={false}
       />
       <H contentTableCallback={contentTableCallback} level={2} text="Example code" />

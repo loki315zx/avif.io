@@ -1,6 +1,6 @@
 import { Blog, ContentTable, H } from "@components/Blog/";
 import { ContentTableEntry } from "@components/Blog/ContentTable";
-import { privacyPolicy as postMeta } from "lib/meta";
+import { privacyPolicy as meta } from "lib/meta";
 import { useState } from "react";
 
 export default function BlogPost() {

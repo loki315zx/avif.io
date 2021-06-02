@@ -1,4 +1,4 @@
-import SmartLink from "@components/SmartLink";
+import Link from "@components/Link";
 import { saveFile } from "@utils/utils";
 import JSZip from "jszip";
 
@@ -18,7 +18,7 @@ export default function DownloadButton(props: DownloadButtonProps) {
     <div className={`downloadall-container ${props.files.length > 1 ? "show" : "hide"}`}>
       <button onClick={onClick}> Download all images </button>
       Enjoying avif.io?
-      <SmartLink
+      <Link
         className="color300"
         text="Join our Discord!"
         link="discord.com/invite/6w42YpF5hm"

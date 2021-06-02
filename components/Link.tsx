@@ -1,6 +1,6 @@
-import Link from "next/link";
+import NextLink from "next/link";
 
-export default function SmartLink(props: {
+export default function Link(props: {
   link: any;
   text?: string;
   newLine?: boolean;
@@ -14,7 +14,7 @@ export default function SmartLink(props: {
     <>
       {" "}
       <div {...(props.newLine ? null : { style: { display: "inline-block" } })}>
-        <Link href={props.ext ? `https://` + props.link : props.link}>
+        <NextLink href={props.ext ? `https://` + props.link : props.link}>
           <a
             title={props.aria ? props.aria : undefined}
             tabIndex={props.tabindex ? props.tabindex : undefined}
@@ -27,7 +27,7 @@ export default function SmartLink(props: {
           >
             {props.text}
           </a>
-        </Link>
+        </NextLink>
       </div>{" "}
     </>
   );

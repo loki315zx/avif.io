@@ -1,8 +1,8 @@
 export default function Checklist(props: any) {
-  const listItems = props.advantages.map((advantage: any) => (
-    <li key={advantage}>
+  const listItems = props.items.map((item: any) => (
+    <li key={item}>
       <span className="checklist">✓</span>
-      {advantage}
+      {item}
     </li>
   ));
   return <ul className="checkbox-list">{listItems}</ul>;

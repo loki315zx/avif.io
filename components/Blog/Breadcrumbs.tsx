@@ -1,4 +1,4 @@
-import SmartLink from "@components/SmartLink";
+import Link from "@components/Link";
 import Head from "next/head";
 import { jsonLdScriptProps } from "react-schemaorg";
 import { BreadcrumbList } from "schema-dts";
@@ -34,10 +34,10 @@ export default function Breadcrumbs(props: any) {
       </Head>
       <div className="breadcrumbs">
         <div>
-          <SmartLink className="white" link={`/${urlSplit[0]}/`} text={`#${urlSplit[0]}`} />
+          <Link className="white" link={`/${urlSplit[0]}/`} text={`#${urlSplit[0]}`} />
           {urlSplit[2] ? (
             <div className="white inline">
-              <SmartLink
+              <Link
                 className="white"
                 link={`/${urlSplit[0]}#${urlSplit[1]}`}
                 text={`#${urlSplit[1]}`}

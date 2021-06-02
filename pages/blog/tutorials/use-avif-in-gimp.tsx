@@ -1,11 +1,10 @@
-import { Blog, ContentTable, H, Image } from "@components/Blog/";
+import { Blog, ContentTable, H, Image, Link } from "@components/Blog/";
 import { ContentTableEntry } from "@components/Blog/ContentTable";
-import SmartLink from "@components/SmartLink";
 import {
-  useAvifInGimp as meta,
-  useAvifInHtml as post2,
-  useAvifInWindows as post1,
-  useAvifInWordpress as post3,
+  tutorialGimp as meta,
+  tutorialHtml as post2,
+  tutorialWindows as post1,
+  tutorialWordpress as post3,
 } from "lib/meta";
 import { useState } from "react";
 
@@ -43,11 +42,7 @@ export default function BlogPost() {
       <Image url="gimp-bitdepth" alt="gimp export avif dialogue showing different bit depths" />
       <H contentTableCallback={contentTableCallback} level={2} text="AVIF Plugin" />
       There is also a plugin called
-      <SmartLink
-        text="gimp-avif-plugin by novemesk"
-        link="github.com/novomesk/gimp-avif-plugin"
-        ext
-      />
+      <Link text="gimp-avif-plugin by novemesk" link="github.com/novomesk/gimp-avif-plugin" ext />
       . Despite the non-creative name, the user interface is fantastic. It allows you to choose from
       many options, such as minimum and maximum quantizer, pixel format, bit depth, encoder, encoder
       speed, alpha channel settings, EXIF data and XMP data processing, as well as the ICC color
@@ -56,7 +51,7 @@ export default function BlogPost() {
       <H contentTableCallback={contentTableCallback} level={2} text="Converting existing images" />
       If you look to have a lot of images converted, it's a lot easier to convert them all in one
       go. Make life easier for yourself by
-      <SmartLink text="using our AVIF converter, which is free." link="/" />
+      <Link text="using our AVIF converter, which is free." link="/" />
     </Blog>
   );
 }

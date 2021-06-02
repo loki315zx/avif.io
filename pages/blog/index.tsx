@@ -22,19 +22,19 @@ import {
   imageOptimizationIn2021 as post1001,
   january2021 as post101,
   march2021 as post103,
-  useAvifInCloudflare as post1,
-  useAvifInCss as post2,
-  useAvifInEdge as post3,
-  useAvifInFirefox as post4,
-  useAvifInFrameworks as post5,
-  useAvifInGimp as post6,
-  useAvifInHtml as post7,
-  useAvifInMagento as post12,
-  useAvifInNetlify as post11,
-  useAvifInNextjs as post8,
-  useAvifInSafari as post13,
-  useAvifInWindows as post9,
-  useAvifInWordpress as post10,
+  tutorialCloudflare as post1,
+  tutorialCss as post2,
+  tutorialEdge as post3,
+  tutorialFirefox as post4,
+  tutorialFrameworks as post5,
+  tutorialGimp as post6,
+  tutorialHtml as post7,
+  tutorialMagento as post12,
+  tutorialNetlify as post11,
+  tutorialNextjs as post8,
+  tutorialSafari as post13,
+  tutorialWindows as post9,
+  tutorialWordpress as post10,
 } from "lib/meta";
 
 const comparisons = [post2001];
@@ -58,11 +58,11 @@ const posts = [
 
 export default function BlogAvif() {
   return (
-    <Layout meta={postMeta}>
+    <Layout meta={meta}>
       <main className="archive blog">
         <div className="blog__header white center">
-          <h1>{postMeta.title}</h1>
-          <h2>{postMeta.description}</h2>
+          <h1>{meta.title}</h1>
+          <h2>{meta.description}</h2>
         </div>
         <Posts posts={articles} title="articles" />
         <Posts posts={posts} title="tutorials" />

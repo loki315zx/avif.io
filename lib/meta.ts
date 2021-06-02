@@ -94,7 +94,7 @@ export const march2021 = {
   blog: true,
 };
 
-export const useAvifInCloudflare = {
+export const tutorialCloudflare = {
   description:
     "Cloudflare has added support for AVIF, a new image format. Learn how to optimize images and convert them to WebP or AVIF on demand.",
   title: "Boost your images with Cloudflare AVIF support",
@@ -144,7 +144,7 @@ export const useAvifInCloudflare = {
   blog: true,
 };
 
-export const useAvifInCss = {
+export const tutorialCss = {
   title: "Use AVIF images as CSS Background",
   description:
     "Learn how to boost your website by using the new AVIF image format in the `background-images` of your CSS.",
@@ -190,7 +190,7 @@ export const useAvifInCss = {
   blog: true,
 };
 
-export const useAvifInEdge = {
+export const tutorialEdge = {
   title: "View AVIF Images In Microsoft Edge",
   description:
     "Internet Explorer 6, the latest brow.. oh, it's called Edge? Well, okay. The current state about AVIF in Edge is difficult. Learn more about it here.",
@@ -241,7 +241,7 @@ export const useAvifInEdge = {
   blog: true,
 };
 
-export const useAvifInSafari = {
+export const tutorialSafari = {
   title: "Is Safari adding AVIF support in 2021?",
   description:
     "Everyone is ready to use AVIF, is Apple ready as well? Find out more about the current state in Webkit and Safari.",
@@ -282,7 +282,7 @@ export const useAvifInSafari = {
   blog: true,
 };
 
-export const useAvifInFirefox = {
+export const tutorialFirefox = {
   title: "Firefox supports AVIF, Updated Guide June 20201",
   description:
     "Learn about the current state of AVIF in Firefox and how to enable support with a simple tutorial.",
@@ -344,7 +344,7 @@ export const useAvifInFirefox = {
   blog: true,
 };
 
-export const useAvifInFrameworks = {
+export const tutorialFrameworks = {
   title: "Use AVIF in Frameworks like Vue, React and Angular",
   description: "Serving AVIF images via JavaScript frameworks is quite easy - find out more here.",
   url: "blog/tutorials/use-avif-in-frameworks/",
@@ -384,7 +384,7 @@ export const useAvifInFrameworks = {
   blog: true,
 };
 
-export const useAvifInMagento = {
+export const tutorialMagento = {
   title: "Magento 2 AVIF Support? Native and with extensions!",
   description: "Find out about the current state of AVIF support in Magento 2.",
   url: "blog/tutorials/use-avif-in-magento/",
@@ -423,7 +423,7 @@ export const useAvifInMagento = {
   blog: true,
 };
 
-export const useAvifInGimp = {
+export const tutorialGimp = {
   title: "GIMP supports AVIF! Learn how to use it.",
   description:
     "GIMP 2.10.22 now includes HEIC support and AVIF support. Learn how to take advantage of these new features.",
@@ -469,7 +469,7 @@ export const useAvifInGimp = {
   blog: true,
 };
 
-export const useAvifInHtml = {
+export const tutorialHtml = {
   title: "How to get started with AVIF using HTML",
   description:
     "Enjoy this in-depth guide on how to use AVIF in HTML. Featuring examples with modern delivery standards.",
@@ -527,7 +527,7 @@ export const useAvifInHtml = {
   blog: true,
 };
 
-export const useAvifInNextjs = {
+export const tutorialNextjs = {
   title: "Start using AVIF in your Next.JS project",
   description:
     "Curious to read on how to use AVIF images in Next.JS? Well, this site does exactly that! Learn more.",
@@ -573,7 +573,7 @@ export const useAvifInNextjs = {
   blog: true,
 };
 
-export const useAvifInWindows = {
+export const tutorialWindows = {
   title: "Does Windows support AVIF already?",
   description:
     "Learn how to make AVIF images load on native Windows 10 applications such as Paint and File Explorer.",
@@ -636,7 +636,7 @@ export const useAvifInWindows = {
   blog: true,
 };
 
-export const useAvifInNetlify = {
+export const tutorialNetlify = {
   title: "Don't miss out on AVIF when using Netlify",
   description:
     "Learn how to proper configure Netlify so that you can use AVIF image files on your website today.",
@@ -665,7 +665,7 @@ export const useAvifInNetlify = {
   blog: true,
 };
 
-export const useAvifInWordpress = {
+export const tutorialWordpress = {
   title: "How To Use AVIF Images In WordPress",
   description:
     "WordPress doesn't allow uploading AVIF files. Learn how to still use AVIF images on your website today.",

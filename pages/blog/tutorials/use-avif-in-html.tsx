@@ -1,11 +1,10 @@
-import { Blog, Checklist, ContentTable, H, Syntax } from "@components/Blog/";
+import { Blog, Checklist, ContentTable, H, Link, Syntax } from "@components/Blog/";
 import { ContentTableEntry } from "@components/Blog/ContentTable";
-import SmartLink from "@components/SmartLink";
 import {
-  useAvifInCss as post1,
-  useAvifInFirefox as post3,
-  useAvifInFrameworks as post2,
-  useAvifInHtml as meta,,
+  tutorialCss as post1,
+  tutorialFirefox as post3,
+  tutorialFrameworks as post2,
+  tutorialHtml as meta,
 } from "lib/meta";
 import { useState } from "react";
 
@@ -42,7 +41,7 @@ export default function BlogPost() {
       browsers <b>load only one image at a time</b>, which reduces the load on the server. Besides,
       you don't need a script to process multiple images.
       <Checklist
-        advantages={[
+        items={[
           "Does not download more than one image at a time",
           "Native support for selecting the most appropriate image",
           "96% browser support and automatic fallback",
@@ -110,9 +109,9 @@ src="/image.jpg" alt="an avif image" />
       <br /> Please remember to provide fallback images for older browser versions or experimental
       use as in Firefox. Otherwise, your user experience may suffer as images are not rendered. AVIF
       is also good for backgrounds. Check out the{" "}
-      <SmartLink text="CSS article." link="/blog/tutorials/use-avif-in-css/" /> How about
-      <SmartLink text="frameworks?" link="/blog/tutorials/use-avif-in-frameworks/" /> Enjoy this
-      article with the different types of frameworks you can use.
+      <Link text="CSS article." link="/blog/tutorials/use-avif-in-css/" /> How about
+      <Link text="frameworks?" link="/blog/tutorials/use-avif-in-frameworks/" /> Enjoy this article
+      with the different types of frameworks you can use.
     </Blog>
   );
 }

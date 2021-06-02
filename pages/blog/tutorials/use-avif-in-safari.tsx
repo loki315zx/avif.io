@@ -1,10 +1,10 @@
 import { Blog, ContentTable, H } from "@components/Blog/";
 import { ContentTableEntry } from "@components/Blog/ContentTable";
 import {
-  useAvifInEdge as post2,
-  useAvifInFirefox as post1,
-  useAvifInHtml as post3,
-  useAvifInSafari as meta,,
+  tutorialEdge as post2,
+  tutorialFirefox as post1,
+  tutorialHtml as post3,
+  tutorialSafari as meta,
 } from "lib/meta";
 import { useState } from "react";
 

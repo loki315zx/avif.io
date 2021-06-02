@@ -1,11 +1,10 @@
-import { Blog, Checklist, ContentTable, H, Image, Syntax } from "@components/Blog/";
+import { Blog, Checklist, ContentTable, H, Image, Link, Syntax } from "@components/Blog/";
 import { ContentTableEntry } from "@components/Blog/ContentTable";
-import SmartLink from "@components/SmartLink";
 import {
-  useAvifInCloudflare as meta,
-  useAvifInCss as post2,
-  useAvifInHtml as post1,
-  useAvifInNextjs as post3,
+  tutorialCloudflare as meta,
+  tutorialCss as post2,
+  tutorialHtml as post1,
+  tutorialNextjs as post3,
 } from "lib/meta";
 import { useState } from "react";
 
@@ -45,7 +44,7 @@ export default function BlogPost() {
       Regarding their latest blog post about AVIF, Cloudflare made the decision to support AVIF
       because of the following benefits:
       <Checklist
-        advantages={[
+        items={[
           "fixes WebP biggest flaws",
           "uses the next generation VP10 video codec",
           "is not limited to 8-bit color depth and support 12-bit color",
@@ -97,10 +96,10 @@ export default function BlogPost() {
       and you can still handle the large file size.
       <H contentTableCallback={contentTableCallback} level={2} text="The picture element" />
       In our Tutorial on
-      <SmartLink link="/blog/tutorials/use-avif-in-html/" text="how to use avif in HTML" />, we
-      present you the {`<picture>`} element as the best option to serve AVIF files in an HTML
-      environment. Cloudflare allows you to use their image optimization endpoint to perform the
-      conversion if you don't want to use Workers.
+      <Link link="/blog/tutorials/use-avif-in-html/" text="how to use avif in HTML" />, we present
+      you the {`<picture>`} element as the best option to serve AVIF files in an HTML environment.
+      Cloudflare allows you to use their image optimization endpoint to perform the conversion if
+      you don't want to use Workers.
       <Syntax language="html">
         {`<picture>
     <source type="image/avif" 
@@ -116,7 +115,7 @@ export default function BlogPost() {
       Cloudflare does regularly. They already have preliminary support for HTTP/3. Is there anything
       else you would like to know about avif? Do you have a good suggestion for an advanced worker
       script?
-      <SmartLink link="twitter.com/jschmitz97" text="Tell us on Justin's Twitter." ext />
+      <Link link="twitter.com/jschmitz97" text="Tell us on Justin's Twitter." ext />
     </Blog>
   );
 }

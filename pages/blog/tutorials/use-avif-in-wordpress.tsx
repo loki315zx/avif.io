@@ -1,11 +1,10 @@
-import { Blog, ContentTable, H, Image, Syntax } from "@components/Blog/";
+import { Blog, ContentTable, H, Image, Link, Syntax } from "@components/Blog/";
 import { ContentTableEntry } from "@components/Blog/ContentTable";
-import SmartLink from "@components/SmartLink";
 import {
-  useAvifInCloudflare as post3,
-  useAvifInCss as post2,
-  useAvifInHtml as post1,
-  useAvifInWordpress as meta,,
+  tutorialCloudflare as post3,
+  tutorialCss as post2,
+  tutorialHtml as post1,
+  tutorialWordpress as meta,
 } from "lib/meta";
 import { useState } from "react";
 
@@ -93,13 +92,8 @@ add_filter( 'upload_mimes', 'allow_modern_images', 1, 1 );`}
       There's a <b>considerable disadvantage when modifying the functions.php</b>. It's theme
       related. This means whenever you switch a theme or proceed to update your current one, the
       shortcode snippet will be gone. Multiple plugin solutions exist for this issue:
-      <SmartLink
-        link="wordpress.org/plugins/wp-add-mime-types/"
-        text="WP Add Mime Types"
-        newLine
-        ext
-      />
-      <SmartLink link="wordpress.org/plugins/blob-mimes/" text="Lord of the Files" newLine ext />
+      <Link link="wordpress.org/plugins/wp-add-mime-types/" text="WP Add Mime Types" newLine ext />
+      <Link link="wordpress.org/plugins/blob-mimes/" text="Lord of the Files" newLine ext />
       To quote: WordPress relies mostly on name-based validation when deciding whether or not to
       allow a particular file, leaving the door open for various kinds of attacks. Lord of the Files
       (previously known as "blob mimes") adds to this content-based validation and sanitizing,
@@ -108,9 +102,9 @@ add_filter( 'upload_mimes', 'allow_modern_images', 1, 1 );`}
       <H contentTableCallback={contentTableCallback} level={2} text="No automatic conversion" />
       Uploading images is a cool thing, but a colossal problem remains. For every image you want to
       serve to your users, <b>you need to convert it manually</b>.
-      <SmartLink text="Bulk converters like avif.io" link="/" /> offer a solution to convert
-      multiple files. However,
-      <SmartLink text="using the HTML picture tag" link="/blog/tutorials/use-avif-in-html/" />
+      <Link text="Bulk converters like avif.io" link="/" /> offer a solution to convert multiple
+      files. However,
+      <Link text="using the HTML picture tag" link="/blog/tutorials/use-avif-in-html/" />
       remains.
       <br /> A simpler idea would be an image plugin that automatically converts images to modern
       formats and offers the best solution based on your user's browser.

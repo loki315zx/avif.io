@@ -1,11 +1,10 @@
-import { Blog, ContentTable, H, Syntax } from "@components/Blog/";
+import { Blog, ContentTable, H, Link, Syntax } from "@components/Blog/";
 import { ContentTableEntry } from "@components/Blog/ContentTable";
-import SmartLink from "@components/SmartLink";
 import {
-  useAvifInCloudflare as post1,
-  useAvifInFrameworks as post2,
-  useAvifInNetlify as meta,
-  useAvifInWordpress as post3,
+  tutorialCloudflare as post1,
+  tutorialFrameworks as post2,
+  tutorialNetlify as meta,
+  tutorialWordpress as post3,
 } from "lib/meta";
 import { useState } from "react";
 
@@ -28,7 +27,7 @@ export default function BlogPost() {
         native image HTML tag
       </b>
       , as we explained here:
-      <SmartLink link="/blog/tutorials/use-avif-in-html/" text="How to use AVIF in HTML" />
+      <Link link="/blog/tutorials/use-avif-in-html/" text="How to use AVIF in HTML" />
       <H contentTableCallback={contentTableCallback} level={2} text="Defining custom headers" />
       While using the image tag on Netlify seems to work, there was a problem with using. avif
       files. When trying to view the images inside Firefox, we noticed that the images did not show
@@ -46,7 +45,7 @@ Content-Type = "image/avif"`}
       Enabling AVIF support on Netlify is not easy as simply clicking a single button. However, it
       can be easily achieved by customizing the configuration file to your specific needs. If this
       is the first time you hear about the configuration file, I suggest you take a look at its
-      <SmartLink
+      <Link
         ext
         link="docs.netlify.com/configure-builds/file-based-configuration/"
         text="documentation"

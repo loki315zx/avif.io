@@ -1,11 +1,10 @@
-import { Blog, ContentTable, H, Image, Syntax } from "@components/Blog/";
+import { Blog, ContentTable, H, Image, Link, Syntax } from "@components/Blog/";
 import { ContentTableEntry } from "@components/Blog/ContentTable";
-import SmartLink from "@components/SmartLink";
 import {
-  useAvifInCss as meta,
-  useAvifInFrameworks as post2,
-  useAvifInHtml as post1,
-  useAvifInWindows as post3,
+  tutorialCss as meta,
+  tutorialFrameworks as post2,
+  tutorialHtml as post1,
+  tutorialWindows as post3,
 } from "lib/meta";
 import { useState } from "react";
 
@@ -21,11 +20,11 @@ export default function BlogPost() {
       <ContentTable contentTable={contentTable} />
       <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
       Using AVIF images via HTML is very easy, as you can read
-      <SmartLink text="in this tutorial." link="/blog/tutorials/use-avif-in-html/" /> Furthermore,
-      it is easy because <b>HTML provides a media-type hint</b> that helps the browser deliver the
-      best version of your image. Unfortunately, CSS does not have such an option. However, with a
-      simple Javascript function, we can easily support WebP and AVIF. We have created a detection
-      script that manipulates the HTML element of your page by writing classes.
+      <Link text="in this tutorial." link="/blog/tutorials/use-avif-in-html/" /> Furthermore, it is
+      easy because <b>HTML provides a media-type hint</b> that helps the browser deliver the best
+      version of your image. Unfortunately, CSS does not have such an option. However, with a simple
+      Javascript function, we can easily support WebP and AVIF. We have created a detection script
+      that manipulates the HTML element of your page by writing classes.
       <H contentTableCallback={contentTableCallback} level={2} text="How CSS works" />
       We must remember that in CSS, the first rule does not win, but <b>the last rule wins</b>. We
       have created a script that checks AVIF and WebP support by loading an AVIF-encoded 1x1 pixel
@@ -99,7 +98,7 @@ avif.onerror = function () {
       <Image url="css-edge" alt="microsoft edge with a webp class in the html element" />
       <H contentTableCallback={contentTableCallback} level={2} text="SCSS background mixin" />
       Earlier this week,
-      <SmartLink
+      <Link
         link="raoulkramer.de/avif-and-webp-images-as-css-background-images/"
         text="Raoul Kramer"
         ext
@@ -144,8 +143,8 @@ avif.onerror = function () {
       declaration. This is a brand-new feature for CSS4. Until browsers support this feature, we
       must use JavaScript to detect AVIF and WebP support.
       <H contentTableCallback={contentTableCallback} level={2} text="Generating AVIF images" />
-      Creating AVIF files with <SmartLink text="avif.io" link="/" /> is child's play. Simply drag
-      the files into the converter and it will do the rest. You will get the best results in the
+      Creating AVIF files with <Link text="avif.io" link="/" /> is child's play. Simply drag the
+      files into the converter and it will do the rest. You will get the best results in the
       shortest time.
     </Blog>
   );

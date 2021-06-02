@@ -1,11 +1,11 @@
-import { Blog, ContentTable, H, Image, Syntax } from "@components/Blog/";
+import { Blog, Link, ContentTable, H, Image, Syntax } from "@components/Blog/";
 import { ContentTableEntry } from "@components/Blog/ContentTable";
-import SmartLink from "@components/SmartLink";
+import Link from "@components/Link";
 import {
-  useAvifInCss as post2,
-  useAvifInFrameworks as post1,
-  useAvifInHtml as post3,
-  useAvifInNextjs as meta,,
+  tutorialCss as post2,
+  tutorialFrameworks as post1,
+  tutorialHtml as post3,
+  tutorialNextjs as meta,
 } from "lib/meta";
 import { useState } from "react";
 
@@ -49,10 +49,10 @@ module.exports = withImages()`}
       All in all, it's a simple "Put this image in your project, add it to the component and we'll
       do the entire conversion and optimization" approach. While it converts images to newer
       formats, it does not yet do so for AVIF. There is a
-      <SmartLink link="github.com/vercel/next.js/pull/20381" text="canary version" ext /> on Github
-      that refers to AVIF more than once, so hopefully we will see this supported in future
-      versions. Finally, the images loaded via CSS will not be optimized, although we pray that this
-      will be the case in future versions.
+      <Link link="github.com/vercel/next.js/pull/20381" text="canary version" ext /> on Github that
+      refers to AVIF more than once, so hopefully we will see this supported in future versions.
+      Finally, the images loaded via CSS will not be optimized, although we pray that this will be
+      the case in future versions.
       <Syntax language="javascript">{`import Image from 'next/image'
 (..)
       <Image
@@ -65,12 +65,8 @@ module.exports = withImages()`}
       <H contentTableCallback={contentTableCallback} level={2} text="Next Optimized Images" />
       Until this point, if you rely heavily on CSS images, you can use the third-party plugin in
       Next.JS called
-      <SmartLink
-        text="next-optimized-images"
-        link="github.com/cyrilwanner/next-optimized-images"
-        ext
-      />
-      . It has many additional features, and it <b> supports loading images with CSS</b>, which is
+      <Link text="next-optimized-images" link="github.com/cyrilwanner/next-optimized-images" ext />.
+      It has many additional features, and it <b> supports loading images with CSS</b>, which is
       very useful. However, the plugin does not yet support AVIF as well. Nevertheless, the author
       is currently working on a complete overhaul of the entire plugin, and a Canary version is
       already published.
@@ -98,7 +94,7 @@ module.exports = withImages()`}
       We have developed our own image component, which uses all the features that modern image
       markup should take into account, from the lazy load to the aspect ratio. We only have to
       choose a path and an alt text. For more information on the perfect image markup visit
-      <SmartLink
+      <Link
         text="Guide to Image Performance."
         link="/blog/articles/optimize-images-for-web-performance/"
       />
@@ -109,7 +105,7 @@ module.exports = withImages()`}
         text="3. Convert images with sharp on build time"
       />
       Finally, we have the NodeJS library
-      <SmartLink text="sharp" link="sharp.pixelplumbing.com/" ext /> integrated into our build and
+      <Link text="sharp" link="sharp.pixelplumbing.com/" ext /> integrated into our build and
       release script to convert images before we upload our website data to Firebase. The sharp
       script detects all images in a specific folder and converts them into all the different
       formats and sizes we need. Below is the current script we are using.
@@ -155,11 +151,7 @@ fs.readdir(input, (err, files) => {
       </Syntax>
       Keep in mind that this is only suitable for website without many images, as it significantly
       increases build time. A way to bypass that could be creating an own sharp API and using
-      <SmartLink
-        text="Incremental Static Regeneration."
-        link="youtube.com/watch?v=nrfuN_Hyd3Y"
-        ext
-      />
+      <Link text="Incremental Static Regeneration." link="youtube.com/watch?v=nrfuN_Hyd3Y" ext />
     </Blog>
   );
 }

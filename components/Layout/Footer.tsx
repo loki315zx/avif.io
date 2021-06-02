@@ -1,4 +1,4 @@
-import SmartLink from "@components/SmartLink";
+import Link from "@components/Link";
 import { conversions } from "@lib/conversions";
 
 export default function Footer() {
@@ -9,18 +9,18 @@ export default function Footer() {
           <b>avif.io</b>
         </div>
         <div className="s2">
-          A tool by <SmartLink text="Justin Schmitz" link="justinschmitz.de/" ext />
+          A tool by <Link text="Justin Schmitz" link="justinschmitz.de/" ext />
           and Niksa Sporin that has already converted {conversions} files.
         </div>
       </div>
       <div id="footer-more">
-        <SmartLink text="Blog" link="/blog/" newLine />
-        <SmartLink text="Release Notes" link="/blog#releases" newLine />
-        <SmartLink text="Contact" link="mailto:support@avif.io" newLine />
-        <SmartLink text="Donate" link="buymeacoffee.com/justinschmitz" newLine ext />
+        <Link text="Blog" link="/blog/" newLine />
+        <Link text="Release Notes" link="/blog#releases" newLine />
+        <Link text="Contact" link="mailto:support@avif.io" newLine />
+        <Link text="Donate" link="buymeacoffee.com/justinschmitz" newLine ext />
         <br />
-        <SmartLink text="Sitemap" link="/sitemap.xml" newLine />
-        <SmartLink text="Legal and Privacy" link="/privacy-policy/" newLine />
+        <Link text="Sitemap" link="/sitemap.xml" newLine />
+        <Link text="Legal and Privacy" link="/privacy-policy/" newLine />
       </div>
       <div id="communication">
         <a

@@ -4,7 +4,7 @@ import {
   february2021 as post2,
   january2021 as meta,
   march2021 as post1,
-  useAvifInWordpress as post3,
+  tutorialWordpress as post3,
 } from "lib/meta";
 import { useState } from "react";
 
@@ -24,13 +24,13 @@ export default function BlogPost() {
       image conversion takes place client-side, we aim to minimize the overall clutter caused by the
       conversion to preserve your computer's resources. In this release, we were able to clean up a
       lot of code and remove some dependencies.
-      <Checklist advantages={["Reduced overall page size by 25%"]} checked={true} />
+      <Checklist items={["Reduced overall page size by 25%"]} checked={true} />
       <H contentTableCallback={contentTableCallback} level={2} text="User Experience" />
       Constantly measuring the User Experience is like a drug to us. We once again ensured that
       everything ran smoothly after the big December release, or even better than before. Thanks to
       Hotjar and your feedback, we will make even more changes in this direction in the future.
       <Checklist
-        advantages={[
+        items={[
           "Added a fixed header for easier navigation",
           "If you accept the Cookie Banner, it won't show again",
           "Optimized layout and readability on mobile sites",
@@ -46,18 +46,15 @@ export default function BlogPost() {
       <H contentTableCallback={contentTableCallback} level={2} text="Community" />
       We have a Discord now! We linked it in our header and footer, as you like to click our names a
       lot!
-      <Checklist advantages={["Discord channel!"]} checked={true} />
+      <Checklist items={["Discord channel!"]} checked={true} />
       <H contentTableCallback={contentTableCallback} level={2} text="Accessibility" />
       We fixed several mistakes in terms of accessibility.
-      <Checklist
-        advantages={["More awesome website for visually impaired people!"]}
-        checked={true}
-      />
+      <Checklist items={["More awesome website for visually impaired people!"]} checked={true} />
       <H contentTableCallback={contentTableCallback} level={2} text="Misc" />
       Yada yada. Just some misc stuff I thought I should write into this changelog, even though you
       most likely won't care.
       <Checklist
-        advantages={[
+        items={[
           "Browser Console errors do not show up",
           "Fixed several links not working",
           "We've removed some techy tooltips as probably most people don't care about them",
@@ -72,7 +69,7 @@ export default function BlogPost() {
       <H contentTableCallback={contentTableCallback} level={2} text="Bugs smashed" />
       We smashed some of these good ol' bugs.
       <Checklist
-        advantages={[
+        items={[
           "Several other linting and bug fixes",
           "Fixed our Tutorials overview",
           "Updated our Linting process for less errors",

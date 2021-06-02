@@ -25,9 +25,6 @@ export default function Meta(props: MetaProps) {
       <link rel="canonical" href={`https://avif.io/${props.url}`} />
       <meta charSet="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="msapplication-TileColor" content="#140635" />
-      <meta name="theme-color" content="#140635" />
-      <meta name="msapplication-config" content="none" />
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
       <title>{props.title} | avif.io ✨</title>

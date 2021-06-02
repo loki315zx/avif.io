@@ -4,7 +4,7 @@ import {
   february2021 as meta,
   january2021 as post2,
   march2021 as post1,
-  useAvifInWordpress as post3,
+  tutorialWordpress as post3,
 } from "lib/meta";
 import { useState } from "react";
 
@@ -29,7 +29,7 @@ export default function BlogPost() {
       aarch64. The overall speedup is solid across the speed levels, both for 8bit and 10bit
       encoding. With some drastic improvement for aarch64 on speed 10. Inluded, but not limited to:
       <Checklist
-        advantages={[
+        items={[
           "Improved 4:2:2 support (37% reduction in encoding time, 0.8% to 5% improvement to coding efficiency)",
           "Thread CDEF loop filter with tiles (1.2% reduction in encoding time with 4 tiles)",
           "Enable open partitions on frame boundaries (2% improvement to coding efficiency)",
@@ -54,7 +54,7 @@ export default function BlogPost() {
       Based on an analysis of 500 Hotjar recordings and reading more in depth about several topics,
       we've made several changes for the common user, to improve accessibility and SEO.
       <Checklist
-        advantages={[
+        items={[
           "higher use of semantic elements and aria attributes",
           "added JSON data for better search engine results",
           "linked Sitemap in footer",

@@ -2,9 +2,9 @@ import { Blog, Checklist, ContentTable, H } from "@components/Blog/";
 import { ContentTableEntry } from "@components/Blog/ContentTable";
 import {
   avifVsJpg as meta,
-  useAvifInCss as post2,
-  useAvifInHtml as post1,
-  useAvifInWordpress as post3,
+  tutorialCss as post2,
+  tutorialHtml as post1,
+  tutorialWordpress as post3,
 } from "lib/meta";
 import { useState } from "react";
 
@@ -121,7 +121,7 @@ export default function BlogPost() {
       There are some crucial differences when it comes to looking at the differences in the JPEG vs.
       AVIF debate. For example, you will find that AVIF supports features such as:
       <Checklist
-        advantages={[
+        items={[
           "Any color space including wide color gamut, ISO/IEC-CICP, and ICC",
           "NCLX support: sRGB, linear sRGB, linear Rec2020, etc.",
           "4: 2: 0, 4: 2: 2, 4: 4: 4 chroma subsampling",
@@ -158,7 +158,7 @@ export default function BlogPost() {
       above. Typically, the main differences between AVIF and JPEG could then be broken down as
       follows, with AVIF providing:
       <Checklist
-        advantages={[
+        items={[
           "higher image quality.",
           "lower image size.",
           "slower processing time, expected to improve over the years.",
