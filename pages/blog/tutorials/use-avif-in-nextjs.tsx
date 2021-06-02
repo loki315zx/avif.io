@@ -1,6 +1,5 @@
-import { Blog, Link, ContentTable, H, Image, Syntax } from "@components/Blog/";
+import { Blog, ContentTable, H, Image, Link, Syntax } from "@components/Blog/";
 import { ContentTableEntry } from "@components/Blog/ContentTable";
-import Link from "@components/Link";
 import {
   tutorialCss as post2,
   tutorialFrameworks as post1,
