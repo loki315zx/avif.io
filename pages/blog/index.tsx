@@ -2,7 +2,7 @@ import Posts from "@components/Blog/Posts";
 import Layout from "@components/Layout";
 import meta from "@lib/meta.json";
 
-const comparisons = [meta.avifVsJpg];
+const comparisons = [meta.avifVsJpg, meta.avifVsPng];
 const releases = [meta.january2021, meta.february2021, meta.march2021];
 const articles = [meta.imageOptimizationIn2021];
 const posts = [
