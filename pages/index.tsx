@@ -39,7 +39,7 @@ interface TutorialsBoxProps {
 function AdvantageItem(props: Advantages) {
   return (
     <div className="advantage__grid__item">
-      <div className="advantage__text f2">
+      <div className="advantage__text">
         {props.pre && props.pre} <span className="advantage__important">{props.text}</span>{" "}
         {props.post}
       </div>
