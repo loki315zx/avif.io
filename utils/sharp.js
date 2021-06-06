@@ -27,12 +27,6 @@ fs.readdir(input, (err, files) => {
         .resize({ width: size })
         .toFile(output + fileShort + "-" + size + ".avif");
     }
-    if (file.endsWith(".avif")) {
-      sharp(input + file).toFile(output + fileShort + ".avif");
-    }
-    if (file.endsWith(".jpg")) {
-      sharp(input + file).toFile(output + fileShort + ".jpg");
-    }
     for (let i = 0; i < sizes.length; i++) {
       convert(sizes[i]);
     }
@@ -44,5 +38,9 @@ fs.copyFile("../images/comparison.jpg", "../public/img/comparison.jpg", (err) =>
 });
 
 fs.copyFile("../images/comparison.avif", "../public/img/comparison.avif", (err) => {
+  if (err) throw err;
+});
+
+fs.copyFile("../images/firefox-test.avif", "../public/img/firefox-test.avif", (err) => {
   if (err) throw err;
 });
