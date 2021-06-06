@@ -390,6 +390,9 @@ header.fixed {
 header nav > div > a {
   padding: var(--s0) var(--s1);
 }
+nav {
+  text-align: right;
+}
 
 .logo {
   font-size: var(--f2);

@@ -16,7 +16,7 @@ export default function Header() {
   return (
     <header className={isFixed ? undefined : "fixed"}>
       <nav>
-        <Link link="/" text="avif.io" className="logo" />
+        <Link text="AVIF Converter" link="/" />
         <Link text="Blog" link="/blog/" />
         <Link text="Tutorials" link="/blog/#tutorials" />
         <Link text="Discord" link="discord.com/invite/6w42YpF5hm" ext />

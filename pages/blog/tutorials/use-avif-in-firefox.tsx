@@ -80,7 +80,7 @@ export default function BlogPost() {
       />
       Remember to restart Firefox. Then come back to this page to see this fantastic image:
       <img
-        src="/images/firefox-test.avif"
+        src="/img/firefox-test.avif"
         alt="your browser may show this AVIF img"
         decoding="async"
         loading="lazy"
