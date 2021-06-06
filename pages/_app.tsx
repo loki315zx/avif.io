@@ -22,7 +22,7 @@ export default function AvifIo({ Component, pageProps }: any) {
       <script src="/__/firebase/8.6.5/firebase-firestore.js"></script>
       <script src="/__/firebase/init.js"></script>
       <script src="/console.js"></script>
-      <script>firebase.analytics()</script>
+      {/*<script>firebase.analytics()</script>*/}
     </>
   );
 }
