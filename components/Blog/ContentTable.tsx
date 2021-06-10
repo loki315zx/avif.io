@@ -15,9 +15,9 @@ export default function ContentTable(props: ContentTableProps) {
   ));
 
   return (
-    <div className="tableofcontent">
+    <nav style={{ textAlign: "left" }} aria-label="Chapters" className="tableofcontent">
       <h4>Table of Content</h4>
       <ol>{contentItem}</ol>
-    </div>
+    </nav>
   );
 }

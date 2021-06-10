@@ -18,7 +18,7 @@ export default function BlogPost() {
       posts={[meta.tutCloudflare, meta.tutNetlify, meta.tutWordpress]}
     >
       <ContentTable contentTable={contentTable} />
-      <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Introduction" />
       Every online store shows a lot of images - product photos, brand images, etc. But with all
       these images come <b>challenges and opportunities for optimization</b>. Image optimization is
       a fascinating thing. You can do a lot to optimize them, for example, change the quality of the
@@ -28,7 +28,7 @@ export default function BlogPost() {
       are not yet adopted sufficiently. But{" "}
       <b>AVIF was founded by all major technology and browser companies worldwide</b>, including
       Google, Apple, and Mozilla.
-      <H contentTableCallback={contentTableCallback} level={2} text="Native Magento solution" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Native Magento solution" />
       Installing AVIF support on Magento CMS has been difficult for some time. Fortunately, some
       developers have been working hard on the problem and found solutions.{" "}
       <b>Both solutions offer local and automatic conversion.</b>
@@ -56,7 +56,7 @@ export default function BlogPost() {
       In addition, developers have added lazy loading and retinal support options, giving Magento 2
       stores a complete image optimization solution. Their customers benefit from improved page
       loading times and high-quality images.
-      <H contentTableCallback={contentTableCallback} level={2} text="magento2-next-gen-images" />
+      <H level={2} contentTableCallback={contentTableCallback} text="magento2-next-gen-images" />
       Jisse Reitsma, the founder of Yireo, provides a Magento module that does exactly the same. He
       describes it as a module to <b>add support for NextGen images</b>. Those who love Magento and
       image optimization have probably seen Yireo's work before, as he maintains the Yireo_Webp2

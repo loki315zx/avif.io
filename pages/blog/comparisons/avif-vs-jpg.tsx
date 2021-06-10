@@ -16,7 +16,7 @@ export default function BlogPost() {
   return (
     <Blog postMeta={meta.avifVsJpg} posts={[meta.tutCss, meta.tutHtml, meta.tutWordpress]}>
       <ContentTable contentTable={contentTable} />
-      <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Introduction" />
       Today, we have many image codecs to work with. Images come in all shapes and sizes but also
       formats. However, many do not realize how important it is to have more than one image codec to
       choose from. Today, <b>JPEG is among the most popular image codecs used worldwide</b>. JPEG /
@@ -47,7 +47,7 @@ export default function BlogPost() {
       - a big problem for a large number of users. In addition, the 8-bit limit means that it may
       have difficulty creating HDR-friendly images with high dynamic range while at the same time
       limiting the quality of compression.
-      <H contentTableCallback={contentTableCallback} level={2} text="Quality comparison" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Quality comparison" />
       If you focus on the discussion about which image codec is the best, there will always be one
       opinion or another. However, there is no denying that{" "}
       <b>JPEG suffers in terms of compression quality today</b>. Indeed, even the slightly more
@@ -80,7 +80,7 @@ export default function BlogPost() {
       <b>AVIFs can capture an image/video image the size of an 8K video</b>, its use in modern
       photos is apparent.
       <br />
-      <H contentTableCallback={contentTableCallback} level={2} text="Speed comparison" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Speed comparison" />
       Another crucial aspect, is speed. JPEG was written before the invention of multicore CPU
       chips. So it is designed to work only with a sequential process where the number of cores does
       not matter; it is the clock speed. Today, CPU development is primarily focused on multiple
@@ -96,12 +96,12 @@ export default function BlogPost() {
       experience, as AVIF files are much smaller than the corresponding JPEG or PNG files, and
       therefore can be downloaded and displayed much faster. For larger file sizes, the impact can
       be significant, and you should consider using a format that supports progressive rendering.
-      <H contentTableCallback={contentTableCallback} level={2} text="Animation capacity" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Animation capacity" />
       As you may know, JPEG is an image format. This means that it is typically designed to show
       only still images.{" "}
       <b>AVIF is based on an actual video codec and provides animation capacity.</b> This means that
       it can support animations and movements in a way that JPEG simply can not.
-      <H contentTableCallback={contentTableCallback} level={2} text="Main differences for Nerds" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Main differences for Nerds" />
       There are some crucial differences when it comes to looking at the differences in the JPEG vs.
       AVIF debate. For example, you will find that AVIF supports features such as:
       <Checklist
@@ -159,7 +159,7 @@ export default function BlogPost() {
         AVIF has more or less everything that JPEG lacks, apart from the broad uptake on the market.
       </b>{" "}
       In time that will change.
-      <H contentTableCallback={contentTableCallback} level={2} text="Conclusion" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Conclusion" />
       Most image codecs will be a significant improvement over what we have used in JPEG so far.
       Although the improved JPEG 2000 also offers substantial improvements over its predecessor, it
       still cannot compete with AVIF in many ways.{" "}

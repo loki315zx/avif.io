@@ -17,14 +17,14 @@ export default function BlogPost() {
   return (
     <Blog postMeta={meta.tutCss} posts={[meta.tutFrameworks, meta.tutHtml, meta.tutWindows]}>
       <ContentTable contentTable={contentTable} />
-      <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Introduction" />
       Using AVIF images via HTML is very easy, as you can read
       <Link text="in this tutorial." link="/blog/tutorials/use-avif-in-html/" /> Furthermore, it is
       easy because <b>HTML provides a media-type hint</b> that helps the browser deliver the best
       version of your image. Unfortunately, CSS does not have such an option. However, with a simple
       Javascript function, we can easily support WebP and AVIF. We have created a detection script
       that manipulates the HTML element of your page by writing classes.
-      <H contentTableCallback={contentTableCallback} level={2} text="How CSS works" />
+      <H level={2} contentTableCallback={contentTableCallback} text="How CSS works" />
       We must remember that in CSS, the first rule does not win, but <b>the last rule wins</b>. We
       have created a script that checks AVIF and WebP support by loading an AVIF-encoded 1x1 pixel
       image. If the browser successfully loads the AVIF image, the HTML element receives an "avif"
@@ -70,7 +70,7 @@ avif.onerror = function () {
       <Syntax language="javascript">
         {`var A=new Image;A.src="data:image/avif;base64,AAAAFGZ0eXBhdmlmAAAAAG1pZjEAAACgbWV0YQAAAAAAAAAOcGl0bQAAAAAAAQAAAB5pbG9jAAAAAEQAAAEAAQAAAAEAAAC8AAAAGwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAARWlwcnAAAAAoaXBjbwAAABRpc3BlAAAAAAAAAAQAAAAEAAAADGF2MUOBAAAAAAAAFWlwbWEAAAAAAAAAAQABAgECAAAAI21kYXQSAAoIP8R8hAQ0BUAyDWeeUy0JG+QAACANEkA=",A.onload=function(){document.documentElement.classList.add("avif")};`}{" "}
       </Syntax>
-      <H contentTableCallback={contentTableCallback} level={2} text="Code Snippet" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Code Snippet" />
       Once implemented, we can simply use the following CSS due to the high level classes.
       <Syntax language="css">
         {`/* Simple approach */
@@ -95,7 +95,7 @@ avif.onerror = function () {
       <Image url="css-firefox" alt="firefox quantum without any class" />
       <Image url="css-chrome" alt="our website on chrome gets an avif class" />
       <Image url="css-edge" alt="microsoft edge with a webp class in the html element" />
-      <H contentTableCallback={contentTableCallback} level={2} text="SCSS background mixin" />
+      <H level={2} contentTableCallback={contentTableCallback} text="SCSS background mixin" />
       Earlier this week,
       <Link
         link="raoulkramer.de/avif-and-webp-images-as-css-background-images/"
@@ -120,7 +120,7 @@ avif.onerror = function () {
   }
 }`}
       </Syntax>
-      <H contentTableCallback={contentTableCallback} level={2} text="Future implementation" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Future implementation" />
       The World Wide Web Consortium (W3C) is developing the CSS Images Module Level 4, which allows
       us to define the image type. The image-set property allows us to specify different image
       formats. <b>The browser renders the first image format supported by the browser.</b>
@@ -141,7 +141,7 @@ avif.onerror = function () {
       Currently, image-set is supported by 90% of browsers, but does not yet support type
       declaration. This is a brand-new feature for CSS4. Until browsers support this feature, we
       must use JavaScript to detect AVIF and WebP support.
-      <H contentTableCallback={contentTableCallback} level={2} text="Generating AVIF images" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Generating AVIF images" />
       Creating AVIF files with <Link text="avif.io" link="/" /> is child's play. Simply drag the
       files into the converter and it will do the rest. You will get the best results in the
       shortest time.

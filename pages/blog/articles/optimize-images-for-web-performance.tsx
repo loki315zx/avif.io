@@ -19,7 +19,7 @@ export default function BlogPost() {
       posts={[meta.tutCss, meta.tutHtml, meta.tutWordpress]}
     >
       <ContentTable contentTable={contentTable} />
-      <H contentTableCallback={contentTableCallback} level={2} text="Takeaways" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Takeaways" />
       <Checklist
         items={[
           "Serve images in next-gen formats: Use AVIF and WebP, with JPG as fallback",
@@ -31,7 +31,7 @@ export default function BlogPost() {
         ]}
         checked={true}
       />
-      <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Introduction" />
       <H
         level={5}
         text="
@@ -113,7 +113,11 @@ export default function BlogPost() {
       to us because for example having images without dimensions can cause elements shift while a
       user is trying to interact with it, leading to a bad user experience. With techniques in this
       article, we will keep CLS to zero.
-      <H level={3} text="Summary of image optimization benefits" />
+      <H
+        level={3}
+        contentTableCallback={contentTableCallback}
+        text="Summary of image optimization benefits"
+      />
       Depending on how your website is structured, images make up the bulk of data that needs to be
       loaded. The smaller the file sizes of the images, the faster a website loads. But you don't
       want to end up with a grainy or blurry-looking website, especially in times of high-resolution
@@ -152,7 +156,11 @@ export default function BlogPost() {
       The goal is not to compare enlarged 1:1 previews of high-resolution files, but to{" "}
       <b>compare images with realistic pixel dimensions</b>. This chapter focuses on the file
       format, while the next chapter will focus on the type of compression.
-      <H level={3} text="Other formats than JPG and PNG" />
+      <H
+        level={3}
+        contentTableCallback={contentTableCallback}
+        text="Other formats than JPG and PNG"
+      />
       If you know the right file formats and how to handle different types of images in different
       file formats, you can know which file type to use to speed up the loading time of your website
       while maintaining good image quality.
@@ -186,7 +194,11 @@ export default function BlogPost() {
         ]}
         checked={true}
       />
-      <H level={3} text="Explaining the best usecase for all formats" />
+      <H
+        level={3}
+        contentTableCallback={contentTableCallback}
+        text="Explaining the best usecase for all formats"
+      />
       <H level={4} text="(Not) Using GIF" />
       Most platforms that host short videos do not use GIFs because{" "}
       <b>animated GIFs can be quite large</b>. Twitter, for instance, converts animated GIFs to
@@ -265,7 +277,11 @@ export default function BlogPost() {
       them. <b>JPEG XL competes with AVIF</b>, which has similar compression quality but fewer
       features overall. Unfortunately, it is not yet supported by any browser and should therefore
       not be a concern for the time being.
-      <H level={3} text="How to convert all these image formats correctly?" />
+      <H
+        level={3}
+        contentTableCallback={contentTableCallback}
+        text="How to convert all these image formats correctly?"
+      />
       Opt for JPG as a general fallback, followed by WebP, which is better and has broad support,
       followed by AVIF, which is the latest active file format with slightly less support.
       <br /> To implement this progressive improvement for AVIF, <b>use the picture element</b>. The
@@ -315,7 +331,11 @@ export default function BlogPost() {
         Efficient image encoding reduces your image file and thus the page size and helps to speed
         up page loading.
       </b>
-      <H level={3} text="Lossy vs. lossless compression" />
+      <H
+        level={3}
+        contentTableCallback={contentTableCallback}
+        text="Lossy vs. lossless compression"
+      />
       It is also important to understand that <b>there are two types of compression</b>, lossy and
       lossless. Images are optimized by reducing the amount of data contained in an image, called
       data compression.
@@ -332,7 +352,11 @@ export default function BlogPost() {
       lossy compression. Simply use a good image optimization tool to handle image compression for
       you, at the quality level you feel comfortable with. <br />
       <b>Lossless suits photography websites, use lossy for everything else.</b>
-      <H level={3} text="How to efficiently encode images?" />
+      <H
+        level={3}
+        contentTableCallback={contentTableCallback}
+        text="How to efficiently encode images?"
+      />
       There are a few strategies to efficiently encode images, such as:
       <Checklist
         items={[
@@ -347,7 +371,7 @@ export default function BlogPost() {
         ]}
         checked={true}
       />
-      <H contentTableCallback={contentTableCallback} level={2} text="3) Properly size images" />
+      <H level={2} contentTableCallback={contentTableCallback} text="3) Properly size images" />
       One of the most worthwhile optimizations you can make in the interest of web performance is to
       <b>provide images in the correct size</b>. An all too common problem is that images are
       uploaded at full resolution or of enormous dimensions. In this case, the browser must resize
@@ -386,7 +410,11 @@ export default function BlogPost() {
       <b>the above example only works for images within a fixed width container</b>. If you want a
       full width image, consider creating your images with typical screen widths such as 2560px,
       1920px or 1366px.
-      <H level={3} text="How do we implement different sizes in our code?" />
+      <H
+        level={3}
+        contentTableCallback={contentTableCallback}
+        text="How do we implement different sizes in our code?"
+      />
       We use the attributes <b>srcset</b> and <b>sizes</b> as shown below. The w selector tells the
       browser which URL to use based on the physical pixels that would be used if the image was
       drawn to the user's device given the width calculated from the sizes attribute.
@@ -411,7 +439,11 @@ sizes="(max-width: 720px) 100vw, 720px">
 <img loading="lazy" decoding="async" width="2880" height="1620" src="/img/image-1440.jpg" alt="example image">
 
 </picture>`}</Syntax>
-      <H level={3} text="How do we automate the resize process?" />
+      <H
+        level={3}
+        contentTableCallback={contentTableCallback}
+        text="How do we automate the resize process?"
+      />
       With so many lines of code, manually performing this task can be a difficult process for any
       image, so here are some automation options:
       <Checklist
@@ -453,7 +485,11 @@ sizes="(max-width: 720px) 100vw, 720px">
 </style>
 <!-- Providing width and height is more important than ever. -->
 <img height="853" width="1280" … />`}</Syntax>
-      <H level={3} text="b) Use explicit width and height on image elements" />
+      <H
+        level={3}
+        contentTableCallback={contentTableCallback}
+        text="b) Use explicit width and height on image elements"
+      />
       Always <b>include width and height size</b> attributes to your images and video elements. This
       approach ensures that the browser can allocate the right amount of space in the document while
       loading the image. Image and / or video elements that are not explicitly declared with height
@@ -524,7 +560,7 @@ sizes="(max-width: 720px) 100vw, 720px">
       <b> decode the image off the main thread</b> avoiding user impact of the CPU time used to
       decode the image. It effectively <b>reduces delay in presenting other content</b>.
       <Syntax language="html">{`<img src="image.jpg" decoding="async">`}</Syntax>
-      <H contentTableCallback={contentTableCallback} level={2} text="5) Improve hosting behavior" />
+      <H level={2} contentTableCallback={contentTableCallback} text="5) Improve hosting behavior" />
       <H
         level={5}
         text="
@@ -582,7 +618,7 @@ sizes="(max-width: 720px) 100vw, 720px">
         ]}
         checked={true}
       />
-      <H contentTableCallback={contentTableCallback} level={2} text="6) SEO Image Optimization" />
+      <H level={2} contentTableCallback={contentTableCallback} text="6) SEO Image Optimization" />
       <H
         level={5}
         text="Summary: Use an explanatory file name as well as describing title and alt attributes."
@@ -603,7 +639,11 @@ sizes="(max-width: 720px) 100vw, 720px">
       <br />
       So how can you use <b>SEO image optimization for better visibility</b>? There are a number of
       ways to make your images more accessible to search engines, which we will explain below.
-      <H level={3} text="1. Optimize image file names" />
+      <H
+        level={3}
+        contentTableCallback={contentTableCallback}
+        text="1. Optimize image file names"
+      />
       Storing images with any default filenames can be secondary - but this random string of letters
       and numbers can hurt you in the long run. Before uploading an image to your website, it is
       important to <b>make sure the filename is relevant</b>, because search engines not only search
@@ -654,7 +694,7 @@ sizes="(max-width: 720px) 100vw, 720px">
 <img loading="lazy" decoding="async" width="2880" height="1620" src="/img/image-1440.jpg" alt="example image">
 
 </picture>`}</Syntax>
-      <H contentTableCallback={contentTableCallback} level={2} text="More Tips" />
+      <H level={2} contentTableCallback={contentTableCallback} text="More Tips" />
       Thanks for reading the article! Have fun implementing all the features mentioned above. Here
       are some more general best practices when it comes down to how to optimize images for web:
       <Checklist

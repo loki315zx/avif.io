@@ -49,19 +49,23 @@ export default function BlogPost() {
       system. Since the day we activated it, we've added and repaired so many tiny things that have
       drastically improved the overall user experience. After viewing a record of the web session,
       we delete them.
-      <H level={3} text="Below is the full version of the privacy policy." />
+      <H
+        level={3}
+        contentTableCallback={contentTableCallback}
+        text="Below is the full version of the privacy policy."
+      />
       This is all we are now doing. We could integrate a Rest API or run ads in the future. In
       addition, there could be some kind of payment. In any case, we will update the Privacy Policy
       accordingly, as we have done and want to do. If you are interested in reading the Privacy
       Policy and legal terms generated below, do not hesitate. If you would like to answer a simple
       question, please send an e-mail to support@avif.io or just tweet @jschmitz97. I will be happy
       to help and answer any questions you may have.
-      <H contentTableCallback={contentTableCallback} level={2} text="Legal Stuff" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Legal Stuff" />
       This service is brought to you by Justin Schmitz, resident in Germany. More information is not
       revealed for personal protection. You can request this information at support@avif.io.
-      <H contentTableCallback={contentTableCallback} level={2} text="Privacy Policy" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Privacy Policy" />
       Effective date: 23th of December, 2020
-      <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Introduction" />
       Welcome to avif.io. avif.io (“us”, “we”, or “our”) operates https://avif.io and
       https://avif.io & https://avif.io and https://avif.io and possibly an avif.io mobile
       application (hereinafter referred to as “Service”). Our Privacy Policy governs your visit to
@@ -73,7 +77,7 @@ export default function BlogPost() {
       have the same meanings as in our Terms and Conditions. Our Terms and Conditions (“Terms”)
       govern all use of our Service and together with the Privacy Policy constitutes your agreement
       with us (“agreement”).
-      <H contentTableCallback={contentTableCallback} level={2} text="Definitions" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Definitions" />
       SERVICE means the https://avif.io and https://avif.io and https://avif.io and https://avif.io
       website and possibly an avif.io mobile application operated by avif.io PERSONAL DATA means
       data about a living individual who can be identified from those data (or from those and other
@@ -96,7 +100,7 @@ export default function BlogPost() {
       />
       We collect several different types of information for various purposes to provide and improve
       our Service to you.
-      <H contentTableCallback={contentTableCallback} level={2} text="Types of Data Collected" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Types of Data Collected" />
       Personal Data While using our Service, we may ask you to provide us with certain personally
       identifiable information that can be used to contact or identify you (“Personal Data”).
       Personally identifiable information may include, but is not limited to: (a) Email address (b)
@@ -128,7 +132,7 @@ export default function BlogPost() {
       Cookies: We use Security Cookies for security purposes. (d) Advertising Cookies: Advertising
       Cookies are used to serve you with advertisements that may be relevant to you and your
       interests.
-      <H contentTableCallback={contentTableCallback} level={2} text="Use of Data" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Use of Data" />
       avif.io uses the collected data for various purposes: (a) to provide and maintain our Service;
       (b) to notify you about changes to our Service; (c) to allow you to participate in interactive
       features of our Service when you choose to do so; (d) to provide customer support; (e) to
@@ -142,7 +146,7 @@ export default function BlogPost() {
       that are similar to those that you have already purchased or enquired about unless you have
       opted not to receive such information; (l) in any other way we may describe when you provide
       the information; (m) for any other purpose with your consent.
-      <H contentTableCallback={contentTableCallback} level={2} text="Retention of Data" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Retention of Data" />
       We will retain your Personal Data only for as long as is necessary for the purposes set out in
       this Privacy Policy. We will retain and use your Personal Data to the extent necessary to
       comply with our legal obligations (for example, if we are required to retain your data to
@@ -151,7 +155,7 @@ export default function BlogPost() {
       retained for a shorter period, except when this data is used to strengthen the security or to
       improve the functionality of our Service, or we are legally obligated to retain this data for
       longer time periods.
-      <H contentTableCallback={contentTableCallback} level={2} text="Transfer of Data" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Transfer of Data" />
       Your information, including Personal Data, may be transferred to – and maintained on –
       computers located outside of your state, province, country or other governmental jurisdiction
       where the data protection laws may differ from those of your jurisdiction. If you are located
@@ -162,7 +166,7 @@ export default function BlogPost() {
       is treated securely and in accordance with this Privacy Policy and no transfer of your
       Personal Data will take place to an organisation or a country unless there are adequate
       controls in place including the security of your data and other personal information.
-      <H contentTableCallback={contentTableCallback} level={2} text="Disclosure of Data" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Disclosure of Data" />
       We may disclose personal information that we collect, or you provide: (a) Disclosure for Law
       Enforcement. Under certain circumstances, we may be required to disclose your Personal Data if
       required to do so by law or in response to valid requests by public authorities. (b) Business
@@ -174,7 +178,7 @@ export default function BlogPost() {
       other purpose disclosed by us when you provide the information; (vi) with your consent in any
       other cases; (vii) if we believe disclosure is necessary or appropriate to protect the rights,
       property, or safety of the Company, our customers, or others.
-      <H contentTableCallback={contentTableCallback} level={2} text="Security of Data" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Security of Data" />
       The security of your data is important to us but remember that no method of transmission over
       the Internet or method of electronic storage is 100% secure. While we strive to use
       commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute
@@ -257,13 +261,13 @@ export default function BlogPost() {
       Your data protection rights, described above, are covered by the CCPA, short for the
       California Consumer Privacy Act. To find out more, visit the official California Legislative
       Information website. The CCPA took effect on 01/01/2020.
-      <H contentTableCallback={contentTableCallback} level={2} text="Service Providers" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Service Providers" />
       We may employ third party companies and individuals to facilitate our Service (“Service
       Providers”), provide Service on our behalf, perform Service-related services or assist us in
       analysing how our Service is used. These third parties have access to your Personal Data only
       to perform these tasks on our behalf and are obligated not to disclose or use it for any other
       purpose.
-      <H contentTableCallback={contentTableCallback} level={2} text="Analytics" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Analytics" />
       We may use third-party Service Providers to monitor and analyze the use of our Service. Google
       Analytics Google Analytics is a web analytics service offered by Google that tracks and
       reports website traffic. Google uses the data collected to track and monitor the use of our
@@ -278,7 +282,7 @@ export default function BlogPost() {
       https://policies.google.com/privacy?hl=en For more information on what type of information
       Firebase collects, please visit the Google Privacy Terms web page:
       https://policies.google.com/privacy?hl=en
-      <H contentTableCallback={contentTableCallback} level={2} text="Hotjar" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Hotjar" />
       "We use Hotjar in order to better understand our users’ needs and to optimize this service and
       experience. Hotjar is a technology service that helps us better understand our users’
       experience (e.g. how much time they spend on which pages, which links they choose to click,
@@ -291,7 +295,7 @@ export default function BlogPost() {
       pseudonymized user profile. Hotjar is contractually forbidden to sell any of the data
       collected on our behalf. For further details, please see the ‘about Hotjar’ section of
       Hotjar’s support site.
-      <H contentTableCallback={contentTableCallback} level={2} text=" CI and CD Tools" />
+      <H level={2} contentTableCallback={contentTableCallback} text=" CI and CD Tools" />
       We may use third-party Service Providers to automate the development process of our Service.
       GitHub GitHub is provided by GitHub, Inc. GitHub is a development platform to host and review
       code, manage projects, and build software. For more information on what data GitHub collects
@@ -303,7 +307,7 @@ export default function BlogPost() {
       production which results in every day deployment of production. For more information on what
       data GitLab CI/CD collects for what purpose and how the protection of the data is ensured,
       please visit GitLab CI/CD Privacy Policy page: https://about.gitlab.com/privacy/.
-      <H contentTableCallback={contentTableCallback} level={2} text="Advertising" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Advertising" />
       We may use third-party Service Providers to show advertisements to you to help support and
       maintain our Service. Google AdSense DoubleClick Cookie Google, as a third party vendor, uses
       cookies to serve ads on our Service. Google's use of the DoubleClick cookie enables it and its
@@ -321,7 +325,7 @@ export default function BlogPost() {
       data when you use our partners' sites or app” page:
       https://google.com/policies/privacy/partners/ or visit the Privacy Policy of Google:
       https://google.com/policies/privacy/
-      <H contentTableCallback={contentTableCallback} level={2} text="Behavioral Remarketing" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Behavioral Remarketing" />
       avif.io uses remarketing services to advertise on third party websites to you after you
       visited our Service. We and our third-party vendors use cookies to inform, optimise and serve
       ads based on your past visits to our Service. Google Ads (AdWords) Google Ads (AdWords)
@@ -358,7 +362,7 @@ export default function BlogPost() {
       https://help.pinterest.com/en/articles/personalization-and-data You can learn more about the
       privacy practices and policies of Pinterest by visiting their Privacy Policy page:
       https://about.pinterest.com/en/privacy-policy
-      <H contentTableCallback={contentTableCallback} level={2} text="Payments" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Payments" />
       We may provide paid products and/or services within Service. In that case, we use third-party
       services for payment processing (e.g. payment processors). We will not store or collect your
       payment card details. That information is provided directly to our third-party payment
@@ -392,13 +396,13 @@ export default function BlogPost() {
       can be viewed at: https://go.wepay.com/privacy-policy WorldPay: Their Privacy Policy can be
       viewed at: https://online.worldpay.com/terms/privacy WeChat: Their Privacy Policy can be
       viewed at: https://wechat.com/en/privacy_policy.html
-      <H contentTableCallback={contentTableCallback} level={2} text="Links to other sites" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Links to other sites" />
       Our Service may contain links to other sites that are not operated by us. If you click a third
       party link, you will be directed to that third party's site. We strongly advise you to review
       the Privacy Policy of every site you visit. We have no control over and assume no
       responsibility for the content, privacy policies or practices of any third party sites or
       services.
-      <H contentTableCallback={contentTableCallback} level={2} text="Children's Privacy" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Children's Privacy" />
       Our Services are not intended for use by children under the age of 18 (“Child” or “Children”).
       We do not knowingly collect personally identifiable information from Children under 18. If you
       become aware that a Child has provided us with Personal Data, please contact us. If we become
@@ -414,7 +418,7 @@ export default function BlogPost() {
       notice on our Service, prior to the change becoming effective and update “effective date” at
       the top of this Privacy Policy. You are advised to review this Privacy Policy periodically for
       any changes. Changes to this Privacy Policy are effective when they are posted on this page.
-      <H contentTableCallback={contentTableCallback} level={2} text="Contact Us" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Contact Us" />
       If you have any questions about this Privacy Policy, please contact us: By email:
       support@avif.io.
     </Blog>

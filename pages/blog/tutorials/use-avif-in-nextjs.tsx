@@ -17,7 +17,7 @@ export default function BlogPost() {
   return (
     <Blog postMeta={meta.tutNextjs} posts={[meta.tutCss, meta.tutFrameworks, meta.tutHtml]}>
       <ContentTable contentTable={contentTable} />
-      <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Introduction" />
       NextJS images is easy! The blog you're reading uses both the latest version of React and
       NextJS. And not only that: the bundler automatically detects AVIF files and handles them
       accordingly. We didn't have to do anything for this work. That's what we call a first-class
@@ -43,7 +43,7 @@ module.exports = withImages()`}
       <br /> Furthermore, the images <b>support the Core Web Vitals</b> by not shifting their
       layouts. Furthermore, this service can also be used if the server that contains the images of
       the website is a CDN and not a server hosted by the website.
-      <H contentTableCallback={contentTableCallback} level={2} text="Next.JS image component" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Next.JS image component" />
       All in all, it's a simple "Put this image in your project, add it to the component and we'll
       do the entire conversion and optimization" approach. While it converts images to newer
       formats, it does not yet do so for AVIF. There is a
@@ -60,7 +60,7 @@ module.exports = withImages()`}
         height={0}
       />
 (..)`}</Syntax>
-      <H contentTableCallback={contentTableCallback} level={2} text="Next Optimized Images" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Next Optimized Images" />
       Until this point, if you rely heavily on CSS images, you can use the third-party plugin in
       Next.JS called
       <Link text="next-optimized-images" link="github.com/cyrilwanner/next-optimized-images" ext />.

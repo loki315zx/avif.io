@@ -17,12 +17,12 @@ export default function BlogPost() {
   return (
     <Blog postMeta={meta.tutHtml} posts={[meta.tutCss, meta.tutFirefox, meta.tutFrameworks]}>
       <ContentTable contentTable={contentTable} />
-      <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Introduction" />
       AVIF is a file format based on a video codec and supports a high bit depth while maintaining a
       small file size. You can find many articles about how fantastic AVIF is right here, as well as
       anywhere else on the web. You clicked on this article because you want to learn how to use
       AVIF in HTML, so let's take a look at the topic.
-      <H contentTableCallback={contentTableCallback} level={2} text="Browser Support" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Browser Support" />
       The most important thing to keep in mind when using AVIF is that it is unfortunately not yet
       supported everywhere. That's a pity, isn't it? It took WebP (another excellent image format,
       but not good enough to keep up with AVIF) ten years to be fully supported as Apple wasn't
@@ -32,7 +32,7 @@ export default function BlogPost() {
       support. However, AVIF is an invention of the non-profit industry consortium Alliance of Open
       Media AOM. Major browser giants Apple, Mozilla and Google are all part of the project, so{" "}
       <b>support can be expected relatively quickly.</b>
-      <H contentTableCallback={contentTableCallback} level={2} text="The picture element" />
+      <H level={2} contentTableCallback={contentTableCallback} text="The picture element" />
       For now, you can still use the format in its almost complete glory with the native{" "}
       {`<picture>`} element in HTML. Why, you may ask? Well, the {`<picture>`}element allows
       progressive support. You can simply{" "}
@@ -48,7 +48,7 @@ export default function BlogPost() {
         ]}
         checked={true}
       />
-      <H contentTableCallback={contentTableCallback} level={2} text="Implementation" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Implementation" />
       Currently <b>96% of browsers support the picture element</b>. Even if your grandma visits your
       website with her disgusting Internet Explorer 6, her browser will simply revert to the default
       image format when you specify it. Have a look at the following example and copy it if you want
@@ -73,7 +73,7 @@ export default function BlogPost() {
       This is a nice set up for all visitors. Just make sure{" "}
       <b> the first source tag is an AVIF image</b>
       for the browser to display the first media type it can handle.
-      <H contentTableCallback={contentTableCallback} level={2} text="Responsiveness" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Responsiveness" />
       At this point, it seems great, doesn't it? Well, no, not yet, because our platform still lacks
       support for different types of devices. It's a little more difficult to create an optimal
       experience for Retina displays. We also want to make sure that mobile devices don't download

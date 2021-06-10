@@ -390,6 +390,7 @@ header.fixed {
 header nav > div > a {
   padding: var(--s0) var(--s1);
 }
+
 nav {
   text-align: right;
 }
@@ -1588,6 +1589,10 @@ h5 .heading-anchor-wrapper {
   padding: var(--s2) var(--s3);
   background: rgb(224 77 85 / 5%);
   border-radius: var(--radius-small);
+}
+
+.tableofcontent + ins {
+  display: none !important;
 }
 
 .tableofcontent ol {

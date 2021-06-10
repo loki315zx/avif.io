@@ -20,7 +20,7 @@ export default function BlogPost() {
       posts={[meta.february2021, meta.january2021, meta.tutWordpress]}
     >
       <ContentTable contentTable={contentTable} />
-      <H contentTableCallback={contentTableCallback} level={2} text="Accessibility" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Accessibility" />
       One would think a website that heavily focuses on images wouldn't care about accessibility,
       right? Wrong! There are a lot of people with physical disabilities that affect how they
       perceive colors, images, and websites. We've been spending days and weeks learning how to
@@ -41,7 +41,7 @@ export default function BlogPost() {
       We realize these changes may not seem like a big deal, but they're just a huge step towards
       making our website accessible to everyone and we're happy to be able to offer everyone a
       chance to experience AVIF.
-      <H contentTableCallback={contentTableCallback} level={2} text="API" />
+      <H level={2} contentTableCallback={contentTableCallback} text="API" />
       As part of our service, we would also like to provide a Web API. We are currently working on a
       REST API for avif.io and we're happy to announce that our version 0.0.1 is working
       beautifully! We are making sure things go smooth before we release it to the public. The
@@ -53,7 +53,7 @@ export default function BlogPost() {
       are super excited for all the upcoming steps.
       <Link text="Join our Discord" link="discord.com/invite/6w42YpF5hm" ext /> for staying up to
       date on latest changes and being part of the development.
-      <H contentTableCallback={contentTableCallback} level={2} text="Conversion issues" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Conversion issues" />
       These past few weeks, we've gotten a lot of correspondence from the Firefox developers,
       specifically Jon Bauman, the guy who is responsible for the AVIF implementation, especially
       the recent upcoming full public release, without AVIF support hidden behind a developer flag.

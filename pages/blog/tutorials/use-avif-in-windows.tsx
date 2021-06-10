@@ -15,7 +15,7 @@ export default function BlogPost() {
   return (
     <Blog postMeta={meta.tutWindows} posts={[meta.tutGimp, meta.tutEdge, meta.tutWordpress]}>
       <ContentTable contentTable={contentTable} />
-      <H contentTableCallback={contentTableCallback} level={2} text="Microsoft supports AVIF" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Microsoft supports AVIF" />
       AVIF got a significant boost when Microsoft{" "}
       <b> decided to add support for it in the Windows 10 May 2019 Update</b>. Windows 10 does not
       support the AVIF image format natively, but the software giant has incorporated this
@@ -24,7 +24,7 @@ export default function BlogPost() {
       your computer,{" "}
       <b>you can view AVIF images natively within Windows 10 apps like Paint and File Explorer</b>
       .
-      <H contentTableCallback={contentTableCallback} level={2} text="With an extension" />
+      <H level={2} contentTableCallback={contentTableCallback} text="With an extension" />
       Without proper configuration, tools like Microsoft Paint throw a bug that says that the AVIF
       file is not a valid format and is not supported by the application. If you are looking for
       AVIF support for Windows 10, you can either wait until Microsoft implements it by default, or
@@ -39,7 +39,7 @@ export default function BlogPost() {
       AV1 extension has been around since Windows 10 version 1809, when support for the AV1 video
       format first appeared.{" "}
       <b>Since version 1903, the extension is also able to process AVIF files.</b>
-      <H contentTableCallback={contentTableCallback} level={2} text="Results" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Results" />
       After installing the extension, File Explorer generates a thumbnail image for the AVIF image
       format. Additionally, MSPaint allows editing and saving these images. You may want to use a
       more advanced image editor than Paint to work on image files such as AVIF. For more details,

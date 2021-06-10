@@ -829,9 +829,39 @@
     "image": "/logo_draft.png",
     "datePublished": "03.06.21",
     "dateModified": "03.06.21",
-    "questions": ["Which file format is better suited for saving a logo?","Is AVIF lossless?","Should I save lossless images as AVIF or PNG?","How does AVIF compare to PNG?","Is AVIF better than PNG?","What are the benefits of the image format AVIF?","Is PNG or AVIF better for saving images on the web?"],
-    "tags": ["image format","comparison","image compression","lossless images","avif","png","alpha channel","transparency","file size reduction","browser compatibility","subsampling","lossy compression"],
-    "sources": ["https://www.lambdatest.com/blog/avif-image-format/","https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types","https://jakearchibald.com/2020/avif-has-landed/","https://www.freecodecamp.org/news/best-image-format-for-web-in-2019-jpeg-webp-heic-avif-41ba0c1b2789/","https://netflixtechblog.com/avif-for-next-generation-image-coding-b1d75675fe4","https://www.reddit.com/r/AV1/comments/aabqdc/lossless_compression_test_png_vs_webp_vs_avif/","https://reachlightspeed.com/blog/using-the-new-high-performance-avif-image-format-on-the-web-today/#:~:text=avif)%20image%20file%20format.,to%20compressed%20file%20size%20ratio.","https://cloudinary.com/blog/time_for_next_gen_codecs_to_dethrone_jpeg"],
+    "questions": [
+      "Which file format is better suited for saving a logo?",
+      "Is AVIF lossless?",
+      "Should I save lossless images as AVIF or PNG?",
+      "How does AVIF compare to PNG?",
+      "Is AVIF better than PNG?",
+      "What are the benefits of the image format AVIF?",
+      "Is PNG or AVIF better for saving images on the web?"
+    ],
+    "tags": [
+      "image format",
+      "comparison",
+      "image compression",
+      "lossless images",
+      "avif",
+      "png",
+      "alpha channel",
+      "transparency",
+      "file size reduction",
+      "browser compatibility",
+      "subsampling",
+      "lossy compression"
+    ],
+    "sources": [
+      "https://www.lambdatest.com/blog/avif-image-format/",
+      "https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types",
+      "https://jakearchibald.com/2020/avif-has-landed/",
+      "https://www.freecodecamp.org/news/best-image-format-for-web-in-2019-jpeg-webp-heic-avif-41ba0c1b2789/",
+      "https://netflixtechblog.com/avif-for-next-generation-image-coding-b1d75675fe4",
+      "https://www.reddit.com/r/AV1/comments/aabqdc/lossless_compression_test_png_vs_webp_vs_avif/",
+      "https://reachlightspeed.com/blog/using-the-new-high-performance-avif-image-format-on-the-web-today/#:~:text=avif)%20image%20file%20format.,to%20compressed%20file%20size%20ratio.",
+      "https://cloudinary.com/blog/time_for_next_gen_codecs_to_dethrone_jpeg"
+    ],
     "keyword": "png",
     "category": "comparison",
     "blog": true

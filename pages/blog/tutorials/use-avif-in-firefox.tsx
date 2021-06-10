@@ -15,18 +15,18 @@ export default function BlogPost() {
   return (
     <Blog postMeta={meta.tutFirefox} posts={[meta.tutEdge, meta.tutHtml, meta.tutWordpress]}>
       <ContentTable contentTable={contentTable} />
-      <H contentTableCallback={contentTableCallback} level={2} text="Update March 2021" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Update March 2021" />
       Several open bugs and issues have lead to support still not being the default. This has mainly
       to do with the current AVIF spec from AOM.{" "}
       <b>
         We can expect Firefox 89 to have a full, compliant AVIF support that is enabled by default.
       </b>{" "}
       Version 89 will be released at the 1st of July.
-      <H contentTableCallback={contentTableCallback} level={2} text="Update January 2021" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Update January 2021" />
       YES! Finally. Firefox Nightly users needed to enable the feature manually to get it supported
       in the Firefox browser at the time. Starting with version 86, which will be available on the
       23th of February, 2021, Firefox is going to support AVIF by default.
-      <H contentTableCallback={contentTableCallback} level={2} text="Update December 2020" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Update December 2020" />
       There has been other industry adoption for AVIF images, such as Microsoft with Windows. Google
       added support for AVIF to Chrome earlier this year and shipped it with Chrome 85. Mozilla
       Firefox is also very soon expected to enable support for AVIF as an image format based on AV1
@@ -38,7 +38,7 @@ export default function BlogPost() {
       support AVIF images with its next versions in early 2021. We can't wait for users to be able
       to directly use and view AVIF images. For those looking to convert their images to AVIF, try
       out our fastest converter. It works with Firefox already.
-      <H contentTableCallback={contentTableCallback} level={2} text="Original Post" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Original Post" />
       Starting in version 77 (released in June 2020),{" "}
       <b>Mozilla recently implemented experimental support for the AVIF image format in Firefox</b>.
       The feature is not enabled by default in the web browser's production version. Still, users
@@ -47,7 +47,7 @@ export default function BlogPost() {
       web browser. AVIF was developed from the AV1 video format and uses HEIF as the container and
       AV1 frames. It is a new format. AV1 is already supported in most web browsers, and the work
       has begun to integrate AVIF too.
-      <H contentTableCallback={contentTableCallback} level={2} text="Check your version" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Check your version" />
       If you would like to find out your browser's version, open the Firefox settings located the
       top right, head to the help menu and click 'about'. <b>If you have version 77 or above</b>,
       you will be able to use the tutorial below to enable the AVIF image format.

@@ -18,7 +18,7 @@ export default function BlogPost() {
   return (
     <Blog postMeta={meta.tutCloudflare} posts={[meta.tutCss, meta.tutHtml, meta.tutNextjs]}>
       <ContentTable contentTable={contentTable} />
-      <H contentTableCallback={contentTableCallback} level={2} text="Introduction" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Introduction" />
       Images compressed in AVIF usually take up half the storage space of JPEG and WebP. It uses the
       HEIF ISO standard and AV1 codec from Mozilla, Google, Cisco and others. On the other hand,
       Cloudflare provides hosting and distribution services for websites to optimize the loading of
@@ -56,7 +56,7 @@ export default function BlogPost() {
         ]}
         checked={true}
       />
-      <H contentTableCallback={contentTableCallback} level={2} text="Business and Pro Plan" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Business and Pro Plan" />
       The Image Resizing feature converts images to the AVIF format. Unfortunately, this feature is
       not free, but part of the Business Plan. Since a Business plan costs about $200 or more per
       month, this seems excessive for such a small feature.
@@ -68,7 +68,7 @@ export default function BlogPost() {
       automatic mobile and image optimization, a better firewall, captchas, cache analytics, etc.
       For an emerging small to medium-sized business, this seems like an attractive investment to
       get the last bit of performance out of your website.
-      <H contentTableCallback={contentTableCallback} level={2} text="Implementation with Workers" />
+      <H level={2} contentTableCallback={contentTableCallback} text="Implementation with Workers" />
       Browsers with AVIF support add an image/avif note to their Accept request header. To request
       the AVIF format from the Image Resizing module of Cloudflare, simply set the format option to
       avif. Using a <b>worker script</b>, you can easily automatically detect and enable AVIF
@@ -94,7 +94,7 @@ export default function BlogPost() {
       beneficial to dynamically operate more image functions based on the state of the network.
       Crisp images in 4K are still incredible if your visitors have a bandwidth that supports it,
       and you can still handle the large file size.
-      <H contentTableCallback={contentTableCallback} level={2} text="The picture element" />
+      <H level={2} contentTableCallback={contentTableCallback} text="The picture element" />
       In our Tutorial on
       <Link link="/blog/tutorials/use-avif-in-html/" text="how to use avif in HTML" />, we present
       you the {`<picture>`} element as the best option to serve AVIF files in an HTML environment.

@@ -9,20 +9,22 @@ export default function AvifIo({ Component, pageProps }: any) {
     <>
       <Head>
         <script src="/avif.js"></script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       </Head>
       <div className="page">
         <Component {...pageProps} />
       </div>
       <script async defer data-domain="avif.io" src="https://plausible.io/js/plausible.js"></script>{" "}
-      {/* Testing Plausible instead of GA. */}
+      {/* Testing Plausible instead of GA.
+      <script src="/__/firebase/8.6.5/firebase-analytics.js"></script>
+       <script>firebase.analytics()</script> */}
       <script src="/__/firebase/8.6.5/firebase-app.js"></script>
-      {/* <script src="/__/firebase/8.6.5/firebase-analytics.js"></script>*/}
       <script src="/__/firebase/8.6.5/firebase-database.js"></script>
       <script src="/__/firebase/8.6.5/firebase-storage.js"></script>
       <script src="/__/firebase/8.6.5/firebase-firestore.js"></script>
       <script src="/__/firebase/init.js"></script>
       <script src="/console.js"></script>
-      {/*<script>firebase.analytics()</script>*/}
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </>
   );
 }
