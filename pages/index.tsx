@@ -93,6 +93,10 @@ export default function App(): ReactElement {
 
   return (
     <Layout meta={meta.index}>
+      <script src="/__/firebase/8.6.5/firebase-database.js" />
+      <script src="/__/firebase/8.6.5/firebase-storage.js" />
+      <script src="/__/firebase/8.6.5/firebase-firestore.js" />
+      <script src="/__/firebase/init.js" />
       <section className={"app-container"}>
         <h1>Convert all images to AVIF for free.</h1>
         <h2 className={"f1 m0 s3 center normal"}>

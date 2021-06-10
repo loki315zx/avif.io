@@ -756,7 +756,7 @@ nav {
 }
 
 .conversion:hover .conversion__cancel {
-  opacity: 0.1;
+  opacity: 0.5;
 }
 
 .conversion__cancel:focus,
@@ -839,6 +839,7 @@ nav {
 
 .downloadall-container button {
   background: var(--gradient);
+  margin:var(--s2) auto
 }
 
 .downloadall-container.show {
