@@ -15,7 +15,7 @@ export default function Blog(props: { postMeta: any; children: any; posts: any; 
     if (articleRef.current == null) return;
     const text = articleRef.current.textContent ?? "";
     const wordCount = text.split(/\s+/).length;
-    const averageWordsPerMinute = 250;
+    const averageWordsPerMinute = 150;
     setReadingTime(Math.ceil(wordCount / averageWordsPerMinute));
   }, [articleRef]);
 
