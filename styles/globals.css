@@ -1591,8 +1591,9 @@ h5 .heading-anchor-wrapper {
   border-radius: var(--radius-small);
 }
 
-.tableofcontent + ins {
-  display: none !important;
+.tableofcontent + .ad {
+  opacity: 0 !important;
+  max-height: 0 !important;
 }
 
 .tableofcontent ol {

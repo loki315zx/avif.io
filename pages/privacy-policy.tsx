@@ -49,11 +49,7 @@ export default function BlogPost() {
       system. Since the day we activated it, we've added and repaired so many tiny things that have
       drastically improved the overall user experience. After viewing a record of the web session,
       we delete them.
-      <H
-        level={3}
-        contentTableCallback={contentTableCallback}
-        text="Below is the full version of the privacy policy."
-      />
+      <H level={3} text="Below is the full version of the privacy policy." />
       This is all we are now doing. We could integrate a Rest API or run ads in the future. In
       addition, there could be some kind of payment. In any case, we will update the Privacy Policy
       accordingly, as we have done and want to do. If you are interested in reading the Privacy

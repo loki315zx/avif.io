@@ -74,21 +74,13 @@ module.exports = withImages()`}
         text="How do we at avif.io deal with AVIF support?"
       />
       As we don't want to rely on Vercel or third-party components, we perform the following steps.
-      <H
-        contentTableCallback={contentTableCallback}
-        level={3}
-        text="1. Add browser support detection script"
-      />
+      <H level={3} text="1. Add browser support detection script" />
       To find out if you as a visitor have a browser with AVIF support, we have implemented the
       following 600-byte script in our header:
       <Syntax language="javascript">
         {`function F(a){document.documentElement.classList.add(a)}var A=new Image;A.src="data:image/avif;base64,AAAAFGZ0eXBhdmlmAAAAAG1pZjEAAACgbWV0YQAAAAAAAAAOcGl0bQAAAAAAAQAAAB5pbG9jAAAAAEQAAAEAAQAAAAEAAAC8AAAAGwAAACNpaW5mAAAAAAABAAAAFWluZmUCAAAAAAEAAGF2MDEAAAAARWlwcnAAAAAoaXBjbwAAABRpc3BlAAAAAAAAAAQAAAAEAAAADGF2MUOBAAAAAAAAFWlwbWEAAAAAAAAAAQABAgECAAAAI21kYXQSAAoIP8R8hAQ0BUAyDWeeUy0JG+QAACANEkA=",A.onload=function(){F("avif")},A.onerror=function(){var a=new Image;a.src="data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==",a.onload=function(){F("webp")}};`}
       </Syntax>
-      <H
-        contentTableCallback={contentTableCallback}
-        level={3}
-        text="2. Create image component with modern markup"
-      />
+      <H level={3} text="2. Create image component with modern markup" />
       We have developed our own image component, which uses all the features that modern image
       markup should take into account, from the lazy load to the aspect ratio. We only have to
       choose a path and an alt text. For more information on the perfect image markup visit
@@ -97,11 +89,7 @@ module.exports = withImages()`}
         link="/blog/articles/optimize-images-for-web-performance/"
       />
       <Image url="image-component" alt="screenshot of code that resembles our image component" />
-      <H
-        contentTableCallback={contentTableCallback}
-        level={3}
-        text="3. Convert images with sharp on build time"
-      />
+      <H level={3} text="3. Convert images with sharp on build time" />
       Finally, we have the NodeJS library
       <Link text="sharp" link="sharp.pixelplumbing.com/" ext /> integrated into our build and
       release script to convert images before we upload our website data to Firebase. The sharp

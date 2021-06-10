@@ -115,7 +115,6 @@ export default function BlogPost() {
       article, we will keep CLS to zero.
       <H
         level={3}
-        contentTableCallback={contentTableCallback}
         text="Summary of image optimization benefits"
       />
       Depending on how your website is structured, images make up the bulk of data that needs to be
@@ -158,7 +157,6 @@ export default function BlogPost() {
       format, while the next chapter will focus on the type of compression.
       <H
         level={3}
-        contentTableCallback={contentTableCallback}
         text="Other formats than JPG and PNG"
       />
       If you know the right file formats and how to handle different types of images in different
@@ -196,7 +194,6 @@ export default function BlogPost() {
       />
       <H
         level={3}
-        contentTableCallback={contentTableCallback}
         text="Explaining the best usecase for all formats"
       />
       <H level={4} text="(Not) Using GIF" />
@@ -279,7 +276,6 @@ export default function BlogPost() {
       not be a concern for the time being.
       <H
         level={3}
-        contentTableCallback={contentTableCallback}
         text="How to convert all these image formats correctly?"
       />
       Opt for JPG as a general fallback, followed by WebP, which is better and has broad support,
@@ -333,7 +329,6 @@ export default function BlogPost() {
       </b>
       <H
         level={3}
-        contentTableCallback={contentTableCallback}
         text="Lossy vs. lossless compression"
       />
       It is also important to understand that <b>there are two types of compression</b>, lossy and
@@ -354,7 +349,6 @@ export default function BlogPost() {
       <b>Lossless suits photography websites, use lossy for everything else.</b>
       <H
         level={3}
-        contentTableCallback={contentTableCallback}
         text="How to efficiently encode images?"
       />
       There are a few strategies to efficiently encode images, such as:
@@ -412,7 +406,6 @@ export default function BlogPost() {
       1920px or 1366px.
       <H
         level={3}
-        contentTableCallback={contentTableCallback}
         text="How do we implement different sizes in our code?"
       />
       We use the attributes <b>srcset</b> and <b>sizes</b> as shown below. The w selector tells the
@@ -441,7 +434,6 @@ sizes="(max-width: 720px) 100vw, 720px">
 </picture>`}</Syntax>
       <H
         level={3}
-        contentTableCallback={contentTableCallback}
         text="How do we automate the resize process?"
       />
       With so many lines of code, manually performing this task can be a difficult process for any
@@ -487,7 +479,6 @@ sizes="(max-width: 720px) 100vw, 720px">
 <img height="853" width="1280" … />`}</Syntax>
       <H
         level={3}
-        contentTableCallback={contentTableCallback}
         text="b) Use explicit width and height on image elements"
       />
       Always <b>include width and height size</b> attributes to your images and video elements. This
@@ -641,7 +632,6 @@ sizes="(max-width: 720px) 100vw, 720px">
       ways to make your images more accessible to search engines, which we will explain below.
       <H
         level={3}
-        contentTableCallback={contentTableCallback}
         text="1. Optimize image file names"
       />
       Storing images with any default filenames can be secondary - but this random string of letters
