@@ -27,7 +27,6 @@ const Ad = () => {
           __html: `(adsbygoogle = window.adsbygoogle || []).push({});`,
         }}
       />
-      ;
     </div>
   );
 };
