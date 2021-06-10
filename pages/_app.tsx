@@ -19,7 +19,6 @@ export default function AvifIo({ Component, pageProps }: any) {
       <script src="/__/firebase/8.6.5/firebase-analytics.js"/>
        <script>firebase.analytics()</script> */}
       <script src="/__/firebase/8.6.5/firebase-app.js" />
-      <script src="/__/firebase/8.6.5/firebase-firestore.js" />
       <script src="/__/firebase/init.js" />
     </>
   );
