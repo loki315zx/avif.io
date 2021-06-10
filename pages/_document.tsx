@@ -13,17 +13,21 @@ class Layout extends Document<Layout> {
           {/* Testing Plausible instead of GA.
       <script src="/__/firebase/8.6.5/firebase-analytics.js"/>
        <script>firebase.analytics()</script> */}
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" />
-          <script src="/__/firebase/8.6.5/firebase-app.js" />
-          <script src="/__/firebase/8.6.5/firebase-database.js" />
-          <script src="/__/firebase/8.6.5/firebase-storage.js" />
-          <script src="/__/firebase/8.6.5/firebase-firestore.js" />
-          <script src="/__/firebase/init.js" />
+          <script
+            async
+            defer
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          />
         </Head>
         <body>
           <Main />
           <NextScript />
         </body>
+        <script src="/__/firebase/8.6.5/firebase-app.js" />
+        <script src="/__/firebase/8.6.5/firebase-database.js" />
+        <script src="/__/firebase/8.6.5/firebase-storage.js" />
+        <script src="/__/firebase/8.6.5/firebase-firestore.js" />
+        <script src="/__/firebase/init.js" />
       </Html>
     );
   }
