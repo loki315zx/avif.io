@@ -36,7 +36,6 @@ export default function BlogPost() {
         ]}
         checked={true}
       />
-      You can see some screenshots of our test on Angular and React below:
       <H level={2} contentTableCallback={contentTableCallback} text="Other frameworks" />
       In principle, other frameworks might work differently. We found out from our research that
       Meteor and Ember support AVIF files without additional configuration, but since we did not
