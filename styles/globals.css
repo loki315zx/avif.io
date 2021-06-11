@@ -1439,7 +1439,7 @@ footer {
   align-items: flex-start;
   justify-content: space-between;
   padding: var(--s4) var(--s3);
-  background: var(--black3);
+  background: hsl(0deg 0% 0% / 10%);
 }
 
 footer a {
