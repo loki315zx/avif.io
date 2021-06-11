@@ -1995,6 +1995,8 @@ h5 .heading-anchor-wrapper {
 
 .content__details h5 {
   margin: var(--s3) 0 var(--s0);
+  padding: 0;
+  background: none;
 }
 
 #sources ol {
