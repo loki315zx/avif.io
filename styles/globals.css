@@ -99,7 +99,7 @@ html {
 *,
 *::before,
 *::after {
-  box-sizing: inherit; /* border box behavior */
+  box-sizing: border-box; /* border box behavior */
 }
 
 img {
@@ -839,7 +839,7 @@ nav {
 
 .downloadall-container button {
   background: var(--gradient);
-  margin:var(--s2) auto
+  margin: var(--s2) auto;
 }
 
 .downloadall-container.show {
@@ -2277,7 +2277,7 @@ pre {
   }
 
   .page section.app-container {
-    padding: var(--s2) 0 var(--s5);
+    padding: var(--s3) 0 var(--s5);
   }
 
   .app-container h2 {
