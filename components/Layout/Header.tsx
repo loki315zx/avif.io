@@ -18,7 +18,6 @@ export default function Header() {
       <nav>
         <Link text="Converter" link="/" />
         <Link text="Blog" link="/blog/" />
-        <Link text="Tutorials" link="/blog/#tutorials" />
         <Link text="Discord" link="discord.com/invite/6w42YpF5hm" ext />
       </nav>
     </header>

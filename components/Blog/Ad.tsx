@@ -22,11 +22,7 @@ const Ad = () => {
         data-ad-client="ca-pub-4499854243209236"
         data-ad-slot="9846855571"
       ></ins>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `(adsbygoogle = window.adsbygoogle || []).push({});`,
-        }}
-      />
+      <script>{`(adsbygoogle = window.adsbygoogle || []).push({})`}</script>
     </div>
   );
 };
