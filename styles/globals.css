@@ -55,19 +55,19 @@
   --radius-small: var(--s0);
   --radius-medium: 32px;
   --radius-large: 999999px;
-  --color700: #91006b;
-  --color500: #cf0054;
-  --color300: #e04d55;
+  --color700: #b30083;
+  --color500: #bc004b;
+  --color300: #b72027;
   --white: #fff;
-  --gray1: #f4f4f4;
-  --gray2: #bbb;
-  --gray3: hsl(274, 50%, 8%);
+  --gray1: #fbfbfb;
+  --gray2: #dddddd;
+  --gray3: hsl(274, 50%, 7.5%);
   --gray4: #111;
-  --black1: hsl(276, 100%, 4%);
-  --black2: hsl(276, 50%, 6%);
-  --black3: hsl(276, 5%, 8%);
-  --black1-8: hsl(274 100% 4% / 0.8);
-  --black2-8: hsl(274 50% 8% / 0.8);
+  --black1: hsl(276, 100%, 6%);
+  --black2: hsl(276, 50%, 9%);
+  --black3: hsl(276, 5%, 12%);
+  --black1-8: hsl(274 100% 6% / 0.8);
+  --black2-8: hsl(274 50% 9% / 0.8);
   --black3-8: hsl(274 25% 12% / 0.8);
   --gradient: radial-gradient(circle at center left, var(--color300), transparent 50%),
     radial-gradient(circle at 0% 0%, var(--color500), transparent 25%),
@@ -1588,7 +1588,7 @@ h5 .heading-anchor-wrapper {
 
 .tableofcontent {
   padding: var(--s2) var(--s3);
-  background: rgb(224 77 85 / 5%);
+  background: rgb(224 77 85 / 1%);
   border-radius: var(--radius-small);
 }
 
