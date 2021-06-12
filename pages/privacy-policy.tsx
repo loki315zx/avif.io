@@ -33,22 +33,21 @@ export default function BlogPost() {
       consent under any circumstances. Besides, I really don't care about your 500 dog pictures, I'm
       sorry.
       <H level={3} text="What about analytics?" />
-      We use Hotjar and Google Analytics. Google Analytics does not track your IP. The only reason
-      we use it is because it provides us with useful data that allows us to optimize our service.
-      It sounds like an empty phrase, but it is certainly true, and I will tell you how. We receive
-      data about the most commonly used browsers, devices and resolutions. We integrate this
-      information into our testing process with Selenium, a framework that automates testing
-      processes. We don't want to send my website advertising to people who aren't interested in it,
-      but to people who can benefit from it. It also allows us to evaluate the growth and maybe find
-      an investor for the future. It's probably even good for which countries are our primary
-      targets, so we can offer personalized content like translations Cool? Cool. What's special
-      about Hotjar is that we found this tool only recently and we absolutely love it. What Hotjar
-      does is that it records your web session on our website. That sounds scary at first, but
-      there's no reason to be afraid. We can't see you through your webcam, nor can we see anything
-      else BUT our website. It stores no IP addresses, just your country, browser and operating
-      system. Since the day we activated it, we've added and repaired so many tiny things that have
-      drastically improved the overall user experience. After viewing a record of the web session,
-      we delete them.
+      We use Hotjar and Plausible. Plausible is a GDPR-compliant alternative to Google Analytics.
+      The only reason we use it is because it provides us with useful data that allows us to
+      optimize our service. It sounds like an empty phrase, but it is certainly true, and I will
+      tell you how. We receive data about the most commonly used browsers, devices and resolutions.
+      We integrate this information into our testing process. We don't want to send our website
+      advertising to people who aren't interested in it, but to people who can benefit from it. It
+      also allows us to evaluate the growth and maybe find an investor for the future. It's probably
+      even good for which countries are our primary targets, so we can offer personalized content
+      like translations Cool? Cool. What's special about Hotjar is that we found this tool only
+      recently and we absolutely love it. What Hotjar does is that it records your web session on
+      our website. That sounds scary at first, but there's no reason to be afraid. We can't see you
+      through your webcam, nor can we see anything else BUT our website. It stores no IP addresses,
+      just your country, browser and operating system. Since the day we activated it, we've added
+      and repaired so many tiny things that have drastically improved the overall user experience.
+      After viewing a record of the web session, we delete them.
       <H level={3} text="Below is the full version of the privacy policy." />
       This is all we are now doing. We could integrate a Rest API or run ads in the future. In
       addition, there could be some kind of payment. In any case, we will update the Privacy Policy
@@ -264,20 +263,14 @@ export default function BlogPost() {
       to perform these tasks on our behalf and are obligated not to disclose or use it for any other
       purpose.
       <H level={2} contentTableCallback={contentTableCallback} text="Analytics" />
-      We may use third-party Service Providers to monitor and analyze the use of our Service. Google
-      Analytics Google Analytics is a web analytics service offered by Google that tracks and
-      reports website traffic. Google uses the data collected to track and monitor the use of our
-      Service. This data is shared with other Google services. Google may use the collected data to
-      contextualise and personalise the ads of its own advertising network. For more information on
-      the privacy practices of Google, please visit the Google Privacy Terms web page:
-      https://policies.google.com/privacy?hl=en We also encourage you to review the Google's policy
-      for safeguarding your data: https://support.google.com/analytics/answer/6004245. Firebase
-      Firebase is analytics service provided by Google Inc. You may opt-out of certain Firebase
-      features through your mobile device settings, such as your device advertising settings or by
-      following the instructions provided by Google in their Privacy Policy:
-      https://policies.google.com/privacy?hl=en For more information on what type of information
-      Firebase collects, please visit the Google Privacy Terms web page:
-      https://policies.google.com/privacy?hl=en
+      The privacy of our website visitors is important to us so we do not track any individual
+      people. We run the Plausible Analytics script to collect some anonymous usage data for
+      statistical purposes. The goal is to track overall trends in our website traffic, it is not to
+      track individual visitors. All the data is in aggregate only. No personal data is collected.
+      You can view the data we collect in our live demo. Data collected includes referral sources,
+      top pages, visit duration, information from the devices (device type, operating system,
+      country and browser) used during the visit and more. You can see full details in our data
+      policy.
       <H level={2} contentTableCallback={contentTableCallback} text="Hotjar" />
       "We use Hotjar in order to better understand our users’ needs and to optimize this service and
       experience. Hotjar is a technology service that helps us better understand our users’
