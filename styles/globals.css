@@ -1157,6 +1157,11 @@ nav {
   border-radius: var(--radius-small);
 }
 
+.badge__shadow__container {
+  max-width: 100vw;
+  overflow: hidden;
+}
+
 .badge__shadow {
   z-index: -1;
   width: 60%;
@@ -2378,6 +2383,16 @@ pre {
   section {
     max-width: 100vw !important;
     overflow-x: hidden !important;
+  }
+  .badge__shadow__container {
+    max-width: 100vw;
+    overflow: hidden;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
   }
 }
 

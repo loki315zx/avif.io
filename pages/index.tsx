@@ -127,7 +127,7 @@ export default function App(): ReactElement {
           <DownloadButton files={convertedFiles} />
         </div>
       </section>
-      <div style={{ position: "relative", maxWidth: "100vw", overflow: "hidden" }}>
+      <div className="badge__shadow__container">
         <div className="badge__shadow overlay"></div>
       </div>
       <section id="avifbadge">
