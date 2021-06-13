@@ -1608,7 +1608,7 @@ h5 .heading-anchor-wrapper {
 }
 
 .tableofcontent ol li a {
-  display: inline-block;
+  display: inline;
   transform: translateX(-10px);
 }
 
@@ -2207,11 +2207,6 @@ pre {
     max-width: 100vw;
   }
 
-  section {
-    max-width: 100vw;
-    overflow-x: hidden;
-  }
-
   .blog > * {
     padding: var(--s5) var(--s0) var(--s2);
   }
@@ -2379,6 +2374,10 @@ pre {
 
   #communication {
     padding: var(--s3) 0 0;
+  }
+  section {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
   }
 }
 
