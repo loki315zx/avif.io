@@ -1,10 +1,39 @@
 import "@styles/global.css";
 import { useEffect } from "react";
+import Script from "next/script";
 
 export default function AvifIo({ Component, pageProps }: any) {
   useEffect(arrayBufferPolyfill, []);
   return (
     <>
+      <Script strategy="beforeInteractive" src="/avif.js" />
+      <Script
+        strategy="beforeInteractive"
+        src="/__/firebase/8.6.5/firebase-app.js"
+      />
+      <Script
+        strategy="beforeInteractive"
+        src="/__/firebase/8.6.5/firebase-database.js"
+      />
+      <Script
+        strategy="lazyOnload"
+        src="/__/firebase/8.6.5/firebase-storage.js"
+      />
+      <Script
+        strategy="lazyOnload"
+        src="/__/firebase/8.6.5/firebase-firestore.js"
+      />
+      <Script
+        strategy="lazyOnload"
+        src="/__/firebase/8.6.5/firebase-analytics.js"
+      />
+      <Script strategy="beforeInteractive" src="/__/firebase/init.js" />
+      <Script strategy="beforeInteractive">firebase.analytics()</Script>
+      <Script
+        strategy="lazyOnload"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+      />
+
       <div className="page">
         <Component {...pageProps} />
       </div>
