@@ -73,7 +73,7 @@ export default function Dropzone(props: DropzoneProps) {
           ></div>
           <div className="z-10 absolute top-0 bottom-0 right-0 left-0 bg-gradient blur-sm animate-ctaBackground"></div>
         </div>
-        <b>Browse images</b>
+        <b>Drop images or browse</b>
         <div className="text-gray-400">
           supports png · jpg · webp · gif and more
         </div>
