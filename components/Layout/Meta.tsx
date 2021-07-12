@@ -15,17 +15,27 @@ export interface MetaProps {
 export default function Meta(props: MetaProps) {
   const publishedSplit = props.datePublished.split(".");
   const publishedDate =
-    "20" + publishedSplit[2] + "-" + publishedSplit[1] + "-" + publishedSplit[0];
+    "20" +
+    publishedSplit[2] +
+    "-" +
+    publishedSplit[1] +
+    "-" +
+    publishedSplit[0];
 
   const modifiedSplit = props.dateModified.split(".");
-  const modifiedDate = "20" + modifiedSplit[2] + "-" + modifiedSplit[1] + "-" + modifiedSplit[0];
+  const modifiedDate =
+    "20" + modifiedSplit[2] + "-" + modifiedSplit[1] + "-" + modifiedSplit[0];
 
   return (
     <Head>
       <link rel="canonical" href={`https://avif.io/${props.url}`} />
       <meta charSet="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+      <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="/apple-touch-icon.png"
+      />
 
       <title>{props.title} | avif.io ✨</title>
 
@@ -43,9 +53,14 @@ export default function Meta(props: MetaProps) {
       <meta property="twitter:creator" content="@jschmitz97" />
       <meta property="twitter:site" content="@jschmitz97" />
       <meta property="twitter:url" content="https://twitter.com/jschmitz97" />
-      <meta property="twitter:title" content={props.title + " | " + "avif.io ✨"} />
+      <meta
+        property="twitter:title"
+        content={props.title + " | " + "avif.io ✨"}
+      />
       <meta property="twitter:description" content={props.description} />
-      {props.image && <meta name="twitter:image" content="https://avif.io/twitter.png" />}
+      {props.image && (
+        <meta name="twitter:image" content="https://avif.io/twitter.png" />
+      )}
 
       {props.blog && (
         <script

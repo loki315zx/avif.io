@@ -23,7 +23,10 @@ export default function Sources(props: SourcesProps) {
   sources = _.sortBy(sources, (s) => s.short);
 
   const listItems = sources.map((source: any) => (
-    <li key={source.original} className="source">
+    <li
+      key={source.original}
+      className="inline-block p-1 m-1 text-tiny rounded-sm bg-bg-red text-red-700"
+    >
       <a target="_blank" rel="noreferrer" href={source.original}>
         {source.short}
       </a>

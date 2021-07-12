@@ -21,7 +21,13 @@ onmessage = async function (msg) {
       msg.data.options.keepTransparency
     );
     if (msg.data.isRawRgba) {
-      return rgbaToAvif(input, options, msg.data.width, msg.data.height, postProgress);
+      return rgbaToAvif(
+        input,
+        options,
+        msg.data.width,
+        msg.data.height,
+        postProgress
+      );
     } else {
       return convertToAvif(input, options, postProgress);
     }
@@ -39,7 +45,11 @@ onmessage = async function (msg) {
 
   function postResult(result) {
     if (result.error_size !== 0) {
-      const errorData = new Uint8Array(memory.buffer, result.error, result.error_size);
+      const errorData = new Uint8Array(
+        memory.buffer,
+        result.error,
+        result.error_size
+      );
       const error = new TextDecoder().decode(errorData);
       postMessage(
         {
@@ -50,7 +60,9 @@ onmessage = async function (msg) {
       );
     }
 
-    const data = new Uint8Array(memory.buffer.slice(result.data, result.data + result.size));
+    const data = new Uint8Array(
+      memory.buffer.slice(result.data, result.data + result.size)
+    );
     postMessage(
       {
         type: "finished",

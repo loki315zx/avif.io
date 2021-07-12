@@ -1,3 +1,5 @@
+import Tooltip from "@components/Tooltip";
+
 export interface PercentageSliderProps {
   className?: string;
   value: number;
@@ -5,20 +7,19 @@ export interface PercentageSliderProps {
   disabled?: boolean;
   label?: string;
   id?: string;
+  explanation: string;
   onChange(value: number): void;
 }
 
 export default function PercentageSlider(props: PercentageSliderProps) {
   return (
-    <div className={props.className + " " + "s2"} id={props.id}>
-      <div style={{ display: "flex", alignItems: "center" }}>
-        <p className="center bold">{props.name}</p>
-        <span tabIndex={0} role="button" className="tutorial">
-          ?
-        </span>
+    <div className="mb-3" id={props.id}>
+      <div className="flex align-center">
+        <p className="font-bold">{props.name}</p>
+        <Tooltip text="?" explanation={props.explanation} />
       </div>
-      <div style={{ display: "flex" }}>
-        <label>
+      <div className="flex items-center content-center">
+        <label className="text-none">
           {props.label}
           <input
             type={"range"}

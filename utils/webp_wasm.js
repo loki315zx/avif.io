@@ -45,7 +45,10 @@ var Module = (function () {
         scriptDirectory = _scriptDir;
       }
       if (scriptDirectory.indexOf("blob:") !== 0) {
-        scriptDirectory = scriptDirectory.substr(0, scriptDirectory.lastIndexOf("/") + 1);
+        scriptDirectory = scriptDirectory.substr(
+          0,
+          scriptDirectory.lastIndexOf("/") + 1
+        );
       } else {
         scriptDirectory = "";
       }
@@ -130,7 +133,10 @@ var Module = (function () {
     }
     function getCFunc(ident) {
       var func = Module["_" + ident];
-      assert(func, "Cannot call unknown function " + ident + ", make sure it is exported");
+      assert(
+        func,
+        "Cannot call unknown function " + ident + ", make sure it is exported"
+      );
       return func;
     }
     function ccall(ident, returnType, argTypes, args, opts) {
@@ -187,7 +193,8 @@ var Module = (function () {
         return ccall(ident, returnType, argTypes, arguments, opts);
       };
     }
-    var UTF8Decoder = typeof TextDecoder !== "undefined" ? new TextDecoder("utf8") : undefined;
+    var UTF8Decoder =
+      typeof TextDecoder !== "undefined" ? new TextDecoder("utf8") : undefined;
     function UTF8ArrayToString(heap, idx, maxBytesToRead) {
       var endIdx = idx + maxBytesToRead;
       var endPtr = idx;
@@ -285,7 +292,15 @@ var Module = (function () {
       }
       return x;
     }
-    var buffer, HEAP8, HEAPU8, HEAP16, HEAPU16, HEAP32, HEAPU32, HEAPF32, HEAPF64;
+    var buffer,
+      HEAP8,
+      HEAPU8,
+      HEAP16,
+      HEAPU16,
+      HEAP32,
+      HEAPU32,
+      HEAPF32,
+      HEAPF64;
     function updateGlobalBufferAndViews(buf) {
       buffer = buf;
       Module["HEAP8"] = HEAP8 = new Int8Array(buf);
@@ -321,7 +336,8 @@ var Module = (function () {
     var runtimeInitialized = false;
     function preRun() {
       if (Module["preRun"]) {
-        if (typeof Module["preRun"] == "function") Module["preRun"] = [Module["preRun"]];
+        if (typeof Module["preRun"] == "function")
+          Module["preRun"] = [Module["preRun"]];
         while (Module["preRun"].length) {
           addOnPreRun(Module["preRun"].shift());
         }
@@ -340,7 +356,8 @@ var Module = (function () {
     }
     function postRun() {
       if (Module["postRun"]) {
-        if (typeof Module["postRun"] == "function") Module["postRun"] = [Module["postRun"]];
+        if (typeof Module["postRun"] == "function")
+          Module["postRun"] = [Module["postRun"]];
         while (Module["postRun"].length) {
           addOnPostRun(Module["postRun"].shift());
         }
@@ -402,7 +419,9 @@ var Module = (function () {
       throw e;
     }
     function hasPrefix(str, prefix) {
-      return String.prototype.startsWith ? str.startsWith(prefix) : str.indexOf(prefix) === 0;
+      return String.prototype.startsWith
+        ? str.startsWith(prefix)
+        : str.indexOf(prefix) === 0;
     }
     var dataURIPrefix = "data:application/octet-stream;base64,";
     function isDataURI(filename) {
@@ -437,7 +456,9 @@ var Module = (function () {
         return fetch(wasmBinaryFile, { credentials: "same-origin" })
           .then(function (response) {
             if (!response["ok"]) {
-              throw "failed to load wasm binary file at '" + wasmBinaryFile + "'";
+              throw (
+                "failed to load wasm binary file at '" + wasmBinaryFile + "'"
+              );
             }
             return response["arrayBuffer"]();
           })
@@ -475,7 +496,9 @@ var Module = (function () {
           !isDataURI(wasmBinaryFile) &&
           typeof fetch === "function"
         ) {
-          fetch(wasmBinaryFile, { credentials: "same-origin" }).then(function (response) {
+          fetch(wasmBinaryFile, { credentials: "same-origin" }).then(function (
+            response
+          ) {
             var result = WebAssembly.instantiateStreaming(response, info);
             return result.then(receiveInstantiatedSource, function (reason) {
               err("wasm streaming compile failed: " + reason);
@@ -560,7 +583,8 @@ var Module = (function () {
     }
     var PATH = {
       splitPath: function (filename) {
-        var splitPathRe = /^(\/?|)([\s\S]*?)((?:\.{1,2}|[^\/]+?|)(\.[^.\/]*|))(?:[\/]*)$/;
+        var splitPathRe =
+          /^(\/?|)([\s\S]*?)((?:\.{1,2}|[^\/]+?|)(\.[^.\/]*|))(?:[\/]*)$/;
         return splitPathRe.exec(filename).slice(1);
       },
       normalizeArray: function (parts, allowAboveRoot) {
@@ -755,7 +779,10 @@ var Module = (function () {
         get_char: function (tty) {
           if (!tty.input.length) {
             var result = null;
-            if (typeof window != "undefined" && typeof window.prompt == "function") {
+            if (
+              typeof window != "undefined" &&
+              typeof window.prompt == "function"
+            ) {
               result = window.prompt("Input: ");
               if (result !== null) {
                 result += "\n";
@@ -894,7 +921,8 @@ var Module = (function () {
       },
       getFileDataAsTypedArray: function (node) {
         if (!node.contents) return new Uint8Array(0);
-        if (node.contents.subarray) return node.contents.subarray(0, node.usedBytes);
+        if (node.contents.subarray)
+          return node.contents.subarray(0, node.usedBytes);
         return new Uint8Array(node.contents);
       },
       expandFileStorage: function (node, newCapacity) {
@@ -903,12 +931,15 @@ var Module = (function () {
         var CAPACITY_DOUBLING_MAX = 1024 * 1024;
         newCapacity = Math.max(
           newCapacity,
-          (prevCapacity * (prevCapacity < CAPACITY_DOUBLING_MAX ? 2 : 1.125)) >>> 0
+          (prevCapacity *
+            (prevCapacity < CAPACITY_DOUBLING_MAX ? 2 : 1.125)) >>>
+            0
         );
         if (prevCapacity != 0) newCapacity = Math.max(newCapacity, 256);
         var oldContents = node.contents;
         node.contents = new Uint8Array(newCapacity);
-        if (node.usedBytes > 0) node.contents.set(oldContents.subarray(0, node.usedBytes), 0);
+        if (node.usedBytes > 0)
+          node.contents.set(oldContents.subarray(0, node.usedBytes), 0);
         return;
       },
       resizeFileStorage: function (node, newSize) {
@@ -922,7 +953,9 @@ var Module = (function () {
           var oldContents = node.contents;
           node.contents = new Uint8Array(newSize);
           if (oldContents) {
-            node.contents.set(oldContents.subarray(0, Math.min(newSize, node.usedBytes)));
+            node.contents.set(
+              oldContents.subarray(0, Math.min(newSize, node.usedBytes))
+            );
           }
           node.usedBytes = newSize;
           return;
@@ -1032,7 +1065,8 @@ var Module = (function () {
           if (size > 8 && contents.subarray) {
             buffer.set(contents.subarray(position, position + size), offset);
           } else {
-            for (var i = 0; i < size; i++) buffer[offset + i] = contents[position + i];
+            for (var i = 0; i < size; i++)
+              buffer[offset + i] = contents[position + i];
           }
           return size;
         },
@@ -1053,13 +1087,19 @@ var Module = (function () {
               node.usedBytes = length;
               return length;
             } else if (position + length <= node.usedBytes) {
-              node.contents.set(buffer.subarray(offset, offset + length), position);
+              node.contents.set(
+                buffer.subarray(offset, offset + length),
+                position
+              );
               return length;
             }
           }
           MEMFS.expandFileStorage(node, position + length);
           if (node.contents.subarray && buffer.subarray) {
-            node.contents.set(buffer.subarray(offset, offset + length), position);
+            node.contents.set(
+              buffer.subarray(offset, offset + length),
+              position
+            );
           } else {
             for (var i = 0; i < length; i++) {
               node.contents[position + i] = buffer[offset + i];
@@ -1084,7 +1124,10 @@ var Module = (function () {
         },
         allocate: function (stream, offset, length) {
           MEMFS.expandFileStorage(stream.node, offset + length);
-          stream.node.usedBytes = Math.max(stream.node.usedBytes, offset + length);
+          stream.node.usedBytes = Math.max(
+            stream.node.usedBytes,
+            offset + length
+          );
         },
         mmap: function (stream, address, length, position, prot, flags) {
           assert(address === 0);
@@ -1102,7 +1145,11 @@ var Module = (function () {
               if (contents.subarray) {
                 contents = contents.subarray(position, position + length);
               } else {
-                contents = Array.prototype.slice.call(contents, position, position + length);
+                contents = Array.prototype.slice.call(
+                  contents,
+                  position,
+                  position + length
+                );
               }
             }
             allocated = true;
@@ -1121,7 +1168,14 @@ var Module = (function () {
           if (mmapFlags & 2) {
             return 0;
           }
-          var bytesWritten = MEMFS.stream_ops.write(stream, buffer, 0, length, offset, false);
+          var bytesWritten = MEMFS.stream_ops.write(
+            stream,
+            buffer,
+            0,
+            length,
+            offset,
+            false
+          );
           return 0;
         },
       },
@@ -1202,7 +1256,9 @@ var Module = (function () {
           if (FS.isRoot(node)) {
             var mount = node.mount.mountpoint;
             if (!path) return mount;
-            return mount[mount.length - 1] !== "/" ? mount + "/" + path : mount + path;
+            return mount[mount.length - 1] !== "/"
+              ? mount + "/" + path
+              : mount + path;
           }
           path = path ? node.name + "/" + path : node.name;
           node = node.parent;
@@ -1683,7 +1739,10 @@ var Module = (function () {
         if (!old_dir.node_ops.rename) {
           throw new FS.ErrnoError(63);
         }
-        if (FS.isMountpoint(old_node) || (new_node && FS.isMountpoint(new_node))) {
+        if (
+          FS.isMountpoint(old_node) ||
+          (new_node && FS.isMountpoint(new_node))
+        ) {
           throw new FS.ErrnoError(10);
         }
         if (new_dir !== old_dir) {
@@ -1749,16 +1808,23 @@ var Module = (function () {
           }
         } catch (e) {
           err(
-            "FS.trackingDelegate['willDeletePath']('" + path + "') threw an exception: " + e.message
+            "FS.trackingDelegate['willDeletePath']('" +
+              path +
+              "') threw an exception: " +
+              e.message
           );
         }
         parent.node_ops.rmdir(parent, name);
         FS.destroyNode(node);
         try {
-          if (FS.trackingDelegate["onDeletePath"]) FS.trackingDelegate["onDeletePath"](path);
+          if (FS.trackingDelegate["onDeletePath"])
+            FS.trackingDelegate["onDeletePath"](path);
         } catch (e) {
           err(
-            "FS.trackingDelegate['onDeletePath']('" + path + "') threw an exception: " + e.message
+            "FS.trackingDelegate['onDeletePath']('" +
+              path +
+              "') threw an exception: " +
+              e.message
           );
         }
       },
@@ -1791,16 +1857,23 @@ var Module = (function () {
           }
         } catch (e) {
           err(
-            "FS.trackingDelegate['willDeletePath']('" + path + "') threw an exception: " + e.message
+            "FS.trackingDelegate['willDeletePath']('" +
+              path +
+              "') threw an exception: " +
+              e.message
           );
         }
         parent.node_ops.unlink(parent, name);
         FS.destroyNode(node);
         try {
-          if (FS.trackingDelegate["onDeletePath"]) FS.trackingDelegate["onDeletePath"](path);
+          if (FS.trackingDelegate["onDeletePath"])
+            FS.trackingDelegate["onDeletePath"](path);
         } catch (e) {
           err(
-            "FS.trackingDelegate['onDeletePath']('" + path + "') threw an exception: " + e.message
+            "FS.trackingDelegate['onDeletePath']('" +
+              path +
+              "') threw an exception: " +
+              e.message
           );
         }
       },
@@ -1813,7 +1886,10 @@ var Module = (function () {
         if (!link.node_ops.readlink) {
           throw new FS.ErrnoError(28);
         }
-        return PATH_FS.resolve(FS.getPath(link.parent), link.node_ops.readlink(link));
+        return PATH_FS.resolve(
+          FS.getPath(link.parent),
+          link.node_ops.readlink(link)
+        );
       },
       stat: function (path, dontFollow) {
         var lookup = FS.lookupPath(path, { follow: !dontFollow });
@@ -2070,7 +2146,13 @@ var Module = (function () {
         } else if (!stream.seekable) {
           throw new FS.ErrnoError(70);
         }
-        var bytesRead = stream.stream_ops.read(stream, buffer, offset, length, position);
+        var bytesRead = stream.stream_ops.read(
+          stream,
+          buffer,
+          offset,
+          length,
+          position
+        );
         if (!seeking) stream.position += bytesRead;
         return bytesRead;
       },
@@ -2140,7 +2222,11 @@ var Module = (function () {
         stream.stream_ops.allocate(stream, offset, length);
       },
       mmap: function (stream, address, length, position, prot, flags) {
-        if ((prot & 2) !== 0 && (flags & 2) === 0 && (stream.flags & 2097155) !== 2) {
+        if (
+          (prot & 2) !== 0 &&
+          (flags & 2) === 0 &&
+          (stream.flags & 2097155) !== 2
+        ) {
           throw new FS.ErrnoError(2);
         }
         if ((stream.flags & 2097155) === 1) {
@@ -2149,13 +2235,26 @@ var Module = (function () {
         if (!stream.stream_ops.mmap) {
           throw new FS.ErrnoError(43);
         }
-        return stream.stream_ops.mmap(stream, address, length, position, prot, flags);
+        return stream.stream_ops.mmap(
+          stream,
+          address,
+          length,
+          position,
+          prot,
+          flags
+        );
       },
       msync: function (stream, buffer, offset, length, mmapFlags) {
         if (!stream || !stream.stream_ops.msync) {
           return 0;
         }
-        return stream.stream_ops.msync(stream, buffer, offset, length, mmapFlags);
+        return stream.stream_ops.msync(
+          stream,
+          buffer,
+          offset,
+          length,
+          mmapFlags
+        );
       },
       munmap: function (stream) {
         return 0;
@@ -2240,7 +2339,10 @@ var Module = (function () {
         FS.mkdev("/dev/tty", FS.makedev(5, 0));
         FS.mkdev("/dev/tty1", FS.makedev(6, 0));
         var random_device;
-        if (typeof crypto === "object" && typeof crypto["getRandomValues"] === "function") {
+        if (
+          typeof crypto === "object" &&
+          typeof crypto["getRandomValues"] === "function"
+        ) {
           var randomBuffer = new Uint8Array(1);
           random_device = function () {
             crypto.getRandomValues(randomBuffer);
@@ -2417,7 +2519,10 @@ var Module = (function () {
         return ret;
       },
       createFolder: function (parent, name, canRead, canWrite) {
-        var path = PATH.join2(typeof parent === "string" ? parent : FS.getPath(parent), name);
+        var path = PATH.join2(
+          typeof parent === "string" ? parent : FS.getPath(parent),
+          name
+        );
         var mode = FS.getMode(canRead, canWrite);
         return FS.mkdir(path, mode);
       },
@@ -2436,20 +2541,27 @@ var Module = (function () {
         return current;
       },
       createFile: function (parent, name, properties, canRead, canWrite) {
-        var path = PATH.join2(typeof parent === "string" ? parent : FS.getPath(parent), name);
+        var path = PATH.join2(
+          typeof parent === "string" ? parent : FS.getPath(parent),
+          name
+        );
         var mode = FS.getMode(canRead, canWrite);
         return FS.create(path, mode);
       },
       createDataFile: function (parent, name, data, canRead, canWrite, canOwn) {
         var path = name
-          ? PATH.join2(typeof parent === "string" ? parent : FS.getPath(parent), name)
+          ? PATH.join2(
+              typeof parent === "string" ? parent : FS.getPath(parent),
+              name
+            )
           : parent;
         var mode = FS.getMode(canRead, canWrite);
         var node = FS.create(path, mode);
         if (data) {
           if (typeof data === "string") {
             var arr = new Array(data.length);
-            for (var i = 0, len = data.length; i < len; ++i) arr[i] = data.charCodeAt(i);
+            for (var i = 0, len = data.length; i < len; ++i)
+              arr[i] = data.charCodeAt(i);
             data = arr;
           }
           FS.chmod(node, mode | 146);
@@ -2461,7 +2573,10 @@ var Module = (function () {
         return node;
       },
       createDevice: function (parent, name, input, output) {
-        var path = PATH.join2(typeof parent === "string" ? parent : FS.getPath(parent), name);
+        var path = PATH.join2(
+          typeof parent === "string" ? parent : FS.getPath(parent),
+          name
+        );
         var mode = FS.getMode(!!input, !!output);
         if (!FS.createDevice.major) FS.createDevice.major = 64;
         var dev = FS.makedev(FS.createDevice.major++, 0);
@@ -2512,11 +2627,15 @@ var Module = (function () {
         return FS.mkdev(path, mode, dev);
       },
       createLink: function (parent, name, target, canRead, canWrite) {
-        var path = PATH.join2(typeof parent === "string" ? parent : FS.getPath(parent), name);
+        var path = PATH.join2(
+          typeof parent === "string" ? parent : FS.getPath(parent),
+          name
+        );
         return FS.symlink(target, path);
       },
       forceLoadFile: function (obj) {
-        if (obj.isDevice || obj.isFolder || obj.link || obj.contents) return true;
+        if (obj.isDevice || obj.isFolder || obj.link || obj.contents)
+          return true;
         var success = true;
         if (typeof XMLHttpRequest !== "undefined") {
           throw new Error(
@@ -2548,64 +2667,90 @@ var Module = (function () {
           var chunkNum = (idx / this.chunkSize) | 0;
           return this.getter(chunkNum)[chunkOffset];
         };
-        LazyUint8Array.prototype.setDataGetter = function LazyUint8Array_setDataGetter(getter) {
-          this.getter = getter;
-        };
-        LazyUint8Array.prototype.cacheLength = function LazyUint8Array_cacheLength() {
-          var xhr = new XMLHttpRequest();
-          xhr.open("HEAD", url, false);
-          xhr.send(null);
-          if (!((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304))
-            throw new Error("Couldn't load " + url + ". Status: " + xhr.status);
-          var datalength = Number(xhr.getResponseHeader("Content-length"));
-          var header;
-          var hasByteServing =
-            (header = xhr.getResponseHeader("Accept-Ranges")) && header === "bytes";
-          var usesGzip = (header = xhr.getResponseHeader("Content-Encoding")) && header === "gzip";
-          var chunkSize = 1024 * 1024;
-          if (!hasByteServing) chunkSize = datalength;
-          var doXHR = function (from, to) {
-            if (from > to)
-              throw new Error("invalid range (" + from + ", " + to + ") or no bytes requested!");
-            if (to > datalength - 1)
-              throw new Error("only " + datalength + " bytes available! programmer error!");
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", url, false);
-            if (datalength !== chunkSize) xhr.setRequestHeader("Range", "bytes=" + from + "-" + to);
-            if (typeof Uint8Array != "undefined") xhr.responseType = "arraybuffer";
-            if (xhr.overrideMimeType) {
-              xhr.overrideMimeType("text/plain; charset=x-user-defined");
-            }
-            xhr.send(null);
-            if (!((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304))
-              throw new Error("Couldn't load " + url + ". Status: " + xhr.status);
-            if (xhr.response !== undefined) {
-              return new Uint8Array(xhr.response || []);
-            } else {
-              return intArrayFromString(xhr.responseText || "", true);
-            }
+        LazyUint8Array.prototype.setDataGetter =
+          function LazyUint8Array_setDataGetter(getter) {
+            this.getter = getter;
           };
-          var lazyArray = this;
-          lazyArray.setDataGetter(function (chunkNum) {
-            var start = chunkNum * chunkSize;
-            var end = (chunkNum + 1) * chunkSize - 1;
-            end = Math.min(end, datalength - 1);
-            if (typeof lazyArray.chunks[chunkNum] === "undefined") {
-              lazyArray.chunks[chunkNum] = doXHR(start, end);
+        LazyUint8Array.prototype.cacheLength =
+          function LazyUint8Array_cacheLength() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("HEAD", url, false);
+            xhr.send(null);
+            if (
+              !((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304)
+            )
+              throw new Error(
+                "Couldn't load " + url + ". Status: " + xhr.status
+              );
+            var datalength = Number(xhr.getResponseHeader("Content-length"));
+            var header;
+            var hasByteServing =
+              (header = xhr.getResponseHeader("Accept-Ranges")) &&
+              header === "bytes";
+            var usesGzip =
+              (header = xhr.getResponseHeader("Content-Encoding")) &&
+              header === "gzip";
+            var chunkSize = 1024 * 1024;
+            if (!hasByteServing) chunkSize = datalength;
+            var doXHR = function (from, to) {
+              if (from > to)
+                throw new Error(
+                  "invalid range (" +
+                    from +
+                    ", " +
+                    to +
+                    ") or no bytes requested!"
+                );
+              if (to > datalength - 1)
+                throw new Error(
+                  "only " + datalength + " bytes available! programmer error!"
+                );
+              var xhr = new XMLHttpRequest();
+              xhr.open("GET", url, false);
+              if (datalength !== chunkSize)
+                xhr.setRequestHeader("Range", "bytes=" + from + "-" + to);
+              if (typeof Uint8Array != "undefined")
+                xhr.responseType = "arraybuffer";
+              if (xhr.overrideMimeType) {
+                xhr.overrideMimeType("text/plain; charset=x-user-defined");
+              }
+              xhr.send(null);
+              if (
+                !((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304)
+              )
+                throw new Error(
+                  "Couldn't load " + url + ". Status: " + xhr.status
+                );
+              if (xhr.response !== undefined) {
+                return new Uint8Array(xhr.response || []);
+              } else {
+                return intArrayFromString(xhr.responseText || "", true);
+              }
+            };
+            var lazyArray = this;
+            lazyArray.setDataGetter(function (chunkNum) {
+              var start = chunkNum * chunkSize;
+              var end = (chunkNum + 1) * chunkSize - 1;
+              end = Math.min(end, datalength - 1);
+              if (typeof lazyArray.chunks[chunkNum] === "undefined") {
+                lazyArray.chunks[chunkNum] = doXHR(start, end);
+              }
+              if (typeof lazyArray.chunks[chunkNum] === "undefined")
+                throw new Error("doXHR failed!");
+              return lazyArray.chunks[chunkNum];
+            });
+            if (usesGzip || !datalength) {
+              chunkSize = datalength = 1;
+              datalength = this.getter(0).length;
+              chunkSize = datalength;
+              out(
+                "LazyFiles on gzip forces download of the whole file when length is accessed"
+              );
             }
-            if (typeof lazyArray.chunks[chunkNum] === "undefined") throw new Error("doXHR failed!");
-            return lazyArray.chunks[chunkNum];
-          });
-          if (usesGzip || !datalength) {
-            chunkSize = datalength = 1;
-            datalength = this.getter(0).length;
-            chunkSize = datalength;
-            out("LazyFiles on gzip forces download of the whole file when length is accessed");
-          }
-          this._length = datalength;
-          this._chunkSize = chunkSize;
-          this.lengthKnown = true;
-        };
+            this._length = datalength;
+            this._chunkSize = chunkSize;
+            this.lengthKnown = true;
+          };
         if (typeof XMLHttpRequest !== "undefined") {
           if (!ENVIRONMENT_IS_WORKER)
             throw "Cannot do synchronous binary XHRs outside webworkers in modern browsers. Use --embed-file or --preload-file in emcc";
@@ -2657,7 +2802,13 @@ var Module = (function () {
             return fn.apply(null, arguments);
           };
         });
-        stream_ops.read = function stream_ops_read(stream, buffer, offset, length, position) {
+        stream_ops.read = function stream_ops_read(
+          stream,
+          buffer,
+          offset,
+          length,
+          position
+        ) {
           if (!FS.forceLoadFile(node)) {
             throw new FS.ErrnoError(29);
           }
@@ -2691,13 +2842,22 @@ var Module = (function () {
         preFinish
       ) {
         Browser.init();
-        var fullname = name ? PATH_FS.resolve(PATH.join2(parent, name)) : parent;
+        var fullname = name
+          ? PATH_FS.resolve(PATH.join2(parent, name))
+          : parent;
         var dep = getUniqueRunDependency("cp " + fullname);
         function processData(byteArray) {
           function finish(byteArray) {
             if (preFinish) preFinish();
             if (!dontCreateFile) {
-              FS.createDataFile(parent, name, byteArray, canRead, canWrite, canOwn);
+              FS.createDataFile(
+                parent,
+                name,
+                byteArray,
+                canRead,
+                canWrite,
+                canOwn
+              );
             }
             if (onload) onload();
             removeRunDependency(dep);
@@ -2730,7 +2890,10 @@ var Module = (function () {
       },
       indexedDB: function () {
         return (
-          window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB
+          window.indexedDB ||
+          window.mozIndexedDB ||
+          window.webkitIndexedDB ||
+          window.msIndexedDB
         );
       },
       DB_NAME: function () {
@@ -2764,7 +2927,10 @@ var Module = (function () {
             else onerror();
           }
           paths.forEach(function (path) {
-            var putRequest = files.put(FS.analyzePath(path).object.contents, path);
+            var putRequest = files.put(
+              FS.analyzePath(path).object.contents,
+              path
+            );
             putRequest.onsuccess = function putRequest_onsuccess() {
               ok++;
               if (ok + fail == total) finish();
@@ -2844,11 +3010,15 @@ var Module = (function () {
         return 1;
       }
       if (mode == 0) {
-        Browser.mainLoop.scheduler = function Browser_mainLoop_scheduler_setTimeout() {
-          var timeUntilNextTick =
-            Math.max(0, Browser.mainLoop.tickStartTime + value - _emscripten_get_now()) | 0;
-          setTimeout(Browser.mainLoop.runner, timeUntilNextTick);
-        };
+        Browser.mainLoop.scheduler =
+          function Browser_mainLoop_scheduler_setTimeout() {
+            var timeUntilNextTick =
+              Math.max(
+                0,
+                Browser.mainLoop.tickStartTime + value - _emscripten_get_now()
+              ) | 0;
+            setTimeout(Browser.mainLoop.runner, timeUntilNextTick);
+          };
         Browser.mainLoop.method = "timeout";
       } else if (mode == 1) {
         Browser.mainLoop.scheduler = function Browser_mainLoop_scheduler_rAF() {
@@ -2868,19 +3038,25 @@ var Module = (function () {
               setImmediates.shift()();
             }
           };
-          addEventListener("message", Browser_setImmediate_messageHandler, true);
+          addEventListener(
+            "message",
+            Browser_setImmediate_messageHandler,
+            true
+          );
           setImmediate = function Browser_emulated_setImmediate(func) {
             setImmediates.push(func);
             if (ENVIRONMENT_IS_WORKER) {
-              if (Module["setImmediates"] === undefined) Module["setImmediates"] = [];
+              if (Module["setImmediates"] === undefined)
+                Module["setImmediates"] = [];
               Module["setImmediates"].push(func);
               postMessage({ target: emscriptenMainLoopMessageId });
             } else postMessage(emscriptenMainLoopMessageId, "*");
           };
         }
-        Browser.mainLoop.scheduler = function Browser_mainLoop_scheduler_setImmediate() {
-          setImmediate(Browser.mainLoop.runner);
-        };
+        Browser.mainLoop.scheduler =
+          function Browser_mainLoop_scheduler_setImmediate() {
+            setImmediate(Browser.mainLoop.runner);
+          };
         Browser.mainLoop.method = "immediate";
       }
       return 0;
@@ -2889,7 +3065,13 @@ var Module = (function () {
     _emscripten_get_now = function () {
       return performance.now();
     };
-    function setMainLoop(browserIterationFunc, fps, simulateInfiniteLoop, arg, noSetTiming) {
+    function setMainLoop(
+      browserIterationFunc,
+      fps,
+      simulateInfiniteLoop,
+      arg,
+      noSetTiming
+    ) {
       noExitRuntime = true;
       assert(
         !Browser.mainLoop.func,
@@ -2906,7 +3088,8 @@ var Module = (function () {
           blocker.func(blocker.arg);
           if (Browser.mainLoop.remainingBlockers) {
             var remaining = Browser.mainLoop.remainingBlockers;
-            var next = remaining % 1 == 0 ? remaining - 1 : Math.floor(remaining);
+            var next =
+              remaining % 1 == 0 ? remaining - 1 : Math.floor(remaining);
             if (blocker.counted) {
               Browser.mainLoop.remainingBlockers = next;
             } else {
@@ -2915,19 +3098,26 @@ var Module = (function () {
             }
           }
           console.log(
-            'main loop blocker "' + blocker.name + '" took ' + (Date.now() - start) + " ms"
+            'main loop blocker "' +
+              blocker.name +
+              '" took ' +
+              (Date.now() - start) +
+              " ms"
           );
           Browser.mainLoop.updateStatus();
-          if (thisMainLoopId < Browser.mainLoop.currentlyRunningMainloop) return;
+          if (thisMainLoopId < Browser.mainLoop.currentlyRunningMainloop)
+            return;
           setTimeout(Browser.mainLoop.runner, 0);
           return;
         }
         if (thisMainLoopId < Browser.mainLoop.currentlyRunningMainloop) return;
-        Browser.mainLoop.currentFrameNumber = (Browser.mainLoop.currentFrameNumber + 1) | 0;
+        Browser.mainLoop.currentFrameNumber =
+          (Browser.mainLoop.currentFrameNumber + 1) | 0;
         if (
           Browser.mainLoop.timingMode == 1 &&
           Browser.mainLoop.timingValue > 1 &&
-          Browser.mainLoop.currentFrameNumber % Browser.mainLoop.timingValue != 0
+          Browser.mainLoop.currentFrameNumber % Browser.mainLoop.timingValue !=
+            0
         ) {
           Browser.mainLoop.scheduler();
           return;
@@ -2981,7 +3171,9 @@ var Module = (function () {
             var expected = Browser.mainLoop.expectedBlockers;
             if (remaining) {
               if (remaining < expected) {
-                Module["setStatus"](message + " (" + (expected - remaining) + "/" + expected + ")");
+                Module["setStatus"](
+                  message + " (" + (expected - remaining) + "/" + expected + ")"
+                );
               } else {
                 Module["setStatus"](message);
               }
@@ -3006,7 +3198,8 @@ var Module = (function () {
             } else if (e == "unwind") {
               return;
             } else {
-              if (e && typeof e === "object" && e.stack) err("exception thrown: " + [e, e.stack]);
+              if (e && typeof e === "object" && e.stack)
+                err("exception thrown: " + [e, e.stack]);
               throw e;
             }
           }
@@ -3026,7 +3219,9 @@ var Module = (function () {
           Browser.hasBlobConstructor = true;
         } catch (e) {
           Browser.hasBlobConstructor = false;
-          console.log("warning: no blob constructor, cannot create blobs with mimetypes");
+          console.log(
+            "warning: no blob constructor, cannot create blobs with mimetypes"
+          );
         }
         Browser.BlobBuilder =
           typeof MozBlobBuilder != "undefined"
@@ -3037,8 +3232,15 @@ var Module = (function () {
             ? console.log("warning: no BlobBuilder")
             : null;
         Browser.URLObject =
-          typeof window != "undefined" ? (window.URL ? window.URL : window.webkitURL) : undefined;
-        if (!Module.noImageDecoding && typeof Browser.URLObject === "undefined") {
+          typeof window != "undefined"
+            ? window.URL
+              ? window.URL
+              : window.webkitURL
+            : undefined;
+        if (
+          !Module.noImageDecoding &&
+          typeof Browser.URLObject === "undefined"
+        ) {
           console.log(
             "warning: Browser does not support creating object URLs. Built-in browser image decoding will not be available."
           );
@@ -3048,7 +3250,12 @@ var Module = (function () {
         imagePlugin["canHandle"] = function imagePlugin_canHandle(name) {
           return !Module.noImageDecoding && /\.(jpg|jpeg|png|bmp)$/i.test(name);
         };
-        imagePlugin["handle"] = function imagePlugin_handle(byteArray, name, onload, onerror) {
+        imagePlugin["handle"] = function imagePlugin_handle(
+          byteArray,
+          name,
+          onload,
+          onerror
+        ) {
           var b = null;
           if (Browser.hasBlobConstructor) {
             try {
@@ -3060,7 +3267,9 @@ var Module = (function () {
               }
             } catch (e) {
               warnOnce(
-                "Blob constructor present but fails: " + e + "; falling back to blob builder"
+                "Blob constructor present but fails: " +
+                  e +
+                  "; falling back to blob builder"
               );
             }
           }
@@ -3091,9 +3300,17 @@ var Module = (function () {
         Module["preloadPlugins"].push(imagePlugin);
         var audioPlugin = {};
         audioPlugin["canHandle"] = function audioPlugin_canHandle(name) {
-          return !Module.noAudioDecoding && name.substr(-4) in { ".ogg": 1, ".wav": 1, ".mp3": 1 };
+          return (
+            !Module.noAudioDecoding &&
+            name.substr(-4) in { ".ogg": 1, ".wav": 1, ".mp3": 1 }
+          );
         };
-        audioPlugin["handle"] = function audioPlugin_handle(byteArray, name, onload, onerror) {
+        audioPlugin["handle"] = function audioPlugin_handle(
+          byteArray,
+          name,
+          onload,
+          onerror
+        ) {
           var done = false;
           function finish(audio) {
             if (done) return;
@@ -3132,7 +3349,8 @@ var Module = (function () {
                   ", trying slower base64 approach"
               );
               function encode64(data) {
-                var BASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+                var BASE =
+                  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
                 var PAD = "=";
                 var ret = "";
                 var leftchar = 0;
@@ -3155,7 +3373,11 @@ var Module = (function () {
                 }
                 return ret;
               }
-              audio.src = "data:audio/x-" + name.substr(-3) + ";base64," + encode64(byteArray);
+              audio.src =
+                "data:audio/x-" +
+                name.substr(-3) +
+                ";base64," +
+                encode64(byteArray);
               finish(audio);
             };
             audio.src = url;
@@ -3189,15 +3411,34 @@ var Module = (function () {
             document["msExitPointerLock"] ||
             function () {};
           canvas.exitPointerLock = canvas.exitPointerLock.bind(document);
-          document.addEventListener("pointerlockchange", pointerLockChange, false);
-          document.addEventListener("mozpointerlockchange", pointerLockChange, false);
-          document.addEventListener("webkitpointerlockchange", pointerLockChange, false);
-          document.addEventListener("mspointerlockchange", pointerLockChange, false);
+          document.addEventListener(
+            "pointerlockchange",
+            pointerLockChange,
+            false
+          );
+          document.addEventListener(
+            "mozpointerlockchange",
+            pointerLockChange,
+            false
+          );
+          document.addEventListener(
+            "webkitpointerlockchange",
+            pointerLockChange,
+            false
+          );
+          document.addEventListener(
+            "mspointerlockchange",
+            pointerLockChange,
+            false
+          );
           if (Module["elementPointerLock"]) {
             canvas.addEventListener(
               "click",
               function (ev) {
-                if (!Browser.pointerLock && Module["canvas"].requestPointerLock) {
+                if (
+                  !Browser.pointerLock &&
+                  Module["canvas"].requestPointerLock
+                ) {
                   Module["canvas"].requestPointerLock();
                   ev.preventDefault();
                 }
@@ -3207,8 +3448,14 @@ var Module = (function () {
           }
         }
       },
-      createContext: function (canvas, useWebGL, setInModule, webGLContextAttributes) {
-        if (useWebGL && Module.ctx && canvas == Module.canvas) return Module.ctx;
+      createContext: function (
+        canvas,
+        useWebGL,
+        setInModule,
+        webGLContextAttributes
+      ) {
+        if (useWebGL && Module.ctx && canvas == Module.canvas)
+          return Module.ctx;
         var ctx;
         var contextHandle;
         if (useWebGL) {
@@ -3255,8 +3502,10 @@ var Module = (function () {
       requestFullscreen: function (lockPointer, resizeCanvas) {
         Browser.lockPointer = lockPointer;
         Browser.resizeCanvas = resizeCanvas;
-        if (typeof Browser.lockPointer === "undefined") Browser.lockPointer = true;
-        if (typeof Browser.resizeCanvas === "undefined") Browser.resizeCanvas = false;
+        if (typeof Browser.lockPointer === "undefined")
+          Browser.lockPointer = true;
+        if (typeof Browser.resizeCanvas === "undefined")
+          Browser.resizeCanvas = false;
         var canvas = Module["canvas"];
         function fullscreenChange() {
           Browser.isFullscreen = false;
@@ -3285,15 +3534,33 @@ var Module = (function () {
               Browser.updateCanvasDimensions(canvas);
             }
           }
-          if (Module["onFullScreen"]) Module["onFullScreen"](Browser.isFullscreen);
-          if (Module["onFullscreen"]) Module["onFullscreen"](Browser.isFullscreen);
+          if (Module["onFullScreen"])
+            Module["onFullScreen"](Browser.isFullscreen);
+          if (Module["onFullscreen"])
+            Module["onFullscreen"](Browser.isFullscreen);
         }
         if (!Browser.fullscreenHandlersInstalled) {
           Browser.fullscreenHandlersInstalled = true;
-          document.addEventListener("fullscreenchange", fullscreenChange, false);
-          document.addEventListener("mozfullscreenchange", fullscreenChange, false);
-          document.addEventListener("webkitfullscreenchange", fullscreenChange, false);
-          document.addEventListener("MSFullscreenChange", fullscreenChange, false);
+          document.addEventListener(
+            "fullscreenchange",
+            fullscreenChange,
+            false
+          );
+          document.addEventListener(
+            "mozfullscreenchange",
+            fullscreenChange,
+            false
+          );
+          document.addEventListener(
+            "webkitfullscreenchange",
+            fullscreenChange,
+            false
+          );
+          document.addEventListener(
+            "MSFullscreenChange",
+            fullscreenChange,
+            false
+          );
         }
         var canvasContainer = document.createElement("div");
         canvas.parentNode.insertBefore(canvasContainer, canvas);
@@ -3304,12 +3571,16 @@ var Module = (function () {
           canvasContainer["msRequestFullscreen"] ||
           (canvasContainer["webkitRequestFullscreen"]
             ? function () {
-                canvasContainer["webkitRequestFullscreen"](Element["ALLOW_KEYBOARD_INPUT"]);
+                canvasContainer["webkitRequestFullscreen"](
+                  Element["ALLOW_KEYBOARD_INPUT"]
+                );
               }
             : null) ||
           (canvasContainer["webkitRequestFullScreen"]
             ? function () {
-                canvasContainer["webkitRequestFullScreen"](Element["ALLOW_KEYBOARD_INPUT"]);
+                canvasContainer["webkitRequestFullScreen"](
+                  Element["ALLOW_KEYBOARD_INPUT"]
+                );
               }
             : null);
         canvasContainer.requestFullscreen();
@@ -3412,15 +3683,26 @@ var Module = (function () {
       },
       getUserMedia: function (func) {
         if (!window.getUserMedia) {
-          window.getUserMedia = navigator["getUserMedia"] || navigator["mozGetUserMedia"];
+          window.getUserMedia =
+            navigator["getUserMedia"] || navigator["mozGetUserMedia"];
         }
         window.getUserMedia(func);
       },
       getMovementX: function (event) {
-        return event["movementX"] || event["mozMovementX"] || event["webkitMovementX"] || 0;
+        return (
+          event["movementX"] ||
+          event["mozMovementX"] ||
+          event["webkitMovementX"] ||
+          0
+        );
       },
       getMovementY: function (event) {
-        return event["movementY"] || event["mozMovementY"] || event["webkitMovementY"] || 0;
+        return (
+          event["movementY"] ||
+          event["mozMovementY"] ||
+          event["webkitMovementY"] ||
+          0
+        );
       },
       getMouseWheelDelta: function (event) {
         var delta = 0;
@@ -3477,8 +3759,14 @@ var Module = (function () {
           var rect = Module["canvas"].getBoundingClientRect();
           var cw = Module["canvas"].width;
           var ch = Module["canvas"].height;
-          var scrollX = typeof window.scrollX !== "undefined" ? window.scrollX : window.pageXOffset;
-          var scrollY = typeof window.scrollY !== "undefined" ? window.scrollY : window.pageYOffset;
+          var scrollX =
+            typeof window.scrollX !== "undefined"
+              ? window.scrollX
+              : window.pageXOffset;
+          var scrollY =
+            typeof window.scrollY !== "undefined"
+              ? window.scrollY
+              : window.pageYOffset;
           if (
             event.type === "touchstart" ||
             event.type === "touchend" ||
@@ -3496,7 +3784,10 @@ var Module = (function () {
             if (event.type === "touchstart") {
               Browser.lastTouches[touch.identifier] = coords;
               Browser.touches[touch.identifier] = coords;
-            } else if (event.type === "touchend" || event.type === "touchmove") {
+            } else if (
+              event.type === "touchend" ||
+              event.type === "touchmove"
+            ) {
               var last = Browser.touches[touch.identifier];
               if (!last) last = coords;
               Browser.lastTouches[touch.identifier] = last;
@@ -3519,7 +3810,10 @@ var Module = (function () {
         readAsync(
           url,
           function (arrayBuffer) {
-            assert(arrayBuffer, 'Loading data file "' + url + '" failed (no arrayBuffer).');
+            assert(
+              arrayBuffer,
+              'Loading data file "' + url + '" failed (no arrayBuffer).'
+            );
             onload(new Uint8Array(arrayBuffer));
             if (dep) removeRunDependency(dep);
           },
@@ -3635,14 +3929,23 @@ var Module = (function () {
         HEAP32[(surf + 20) >> 2] = surfData.buffer;
       }
       HEAP32[(surf + 20) >> 2] = surfData.buffer;
-      if (surf == SDL.screen && Module.screenIsReadOnly && surfData.image) return 0;
+      if (surf == SDL.screen && Module.screenIsReadOnly && surfData.image)
+        return 0;
       if (SDL.defaults.discardOnLock) {
         if (!surfData.image) {
-          surfData.image = surfData.ctx.createImageData(surfData.width, surfData.height);
+          surfData.image = surfData.ctx.createImageData(
+            surfData.width,
+            surfData.height
+          );
         }
         if (!SDL.defaults.opaqueFrontBuffer) return;
       } else {
-        surfData.image = surfData.ctx.getImageData(0, 0, surfData.width, surfData.height);
+        surfData.image = surfData.ctx.getImageData(
+          0,
+          0,
+          surfData.width,
+          surfData.height
+        );
       }
       if (surf == SDL.screen && SDL.defaults.opaqueFrontBuffer) {
         var data = surfData.image.data;
@@ -3906,7 +4209,15 @@ var Module = (function () {
       checkPixelFormat: function (fmt) {},
       loadColorToCSSRGB: function (color) {
         var rgba = HEAP32[color >> 2];
-        return "rgb(" + (rgba & 255) + "," + ((rgba >> 8) & 255) + "," + ((rgba >> 16) & 255) + ")";
+        return (
+          "rgb(" +
+          (rgba & 255) +
+          "," +
+          ((rgba >> 8) & 255) +
+          "," +
+          ((rgba >> 16) & 255) +
+          ")"
+        );
       },
       loadColorToCSSRGBA: function (color) {
         var rgba = HEAP32[color >> 2];
@@ -3937,7 +4248,15 @@ var Module = (function () {
       },
       translateRGBAToCSSRGBA: function (r, g, b, a) {
         return (
-          "rgba(" + (r & 255) + "," + (g & 255) + "," + (b & 255) + "," + (a & 255) / 255 + ")"
+          "rgba(" +
+          (r & 255) +
+          "," +
+          (g & 255) +
+          "," +
+          (b & 255) +
+          "," +
+          (a & 255) / 255 +
+          ")"
         );
       },
       translateRGBAToColor: function (r, g, b, a) {
@@ -4059,7 +4378,8 @@ var Module = (function () {
           return;
         }
         var info = SDL.surfaces[surf];
-        if (!info.usePageCanvas && info.canvas) SDL.canvasPool.push(info.canvas);
+        if (!info.usePageCanvas && info.canvas)
+          SDL.canvasPool.push(info.canvas);
         if (info.buffer) _free(info.buffer);
         _free(info.pixelFormat);
         _free(surf);
@@ -4105,7 +4425,17 @@ var Module = (function () {
         }
         var oldAlpha = dstData.ctx.globalAlpha;
         dstData.ctx.globalAlpha = srcData.alpha / 255;
-        dstData.ctx.drawImage(srcData.canvas, sr.x, sr.y, sr.w, sr.h, dr.x, dr.y, blitw, blith);
+        dstData.ctx.drawImage(
+          srcData.canvas,
+          sr.x,
+          sr.y,
+          sr.w,
+          sr.h,
+          dr.x,
+          dr.y,
+          blitw,
+          blith
+        );
         dstData.ctx.globalAlpha = oldAlpha;
         if (dst != SDL.screen) {
           warnOnce("WARNING: copying canvas data to memory for compatibility");
@@ -4192,7 +4522,12 @@ var Module = (function () {
           case "mousewheel":
           case "wheel":
             var delta = -Browser.getMouseWheelDelta(event);
-            delta = delta == 0 ? 0 : delta > 0 ? Math.max(delta, 1) : Math.min(delta, -1);
+            delta =
+              delta == 0
+                ? 0
+                : delta > 0
+                ? Math.max(delta, 1)
+                : Math.min(delta, -1);
             var button = delta > 0 ? 3 : 4;
             SDL.events.push({
               type: "mousedown",
@@ -4346,7 +4681,11 @@ var Module = (function () {
           code += 32;
         } else {
           code = SDL.keyCodes[event.keyCode] || event.keyCode;
-          if (event.location === 2 && code >= (224 | (1 << 10)) && code <= (227 | (1 << 10))) {
+          if (
+            event.location === 2 &&
+            code >= (224 | (1 << 10)) &&
+            code <= (227 | (1 << 10))
+          ) {
             code += 4;
           }
         }
@@ -4397,7 +4736,10 @@ var Module = (function () {
       flushEventsToHandler: function () {
         if (!SDL.eventHandler) return;
         while (SDL.pollEvent(SDL.eventHandlerTemp)) {
-          wasmTable.get(SDL.eventHandler)(SDL.eventHandlerContext, SDL.eventHandlerTemp);
+          wasmTable.get(SDL.eventHandler)(
+            SDL.eventHandlerContext,
+            SDL.eventHandlerTemp
+          );
         }
       },
       pollEvent: function (ptr) {
@@ -4493,8 +4835,10 @@ var Module = (function () {
             var ly = Browser.lastTouches[touch.identifier].y / h;
             var dx = x - lx;
             var dy = y - ly;
-            if (touch["deviceID"] === undefined) touch.deviceID = SDL.TOUCH_DEFAULT_ID;
-            if (dx === 0 && dy === 0 && event.type === "touchmove") return false;
+            if (touch["deviceID"] === undefined)
+              touch.deviceID = SDL.TOUCH_DEFAULT_ID;
+            if (dx === 0 && dy === 0 && event.type === "touchmove")
+              return false;
             HEAP32[ptr >> 2] = SDL.DOMEventToSDLEvent[event.type];
             HEAP32[(ptr + 4) >> 2] = _SDL_GetTicks();
             (tempI64 = [
@@ -4502,8 +4846,15 @@ var Module = (function () {
               ((tempDouble = touch.deviceID),
               +Math_abs(tempDouble) >= 1
                 ? tempDouble > 0
-                  ? (Math_min(+Math_floor(tempDouble / 4294967296), 4294967295) | 0) >>> 0
-                  : ~~+Math_ceil((tempDouble - +(~~tempDouble >>> 0)) / 4294967296) >>> 0
+                  ? (Math_min(
+                      +Math_floor(tempDouble / 4294967296),
+                      4294967295
+                    ) |
+                      0) >>>
+                    0
+                  : ~~+Math_ceil(
+                      (tempDouble - +(~~tempDouble >>> 0)) / 4294967296
+                    ) >>> 0
                 : 0),
             ]),
               (HEAP32[(ptr + 8) >> 2] = tempI64[0]),
@@ -4513,8 +4864,15 @@ var Module = (function () {
               ((tempDouble = touch.identifier),
               +Math_abs(tempDouble) >= 1
                 ? tempDouble > 0
-                  ? (Math_min(+Math_floor(tempDouble / 4294967296), 4294967295) | 0) >>> 0
-                  : ~~+Math_ceil((tempDouble - +(~~tempDouble >>> 0)) / 4294967296) >>> 0
+                  ? (Math_min(
+                      +Math_floor(tempDouble / 4294967296),
+                      4294967295
+                    ) |
+                      0) >>>
+                    0
+                  : ~~+Math_ceil(
+                      (tempDouble - +(~~tempDouble >>> 0)) / 4294967296
+                    ) >>> 0
                 : 0),
             ]),
               (HEAP32[(ptr + 16) >> 2] = tempI64[0]),
@@ -4553,7 +4911,9 @@ var Module = (function () {
             HEAP32[ptr >> 2] = SDL.DOMEventToSDLEvent[event.type];
             HEAP8[(ptr + 4) >> 0] = event.index;
             HEAP8[(ptr + 5) >> 0] = event.axis;
-            HEAP32[(ptr + 8) >> 2] = SDL.joystickAxisValueConversion(event.value);
+            HEAP32[(ptr + 8) >> 2] = SDL.joystickAxisValueConversion(
+              event.value
+            );
             break;
           }
           case "focus": {
@@ -4573,7 +4933,9 @@ var Module = (function () {
           case "visibilitychange": {
             var SDL_WINDOWEVENT_SHOWN = 1;
             var SDL_WINDOWEVENT_HIDDEN = 2;
-            var visibilityEventID = event.visible ? SDL_WINDOWEVENT_SHOWN : SDL_WINDOWEVENT_HIDDEN;
+            var visibilityEventID = event.visible
+              ? SDL_WINDOWEVENT_SHOWN
+              : SDL_WINDOWEVENT_HIDDEN;
             HEAP32[ptr >> 2] = SDL.DOMEventToSDLEvent[event.type];
             HEAP32[(ptr + 4) >> 2] = 0;
             HEAP8[(ptr + 8) >> 0] = visibilityEventID;
@@ -4660,7 +5022,8 @@ var Module = (function () {
           audio.webAudioPannerNode["connect"](audio.webAudioGainNode);
           audio.webAudioGainNode["connect"](SDL.audioContext["destination"]);
           audio.webAudioNode["start"](0, audio.currentPosition);
-          audio.startTime = SDL.audioContext["currentTime"] - audio.currentPosition;
+          audio.startTime =
+            SDL.audioContext["currentTime"] - audio.currentPosition;
         } catch (e) {
           err("playWebAudio failed: " + e);
         }
@@ -4683,7 +5046,8 @@ var Module = (function () {
       },
       openAudioContext: function () {
         if (!SDL.audioContext) {
-          if (typeof AudioContext !== "undefined") SDL.audioContext = new AudioContext();
+          if (typeof AudioContext !== "undefined")
+            SDL.audioContext = new AudioContext();
           else if (typeof webkitAudioContext !== "undefined")
             SDL.audioContext = new webkitAudioContext();
         }
@@ -4691,7 +5055,11 @@ var Module = (function () {
       webAudioAvailable: function () {
         return !!SDL.audioContext;
       },
-      fillWebAudioBufferFromHeap: function (heapPtr, sizeSamplesPerChannel, dstAudioBuffer) {
+      fillWebAudioBufferFromHeap: function (
+        heapPtr,
+        sizeSamplesPerChannel,
+        dstAudioBuffer
+      ) {
         var audio = SDL_audio();
         var numChannels = audio.channels;
         for (var c = 0; c < numChannels; ++c) {
@@ -4707,7 +5075,8 @@ var Module = (function () {
           }
           if (audio.format == 32784) {
             for (var j = 0; j < sizeSamplesPerChannel; ++j) {
-              channelData[j] = HEAP16[(heapPtr + (j * numChannels + c) * 2) >> 1] / 32768;
+              channelData[j] =
+                HEAP16[(heapPtr + (j * numChannels + c) * 2) >> 1] / 32768;
             }
           } else if (audio.format == 8) {
             for (var j = 0; j < sizeSamplesPerChannel; ++j) {
@@ -4716,7 +5085,8 @@ var Module = (function () {
             }
           } else if (audio.format == 33056) {
             for (var j = 0; j < sizeSamplesPerChannel; ++j) {
-              channelData[j] = HEAPF32[(heapPtr + (j * numChannels + c) * 4) >> 2];
+              channelData[j] =
+                HEAPF32[(heapPtr + (j * numChannels + c) * 4) >> 2];
             }
           } else {
             throw "Invalid SDL audio format " + audio.format + "!";
@@ -4725,9 +5095,15 @@ var Module = (function () {
       },
       debugSurface: function (surfData) {
         console.log(
-          "dumping surface " + [surfData.surf, surfData.source, surfData.width, surfData.height]
+          "dumping surface " +
+            [surfData.surf, surfData.source, surfData.width, surfData.height]
         );
-        var image = surfData.ctx.getImageData(0, 0, surfData.width, surfData.height);
+        var image = surfData.ctx.getImageData(
+          0,
+          0,
+          surfData.width,
+          surfData.height
+        );
         var data = image.data;
         var num = Math.min(surfData.width, surfData.height);
         for (var i = 0; i < num; i++) {
@@ -4783,7 +5159,9 @@ var Module = (function () {
               var buttonState = SDL.getJoystickButtonState(state.buttons[i]);
               if (buttonState !== prevState.buttons[i]) {
                 SDL.events.push({
-                  type: buttonState ? "joystick_button_down" : "joystick_button_up",
+                  type: buttonState
+                    ? "joystick_button_down"
+                    : "joystick_button_up",
                   joystick: joystick,
                   index: joystick - 1,
                   button: i,
@@ -4830,7 +5208,16 @@ var Module = (function () {
         return null;
       },
     };
-    function _SDL_CreateRGBSurface(flags, width, height, depth, rmask, gmask, bmask, amask) {
+    function _SDL_CreateRGBSurface(
+      flags,
+      width,
+      height,
+      depth,
+      rmask,
+      gmask,
+      bmask,
+      amask
+    ) {
       return SDL.makeSurface(
         width,
         height,
@@ -4851,7 +5238,8 @@ var Module = (function () {
       SDL.startTime = Date.now();
       SDL.initFlags = initFlags;
       if (!Module["doNotCaptureKeyboard"]) {
-        var keyboardListeningElement = Module["keyboardListeningElement"] || document;
+        var keyboardListeningElement =
+          Module["keyboardListeningElement"] || document;
         keyboardListeningElement.addEventListener("keydown", SDL.receiveEvent);
         keyboardListeningElement.addEventListener("keyup", SDL.receiveEvent);
         keyboardListeningElement.addEventListener("keypress", SDL.receiveEvent);
@@ -4891,8 +5279,20 @@ var Module = (function () {
         ctx["drawArraysInstanced"] = function (mode, first, count, primcount) {
           ext["drawArraysInstancedANGLE"](mode, first, count, primcount);
         };
-        ctx["drawElementsInstanced"] = function (mode, count, type, indices, primcount) {
-          ext["drawElementsInstancedANGLE"](mode, count, type, indices, primcount);
+        ctx["drawElementsInstanced"] = function (
+          mode,
+          count,
+          type,
+          indices,
+          primcount
+        ) {
+          ext["drawElementsInstancedANGLE"](
+            mode,
+            count,
+            type,
+            indices,
+            primcount
+          );
         };
         return 1;
       }
@@ -4959,7 +5359,10 @@ var Module = (function () {
         var source = "";
         for (var i = 0; i < count; ++i) {
           var len = length ? HEAP32[(length + i * 4) >> 2] : -1;
-          source += UTF8ToString(HEAP32[(string + i * 4) >> 2], len < 0 ? undefined : len);
+          source += UTF8ToString(
+            HEAP32[(string + i * 4) >> 2],
+            len < 0 ? undefined : len
+          );
         }
         return source;
       },
@@ -4980,7 +5383,8 @@ var Module = (function () {
         if (ctx.canvas) ctx.canvas.GLctxObject = context;
         GL.contexts[handle] = context;
         if (
-          typeof webGLContextAttributes.enableExtensionsByDefault === "undefined" ||
+          typeof webGLContextAttributes.enableExtensionsByDefault ===
+            "undefined" ||
           webGLContextAttributes.enableExtensionsByDefault
         ) {
           GL.initExtensions(context);
@@ -4996,10 +5400,16 @@ var Module = (function () {
         return GL.contexts[contextHandle];
       },
       deleteContext: function (contextHandle) {
-        if (GL.currentContext === GL.contexts[contextHandle]) GL.currentContext = null;
+        if (GL.currentContext === GL.contexts[contextHandle])
+          GL.currentContext = null;
         if (typeof JSEvents === "object")
-          JSEvents.removeAllHandlersOnTarget(GL.contexts[contextHandle].GLctx.canvas);
-        if (GL.contexts[contextHandle] && GL.contexts[contextHandle].GLctx.canvas)
+          JSEvents.removeAllHandlersOnTarget(
+            GL.contexts[contextHandle].GLctx.canvas
+          );
+        if (
+          GL.contexts[contextHandle] &&
+          GL.contexts[contextHandle].GLctx.canvas
+        )
           GL.contexts[contextHandle].GLctx.canvas.GLctxObject = undefined;
         GL.contexts[contextHandle] = null;
       },
@@ -5011,7 +5421,9 @@ var Module = (function () {
         __webgl_enable_ANGLE_instanced_arrays(GLctx);
         __webgl_enable_OES_vertex_array_object(GLctx);
         __webgl_enable_WEBGL_draw_buffers(GLctx);
-        GLctx.disjointTimerQueryExt = GLctx.getExtension("EXT_disjoint_timer_query");
+        GLctx.disjointTimerQueryExt = GLctx.getExtension(
+          "EXT_disjoint_timer_query"
+        );
         __webgl_enable_WEBGL_multi_draw(GLctx);
         var automaticallyEnabledExtensions = [
           "OES_texture_float",
@@ -5063,7 +5475,10 @@ var Module = (function () {
         for (var i = 0; i < numUniforms; ++i) {
           var u = GLctx.getActiveUniform(p, i);
           var name = u.name;
-          ptable.maxUniformLength = Math.max(ptable.maxUniformLength, name.length + 1);
+          ptable.maxUniformLength = Math.max(
+            ptable.maxUniformLength,
+            name.length + 1
+          );
           if (name.slice(-1) == "]") {
             name = name.slice(0, name.lastIndexOf("["));
           }
@@ -5137,7 +5552,10 @@ var Module = (function () {
         var dst = 0;
         var isScreen = surf == SDL.screen;
         var num;
-        if (typeof CanvasPixelArray !== "undefined" && data instanceof CanvasPixelArray) {
+        if (
+          typeof CanvasPixelArray !== "undefined" &&
+          data instanceof CanvasPixelArray
+        ) {
           num = data.length;
           while (dst < num) {
             var val = HEAP32[src];
@@ -5231,10 +5649,16 @@ var Module = (function () {
       var minHeapSize = 16777216;
       for (var cutDown = 1; cutDown <= 4; cutDown *= 2) {
         var overGrownHeapSize = oldSize * (1 + 0.2 / cutDown);
-        overGrownHeapSize = Math.min(overGrownHeapSize, requestedSize + 100663296);
+        overGrownHeapSize = Math.min(
+          overGrownHeapSize,
+          requestedSize + 100663296
+        );
         var newSize = Math.min(
           maxHeapSize,
-          alignUp(Math.max(minHeapSize, requestedSize, overGrownHeapSize), 65536)
+          alignUp(
+            Math.max(minHeapSize, requestedSize, overGrownHeapSize),
+            65536
+          )
         );
         var replacement = emscripten_realloc_buffer(newSize);
         if (replacement) {
@@ -5332,13 +5756,22 @@ var Module = (function () {
     });
     FS.FSNode = FSNode;
     FS.staticInit();
-    Module["requestFullscreen"] = function Module_requestFullscreen(lockPointer, resizeCanvas) {
+    Module["requestFullscreen"] = function Module_requestFullscreen(
+      lockPointer,
+      resizeCanvas
+    ) {
       Browser.requestFullscreen(lockPointer, resizeCanvas);
     };
-    Module["requestAnimationFrame"] = function Module_requestAnimationFrame(func) {
+    Module["requestAnimationFrame"] = function Module_requestAnimationFrame(
+      func
+    ) {
       Browser.requestAnimationFrame(func);
     };
-    Module["setCanvasSize"] = function Module_setCanvasSize(width, height, noUpdates) {
+    Module["setCanvasSize"] = function Module_setCanvasSize(
+      width,
+      height,
+      noUpdates
+    ) {
       Browser.setCanvasSize(width, height, noUpdates);
     };
     Module["pauseMainLoop"] = function Module_pauseMainLoop() {
@@ -5356,13 +5789,23 @@ var Module = (function () {
       setInModule,
       webGLContextAttributes
     ) {
-      return Browser.createContext(canvas, useWebGL, setInModule, webGLContextAttributes);
+      return Browser.createContext(
+        canvas,
+        useWebGL,
+        setInModule,
+        webGLContextAttributes
+      );
     };
     var GLctx;
     function intArrayFromString(stringy, dontAddNull, length) {
       var len = length > 0 ? length : lengthBytesUTF8(stringy) + 1;
       var u8array = new Array(len);
-      var numBytesWritten = stringToUTF8Array(stringy, u8array, 0, u8array.length);
+      var numBytesWritten = stringToUTF8Array(
+        stringy,
+        u8array,
+        0,
+        u8array.length
+      );
       if (dontAddNull) u8array.length = numBytesWritten;
       return u8array;
     }
@@ -5385,40 +5828,60 @@ var Module = (function () {
     };
     var asm = createWasm();
     var ___wasm_call_ctors = (Module["___wasm_call_ctors"] = function () {
-      return (___wasm_call_ctors = Module["___wasm_call_ctors"] = Module["asm"]["n"]).apply(
-        null,
-        arguments
-      );
+      return (___wasm_call_ctors = Module["___wasm_call_ctors"] =
+        Module["asm"]["n"]).apply(null, arguments);
     });
     var _WebpToSDL = (Module["_WebpToSDL"] = function () {
-      return (_WebpToSDL = Module["_WebpToSDL"] = Module["asm"]["o"]).apply(null, arguments);
-    });
-    var _memset = (Module["_memset"] = function () {
-      return (_memset = Module["_memset"] = Module["asm"]["p"]).apply(null, arguments);
-    });
-    var _memcpy = (Module["_memcpy"] = function () {
-      return (_memcpy = Module["_memcpy"] = Module["asm"]["q"]).apply(null, arguments);
-    });
-    var _malloc = (Module["_malloc"] = function () {
-      return (_malloc = Module["_malloc"] = Module["asm"]["r"]).apply(null, arguments);
-    });
-    var _free = (Module["_free"] = function () {
-      return (_free = Module["_free"] = Module["asm"]["s"]).apply(null, arguments);
-    });
-    var ___errno_location = (Module["___errno_location"] = function () {
-      return (___errno_location = Module["___errno_location"] = Module["asm"]["t"]).apply(
+      return (_WebpToSDL = Module["_WebpToSDL"] = Module["asm"]["o"]).apply(
         null,
         arguments
       );
     });
+    var _memset = (Module["_memset"] = function () {
+      return (_memset = Module["_memset"] = Module["asm"]["p"]).apply(
+        null,
+        arguments
+      );
+    });
+    var _memcpy = (Module["_memcpy"] = function () {
+      return (_memcpy = Module["_memcpy"] = Module["asm"]["q"]).apply(
+        null,
+        arguments
+      );
+    });
+    var _malloc = (Module["_malloc"] = function () {
+      return (_malloc = Module["_malloc"] = Module["asm"]["r"]).apply(
+        null,
+        arguments
+      );
+    });
+    var _free = (Module["_free"] = function () {
+      return (_free = Module["_free"] = Module["asm"]["s"]).apply(
+        null,
+        arguments
+      );
+    });
+    var ___errno_location = (Module["___errno_location"] = function () {
+      return (___errno_location = Module["___errno_location"] =
+        Module["asm"]["t"]).apply(null, arguments);
+    });
     var stackSave = (Module["stackSave"] = function () {
-      return (stackSave = Module["stackSave"] = Module["asm"]["u"]).apply(null, arguments);
+      return (stackSave = Module["stackSave"] = Module["asm"]["u"]).apply(
+        null,
+        arguments
+      );
     });
     var stackRestore = (Module["stackRestore"] = function () {
-      return (stackRestore = Module["stackRestore"] = Module["asm"]["v"]).apply(null, arguments);
+      return (stackRestore = Module["stackRestore"] = Module["asm"]["v"]).apply(
+        null,
+        arguments
+      );
     });
     var stackAlloc = (Module["stackAlloc"] = function () {
-      return (stackAlloc = Module["stackAlloc"] = Module["asm"]["w"]).apply(null, arguments);
+      return (stackAlloc = Module["stackAlloc"] = Module["asm"]["w"]).apply(
+        null,
+        arguments
+      );
     });
     Module["cwrap"] = cwrap;
     var calledRun;
@@ -5463,7 +5926,8 @@ var Module = (function () {
     }
     Module["run"] = run;
     if (Module["preInit"]) {
-      if (typeof Module["preInit"] == "function") Module["preInit"] = [Module["preInit"]];
+      if (typeof Module["preInit"] == "function")
+        Module["preInit"] = [Module["preInit"]];
       while (Module["preInit"].length > 0) {
         Module["preInit"].pop()();
       }
@@ -5474,7 +5938,8 @@ var Module = (function () {
     return Module.ready;
   };
 })();
-if (typeof exports === "object" && typeof module === "object") module.exports = Module;
+if (typeof exports === "object" && typeof module === "object")
+  module.exports = Module;
 else if (typeof define === "function" && define["amd"])
   define([], function () {
     return Module;

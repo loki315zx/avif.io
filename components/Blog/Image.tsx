@@ -3,25 +3,25 @@ export default function Image(props: { alt: string; url: string }) {
     <picture>
       <source
         type="image/avif"
-        srcSet={`/img/${props.url}-1440.avif 1440w, /img/${props.url}-720.avif 720w, /img/${props.url}-540.avif 540w, /img/${props.url}-360.avif 360w`}
-        sizes="(max-width: 720px) 100vw, 720px"
+        srcSet={`/img/${props.url}-1536.avif 1536w, /img/${props.url}-768.avif 768w, /img/${props.url}-576.avif 576w, /img/${props.url}-384.avif 384w`}
+        sizes="(max-width: 768px) 100vw, 768px"
       />
       <source
         type="image/webp"
-        srcSet={`/img/${props.url}-1440.webp 1440w, /img/${props.url}-720.webp 720w, /img/${props.url}-540.webp 540w, /img/${props.url}-360.webp 360w`}
-        sizes="(max-width: 720px) 100vw, 720px"
+        srcSet={`/img/${props.url}-1536.webp 1536w, /img/${props.url}-768.webp 768w, /img/${props.url}-576.webp 576w, /img/${props.url}-384.webp 384w`}
+        sizes="(max-width: 768px) 100vw, 768px"
       />
       <source
         type="image/jpeg"
-        srcSet={`/img/${props.url}-1440.jpg 1440w, /img/${props.url}-720.jpg 720w, /img/${props.url}-540.jpg 540w, /img/${props.url}-360.jpg 360w`}
-        sizes="(max-width: 720px) 100vw, 720px"
+        srcSet={`/img/${props.url}-1536.jpg 1536w, /img/${props.url}-768.jpg 768w, /img/${props.url}-576.jpg 576w, /img/${props.url}-384.jpg 384w`}
+        sizes="(max-width: 768px) 100vw, 768px"
       />
       <img
         loading="lazy"
         decoding="async"
         width={2880}
         height={1620}
-        src={`/img/${props.url}-1440.jpg`}
+        src={`/img/${props.url}-1536.jpg`}
         alt={props.alt}
         title={props.alt}
       />

@@ -44,7 +44,12 @@ export class ConversionOptions {
    * @param {number} subsampling
    * @param {boolean} keep_transparency
    */
-  constructor(effort: number, quality: number, subsampling: number, keep_transparency: boolean);
+  constructor(
+    effort: number,
+    quality: number,
+    subsampling: number,
+    keep_transparency: boolean
+  );
   /**
    * Effort of conversion as a percentage from 0 to 100.
    * @returns {number}

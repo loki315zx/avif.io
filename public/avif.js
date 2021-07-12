@@ -9,7 +9,8 @@ var A = new Image();
   }),
   (A.onerror = function () {
     var a = new Image();
-    (a.src = "data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA=="),
+    (a.src =
+      "data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA=="),
       (a.onload = function () {
         F("webp");
       });

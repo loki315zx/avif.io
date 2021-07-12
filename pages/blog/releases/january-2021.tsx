@@ -19,17 +19,27 @@ export default function BlogPost() {
       posts={[meta.february2021, meta.march2021, meta.tutWordpress]}
     >
       <ContentTable contentTable={contentTable} />
-      <H level={2} contentTableCallback={contentTableCallback} text="Performance" />
-      Although improving the speed of the file conversion is our primary priority next to shipping
-      new features, we constantly aim to improve the overall loading time of the website. Since the
-      image conversion takes place client-side, we aim to minimize the overall clutter caused by the
-      conversion to preserve your computer's resources. In this release, we were able to clean up a
-      lot of code and remove some dependencies.
+      <H
+        level={2}
+        contentTableCallback={contentTableCallback}
+        text="Performance"
+      />
+      Although improving the speed of the file conversion is our primary
+      priority next to shipping new features, we constantly aim to improve the
+      overall loading time of the website. Since the image conversion takes
+      place client-side, we aim to minimize the overall clutter caused by the
+      conversion to preserve your computer's resources. In this release, we were
+      able to clean up a lot of code and remove some dependencies.
       <Checklist items={["Reduced overall page size by 25%"]} checked={true} />
-      <H level={2} contentTableCallback={contentTableCallback} text="User Experience" />
-      Constantly measuring the User Experience is like a drug to us. We once again ensured that
-      everything ran smoothly after the big December release, or even better than before. Thanks to
-      Hotjar and your feedback, we will make even more changes in this direction in the future.
+      <H
+        level={2}
+        contentTableCallback={contentTableCallback}
+        text="User Experience"
+      />
+      Constantly measuring the User Experience is like a drug to us. We once
+      again ensured that everything ran smoothly after the big December release,
+      or even better than before. Thanks to Hotjar and your feedback, we will
+      make even more changes in this direction in the future.
       <Checklist
         items={[
           "Added a fixed header for easier navigation",
@@ -44,16 +54,27 @@ export default function BlogPost() {
         ]}
         checked={true}
       />
-      <H level={2} contentTableCallback={contentTableCallback} text="Community" />
-      We have a Discord now! We linked it in our header and footer, as you like to click our names a
-      lot!
+      <H
+        level={2}
+        contentTableCallback={contentTableCallback}
+        text="Community"
+      />
+      We have a Discord now! We linked it in our header and footer, as you like
+      to click our names a lot!
       <Checklist items={["Discord channel!"]} checked={true} />
-      <H level={2} contentTableCallback={contentTableCallback} text="Accessibility" />
+      <H
+        level={2}
+        contentTableCallback={contentTableCallback}
+        text="Accessibility"
+      />
       We fixed several mistakes in terms of accessibility.
-      <Checklist items={["More awesome website for visually impaired people!"]} checked={true} />
+      <Checklist
+        items={["More awesome website for visually impaired people!"]}
+        checked={true}
+      />
       <H level={2} contentTableCallback={contentTableCallback} text="Misc" />
-      Yada yada. Just some misc stuff I thought I should write into this changelog, even though you
-      most likely won't care.
+      Yada yada. Just some misc stuff I thought I should write into this
+      changelog, even though you most likely won't care.
       <Checklist
         items={[
           "Browser Console errors do not show up",
@@ -67,7 +88,11 @@ export default function BlogPost() {
         ]}
         checked={true}
       />
-      <H level={2} contentTableCallback={contentTableCallback} text="Bugs smashed" />
+      <H
+        level={2}
+        contentTableCallback={contentTableCallback}
+        text="Bugs smashed"
+      />
       We smashed some of these good ol' bugs.
       <Checklist
         items={[

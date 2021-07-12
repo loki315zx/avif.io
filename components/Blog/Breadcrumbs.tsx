@@ -32,13 +32,12 @@ export default function Breadcrumbs(props: any) {
         />
         )
       </Head>
-      <div className="breadcrumbs">
+      <div>
         <div>
-          <Link className="white" link={`/${urlSplit[0]}/`} text={`#${urlSplit[0]}`} />
+          <Link link={`/${urlSplit[0]}/`} text={`#${urlSplit[0]}`} />
           {urlSplit[2] ? (
-            <div className="white inline">
+            <div className="inline">
               <Link
-                className="white"
                 link={`/${urlSplit[0]}#${urlSplit[1]}`}
                 text={`#${urlSplit[1]}`}
               />

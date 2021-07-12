@@ -15,7 +15,10 @@ export default function Questions(props: QuestionsProps) {
   questions = _.sortBy(questions, (s) => s.short);
 
   const listQuestions = questions.map((source: any) => (
-    <li key={source.original} className="question">
+    <li
+      key={source.original}
+      className="inline-block p-1 m-1 text-tiny rounded-sm bg-bg-red text-red-700"
+    >
       <a target="_blank" rel="noreferrer" href={source.original}>
         {source.short}
       </a>

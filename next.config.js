@@ -6,16 +6,25 @@ const bundleAnalyzer = require("@next/bundle-analyzer")({
 
 const baseUrl = "";
 
-module.exports = withPlugins([
-  images,
+const nextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+};
+
+module.exports = withPlugins(
   [
-    bundleAnalyzer,
-    {
-      trailingSlash: true,
-      basePath: baseUrl,
-      env: {
-        baseUrl: baseUrl,
+    images,
+    [
+      bundleAnalyzer,
+      {
+        trailingSlash: true,
+        basePath: baseUrl,
+        env: {
+          baseUrl: baseUrl,
+        },
       },
-    },
+    ],
   ],
-]);
+  nextConfig
+);

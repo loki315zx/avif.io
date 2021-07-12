@@ -5,6 +5,9 @@ import Converter, { ConversionId, ConversionResult } from "@utils/converter";
 import { splitNameAndExtension } from "@utils/utils";
 import prettyBytes from "pretty-bytes";
 import { ReactElement, useEffect, useState } from "react";
+import Tooltip from "@components/Tooltip";
+
+import arrow from "@assets/arrow.svg";
 
 export interface ConversionProps {
   file: File;
@@ -18,7 +21,8 @@ function formatRemainingTimeEstimate(estimator: ConversionTimeEstimator) {
   if (estimator.minutes === undefined) return "";
   if (estimator.seconds === undefined) return "";
 
-  if (estimator.minutes === 0 && estimator.seconds === 0) return "almost ready..";
+  if (estimator.minutes === 0 && estimator.seconds === 0)
+    return "almost ready..";
 
   let result = "";
   if (estimator.minutes !== 0) {
@@ -46,7 +50,9 @@ export default function Conversion(props: ConversionProps): ReactElement {
   const [outputObjectURL, setOutputObjectURL] = useState("");
   const [remainingTime, setRemainingTime] = useState("");
   const [conversionId, setConversionId] = useState<ConversionId>();
-  const [conversionTimeEstimator] = useState(new ConversionTimeEstimator(50, 300));
+  const [conversionTimeEstimator] = useState(
+    new ConversionTimeEstimator(50, 300)
+  );
 
   useEffect(() => {
     (async () => {
@@ -81,7 +87,11 @@ export default function Conversion(props: ConversionProps): ReactElement {
                 "Oh no, the conversion has failed. Can we use your file to check what went wrong and fix it in a future release?"
               )
             ) {
-              (window as any).firebase.storage().ref().child(Date.now().toString()).put(props.file);
+              (window as any).firebase
+                .storage()
+                .ref()
+                .child(Date.now().toString())
+                .put(props.file);
             }
           },
         })
@@ -89,7 +99,7 @@ export default function Conversion(props: ConversionProps): ReactElement {
     })();
   }, []);
 
-  const percentageSaved = Math.max(Math.ceil((1 - outputSize / originalSize) * 100), 0);
+  const percentageSaved = Math.max(Math.ceil(1 - outputSize / originalSize), 0);
 
   function cancelConverison() {
     if (status === "inProgress" && conversionId !== undefined) {
@@ -103,48 +113,70 @@ export default function Conversion(props: ConversionProps): ReactElement {
 
   return (
     <div
-      className={`conversion ${finished ? "finished" : "progress"} ${cancelled ? "cancelled" : ""}`}
+      className={`conversion justify-between w-full relative z-10 flex flex-row items-center self-auto mt-4 py-2 px-3 bg-white rounded-md text-gray-900${
+        finished ? "pointer-events-auto animate-bounceIn" : "progress group"
+      } ${cancelled ? "hidden" : ""}`}
     >
-      <div className="conversion_information">
-        <p className="filename">
-          {fileName?.substring(0, 15)}
+      <div className=" flex flex-col items-baseline justify-between py-2">
+        <p className="z-50 relative overflow-hidden whitespace-nowrap overflow-ellipsis select-none text-gray-900">
+          {fileName?.substring(0, 20)}
           {finished ? ".avif " : " "}
-          {cancelled ? " · cancelled " : " "}
         </p>
-        <p className="remaining-time">
-          {status === "inProgress" && remainingTime ? " · " + remainingTime : ""}
-        </p>
-      </div>
-      <div className="conversion_meta">
-        <span className="conversion_format">
-          {originalFormat} · {prettyBytes(originalSize)}
-        </span>
+        <p className={`z-50 text-tiny text-gray-400 `}>
+          {cancelled
+            ? "cancelled"
+            : finished
+            ? percentageSaved + "% smaller · " + prettyBytes(outputSize)
+            : (progress * 100).toFixed() +
+              "%" +
+              (remainingTime !== "" ? " · " + remainingTime : "")}
 
-        <span className="conversion_outcome">
           {percentageSaved === 0 && (
-            <div id="zeropercent" className="tutorial">
-              Why 0%?
-            </div>
+            <Tooltip
+              text="Why 0%?"
+              explanation="Adjust your conversion settings to achieve higher compression."
+            />
           )}
-          {percentageSaved}% smaller · {prettyBytes(outputSize)}
-        </span>
+        </p>
       </div>
+      {finished ? (
+        ""
+      ) : (
+        <p className="z-50 mr-6 text-gray-900 rounded-md ml-2">
+          <span className="conversion_format">
+            {originalFormat} · {prettyBytes(originalSize)}
+          </span>
+        </p>
+      )}
       <a
         role="button"
         tabIndex={0}
         title={`download ${fileName}`}
         download={`${fileName}.avif`}
         href={outputObjectURL}
-        className={"download overlay-after overlay-before"}
+        className={`group absolute top-0 right-0 w-6 h-full overflow-hidden cursor-pointer transform ${
+          finished ? "" : "hidden"
+        }`}
       >
-        Download
+        {" "}
+        <span
+          style={{ backgroundSize: "200%" }}
+          className="absolute top-0 right-0 bottom-0 left-0 bg-gradient cursor-pointer bg-center bg-cover rounded-r-md"
+        ></span>
+        <span
+          className="z-50 text-white bg-no-repeat bg-center absolute top-0 right-0 left-0 bottom-0 transform rotate-180 hover:scale-110 hover:translate-y-1 ease-in transition-all duration-300"
+          style={{
+            backgroundImage: `url(${arrow})`,
+            backgroundSize: "30%",
+          }}
+        ></span>
       </a>
       {status === "inProgress" && <ProgressBar progress={progress} />}
       {status === "inProgress" && (
         <a
           role="button"
           title="stop conversion"
-          className="conversion__cancel center"
+          className="opacity-0 group-hover:opacity-100 bg-white text-gray-900 rounded-lg absolute left-full z-50 flex items-center justify-center w-4 h-4 ml-1 pb-1 transition-all ease-out duration-300"
           onClick={cancelConverison}
           onKeyPress={cancelConverison}
           tabIndex={0}

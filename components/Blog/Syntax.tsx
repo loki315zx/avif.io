@@ -18,12 +18,25 @@ export default function Syntax(props: { language: string; children: any }) {
     e.target.focus();
   }
   return (
-    <div className="blog__syntax">
-      <SyntaxHighlighter language={props.language} style={vs2015} showLineNumbers={true}>
+    <div className="code relative group">
+      <SyntaxHighlighter
+        language={props.language}
+        style={vs2015}
+        showLineNumbers={true}
+      >
         {props.children}
       </SyntaxHighlighter>
-      <button className="blog__syntax__copy" onClick={copyToClipboard}>
+      <button
+        className="copycode absolute top-0 z-50 py-2 px-4 bg-bg-800 bg-bg-pink hover:bg-pink-700 text-pink-700 hover:text-white left-full rounded-r-xl rounded-l-none cursor-pointer opacity-0 group-hover:opacity-100 group"
+        onClick={copyToClipboard}
+      >
         <span>Copy</span>
+        <span
+          className="check absolute z-50 flex items-center justify-center w-5 h-5 p-2 bg-pink-700 rounded-full opacity-0 group-hover:opacity-100"
+          style={{ top: "10%", right: "-40px" }}
+        >
+          ✓
+        </span>
       </button>
     </div>
   );

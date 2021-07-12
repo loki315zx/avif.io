@@ -29,7 +29,13 @@ export default function SettingsBox(props: SettingsBoxProps) {
   const [lossless, setLossless] = useState(false);
 
   function saveSettings() {
-    setCookieJson(settingsCookieKey, { effort, quality, useYuv444, keepTransparency, lossless });
+    setCookieJson(settingsCookieKey, {
+      effort,
+      quality,
+      useYuv444,
+      keepTransparency,
+      lossless,
+    });
   }
 
   function loadSettings(): StoredSettings | undefined {
@@ -87,53 +93,39 @@ export default function SettingsBox(props: SettingsBoxProps) {
   }
 
   return (
-    <div className={"settings-box align-left secondary " + (props.open ? "open" : "closed")}>
-      <div className={"align-left"}>
+    <div className={"text-left" + " " + (props.open ? "open" : "closed")}>
+      <h2 className="mb-1">Conversion settings</h2>
+      <div className="mb-4">Settings don't change a running conversion.</div>
+      <div className="my-4">
         <PercentageSlider
-          className={"align-left"}
           value={effort}
           name={"Effort"}
           onChange={setEffort}
           label="effort"
           id="effort"
+          explanation="Set the processing power. More effort equals longer time of conversion, but better compression."
         />
 
         <PercentageSlider
-          className={"align-left " + (lossless ? "disabled" : "")}
           value={quality}
           name={"Quality"}
           onChange={setQuality}
           label="quality"
           id="quality"
+          explanation="Set the output quality. 100% almost equals lossless conversion."
+          disabled={lossless ? true : false}
         />
-
-        <label className={"lossless-checkbox"}>
-          <input id="lossless" type={"checkbox"} checked={lossless} onChange={onLosslessChanged} />
+      </div>
+      <div>
+        <label>
+          <input
+            id="lossless"
+            type={"checkbox"}
+            checked={lossless}
+            onChange={onLosslessChanged}
+          />
           Lossless
         </label>
-      </div>
-      {/*<div className={"subsampling"}>
-        <p>Subsample Chroma (back soon)	</p>
-        <div className={"subsampling-options disabled"}>
-          <label>
-            <input
-              type={"checkbox"}
-              checked={!useYuv444}
-              onChange={on420Changed}
-            />
-            <p className={"checkbox-text"}>4:2:0</p>
-          </label>
-          <label>
-            <input
-              type={"checkbox"}
-              checked={useYuv444}
-              onChange={on444Changed}
-            />
-            <p className={"checkbox-text"}>4:4:4</p>
-          </label>
-        </div>
-    </div>*/}
-      <div className={"misc s2"}>
         <label>
           <input
             type={"checkbox"}
@@ -143,7 +135,6 @@ export default function SettingsBox(props: SettingsBoxProps) {
           Keep transparency
         </label>
       </div>
-      <div className="f0">Settings don't change a running conversion.</div>
     </div>
   );
 }

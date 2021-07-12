@@ -17,16 +17,20 @@ function useStickyState(defaultValue: any, key: any) {
 const CookieBanner = () => {
   const [mode, setMode] = useStickyState("false", "true");
   return (
-    <div className={`cookie ${mode}`}>
-      We serve cookies to optimize your experience.
+    <div
+      className={`p-3 bg-bg-500 fixed bottom-2 right-2 text-tiny rounded-sm z-50 ${
+        mode && "hidden"
+      }`}
+    >
+      We use cookies from Google to deliver services.
       <div
         role="button"
-        className="overlay flex-center"
         onKeyDown={() => setMode("true")}
         onClick={() => setMode("true")}
         tabIndex={0}
+        className="font-bold"
       >
-        Close
+        OK
       </div>
     </div>
   );

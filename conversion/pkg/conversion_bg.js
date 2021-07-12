@@ -100,14 +100,19 @@ let WASM_VECTOR_LEN = 0;
 
 let cachegetUint8Memory0 = null;
 function getUint8Memory0() {
-  if (cachegetUint8Memory0 === null || cachegetUint8Memory0.buffer !== wasm.memory.buffer) {
+  if (
+    cachegetUint8Memory0 === null ||
+    cachegetUint8Memory0.buffer !== wasm.memory.buffer
+  ) {
     cachegetUint8Memory0 = new Uint8Array(wasm.memory.buffer);
   }
   return cachegetUint8Memory0;
 }
 
 const lTextEncoder =
-  typeof TextEncoder === "undefined" ? (0, module.require)("util").TextEncoder : TextEncoder;
+  typeof TextEncoder === "undefined"
+    ? (0, module.require)("util").TextEncoder
+    : TextEncoder;
 
 let cachedTextEncoder = new lTextEncoder("utf-8");
 
@@ -166,16 +171,24 @@ function passStringToWasm0(arg, malloc, realloc) {
 
 let cachegetInt32Memory0 = null;
 function getInt32Memory0() {
-  if (cachegetInt32Memory0 === null || cachegetInt32Memory0.buffer !== wasm.memory.buffer) {
+  if (
+    cachegetInt32Memory0 === null ||
+    cachegetInt32Memory0.buffer !== wasm.memory.buffer
+  ) {
     cachegetInt32Memory0 = new Int32Array(wasm.memory.buffer);
   }
   return cachegetInt32Memory0;
 }
 
 const lTextDecoder =
-  typeof TextDecoder === "undefined" ? (0, module.require)("util").TextDecoder : TextDecoder;
+  typeof TextDecoder === "undefined"
+    ? (0, module.require)("util").TextDecoder
+    : TextDecoder;
 
-let cachedTextDecoder = new lTextDecoder("utf-8", { ignoreBOM: true, fatal: true });
+let cachedTextDecoder = new lTextDecoder("utf-8", {
+  ignoreBOM: true,
+  fatal: true,
+});
 
 cachedTextDecoder.decode();
 
@@ -206,7 +219,12 @@ export function convert_to_avif(input_data, options, on_progress) {
   var ptr0 = passArray8ToWasm0(input_data, wasm.__wbindgen_malloc);
   var len0 = WASM_VECTOR_LEN;
   _assertClass(options, ConversionOptions);
-  var ret = wasm.convert_to_avif(ptr0, len0, options.ptr, addHeapObject(on_progress));
+  var ret = wasm.convert_to_avif(
+    ptr0,
+    len0,
+    options.ptr,
+    addHeapObject(on_progress)
+  );
   return ConversionResult.__wrap(ret);
 }
 
@@ -223,7 +241,14 @@ export function rgba_to_avif(input_data, options, width, height, on_progress) {
   var ptr0 = passArray8ToWasm0(input_data, wasm.__wbindgen_malloc);
   var len0 = WASM_VECTOR_LEN;
   _assertClass(options, ConversionOptions);
-  var ret = wasm.rgba_to_avif(ptr0, len0, options.ptr, width, height, addHeapObject(on_progress));
+  var ret = wasm.rgba_to_avif(
+    ptr0,
+    len0,
+    options.ptr,
+    width,
+    height,
+    addHeapObject(on_progress)
+  );
   return ConversionResult.__wrap(ret);
 }
 
@@ -330,7 +355,12 @@ export class ConversionOptions {
    * @param {boolean} keep_transparency
    */
   constructor(effort, quality, subsampling, keep_transparency) {
-    var ret = wasm.conversionoptions_new(effort, quality, subsampling, keep_transparency);
+    var ret = wasm.conversionoptions_new(
+      effort,
+      quality,
+      subsampling,
+      keep_transparency
+    );
     return ConversionOptions.__wrap(ret);
   }
 }
@@ -425,7 +455,11 @@ export const __wbg_new_59cb74e423758ede = function () {
 
 export const __wbg_stack_558ba5917b466edd = function (arg0, arg1) {
   var ret = getObject(arg1).stack;
-  var ptr0 = passStringToWasm0(ret, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+  var ptr0 = passStringToWasm0(
+    ret,
+    wasm.__wbindgen_malloc,
+    wasm.__wbindgen_realloc
+  );
   var len0 = WASM_VECTOR_LEN;
   getInt32Memory0()[arg0 / 4 + 1] = len0;
   getInt32Memory0()[arg0 / 4 + 0] = ptr0;
@@ -439,14 +473,22 @@ export const __wbg_error_4bb6c2a97407129a = function (arg0, arg1) {
   }
 };
 
-export const __wbg_call_f5e0576f61ee7461 = handleError(function (arg0, arg1, arg2) {
+export const __wbg_call_f5e0576f61ee7461 = handleError(function (
+  arg0,
+  arg1,
+  arg2
+) {
   var ret = getObject(arg0).call(getObject(arg1), getObject(arg2));
   return addHeapObject(ret);
 });
 
 export const __wbindgen_debug_string = function (arg0, arg1) {
   var ret = debugString(getObject(arg1));
-  var ptr0 = passStringToWasm0(ret, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+  var ptr0 = passStringToWasm0(
+    ret,
+    wasm.__wbindgen_malloc,
+    wasm.__wbindgen_realloc
+  );
   var len0 = WASM_VECTOR_LEN;
   getInt32Memory0()[arg0 / 4 + 1] = len0;
   getInt32Memory0()[arg0 / 4 + 0] = ptr0;

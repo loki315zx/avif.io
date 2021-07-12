@@ -9,7 +9,10 @@ export default class ConversionTimeEstimator {
   private coarseMinutesEstimate?: number;
   private coarseSecondsEstimate?: number;
 
-  constructor(private readonly samplingTime: number, private readonly holdTime: number) {}
+  constructor(
+    private readonly samplingTime: number,
+    private readonly holdTime: number
+  ) {}
 
   start(): void {
     this.samples = [];
@@ -19,7 +22,10 @@ export default class ConversionTimeEstimator {
   update(progress: number): void {
     const now = Date.now();
 
-    if (this.samples.length && now - _.last(this.samples)!.time < this.samplingTime) {
+    if (
+      this.samples.length &&
+      now - _.last(this.samples)!.time < this.samplingTime
+    ) {
       return;
     }
 
@@ -76,7 +82,8 @@ export default class ConversionTimeEstimator {
       this.estimate < minSample.remainingTimeEstimate ||
       this.estimate > maxSample.remainingTimeEstimate
     ) {
-      this.estimate = (minSample.remainingTimeEstimate + maxSample.remainingTimeEstimate) / 2;
+      this.estimate =
+        (minSample.remainingTimeEstimate + maxSample.remainingTimeEstimate) / 2;
       this.coarserEstimate();
     }
   }

@@ -6,7 +6,10 @@ export default async function webpToRgba(data: Uint8Array): Promise<ImageData> {
     webpWasm = await Module();
   }
 
-  const webpToCanvas = webpWasm.cwrap("WebpToSDL", "number", ["array", "number"]);
+  const webpToCanvas = webpWasm.cwrap("WebpToSDL", "number", [
+    "array",
+    "number",
+  ]);
   const canvas = document.createElement("canvas");
   canvas.hidden = true;
   document.body.append(canvas);

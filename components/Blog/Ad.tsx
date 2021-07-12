@@ -2,21 +2,9 @@ import React from "react";
 
 const Ad = () => {
   return (
-    <div
-      className="ad"
-      style={{
-        display: "block",
-        width: "100%",
-      }}
-    >
+    <div className="block w-full">
       <ins
-        className="adsbygoogle"
-        style={{
-          display: "block",
-          textAlign: "center",
-          width: "100%",
-          margin: "var(--s4) 0",
-        }}
+        className="adsbygoogle block text-center w-full my-6"
         data-ad-layout="in-article"
         data-ad-format="fluid"
         data-ad-client="ca-pub-4499854243209236"

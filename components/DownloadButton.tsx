@@ -9,17 +9,23 @@ export interface DownloadButtonProps {
 export default function DownloadButton(props: DownloadButtonProps) {
   async function onClick() {
     const zip = new JSZip();
-    for (const file of props.files) zip.file(file.name, await file.arrayBuffer());
+    for (const file of props.files)
+      zip.file(file.name, await file.arrayBuffer());
     const data = await zip.generateAsync({ type: "blob" });
     saveFile(new File([data], "images.zip"));
   }
 
   return (
-    <div className={`downloadall-container ${props.files.length > 1 ? "show" : "hide"}`}>
-      <button onClick={onClick}> Download all images </button>
+    <div
+      className={`block h-auto mt-8 ${props.files.length > 1 ? "" : "hidden"}`}
+    >
+      <button className="bg-gradient mx-auto mb-4 px-4 py-3" onClick={onClick}>
+        {" "}
+        Download all images{" "}
+      </button>
       Enjoying avif.io?
       <Link
-        className="color300"
+        className="underline"
         text="Join our Discord!"
         link="discord.com/invite/6w42YpF5hm"
         ext

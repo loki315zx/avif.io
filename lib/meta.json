@@ -263,7 +263,7 @@
     "blog": true
   },
   "tutFirefox": {
-    "title": "Firefox supports AVIF, Updated Guide June 20201",
+    "title": "Firefox supports AVIF, Updated Guide June 2021",
     "description": "Learn about the current state of AVIF in Firefox and how to enable support with a simple tutorial.",
     "url": "blog/tutorials/use-avif-in-firefox/",
     "image": "/logo_draft.png",
@@ -612,7 +612,10 @@
       "browser compatibility",
       "next-gen image compression format"
     ],
-    "questions": ["Using AVIF in Web Development Today", "AVIF Content-Type Headers + Netlify"],
+    "questions": [
+      "Using AVIF in Web Development Today",
+      "AVIF Content-Type Headers + Netlify"
+    ],
     "keyword": "Netlify",
     "category": "tutorials",
     "blog": true

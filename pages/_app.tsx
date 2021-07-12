@@ -1,15 +1,10 @@
-import "@styles/normalize.min.css";
-import "@styles/globals.css";
-import Head from "next/head";
+import "@styles/global.css";
 import { useEffect } from "react";
 
 export default function AvifIo({ Component, pageProps }: any) {
   useEffect(arrayBufferPolyfill, []);
   return (
     <>
-      <Head>
-        <script src="/avif.js" />
-      </Head>
       <div className="page">
         <Component {...pageProps} />
       </div>
