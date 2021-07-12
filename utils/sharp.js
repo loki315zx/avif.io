@@ -8,7 +8,6 @@ const jpgQuality = { mozjpeg: true, quality: 50, progressive: true };
 const webpQuality = { quality: 45, reductionEffort: 3 };
 const avifQuality = { quality: 40, speed: 3 };
 const sizes = [1536, 768, 576, 384];
-
 fs.readdir(input, (err, files) => {
   console.log(
     "Found " + files.length + " files. Converting now, please be patient.."
