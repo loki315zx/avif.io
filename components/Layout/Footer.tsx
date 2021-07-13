@@ -139,6 +139,11 @@ export default function Footer() {
                 link="producthunt.com/posts/avif-io-avif-image-converter"
                 ext
               />
+              <FooterLink
+                text="Request feature on Frill"
+                link="avif.frill.co/b/2j0xdxvq/feature-requests"
+                ext
+              />
               <FooterLink text="Sitemap" link="/sitemap.xml" />
               <FooterLink text="Legal and Privacy" link="/privacy-policy/" />
             </nav>
