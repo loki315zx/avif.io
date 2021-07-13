@@ -51,12 +51,3 @@ of the code is explicitly checking whether it's working with WebP.
 ## Installing dependencies and building the front-end
 
 You can find the related commands in the package.json file.
-
-## Blogging
-
-You can add blogs by adding `.tsx` files to the `pages/blogs` folder and
-you can update the blog list by editing the `pages/blogs/index.tsx` file.
-If you would like to modify the layout of the entire website, you can do
-that by editing `pages/_app.tsx`. Don't forget to put all components in the
-`/components` directory. If you accidentaly put them in `pages` they will be
-accessible via public routes, which is probably not what you intended.
