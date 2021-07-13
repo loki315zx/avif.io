@@ -100,7 +100,10 @@ export default function Conversion(props: ConversionProps): ReactElement {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const percentageSaved = Math.max(Math.ceil(1 - outputSize / originalSize), 0);
+  const percentageSaved = Math.max(
+    Math.ceil((1 - outputSize / originalSize) * 100),
+    0
+  );
 
   function cancelConverison() {
     if (status === "inProgress" && conversionId !== undefined) {
