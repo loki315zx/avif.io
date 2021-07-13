@@ -121,6 +121,7 @@ export default function BlogPost() {
       />
       Remember to restart Firefox. Then come back to this page to see this
       fantastic image:
+      {/* eslint-disable-next-line @next/next/no-img-element*/}
       <img
         src="/img/firefox-test.avif"
         alt="your browser may show this AVIF img"

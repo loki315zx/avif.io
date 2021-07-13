@@ -33,6 +33,8 @@
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "jsx-a11y/anchor-is-valid": "off",
     "react/react-in-jsx-scope": "off",
-    "react/no-unescaped-entities": 0
+    "react/no-unescaped-entities": 0,
+    "no-useless-escape": "off",
+    "jsx-a11y/accessible-emoji": "off"
   }
 }

@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function CTA() {
   return (
     <div className="container mx-auto my-8 text-center">
-      <Link href="/">
+      <Link href="/" passHref>
         <button className="text-left max-w-screen-lg container inline-block">
           <div className="relative p-6 overflow-hidden rounded-md cursor-pointer">
             <div className="relative z-10 opacity-80">

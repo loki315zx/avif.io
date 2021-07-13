@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 export default function Image(props: { alt: string; url: string }) {
   return (
     <picture>

@@ -1,5 +1,4 @@
-const colors = require("tailwindcss/colors");
-
+// eslint-disable-next-line no-undef
 module.exports = {
   mode: "jit",
   purge: [
@@ -148,7 +147,7 @@ module.exports = {
     },
 
     extend: {
-      backgroundImage: (theme) => ({
+      backgroundImage: () => ({
         gradient: `radial-gradient(circle at center left, #b72028, transparent 50%), radial-gradient(circle at 0% 0%, #bc004b, transparent 25%), radial-gradient(circle at 20% 60%, #b72028, transparent 50%),radial-gradient(circle at center right, #bc004b, transparent 50%),radial-gradient(circle at 60% 60%, #b30083, transparent 25%),radial-gradient(circle at bottom center, #bc004b, transparent 75%),radial-gradient(circle at 80% 40%, #b30083, transparent 75%), radial-gradient(circle at center center, #000, #000 100%)`,
       }),
 

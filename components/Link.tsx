@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import NextLink from "next/link";
 
 export default function Link(props: {

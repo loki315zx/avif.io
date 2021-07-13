@@ -16,6 +16,7 @@ export default function H(props: HProps) {
 
   useEffect(() => {
     props.contentTableCallback?.({ text: props.text, href: `#${trimmedText}` });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function copyToClipboard(e: any) {

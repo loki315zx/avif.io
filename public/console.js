@@ -1,6 +1,7 @@
 const log = console.log.bind(console);
 const warn = console.warn.bind(console);
 const error = console.error.bind(console);
+// eslint-disable-next-line no-undef
 const db = firebase.database();
 
 console.log = (...args) => {

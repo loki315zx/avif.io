@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable no-undef */
 const sharp = require("sharp");
 const fs = require("fs");
 const path = require("path");

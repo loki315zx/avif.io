@@ -56,6 +56,7 @@ export default function SettingsBox(props: SettingsBoxProps) {
   useEffect(() => {
     saveSettings();
     props.onSettingsUpdate({ effort, quality, useYuv444, keepTransparency });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [effort, quality, useYuv444, keepTransparency]);
 
   useEffect(() => {
@@ -70,22 +71,11 @@ export default function SettingsBox(props: SettingsBoxProps) {
     } else {
       props.onSettingsUpdate({ useYuv444, quality, effort, keepTransparency });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lossless]);
 
   function onLosslessChanged(event: ChangeEvent<HTMLInputElement>) {
     setLossless(event.target.checked);
-  }
-
-  function on420Changed(event: ChangeEvent<HTMLInputElement>) {
-    if (!event.target.checked) return;
-
-    setUseYuv444(false);
-  }
-
-  function on444Changed(event: ChangeEvent<HTMLInputElement>) {
-    if (!event.target.checked) return;
-
-    setUseYuv444(true);
   }
 
   function onKeepTransparencyChanged(event: ChangeEvent<HTMLInputElement>) {
