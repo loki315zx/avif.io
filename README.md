@@ -1,13 +1,9 @@
-# AVIF.IO
+# avif.io
 
-avif.io is a website for converting a wide variety of file
-formats into AVIF, directly inside the browser.
-The converted files never get sent to the
-server, and the entire conversion process happens
-client-side.
+You can use AVIF.io to convert a wide variety of file formats into AVIF, directly inside your web browser. Converted files are never sent to the server, and the entire conversion process is performed locally.
 
 
-## How?
+## How does the conversion work?
 
 We use [Rust](https://rust-lang.org/) with [wasm-pack](https://github.com/rustwasm/wasm-pack)
 to compile a converter library into WASM and call the Rust code
@@ -22,7 +18,7 @@ The Rust code is in `conversion/`.
 The root of the project is a [Next.js](https://nextjs.org) application
 written in [TypeScript](https://typescriptlang.org/).
 You can run the application via `npm start`, and watch and reload the
-files via `npm dev`. The `wasm-pack`ed Rust code ends up in `public/dist`.
+files via `npm develop`. The `wasm-pack`ed Rust code ends up in `public/dist`.
 
 ## Building the Rust code
 
@@ -33,7 +29,6 @@ code for release, use:
 cd conversion/
 make wasm
 ```
-
 This will also run webpack to move the produced WASM and JS
 files to `public/dist`. Keep in mind that when you clone the repository
 the Rust code will already have been compiled, so you don't have to
@@ -55,28 +50,7 @@ of the code is explicitly checking whether it's working with WebP.
 
 ## Installing dependencies and building the front-end
 
-First, we will install the dependencies:
-
-```bash
-npm i -D
-```
-
-Next, we are going to export the code as a pre-rendered static web app:
-
-```bash
-npm run export
-```
-
-Package the WASM code:
-
-```bash
-cd ../conversion
-npx cross-env NODE_ENV=production webpack
-```
-
-Now, you can run the server locally using `npm run start`,
-or you can deploy it to a static web server by copying everything
-from `out/` to the server.
+You can find the related commands in the package.json file.
 
 ## Blogging
 
