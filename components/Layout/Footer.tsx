@@ -140,8 +140,8 @@ export default function Footer() {
                 ext
               />
               <FooterLink
-                text="Request feature on Frill"
-                link="avif.frill.co/b/2j0xdxvq/feature-requests"
+                text="Github issues and requests"
+                link="https://github.com/justinschmitz97/avif.io/issues"
                 ext
               />
               <FooterLink text="Sitemap" link="/sitemap.xml" />

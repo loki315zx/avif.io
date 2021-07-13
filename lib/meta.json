@@ -81,6 +81,25 @@
     "category": "changelog",
     "blog": true
   },
+
+  "july2021": {
+    "title": "Changelog for July 2021",
+    "description": "We are open-source!! This release focused on 'under the hood' changes, like upgrading dependencies, switching to TailwindCSS and moving to NextJS 11.",
+    "url": "blog/releases/july-2021/",
+    "image": "/logo_draft.png",
+    "datePublished": "13.07.21",
+    "dateModified": "13.07.21",
+    "sources": [
+      "https://tailwindcss.com/",
+      "https://tailwindcss.com/docs",
+      "https://nextjs.org/blog/next-11",
+      "https://webpack.js.org/blog/2020-10-10-webpack-5-release/"
+    ],
+    "keyword": "Changelog July 2021",
+    "category": "changelog",
+    "blog": true
+  },
+
   "tutCloudflare": {
     "description": "Cloudflare has added support for AVIF, a new image format. Learn how to optimize images and convert them to WebP or AVIF on demand.",
     "title": "Boost your images with Cloudflare AVIF support",

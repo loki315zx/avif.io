@@ -16,7 +16,7 @@ export default function BlogPost() {
     <Blog
       className="release"
       postMeta={meta.february2021}
-      posts={[meta.january2021, meta.march2021, meta.tutWordpress]}
+      posts={[meta.january2021, meta.march2021, meta.july2021]}
     >
       <ContentTable contentTable={contentTable} />
       <H
