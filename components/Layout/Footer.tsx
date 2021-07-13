@@ -1,5 +1,4 @@
 import Link from "@components/Link";
-import { conversions } from "@lib/conversions";
 
 const FooterLink = (props: any) => {
   return (
@@ -26,7 +25,7 @@ export default function Footer() {
             <div className="my-4 text-gray-400">
               A tool by{" "}
               <Link text="Justin Schmitz" link="justinschmitz.de/" ext />
-              and Niksa Sporin that has already converted {conversions} files.
+              and Niksa Sporin that is now open-source.
               <Link text="- @jschmitz97" link="twitter.com/jschmitz97" ext />
             </div>
             <span className="inline-flex sm:mt-0 mt-4 justify-center sm:justify-start">
