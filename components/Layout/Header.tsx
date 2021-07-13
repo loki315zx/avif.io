@@ -33,11 +33,6 @@ export default function Header() {
         <nav className="md:mr-auto md:pl-4	flex flex-wrap items-center text-base justify-center">
           <Link className="p-2 md:p-3" text="Blog" link="/blog/" />
           <Link
-            className="p-2 md:p-3 md:hidden"
-            text="Tutorials"
-            link="/blog/#tutorials"
-          />
-          <Link
             className="p-2 md:p-3"
             text="Discord"
             link="discord.com/invite/6w42YpF5hm"
