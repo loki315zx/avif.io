@@ -61,6 +61,9 @@ export default function BlogPost() {
       for staying up to date on latest changes and being part of the
       development.
       <br />
+      Interested in the source code? Check out{" "}
+      <Link text="Github." link="github.com/justinschmitz97/avif.io/" ext />
+      <br />
       Stay safe ~ Justin and Niksa
     </Blog>
   );
