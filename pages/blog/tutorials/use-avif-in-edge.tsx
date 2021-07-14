@@ -25,9 +25,8 @@ export default function BlogPost() {
         text="Current status"
       />
       While Google can quickly implement new browser features, other companies
-      such as Microsoft are much slower. AVIF was created as part of the
-      development of AV1, which was developed by the Alliance for Open Media.
-      Since{" "}
+      such as Microsoft are much slower. AVIF was created as part of developing
+      AV1, which was developed by the Alliance for Open Media. Since{" "}
       <b> all the major browser manufacturers are part of this alliance </b>
       and everyone is interested in displacing a new and modern format, you
       expect Microsoft Edge to support AVIF files soon. At the time of writing,

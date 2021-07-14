@@ -51,8 +51,8 @@ export default function BlogPost() {
         level={2}
         text="Cloudflare Support"
       />
-      Regarding their latest blog post about AVIF, Cloudflare made the decision
-      to support AVIF because of the following benefits:
+      Regarding their latest blog post about AVIF, Cloudflare decided to support
+      AVIF because of the following benefits:
       <Checklist
         items={[
           "fixes WebP biggest flaws",
@@ -125,8 +125,8 @@ export default function BlogPost() {
       />
       , we present you the {`<picture>`} element as the best option to serve
       AVIF files in an HTML environment. Cloudflare allows you to use their
-      image optimization endpoint to perform the conversion if you don't want to
-      use Workers.
+      image optimization endpoint to perform the conversion if you do not want
+      to use Workers.
       <Syntax language="html">
         {`<picture>
     <source type="image/avif" 

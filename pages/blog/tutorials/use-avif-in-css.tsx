@@ -25,7 +25,7 @@ export default function BlogPost() {
         contentTableCallback={contentTableCallback}
         text="Introduction"
       />
-      Using AVIF images via HTML is very easy, as you can read
+      Using AVIF images via HTML is very easy as you can read
       <Link
         text="in this tutorial."
         link="/blog/tutorials/use-avif-in-html/"
@@ -63,8 +63,8 @@ export default function BlogPost() {
         text="AVIF support detection script"
       />
       To avoid visible image changes when adding the avif/webp class to your
-      DOM, add the content as an inline script in your header, above any CSS
-      content. The minified version of this script is a tiny 600 byte piece and
+      DOM, add the content as an inline script in your header above any CSS
+      content. The minified version of this script is a tiny 600-byte-piece and
       takes 5ms to load, which is perfectly fine for the benefit it provides.
       <Syntax language="javascript">
         {`function AddClass(class) { document.documentElement.classList.add(class) };
@@ -89,8 +89,8 @@ avif.onerror = function () {
         contentTableCallback={contentTableCallback}
         text="Code Snippet"
       />
-      Once implemented, we can simply use the following CSS due to the high
-      level classes.
+      Once implemented, we can simply use the following CSS due to the
+      high-level classes.
       <Syntax language="css">
         {`/* Simple approach */
 .img { background-image: url('avif-in-css.jpg') }
@@ -109,7 +109,7 @@ avif.onerror = function () {
 }`}
       </Syntax>
       Using this script leads to the following screenshots. Back in the day,
-      Firefox Quantum didn't support WebP or AVIF, so there is no class. Chrome
+      Firefox Quantum did not support WebP or AVIF, so there is no class. Chrome
       currently supports AVIF, so AVIF is displayed. Edge does not support AVIF
       and supports WebP, so our site has a webp class.
       <Image url="css-firefox" alt="firefox quantum without any class" />
@@ -174,10 +174,9 @@ avif.onerror = function () {
 		"zebra.png" type("image/png")
 	);`}
       </Syntax>{" "}
-      Currently, image-set is supported by 90% of browsers, but does not yet
-      support type declaration. This is a brand-new feature for CSS4. Until
-      browsers support this feature, we must use JavaScript to detect AVIF and
-      WebP support.
+      Currently, 90% of browsers support image-set , but do not yet support type
+      declaration. This is a brand-new feature for CSS4. Until browsers support
+      this feature, we must use JavaScript to detect AVIF and WebP support.
       <H
         level={2}
         contentTableCallback={contentTableCallback}
