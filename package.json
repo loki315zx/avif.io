@@ -8,7 +8,7 @@
     "start": "next start",
     "bundle": "ANALYZE=true npm run build",
     "convert": "cd utils && node sharp && cd ../",
-    "lint": "rustywind . --write && prettier --write . && next lint --fix --dir pages --dir components --dir public --dir utils && eslint . --ext .js --ext .tsx",
+    "lint": "rustywind . --write && prettier --write . && next lint --fix --dir pages --dir components && eslint . --ext .js --ext .tsx",
     "develop": "npm run build && next export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && npm run dev",
     "release": "npm run build && next export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && next-sitemap --config next-sitemap.config.js && firebase deploy"
   },
