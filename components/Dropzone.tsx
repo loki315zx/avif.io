@@ -66,12 +66,12 @@ export default function Dropzone(props: DropzoneProps) {
           }
         >
           <div
-            className="relative h-full w-full z-50 bg-center bg-no-repeat"
+            className="relative z-50 w-full h-full bg-center bg-no-repeat"
             style={{
               backgroundImage: `url(${arrow})`,
             }}
           ></div>
-          <div className="z-10 absolute top-0 bottom-0 right-0 left-0 bg-gradient blur-sm animate-ctaBackground"></div>
+          <div className="absolute top-0 right-0 bottom-0 left-0 z-10 bg-gradient blur-sm animate-ctaBackground"></div>
         </div>
         <b>Drop images or browse</b>
         <div className="text-gray-400">

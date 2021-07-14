@@ -121,8 +121,8 @@ export default function Conversion(props: ConversionProps): ReactElement {
         finished ? "pointer-events-auto animate-bounceIn" : "progress group"
       } ${cancelled ? "hidden" : ""}`}
     >
-      <div className=" flex flex-col items-baseline justify-between py-2">
-        <p className="z-50 relative overflow-hidden whitespace-nowrap overflow-ellipsis select-none text-gray-900">
+      <div className="flex flex-col justify-between items-baseline py-2">
+        <p className="overflow-hidden relative z-50 text-gray-900 whitespace-nowrap select-none overflow-ellipsis">
           {fileName?.substring(0, 20)}
           {finished ? ".avif " : " "}
         </p>
@@ -146,7 +146,7 @@ export default function Conversion(props: ConversionProps): ReactElement {
       {finished ? (
         ""
       ) : (
-        <p className="z-50 mr-6 text-gray-900 rounded-md ml-2">
+        <p className="z-50 mr-6 ml-2 text-gray-900 rounded-md">
           <span className="conversion_format">
             {originalFormat} · {prettyBytes(originalSize)}
           </span>
@@ -165,10 +165,10 @@ export default function Conversion(props: ConversionProps): ReactElement {
         {" "}
         <span
           style={{ backgroundSize: "200%" }}
-          className="absolute top-0 right-0 bottom-0 left-0 bg-gradient cursor-pointer bg-center bg-cover rounded-r-md"
+          className="absolute top-0 right-0 bottom-0 left-0 bg-center bg-cover rounded-r-md cursor-pointer bg-gradient"
         ></span>
         <span
-          className="z-50 text-white bg-no-repeat bg-center absolute top-0 right-0 left-0 bottom-0 transform rotate-180 hover:scale-110 hover:translate-y-1 ease-in transition-all duration-300"
+          className="absolute top-0 right-0 bottom-0 left-0 z-50 text-white bg-center bg-no-repeat transition-all duration-300 ease-in transform rotate-180 hover:scale-110 hover:translate-y-1"
           style={{
             backgroundImage: `url(${arrow})`,
             backgroundSize: "30%",
@@ -180,7 +180,7 @@ export default function Conversion(props: ConversionProps): ReactElement {
         <a
           role="button"
           title="stop conversion"
-          className="opacity-0 group-hover:opacity-100 bg-white text-gray-900 rounded-lg absolute left-full z-50 flex items-center justify-center w-4 h-4 ml-1 pb-1 transition-all ease-out duration-300"
+          className="flex absolute left-full z-50 justify-center items-center pb-1 ml-1 w-4 h-4 text-gray-900 bg-white rounded-lg opacity-0 transition-all duration-300 ease-out group-hover:opacity-100"
           onClick={cancelConverison}
           onKeyPress={cancelConverison}
           tabIndex={0}

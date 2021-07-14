@@ -8,12 +8,14 @@
     "start": "next start",
     "bundle": "ANALYZE=true npm run build",
     "convert": "cd utils && node sharp && cd ../",
-    "lint": "npx stylelint styles/ --fix && prettier --write . && next lint && eslint . --ext .js --ext .tsx",
+    "lint": "rustywind . --write && prettier --write . && next lint --fix --dir pages --dir components --dir public --dir utils && eslint . --ext .js --ext .tsx",
     "develop": "npm run build && next export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && npm run dev",
     "release": "npm run build && next export && cd conversion && npx cross-env NODE_ENV=production webpack && cd ../ && next-sitemap --config next-sitemap.config.js && firebase deploy"
   },
   "dependencies": {
     "@next/bundle-analyzer": "^11.0.1",
+    "@tailwindcss/forms": "^0.3.3",
+    "@tailwindcss/typography": "^0.4.1",
     "jszip": "^3.5.0",
     "lodash": "^4.17.21",
     "next": "^11.0.1",
@@ -51,50 +53,11 @@
     "postcss": "^8.3.5",
     "prettier": "^2.3.2",
     "responsive-loader": "^2.3.0",
+    "rustywind": "^0.12.2",
     "sharp": "^0.28.3",
-    "stylelint": "^13.13.1",
-    "stylelint-config-rational-order": "^0.1.2",
-    "stylelint-config-standard": "^22.0.0",
-    "stylelint-order": "^4.1.0",
     "tailwindcss": "^2.2.4",
     "typescript": "^4.3.5",
     "webpack": "^4.46.0",
     "webpack-cli": "^4.7.2"
-  },
-  "optionalDependencies": {
-    "fsevents": "^2.3.2"
-  },
-  "prettier": {
-    "tabWidth": 2,
-    "semi": true,
-    "singleQuote": false,
-    "quoteProps": "consistent",
-    "jsxSingleQuote": false,
-    "bracketSpacing": true
-  },
-  "stylelint": {
-    "extends": "stylelint-config-rational-order",
-    "rules": {
-      "indentation": 2,
-      "property-no-unknown": null,
-      "no-descending-specificity": null,
-      "rule-empty-line-before": "always",
-      "comment-empty-line-before": [
-        "always",
-        {
-          "ignore": [
-            "after-comment",
-            "stylelint-commands"
-          ]
-        }
-      ],
-      "comment-no-empty": null,
-      "font-family-no-duplicate-names": null,
-      "value-list-comma-newline-after": null,
-      "declaration-colon-newline-after": null
-    },
-    "ignoreFiles": [
-      "node_modules/**/*.css"
-    ]
   }
 }

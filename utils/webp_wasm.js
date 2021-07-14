@@ -1,3 +1,14 @@
+/* eslint-disable @typescript-eslint/no-extra-semi */
+/* eslint-disable no-fallthrough */
+/* eslint-disable @typescript-eslint/no-this-alias */
+/* eslint-disable no-useless-catch */
+/* eslint-disable no-constant-condition */
+/* eslint-disable no-undef */
+/* eslint-disable @typescript-eslint/no-empty-function */
+/* eslint-disable no-empty */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable no-prototype-builtins */
+/* eslint-disable no-redeclare */
 var Module = (function () {
   var _scriptDir =
     typeof document !== "undefined" && document.currentScript

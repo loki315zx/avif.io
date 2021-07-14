@@ -18,7 +18,7 @@ export default function PercentageSlider(props: PercentageSliderProps) {
         <p className="font-bold">{props.name}</p>
         <Tooltip text="?" explanation={props.explanation} />
       </div>
-      <div className="flex items-center content-center">
+      <div className="flex content-center items-center">
         <label className="text-none">
           {props.label}
           <input

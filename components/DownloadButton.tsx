@@ -19,7 +19,7 @@ export default function DownloadButton(props: DownloadButtonProps) {
     <div
       className={`block h-auto mt-8 ${props.files.length > 1 ? "" : "hidden"}`}
     >
-      <button className="bg-gradient mx-auto mb-4 px-4 py-3" onClick={onClick}>
+      <button className="py-3 px-4 mx-auto mb-4 bg-gradient" onClick={onClick}>
         {" "}
         Download all images{" "}
       </button>

@@ -13,11 +13,11 @@ const FooterLink = (props: any) => {
 export default function Footer() {
   return (
     <footer className="text-gray-400 bg-tenpercent body-font">
-      <div className="container px-1 py-8 mx-auto">
-        <div className="flex flex-wrap md:text-left text-center order-first">
-          <div className="flex flex-col lg:w-1/4 md:w-1/2 w-full px-4 mt-6">
+      <div className="container py-8 px-1 mx-auto">
+        <div className="flex flex-wrap order-first text-left">
+          <div className="flex flex-col px-4 mt-6 w-full md:w-1/2 lg:w-1/4">
             <Link
-              className="flex font-medium items-center md:justify-start justify-center text-white text-xl font-display"
+              className="flex justify-start items-center text-xl font-medium text-white font-display"
               text="avif.io"
               link="/"
             />
@@ -28,11 +28,8 @@ export default function Footer() {
               and Niksa Sporin that is now open-source.
               <Link text="- @jschmitz97" link="twitter.com/jschmitz97" ext />
             </div>
-            <span className="inline-flex sm:mt-0 mt-4 justify-center sm:justify-start">
-              <a
-                className="
-              text-gray-400 hover:text-white"
-              >
+            <span className="inline-flex justify-start mt-0">
+              <a className="text-gray-400 hover:text-white">
                 <svg
                   aria-hidden="true"
                   fill="currentColor"
@@ -88,9 +85,9 @@ export default function Footer() {
               </a>
             </span>
           </div>
-          <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h6 className="font-bold text-white mt-6 mb-3">Categories</h6>
-            <nav className="list-none ">
+          <div className="px-4 w-full md:w-1/2 lg:w-1/4">
+            <h6 className="mt-6 mb-3 font-bold text-white">Categories</h6>
+            <nav className="list-none">
               <FooterLink text="Blog" link="/blog" />
               <FooterLink text="Tutorials" link="/blog#tutorials" />
               <FooterLink text="Articles" link="/blog#articles" />
@@ -98,11 +95,11 @@ export default function Footer() {
               <FooterLink text="Release Notes" link="/blog#releasenotes" />
             </nav>
           </div>
-          <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h6 className="font-bold text-white mt-6  mb-3">
+          <div className="px-4 w-full md:w-1/2 lg:w-1/4">
+            <h6 className="mt-6 mb-3 font-bold text-white">
               Most viewed articles
             </h6>
-            <nav className="list-none ">
+            <nav className="list-none">
               <FooterLink
                 text="AVIF in Wordpress"
                 link="/blog/tutorials/use-avif-in-wordpress/"
@@ -125,9 +122,9 @@ export default function Footer() {
               />
             </nav>
           </div>
-          <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h6 className="font-bold text-white mt-6 mb-3">Other Pages</h6>
-            <nav className="list-none ">
+          <div className="px-4 w-full md:w-1/2 lg:w-1/4">
+            <h6 className="mt-6 mb-3 font-bold text-white">Other Pages</h6>
+            <nav className="list-none">
               <FooterLink
                 text="Follow ProductHunt"
                 link="discord.com/invite/6w42YpF5hm"

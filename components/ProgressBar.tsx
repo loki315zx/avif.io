@@ -23,7 +23,7 @@ export default function ProgressBar(props: ProgressBarProps) {
         style={innerStyle}
       >
         <div
-          className="relative w-2 h-2 m bg-pink-700 rounded-full"
+          className="relative w-2 h-2 bg-pink-700 rounded-full m"
           style={{ marginRight: "-4px", boxShadow: "0 0 3px 2px #fff" }}
         />
       </div>

@@ -73,7 +73,7 @@ interface TutorialsBoxProps {
 function AdvantageItem(props: Advantages) {
   return (
     <div
-      className="group relative z-50 overflow-hidden rounded-3xl bg-bg-600 ease-out text-lg transform-gpu hover:scale-105 hover:bg-bg-500 group duration-200"
+      className="overflow-hidden relative z-50 text-lg rounded-xl transition-all duration-200 ease-out transform-gpu hover:scale-105 group bg-bg-600 hover:bg-bg-500"
       style={{
         padding: "calc(100% - 8px) 8px 8px 8px",
       }}
@@ -84,8 +84,7 @@ function AdvantageItem(props: Advantages) {
         {props.post}
       </div>
       <div
-        className="group-hover:scale-110 group-hover:opacity-5 group-hover:blur-md absolute z-0 rounded-lg ease-out background-no-repeat bg-center bg-contain origin-center top-0 right-0 bottom-0 left-0
-        "
+        className="absolute top-0 right-0 bottom-0 left-0 z-0 bg-center bg-contain rounded-lg ease-out origin-center group-hover:opacity-5 group-hover:scale-110 background-no-repeat group-hover:blur-md"
         id={props.number}
         style={{
           backgroundImage: `url(${props.image})`,
@@ -103,25 +102,25 @@ function TutorialsBox(props: TutorialsBoxProps) {
       <a href={`/blog/tutorials/use-avif-in-${props.url}/`} tabIndex={0}>
         <div
           className={
-            "py-7 md:p-rectangle group relative w-full cursor-pointer rounded-md md:rounded-xl lg:rounded-3xl ease-in-out duration-300 overlay-before group transform hover:scale-105 hover:rotate-1 md:hover:rotate-6"
+            "py-7 md:p-rectangle group relative w-full cursor-pointer rounded-md md:rounded-xl lg:rounded-xl ease-in-out duration-300 overlay-before group transform hover:scale-105 hover:rotate-1 md:hover:rotate-6"
           }
           id={props.cssclass}
         >
-          <div className="bg-gradient rounded-md md:rounded-xl lg:rounded-3xl opacity-50 absolute top-0 right-0 left-0 bottom-0 group-hover:opacity-100"></div>
+          <div className="absolute top-0 right-0 bottom-0 left-0 rounded-md opacity-50 md:rounded-xl lg:rounded-xl group-hover:opacity-100 bg-gradient"></div>
           <div
             className={
-              "flex items-center pl-4 overflow-hidden rounded-md md:rounded-xl lg:rounded-3xl absolute top-0 right-0 left-0 bottom-0"
+              "flex items-center pl-4 overflow-hidden rounded-md md:rounded-xl lg:rounded-xl absolute top-0 right-0 left-0 bottom-0"
             }
           >
             <div
               style={{ opacity: 0.05, backgroundImage: `url(${props.image})` }}
-              className="absolute top-0 right-0 bottom-0 left-0 bg-no-repeat bg-cover bg-center group-hover:blur-sm"
+              className="absolute top-0 right-0 bottom-0 left-0 bg-center bg-no-repeat bg-cover group-hover:blur-sm"
             ></div>
-            <span className="relative font-bold z-50 text-xl">
+            <span className="relative z-50 text-xl font-bold">
               {props.title}
             </span>
           </div>
-          <div className="-z-1 bg-bg-400 rounded-md md:rounded-xl lg:rounded-3xl absolute top-0 right-0 left-0 bottom-0"></div>
+          <div className="absolute top-0 right-0 bottom-0 left-0 rounded-md md:rounded-xl lg:rounded-xl -z-1 bg-bg-400"></div>
         </div>
       </a>
     </Link>
@@ -161,9 +160,9 @@ export default function App(): ReactElement {
 
   return (
     <Layout meta={meta.index}>
-      <section className="text-center mt-12 px-3">
+      <section className="px-3 mt-12 text-center">
         <h1>Convert all images to AVIF for free.</h1>
-        <h2 className="text-base font-normal mb-6">
+        <h2 className="mb-6 text-base font-normal">
           No data is sent. The magic happens in your browser.
           <Tooltip
             text="How?"
@@ -227,9 +226,9 @@ export default function App(): ReactElement {
           <DownloadButton files={convertedFiles} />
         </div>
       </section>
-      <div className="max-w-full overflow-hidden">
+      <div className="overflow-hidden max-w-full">
         <div
-          className="-z-1 w-3/5 mx-auto bg-gradient absolute top-0 right-0 bottom-0 left-0 ease-in-out animate-glow rounded-full"
+          className="absolute top-0 right-0 bottom-0 left-0 mx-auto w-3/5 rounded-full ease-in-out -z-1 bg-gradient animate-glow"
           style={{
             paddingTop: "30%",
             paddingBottom: "30%",
@@ -238,18 +237,14 @@ export default function App(): ReactElement {
         ></div>
       </div>
       <section
-        className="max-w-screen-lg container relative mt-12 mb-4 px-3"
+        className="container relative px-3 mt-12 mb-4 max-w-screen-lg"
         id="avifbadge"
-      >
-        <div className="text-center text-6xl">
-          <b>.AVIF</b>
-        </div>
-      </section>
+      ></section>
       <section
-        className="max-w-screen-xl container relative px-3"
+        className="container relative px-3 max-w-screen-xl"
         id="avifadvantages"
       >
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-12">
+        <div className="grid grid-cols-1 gap-4 mb-12 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           <AdvantageItem
             text="reduces file size"
             post="of images by 20-90% for faster page loading"
@@ -325,7 +320,7 @@ export default function App(): ReactElement {
           />
         </div>
       </section>
-      <section className="max-w-screen-xl px-3 mx-auto">
+      <section className="px-3 mx-auto max-w-screen-xl">
         <div className="relative">
           <ReactCompareImage
             leftImage={"/img/comparison.jpg"}
@@ -345,22 +340,22 @@ export default function App(): ReactElement {
             sliderPositionPercentage={0.5}
           />
           <p
-            className="absolute top-4 left-4 px-3 py-2 bg-bg-400 rounded-md"
+            className="absolute top-4 left-4 py-2 px-3 rounded-md bg-bg-400"
             id="jpg"
           >
             jpg · 18kB
           </p>
           <p
-            className="absolute top-4 right-4 px-3 py-2 bg-bg-400 rounded-md"
+            className="absolute top-4 right-4 py-2 px-3 rounded-md bg-bg-400"
             id="avif"
           >
             avif · 18kB
           </p>
         </div>
       </section>
-      <section className="container relative z-10 max-w-screen-xl container mt-12 px-3">
+      <section className="container relative z-10 px-3 mt-12 max-w-screen-xl">
         <h2 className="text-center">How to use AVIF</h2>
-        <div className="text-center my-6 max-w-screen-md mx-auto">
+        <div className="my-6 mx-auto max-w-screen-md text-center">
           Support is constantly rising across browsers, software and hardware.
           Thanks to being royalty-free, companies can include the format without
           having to deal with patents. We created articles for you on how to get
@@ -368,7 +363,7 @@ export default function App(): ReactElement {
           software. We didn't cover your software? Feel free to tell us on
           support@avif.io and we will write an article about it.
         </div>
-        <div className="tutorials grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4">
+        <div className="grid gap-3 md:grid-cols-2 md:gap-4 lg:grid-cols-3 xl:grid-cols-4 tutorials">
           <TutorialsBox
             cssclass="firefox"
             title="Firefox"
@@ -462,7 +457,7 @@ export default function App(): ReactElement {
         </div>
       </section>
 
-      <div className="container max-w-screen-md text-center my-12 ">
+      <div className="container my-12 max-w-screen-md text-center">
         In the last ten years,{" "}
         <b>
           the size of an average web page has increased from 500 kb to 2000 kb

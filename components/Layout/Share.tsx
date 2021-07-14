@@ -7,7 +7,7 @@ import sh from "@assets/share.svg";
 const ShareButton = (props: any) => {
   return (
     <button
-      className="w-5 h-5 m-1 p-1 bg-no-repeat bg-center bg-contain hidden md:block"
+      className="hidden p-1 m-1 w-5 h-5 bg-center bg-no-repeat bg-contain md:block"
       style={{ backgroundImage: `url(${props.image})` }}
       onClick={() => window.open(`${props.url}`, "_blank")}
       onKeyPress={() => window.open(`${props.url}`, "_blank")}
@@ -28,7 +28,7 @@ export default function Blog() {
   const router = useRouter();
   const url = "https://avif.io" + router.pathname;
   return (
-    <div className="fixed right-4 bottom-4 flex content-center justify-items-center bg-bg-500 p-2 rounded-lg">
+    <div className="flex fixed right-4 bottom-4 justify-items-center content-center p-2 rounded-lg bg-bg-500">
       <ShareButton
         url={`https://twitter.com/intent/tweet?text=${url}`}
         name="Twitter"
@@ -45,7 +45,7 @@ export default function Blog() {
         image={fb}
       />
       <button
-        className="w-5 h-5 m-1 p-1 bg-no-repeat bg-center bg-contain block md:hidden"
+        className="block p-1 m-1 w-5 h-5 bg-center bg-no-repeat bg-contain md:hidden"
         style={{ backgroundImage: `url(${sh})` }}
         onClick={() => share()}
         onKeyPress={() => share()}

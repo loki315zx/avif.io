@@ -18,7 +18,7 @@ export default function Syntax(props: { language: string; children: any }) {
     e.target.focus();
   }
   return (
-    <div className="code relative group">
+    <div className="relative code group">
       <SyntaxHighlighter
         language={props.language}
         style={vs2015}
@@ -27,12 +27,12 @@ export default function Syntax(props: { language: string; children: any }) {
         {props.children}
       </SyntaxHighlighter>
       <button
-        className="copycode absolute top-0 z-50 py-2 px-4 bg-bg-800 bg-bg-pink hover:bg-pink-700 text-pink-700 hover:text-white left-full rounded-r-xl rounded-l-none cursor-pointer opacity-0 group-hover:opacity-100 group"
+        className="absolute top-0 left-full z-50 py-2 px-4 text-pink-700 rounded-l-none rounded-r-lg opacity-0 cursor-pointer group-hover:opacity-100 hover:text-white hover:bg-pink-700 copycode bg-bg-800 bg-pink-1000 group"
         onClick={copyToClipboard}
       >
         <span>Copy</span>
         <span
-          className="check absolute z-50 flex items-center justify-center w-5 h-5 p-2 bg-pink-700 rounded-full opacity-0 group-hover:opacity-100"
+          className="flex absolute z-50 justify-center items-center p-2 w-5 h-5 bg-pink-700 rounded-full opacity-0 group-hover:opacity-100 check"
           style={{ top: "10%", right: "-40px" }}
         >
           ✓

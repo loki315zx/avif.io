@@ -2,10 +2,10 @@ import Link from "next/link";
 
 export default function CTA() {
   return (
-    <div className="container mx-auto my-8 text-center">
+    <div className="container my-8 mx-auto text-center">
       <Link href="/" passHref>
-        <button className="text-left max-w-screen-lg container inline-block">
-          <div className="relative p-6 overflow-hidden rounded-md cursor-pointer">
+        <button className="container inline-block max-w-screen-lg text-left">
+          <div className="overflow-hidden relative p-6 rounded-md cursor-pointer">
             <div className="relative z-10 opacity-80">
               Profit from a faster website, higher ranking and better
               conversions.
@@ -13,8 +13,8 @@ export default function CTA() {
             <div className="relative z-10 text-2xl font-bold">
               Convert your images to AVIF for free.
             </div>
-            <div className="z-0 bg-gradient animate-cta absolute right-0 left-0 top-0 bottom-0 h-48 opacity-10"></div>
-            <div className="-z-1 bg-gradient absolute right-0 left-0 top-0 bottom-0"></div>
+            <div className="absolute top-0 right-0 bottom-0 left-0 z-0 h-48 opacity-10 bg-gradient animate-cta"></div>
+            <div className="absolute top-0 right-0 bottom-0 left-0 -z-1 bg-gradient"></div>
           </div>
         </button>
       </Link>

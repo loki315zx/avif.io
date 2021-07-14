@@ -9,7 +9,7 @@ class Layout extends Document<Layout> {
     return (
       <Html lang="en">
         <Head />
-        <body className="bg-bg-700 text-base text-white w-full overflow-hidden">
+        <body className="overflow-hidden w-full text-base text-white bg-bg-700">
           <Main />
           <NextScript />
         </body>

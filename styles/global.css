@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /*  */
 /* FONTS */
 /*  */
@@ -37,7 +41,6 @@
     U+FEFF, U+FFFD;
 }
 
-/* adjust fallback font overrides */
 @font-face {
   font-family: fallback-font;
   ascent-override: 105%;
@@ -46,6 +49,10 @@
   advance-override: 254, 1%;
   src: local(Arial);
 }
+
+/*  */
+/* Reduced Motion Preference */
+/*  */
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -64,9 +71,9 @@
   }
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/*  */
+/* Base Styles */
+/*  */
 
 @layer base {
   ::selection {
@@ -179,7 +186,6 @@
   }
 
   label {
-    display: block;
     display: flex;
     align-items: center;
   }
@@ -251,10 +257,6 @@ nav ol li:before {
   content: counter(step-counter);
 }
 
-.avifcompare * {
-  border-radius: theme("borderRadius.3xl");
-}
-
 .playstate * {
   animation-play-state: paused;
 }
@@ -267,10 +269,6 @@ nav ol li:before {
   .tutorials a:nth-child(2n) {
     padding: theme("spacing.2") theme("spacing.2") 0;
   }
-}
-
-.advantage {
-  transition: all 0.25s ease-out;
 }
 
 /* */

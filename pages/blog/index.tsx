@@ -29,8 +29,8 @@ const posts = [
 export default function BlogAvif() {
   return (
     <Layout meta={meta.blog}>
-      <main className="archive blog p-4">
-        <div className="text-center mt-12">
+      <main className="p-4 archive blog">
+        <div className="mt-12 text-center">
           <h1>{meta.blog.title}</h1>
           <h2 className="text-base">{meta.blog.description}</h2>
         </div>

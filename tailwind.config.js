@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 // eslint-disable-next-line no-undef
 module.exports = {
   mode: "jit",
@@ -9,10 +10,16 @@ module.exports = {
     "./utils/**/*.{js,ts,jsx,tsx}",
     "./styles/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: false,
   theme: {
     container: {
       center: true,
+    },
+    screens: {
+      "md": "768px",
+      "lg": "1024px",
+      "xl": "1280px",
+      "2xl": "1536px",
     },
     fontSize: {
       "none": "0",
@@ -23,8 +30,6 @@ module.exports = {
       "2xl": "2.44rem",
       "3xl": "3.05rem",
       "4xl": "3.82rem",
-      "5xl": "4.77rem",
-      "6xl": "5.96rem",
     },
     spacing: {
       0: "0rem",
@@ -62,25 +67,11 @@ module.exports = {
       "48": "50rem",
     },
     borderRadius: {
-      "none": "0",
-      "sm": "0.125rem",
-      "default": "0.25rem",
-      "md": "0.5rem",
-      "lg": "1rem",
-      "xl": "1.5rem",
-      "2xl": "2.25rem",
-      "3xl": "3rem",
-      "full": "9999px",
+      md: "0.5rem",
+      lg: "1rem",
+      xl: "2rem",
+      full: "9999px",
     },
-    fontFamily: {
-      sans: ["Poppins"],
-      serif: ["Poppins"],
-      mono: ["Poppins"],
-      display: ["Patua One"],
-      body: ["Poppins"],
-      title: ["Patua One"],
-    },
-
     colors: {
       transparent: "transparent",
       tenpercent: "rgba(0,0,0,0.10)",
@@ -134,9 +125,6 @@ module.exports = {
         1000: "rgba(135, 0, 232, 0.1)",
       },
       bg: {
-        red: "rgba(182, 32, 39, 0.1)",
-        pink: "rgba(179, 0, 131, 0.1)",
-        purple: "rgba(135, 0, 232, 0.1)",
         200: "hsla(280, 5%, 12%, 0.8)",
         300: "#201726",
         400: "hsla(277, 51%, 9%, 0.8)",
@@ -285,5 +273,5 @@ module.exports = {
       blur: ["hover", "focus", "group-hover", "group-focus"],
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],
 };

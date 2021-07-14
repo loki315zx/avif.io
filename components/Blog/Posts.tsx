@@ -7,13 +7,13 @@ export default function BlogPosts(props: any) {
       <a
         href={`/${post.url}`}
         tabIndex={0}
-        className="p-2 md:w-1/3 cursor-pointer group"
+        className="p-2 cursor-pointer md:w-1/3 group"
       >
-        <div className="h-full  bg-bg-300 rounded-md overflow-hidden">
+        <div className="overflow-hidden h-full rounded-md bg-bg-300">
           <div className="p-3 bg-bg-500 group-hover:bg-gradient">
             <div className="font-bold">#{post.keyword}</div>
           </div>
-          <div className="p-3 border-t-2 border-bg-700 group-hover:text-white">
+          <div className="p-3 border-t-2 group-hover:text-white border-bg-700">
             <p>{post.description}</p>
           </div>
         </div>
@@ -21,9 +21,9 @@ export default function BlogPosts(props: any) {
     </Link>
   ));
   return (
-    <section className="bg-bg-700 body-font max-w-screen-lg container">
+    <section className="container max-w-screen-lg bg-bg-700 body-font">
       <h3
-        className="text-center mt-8 mb-6 capitalize text-xl font-bold"
+        className="mt-8 mb-6 text-xl font-bold text-center capitalize"
         id={props.title ? props.title : "related"}
       >
         {props.title ? props.title : "Related articles"}

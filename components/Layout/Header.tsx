@@ -29,8 +29,8 @@ export default function Header() {
           : { zIndex: 9999 }
       }
     >
-      <div className="flex flex-wrap flex-col md:flex-row items-center">
-        <nav className="md:mr-auto md:pl-4	flex flex-wrap items-center text-base justify-center">
+      <div className="flex flex-col flex-wrap items-center md:flex-row">
+        <nav className="flex flex-wrap justify-center items-center text-base md:pl-4 md:mr-auto">
           <Link className="p-2 md:p-3" text="Blog" link="/blog/" />
           <Link
             className="p-2 md:p-3"
@@ -46,7 +46,7 @@ export default function Header() {
           />
         </nav>
         <NextLink href="/">
-          <button className="inline-flex items-center bg-bg-200 border-0 py-1 px-2 focus:outline-none hover:bg-bg-300 rounded text-base md:mt-0">
+          <button className="inline-flex items-center py-1 px-2 text-base rounded border-0 md:mt-0 focus:outline-none bg-bg-200 hover:bg-bg-300">
             Convert images
             <svg
               fill="none"
@@ -54,7 +54,7 @@ export default function Header() {
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth={2}
-              className="w-3 h-3 ml-1"
+              className="ml-1 w-3 h-3"
               viewBox="0 0 24 24"
             >
               <path d="M5 12h14M12 5l7 7-7 7" />

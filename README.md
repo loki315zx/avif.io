@@ -2,7 +2,6 @@
 
 You can use AVIF.io to convert a wide variety of file formats into AVIF, directly inside your web browser. Converted files are never sent to the server, and the entire conversion process is performed locally.
 
-
 ## How does the conversion work?
 
 We use [Rust](https://rust-lang.org/) with [wasm-pack](https://github.com/rustwasm/wasm-pack)
@@ -29,6 +28,7 @@ code for release, use:
 cd conversion/
 make wasm
 ```
+
 This will also run webpack to move the produced WASM and JS
 files to `public/dist`. Keep in mind that when you clone the repository
 the Rust code will already have been compiled, so you don't have to
