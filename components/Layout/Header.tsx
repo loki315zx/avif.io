@@ -41,7 +41,7 @@ export default function Header() {
           <Link
             className="p-2 md:p-3"
             text="Github"
-            link="https://github.com/justinschmitz97/avif.io/"
+            link="github.com/justinschmitz97/avif.io/"
             ext
           />
         </nav>
