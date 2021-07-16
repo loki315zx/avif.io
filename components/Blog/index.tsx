@@ -26,12 +26,31 @@ export default function Blog(props: {
   return (
     <Layout meta={props.postMeta}>
       <main className={`blog ${props.className}`}>
-        <div className="py-12 px-4 md:p-10 lg:p-12 bg-gradient">
+        <div
+          className="py-12 px-4 md:p-10 lg:p-12 bg-gradient animation-delay-2"
+          transition-style="in:circle:center"
+        >
           <div className="container max-w-screen-md">
             <Breadcrumbs postMeta={props.postMeta} />
-            <h1 className="md:text-4xl">{props.postMeta.title}</h1>
+            <h1
+              className="md:text-4xl animation-delay-5"
+              transition-style="in:wipe:right"
+            >
+              {props.postMeta.title}
+            </h1>
             <div>
-              {props.postMeta.dateModified} · {readingTime} min read
+              <span
+                transition-style="in:wipe:right"
+                className="animation-delay-7"
+              >
+                {props.postMeta.dateModified}
+              </span>{" "}
+              <span
+                transition-style="in:wipe:right"
+                className="animation-delay-8"
+              >
+                · {readingTime} min read
+              </span>
             </div>
           </div>
         </div>

@@ -35,7 +35,7 @@ export default function AvifIo({ Component, pageProps }: any) {
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
       />
 
-      <div className="page">
+      <div className="overflow-x-hidden page">
         <Component {...pageProps} />
       </div>
     </>

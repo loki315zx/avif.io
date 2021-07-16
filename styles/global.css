@@ -119,6 +119,10 @@
     @apply cursor-pointer no-underline;
   }
 
+  a:hover {
+    @apply text-red-600;
+  }
+
   br {
     @apply block mt-2;
     content: "";
@@ -170,6 +174,10 @@
     @apply block z-0 py-2 px-3 text-white font-bold text-center border-0 rounded-md cursor-pointer;
   }
 
+  button:focus-visible {
+    @apply border-white border-2;
+  }
+
   pre {
     @apply mt-3 mb-4 p-3 bg-bg-500;
     border-radius: theme("borderRadius.md") 0 theme("borderRadius.md")
@@ -188,7 +196,40 @@
   }
 }
 
-/**/
+/*  */
+/* Animation Delay */
+/*  */
+
+@layer utilities {
+  .animation-delay-1 {
+    animation-delay: 0.2s !important;
+  }
+  .animation-delay-2 {
+    animation-delay: 0.4s !important;
+  }
+  .animation-delay-3 {
+    animation-delay: 0.6s !important;
+  }
+  .animation-delay-4 {
+    animation-delay: 0.8s !important;
+  }
+  .animation-delay-5 {
+    animation-delay: 1s !important;
+  }
+  .animation-delay-6 {
+    animation-delay: 1.2s !important;
+  }
+  .animation-delay-7 {
+    animation-delay: 1.4s !important;
+  }
+  .animation-delay-8 {
+    animation-delay: 1.6s !important;
+  }
+}
+
+/*  */
+/* Some Custom Code */
+/*  */
 
 .copycode {
   transition: all 0.2s ease-in-out;
@@ -230,7 +271,9 @@ nav ol li:before {
   }
 }
 
-/* */
+/*  */
+/* Input Styles */
+/*  */
 
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {
   input[type="checkbox"],
@@ -436,4 +479,169 @@ nav ol li:before {
   input:focus-visible {
     border: 2px solid theme("colors.white");
   }
+}
+
+/*  */
+/* Animations */
+/*  */
+
+/* Circle In Center Animation */
+
+@keyframes circle-in-center {
+  from {
+    clip-path: circle(0%);
+  }
+  to {
+    clip-path: circle(125%);
+  }
+}
+
+[transition-style="in:circle:center"] {
+  animation: 1.5s cubic-bezier(0.25, 1, 0.3, 1) circle-in-center both;
+}
+
+/* Wipe In Right Animation */
+
+@keyframes wipe-in-right {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+[transition-style="in:wipe:right"] {
+  animation: 1s cubic-bezier(0.25, 1, 0.3, 1) wipe-in-right both;
+}
+
+/* CTA Animation */
+
+@keyframes cta {
+  from {
+    filter: blur(50px);
+    opacity: 0.75;
+    background-position: 100% 50%;
+    transform: translateZ(0) rotate(0deg) scale(1.2);
+  }
+  to {
+    filter: blur(50px);
+    opacity: 100%;
+    background-position: 25% 50%;
+    transform: translateZ(0) rotate(1turn) scale(1.4);
+  }
+}
+
+[transition-style="cta"] {
+  animation: cta 10s infinite alternate-reverse both;
+}
+
+/* Glow Animation */
+
+@keyframes glow {
+  0% {
+    transform: translate3d(0, 0, 0) translateY(75%) scale(1.5);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) translateY(75%) rotate(360deg) scale(1.8);
+  }
+}
+
+[transition-style="glow"] {
+  animation: glow 10s infinite alternate-reverse both;
+}
+
+/* Bouncing In Animation */
+
+@keyframes bouncingIn {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1, 1);
+  }
+  10% {
+    transform: translate3d(0, 0, 0) scale(1.04, 0.92);
+  }
+  30% {
+    transform: translate3d(0, 0, 0) scale(0.92, 1.04);
+  }
+
+  50% {
+    transform: translate3d(0, 0, 0) scale(1.02, 0.96);
+  }
+
+  57% {
+    transform: translate3d(0, 0, 0) scale(1, 1);
+  }
+
+  64% {
+    transform: translate3d(0, 0, 0) scale(1.01, 0.99);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0) scale(1, 1);
+  }
+}
+
+[transition-style="bouncingIn"] {
+  animation: bouncingIn 1s forwards 1;
+}
+
+/* Bounce In Animation */
+
+@keyframes bounceIn {
+  0%,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    transform: translate3d(0, 0, 0) scale3d(0.97, 0.97, 0.97);
+    opacity: 0;
+  }
+
+  20% {
+    transform: translate3d(0, 0, 0) scale3d(1.02, 1.02, 1.02);
+  }
+
+  40% {
+    transform: translate3d(0, 0, 0) scale3d(0.98, 0.98, 0.98);
+  }
+
+  60% {
+    transform: translate3d(0, 0, 0) scale3d(1.01, 1.01, 1.01);
+    opacity: 1;
+  }
+
+  80% {
+    transform: translate3d(0, 0, 0) scale3d(0.99, 0.99, 0.99);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0) scaleX(1);
+    opacity: 1;
+  }
+}
+
+[transition-style="bounceIn"] {
+  animation: bounceIn 0.75s cubic-bezier(0.28, 0.84, 0.42, 1);
+}
+
+/* ctaBackground Animation */
+
+@keyframes ctaBackground {
+  from {
+    background-position: 100% 50%;
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1.2);
+  }
+  to {
+    background-position: 25% 50%;
+    transform: translate3d(0, 0, 0) rotate(360deg) scale(1.4);
+  }
+}
+
+[transition-style="ctaBackground"] {
+  animation: ctaBackground 5s infinite both;
 }

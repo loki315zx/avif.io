@@ -62,7 +62,7 @@ export default function Dropzone(props: DropzoneProps) {
         <input {...getInputProps()} />
         <div
           className={
-            "mx-auto relative w-8 h-8 overflow-hidden rounded-full  mb-4"
+            "mx-auto relative w-8 h-8 overflow-hidden rounded-full mb-4"
           }
         >
           <div

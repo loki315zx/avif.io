@@ -73,6 +73,8 @@ interface TutorialsBoxProps {
 function AdvantageItem(props: Advantages) {
   return (
     <div
+      // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+      tabIndex={0}
       className="overflow-hidden relative z-50 text-lg rounded-xl transition-all duration-200 ease-out transform-gpu hover:scale-105 group bg-bg-600 hover:bg-bg-500"
       style={{
         padding: "calc(100% - 8px) 8px 8px 8px",
@@ -116,7 +118,7 @@ function TutorialsBox(props: TutorialsBoxProps) {
               style={{ opacity: 0.05, backgroundImage: `url(${props.image})` }}
               className="absolute top-0 right-0 bottom-0 left-0 bg-center bg-no-repeat bg-cover group-hover:blur-sm"
             ></div>
-            <span className="relative z-50 text-xl font-bold">
+            <span className="relative z-50 text-xl font-bold text-white">
               {props.title}
             </span>
           </div>
@@ -173,7 +175,7 @@ export default function App(): ReactElement {
         <div
           style={{ width: 720 }}
           className={
-            "relative animate-bouncingIn mx-auto flex flex-col items-center justify-center max-w-full rounded-xl p-4 bg-white bg-opacity-5" +
+            "relative animate-bouncingIn mx-auto flex flex-col items-center justify-center max-w-full rounded-xl p-4 bg-white bg-opacity-5 " +
             " " +
             (settingsBoxOpen ? "open" : "")
           }
