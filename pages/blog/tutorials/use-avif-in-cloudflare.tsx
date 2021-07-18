@@ -11,7 +11,7 @@ import { useState } from "react";
 export default function BlogPost() {
   const [contentTable, setContentTable] = useState<ContentTableEntry[]>([]);
 
-  function contentTableCallback(entry: ContentTableEntry) {
+  function callback(entry: ContentTableEntry) {
     contentTable.push(entry);
     setContentTable([...contentTable]);
   }
@@ -21,11 +21,7 @@ export default function BlogPost() {
       posts={[meta.tutCss, meta.tutHtml, meta.tutNextjs]}
     >
       <ContentTable contentTable={contentTable} />
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Introduction"
-      />
+      <H level={2} callback={callback} text="Introduction" />
       Images compressed in AVIF usually take up half the storage space of JPEG
       and WebP. It uses the HEIF ISO standard and AV1 codec from Mozilla,
       Google, Cisco and others. On the other hand, Cloudflare provides hosting
@@ -46,11 +42,7 @@ export default function BlogPost() {
       this page because you are using Cloudflare services and want to know how
       to turn on AVIF support. Oh, and by the way, this post is not sponsored in
       any way. Let's see:
-      <H
-        contentTableCallback={contentTableCallback}
-        level={2}
-        text="Cloudflare Support"
-      />
+      <H callback={callback} level={2} text="Cloudflare Support" />
       Regarding their latest blog post about AVIF, Cloudflare decided to support
       AVIF because of the following benefits:
       <Checklist
@@ -66,11 +58,7 @@ export default function BlogPost() {
         ]}
         checked={true}
       />
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Business Plan"
-      />
+      <H level={2} callback={callback} text="Business Plan" />
       The Image Resizing feature converts images to the AVIF format.
       Unfortunately, this feature is not free, but part of the Business Plan.
       Since a Business plan costs about $200 or more per month, this seems
@@ -85,7 +73,7 @@ export default function BlogPost() {
       optimization, a better firewall, captchas, cache analytics, etc. For an
       emerging small to medium-sized business, this seems like an attractive
       investment to get the last bit of performance out of your website.
-      <H level={2} contentTableCallback={contentTableCallback} text="Workers" />
+      <H level={2} callback={callback} text="Workers" />
       Browsers with AVIF support add an image/avif note to their Accept request
       header. To request the AVIF format from the Image Resizing module of
       Cloudflare, simply set the format option to avif. Using a{" "}
@@ -113,11 +101,7 @@ export default function BlogPost() {
       functions based on the state of the network. Crisp images in 4K are still
       incredible if your visitors have a bandwidth that supports it, and you can
       still handle the large file size.
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Picture element"
-      />
+      <H level={2} callback={callback} text="Picture element" />
       In our Tutorial on
       <Link
         link="/blog/tutorials/use-avif-in-html/"

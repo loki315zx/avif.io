@@ -8,7 +8,7 @@ import { useState } from "react";
 export default function BlogPost() {
   const [contentTable, setContentTable] = useState<ContentTableEntry[]>([]);
 
-  function contentTableCallback(entry: ContentTableEntry) {
+  function callback(entry: ContentTableEntry) {
     contentTable.push(entry);
     setContentTable([...contentTable]);
   }
@@ -18,11 +18,7 @@ export default function BlogPost() {
       posts={[meta.tutGimp, meta.tutEdge, meta.tutWordpress]}
     >
       <ContentTable contentTable={contentTable} />
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Microsoft supports AVIF"
-      />
+      <H level={2} callback={callback} text="Microsoft supports AVIF" />
       AVIF got a significant boost when Microsoft{" "}
       <b> decided to add support for it in the Windows 10 May 2019 Update</b>.
       Windows 10 does not support the AVIF image format natively, but the
@@ -35,11 +31,7 @@ export default function BlogPost() {
         File Explorer
       </b>
       .
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="With an extension"
-      />
+      <H level={2} callback={callback} text="With an extension" />
       Without proper configuration, tools like Microsoft Paint throw a bug that
       says that the AVIF file is not a valid format and is not supported by the
       application. If you are looking for AVIF support for Windows 10, you can
@@ -56,7 +48,7 @@ export default function BlogPost() {
       <b>
         Since version 1903, the extension is also able to process AVIF files.
       </b>
-      <H level={2} contentTableCallback={contentTableCallback} text="Results" />
+      <H level={2} callback={callback} text="Results" />
       After installing the extension, File Explorer generates a thumbnail image
       for the AVIF image format. Additionally, MSPaint allows editing and saving
       these images. You may want to use a more advanced image editor than Paint

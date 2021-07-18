@@ -9,7 +9,7 @@ import { useState } from "react";
 export default function BlogPost() {
   const [contentTable, setContentTable] = useState<ContentTableEntry[]>([]);
 
-  function contentTableCallback(entry: ContentTableEntry) {
+  function callback(entry: ContentTableEntry) {
     contentTable.push(entry);
     setContentTable([...contentTable]);
   }
@@ -19,11 +19,7 @@ export default function BlogPost() {
       posts={[meta.tutFirefox, meta.tutGimp, meta.tutWindows]}
     >
       <ContentTable contentTable={contentTable} />
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Current status"
-      />
+      <H level={2} callback={callback} text="Current status" />
       While Google can quickly implement new browser features, other companies
       such as Microsoft are much slower. AVIF was created as part of developing
       AV1, which was developed by the Alliance for Open Media. Since{" "}
@@ -36,11 +32,7 @@ export default function BlogPost() {
       If you want to enable experimental AV1 support, you can do so by
       downloading a plugin. At least YouTube videos will then be streamed in the
       new format.
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Your Edge version"
-      />
+      <H level={2} callback={callback} text="Your Edge version" />
       If you are looking for a way to test the functionality and capabilities of
       AV1 on Microsoft Edge, you should
       <Link
@@ -57,11 +49,7 @@ export default function BlogPost() {
       browser icon. The new version of Edge has a more minimalist and gradient
       style, while the old one looks like a Van Gogh.
       <Image url="edge-or-edge" alt="microsoft edge version difference" />
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="AV1 Plugin"
-      />
+      <H level={2} callback={callback} text="AV1 Plugin" />
       The AV1 Extension add-on is available from the
       <Link
         link="microsoft.com/en-us/p/av1-video-extension/9mvzqvxjbq9v"

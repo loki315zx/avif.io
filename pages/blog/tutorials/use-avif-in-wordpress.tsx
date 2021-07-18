@@ -10,7 +10,7 @@ import { useState } from "react";
 export default function BlogPost() {
   const [contentTable, setContentTable] = useState<ContentTableEntry[]>([]);
 
-  function contentTableCallback(entry: ContentTableEntry) {
+  function callback(entry: ContentTableEntry) {
     contentTable.push(entry);
     setContentTable([...contentTable]);
   }
@@ -20,11 +20,7 @@ export default function BlogPost() {
       posts={[meta.tutHtml, meta.tutCss, meta.tutCloudflare]}
     >
       <ContentTable contentTable={contentTable} />
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Introduction"
-      />
+      <H level={2} callback={callback} text="Introduction" />
       "Sorry, this file type is not permitted for security reasons".{" "}
       <b>There is no official AVIF support. </b>
       However, WordPress needs AVIF for two reasons: First, technicians and end
@@ -37,11 +33,7 @@ export default function BlogPost() {
       by WordPress. Further statistics of WordPress show that in November 2020
       over 409 million people view more than 20 billion pages every month.
       <Image url="wordpress-usage" alt="shows usage statistics of wordpress" />
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Official Support"
-      />
+      <H level={2} callback={callback} text="Official Support" />
       The WordPress core has implemented a security check for uploading files
       since version 4.7. This means that{" "}
       <b>
@@ -62,11 +54,7 @@ export default function BlogPost() {
       around this security check. If you are looking for an easy way to
       automatically generate images and offer the user the best, skip the next
       paragraphs and take a look at the plugin section.
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Mime Types"
-      />
+      <H level={2} callback={callback} text="Mime Types" />
       WordPress restricts files that do not match its list of Internet media
       types, also known as
       <b>content types</b> or <b>mime-types</b>. The MIME type is a two-part
@@ -144,11 +132,7 @@ add_filter( 'upload_mimes', 'allow_modern_images', 1, 1 );`}
         url="mimetype-plugin"
         alt="screenshot of the mime type plugin website"
       />
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="No automatic conversion"
-      />
+      <H level={2} callback={callback} text="No automatic conversion" />
       Uploading images is a cool thing, but a colossal problem remains. For
       every image you want to serve to your users,{" "}
       <b>you need to convert it manually</b>
@@ -167,11 +151,7 @@ add_filter( 'upload_mimes', 'allow_modern_images', 1, 1 );`}
       will handle all these requests without you having to configure anything.
       Until then, do not hesitate to try other plugins. Unfortunately, none of
       these plugins supports avif yet, but WebP is also an advantage!
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Plugin Support and Summary"
-      />
+      <H level={2} callback={callback} text="Plugin Support and Summary" />
       As we said earlier, all major WordPress services and plugins for image
       optimization currently do not support AVIF. WordPress does not support
       AVIF files. WordPress does not even support WebP. <br />

@@ -10,7 +10,7 @@ import { useState } from "react";
 export default function BlogPost() {
   const [contentTable, setContentTable] = useState<ContentTableEntry[]>([]);
 
-  function contentTableCallback(entry: ContentTableEntry) {
+  function callback(entry: ContentTableEntry) {
     contentTable.push(entry);
     setContentTable([...contentTable]);
   }
@@ -20,11 +20,7 @@ export default function BlogPost() {
       posts={[meta.tutCss, meta.tutFrameworks, meta.tutHtml]}
     >
       <ContentTable contentTable={contentTable} />
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Introduction"
-      />
+      <H level={2} callback={callback} text="Introduction" />
       NextJS images is easy! The blog you're reading uses both the latest
       version of React and NextJS. And not only that: the bundler automatically
       detects AVIF files and handles them accordingly. We didn't have to do
@@ -54,11 +50,7 @@ module.exports = withImages()`}
       shifting their layouts. Furthermore, this service can also be used if the
       server that contains the images of the website is a CDN and not a server
       hosted by the website.
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Next.JS image component"
-      />
+      <H level={2} callback={callback} text="Next.JS image component" />
       All in all, it's a simple "Put this image in your project, add it to the
       component and we'll do the entire conversion and optimization" approach.
       While it converts images to newer formats, it does not yet do so for AVIF.
@@ -81,11 +73,7 @@ module.exports = withImages()`}
         height={0}
       />
 (..)`}</Syntax>
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Next Optimized Images"
-      />
+      <H level={2} callback={callback} text="Next Optimized Images" />
       Until this point, if you rely heavily on CSS images, you can use the
       third-party plugin in Next.JS called
       <Link
@@ -99,7 +87,7 @@ module.exports = withImages()`}
       currently working on a complete overhaul of the entire plugin, and a
       Canary version is already published.
       <H
-        contentTableCallback={contentTableCallback}
+        callback={callback}
         level={2}
         text="How do we at avif.io deal with AVIF support?"
       />

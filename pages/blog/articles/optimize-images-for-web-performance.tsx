@@ -8,7 +8,7 @@ import { useState } from "react";
 
 export default function BlogPost() {
   const [contentTable, setContentTable] = useState<ContentTableEntry[]>([]);
-  function contentTableCallback(entry: ContentTableEntry) {
+  function callback(entry: ContentTableEntry) {
     contentTable.push(entry);
     setContentTable([...contentTable]);
   }
@@ -19,11 +19,7 @@ export default function BlogPost() {
       posts={[meta.tutCss, meta.tutHtml, meta.tutWordpress]}
     >
       <ContentTable contentTable={contentTable} />
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Takeaways"
-      />
+      <H level={2} callback={callback} text="Takeaways" />
       <Checklist
         items={[
           "Serve images in next-gen formats: Use AVIF and WebP, with JPG as fallback",
@@ -35,11 +31,7 @@ export default function BlogPost() {
         ]}
         checked={true}
       />
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Introduction"
-      />
+      <H level={2} callback={callback} text="Introduction" />
       <H
         level={5}
         text="
@@ -164,7 +156,7 @@ export default function BlogPost() {
       />
       Let's examine they ways in which you can improve your images.
       <H
-        contentTableCallback={contentTableCallback}
+        callback={callback}
         level={2}
         text="1) Serve images in next-gen formats"
       />
@@ -353,11 +345,7 @@ export default function BlogPost() {
         ]}
         checked={true}
       />
-      <H
-        contentTableCallback={contentTableCallback}
-        level={2}
-        text="2) Efficiently encode images"
-      />
+      <H callback={callback} level={2} text="2) Efficiently encode images" />
       <H
         level={5}
         text="
@@ -421,11 +409,7 @@ export default function BlogPost() {
         ]}
         checked={true}
       />
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="3) Properly size images"
-      />
+      <H level={2} callback={callback} text="3) Properly size images" />
       One of the most worthwhile optimizations you can make in the interest of
       web performance is to
       <b>provide images in the correct size</b>. An all too common problem is
@@ -522,7 +506,7 @@ sizes="(max-width: 720px) 100vw, 720px">
         checked={true}
       />
       <H
-        contentTableCallback={contentTableCallback}
+        callback={callback}
         level={2}
         text="4) Optimize image loading process"
       />
@@ -639,11 +623,7 @@ sizes="(max-width: 720px) 100vw, 720px">
       avoiding user impact of the CPU time used to decode the image. It
       effectively <b>reduces delay in presenting other content</b>.
       <Syntax language="html">{`<img src="image.jpg" decoding="async">`}</Syntax>
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="5) Improve hosting behavior"
-      />
+      <H level={2} callback={callback} text="5) Improve hosting behavior" />
       <H
         level={5}
         text="
@@ -708,11 +688,7 @@ sizes="(max-width: 720px) 100vw, 720px">
         ]}
         checked={true}
       />
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="6) SEO Image Optimization"
-      />
+      <H level={2} callback={callback} text="6) SEO Image Optimization" />
       <H
         level={5}
         text="Summary: Use an explanatory file name as well as describing title and alt attributes."
@@ -761,7 +737,7 @@ sizes="(max-width: 720px) 100vw, 720px">
       judgement and only label images when the information is useful to
       visitors.
       <H
-        contentTableCallback={contentTableCallback}
+        callback={callback}
         level={2}
         text="Summary Checklist and code example"
       />
@@ -793,11 +769,7 @@ sizes="(max-width: 720px) 100vw, 720px">
 <img loading="lazy" decoding="async" width="2880" height="1620" src="/img/image-1440.jpg" alt="example image">
 
 </picture>`}</Syntax>
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="More Tips"
-      />
+      <H level={2} callback={callback} text="More Tips" />
       Thanks for reading the article! Have fun implementing all the features
       mentioned above. Here are some more general best practices when it comes
       down to how to optimize images for web:
@@ -815,11 +787,7 @@ sizes="(max-width: 720px) 100vw, 720px">
         ]}
         checked={true}
       />
-      <H
-        contentTableCallback={contentTableCallback}
-        level={2}
-        text="All Image optimization tools"
-      />
+      <H callback={callback} level={2} text="All Image optimization tools" />
       There are a lot of tools and programs out there, both premium and free,
       that you can use to optimize your images. Some give you the tools to
       perform your own optimizations and others do the work for you.

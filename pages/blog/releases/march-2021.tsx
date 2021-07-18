@@ -9,7 +9,7 @@ import { useState } from "react";
 export default function BlogPost() {
   const [contentTable, setContentTable] = useState<ContentTableEntry[]>([]);
 
-  function contentTableCallback(entry: ContentTableEntry) {
+  function callback(entry: ContentTableEntry) {
     contentTable.push(entry);
     setContentTable([...contentTable]);
   }
@@ -20,11 +20,7 @@ export default function BlogPost() {
       posts={[meta.february2021, meta.january2021, meta.july2021]}
     >
       <ContentTable contentTable={contentTable} />
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Accessibility"
-      />
+      <H level={2} callback={callback} text="Accessibility" />
       One would think a website that heavily focuses on images wouldn't care
       about accessibility, right? Wrong! There are a lot of people with physical
       disabilities that affect how they perceive colors, images, and websites.
@@ -46,7 +42,7 @@ export default function BlogPost() {
       We realize these changes may not seem like a big deal, but they're just a
       huge step towards making our website accessible to everyone and we're
       happy to be able to offer everyone a chance to experience AVIF.
-      <H level={2} contentTableCallback={contentTableCallback} text="API" />
+      <H level={2} callback={callback} text="API" />
       As part of our service, we would also like to provide a Web API. We are
       currently working on a REST API for avif.io and we're happy to announce
       that our version 0.0.1 is working beautifully! We are making sure things
@@ -65,11 +61,7 @@ export default function BlogPost() {
       />{" "}
       for staying up to date on latest changes and being part of the
       development.
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Conversion issues"
-      />
+      <H level={2} callback={callback} text="Conversion issues" />
       These past few weeks, we've gotten a lot of correspondence from the
       Firefox developers, specifically Jon Bauman, the guy who is responsible
       for the AVIF implementation, especially the recent upcoming full public

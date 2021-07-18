@@ -9,7 +9,7 @@ import { useState } from "react";
 export default function BlogPost() {
   const [contentTable, setContentTable] = useState<ContentTableEntry[]>([]);
 
-  function contentTableCallback(entry: ContentTableEntry) {
+  function callback(entry: ContentTableEntry) {
     contentTable.push(entry);
     setContentTable([...contentTable]);
   }
@@ -19,11 +19,7 @@ export default function BlogPost() {
       posts={[meta.tutCloudflare, meta.tutFrameworks, meta.tutWordpress]}
     >
       <ContentTable contentTable={contentTable} />
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Wishing for native support"
-      />
+      <H level={2} callback={callback} text="Wishing for native support" />
       Many Netlify users wanted a native solution that would allow them to
       deliver images in WebP or AVIF format at any time. However, at the time of
       the article on February 21, there is no easy way to enable this feature.
@@ -37,11 +33,7 @@ export default function BlogPost() {
         link="/blog/tutorials/use-avif-in-html/"
         text="How to use AVIF in HTML"
       />
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Defining custom headers"
-      />
+      <H level={2} callback={callback} text="Defining custom headers" />
       While using the image tag on Netlify seems to work, there was a problem
       with using. avif files. When trying to view the images inside Firefox, we
       noticed that the images did not show up. This problem did not occur in
@@ -59,7 +51,7 @@ for = "*.avif"
 [headers.values]
 Content-Type = "image/avif"`}
       </Syntax>
-      <H level={2} contentTableCallback={contentTableCallback} text="Summary" />
+      <H level={2} callback={callback} text="Summary" />
       Enabling AVIF support on Netlify is not easy as simply clicking a single
       button. However, it can be easily achieved by customizing the
       configuration file to your specific needs. If this is the first time you

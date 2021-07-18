@@ -476,8 +476,10 @@ nav ol li:before {
     transition: background 0.15s ease-in-out;
   }
 
-  input:focus-visible {
+  :focus-visible {
     border: 2px solid theme("colors.white");
+    transform: scale(1.01);
+    transition: all 0.1s ease-in-out;
   }
 }
 

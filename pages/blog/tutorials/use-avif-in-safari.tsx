@@ -7,7 +7,7 @@ import { useState } from "react";
 export default function BlogPost() {
   const [contentTable, setContentTable] = useState<ContentTableEntry[]>([]);
 
-  function contentTableCallback(entry: ContentTableEntry) {
+  function callback(entry: ContentTableEntry) {
     contentTable.push(entry);
     setContentTable([...contentTable]);
   }
@@ -17,11 +17,7 @@ export default function BlogPost() {
       posts={[meta.tutHtml, meta.tutFirefox, meta.tutEdge]}
     >
       <ContentTable contentTable={contentTable} />
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Introduction"
-      />
+      <H level={2} callback={callback} text="Introduction" />
       AVIF support is under development in web browsers. A version of Google
       Chrome was released in mid-August 2020 that includes full AVIF support.
       Opera also supports the image format, and Mozilla is working on it for
@@ -36,11 +32,7 @@ export default function BlogPost() {
       . This is at least our hope, as incompatible browsers are one major factor
       for an unsupported format. As for Safari for macOS, support for AV1 is
       still pending as well.
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Safari AVIF support soon"
-      />
+      <H level={2} callback={callback} text="Safari AVIF support soon" />
       But there's great news in the bug tracker for Webkit, which is the core of
       Safari. It's the engine that's mainly used in Apple's Safari web browser,
       along with all iOS web browsers. WebKit is also used in the BlackBerry
@@ -51,11 +43,7 @@ export default function BlogPost() {
       gtk port. This patch includes AVIF support and basic decoding of still
       images using libavif. Animated AVIF images will be protected in a future
       patch.
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Even ANIMATED support!"
-      />
+      <H level={2} callback={callback} text="Even ANIMATED support!" />
       As if that wasn't already good news, <b>animated AVIF support</b> was
       added some time later. Developers updated dav1d and libavif dependencies
       and fixed parsing issues. They started to turn on AVIF support by default

@@ -8,7 +8,7 @@ import { useState } from "react";
 export default function BlogPost() {
   const [contentTable, setContentTable] = useState<ContentTableEntry[]>([]);
 
-  function contentTableCallback(entry: ContentTableEntry) {
+  function callback(entry: ContentTableEntry) {
     contentTable.push(entry);
     setContentTable([...contentTable]);
   }
@@ -18,11 +18,7 @@ export default function BlogPost() {
       posts={[meta.tutCloudflare, meta.tutNetlify, meta.tutWordpress]}
     >
       <ContentTable contentTable={contentTable} />
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Introduction"
-      />
+      <H level={2} callback={callback} text="Introduction" />
       Every online store shows a lot of images - product photos, brand images,
       etc. But with all these images come{" "}
       <b>challenges and opportunities for optimization</b>. Image optimization
@@ -35,11 +31,7 @@ export default function BlogPost() {
         AVIF was founded by all major technology and browser companies worldwide
       </b>
       , including Google, Apple, and Mozilla.
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Native Magento solution"
-      />
+      <H level={2} callback={callback} text="Native Magento solution" />
       Installing AVIF support on Magento CMS has been difficult for some time.
       Fortunately, some developers have been working hard on the problem and
       found solutions.{" "}
@@ -55,7 +47,7 @@ export default function BlogPost() {
       />
       Magento will add native support for AVIF headers shortly.
       <H
-        contentTableCallback={contentTableCallback}
+        callback={callback}
         level={2}
         text="Ultimate Image Optimizer Extension"
       />
@@ -71,11 +63,7 @@ export default function BlogPost() {
       giving Magento 2 stores a complete image optimization solution. Their
       customers benefit from improved page loading times and high-quality
       images.
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="magento2-next-gen-images"
-      />
+      <H level={2} callback={callback} text="magento2-next-gen-images" />
       Jisse Reitsma, the founder of Yireo, provides a Magento module that does
       exactly the same. He describes it as a module to{" "}
       <b>add support for NextGen images</b>. Those who love Magento and image

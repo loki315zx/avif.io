@@ -8,7 +8,7 @@ import { useState } from "react";
 export default function BlogPost() {
   const [contentTable, setContentTable] = useState<ContentTableEntry[]>([]);
 
-  function contentTableCallback(entry: ContentTableEntry) {
+  function callback(entry: ContentTableEntry) {
     contentTable.push(entry);
     setContentTable([...contentTable]);
   }
@@ -19,11 +19,7 @@ export default function BlogPost() {
       posts={[meta.tutCss, meta.tutHtml, meta.tutWordpress]}
     >
       <ContentTable contentTable={contentTable} />
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Introduction"
-      />
+      <H level={2} callback={callback} text="Introduction" />
       Today, we have many image codecs to work with. Images come in all shapes
       and sizes but also formats. However, many do not realize how important it
       is to have more than one image codec to choose from. Today,{" "}
@@ -57,11 +53,7 @@ export default function BlogPost() {
       - a big problem for a large number of users. In addition, the 8-bit limit
       means that it may have difficulty creating HDR-friendly images with high
       dynamic range while at the same time limiting the quality of compression.
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Quality comparison"
-      />
+      <H level={2} callback={callback} text="Quality comparison" />
       If you focus on the discussion about which image codec is the best, there
       will always be one opinion or another. However, there is no denying that{" "}
       <b>JPEG suffers in terms of compression quality today</b>. Indeed, even
@@ -98,11 +90,7 @@ export default function BlogPost() {
       <b>AVIFs can capture an image/video image the size of an 8K video</b>, its
       use in modern photos is apparent.
       <br />
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Speed comparison"
-      />
+      <H level={2} callback={callback} text="Speed comparison" />
       Another crucial aspect, is speed. JPEG was written before the invention of
       multicore CPU chips. So it is designed to work only with a sequential
       process where the number of cores does not matter; it is the clock speed.
@@ -122,11 +110,7 @@ export default function BlogPost() {
       downloaded and displayed much faster. For larger file sizes, the impact
       can be significant, and you should consider using a format that supports
       progressive rendering.
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Animation capacity"
-      />
+      <H level={2} callback={callback} text="Animation capacity" />
       As you may know, JPEG is an image format. This means that it is typically
       designed to show only still images.{" "}
       <b>
@@ -134,11 +118,7 @@ export default function BlogPost() {
       </b>{" "}
       This means that it can support animations and movements in a way that JPEG
       simply can not.
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Main differences for Nerds"
-      />
+      <H level={2} callback={callback} text="Main differences for Nerds" />
       There are some crucial differences when it comes to looking at the
       differences in the JPEG vs. AVIF debate. For example, you will find that
       AVIF supports features such as:
@@ -173,11 +153,7 @@ export default function BlogPost() {
       You can use functions such as additional layers, color channels, and
       masking without any problems. JPEG, on the other hand, can only be saved
       with an intact layer.
-      <H
-        contentTableCallback={contentTableCallback}
-        level={2}
-        text="Main differences for Marketeers"
-      />
+      <H callback={callback} level={2} text="Main differences for Marketeers" />
       Simply put, AVIF has a better chance of being supported in the long term.
       It also has a higher degree of compression efficiency and can work with a
       broader range of functions as described above. Typically, the main
@@ -204,11 +180,7 @@ export default function BlogPost() {
         uptake on the market.
       </b>{" "}
       In time that will change.
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Conclusion"
-      />
+      <H level={2} callback={callback} text="Conclusion" />
       Most image codecs will be a significant improvement over what we have used
       in JPEG so far. Although the improved JPEG 2000 also offers substantial
       improvements over its predecessor, it still cannot compete with AVIF in

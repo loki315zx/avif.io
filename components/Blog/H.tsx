@@ -6,7 +6,7 @@ import Ad from "@components/Blog/Ad";
 export interface HProps {
   text: string;
   level: number;
-  contentTableCallback?: (entry: ContentTableEntry) => void;
+  callback?: (entry: ContentTableEntry) => void;
 }
 
 export default function H(props: HProps) {
@@ -15,7 +15,7 @@ export default function H(props: HProps) {
   const router = useRouter();
 
   useEffect(() => {
-    props.contentTableCallback?.({ text: props.text, href: `#${trimmedText}` });
+    props.callback?.({ text: props.text, href: `#${trimmedText}` });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

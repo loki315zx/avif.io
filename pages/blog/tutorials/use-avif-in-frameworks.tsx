@@ -10,7 +10,7 @@ import { useState } from "react";
 export default function BlogPost() {
   const [contentTable, setContentTable] = useState<ContentTableEntry[]>([]);
 
-  function contentTableCallback(entry: ContentTableEntry) {
+  function callback(entry: ContentTableEntry) {
     contentTable.push(entry);
     setContentTable([...contentTable]);
   }
@@ -20,11 +20,7 @@ export default function BlogPost() {
       posts={[meta.tutCss, meta.tutHtml, meta.tutNextjs]}
     >
       <ContentTable contentTable={contentTable} />
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Framework List"
-      />
+      <H level={2} callback={callback} text="Framework List" />
       Now that you've learned how fantastic AVIF is, you may be asking yourself,
       "<b>How do I use AVIF images in frameworks?</b> Since AVIF is relatively
       new, the implementation must be super complicated and time-consuming!" The
@@ -44,11 +40,7 @@ export default function BlogPost() {
         ]}
         checked={true}
       />
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Other frameworks"
-      />
+      <H level={2} callback={callback} text="Other frameworks" />
       In principle, other frameworks might work differently. We found out from
       our research that Meteor and Ember support AVIF files without additional
       configuration, but since we did not experiment with the latest version
@@ -62,11 +54,7 @@ export default function BlogPost() {
         ]}
         checked={false}
       />
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Example code"
-      />
+      <H level={2} callback={callback} text="Example code" />
       This is the code we used to display the image below in React and Next.JS:
       <Syntax language="html">
         {`<picture>
@@ -77,11 +65,7 @@ export default function BlogPost() {
       </Syntax>
       <Image url="react-avif" alt="using avif in react" />
       <Image url="angular-avif" alt="using avif in angular" />
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Webpack File Loader"
-      />
+      <H level={2} callback={callback} text="Webpack File Loader" />
       In some cases, especially with older versions and when using webpack, you
       may encounter some problems. Especially:
       <Syntax language="html">
@@ -102,11 +86,7 @@ export default function BlogPost() {
   }
 }`}
       </Syntax>
-      <H
-        level={2}
-        contentTableCallback={contentTableCallback}
-        text="Automatic conversion"
-      />
+      <H level={2} callback={callback} text="Automatic conversion" />
       We could not find a plugin that converts the image to other sizes and
       formats such as AVIF to match the device of the client. Node.JS library
       Sharp implemented AVIF support, which might be a good choice for you. Have
