@@ -120,7 +120,7 @@ export default function Conversion(props: ConversionProps): ReactElement {
       className={`conversion justify-between w-full relative z-10 flex flex-row items-center self-auto mt-4 py-2 px-3 bg-white rounded-md text-gray-900${
         finished ? "pointer-events-auto" : "progress group"
       } ${cancelled ? "hidden" : ""}`}
-      transition-style="bounceIn"
+      transition-style={finished ? "bounceIn" : ""}
     >
       <div className="flex flex-col justify-between items-baseline py-2">
         <p className="overflow-hidden relative z-50 text-gray-900 whitespace-nowrap select-none overflow-ellipsis">
