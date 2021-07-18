@@ -62,7 +62,7 @@ export default function Dropzone(props: DropzoneProps) {
         <input {...getInputProps()} />
         <div
           className={
-            "mx-auto relative w-8 h-8 overflow-hidden rounded-full mb-4"
+            "mx-auto relative w-8 h-8 overflow-hidden rounded-full mb-4 playstate"
           }
         >
           <div
@@ -71,7 +71,10 @@ export default function Dropzone(props: DropzoneProps) {
               backgroundImage: `url(${arrow})`,
             }}
           ></div>
-          <div className="absolute top-0 right-0 bottom-0 left-0 z-10 bg-gradient blur-sm animate-ctaBackground"></div>
+          <div
+            className="absolute top-0 right-0 bottom-0 left-0 z-10 bg-gradient blur-sm"
+            transition-style="ctaBackground"
+          ></div>
         </div>
         <b>Drop images or browse</b>
         <div className="text-gray-400">

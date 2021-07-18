@@ -174,8 +174,9 @@ export default function App(): ReactElement {
 
         <div
           style={{ width: 720 }}
+          transition-style="bouncingIn"
           className={
-            "relative animate-bouncingIn mx-auto flex flex-col items-center justify-center max-w-full rounded-xl p-4 bg-white bg-opacity-5 " +
+            "relative mx-auto flex flex-col items-center justify-center max-w-full rounded-xl p-4 bg-white bg-opacity-5 " +
             " " +
             (settingsBoxOpen ? "open" : "")
           }
@@ -228,20 +229,15 @@ export default function App(): ReactElement {
           <DownloadButton files={convertedFiles} />
         </div>
       </section>
-      <div className="overflow-hidden max-w-full">
+      <section className="overflow-hidden px-3 mt-12 mb-4 max-w-screen-lg">
         <div
-          className="absolute top-0 right-0 bottom-0 left-0 mx-auto w-3/5 rounded-full ease-in-out -z-1 bg-gradient animate-glow"
+          className="absolute top-0 right-0 bottom-0 left-0 mx-auto w-3/5 rounded-full ease-in-out -z-1 bg-gradient"
+          transition-style="glow"
           style={{
-            paddingTop: "30%",
-            paddingBottom: "30%",
-            filter: "blur(50px)",
+            filter: "blur(100px)",
           }}
         ></div>
-      </div>
-      <section
-        className="container relative px-3 mt-12 mb-4 max-w-screen-lg"
-        id="avifbadge"
-      ></section>
+      </section>
       <section
         className="container relative px-3 max-w-screen-xl"
         id="avifadvantages"

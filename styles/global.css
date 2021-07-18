@@ -84,6 +84,12 @@
     @apply outline-none; /* keyboard focus but no mouse focus */
   }
 
+  :focus-visible {
+    border: 2px solid theme("colors.white");
+    transform: scale(1.01);
+    transition: all 0.1s ease-in-out;
+  }
+
   html {
     @apply box-border overflow-x-hidden text-white font-normal cursor-default;
     font-family: "Poppins", "fallback-font";
@@ -258,11 +264,11 @@ nav ol li:before {
 }
 
 .playstate * {
-  animation-play-state: paused;
+  animation-play-state: paused !important;
 }
 
 .playstate:hover * {
-  animation-play-state: running;
+  animation-play-state: running !important;
 }
 
 @media only screen and (min-width: 769px) {
@@ -475,12 +481,6 @@ nav ol li:before {
     cursor: pointer;
     transition: background 0.15s ease-in-out;
   }
-
-  :focus-visible {
-    border: 2px solid theme("colors.white");
-    transform: scale(1.01);
-    transition: all 0.1s ease-in-out;
-  }
 }
 
 /*  */
@@ -541,16 +541,19 @@ nav ol li:before {
 /* Glow Animation */
 
 @keyframes glow {
-  0% {
-    transform: translate3d(0, 0, 0) translateY(75%) scale(1.5);
+  from {
+    transform: translateY(40%) translateX(30%) rotate(0deg) scale(1.05);
   }
-  100% {
-    transform: translate3d(0, 0, 0) translateY(75%) rotate(360deg) scale(1.8);
+  50% {
+    transform: translateY(50%) translateX(0%) rotate(360deg) scale(1.2);
+  }
+  to {
+    transform: translateY(60%) translateX(-25%) rotate(0deg) scale(0.95);
   }
 }
 
 [transition-style="glow"] {
-  animation: glow 10s infinite alternate-reverse both;
+  animation: glow 15s ease-in-out infinite alternate-reverse both;
 }
 
 /* Bouncing In Animation */
