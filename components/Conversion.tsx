@@ -82,17 +82,9 @@ export default function Conversion(props: ConversionProps): ReactElement {
           onProgress,
           onError(e: string) {
             console.error(e);
-            if (
-              confirm(
-                "Oh no, the conversion has failed. Can we use your file to check what went wrong and fix it in a future release?"
-              )
-            ) {
-              (window as any).firebase
-                .storage()
-                .ref()
-                .child(Date.now().toString())
-                .put(props.file);
-            }
+            confirm(
+              "Oh no, the conversion has failed. This happens most likely due to your image having the wrong file ending. Please check and try again."
+            );
           },
         })
       );

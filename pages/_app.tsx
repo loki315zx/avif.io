@@ -17,18 +17,11 @@ export default function AvifIo({ Component, pageProps }: any) {
         strategy="beforeInteractive"
         src="/__/firebase/8.6.5/firebase-app.js"
       />
+      {/* Turn off for now.
       <Script
         strategy="beforeInteractive"
         src="/__/firebase/8.6.5/firebase-database.js"
-      />
-      <Script
-        strategy="lazyOnload"
-        src="/__/firebase/8.6.5/firebase-storage.js"
-      />
-      <Script
-        strategy="lazyOnload"
-        src="/__/firebase/8.6.5/firebase-firestore.js"
-      />
+  />*/}
       <Script strategy="beforeInteractive" src="/__/firebase/init.js" />
       <Script
         strategy="lazyOnload"
