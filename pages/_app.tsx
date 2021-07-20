@@ -9,20 +9,15 @@ export default function AvifIo({ Component, pageProps }: any) {
       <Script strategy="beforeInteractive" src="/avif.js" />
       <Script src="/hotjar.js" />
       <Script
-        defer
-        data-domain="avif.io"
-        src="https://plausible.io/js/plausible.js"
-      ></Script>
-      <Script
         strategy="beforeInteractive"
-        src="/__/firebase/8.6.5/firebase-app.js"
+        src="/__/firebase/8.7.1/firebase-app.js"
       />
-      {/* Turn off for now.
+      <Script strategy="beforeInteractive" src="/__/firebase/init.js" />
       <Script
         strategy="beforeInteractive"
-        src="/__/firebase/8.6.5/firebase-database.js"
-  />*/}
-      <Script strategy="beforeInteractive" src="/__/firebase/init.js" />
+        src="/__/firebase/8.7.1/firebase-analytics.js"
+      />
+      <Script>firebase.analytics()</Script>
       <Script
         strategy="lazyOnload"
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
