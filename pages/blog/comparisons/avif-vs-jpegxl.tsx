@@ -100,12 +100,21 @@ export default function BlogPost() {
       looking slightly worse, with more noticeable artifacts in heavily
       compressed images. JPEG XL pulls ahead with lossless compression,
       providing more efficient files for both non-photo and photo lossless
-      images. JPEG XL is excellent for those who want to share lossless photos.
-      However, for web delivery, AVIF offers great-looking lossy photos that
-      will be much kinder on bandwidth.
+      images.
+      <br /> JPEG XL is excellent for those who want to share lossless photos.
+      It is also great for web delivery too. AVIF offers great-looking lossy
+      photos as well, making them perfect for web delivery as they are much
+      kinder on bandwidth. This statement however depends highly on the quality
+      you are looking for.
+      <br />
+      "Most images on the web are (the equivalent of) libjpeg q60-90. AVIF beats
+      JXL below the equivalent of q40. Above q50, JXL is better."
+      <Link text="@Jon Sneyers" link="twitter.com/jonsneyers" ext />
       <br />
       <H level={2} callback={callback} text="Speed" />
-      <b>AVIF can be a slow image codec</b> to encode and decode.
+      <b>AVIF had problems with its decoding and encoding speed.</b>
+      Recent releases of decoders achieved various performance improvements.
+      Encoding is however still a problem and quite slow.
       <b>It doesn't support progressive decoding</b>
       - a process of decoding where portions of an image are incrementally
       decoded from an incomplete image file. This can dramatically increase the
@@ -207,12 +216,14 @@ export default function BlogPost() {
       it must beat every other format, a problem compounded by the fact that
       source elements actually require srcset rather than src. In contrast, WebP
       only needs to surpass the original JPEG/PNG source in order to be useful.
-      We highly recommend Josh's article on Blobfolio for a{" "}
+      We recommend Josh's article on Blobfolio for a{" "}
       <Link
-        text="live comparison of both formats."
+        text="live comparison of both formats"
         link="https://blobfolio.com/2021/jpeg-xl/"
         ext
-      />
+      />{" "}
+      or to experiment with the formats yourself, on sites like
+      <Link text="squoosh.app from Google." link="squoosh.app/" />
       <br />
       <H level={2} callback={callback} text="Summary for Marketeers" />
       For most people,
