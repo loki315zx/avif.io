@@ -21,7 +21,7 @@ export default function BlogPosts(props: any) {
     </Link>
   ));
   return (
-    <section className="container max-w-screen-lg bg-bg-700 body-font">
+    <>
       <h3
         className="mt-8 mb-6 text-xl font-bold text-center capitalize"
         id={props.title ? props.title : "related"}
@@ -29,8 +29,8 @@ export default function BlogPosts(props: any) {
         {props.title ? props.title : "Related articles"}
       </h3>
       <div className="container py-6 mx-auto">
-        <div className="flex flex-wrap m-4">{listItems}</div>
+        <div className="flex flex-wrap m-2 md:m-3">{listItems}</div>
       </div>
-    </section>
+    </>
   );
 }

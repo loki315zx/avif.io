@@ -87,7 +87,7 @@ export default function Blog(props: {
           </div>
         </div>
       </main>
-      <div className="mt-12">
+      <div className="container mt-12 max-w-screen-lg bg-bg-700">
         {props.posts[0] && <Posts posts={props.posts} />}
       </div>
     </Layout>

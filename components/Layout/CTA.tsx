@@ -5,7 +5,7 @@ export default function CTA() {
     <div className="container my-8 mx-auto text-center">
       <Link href="/" passHref>
         <button className="container inline-block max-w-screen-lg text-left">
-          <div className="overflow-hidden relative p-6 rounded-md cursor-pointer">
+          <div className="overflow-hidden relative p-3 rounded-md cursor-pointer md:p-6">
             <div className="relative z-10 opacity-80">
               Profit from a faster website, higher ranking and better
               conversions.

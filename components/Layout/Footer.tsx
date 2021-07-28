@@ -40,9 +40,7 @@ export default function Footer() {
             </nav>
           </div>
           <div className="px-4 w-full md:w-1/2 lg:w-1/4">
-            <h6 className="mt-6 mb-3 font-bold text-white">
-              Most viewed articles
-            </h6>
+            <h6 className="mt-6 mb-3 font-bold text-white">Most viewed</h6>
             <nav className="list-none">
               <FooterLink
                 text="AVIF in Wordpress"

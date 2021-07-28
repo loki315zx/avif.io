@@ -162,7 +162,7 @@ export default function App(): ReactElement {
 
   return (
     <Layout meta={meta.index}>
-      <section className="px-3 mt-12 text-center">
+      <section className="px-3 mt-12 mb-4 text-center">
         <h1>Convert all images to AVIF for free.</h1>
         <h2 className="mb-6 text-base font-normal">
           No data is sent. The magic happens in your browser.
@@ -176,7 +176,7 @@ export default function App(): ReactElement {
           style={{ width: 720 }}
           transition-style="bouncingIn"
           className={
-            "relative mx-auto flex flex-col items-center justify-center max-w-full rounded-xl p-4 bg-white bg-opacity-5 " +
+            "relative mx-auto flex flex-col items-center justify-center max-w-full rounded-xl p-0 md:p-4 bg-white bg-opacity-5 " +
             " " +
             (settingsBoxOpen ? "open" : "")
           }
@@ -229,7 +229,7 @@ export default function App(): ReactElement {
           <DownloadButton files={convertedFiles} />
         </div>
       </section>
-      <section className="overflow-hidden px-3 mt-12 mb-4 max-w-screen-lg">
+      <section className="hidden overflow-hidden px-3 mt-12 mb-4 max-w-screen-lg md:block">
         <div
           className="absolute top-0 right-0 bottom-0 left-0 mx-auto w-3/5 rounded-full ease-in-out -z-1 bg-gradient"
           transition-style="glow"
@@ -455,7 +455,7 @@ export default function App(): ReactElement {
         </div>
       </section>
 
-      <div className="container my-12 max-w-screen-md text-center">
+      <div className="container px-2 my-12 max-w-screen-md text-left md:text-center">
         In the last ten years,{" "}
         <b>
           the size of an average web page has increased from 500 kb to 2000 kb

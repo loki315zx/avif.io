@@ -77,7 +77,7 @@ export default function Dropzone(props: DropzoneProps) {
           ></div>
         </div>
         <b>Drop images or browse</b>
-        <div className="text-gray-400">
+        <div className="text-gray-400 text-tiny md:text-default">
           supports png · jpg · webp · gif and more
         </div>
       </div>

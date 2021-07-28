@@ -34,15 +34,17 @@ const posts = [
 export default function BlogAvif() {
   return (
     <Layout meta={meta.blog}>
-      <main className="p-4 archive blog">
+      <main className="p-2 md:p-4 archive blog">
         <div className="mt-12 text-center">
           <h1>{meta.blog.title}</h1>
           <h2 className="text-base">{meta.blog.description}</h2>
         </div>
-        <Posts posts={articles} title="articles" />
-        <Posts posts={posts} title="tutorials" />
-        <Posts posts={comparisons} title="comparisons" />
-        <Posts posts={releases} title="releases" />
+        <div className="container max-w-screen-lg">
+          <Posts posts={articles} title="articles" />
+          <Posts posts={posts} title="tutorials" />
+          <Posts posts={comparisons} title="comparisons" />
+          <Posts posts={releases} title="releases" />
+        </div>
       </main>
     </Layout>
   );
