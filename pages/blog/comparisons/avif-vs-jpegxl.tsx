@@ -5,6 +5,7 @@ import Blog from "@components/Blog";
 import { useState } from "react";
 import Link from "@components/Link";
 import Syntax from "@components/Blog/Syntax";
+import Image from "@components/Blog/Image";
 
 export default function BlogPost() {
   const [contentTable, setContentTable] = useState<ContentTableEntry[]>([]);
@@ -27,12 +28,13 @@ export default function BlogPost() {
       which is likely to dethrone JPEG as the de-facto king of image web
       delivery.
       <br />
-      Released in 2019 by the Joint Photographic Experts Group (the same
+      Released in 2021 by the Joint Photographic Experts Group (the same
       organization that developed the original JPEG standard),
       <b>JPEG XL aims to be a long-term replacement for legacy JPEG</b>
       (Hence X'L' as in 'long-term'). As a royalty-free and open-source
       standard, JPEG XL's creators hope that the open nature of their format
-      will invite web developers to adopt the standard.
+      will invite web developers to adopt the standard. The JXL core bitstream
+      was frozen in January 2021, the file format was finalized in April 2021.
       <br />
       <b>
         AVIF is another recent image format developed by the Alliance for Open
@@ -40,7 +42,8 @@ export default function BlogPost() {
       </b>
       The format is based on the AV1 video codec and is derived from video
       frames. Here are the technical specs and limitations of both of these
-      image formats compared.
+      image formats compared. The AV1 bitstream was frozen in 2018, the AVIF
+      container spec was finalized in February 2019.
       <br />
       <H level={2} callback={callback} text="Quality and Limits" />
       As an image format based on a video frame, the resolution limit makes
@@ -97,12 +100,21 @@ export default function BlogPost() {
       looking slightly worse, with more noticeable artifacts in heavily
       compressed images. JPEG XL pulls ahead with lossless compression,
       providing more efficient files for both non-photo and photo lossless
-      images. JPEG XL is excellent for those who want to share lossless photos.
-      However, for web delivery, AVIF offers great-looking lossy photos that
-      will be much kinder on bandwidth.
+      images.
+      <br /> JPEG XL is excellent for those who want to share lossless photos.
+      It is also great for web delivery too. AVIF offers great-looking lossy
+      photos as well, making them perfect for web delivery as they are much
+      kinder on bandwidth. This statement however depends highly on the quality
+      you are looking for.
+      <br />
+      "Most images on the web are (the equivalent of) libjpeg q60-90. AVIF beats
+      JXL below the equivalent of q40. Above q50, JXL is better."
+      <Link text="@Jon Sneyers" link="twitter.com/jonsneyers" ext />
       <br />
       <H level={2} callback={callback} text="Speed" />
-      <b>AVIF can be a slow image codec</b> to encode and decode.
+      <b>AVIF had problems with its decoding and encoding speed.</b>
+      Recent releases of decoders achieved various performance improvements.
+      Encoding is however still a problem and quite slow.
       <b>It doesn't support progressive decoding</b>
       - a process of decoding where portions of an image are incrementally
       decoded from an incomplete image file. This can dramatically increase the
@@ -137,17 +149,26 @@ export default function BlogPost() {
       for effects to be applied to the foreground and background of images.
       <br />
       <H level={2} callback={callback} text="Support" />
-      As novel image formats, both AVIF and JPEG XL struggles with widespread
-      browser support. Although AVIF is newer than JXL, AVIF has been slightly
-      more widely adopted by browsers.
+      AVIF and JPEG XL are both novel image formats that are not widely
+      supported by browsers. While AVIF has been around for a long time and has
+      67% browser support, JPEGXL does not have any support whatsoever. Thus, if
+      you are looking for a format that is intended for your users right now,
+      opt for AVIF.
       <br />
       <b>Any major browser does not fully support JPEG XL.</b> For Chrome,
       Firefox, and Edge Chromium, the image format can be enabled using a config
       flag. Although, this isn't going to help web delivery, as users are
       unlikely to want to dive into their browser's configs to view your
-      webpage. There is no mobile support for JPEG XL, with Samsung Internet,
-      Safari for iOS, Chrome for Android, and the Android Browser all forgoing
-      JPEG XL support. Time has not been kind to JPEG XL for browser support.
+      webpage. There is no release mobile support for JPEG XL, with Samsung
+      Internet, Safari for iOS, Chrome for Android, and the Android Browser all
+      forgoing JPEG XL support. Time has not been kind to JPEG XL for browser
+      support.
+      <br />
+      <b>Update 24.07.2021</b>
+      Jon Sneyers clarified that JPEGXL has support both on mobile Chrome canary
+      and Firefox nightly, so we can expect full support for release versions in
+      the near future. Thanks, Jon!
+      <Image alt="Twitter update from Jon Sneyers" url="jonsneyers" />
       <br />
       The situation does look brighter for AVIF.{" "}
       <b>Google Chrome has fully supported AVIF images</b> both still and
@@ -195,12 +216,14 @@ export default function BlogPost() {
       it must beat every other format, a problem compounded by the fact that
       source elements actually require srcset rather than src. In contrast, WebP
       only needs to surpass the original JPEG/PNG source in order to be useful.
-      We highly recommend Josh's article on Blobfolio for a{" "}
+      We recommend Josh's article on Blobfolio for a{" "}
       <Link
-        text="live comparison of both formats."
+        text="live comparison of both formats"
         link="https://blobfolio.com/2021/jpeg-xl/"
         ext
-      />
+      />{" "}
+      or to experiment with the formats yourself, on sites like
+      <Link text="squoosh.app from Google." link="squoosh.app/" />
       <br />
       <H level={2} callback={callback} text="Summary for Marketeers" />
       For most people,
@@ -216,11 +239,8 @@ export default function BlogPost() {
       <b>
         The main difference between these two standards is their market adoption
       </b>
-      . The most considerable and most alarming drawback of JPEG XL is it is
-      supported by next to no one. Despite being around for two years, it hasn't
-      been fully supported by default by any browser and lacks even experimental
-      support on mobile. Considering how important mobile browsing has come to
-      web delivery, this is a massive blow to JPEG XL.
+      . If you are looking for a format that is intended for your users right
+      now, opt for AVIF.
       <br />
       <H level={2} callback={callback} text="Conclusion" />
       Full support from Chrome is a massive win for AVIF and suggested that the
